@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Bracket Generator - UI Flow</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #e9ecef; font-size: 14px; }
+        .state-container { margin-bottom: 45px; border: 1px solid #ced4da; background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #343a40; margin-bottom: 30px; }
+        h2 { margin-top: 0; border-bottom: 2px solid #0d6efd; padding-bottom: 8px; color: #0d6efd; font-size: 1.5em; }
+        iframe { width: 100%; height: 650px; border: 1px solid #dee2e6; border-radius: 4px; }
+        /* Basic styling for bracket placeholders */
+        .bracket-placeholder { border: 1px dashed #ccc; padding: 20px; text-align: center; color: #6c757d; background-color: #f8f9fa; min-height: 300px; display: flex; align-items: center; justify-content: center; font-style: italic; }
+        .matchup { border: 1px solid #adb5bd; margin: 10px; padding: 5px; background-color: #fff; text-align: left; }
+        .participant { padding: 2px 5px; display: block; border-bottom: 1px solid #eee; }
+        .participant:last-child { border-bottom: none; }
+        .round { display: flex; flex-direction: column; align-items: center; margin: 0 20px; }
+        .bracket-vis { display: flex; justify-content: center; padding: 20px; overflow-x: auto; }
+        .table-placeholder { border: 1px dashed #ccc; padding: 20px; text-align: center; color: #6c757d; background-color: #f8f9fa; min-height: 200px; display: flex; align-items: center; justify-content: center; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>Tournament Bracket Generator - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style> body { padding-top: 56px; } .hero { background-color: #f8f9fa; padding: 4rem 2rem; text-align: center; border-radius: 0.3rem; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                    <li class='nav-item'><a class='btn btn-light ms-2' href='#'>Create Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='hero'>
+            <h1 class='display-4'>Tournament Bracket Generator</h1>
+            <p class='lead'>Easily create Single Elimination, Double Elimination, and Round Robin tournament brackets for your competitions.</p>
+            <hr class='my-4'>
+            <p>Get started quickly and manage your tournaments effortlessly.</p>
+            <a class='btn btn-primary btn-lg' href='#' role='button'>Create Your Bracket Now</a>
+        </div>
+
+        <div class='row mt-5 text-center'>
+            <div class='col-md-4'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Single Elimination</h5>
+                        <p class='card-text'>Classic knockout format. Win or go home!</p>
+                        <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Double Elimination</h5>
+                        <p class='card-text'>Get a second chance in the lower bracket.</p>
+                        <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Round Robin</h5>
+                        <p class='card-text'>Everyone plays everyone. Fair and comprehensive.</p>
+                        <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                     <li class='nav-item'><a class='btn btn-light ms-2' href='#'>Create Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1>About BracketGen</h1>
+        <p class='lead'>BracketGen is your go-to solution for creating and managing tournament brackets online.</p>
+        <p>Whether you're organizing a sports league, an eSports competition, a tabletop game tournament, or just a friendly contest, BracketGen provides the tools you need to set up your brackets quickly and efficiently.</p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Support for Single Elimination, Double Elimination, and Round Robin formats.</li>
+            <li>Easy participant entry and management.</li>
+            <li>Optional seeding capabilities.</li>
+            <li>Clean, printable bracket views.</li>
+            <li>Simple interface, accessible on any device.</li>
+        </ul>
+
+        <h2>Our Goal</h2>
+        <p>Our mission is to simplify tournament organization. We aim to provide a reliable, user-friendly platform that takes the hassle out of bracket creation, letting you focus on the competition itself.</p>
+
+    </div>
+
+    <footer class='text-center mt-5 py-3 bg-light fixed-bottom'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Create Tournament - Step 1 (Type Selection) -->
+    <div class="state-container">
+        <h2>State 3: Create Tournament - Step 1 (Type Selection)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Step 1: Select Type - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style> body { padding-top: 56px; } .card { cursor: pointer; transition: transform 0.2s; } .card:hover { transform: scale(1.03); box-shadow: 0 4px 15px rgba(0,0,0,0.1); } .card.selected { border: 2px solid #0d6efd; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1 class='mb-4'>Create New Tournament</h1>
+        <div class='progress mb-4' style='height: 20px;'>
+          <div class='progress-bar' role='progressbar' style='width: 25%;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'>Step 1: Type</div>
+        </div>
+
+        <h2>Step 1: Select Tournament Type</h2>
+        <p>Choose the format for your tournament.</p>
+
+        <div class='row mt-4'>
+            <div class='col-md-4 mb-3'>
+                <div class='card h-100 text-center'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Single Elimination</h5>
+                        <p class='card-text'>One loss and you're out. Quickest way to find a single winner.</p>
+                         <a href='#' class='stretched-link'></a>
+                    </div>
+                    <div class='card-footer text-muted'>Select</div>
+                </div>
+            </div>
+            <div class='col-md-4 mb-3'>
+                 <div class='card h-100 text-center selected'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Double Elimination</h5>
+                        <p class='card-text'>Participants must lose twice to be eliminated. Includes winner's and loser's brackets.</p>
+                         <a href='#' class='stretched-link'></a>
+                    </div>
+                    <div class='card-footer bg-primary text-white'>Selected</div>
+                </div>
+            </div>
+            <div class='col-md-4 mb-3'>
+                <div class='card h-100 text-center'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Round Robin</h5>
+                        <p class='card-text'>Every participant plays against every other participant.</p>
+                         <a href='#' class='stretched-link'></a>
+                    </div>
+                     <div class='card-footer text-muted'>Select</div>
+                </div>
+            </div>
+        </div>
+
+        <div class='d-flex justify-content-end mt-4'>
+            <button type='button' class='btn btn-primary btn-lg'>Next: Add Participants &rarr;</button>
+        </div>
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Create Tournament - Step 2 (Participants - Initial) -->
+    <div class="state-container">
+        <h2>State 4: Create Tournament - Step 2 (Participants - Initial)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Step 2: Participants - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1 class='mb-4'>Create New Tournament <span class='badge bg-secondary'>Double Elimination</span></h1>
+         <div class='progress mb-4' style='height: 20px;'>
+          <div class='progress-bar' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100'>Step 2: Participants</div>
+        </div>
+
+        <h2>Step 2: Add Participants</h2>
+        <p>Enter the names of the participants, one per line. Minimum 4 participants required for Double Elimination.</p>
+
+        <form>
+            <div class='mb-3'>
+                <label for='participantList' class='form-label'>Participant Names:</label>
+                <textarea class='form-control' id='participantList' rows='10' placeholder='Player 1&#10;Team Alpha&#10;Participant Three&#10;John Doe'></textarea>
+                <div id='participantHelp' class='form-text'>Enter each participant or team name on a new line.</div>
+            </div>
+
+            <div class='alert alert-info' role='alert'>
+              Current participant count: <strong>4</strong>
+            </div>
+
+            <div class='d-flex justify-content-between mt-4'>
+                <button type='button' class='btn btn-outline-secondary'>&larr; Back to Type</button>
+                <button type='button' class='btn btn-primary btn-lg'>Next: Settings &rarr;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Create Tournament - Step 2 (Participants - Validation Error) -->
+    <div class="state-container">
+        <h2>State 5: Create Tournament - Step 2 (Participants - Validation Error)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Step 2: Participants - Error - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1 class='mb-4'>Create New Tournament <span class='badge bg-secondary'>Single Elimination</span></h1>
+         <div class='progress mb-4' style='height: 20px;'>
+          <div class='progress-bar' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100'>Step 2: Participants</div>
+        </div>
+
+        <h2>Step 2: Add Participants</h2>
+        <p>Enter the names of the participants, one per line. Minimum 2 participants required for Single Elimination.</p>
+
+        <form>
+            <div class='mb-3'>
+                <label for='participantList' class='form-label'>Participant Names:</label>
+                <textarea class='form-control is-invalid' id='participantList' rows='10' placeholder='Player 1'>Player 1</textarea>
+                <div class='invalid-feedback'>
+                    Please enter at least 2 participants. You only entered 1.
+                </div>
+                 <div id='participantHelp' class='form-text'>Enter each participant or team name on a new line.</div>
+            </div>
+
+             <div class='alert alert-danger' role='alert'>
+              Error: Not enough participants. Minimum required: <strong>2</strong>. Current count: <strong>1</strong>.
+            </div>
+
+
+            <div class='d-flex justify-content-between mt-4'>
+                <button type='button' class='btn btn-outline-secondary'>&larr; Back to Type</button>
+                <button type='button' class='btn btn-primary btn-lg' disabled>Next: Settings &rarr;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: Create Tournament - Step 3 (Settings - Single/Double Elimination) -->
+    <div class="state-container">
+        <h2>State 6: Create Tournament - Step 3 (Settings - Single/Double Elimination)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Step 3: Settings - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+   <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1 class='mb-4'>Create New Tournament <span class='badge bg-secondary'>Double Elimination</span></h1>
+        <div class='progress mb-4' style='height: 20px;'>
+          <div class='progress-bar' role='progressbar' style='width: 75%;' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100'>Step 3: Settings</div>
+        </div>
+
+        <h2>Step 3: Configure Settings</h2>
+        <p>Adjust optional settings for your tournament.</p>
+
+        <form>
+            <div class='mb-3'>
+                <label for='tournamentName' class='form-label'>Tournament Name (Optional)</label>
+                <input type='text' class='form-control' id='tournamentName' placeholder='E.g., Annual Ping Pong Championship'>
+            </div>
+
+            <div class='mb-3 form-check form-switch'>
+                <input class='form-check-input' type='checkbox' role='switch' id='enableSeeding' checked>
+                <label class='form-check-label' for='enableSeeding'>Enable Seeding</label>
+                 <div id='seedingHelp' class='form-text'>If enabled, participants will be assumed to be listed in seeded order (1st seed first, etc.). If disabled, participants will be randomized.</div>
+            </div>
+
+             <div class='mb-3'>
+                <label for='participantOrder' class='form-label'>Participant Order (Seeding Enabled)</label>
+                <ol class='list-group list-group-numbered'>
+                  <li class='list-group-item'>Player 1</li>
+                  <li class='list-group-item'>Team Alpha</li>
+                  <li class='list-group-item'>Participant Three</li>
+                  <li class='list-group-item'>John Doe</li>
+                  <!-- Add more participants -->
+                </ol>
+                 <div class='form-text'>Current order based on input. If seeding is disabled, this order will be randomized for the bracket.</div>
+            </div>
+
+
+            <div class='d-flex justify-content-between mt-5'>
+                <button type='button' class='btn btn-outline-secondary'>&larr; Back to Participants</button>
+                <button type='button' class='btn btn-success btn-lg'>Generate Bracket &rarr;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Create Tournament - Step 3 (Settings - Round Robin) -->
+    <div class="state-container">
+        <h2>State 7: Create Tournament - Step 3 (Settings - Round Robin)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Step 3: Settings (Round Robin) - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1 class='mb-4'>Create New Tournament <span class='badge bg-secondary'>Round Robin</span></h1>
+        <div class='progress mb-4' style='height: 20px;'>
+          <div class='progress-bar' role='progressbar' style='width: 75%;' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100'>Step 3: Settings</div>
+        </div>
+
+        <h2>Step 3: Configure Settings</h2>
+        <p>Adjust optional settings for your Round Robin tournament.</p>
+
+        <form>
+            <div class='mb-3'>
+                <label for='tournamentName' class='form-label'>Tournament Name (Optional)</label>
+                <input type='text' class='form-control' id='tournamentName' placeholder='E.g., Office Chess League Season 1'>
+            </div>
+
+            <div class='mb-3'>
+                <label class='form-label'>Points System (Optional):</label>
+                <div class='row g-3 align-items-center'>
+                    <div class='col-auto'>
+                        <label for='pointsWin' class='col-form-label'>Win:</label>
+                    </div>
+                    <div class='col-auto'>
+                        <input type='number' id='pointsWin' class='form-control' value='3' style='width: 80px;'>
+                    </div>
+                    <div class='col-auto'>
+                        <label for='pointsDraw' class='col-form-label'>Draw:</label>
+                     </div>
+                     <div class='col-auto'>
+                        <input type='number' id='pointsDraw' class='form-control' value='1' style='width: 80px;'>
+                    </div>
+                     <div class='col-auto'>
+                        <label for='pointsLoss' class='col-form-label'>Loss:</label>
+                    </div>
+                    <div class='col-auto'>
+                        <input type='number' id='pointsLoss' class='form-control' value='0' style='width: 80px;'>
+                    </div>
+                </div>
+                 <div id='pointsHelp' class='form-text'>Define points awarded for match outcomes. Leave blank or 0 if not using points.</div>
+            </div>
+
+            <div class='mb-3 form-check form-switch'>
+                <input class='form-check-input' type='checkbox' role='switch' id='doubleRoundRobin'>
+                <label class='form-check-label' for='doubleRoundRobin'>Double Round Robin</label>
+                 <div id='doubleRRHelp' class='form-text'>If enabled, each participant will play every other participant twice (e.g., home and away).</div>
+            </div>
+
+            <div class='d-flex justify-content-between mt-5'>
+                 <button type='button' class='btn btn-outline-secondary'>&larr; Back to Participants</button>
+                <button type='button' class='btn btn-success btn-lg'>Generate Schedule &rarr;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: Generating Bracket (Loading State) -->
+    <div class="state-container">
+        <h2>State 8: Generating Bracket (Loading State)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Generating... - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; display: flex; flex-direction: column; min-height: 100vh; } .container { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div>
+            <h1 class='mb-4'>Generating Your Bracket...</h1>
+             <div class='progress mb-4' style='height: 30px;'>
+              <div class='progress-bar progress-bar-striped progress-bar-animated' role='progressbar' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100' style='width: 100%'>Please wait</div>
+            </div>
+           <p class='lead'>Setting up the matches for your <span class='fw-bold'>Annual Ping Pong Championship</span>.</p>
+        </div>
+    </div>
+
+    <footer class='text-center py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+     <!-- State 9: Bracket View (Single Elimination Example) -->
+    <div class="state-container">
+        <h2>State 9: Bracket View (Single Elimination Example)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Bracket View - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style>
+        body { padding-top: 70px; background-color: #f8f9fa; }
+        .bracket-container { padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow-x: auto; }
+        .bracket-vis { display: flex; justify-content: flex-start; padding: 20px; min-width: max-content; }
+        .round { display: flex; flex-direction: column; justify-content: space-around; margin: 0 40px; }
+        .matchup { border: 1px solid #ccc; border-radius: 3px; margin-bottom: 30px; background-color: #fff; width: 200px; position: relative; }
+        .participant { padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; font-size: 0.9em; }
+        .participant:last-child { border-bottom: none; }
+        .participant span:last-child { font-weight: bold; }
+        .matchup-line-h, .matchup-line-v { background-color: #999; position: absolute; }
+        .matchup-line-h { height: 1px; width: 20px; right: -20px; top: 50%; }
+        .matchup-line-v { width: 1px; /* Height calculated dynamically */ left: -20px; /* Position calculated dynamically */ }
+        .final-matchup { margin-left: 20px; } /* Adjust spacing for visual */
+        .winner { background-color: #d1ecf1; font-weight: bold; }
+        .bye { color: #6c757d; font-style: italic; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen - Summer Showdown</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                    <li class='nav-item dropdown'>
+                      <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                        Actions
+                      </a>
+                      <ul class='dropdown-menu'>
+                        <li><a class='dropdown-item' href='#'>Print Bracket</a></li>
+                        <li><a class='dropdown-item' href='#'>Share Link</a></li>
+                        <li><hr class='dropdown-divider'></li>
+                        <li><a class='dropdown-item' href='#'>Edit Participants</a></li>
+                        <li><a class='dropdown-item text-danger' href='#'>Reset Bracket</a></li>
+                      </ul>
+                    </li>
+                     <li class='nav-item'><a class='btn btn-light ms-2' href='#'>New Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container-fluid mt-4'>
+        <h2 class='text-center mb-3'>Summer Showdown <span class='badge bg-info'>Single Elimination</span></h2>
+        <div class='bracket-container'>
+            <div class='bracket-vis'>
+                <!-- Round 1 -->
+                <div class='round'>
+                    <h4 class='text-center mb-3'>Round 1</h4>
+                    <div class='matchup'>
+                        <div class='participant'><span>Player 1</span><span>2</span></div>
+                        <div class='participant'><span>Player 8</span><span>1</span></div>
+                        <div class='matchup-line-h'></div>
+                    </div>
+                     <div class='matchup'>
+                        <div class='participant'><span>Player 4</span><span>0</span></div>
+                        <div class='participant winner'><span>Player 5</span><span>2</span></div>
+                        <div class='matchup-line-h'></div>
+                    </div>
+                     <div class='matchup'>
+                        <div class='participant winner'><span>Player 2</span><span>2</span></div>
+                        <div class='participant'><span>Player 7</span><span>0</span></div>
+                        <div class='matchup-line-h'></div>
+                    </div>
+                     <div class='matchup'>
+                        <div class='participant'><span>Player 3</span><span>1</span></div>
+                        <div class='participant winner'><span>Player 6</span><span>2</span></div>
+                         <div class='matchup-line-h'></div>
+                    </div>
+                </div>
+                <!-- Round 2 -->
+                <div class='round'>
+                     <h4 class='text-center mb-3'>Semi-Finals</h4>
+                    <div class='matchup mt-5 mb-5'>
+                        <div class='participant winner'><span>Player 1</span><span>2</span></div>
+                        <div class='participant'><span>Player 5</span><span>1</span></div>
+                        <div class='matchup-line-h'></div>
+                    </div>
+                    <div class='matchup mt-5 mb-5'>
+                        <div class='participant winner'><span>Player 2</span><span>2</span></div>
+                        <div class='participant'><span>Player 6</span><span>0</span></div>
+                        <div class='matchup-line-h'></div>
+                    </div>
+                </div>
+                 <!-- Final Round -->
+                <div class='round'>
+                     <h4 class='text-center mb-3'>Finals</h4>
+                    <div class='matchup mt-5 mb-5 final-matchup' style='margin-top: 120px !important;'>
+                        <div class='participant winner'><span>Player 1</span><span>3</span></div>
+                        <div class='participant'><span>Player 2</span><span>2</span></div>
+                    </div>
+                    <h5 class='text-center mt-3'>Winner: Player 1</h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 10: Bracket View (Double Elimination Example) -->
+    <div class="state-container">
+        <h2>State 10: Bracket View (Double Elimination Example)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Bracket View (Double Elim) - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style>
+        body { padding-top: 70px; background-color: #f8f9fa; }
+        .bracket-section { margin-bottom: 40px; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow-x: auto; }
+        .bracket-vis { display: flex; justify-content: flex-start; padding: 20px; min-width: max-content; }
+        .round { display: flex; flex-direction: column; justify-content: space-around; margin: 0 30px; }
+        .matchup { border: 1px solid #ccc; border-radius: 3px; margin-bottom: 25px; background-color: #fff; width: 180px; font-size: 0.85em; }
+        .participant { padding: 6px 8px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .participant:last-child { border-bottom: none; }
+        .participant span:last-child { font-weight: bold; }
+        .winner { background-color: #d1ecf1; font-weight: bold; }
+        .loser { text-decoration: line-through; color: #6c757d; }
+        h3 { border-bottom: 1px solid #dee2e6; padding-bottom: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen - Club Championship</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                      <li class='nav-item dropdown'>
+                      <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                        Actions
+                      </a>
+                      <ul class='dropdown-menu'>
+                        <li><a class='dropdown-item' href='#'>Print Bracket</a></li>
+                        <li><a class='dropdown-item' href='#'>Share Link</a></li>
+                        <li><hr class='dropdown-divider'></li>
+                        <li><a class='dropdown-item' href='#'>Edit Participants</a></li>
+                        <li><a class='dropdown-item text-danger' href='#'>Reset Bracket</a></li>
+                      </ul>
+                    </li>
+                     <li class='nav-item'><a class='btn btn-light ms-2' href='#'>New Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container-fluid mt-4'>
+        <h2 class='text-center mb-3'>Club Championship <span class='badge bg-info'>Double Elimination</span></h2>
+
+        <!-- Winner's Bracket -->
+        <div class='bracket-section'>
+            <h3>Winner's Bracket</h3>
+            <div class='bracket-vis'>
+                 <!-- WB Round 1 -->
+                <div class='round'>
+                    <h4 class='text-center mb-3'>WB R1</h4>
+                    <div class='matchup'>
+                        <div class='participant'><span>Team A</span><span>-</span></div>
+                        <div class='participant'><span>Team D</span><span>-</span></div>
+                    </div>
+                     <div class='matchup'>
+                        <div class='participant'><span>Team B</span><span>-</span></div>
+                        <div class='participant'><span>Team C</span><span>-</span></div>
+                    </div>
+                </div>
+                 <!-- WB Round 2 -->
+                <div class='round'>
+                     <h4 class='text-center mb-3'>WB R2</h4>
+                     <div class='matchup' style='margin-top: 40px; margin-bottom: 40px;'>
+                        <div class='participant'><span>(W R1 M1)</span><span>-</span></div>
+                        <div class='participant'><span>(W R1 M2)</span><span>-</span></div>
+                    </div>
+                </div>
+                 <!-- WB Final -->
+                 <div class='round'>
+                    <h4 class='text-center mb-3'>WB Final</h4>
+                     <div class='matchup' style='margin-top: 90px; margin-bottom: 90px;'>
+                        <div class='participant'><span>(W R2 M1)</span><span>-</span></div>
+                        <div class='participant'><span class='fst-italic'>(From LB)</span><span>-</span></div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+          <!-- Loser's Bracket -->
+        <div class='bracket-section'>
+            <h3>Loser's Bracket</h3>
+            <div class='bracket-vis'>
+                 <!-- LB Round 1 -->
+                <div class='round'>
+                    <h4 class='text-center mb-3'>LB R1</h4>
+                    <div class='matchup'>
+                        <div class='participant'><span>(L R1 M1)</span><span>-</span></div>
+                        <div class='participant'><span class='fst-italic'>(Bye)</span><span>-</span></div>
+                    </div>
+                     <div class='matchup'>
+                        <div class='participant'><span>(L R1 M2)</span><span>-</span></div>
+                        <div class='participant'><span class='fst-italic'>(Bye)</span><span>-</span></div>
+                    </div>
+                </div>
+                 <!-- LB Round 2 -->
+                <div class='round'>
+                     <h4 class='text-center mb-3'>LB R2</h4>
+                     <div class='matchup' style='margin-top: 40px; margin-bottom: 40px;'>
+                        <div class='participant'><span>(W LB R1 M1)</span><span>-</span></div>
+                        <div class='participant'><span>(W LB R1 M2)</span><span>-</span></div>
+                    </div>
+                </div>
+                 <!-- LB Final -->
+                 <div class='round'>
+                    <h4 class='text-center mb-3'>LB Final</h4>
+                     <div class='matchup' style='margin-top: 90px; margin-bottom: 90px;'>
+                        <div class='participant'><span>(L WB R2 M1)</span><span>-</span></div>
+                        <div class='participant'><span>(W LB R2 M1)</span><span>-</span></div>
+                    </div>
+                 </div>
+            </div>
+         </div>
+
+        <div class='text-center mt-4'>
+            <p class='lead'>Grand Final: Winner of WB Final vs Winner of LB Final</p>
+             <p>(If LB winner wins first match, bracket resets for one more match)</p>
+        </div>
+
+    </div>
+
+     <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 11: Bracket View (Round Robin Example) -->
+    <div class="state-container">
+        <h2>State 11: Bracket View (Round Robin Example)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Schedule View (Round Robin) - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style> body { padding-top: 70px; } </style>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen - Office Chess League</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Help/FAQ</a></li>
+                     <li class='nav-item dropdown'>
+                      <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                        Actions
+                      </a>
+                      <ul class='dropdown-menu'>
+                        <li><a class='dropdown-item' href='#'>Print Schedule</a></li>
+                         <li><a class='dropdown-item' href='#'>Print Standings</a></li>
+                        <li><a class='dropdown-item' href='#'>Share Link</a></li>
+                        <li><hr class='dropdown-divider'></li>
+                        <li><a class='dropdown-item' href='#'>Edit Participants</a></li>
+                        <li><a class='dropdown-item text-danger' href='#'>Reset Tournament</a></li>
+                      </ul>
+                    </li>
+                     <li class='nav-item'><a class='btn btn-light ms-2' href='#'>New Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h2 class='text-center mb-3'>Office Chess League <span class='badge bg-info'>Round Robin</span></h2>
+
+        <ul class='nav nav-tabs mb-3' id='rrTab' role='tablist'>
+          <li class='nav-item' role='presentation'>
+            <button class='nav-link active' id='schedule-tab' data-bs-toggle='tab' data-bs-target='#schedule' type='button' role='tab' aria-controls='schedule' aria-selected='true'>Match Schedule</button>
+          </li>
+          <li class='nav-item' role='presentation'>
+            <button class='nav-link' id='standings-tab' data-bs-toggle='tab' data-bs-target='#standings' type='button' role='tab' aria-controls='standings' aria-selected='false'>Standings</button>
+          </li>
+        </ul>
+
+        <div class='tab-content' id='rrTabContent'>
+          <div class='tab-pane fade show active' id='schedule' role='tabpanel' aria-labelledby='schedule-tab'>
+                <h3 class='mb-3'>Match Schedule</h3>
+                 <div class='table-responsive'>
+                    <table class='table table-striped table-hover'>
+                        <thead>
+                            <tr>
+                                <th scope='col'>Round</th>
+                                <th scope='col'>Match</th>
+                                <th scope='col'>Participant 1</th>
+                                <th scope='col'>Score</th>
+                                <th scope='col'>Participant 2</th>
+                                <th scope='col'>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Round 1 -->
+                            <tr> <td rowspan='2' class='align-middle fw-bold'>1</td> <td>1</td> <td>Alice</td> <td><input type='text' size='1' value='1'> - <input type='text' size='1' value='0'></td> <td>Bob</td> <td><button class='btn btn-sm btn-outline-success'>Save</button></td> </tr>
+                            <tr> <td>2</td> <td>Charlie</td> <td><input type='text' size='1'> - <input type='text' size='1'></td> <td>David</td> <td><button class='btn btn-sm btn-outline-secondary'>Enter</button></td> </tr>
+                            <!-- Round 2 -->
+                             <tr> <td rowspan='2' class='align-middle fw-bold'>2</td> <td>3</td> <td>Alice</td> <td><input type='text' size='1'> - <input type='text' size='1'></td> <td>Charlie</td> <td><button class='btn btn-sm btn-outline-secondary'>Enter</button></td> </tr>
+                            <tr> <td>4</td> <td>Bob</td> <td><input type='text' size='1'> - <input type='text' size='1'></td> <td>David</td> <td><button class='btn btn-sm btn-outline-secondary'>Enter</button></td> </tr>
+                             <!-- Round 3 -->
+                             <tr> <td rowspan='2' class='align-middle fw-bold'>3</td> <td>5</td> <td>Alice</td> <td><input type='text' size='1'> - <input type='text' size='1'></td> <td>David</td> <td><button class='btn btn-sm btn-outline-secondary'>Enter</button></td> </tr>
+                            <tr> <td>6</td> <td>Bob</td> <td><input type='text' size='1' value='0'> - <input type='text' size='1' value='0'></td> <td>Charlie</td> <td><button class='btn btn-sm btn-outline-success'>Save</button></td> </tr>
+                        </tbody>
+                    </table>
+                </div>
+          </div>
+          <div class='tab-pane fade' id='standings' role='tabpanel' aria-labelledby='standings-tab'>
+                <h3 class='mb-3'>Standings</h3>
+                 <p>Points System: Win=3, Draw=1, Loss=0</p>
+                 <div class='table-responsive'>
+                    <table class='table table-bordered'>
+                         <thead class='table-light'>
+                            <tr>
+                                <th scope='col'>Rank</th>
+                                <th scope='col'>Participant</th>
+                                <th scope='col'>Played</th>
+                                <th scope='col'>Wins</th>
+                                <th scope='col'>Draws</th>
+                                <th scope='col'>Losses</th>
+                                <th scope='col'>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr> <td>1</td> <td>Alice</td> <td>1</td> <td>1</td> <td>0</td> <td>0</td> <td>3</td> </tr>
+                            <tr> <td>2</td> <td>Bob</td> <td>2</td> <td>0</td> <td>1</td> <td>1</td> <td>1</td> </tr>
+                             <tr> <td>2</td> <td>Charlie</td> <td>1</td> <td>0</td> <td>1</td> <td>0</td> <td>1</td> </tr>
+                            <tr> <td>4</td> <td>David</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr>
+                        </tbody>
+                    </table>
+                </div>
+          </div>
+        </div>
+
+
+    </div>
+
+    <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+     <!-- State 12: Help/FAQ Page -->
+    <div class="state-container">
+        <h2>State 12: Help/FAQ Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Help/FAQ - Tournament Bracket Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+     <style> body { padding-top: 56px; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>BracketGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Help/FAQ</a></li>
+                     <li class='nav-item'><a class='btn btn-light ms-2' href='#'>Create Bracket</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <h1>Help & Frequently Asked Questions</h1>
+
+        <div class='accordion' id='faqAccordion'>
+          <div class='accordion-item'>
+            <h2 class='accordion-header' id='headingOne'>
+              <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne'>
+                What tournament types are supported?
+              </button>
+            </h2>
+            <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#faqAccordion'>
+              <div class='accordion-body'>
+                We currently support Single Elimination, Double Elimination, and Round Robin tournament formats.
+              </div>
+            </div>
+          </div>
+          <div class='accordion-item'>
+            <h2 class='accordion-header' id='headingTwo'>
+              <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
+                How many participants can I add?
+              </button>
+            </h2>
+            <div id='collapseTwo' class='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#faqAccordion'>
+              <div class='accordion-body'>
+                The minimum number of participants depends on the tournament type (e.g., 2 for Single Elimination). There is technically no hard upper limit, but very large brackets (e.g., over 128 participants) might become difficult to view on screen. Performance may vary with extremely large numbers.
+              </div>
+            </div>
+          </div>
+          <div class='accordion-item'>
+            <h2 class='accordion-header' id='headingThree'>
+              <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree'>
+                What is seeding?
+              </button>
+            </h2>
+            <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#faqAccordion'>
+              <div class='accordion-body'>
+                Seeding involves ranking participants before the tournament starts, usually based on skill or past performance. When seeding is enabled, the participants you enter are assumed to be in order from highest seed (rank 1) to lowest. The bracket is then structured to pair higher seeds against lower seeds in early rounds (e.g., seed 1 vs seed 16, seed 2 vs seed 15). If seeding is disabled, participants are randomly assigned positions in the bracket.
+              </div>
+            </div>
+          </div>
+            <div class='accordion-item'>
+            <h2 class='accordion-header' id='headingFour'>
+              <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='false' aria-controls='collapseFour'>
+                How do I handle Byes?
+              </button>
+            </h2>
+            <div id='collapseFour' class='accordion-collapse collapse' aria-labelledby='headingFour' data-bs-parent='#faqAccordion'>
+              <div class='accordion-body'>
+                Byes are automatically handled in Single and Double Elimination brackets when the number of participants is not a power of two (2, 4, 8, 16, 32, etc.). The highest-seeded participants typically receive the byes, automatically advancing them to the next round. You do not need to manually add 'Bye' as a participant.
+              </div>
+            </div>
+          </div>
+           <div class='accordion-item'>
+            <h2 class='accordion-header' id='headingFive'>
+              <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseFive' aria-expanded='false' aria-controls='collapseFive'>
+                Can I edit a bracket after creating it?
+              </button>
+            </h2>
+            <div id='collapseFive' class='accordion-collapse collapse' aria-labelledby='headingFive' data-bs-parent='#faqAccordion'>
+              <div class='accordion-body'>
+                Yes, you can typically edit participant names or reset scores. Major structural changes (like adding/removing participants or changing the tournament type after matches have started) usually require resetting the bracket or creating a new one. Use the 'Actions' menu on the bracket view page.
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <footer class='text-center mt-5 py-3 bg-light'>
+        <p class='mb-0'>&copy; 2023 BracketGen</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+</body>
+</html>

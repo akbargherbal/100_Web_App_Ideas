@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Story Writing Platform - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .state-container h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            display: block; /* Ensure iframe takes up block space */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Collaborative Story Writing Platform - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to StoryWeave!</h1>
+                <p class="col-md-8 fs-4">Where stories come alive, one contribution at a time. Join a community of writers and weave tales together.</p>
+                <a href="#" class="btn btn-primary btn-lg">Browse Stories</a>
+                <a href="#" class="btn btn-outline-secondary btn-lg ms-2">Learn More</a>
+            </div>
+        </div>
+
+        <h2 class="mb-3">Featured Stories</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h5>
+                        <p class="card-text">In a city powered by steam and gears, a young inventor uncovers a hidden conspiracy...</p>
+                        <a href="#" class="btn btn-sm btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Whispers in the Void <span class="badge bg-secondary ms-2">Completed</span></h5>
+                        <p class="card-text">A lone astronaut receives a mysterious signal from the edge of known space...</p>
+                        <a href="#" class="btn btn-sm btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Last Dragon cynical Guide <span class="badge bg-success ms-2">Ongoing</span></h5>
+                        <p class="card-text">Finding the last dragon is easy. Convincing it magic still matters? That is the hard part...</p>
+                        <a href="#" class="btn btn-sm btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About StoryWeave</h1>
+        <p class="lead">StoryWeave is a platform dedicated to the art of collaborative storytelling.</p>
+        <hr>
+        <h2>Our Mission</h2>
+        <p>We believe that stories are more powerful when created together. Our mission is to provide a space where writers of all levels can connect, collaborate, and create unique narratives, one sentence or paragraph at a time.</p>
+
+        <h2>How It Works</h2>
+        <ol>
+            <li><strong>Browse or Start:</strong> Find an ongoing story that sparks your interest, or start a new one with your own opening lines.</li>
+            <li><strong>Contribute:</strong> Add the next sentence or paragraph to continue the narrative.</li>
+            <li><strong>Collaborate:</strong> See how the story evolves as others add their contributions.</li>
+            <li><strong>Read:</strong> Enjoy the completed or ongoing tales woven by the community.</li>
+        </ol>
+
+        <h2>Join Us</h2>
+        <p>Ready to weave your own thread into the tapestry? Sign up today and start collaborating!</p>
+        <a href="#" class="btn btn-primary">Sign Up Now</a>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 3: Browse Stories Page -->
+    <div class="state-container">
+        <h2>State 3: Browse Stories Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Browse Stories</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Browse Stories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h1>Browse Stories</h1>
+             <a href="#" class="btn btn-success">Start a New Story</a>
+        </div>
+
+        <!-- Filter/Search Options -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                 <input type="text" class="form-control" placeholder="Search by title or keyword...">
+            </div>
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option selected>Filter by Genre...</option>
+                    <option value="1">Fantasy</option>
+                    <option value="2">Sci-Fi</option>
+                    <option value="3">Mystery</option>
+                    <option value="4">Horror</option>
+                </select>
+            </div>
+             <div class="col-md-3">
+                <select class="form-select">
+                    <option selected>Filter by Status...</option>
+                    <option value="1">Ongoing</option>
+                    <option value="2">Completed</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Story List -->
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h5>
+                    <small>Last contribution: 1 hour ago</small>
+                </div>
+                <p class="mb-1">In a city powered by steam and gears, a young inventor uncovers a hidden conspiracy that reaches the highest levels of the automatons governing the metropolis...</p>
+                <small>Genre: Steampunk, Mystery | Contributors: 15</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Whispers in the Void <span class="badge bg-secondary ms-2">Completed</span></h5>
+                     <small>Completed: 2 days ago</small>
+                </div>
+                <p class="mb-1">A lone astronaut drifting in deep space receives a recurring, untraceable signal. Is it salvation, or something far more sinister lurking beyond the veil...</p>
+                <small>Genre: Sci-Fi, Horror | Contributors: 8</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">The Last Dragon cynicals Guide <span class="badge bg-success ms-2">Ongoing</span></h5>
+                     <small>Last contribution: 5 hours ago</small>
+                </div>
+                <p class="mb-1">They say finding the last dragon requires a map woven from moonlight and courage. Turns out, it just requires finding a very grumpy lizard in a cave full of junk...</p>
+                <small>Genre: Fantasy, Comedy | Contributors: 22</small>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Beneath the Salt Marsh <span class="badge bg-success ms-2">Ongoing</span></h5>
+                     <small>Last contribution: 15 mins ago</small>
+                </div>
+                <p class="mb-1">Something ancient stirs beneath the murky waters of the Blackwood salt marsh. Local legends speak of disappearances and lights seen dancing over the bogs...</p>
+                <small>Genre: Horror, Mystery | Contributors: 5</small>
+            </a>
+        </div>
+
+         <!-- Pagination -->
+         <nav aria-label="Page navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 4: Login Page -->
+    <div class="state-container">
+        <h2>State 4: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2 active">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                         <div class="text-center mt-3">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                         <hr>
+                         <p class="text-center">Don't have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 5: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 5: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary active">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Create Account</div>
+                    <div class="card-body">
+                        <form>
+                             <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Choose a username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                         <hr>
+                         <p class="text-center">Already have an account? <a href="#">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 6: Home Page (Logged In) -->
+    <div class="state-container">
+        <h2>State 6: Home Page (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-4">
+        <div class="alert alert-info" role="alert">
+          Welcome back, WriterAlice! Ready to continue your writing journey?
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="mb-3">Stories You Follow or Contribute To</h2>
+                 <div class="list-group mb-4">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h5>
+                            <small class="text-muted">Your turn soon!</small>
+                        </div>
+                        <p class="mb-1">In a city powered by steam and gears, a young inventor uncovers a hidden conspiracy...</p>
+                        <small>Last contribution by: GearHeadJoe</small>
+                    </a>
+                     <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Beneath the Salt Marsh <span class="badge bg-warning ms-2">Waiting for Contribution</span></h5>
+                            <small class="text-danger fw-bold">Your Turn!</small>
+                        </div>
+                        <p class="mb-1">Something ancient stirs beneath the murky waters of the Blackwood salt marsh...</p>
+                         <small>Last contribution by: You</small>
+                    </a>
+                 </div>
+                 <a href="#" class="btn btn-primary">Browse All Stories</a>
+            </div>
+             <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                         <h5 class="card-title">Quick Actions</h5>
+                         <p class="card-text">Jump right back in or start something new.</p>
+                         <a href="#" class="btn btn-success d-block mb-2">Create a New Story</a>
+                         <a href="#" class="btn btn-secondary d-block">View My Contributions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 7: View Story Page (Read Mode) -->
+    <div class="state-container">
+        <h2>State 7: View Story Page (Read Mode)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Read Story</title>
+    <style>
+        .story-segment { border-left: 3px solid #eee; padding-left: 15px; margin-bottom: 15px; }
+        .story-segment small { color: #6c757d; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h1>
+            <a href="#" class="btn btn-primary">Contribute to this Story</a>
+        </div>
+        <p class="text-muted">Genre: Steampunk, Mystery | Started by: CreatorX | Last contribution: 1 hour ago</p>
+        <hr>
+
+        <div class="story-content">
+            <div class="story-segment">
+                <p>In the heart of Aethelburg, the City of Gears, rain tasted metallic on Elara’s tongue. Steam hissed from grates in the cobbled streets, momentarily obscuring the towering brass edifices that scraped the perpetually smoggy sky. She clutched the worn cog locket tight in her hand, its familiar weight a small comfort against the unease coiling in her gut.</p>
+                <small>Contributed by CreatorX</small>
+            </div>
+             <div class="story-segment">
+                <p>Tonight felt different. The usual rhythmic clanking of the city seemed off-key, discordant. A furtive glance over her shoulder revealed nothing but swirling vapor and the occasional flicker of a gas lamp, yet the feeling of being watched prickled the back of her neck.</p>
+                <small>Contributed by StorytellerBob</small>
+            </div>
+             <div class="story-segment">
+                <p>She hurried her pace, ducking into the shadowed archway of Tinkerer’s Alley. It was here, amidst the discarded gears and forgotten automatons, that Old Man Hemlock conducted his clandestine business. He was her only hope of deciphering the strange schematic etched onto the back of the locket – a schematic her father had died protecting.</p>
+                <small>Contributed by WriterAlice</small>
+            </div>
+             <div class="story-segment">
+                <p>A low whistle echoed from deeper within the alley. Not Hemlock's usual signal. Elara froze, her hand instinctively moving towards the small, spring-loaded dart launcher hidden up her sleeve. The air grew heavy, thick with the scent of ozone and something else... something unnatural.</p>
+                <small>Contributed by GearHeadJoe</small>
+            </div>
+             <div class="text-center text-muted mt-4">
+                <p>--- End of current contributions ---</p>
+                <p>Next contribution awaited.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 8: View Story Page (Contribute Mode) -->
+    <div class="state-container">
+        <h2>State 8: View Story Page (Contribute Mode)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contribute to Story</title>
+     <style>
+        .story-segment { border-left: 3px solid #eee; padding-left: 15px; margin-bottom: 15px; }
+        .story-segment small { color: #6c757d; }
+        .last-contribution { border: 1px dashed #adb5bd; padding: 10px; margin-bottom: 15px; background-color: #f8f9fa; border-radius: 4px;}
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Contribute to: The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h1>
+         <p class="text-muted">It's your turn to add to the story!</p>
+        <hr>
+
+        <div class="mb-4">
+            <h4>Last Contribution:</h4>
+            <div class="last-contribution">
+                <p>A low whistle echoed from deeper within the alley. Not Hemlock's usual signal. Elara froze, her hand instinctively moving towards the small, spring-loaded dart launcher hidden up her sleeve. The air grew heavy, thick with the scent of ozone and something else... something unnatural.</p>
+                <small>Contributed by GearHeadJoe</small>
+            </div>
+        </div>
+
+        <form>
+            <div class="mb-3">
+                <label for="contribution" class="form-label">Your Contribution (1-3 sentences recommended):</label>
+                <textarea class="form-control" id="contribution" rows="5" placeholder="Continue the story here..."></textarea>
+                <div class="form-text">Keep the story flowing! Your addition should logically follow the previous segment.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Contribution</button>
+            <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+        </form>
+
+         <div class="mt-4">
+            <a href="#">View Full Story So Far</a>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 9: Contribution Submitted Confirmation -->
+     <div class="state-container">
+        <h2>State 9: Contribution Submitted Confirmation</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contribution Submitted</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert alert-success text-center" role="alert">
+          <h4 class="alert-heading">Contribution Submitted!</h4>
+          <p>Your addition to "The Clockwork City" has been successfully saved. Thank you for weaving your part of the tale!</p>
+          <hr>
+          <p class="mb-0">You will be notified when it is your turn to contribute again or when the story progresses.</p>
+        </div>
+
+        <div class="text-center">
+             <a href="#" class="btn btn-primary">View the Updated Story</a>
+             <a href="#" class="btn btn-secondary ms-2">Browse Other Stories</a>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 10: My Contributions Page -->
+    <div class="state-container">
+        <h2>State 10: My Contributions Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>My Contributions</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>My Contributions</h1>
+        <p>Here are the stories you have contributed to or started.</p>
+        <hr>
+
+         <div class="list-group">
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h5>
+                    <small>Your last contribution: 3 hours ago</small>
+                </div>
+                <p class="mb-1 fst-italic">"...She hurried her pace, ducking into the shadowed archway of Tinkerer’s Alley. It was here, amidst the discarded gears and forgotten automatons, that Old Man Hemlock conducted his clandestine business. He was her only hope of deciphering the strange schematic etched onto the back of the locket – a schematic her father had died protecting."</p>
+                <small>Total contributions by you: 3 | <a href="#">View Story</a></small>
+            </div>
+            <div class="list-group-item">
+                 <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Beneath the Salt Marsh <span class="badge bg-success ms-2">Ongoing</span></h5>
+                    <small>Your last contribution: 1 day ago (Currently your turn)</small>
+                </div>
+                 <p class="mb-1 fst-italic">"...The flickering light wasn't from a lantern, but seemed to emanate from the water itself, pulsing with a sickly green luminescence."</p>
+                <small>Total contributions by you: 1 | <a href="#" class="text-danger fw-bold">Contribute Now</a> | <a href="#">View Story</a></small>
+            </div>
+             <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">The Lost Library of Alexandria (Started by You) <span class="badge bg-secondary ms-2">Completed</span></h5>
+                    <small>Completed: 1 week ago</small>
+                </div>
+                 <p class="mb-1 fst-italic">"The year is 48 BC. The great library, repository of all human knowledge, faces imminent destruction. Only a small group of scholars know of a hidden chamber..." (Your starting prompt)</p>
+                <small>Total contributions by you: 5 | <a href="#">View Story</a></small>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 11: Create New Story Page -->
+    <div class="state-container">
+        <h2>State 11: Create New Story Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Create New Story</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Start a New Story</h1>
+        <p>Plant the seed for a new collaborative adventure!</p>
+        <hr>
+
+        <form>
+            <div class="mb-3">
+                <label for="storyTitle" class="form-label">Story Title</label>
+                <input type="text" class="form-control" id="storyTitle" placeholder="Enter a captivating title">
+            </div>
+             <div class="mb-3">
+                <label for="storyGenre" class="form-label">Genre (Optional)</label>
+                <select class="form-select" id="storyGenre">
+                    <option selected>Choose a genre...</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Thriller">Thriller</option>
+                     <option value="Comedy">Comedy</option>
+                     <option value="Adventure">Adventure</option>
+                     <option value="Other">Other</option>
+                </select>
+            </div>
+             <div class="mb-3">
+                <label for="storyTags" class="form-label">Tags (Optional, comma-separated)</label>
+                <input type="text" class="form-control" id="storyTags" placeholder="e.g., magic, space opera, detective, haunted house">
+            </div>
+            <div class="mb-3">
+                <label for="storyPrompt" class="form-label">Opening Sentence(s) / Prompt</label>
+                <textarea class="form-control" id="storyPrompt" rows="6" placeholder="Write the beginning of your story here. This will be the first contribution."></textarea>
+                 <div class="form-text">Make it intriguing to encourage others to join!</div>
+            </div>
+             <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="allowAnyone">
+                <label class="form-check-label" for="allowAnyone">Allow anyone to contribute (Public Story)</label>
+                <div class="form-text">Uncheck to make it invite-only (Feature not shown in this static mock).</div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Create Story</button>
+            <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 12: Error State - Login Failed -->
+    <div class="state-container">
+        <h2>State 12: Error State - Login Failed</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login Error</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2 active">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                           Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="email" placeholder="name@example.com" value="wronguser@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" placeholder="Password">
+                                 <div class="invalid-feedback">
+                                    Incorrect password provided.
+                                 </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                         <div class="text-center mt-3">
+                            <a href="#">Forgot password?</a>
+                        </div>
+                         <hr>
+                         <p class="text-center">Dont have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 13: Error State - Sign Up Failed (Validation) -->
+    <div class="state-container">
+        <h2>State 13: Error State - Sign Up Failed (Validation)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up Error</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                    <a href="#" class="btn btn-primary active">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Create Account</div>
+                    <div class="card-body">
+                        <div class="alert alert-warning" role="alert">
+                          Please fix the errors below and try again.
+                        </div>
+                        <form>
+                             <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="username" placeholder="Choose a username" value="User!">
+                                <div class="invalid-feedback">
+                                    Username can only contain letters, numbers, and underscores.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-valid" id="email" placeholder="name@example.com" value="valid@example.com">
+                                 <div class="valid-feedback">
+                                    Looks good!
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" placeholder="Password" value="pass">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm Password" value="word">
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                 </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                         <hr>
+                         <p class="text-center">Already have an account? <a href="#">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 14: Error State - Contribution Failed (e.g., Not User's Turn) -->
+    <div class="state-container">
+        <h2>State 14: Error State - Contribution Failed (Not User's Turn)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contribution Error</title>
+     <style>
+        .story-segment { border-left: 3px solid #eee; padding-left: 15px; margin-bottom: 15px; }
+        .story-segment small { color: #6c757d; }
+        .last-contribution { border: 1px dashed #adb5bd; padding: 10px; margin-bottom: 15px; background-color: #f8f9fa; border-radius: 4px;}
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">StoryWeave</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Stories</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Contributions</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav">
+                     <span class="navbar-text me-3">
+                        Welcome, WriterAlice!
+                     </span>
+                     <a href="#" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Contribute to: The Clockwork City <span class="badge bg-success ms-2">Ongoing</span></h1>
+         <hr>
+
+         <div class="alert alert-danger" role="alert">
+            <strong>Contribution Failed!</strong> It is not currently your turn to contribute to this story. Please wait for the current contributor (GearHeadJoe) to add their part.
+         </div>
+
+        <div class="mb-4">
+            <h4>Last Contribution:</h4>
+            <div class="last-contribution">
+                <p>A low whistle echoed from deeper within the alley. Not Hemlock's usual signal. Elara froze, her hand instinctively moving towards the small, spring-loaded dart launcher hidden up her sleeve. The air grew heavy, thick with the scent of ozone and something else... something unnatural.</p>
+                <small>Contributed by GearHeadJoe</small>
+            </div>
+        </div>
+
+        <form>
+            <div class="mb-3">
+                <label for="contribution" class="form-label">Your Contribution (1-3 sentences recommended):</label>
+                <textarea class="form-control" id="contribution" rows="5" placeholder="Continue the story here..." disabled></textarea>
+                 <div class="form-text text-danger">Contribution is disabled as it is not your turn.</div>
+            </div>
+            <button type="submit" class="btn btn-primary" disabled>Submit Contribution</button>
+            <a href="#" class="btn btn-secondary ms-2">View Story Instead</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 StoryWeave
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+
+</body>
+</html>

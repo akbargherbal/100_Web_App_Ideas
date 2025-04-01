@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Flow: Simple A/B Test Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-heading {
+             margin-top: 40px;
+             margin-bottom: 10px;
+             font-weight: bold;
+             color: #343a40;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>UI Flow: Simple A/B Test Calculator (Statistical Significance)</h1>
+
+    <h2 class="state-heading">State 1: Home Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Calc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Simple A/B Test Significance Calculator</h1>
+                <p class="col-md-8 fs-4">Quickly determine if your A/B test results are statistically significant. Enter your visitor and conversion numbers for your control and variation to see the results.</p>
+                <button class="btn btn-primary btn-lg" type="button">Go to Calculator</button>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>How it Works</h2>
+                    <p>We use standard statistical methods (like the Z-test for proportions) to calculate the probability that the observed difference between your variations occurred by chance. Find out if you have a winner!</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Why Significance Matters</h2>
+                    <p>Making decisions based on insignificant results can lead you astray. Statistical significance helps ensure you act on reliable data, improving your chances of success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">&copy; 2023 Simple A/B Test Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <h2 class="state-heading">State 2: Calculator Page (Initial State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Calculator</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Calc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>A/B Test Significance Calculator</h2>
+        <p>Enter the visitor and conversion numbers for your control and variation(s).</p>
+
+        <form class="needs-validation" novalidate>
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <h4>Control (Version A)</h4>
+                    <div class="mb-3">
+                        <label for="controlVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control" id="controlVisitors" placeholder="e.g., 1000" required min="1">
+                        <div class="invalid-feedback">
+                            Please enter a valid number of visitors (minimum 1).
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="controlConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control" id="controlConversions" placeholder="e.g., 100" required min="0">
+                         <div class="invalid-feedback">
+                            Please enter a valid number of conversions (minimum 0).
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Variation (Version B)</h4>
+                    <div class="mb-3">
+                        <label for="variationVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control" id="variationVisitors" placeholder="e.g., 1000" required min="1">
+                         <div class="invalid-feedback">
+                            Please enter a valid number of visitors (minimum 1).
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="variationConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control" id="variationConversions" placeholder="e.g., 120" required min="0">
+                         <div class="invalid-feedback">
+                            Please enter a valid number of conversions (minimum 0).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row g-3 mb-4">
+                 <div class="col-md-6">
+                    <label for="confidenceLevel" class="form-label">Confidence Level</label>
+                    <select class="form-select" id="confidenceLevel">
+                        <option value="0.90">90%</option>
+                        <option value="0.95" selected>95%</option>
+                        <option value="0.99">99%</option>
+                    </select>
+                 </div>
+             </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Calculate Significance</button>
+        </form>
+
+    </div>
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">&copy; 2023 Simple A/B Test Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <h2 class="state-heading">State 3: Calculator Page (Input Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Calculator - Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Calc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>A/B Test Significance Calculator</h2>
+        <p>Enter the visitor and conversion numbers for your control and variation(s).</p>
+
+        <div class="alert alert-danger" role="alert">
+          Please fix the errors below before calculating.
+        </div>
+
+        <form class="was-validated">
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <h4>Control (Version A)</h4>
+                    <div class="mb-3">
+                        <label for="controlVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control is-invalid" id="controlVisitors" placeholder="e.g., 1000" required min="1" value="abc">
+                        <div class="invalid-feedback">
+                            Please enter a valid number of visitors (minimum 1). Input must be numeric.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="controlConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control is-valid" id="controlConversions" placeholder="e.g., 100" required min="0" value="100">
+                         <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Variation (Version B)</h4>
+                    <div class="mb-3">
+                        <label for="variationVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control is-valid" id="variationVisitors" placeholder="e.g., 1000" required min="1" value="1000">
+                         <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="variationConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control is-invalid" id="variationConversions" placeholder="e.g., 120" required min="0" value="1100">
+                         <div class="invalid-feedback">
+                            Conversions cannot be greater than visitors. Please enter a valid number (minimum 0).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row g-3 mb-4">
+                 <div class="col-md-6">
+                    <label for="confidenceLevel" class="form-label">Confidence Level</label>
+                    <select class="form-select" id="confidenceLevel">
+                        <option value="0.90">90%</option>
+                        <option value="0.95" selected>95%</option>
+                        <option value="0.99">99%</option>
+                    </select>
+                 </div>
+             </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Calculate Significance</button>
+        </form>
+
+    </div>
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">&copy; 2023 Simple A/B Test Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <h2 class="state-heading">State 4: Calculator Page (Results Displayed)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Calculator - Results</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Calc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>A/B Test Significance Calculator</h2>
+        <p>Enter the visitor and conversion numbers for your control and variation(s).</p>
+
+        <form>
+             <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <h4>Control (Version A)</h4>
+                    <div class="mb-3">
+                        <label for="controlVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control" id="controlVisitors" value="1050" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="controlConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control" id="controlConversions" value="100" readonly>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Variation (Version B)</h4>
+                    <div class="mb-3">
+                        <label for="variationVisitors" class="form-label">Visitors</label>
+                        <input type="number" class="form-control" id="variationVisitors" value="1035" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="variationConversions" class="form-label">Conversions</label>
+                        <input type="number" class="form-control" id="variationConversions" value="135" readonly>
+                    </div>
+                </div>
+            </div>
+             <div class="row g-3 mb-4">
+                 <div class="col-md-6">
+                    <label for="confidenceLevel" class="form-label">Confidence Level</label>
+                    <select class="form-select" id="confidenceLevel" disabled>
+                        <option value="0.95" selected>95%</option>
+                    </select>
+                 </div>
+             </div>
+            <button type="submit" class="btn btn-secondary btn-lg" disabled>Calculate Significance</button>
+             <a href="#" class="btn btn-outline-secondary btn-lg">Start New Calculation</a>
+        </form>
+
+        <hr class="my-4">
+
+        <h3>Results</h3>
+
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Success:">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+          </svg>
+          <div>
+            <strong>Statistically Significant!</strong> The results suggest Variation B outperforms the Control at a 95% confidence level.
+          </div>
+        </div>
+
+        <!-- Example of Non-Significant Result (commented out for display)
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+             </svg>
+             <div>
+               <strong>Not Statistically Significant.</strong> The observed difference could likely be due to random chance at the 95% confidence level. More data might be needed.
+             </div>
+        </div>
+        -->
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Control (A)</th>
+                            <th>Variation (B)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Visitors</td>
+                            <td>1,050</td>
+                            <td>1,035</td>
+                        </tr>
+                        <tr>
+                            <td>Conversions</td>
+                            <td>100</td>
+                            <td>135</td>
+                        </tr>
+                         <tr>
+                            <td>Conversion Rate</td>
+                            <td>9.52%</td>
+                            <td>13.04%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                 <table class="table table-striped">
+                     <tbody>
+                        <tr>
+                            <th>Improvement (Lift)</th>
+                            <td>+36.97%</td>
+                        </tr>
+                        <tr>
+                            <th>Confidence Level</th>
+                            <td>95%</td>
+                         </tr>
+                        <tr>
+                            <th>P-value</th>
+                            <td>0.008</td>
+                        </tr>
+                         <tr>
+                            <th>Z-score</th>
+                            <td>2.65</td>
+                        </tr>
+                         <tr>
+                            <th>Result</th>
+                            <td class="fw-bold text-success">Significant</td>
+                        </tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+
+        <div class="mt-3 p-3 bg-light border rounded">
+            <h5>Interpretation</h5>
+            <p>The p-value (0.008) is less than the significance level (alpha = 0.05 for 95% confidence). This means there is strong evidence to reject the null hypothesis (that there is no difference between the variations). We can conclude with 95% confidence that Variation B's conversion rate is higher than the Control's.</p>
+        </div>
+
+    </div>
+
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">&copy; 2023 Simple A/B Test Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <h2 class="state-heading">State 5: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Calc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>About This Calculator</h2>
+        <p class="lead">This tool helps you determine the statistical significance of your A/B testing results.</p>
+
+        <h4>What is Statistical Significance?</h4>
+        <p>In A/B testing, statistical significance helps you understand whether the difference in performance between your control and variation(s) is likely real or just due to random chance. If a result is statistically significant, it means you can be confident (to a certain degree, e.g., 95%) that the observed difference is not accidental.</p>
+
+        <h4>How Does it Work?</h4>
+        <p>This calculator typically uses a Z-test for comparing two proportions. It calculates a p-value, which represents the probability of observing the data (or more extreme data) if there were actually no difference between the variations (the "null hypothesis").</p>
+        <ul>
+            <li><strong>Low p-value (e.g., < 0.05 for 95% confidence):</strong> Indicates strong evidence against the null hypothesis. You can conclude the difference is statistically significant.</li>
+            <li><strong>High p-value (e.g., >= 0.05 for 95% confidence):</strong> Indicates weak evidence against the null hypothesis. You cannot conclude the difference is statistically significant; it might be due to chance.</li>
+        </ul>
+
+         <h4>Key Terms</h4>
+        <dl class="row">
+          <dt class="col-sm-3">Visitors</dt>
+          <dd class="col-sm-9">The total number of unique users exposed to each version (Control or Variation).</dd>
+
+          <dt class="col-sm-3">Conversions</dt>
+          <dd class="col-sm-9">The number of visitors who completed the desired goal (e.g., clicked a button, made a purchase) for each version.</dd>
+
+          <dt class="col-sm-3">Conversion Rate</dt>
+          <dd class="col-sm-9">(Conversions / Visitors) * 100%.</dd>
+
+          <dt class="col-sm-3">Confidence Level</dt>
+          <dd class="col-sm-9">The probability that the result did not occur by chance. A 95% confidence level means there's a 5% chance the observed difference is random.</dd>
+
+          <dt class="col-sm-3">P-value</dt>
+          <dd class="col-sm-9">The probability of observing the results (or more extreme results) if the null hypothesis were true. Lower is better.</dd>
+
+           <dt class="col-sm-3">Lift / Improvement</dt>
+          <dd class="col-sm-9">The percentage increase (or decrease) in conversion rate of the Variation compared to the Control.</dd>
+        </dl>
+
+         <h4>Disclaimer</h4>
+         <p>This calculator provides results based on standard statistical formulas. However, interpretation requires understanding the context of your experiment. Always consider factors like sample size, test duration, and potential biases. This tool is for informational purposes only and does not guarantee future results.</p>
+
+    </div>
+
+    <footer class="py-3 my-4">
+        <p class="text-center text-muted">&copy; 2023 Simple A/B Test Calculator</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

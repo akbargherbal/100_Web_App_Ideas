@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Collection Manager - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjusted height for better visibility */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 30px;
+            display: block; /* Ensure iframes are block elements */
+        }
+        /* Basic common styles for iframe content */
+        .iframe-content {
+            padding: 20px;
+        }
+        .iframe-content .navbar {
+            margin-bottom: 20px;
+        }
+        .iframe-content h3 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Board Game Collection Manager - UI Flow</h1>
+
+    <!-- Navigation Structure (Common for most logged-in states) -->
+    <script type="text/template" id="navbar-template">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">BG Collection Mgr</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">My Games</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Wishlist</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Play Sessions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      User Name
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </script>
+
+    <!-- State 1: Login Page -->
+    <h2>State 1: Login Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f8f9fa; }.login-container { max-width: 400px; width: 100%; padding: 2rem; background-color: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15); } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <div class="login-container text-center">
+                    <h3 class="mb-4">Board Game Collection Manager</h3>
+                    <h4 class="mb-4">Login</h4>
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="user@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                        <div class="text-center">
+                            <a href="#">Forgot password?</a> | <a href="#">Register an Account</a>
+                        </div>
+                         <div class="alert alert-danger mt-3" role="alert" style="display: none;">
+                            Invalid email or password.
+                         </div>
+                    </form>
+                </div>
+            </div>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 2: Registration Page -->
+    <h2>State 2: Registration Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f8f9fa; }.register-container { max-width: 450px; width: 100%; padding: 2rem; background-color: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15); } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                 <div class="register-container">
+                    <h3 class="mb-4 text-center">Register New Account</h3>
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+                            <label for="floatingName">Full Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                            <label for="floatingConfirmPassword">Confirm Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
+                         <div class="text-center">
+                            Already have an account? <a href="#">Login</a>
+                        </div>
+                         <div class="alert alert-danger mt-3" role="alert" style="display: none;">
+                            Please correct the errors above.
+                         </div>
+                    </form>
+                 </div>
+            </div>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 3: Home Page (Dashboard) -->
+    <h2>State 3: Home Page (Dashboard - Logged In)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <h3 class="mb-4">Dashboard</h3>
+                     <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Owned Games</h5>
+                                    <p class="card-text display-4">73</p>
+                                    <a href="#" class="btn btn-primary">View Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                             <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Wishlist Items</h5>
+                                    <p class="card-text display-4">12</p>
+                                    <a href="#" class="btn btn-info">View Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                             <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Logged Plays</h5>
+                                    <p class="card-text display-4">156</p>
+                                    <a href="#" class="btn btn-success">View Play Log</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt-4 mb-3">Recent Activity</h4>
+                    <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Logged Play: Wingspan</h5>
+                          <small>Yesterday</small>
+                        </div>
+                        <p class="mb-1">Played with Anne and Bob. Anne won (95 points).</p>
+                        <small>View Details</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Added Game: Cascadia</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Added Cascadia base game to collection.</p>
+                         <small class="text-muted">View Game</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Added to Wishlist: Ark Nova</h5>
+                           <small class="text-muted">5 days ago</small>
+                        </div>
+                        <small class="text-muted">View Wishlist</small>
+                      </a>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 4: Owned Games List -->
+    <h2>State 4: Owned Games List</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; } .game-image-sm { width: 50px; height: 50px; object-fit: cover; margin-right: 10px; } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar (using template concept) -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>My Game Collection (73)</h3>
+                        <button class="btn btn-primary">Add New Game</button>
+                    </div>
+
+                    <!-- Filter/Search Bar -->
+                     <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search collection..." aria-label="Search collection">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+
+                    <!-- Game List Table -->
+                    <table class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Players</th>
+                                <th scope="col">Play Time</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50.png?text=Game1" alt="Game Cover" class="game-image-sm"></td>
+                                <td>Wingspan</td>
+                                <td>1-5</td>
+                                <td>40-70 min</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Details</button>
+                                    <button class="btn btn-sm btn-success">Log Play</button>
+                                    <button class="btn btn-sm btn-danger">X</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="https://via.placeholder.com/50x50.png?text=Game2" alt="Game Cover" class="game-image-sm"></td>
+                                <td>Cascadia</td>
+                                <td>1-4</td>
+                                <td>30-45 min</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Details</button>
+                                    <button class="btn btn-sm btn-success">Log Play</button>
+                                    <button class="btn btn-sm btn-danger">X</button>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td><img src="https://via.placeholder.com/50x50.png?text=Game3" alt="Game Cover" class="game-image-sm"></td>
+                                <td>Terraforming Mars</td>
+                                <td>1-5</td>
+                                <td>120 min</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Details</button>
+                                    <button class="btn btn-sm btn-success">Log Play</button>
+                                    <button class="btn btn-sm btn-danger">X</button>
+                                </td>
+                            </tr>
+                           <!-- More rows -->
+                        </tbody>
+                    </table>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 5: Add New Game Form -->
+    <h2>State 5: Add New Game Form</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <h3>Add New Game to Collection</h3>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label for="gameName" class="form-label">Game Name</label>
+                                <input type="text" class="form-control" id="gameName" required>
+                                <div class="invalid-feedback">
+                                    Please enter the game name.
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="minPlayers" class="form-label">Min Players</label>
+                                <input type="number" class="form-control" id="minPlayers" min="1" value="1" required>
+                                 <div class="invalid-feedback">
+                                    Required.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="maxPlayers" class="form-label">Max Players</label>
+                                <input type="number" class="form-control" id="maxPlayers" min="1" value="4" required>
+                                 <div class="invalid-feedback">
+                                    Required.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="playTimeMin" class="form-label">Min Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMin" min="1">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="playTimeMax" class="form-label">Max Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMax" min="1">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="coverImage" class="form-label">Cover Image URL</label>
+                                <input type="url" class="form-control" id="coverImage" placeholder="http://example.com/image.jpg">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="ownedExpansions" class="form-label">Owned Expansions (comma-separated)</label>
+                                <input type="text" class="form-control" id="ownedExpansions" placeholder="e.g., European Expansion, Oceania Expansion">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="tags" class="form-label">Tags (comma-separated)</label>
+                                <input type="text" class="form-control" id="tags" placeholder="e.g., Area Control, Dice Rolling, Cooperative">
+                            </div>
+
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg me-2" type="submit">Save Game</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+     <!-- State 6: Add New Game Form (with Validation Errors) -->
+    <h2>State 6: Add New Game Form (with Validation Errors)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <h3>Add New Game to Collection</h3>
+                     <div class="alert alert-danger" role="alert">
+                        Please fix the errors below before saving.
+                    </div>
+                    <form class="was-validated" novalidate> <!-- Use was-validated to show errors -->
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label for="gameName" class="form-label">Game Name</label>
+                                <input type="text" class="form-control is-invalid" id="gameName" required>
+                                <div class="invalid-feedback">
+                                    Please enter the game name.
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="minPlayers" class="form-label">Min Players</label>
+                                <input type="number" class="form-control is-invalid" id="minPlayers" min="1" required>
+                                 <div class="invalid-feedback">
+                                    Minimum players is required.
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="maxPlayers" class="form-label">Max Players</label>
+                                <input type="number" class="form-control" id="maxPlayers" min="1" value="4" required>
+                                 <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="playTimeMin" class="form-label">Min Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMin" min="1">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="playTimeMax" class="form-label">Max Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMax" min="1">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="coverImage" class="form-label">Cover Image URL</label>
+                                <input type="url" class="form-control" id="coverImage" placeholder="http://example.com/image.jpg">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="ownedExpansions" class="form-label">Owned Expansions (comma-separated)</label>
+                                <input type="text" class="form-control" id="ownedExpansions" placeholder="e.g., European Expansion, Oceania Expansion">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="tags" class="form-label">Tags (comma-separated)</label>
+                                <input type="text" class="form-control" id="tags" placeholder="e.g., Area Control, Dice Rolling, Cooperative">
+                            </div>
+
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg me-2" type="submit">Save Game</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 7: Game Details Page -->
+    <h2>State 7: Game Details Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; } .game-cover-lg { max-width: 100%; height: auto; max-height: 400px; object-fit: contain; } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                         <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="#">My Games</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Wingspan</li>
+                          </ol>
+                        </nav>
+                        <div>
+                            <button class="btn btn-success me-2">Log Play</button>
+                            <button class="btn btn-warning me-2">Edit</button>
+                             <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <h3 class="mb-4">Wingspan</h3>
+
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-3">
+                             <img src="https://via.placeholder.com/300x400.png?text=Wingspan+Cover" alt="Wingspan Cover" class="game-cover-lg img-thumbnail">
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Details</h4>
+                            <table class="table table-sm table-borderless">
+                                <tbody>
+                                    <tr><th scope="row" style="width: 150px;">Players:</th><td>1 - 5</td></tr>
+                                    <tr><th scope="row">Play Time:</th><td>40 - 70 min</td></tr>
+                                    <tr><th scope="row">Tags:</th><td><span class="badge bg-secondary me-1">Engine Building</span><span class="badge bg-secondary me-1">Card Drafting</span><span class="badge bg-secondary">Animals</span></td></tr>
+                                </tbody>
+                            </table>
+
+                             <h4>Description</h4>
+                             <p>Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. You are bird enthusiasts—researchers, bird watchers, ornithologists, and collectors—seeking to discover and attract the best birds to your network of wildlife preserves...</p>
+
+                            <h4 class="mt-4">Owned Expansions</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item ps-0">European Expansion</li>
+                                <li class="list-group-item ps-0">Oceania Expansion</li>
+                            </ul>
+
+                            <h4 class="mt-4">Recent Plays (Last 5)</h4>
+                            <ul class="list-group list-group-flush">
+                               <li class="list-group-item ps-0 d-flex justify-content-between align-items-center">
+                                    <span>Played on 2023-10-25 with Anne, Bob. Winner: Anne (95)</span>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                </li>
+                                <li class="list-group-item ps-0 d-flex justify-content-between align-items-center">
+                                    <span>Played on 2023-09-10 with Charlie. Winner: Charlie (88)</span>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                </li>
+                                 <li class="list-group-item ps-0 d-flex justify-content-between align-items-center">
+                                    <span>Played on 2023-08-01 Solo Play. Score: 75</span>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                                </li>
+                            </ul>
+                             <a href="#" class="btn btn-link ps-0 mt-2">View All Plays for this Game</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 8: Edit Game Form -->
+    <h2>State 8: Edit Game Form</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                   <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-3">
+                        <li class="breadcrumb-item"><a href="#">My Games</a></li>
+                        <li class="breadcrumb-item"><a href="#">Wingspan</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                      </ol>
+                    </nav>
+                    <h3>Edit Game: Wingspan</h3>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label for="gameName" class="form-label">Game Name</label>
+                                <input type="text" class="form-control" id="gameName" value="Wingspan" required>
+                                <div class="invalid-feedback">
+                                    Please enter the game name.
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="minPlayers" class="form-label">Min Players</label>
+                                <input type="number" class="form-control" id="minPlayers" min="1" value="1" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="maxPlayers" class="form-label">Max Players</label>
+                                <input type="number" class="form-control" id="maxPlayers" min="1" value="5" required>
+                            </div>
+                           <div class="col-md-3">
+                                <label for="playTimeMin" class="form-label">Min Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMin" min="1" value="40">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="playTimeMax" class="form-label">Max Play Time (min)</label>
+                                <input type="number" class="form-control" id="playTimeMax" min="1" value="70">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" rows="3">Wingspan is a competitive, medium-weight, card-driven, engine-building board game from Stonemaier Games. You are bird enthusiasts—researchers, bird watchers, ornithologists, and collectors—seeking to discover and attract the best birds to your network of wildlife preserves...</textarea>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="coverImage" class="form-label">Cover Image URL</label>
+                                <input type="url" class="form-control" id="coverImage" value="https://via.placeholder.com/300x400.png?text=Wingspan+Cover" placeholder="http://example.com/image.jpg">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="ownedExpansions" class="form-label">Owned Expansions (comma-separated)</label>
+                                <input type="text" class="form-control" id="ownedExpansions" value="European Expansion, Oceania Expansion" placeholder="e.g., European Expansion, Oceania Expansion">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="tags" class="form-label">Tags (comma-separated)</label>
+                                <input type="text" class="form-control" id="tags" value="Engine Building, Card Drafting, Animals" placeholder="e.g., Area Control, Dice Rolling, Cooperative">
+                            </div>
+
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg me-2" type="submit">Update Game</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+     <!-- State 9: Wishlist -->
+    <h2>State 9: Wishlist</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; } .game-image-sm { width: 50px; height: 50px; object-fit: cover; margin-right: 10px; } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                 <div class="container">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>My Wishlist (12)</h3>
+                        <button class="btn btn-primary">Add to Wishlist</button>
+                    </div>
+
+                     <!-- Wishlist Table -->
+                    <table class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Date Added</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ark Nova</td>
+                                <td>Highly rated zoo game.</td>
+                                <td>2023-10-20</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Mark Owned</button>
+                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Lost Ruins of Arnak</td>
+                                <td>Check out expansion availability.</td>
+                                <td>2023-09-15</td>
+                                <td>
+                                    <button class="btn btn-sm btn-success">Mark Owned</button>
+                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Everdell</td>
+                                <td>Looks cute, good reviews.</td>
+                                <td>2023-08-01</td>
+                                <td>
+                                     <button class="btn btn-sm btn-success">Mark Owned</button>
+                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                </td>
+                            </tr>
+                           <!-- More rows -->
+                        </tbody>
+                    </table>
+                      <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 10: Add to Wishlist Form -->
+    <h2>State 10: Add to Wishlist Form</h2>
+     <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                     <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-3">
+                        <li class="breadcrumb-item"><a href="#">Wishlist</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Item</li>
+                      </ol>
+                    </nav>
+                    <h3>Add Game to Wishlist</h3>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label for="wishlistGameName" class="form-label">Game Name</label>
+                                <input type="text" class="form-control" id="wishlistGameName" required>
+                                <div class="invalid-feedback">
+                                    Please enter the game name.
+                                </div>
+                            </div>
+                             <div class="col-md-12">
+                                <label for="wishlistNotes" class="form-label">Notes (Optional)</label>
+                                <textarea class="form-control" id="wishlistNotes" rows="3" placeholder="e.g., Heard good things about it, wait for sale..."></textarea>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-primary btn-lg me-2" type="submit">Add to Wishlist</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 11: Play Sessions List -->
+    <h2>State 11: Play Sessions List</h2>
+    <iframe srcdoc='
+       <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; } </style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                     <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>Logged Play Sessions (156)</h3>
+                        <button class="btn btn-success">Log New Play</button>
+                    </div>
+
+                     <!-- Filter/Search Bar -->
+                     <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search plays (game, players, date...)" aria-label="Search plays">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+
+                       <!-- Play Session List Table -->
+                    <table class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Game Played</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Players</th>
+                                <th scope="col">Outcome / Scores</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wingspan</td>
+                                <td>2023-10-25</td>
+                                <td>Me, Anne, Bob</td>
+                                <td>Winner: Anne (95)</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Details</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cascadia</td>
+                                <td>2023-10-22</td>
+                                <td>Me, Deb</td>
+                                <td>Me: 102, Deb: 98</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Details</button>
+                                     <button class="btn btn-sm btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td>Terraforming Mars</td>
+                                <td>2023-10-18</td>
+                               <td>Me, Anne, Bob, Charlie</td>
+                               <td>Winner: Bob (110)</td>
+                               <td>
+                                   <button class="btn btn-sm btn-info">Details</button>
+                                   <button class="btn btn-sm btn-danger">Delete</button>
+                               </td>
+                           </tr>
+                            <tr>
+                               <td>Wingspan</td>
+                               <td>2023-09-10</td>
+                               <td>Me, Charlie</td>
+                               <td>Winner: Charlie (88)</td>
+                               <td>
+                                   <button class="btn btn-sm btn-info">Details</button>
+                                   <button class="btn btn-sm btn-danger">Delete</button>
+                               </td>
+                           </tr>
+                            <!-- More rows -->
+                        </tbody>
+                    </table>
+                     <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 12: Log New Play Session Form -->
+    <h2>State 12: Log New Play Session Form</h2>
+     <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                   <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-3">
+                        <li class="breadcrumb-item"><a href="#">Play Sessions</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Log New Play</li>
+                      </ol>
+                    </nav>
+                    <h3>Log New Play Session</h3>
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="playedGame" class="form-label">Game Played</label>
+                                <select class="form-select" id="playedGame" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option>Wingspan</option>
+                                    <option>Cascadia</option>
+                                    <option>Terraforming Mars</option>
+                                    <option>...</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select the game played.
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                <label for="playDate" class="form-label">Date Played</label>
+                                <input type="date" class="form-control" id="playDate" value="2023-10-26" required>
+                                 <div class="invalid-feedback">
+                                    Please select the date.
+                                </div>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="players" class="form-label">Players (comma-separated, include yourself)</label>
+                                <input type="text" class="form-control" id="players" placeholder="e.g., Me, Anne, Bob" required>
+                                 <div class="invalid-feedback">
+                                    Please list the players.
+                                </div>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="location" class="form-label">Location (Optional)</label>
+                                <input type="text" class="form-control" id="location" placeholder="e.g., Home, Game Store, Annes House">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="scoresWinner" class="form-label">Scores / Winner / Outcome</label>
+                                <textarea class="form-control" id="scoresWinner" rows="3" placeholder="e.g., Winner: Anne (95), Me (80), Bob (75) OR Cooperative Win! OR Solo Score: 75"></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="playNotes" class="form-label">Notes (Optional)</label>
+                                <textarea class="form-control" id="playNotes" rows="3" placeholder="e.g., First time playing Oceania expansion, Close game..."></textarea>
+                            </div>
+
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-success btn-lg me-2" type="submit">Log Play</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 13: Log New Play Session Form (with Validation Errors) -->
+    <h2>State 13: Log New Play Session Form (with Validation Errors)</h2>
+     <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-3">
+                        <li class="breadcrumb-item"><a href="#">Play Sessions</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Log New Play</li>
+                      </ol>
+                    </nav>
+                    <h3>Log New Play Session</h3>
+                     <div class="alert alert-danger" role="alert">
+                        Please fix the errors below before saving.
+                    </div>
+                    <form class="was-validated" novalidate> <!-- Use was-validated to show errors -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="playedGame" class="form-label">Game Played</label>
+                                <select class="form-select is-invalid" id="playedGame" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option>Wingspan</option>
+                                    <option>Cascadia</option>
+                                    <option>Terraforming Mars</option>
+                                    <option>...</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select the game played.
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                <label for="playDate" class="form-label">Date Played</label>
+                                <input type="date" class="form-control" id="playDate" value="2023-10-26" required>
+                                 <div class="valid-feedback">
+                                    Looks good.
+                                </div>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="players" class="form-label">Players (comma-separated, include yourself)</label>
+                                <input type="text" class="form-control is-invalid" id="players" placeholder="e.g., Me, Anne, Bob" required>
+                                 <div class="invalid-feedback">
+                                    Please list the players involved in the session.
+                                </div>
+                            </div>
+
+                             <div class="col-md-12">
+                                <label for="location" class="form-label">Location (Optional)</label>
+                                <input type="text" class="form-control" id="location" placeholder="e.g., Home, Game Store, Annes House">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="scoresWinner" class="form-label">Scores / Winner / Outcome</label>
+                                <textarea class="form-control" id="scoresWinner" rows="3" placeholder="e.g., Winner: Anne (95), Me (80), Bob (75) OR Cooperative Win! OR Solo Score: 75"></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="playNotes" class="form-label">Notes (Optional)</label>
+                                <textarea class="form-control" id="playNotes" rows="3" placeholder="e.g., First time playing Oceania expansion, Close game..."></textarea>
+                            </div>
+
+                        </div>
+                        <hr class="my-4">
+                        <button class="btn btn-success btn-lg me-2" type="submit">Log Play</button>
+                        <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 14: Play Session Details -->
+    <h2>State 14: Play Session Details</h2>
+    <iframe srcdoc='
+       <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                   <div class="d-flex justify-content-between align-items-center mb-3">
+                         <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="#">Play Sessions</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Details: Wingspan (2023-10-25)</li>
+                          </ol>
+                        </nav>
+                        <div>
+                            <button class="btn btn-warning me-2">Edit</button> <!-- Should lead to a pre-filled log form -->
+                             <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+
+                    <h3 class="mb-4">Play Session Details</h3>
+
+                    <div class="card">
+                        <div class="card-header">
+                           <a href="#">Wingspan</a> played on October 25, 2023
+                        </div>
+                        <div class="card-body">
+                             <dl class="row">
+                              <dt class="col-sm-3">Game</dt>
+                              <dd class="col-sm-9"><a href="#">Wingspan</a></dd>
+
+                              <dt class="col-sm-3">Date</dt>
+                              <dd class="col-sm-9">2023-10-25</dd>
+
+                              <dt class="col-sm-3">Players</dt>
+                              <dd class="col-sm-9">Me, Anne, Bob</dd>
+
+                              <dt class="col-sm-3">Location</dt>
+                              <dd class="col-sm-9">Home</dd>
+
+                              <dt class="col-sm-3">Outcome / Scores</dt>
+                              <dd class="col-sm-9">Winner: Anne (95), Me (80), Bob (75)</dd>
+
+                              <dt class="col-sm-3 text-truncate">Notes</dt>
+                              <dd class="col-sm-9">First time playing Oceania expansion. Close game until the final round bird points. Anne had a great egg strategy.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 15: About Page -->
+    <h2>State 15: About Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container">
+                    <h3>About Board Game Collection Manager</h3>
+                    <p class="lead">Your personal assistant for managing your beloved board game collection.</p>
+                    <p>This application helps you keep track of all the board games you own, games you wish to acquire, and your play sessions.</p>
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Track your owned board games, including details like player count, playtime, and expansions.</li>
+                        <li>Maintain a wishlist of games you want to buy.</li>
+                        <li>Log your play sessions, recording who played, when, where, scores, and winners.</li>
+                        <li>View statistics and summaries of your collection and plays (future feature).</li>
+                        <li>Easily search and filter your collection and play log.</li>
+                    </ul>
+
+                    <p>Built with HTML, Bootstrap, and lots of love for board games.</p>
+                    <p>Version: 1.0.0 (Static UI Demo)</p>
+
+                    <hr>
+                    <small class="text-muted">Created as a demonstration UI flow.</small>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+
+    <!-- State 16: 404 Error Page -->
+    <h2>State 16: 404 Error Page</h2>
+     <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>.iframe-content { padding: 20px; } .iframe-content .navbar { margin-bottom: 20px; } .iframe-content h3 { margin-bottom: 1.5rem; }</style>
+        </head>
+        <body>
+            <div class="iframe-content">
+                <!-- Navigation Bar (Optional on 404, but good for consistency if logged in) -->
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BG Collection Mgr</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Games</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Play Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                              <li><a class="dropdown-item" href="#">Profile</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container text-center mt-5">
+                   <h1 class="display-1">404</h1>
+                   <h2>Page Not Found</h2>
+                   <p class="lead">Sorry, the page you are looking for does not exist.</p>
+                   <a href="#" class="btn btn-primary mt-3">Go to Home Page</a>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+    '></iframe>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Uptime Monitor - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            display: block;
+            margin-bottom: 30px;
+        }
+        /* Reduce Bootstrap default margins for better density in iframes */
+        .iframe-content .mb-3 { margin-bottom: 0.75rem !important; }
+        .iframe-content .mt-3 { margin-top: 0.75rem !important; }
+        .iframe-content .my-4 { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+        .iframe-content .py-5 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+        .iframe-content .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Website Uptime Monitor - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home Page</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary btn-sm me-2" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Never Miss Website Downtime Again</h1>
+            <p class="lead">Get instant alerts via email, SMS, or Slack the moment your website goes down. Simple, reliable monitoring.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Start Monitoring Now</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+            </div>
+          </div>
+          <div class="col-10 col-sm-8 col-lg-6">
+             <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Monitor graphic" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="35%" y="50%" fill="#dee2e6" dy=".3em">Monitor Graphic</text></svg>
+          </div>
+        </div>
+      </div>
+
+    <!-- Features Section -->
+     <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Key Features</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Instant Alerts</h3>
+            <p>Receive notifications immediately via Email, SMS, Slack, and more when downtime is detected.</p>
+          </div>
+          <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Global Monitoring</h3>
+            <p>We check your website from multiple locations around the world to reduce false positives.</p>
+          </div>
+          <div class="feature col">
+            <h3 class="fs-2 text-body-emphasis">Simple Setup</h3>
+            <p>Adding your website takes less than a minute. No complex configurations required.</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Pricing Section -->
+     <div class="container py-3">
+        <header>
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h2 class="display-4 fw-normal text-body-emphasis">Pricing</h2>
+            <p class="fs-5 text-body-secondary">Simple plans for everyone. Start for free.</p>
+          </div>
+        </header>
+        <main>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>5 Monitors</li>
+                    <li>5 Minute Checks</li>
+                    <li>Email Alerts</li>
+                    <li>Basic Support</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>50 Monitors</li>
+                    <li>1 Minute Checks</li>
+                    <li>SMS & Email Alerts</li>
+                    <li>Priority Support</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Business</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$49<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>200 Monitors</li>
+                    <li>1 Minute Checks</li>
+                    <li>All Alert Types</li>
+                    <li>Premium Support</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 2: Sign Up Page -->
+    <h2>State 2: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up</title>
+    <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-signup { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-signup w-100 m-auto">
+      <form>
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Create Your Account</h1>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingUsername" placeholder="Your Username">
+          <label for="floatingUsername">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+         <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+          <label for="floatingConfirmPassword">Confirm Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign Up</button>
+        <p class="mb-0"><a href="#">Already have an account? Sign In</a></p>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 3: Sign Up Page (Validation Error) -->
+    <h2>State 3: Sign Up Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up Error</title>
+     <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-signup { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-signup w-100 m-auto">
+      <form>
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Create Your Account</h1>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control is-invalid" id="floatingUsername" placeholder="Your Username" value="user">
+          <label for="floatingUsername">Username</label>
+           <div class="invalid-feedback text-start">
+            Username is already taken.
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="invalid-email">
+          <label for="floatingInput">Email address</label>
+          <div class="invalid-feedback text-start">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="pass1">
+          <label for="floatingPassword">Password</label>
+        </div>
+         <div class="form-floating mb-3">
+          <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" value="pass2">
+          <label for="floatingConfirmPassword">Confirm Password</label>
+           <div class="invalid-feedback text-start">
+            Passwords do not match.
+          </div>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign Up</button>
+        <p class="mb-0"><a href="#">Already have an account? Sign In</a></p>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 4: Sign In Page -->
+    <h2>State 4: Sign In Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign In</title>
+     <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-signin { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-signin w-100 m-auto">
+      <form>
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Sign In</h1>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3 text-start">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign In</button>
+         <div class="d-flex justify-content-between">
+            <a href="#">Forgot Password?</a>
+            <a href="#">Don't have an account? Sign Up</a>
+        </div>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 5: Sign In Page (Error) -->
+    <h2>State 5: Sign In Page (Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign In Error</title>
+    <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-signin { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-signin w-100 m-auto">
+      <form>
+         <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+         <h1 class="h3 my-4 fw-normal">Sign In</h1>
+
+         <div class="alert alert-danger" role="alert">
+          Invalid email or password. Please try again.
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="wrong@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="wrongpass">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3 text-start">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign In</button>
+         <div class="d-flex justify-content-between">
+            <a href="#">Forgot Password?</a>
+            <a href="#">Don't have an account? Sign Up</a>
+        </div>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 6: Forgot Password Page -->
+    <h2>State 6: Forgot Password Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Forgot Password</title>
+    <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-forgot { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-forgot w-100 m-auto">
+      <form>
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Forgot Password</h1>
+        <p class="mb-3">Enter your email address and we'll send you a link to reset your password.</p>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+          <label for="floatingInput">Email address</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Send Reset Link</button>
+        <p class="mb-0"><a href="#">Back to Sign In</a></p>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 7: Forgot Password Confirmation -->
+    <h2>State 7: Forgot Password Confirmation</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Forgot Password Confirmation</title>
+    <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .confirm-message { max-width: 450px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="confirm-message w-100 m-auto">
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Check Your Email</h1>
+        <p class="lead">If an account exists for <strong>user@example.com</strong>, you will receive an email shortly with instructions on how to reset your password.</p>
+        <p class="mt-4"><a href="#" class="btn btn-secondary">Back to Sign In</a></p>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 8: Password Reset Page -->
+    <h2>State 8: Password Reset Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Reset Password</title>
+     <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa;} .form-reset { max-width: 400px; padding: 1rem;} </style>
+</head>
+<body class="text-center iframe-content">
+    <main class="form-reset w-100 m-auto">
+      <form>
+        <a class="navbar-brand fs-4" href="#">Uptime Monitor</a>
+        <h1 class="h3 my-4 fw-normal">Reset Your Password</h1>
+
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingNewPassword" placeholder="New Password" required>
+          <label for="floatingNewPassword">New Password</label>
+        </div>
+         <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm New Password" required>
+          <label for="floatingConfirmPassword">Confirm New Password</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Reset Password</button>
+        <p class="mt-4 mb-3 text-body-secondary">© 2024</p>
+      </form>
+    </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 9: Dashboard (Logged In, No Monitors) -->
+    <h2>State 9: Dashboard (Logged In, No Monitors)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Dashboard - Empty</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-success">
+                <i class="bi bi-plus-circle"></i> Add New Monitor
+              </button>
+            </div>
+        </div>
+
+        <div class="text-center py-5">
+            <h4 class="text-muted">Welcome, User!</h4>
+            <p class="lead text-muted">You haven't added any websites to monitor yet.</p>
+            <button type="button" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle"></i> Add Your First Monitor
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 10: Dashboard (Logged In, With Monitors) -->
+    <h2>State 10: Dashboard (Logged In, With Monitors)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Dashboard</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-sm btn-success">
+                 <i class="bi bi-plus-circle"></i> Add New Monitor
+              </button>
+            </div>
+        </div>
+
+        <!-- Overview Stats -->
+        <div class="row mb-3">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Monitors</h5>
+                        <p class="card-text fs-2">3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center border-success">
+                    <div class="card-body text-success">
+                        <h5 class="card-title">Monitors Up</h5>
+                        <p class="card-text fs-2">2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center border-danger">
+                    <div class="card-body text-danger">
+                        <h5 class="card-title">Monitors Down</h5>
+                        <p class="card-text fs-2">1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Monitors Table -->
+        <h4>Monitored Websites</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Status</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">URL</th>
+                  <th scope="col">Last Checked</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td><span class="badge bg-success">Up</span></td>
+                    <td>My Blog</td>
+                    <td>https://myblog.com</td>
+                    <td>2 minutes ago</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-outline-primary" title="Details"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary" title="Pause"><i class="bi bi-pause-fill"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="badge bg-danger">Down</span></td>
+                    <td>E-commerce Store</td>
+                    <td>https://mystore.com</td>
+                    <td>1 minute ago <small class="text-danger">(Down for 5m)</small></td>
+                     <td>
+                        <a href="#" class="btn btn-sm btn-outline-primary" title="Details"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary" title="Pause"><i class="bi bi-pause-fill"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                 <tr>
+                    <td><span class="badge bg-success">Up</span></td>
+                    <td>Company Website</td>
+                    <td>https://company.com</td>
+                    <td>Just now</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-outline-primary" title="Details"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary" title="Pause"><i class="bi bi-pause-fill"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                 <tr>
+                    <td><span class="badge bg-secondary">Paused</span></td>
+                    <td>Old Project Site</td>
+                    <td>http://oldproject.dev</td>
+                    <td>1 day ago</td>
+                     <td>
+                        <a href="#" class="btn btn-sm btn-outline-primary" title="Details"><i class="bi bi-eye"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-success" title="Resume"><i class="bi bi-play-fill"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 11: Add Monitor Page -->
+    <h2>State 11: Add Monitor Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Add Monitor</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add New Monitor</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary">Cancel</a>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="monitorName" class="form-label">Monitor Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="monitorName" placeholder="e.g., My Personal Blog" required>
+                        <div class="form-text">A friendly name for easy identification.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="monitorUrl" class="form-label">Website URL <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control" id="monitorUrl" placeholder="https://example.com" required>
+                         <div class="form-text">The full URL (including http/https) of the website to monitor.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="checkInterval" class="form-label">Check Interval</label>
+                        <select class="form-select" id="checkInterval">
+                            <option value="1">1 Minute</option>
+                            <option value="5" selected>5 Minutes</option>
+                            <option value="15">15 Minutes</option>
+                            <option value="30">30 Minutes</option>
+                             <option value="60">60 Minutes</option>
+                        </select>
+                         <div class="form-text">How often we should check your website.</div>
+                    </div>
+
+                     <div class="mb-4">
+                        <label class="form-label">Alerting</label>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertEmail" checked>
+                            <label class="form-check-label" for="alertEmail">
+                                Send email notifications to default contacts
+                            </label>
+                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertSms">
+                            <label class="form-check-label" for="alertSms">
+                                Send SMS notifications (Requires setup)
+                            </label>
+                         </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertSlack">
+                            <label class="form-check-label" for="alertSlack">
+                                Send Slack notifications (Requires setup)
+                            </label>
+                         </div>
+                         <div class="form-text mt-1">Choose how you want to be notified. Configure details in <a href="#">Alert Settings</a>.</div>
+                    </div>
+
+                     <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Add Monitor</button>
+                        <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 12: Add Monitor Page (Validation Error) -->
+    <h2>State 12: Add Monitor Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Add Monitor Error</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add New Monitor</h1>
+            <a href="#" class="btn btn-sm btn-outline-secondary">Cancel</a>
+        </div>
+
+         <div class="alert alert-danger" role="alert">
+          Please fix the errors below and try again.
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="monitorName" class="form-label">Monitor Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="monitorName" placeholder="e.g., My Personal Blog" required>
+                        <div class="form-text">A friendly name for easy identification.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="monitorUrl" class="form-label">Website URL <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control is-invalid" id="monitorUrl" placeholder="https://example.com" value="invalid-url" required>
+                         <div class="invalid-feedback">
+                            Please enter a valid URL (e.g., https://example.com).
+                        </div>
+                         <div class="form-text">The full URL (including http/https) of the website to monitor.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="checkInterval" class="form-label">Check Interval</label>
+                        <select class="form-select" id="checkInterval">
+                            <option value="1">1 Minute</option>
+                            <option value="5" selected>5 Minutes</option>
+                            <option value="15">15 Minutes</option>
+                            <option value="30">30 Minutes</option>
+                             <option value="60">60 Minutes</option>
+                        </select>
+                         <div class="form-text">How often we should check your website.</div>
+                    </div>
+
+                     <div class="mb-4">
+                        <label class="form-label">Alerting</label>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertEmail" checked>
+                            <label class="form-check-label" for="alertEmail">
+                                Send email notifications to default contacts
+                            </label>
+                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertSms">
+                            <label class="form-check-label" for="alertSms">
+                                Send SMS notifications (Requires setup)
+                            </label>
+                         </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="alertSlack">
+                            <label class="form-check-label" for="alertSlack">
+                                Send Slack notifications (Requires setup)
+                            </label>
+                         </div>
+                         <div class="form-text mt-1">Choose how you want to be notified. Configure details in <a href="#">Alert Settings</a>.</div>
+                    </div>
+
+                     <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Add Monitor</button>
+                        <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 13: Monitor Details Page -->
+    <h2>State 13: Monitor Details Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Monitor Details</title>
+</head>
+<body class="iframe-content">
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">E-commerce Store <span class="badge bg-danger ms-2 fs-5 align-middle">Down</span></h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-sm btn-outline-warning"><i class="bi bi-pause-fill"></i> Pause</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <ul class="list-group">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    URL
+                    <span>https://mystore.com</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Check Interval
+                    <span>1 Minute</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Last Checked
+                    <span>1 minute ago</span>
+                  </li>
+                   <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Current Status
+                    <span class="text-danger fw-bold">Down (for 5 minutes)</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Uptime (Last 24h)
+                    <span>99.85%</span>
+                  </li>
+                </ul>
+            </div>
+             <div class="col-md-6">
+                 <div class="card">
+                    <div class="card-body text-center text-muted">
+                        <i class="bi bi-graph-up" style="font-size: 3rem;"></i>
+                        <p class="mt-2">Uptime Graph Placeholder</p>
+                        <small>(Graph showing uptime over the last 24 hours/7 days)</small>
+                    </div>
+                 </div>
+             </div>
+        </div>
+
+
+        <h4>Recent Events</h4>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Timestamp</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Details / Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>2024-03-15 10:05:00 UTC</td>
+                    <td><span class="badge bg-danger">Down</span></td>
+                    <td>Connection timeout</td>
+                </tr>
+                 <tr>
+                    <td>2024-03-15 10:00:00 UTC</td>
+                    <td><span class="badge bg-success">Up</span></td>
+                    <td>OK (200) - Response time: 150ms</td>
+                 </tr>
+                 <tr>
+                    <td>2024-03-15 09:59:00 UTC</td>
+                    <td><span class="badge bg-success">Up</span></td>
+                    <td>OK (200) - Response time: 145ms</td>
+                 </tr>
+                  <tr>
+                    <td>2024-03-15 09:58:00 UTC</td>
+                    <td><span class="badge bg-success">Up</span></td>
+                     <td>OK (200) - Response time: 160ms</td>
+                 </tr>
+                  <tr>
+                    <td>2024-03-14 22:10:00 UTC</td>
+                    <td><span class="badge bg-danger">Down</span></td>
+                     <td>503 Service Unavailable (Down for 12m)</td>
+                 </tr>
+                  <tr>
+                    <td>2024-03-14 22:00:00 UTC</td>
+                    <td><span class="badge bg-success">Up</span></td>
+                     <td>OK (200) - Response time: 155ms</td>
+                 </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 14: Alert Settings Page -->
+    <h2>State 14: Alert Settings Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Alert Settings</title>
+</head>
+<body class="iframe-content">
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Alert Settings</h1>
+        </div>
+
+        <div class="row">
+           <div class="col-md-7">
+                <h4 class="mb-3">Notification Methods</h4>
+
+                <!-- Email Settings -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="bi bi-envelope-fill me-2"></i>Email Notifications</div>
+                    <div class="card-body">
+                        <p>Add email addresses to receive alerts.</p>
+                         <ul class="list-group mb-3">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            user@example.com <span class="badge bg-success">Verified</span>
+                             <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            admin@example.com <span class="badge bg-warning text-dark">Pending Verification</span>
+                             <span>
+                                <button class="btn btn-sm btn-outline-secondary me-1">Resend</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                             </span>
+                          </li>
+                        </ul>
+                        <form class="row g-2 align-items-center">
+                            <div class="col-auto flex-grow-1">
+                                <input type="email" class="form-control form-control-sm" placeholder="new.email@example.com">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-sm btn-primary">Add Email</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- SMS Settings -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="bi bi-phone-fill me-2"></i>SMS Notifications <span class="badge bg-info ms-2">Pro Plan Feature</span></div>
+                    <div class="card-body">
+                        <p>Add phone numbers to receive SMS alerts.</p>
+                         <ul class="list-group mb-3">
+                             <li class="list-group-item d-flex justify-content-between align-items-center">
+                                +1 555-123-4567 <span class="badge bg-success">Verified</span>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                            </li>
+                         </ul>
+                        <form class="row g-2 align-items-center">
+                            <div class="col-auto flex-grow-1">
+                                <input type="tel" class="form-control form-control-sm" placeholder="+1 555-987-6543">
+                            </div>
+                             <div class="col-auto">
+                                <button type="submit" class="btn btn-sm btn-primary" disabled>Add Number</button>
+                            </div>
+                        </form>
+                         <small class="d-block mt-2 text-muted">Upgrade to Pro to enable SMS alerts.</small>
+                    </div>
+                </div>
+
+                <!-- Webhook Settings -->
+                 <div class="card mb-4">
+                    <div class="card-header"><i class="bi bi-slack me-2"></i>Integrations (Slack, Webhooks) <span class="badge bg-info ms-2">Pro Plan Feature</span></div>
+                    <div class="card-body">
+                         <p>Connect to Slack or add custom webhooks.</p>
+                         <button class="btn btn-sm btn-outline-secondary me-2" disabled>Connect Slack</button>
+                         <button class="btn btn-sm btn-outline-secondary" disabled>Add Webhook</button>
+                         <small class="d-block mt-2 text-muted">Upgrade to Pro to enable integrations.</small>
+                    </div>
+                </div>
+
+           </div>
+           <div class="col-md-5">
+                <h4 class="mb-3">Alert Groups <small class="text-muted fs-6">(Optional)</small></h4>
+                 <p class="text-muted">Group monitors and assign specific notification methods and rules (e.g., notify different teams, delay alerts).</p>
+                 <div class="d-grid gap-2 mb-3">
+                     <button class="btn btn-outline-primary"><i class="bi bi-plus-circle"></i> Create Alert Group</button>
+                 </div>
+                 <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>Default Alerts</span>
+                        <span class="text-muted">All monitors, All methods</span>
+                        <span>
+                             <button class="btn btn-sm btn-outline-secondary disabled" title="Cannot edit default group"><i class="bi bi-pencil"></i></button>
+                        </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>Critical Store Alerts</span>
+                        <span class="text-muted">1 monitor, Email+SMS</span>
+                         <span>
+                             <button class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil"></i></button>
+                             <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </span>
+                    </li>
+                </ul>
+           </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 15: Account Settings Page -->
+    <h2>State 15: Account Settings Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Account Settings</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Monitors</a>
+             </li>
+              <li class="nav-item">
+               <a class="nav-link" href="#">Alert Settings</a>
+             </li>
+          </ul>
+           <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="bi bi-person-circle"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item active" href="#">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Account Settings</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active text-start" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</button>
+                    <button class="nav-link text-start" id="v-pills-password-tab" data-bs-toggle="pill" data-bs-target="#v-pills-password" type="button" role="tab" aria-controls="v-pills-password" aria-selected="false">Change Password</button>
+                    <button class="nav-link text-start" id="v-pills-billing-tab" data-bs-toggle="pill" data-bs-target="#v-pills-billing" type="button" role="tab" aria-controls="v-pills-billing" aria-selected="false">Billing</button>
+                     <button class="nav-link text-start text-danger mt-3" id="v-pills-delete-tab" data-bs-toggle="pill" data-bs-target="#v-pills-delete" type="button" role="tab" aria-controls="v-pills-delete" aria-selected="false">Delete Account</button>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!-- Profile Tab -->
+                    <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <h4>Profile Information</h4>
+                        <form class="mt-3">
+                             <div class="mb-3 row">
+                                <label for="profileUsername" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control-plaintext" id="profileUsername" value="demo_user">
+                                </div>
+                              </div>
+                             <div class="mb-3 row">
+                                <label for="profileName" class="col-sm-3 col-form-label">Full Name</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="profileName" value="Demo User">
+                                </div>
+                              </div>
+                            <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="profileEmail" value="user@example.com">
+                                </div>
+                              </div>
+                            <button type="submit" class="btn btn-primary">Save Profile</button>
+                        </form>
+                    </div>
+                    <!-- Change Password Tab -->
+                    <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+                         <h4>Change Password</h4>
+                         <form class="mt-3">
+                             <div class="mb-3 row">
+                                <label for="currentPassword" class="col-sm-4 col-form-label">Current Password</label>
+                                <div class="col-sm-8">
+                                  <input type="password" class="form-control" id="currentPassword" required>
+                                </div>
+                              </div>
+                              <div class="mb-3 row">
+                                <label for="newPassword" class="col-sm-4 col-form-label">New Password</label>
+                                <div class="col-sm-8">
+                                  <input type="password" class="form-control" id="newPassword" required>
+                                </div>
+                              </div>
+                               <div class="mb-3 row">
+                                <label for="confirmNewPassword" class="col-sm-4 col-form-label">Confirm New Password</label>
+                                <div class="col-sm-8">
+                                  <input type="password" class="form-control" id="confirmNewPassword" required>
+                                </div>
+                              </div>
+                             <button type="submit" class="btn btn-primary">Update Password</button>
+                         </form>
+                    </div>
+                    <!-- Billing Tab -->
+                    <div class="tab-pane fade" id="v-pills-billing" role="tabpanel" aria-labelledby="v-pills-billing-tab">
+                         <h4>Billing Information</h4>
+                         <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Current Plan: Pro ($15/month)</h5>
+                                <p class="card-text">Next billing date: April 1, 2024</p>
+                                <button class="btn btn-outline-primary me-2">Change Plan</button>
+                                <button class="btn btn-outline-secondary">Update Payment Method</button>
+                            </div>
+                         </div>
+                         <h5 class="mt-4">Billing History</h5>
+                         <table class="table table-sm mt-2">
+                            <thead><tr><th>Date</th><th>Amount</th><th>Status</th><th>Invoice</th></tr></thead>
+                            <tbody>
+                                <tr><td>Mar 1, 2024</td><td>$15.00</td><td>Paid</td><td><a href="#">Download</a></td></tr>
+                                <tr><td>Feb 1, 2024</td><td>$15.00</td><td>Paid</td><td><a href="#">Download</a></td></tr>
+                            </tbody>
+                         </table>
+                    </div>
+                     <!-- Delete Account Tab -->
+                     <div class="tab-pane fade" id="v-pills-delete" role="tabpanel" aria-labelledby="v-pills-delete-tab">
+                         <h4>Delete Account</h4>
+                         <div class="alert alert-danger mt-3" role="alert">
+                          <strong>Warning:</strong> Deleting your account is permanent and cannot be undone. All your monitors, alert settings, and history will be permanently removed.
+                        </div>
+                        <form class="mt-3">
+                             <div class="mb-3">
+                                <label for="deleteConfirm" class="form-label">To confirm, please type "DELETE" in the box below:</label>
+                                <input type="text" class="form-control" id="deleteConfirm" required pattern="DELETE">
+                            </div>
+                             <button type="submit" class="btn btn-danger">Delete My Account Permanently</button>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 16: About Page -->
+    <h2>State 16: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About Us</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation (Assuming Logged Out for simplicity, adjust if needed) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Contact</a>
+             </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary btn-sm me-2" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mb-4 text-center border-bottom pb-3">About Website Uptime Monitor</h1>
+
+                <h2 class="mt-4">Our Mission</h2>
+                <p class="lead">To provide simple, reliable, and affordable website monitoring for everyone, from individual bloggers to large enterprises. We believe you should be the first to know when your website faces issues.</p>
+
+                <h2 class="mt-4">Who We Are</h2>
+                <p>We are a passionate team of developers and sysadmins who understand the criticality of website uptime. We experienced the frustration of complex and expensive monitoring tools, so we decided to build a better solution focused on ease of use and dependability.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                 <h2 class="mt-4">Why Choose Us?</h2>
+                 <ul>
+                    <li><strong>Simplicity:</strong> Get started in minutes, no technical expertise required.</li>
+                    <li><strong>Reliability:</strong> Global check locations ensure accurate monitoring.</li>
+                    <li><strong>Instant Alerts:</strong> Get notified immediately through your preferred channels.</li>
+                    <li><strong>Affordability:</strong> Generous free plan and competitive pricing for premium features.</li>
+                 </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 17: Contact Page -->
+    <h2>State 17: Contact Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Contact Us</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation (Assuming Logged Out for simplicity, adjust if needed) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Contact</a>
+             </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary btn-sm me-2" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <h1 class="mb-4 text-center border-bottom pb-3">Contact Us</h1>
+                <p class="text-center text-muted mb-4">Have questions or need support? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Your Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Your Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="contactEmail" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="contactSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="contactSubject">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactMessage" class="form-label">Message <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 18: Contact Page (Success) -->
+    <h2>State 18: Contact Page (Success)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Message Sent</title>
+</head>
+<body class="iframe-content">
+    <!-- Navigation (Assuming Logged Out for simplicity, adjust if needed) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Uptime Monitor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Contact</a>
+             </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-primary btn-sm me-2" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                 <i class="bi bi-check-circle-fill text-success display-1 mb-3"></i>
+                <h1 class="mb-3">Message Sent Successfully!</h1>
+                <p class="lead text-muted mb-4">Thank you for contacting us. We have received your message and will get back to you shortly.</p>
+                <a href="#" class="btn btn-primary">Back to Home</a>
+                <!-- Or if logged in: <a href="#" class="btn btn-primary">Back to Dashboard</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container">
+      <footer class="py-3 my-4 border-top">
+        <p class="text-center text-body-secondary">© 2024 Website Uptime Monitor, Inc</p>
+      </footer>
+    </div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+</body>
+</html>

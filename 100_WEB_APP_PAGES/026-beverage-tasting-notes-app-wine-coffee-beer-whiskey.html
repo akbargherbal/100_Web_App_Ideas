@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beverage Tasting Notes App - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Beverage Tasting Notes App - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Home Page</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+              <div class="p-5 mb-4 bg-light rounded-3">
+                  <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Welcome to Tasting Notes</h1>
+                    <p class="col-md-8 fs-4">Your personal space to log, rate, and remember every sip. Capture the nuances of your favorite wines, coffees, beers, and whiskeys.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Sign Up Now</a>
+                    <a href="#" class="btn btn-outline-secondary btn-lg ms-2">Learn More</a>
+                  </div>
+                </div>
+
+                <div class="row align-items-md-stretch">
+                  <div class="col-md-6 mb-3">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                      <h2>Explore Beverages</h2>
+                      <p>Discover detailed notes and ratings across a wide range of beverages. See what others are tasting.</p>
+                      <button class="btn btn-outline-light" type="button">Browse Public Notes</button>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                      <h2>Log Your Tastings</h2>
+                      <p>Sign up or log in to start documenting your tasting experiences. Keep track of your preferences and easily recall your favorites.</p>
+                      <button class="btn btn-outline-secondary" type="button">Login / Sign Up</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>About Page</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h1>About Tasting Notes App</h1>
+                <p class="lead">This application helps enthusiasts and connoisseurs alike to document their beverage tasting experiences.</p>
+                <hr>
+                <h2>Our Mission</h2>
+                <p>To provide a simple, intuitive platform for logging, rating, and recalling tasting notes for a variety of beverages including wine, coffee, beer, and whiskey. We believe that documenting your sensory experiences enhances appreciation and knowledge.</p>
+
+                <h2>Features</h2>
+                <ul>
+                    <li>Log detailed notes for Wine, Coffee, Beer, and Whiskey.</li>
+                    <li>Rate beverages on a standardized scale.</li>
+                    <li>Keep a personal history of all your tastings.</li>
+                    <li>Use specific fields tailored to each beverage type.</li>
+                    <li>Easy-to-use interface built with Bootstrap.</li>
+                </ul>
+
+                <h2>Contact Us</h2>
+                <p>For questions or feedback, please reach out to us at <a href="mailto:info@tastingnotesapp.example.com">info@tastingnotesapp.example.com</a>.</p>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+    <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Login Page</title>
+            <style>
+                .login-container { max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container login-container">
+                <h2 class="text-center mb-4">Login</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                     <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <div class="text-center mt-3">
+                        <a href="#">Forgot Password?</a> | <a href="#">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 4: Sign Up Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Sign Up Page</title>
+             <style>
+                .signup-container { max-width: 450px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+            </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container signup-container">
+                <h2 class="text-center mb-4">Create Account</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="signupName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="signupName" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                     <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" required>
+                        <label class="form-check-label" for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                     <div class="text-center mt-3">
+                        Already have an account? <a href="#">Login here</a>
+                    </div>
+                </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Dashboard / My Tastings Page -->
+    <div class="state-container">
+        <h2>State 5: Dashboard / My Tastings Page (Logged In)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>My Tastings</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h1>My Tastings</h1>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add New Tasting</a>
+                </div>
+
+                <!-- Filters -->
+                 <div class="row mb-3">
+                    <div class="col-md-4">
+                       <label for="filterType" class="form-label">Beverage Type</label>
+                       <select class="form-select" id="filterType">
+                           <option selected>All Types</option>
+                           <option value="wine">Wine</option>
+                           <option value="coffee">Coffee</option>
+                           <option value="beer">Beer</option>
+                           <option value="whiskey">Whiskey</option>
+                       </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="filterSearch" class="form-label">Search Notes</label>
+                        <input type="text" class="form-control" id="filterSearch" placeholder="Search by name, brewery, winery...">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="filterRating" class="form-label">Min Rating</label>
+                        <select class="form-select" id="filterRating">
+                            <option selected>Any</option>
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★☆+</option>
+                            <option value="3">★★★☆☆+</option>
+                            <option value="2">★★☆☆☆+</option>
+                            <option value="1">★☆☆☆☆+</option>
+                        </select>
+                    </div>
+                     <div class="col-md-2 d-flex align-items-end">
+                         <button class="btn btn-outline-secondary w-100">Filter</button>
+                    </div>
+                </div>
+
+
+                <!-- Tasting List -->
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><span class="badge bg-danger me-2">Wine</span> Chateau Margaux 2015</h5>
+                      <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1">Excellent structure, notes of blackberry, cedar. Long finish.</p>
+                    <small>Rating: ★★★★★</small>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><span class="badge bg-success me-2">Beer</span> Sierra Nevada Pale Ale</h5>
+                      <small class="text-body-secondary">1 week ago</small>
+                    </div>
+                    <p class="mb-1">Classic APA. Piney hops, balanced bitterness, refreshing.</p>
+                    <small class="text-body-secondary">Rating: ★★★★☆</small>
+                  </a>
+                   <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><span class="badge bg-warning text-dark me-2">Coffee</span> Ethiopian Yirgacheffe (V60)</h5>
+                      <small class="text-body-secondary">2 weeks ago</small>
+                    </div>
+                    <p class="mb-1">Bright acidity, floral aroma, notes of lemon and bergamot.</p>
+                    <small class="text-body-secondary">Rating: ★★★★☆</small>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1"><span class="badge bg-info me-2">Whiskey</span> Laphroaig 10 Year</h5>
+                      <small class="text-body-secondary">1 month ago</small>
+                    </div>
+                    <p class="mb-1">Peaty, medicinal, smoky with hints of seaweed and sweetness.</p>
+                    <small class="text-body-secondary">Rating: ★★★★★</small>
+                  </a>
+                </div>
+
+                 <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-4">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Select Beverage Type Page -->
+    <div class="state-container">
+        <h2>State 6: Select Beverage Type Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Select Beverage Type</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <h1 class="text-center mb-4">Add New Tasting</h1>
+                <p class="text-center lead mb-5">Select the type of beverage you want to log:</p>
+
+                <div class="row justify-content-center g-4">
+                    <div class="col-md-3 col-sm-6">
+                       <div class="card h-100 text-center">
+                           <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                               <i class="bi bi-vinyl-fill" style="font-size: 3rem; color: #dc3545;"></i>
+                               <h5 class="card-title mt-3">Wine</h5>
+                               <a href="#" class="btn btn-danger mt-auto">Log Wine</a>
+                           </div>
+                       </div>
+                    </div>
+                     <div class="col-md-3 col-sm-6">
+                       <div class="card h-100 text-center">
+                           <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <i class="bi bi-cup-hot-fill" style="font-size: 3rem; color: #ffc107;"></i>
+                               <h5 class="card-title mt-3">Coffee</h5>
+                               <a href="#" class="btn btn-warning text-dark mt-auto">Log Coffee</a>
+                           </div>
+                       </div>
+                    </div>
+                     <div class="col-md-3 col-sm-6">
+                       <div class="card h-100 text-center">
+                           <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                               <i class="bi bi-cup-straw" style="font-size: 3rem; color: #198754;"></i> <!-- Placeholder icon -->
+                               <h5 class="card-title mt-3">Beer</h5>
+                               <a href="#" class="btn btn-success mt-auto">Log Beer</a>
+                           </div>
+                       </div>
+                    </div>
+                     <div class="col-md-3 col-sm-6">
+                       <div class="card h-100 text-center">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                               <i class="bi bi-hourglass-split" style="font-size: 3rem; color: #0dcaf0;"></i> <!-- Placeholder icon -->
+                               <h5 class="card-title mt-3">Whiskey</h5>
+                               <a href="#" class="btn btn-info mt-auto">Log Whiskey</a>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Add Wine Note Form -->
+    <div class="state-container">
+        <h2>State 7: Add Tasting Note Form (Wine Example)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Add Wine Tasting Note</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h2>Add Wine Tasting Note</h2>
+                <form class="needs-validation" novalidate>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="wineName" class="form-label">Wine Name / Designation</label>
+                      <input type="text" class="form-control" id="wineName" placeholder="e.g., Reserve Cabernet Sauvignon" required>
+                       <div class="invalid-feedback">
+                        Please provide a wine name.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="winery" class="form-label">Winery</label>
+                      <input type="text" class="form-control" id="winery" placeholder="e.g., Stag's Leap Wine Cellars" required>
+                       <div class="invalid-feedback">
+                        Please provide the winery name.
+                      </div>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="vintage" class="form-label">Vintage</label>
+                      <input type="number" class="form-control" id="vintage" placeholder="e.g., 2018">
+                    </div>
+                     <div class="col-md-4">
+                      <label for="varietal" class="form-label">Varietal / Blend</label>
+                      <input type="text" class="form-control" id="varietal" placeholder="e.g., Cabernet Sauvignon" required>
+                       <div class="invalid-feedback">
+                        Please provide the varietal(s).
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="region" class="form-label">Region</label>
+                      <input type="text" class="form-control" id="region" placeholder="e.g., Napa Valley, California">
+                    </div>
+
+                     <div class="col-12">
+                        <hr>
+                        <h5>Tasting Details</h5>
+                    </div>
+
+                     <div class="col-md-6">
+                      <label for="appearance" class="form-label">Appearance</label>
+                      <input type="text" class="form-control" id="appearance" placeholder="e.g., Deep ruby, clear">
+                    </div>
+                     <div class="col-md-6">
+                      <label for="nose" class="form-label">Nose / Aroma</label>
+                      <input type="text" class="form-control" id="nose" placeholder="e.g., Blackberry, cedar, vanilla">
+                    </div>
+                     <div class="col-md-12">
+                      <label for="palate" class="form-label">Palate / Taste</label>
+                      <textarea class="form-control" id="palate" rows="3" placeholder="e.g., Full-bodied, dark fruit, fine tannins, long finish"></textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="rating" class="form-label">Rating (out of 5)</label>
+                      <select class="form-select" id="rating" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="1">★☆☆☆☆ (Poor)</option>
+                        <option value="2">★★☆☆☆ (Fair)</option>
+                        <option value="3">★★★☆☆ (Good)</option>
+                        <option value="4">★★★★☆ (Very Good)</option>
+                        <option value="5">★★★★★ (Excellent)</option>
+                      </select>
+                       <div class="invalid-feedback">
+                        Please select a rating.
+                      </div>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="tastingDate" class="form-label">Date Tasted</label>
+                      <input type="date" class="form-control" id="tastingDate" required>
+                       <div class="invalid-feedback">
+                        Please provide the tasting date.
+                      </div>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="price" class="form-label">Price Paid (Optional)</label>
+                      <div class="input-group">
+                           <span class="input-group-text">$</span>
+                           <input type="number" step="0.01" class="form-control" id="price" placeholder="e.g., 45.99">
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="notes" class="form-label">Overall Notes / Impressions</label>
+                      <textarea class="form-control" id="notes" rows="4" placeholder="Any additional thoughts, food pairings, where tasted, etc."></textarea>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="btn btn-primary btn-lg me-2" type="submit">Save Tasting Note</button>
+                  <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+             </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+             <script>
+              // Example starter JavaScript for disabling form submissions if there are invalid fields
+              (() => {
+                'use strict'
+                const forms = document.querySelectorAll('.needs-validation')
+                Array.from(forms).forEach(form => {
+                  form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                  }, false)
+                })
+              })()
+            </script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Add Coffee Note Form -->
+     <div class="state-container">
+        <h2>State 8: Add Tasting Note Form (Coffee Example)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Add Coffee Tasting Note</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h2>Add Coffee Tasting Note</h2>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="coffeeName" class="form-label">Coffee Name / Origin</label>
+                      <input type="text" class="form-control" id="coffeeName" placeholder="e.g., Ethiopia Yirgacheffe Gedeb" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="roaster" class="form-label">Roaster</label>
+                      <input type="text" class="form-control" id="roaster" placeholder="e.g., Intelligentsia Coffee" required>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="roastLevel" class="form-label">Roast Level</label>
+                       <select class="form-select" id="roastLevel">
+                        <option selected disabled value="">Choose...</option>
+                        <option>Light</option>
+                        <option>Medium-Light</option>
+                        <option>Medium</option>
+                        <option>Medium-Dark</option>
+                        <option>Dark</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="process" class="form-label">Processing Method</label>
+                       <select class="form-select" id="process">
+                        <option selected disabled value="">Choose...</option>
+                        <option>Washed</option>
+                        <option>Natural</option>
+                        <option>Honey</option>
+                        <option>Anaerobic</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="brewMethod" class="form-label">Brew Method</label>
+                      <input type="text" class="form-control" id="brewMethod" placeholder="e.g., V60 Pour Over, Aeropress" required>
+                    </div>
+
+                     <div class="col-12">
+                        <hr>
+                        <h5>Tasting Details</h5>
+                    </div>
+
+                     <div class="col-md-6">
+                      <label for="aroma" class="form-label">Aroma</label>
+                      <input type="text" class="form-control" id="aroma" placeholder="e.g., Floral, fruity, jasmine">
+                    </div>
+                     <div class="col-md-6">
+                      <label for="flavor" class="form-label">Flavor Notes</label>
+                      <input type="text" class="form-control" id="flavor" placeholder="e.g., Lemon, bergamot, black tea">
+                    </div>
+                     <div class="col-md-4">
+                      <label for="acidity" class="form-label">Acidity</label>
+                       <select class="form-select" id="acidity">
+                        <option selected disabled value="">Rate intensity...</option>
+                        <option>Low</option>
+                        <option>Medium-Low</option>
+                        <option>Medium</option>
+                        <option>Medium-High</option>
+                         <option>High</option>
+                      </select>
+                    </div>
+                      <div class="col-md-4">
+                      <label for="body" class="form-label">Body</label>
+                       <select class="form-select" id="body">
+                        <option selected disabled value="">Rate weight...</option>
+                        <option>Light / Thin</option>
+                        <option>Medium</option>
+                        <option>Full / Heavy</option>
+                      </select>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="finish" class="form-label">Finish / Aftertaste</label>
+                      <input type="text" class="form-control" id="finish" placeholder="e.g., Clean, lingering sweetness">
+                    </div>
+
+
+                    <div class="col-md-6">
+                      <label for="rating" class="form-label">Rating (out of 5)</label>
+                      <select class="form-select" id="rating" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="1">★☆☆☆☆ (Poor)</option>
+                        <option value="2">★★☆☆☆ (Fair)</option>
+                        <option value="3">★★★☆☆ (Good)</option>
+                        <option value="4">★★★★☆ (Very Good)</option>
+                        <option value="5">★★★★★ (Excellent)</option>
+                      </select>
+                    </div>
+                     <div class="col-md-6">
+                      <label for="tastingDate" class="form-label">Date Tasted</label>
+                      <input type="date" class="form-control" id="tastingDate" required>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="notes" class="form-label">Overall Notes / Brew Parameters</label>
+                      <textarea class="form-control" id="notes" rows="4" placeholder="e.g., 20g coffee, 320g water, 94°C, 3:00 brew time. Very bright and clean cup."></textarea>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="btn btn-primary btn-lg me-2" type="submit">Save Tasting Note</button>
+                  <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+             </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: View Tasting Note Detail Page -->
+    <div class="state-container">
+        <h2>State 9: View Tasting Note Detail Page (Wine Example)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>View Wine Tasting Note</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between align-items-center mb-3">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">My Tastings</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Wine Note Details</li>
+                      </ol>
+                    </nav>
+                    <div>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="bi bi-pencil-square"></i> Edit</a>
+                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal"><i class="bi bi-trash"></i> Delete</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                     <h4 class="mb-0"><span class="badge bg-danger me-2">Wine</span> Chateau Margaux 2015</h4>
+                       <span class="text-muted">Tasted on: 2023-10-27</span>
+                  </div>
+                  <div class="card-body">
+                     <div class="row mb-3">
+                         <div class="col-md-4"><strong>Winery:</strong> Chateau Margaux</div>
+                         <div class="col-md-4"><strong>Vintage:</strong> 2015</div>
+                         <div class="col-md-4"><strong>Varietal:</strong> Bordeaux Blend</div>
+                         <div class="col-md-8"><strong>Region:</strong> Margaux, Bordeaux, France</div>
+                         <div class="col-md-4"><strong>Price Paid:</strong> $750.00</div>
+                     </div>
+                     <hr>
+                     <h5>Tasting Notes</h5>
+                      <dl class="row">
+                        <dt class="col-sm-3">Appearance</dt>
+                        <dd class="col-sm-9">Deep garnet-purple color, high clarity.</dd>
+
+                        <dt class="col-sm-3">Nose</dt>
+                        <dd class="col-sm-9">Complex aromas of cassis, violets, cedar chest, pencil lead, and a touch of truffle.</dd>
+
+                        <dt class="col-sm-3">Palate</dt>
+                        <dd class="col-sm-9">Full-bodied with incredibly fine-grained tannins and amazing freshness. Layers of black fruit preserves, exotic spices, and earthy notes. Very long, perfumed finish.</dd>
+
+                         <dt class="col-sm-3">Rating</dt>
+                        <dd class="col-sm-9"><span style="color: #ffc107;">★★★★★</span> (Excellent)</dd>
+
+                        <dt class="col-sm-3">Overall Impressions</dt>
+                        <dd class="col-sm-9">A truly exceptional wine. Perfectly balanced and showing incredible depth. Tasted at a special dinner event.</dd>
+                      </dl>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Delete Confirmation Modal -->
+            <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete this tasting note? This action cannot be undone.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Delete Note</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 10: Edit Tasting Note Form -->
+     <div class="state-container">
+        <h2>State 10: Edit Tasting Note Form (Wine Example - Pre-filled)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Edit Wine Tasting Note</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h2>Edit Wine Tasting Note</h2>
+                 <nav aria-label="breadcrumb" class="mb-3">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">My Tastings</a></li>
+                    <li class="breadcrumb-item"><a href="#">Note: Chateau Margaux 2015</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                  </ol>
+                </nav>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="wineName" class="form-label">Wine Name / Designation</label>
+                      <input type="text" class="form-control" id="wineName" value="Chateau Margaux 2015" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="winery" class="form-label">Winery</label>
+                      <input type="text" class="form-control" id="winery" value="Chateau Margaux" required>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="vintage" class="form-label">Vintage</label>
+                      <input type="number" class="form-control" id="vintage" value="2015">
+                    </div>
+                     <div class="col-md-4">
+                      <label for="varietal" class="form-label">Varietal / Blend</label>
+                      <input type="text" class="form-control" id="varietal" value="Bordeaux Blend" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="region" class="form-label">Region</label>
+                      <input type="text" class="form-control" id="region" value="Margaux, Bordeaux, France">
+                    </div>
+
+                     <div class="col-12">
+                        <hr>
+                        <h5>Tasting Details</h5>
+                    </div>
+
+                     <div class="col-md-6">
+                      <label for="appearance" class="form-label">Appearance</label>
+                      <input type="text" class="form-control" id="appearance" value="Deep garnet-purple color, high clarity.">
+                    </div>
+                     <div class="col-md-6">
+                      <label for="nose" class="form-label">Nose / Aroma</label>
+                      <input type="text" class="form-control" id="nose" value="Complex aromas of cassis, violets, cedar chest, pencil lead, and a touch of truffle.">
+                    </div>
+                     <div class="col-md-12">
+                      <label for="palate" class="form-label">Palate / Taste</label>
+                      <textarea class="form-control" id="palate" rows="3">Full-bodied with incredibly fine-grained tannins and amazing freshness. Layers of black fruit preserves, exotic spices, and earthy notes. Very long, perfumed finish.</textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="rating" class="form-label">Rating (out of 5)</label>
+                      <select class="form-select" id="rating" required>
+                        <option value="1">★☆☆☆☆ (Poor)</option>
+                        <option value="2">★★☆☆☆ (Fair)</option>
+                        <option value="3">★★★☆☆ (Good)</option>
+                        <option value="4">★★★★☆ (Very Good)</option>
+                        <option value="5" selected>★★★★★ (Excellent)</option>
+                      </select>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="tastingDate" class="form-label">Date Tasted</label>
+                      <input type="date" class="form-control" id="tastingDate" value="2023-10-27" required>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="price" class="form-label">Price Paid (Optional)</label>
+                       <div class="input-group">
+                           <span class="input-group-text">$</span>
+                           <input type="number" step="0.01" class="form-control" id="price" value="750.00">
+                       </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="notes" class="form-label">Overall Notes / Impressions</label>
+                      <textarea class="form-control" id="notes" rows="4">A truly exceptional wine. Perfectly balanced and showing incredible depth. Tasted at a special dinner event.</textarea>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="btn btn-primary btn-lg me-2" type="submit">Save Changes</button>
+                  <a href="#" class="btn btn-secondary btn-lg">Cancel</a>
+             </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 11: Form Validation/Error State -->
+    <div class="state-container">
+        <h2>State 11: Form Validation / Error State (Wine Example)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Add Wine Tasting Note - Errors</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+               <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h2>Add Wine Tasting Note</h2>
+                <div class="alert alert-danger" role="alert">
+                  Please fix the errors below before saving.
+                </div>
+                <form class="was-validated" novalidate> <!-- Use was-validated class to show errors immediately -->
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="wineName" class="form-label">Wine Name / Designation</label>
+                      <input type="text" class="form-control is-invalid" id="wineName" placeholder="e.g., Reserve Cabernet Sauvignon" required>
+                       <div class="invalid-feedback">
+                        Please provide a wine name.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="winery" class="form-label">Winery</label>
+                      <input type="text" class="form-control" id="winery" placeholder="e.g., Stag's Leap Wine Cellars" required>
+                      <!-- Example of valid field -->
+                    </div>
+                     <div class="col-md-4">
+                      <label for="vintage" class="form-label">Vintage</label>
+                      <input type="number" class="form-control" id="vintage" placeholder="e.g., 2018">
+                    </div>
+                     <div class="col-md-4">
+                      <label for="varietal" class="form-label">Varietal / Blend</label>
+                      <input type="text" class="form-control is-invalid" id="varietal" placeholder="e.g., Cabernet Sauvignon" required>
+                       <div class="invalid-feedback">
+                        Please provide the varietal(s).
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="region" class="form-label">Region</label>
+                      <input type="text" class="form-control" id="region" placeholder="e.g., Napa Valley, California">
+                    </div>
+
+                     <!-- Other fields omitted for brevity, assume they are filled or optional -->
+                     <div class="col-12"><hr><h5>Tasting Details</h5> Appearance, Nose, Palate... </div>
+
+                    <div class="col-md-4">
+                      <label for="rating" class="form-label">Rating (out of 5)</label>
+                      <select class="form-select is-invalid" id="rating" required>
+                        <option value="" disabled selected>Choose...</option>
+                        <option value="1">★☆☆☆☆ (Poor)</option>
+                        <option value="2">★★☆☆☆ (Fair)</option>
+                        <option value="3">★★★☆☆ (Good)</option>
+                        <option value="4">★★★★☆ (Very Good)</option>
+                        <option value="5">★★★★★ (Excellent)</option>
+                      </select>
+                       <div class="invalid-feedback">
+                        Please select a rating.
+                      </div>
+                    </div>
+                     <div class="col-md-4">
+                      <label for="tastingDate" class="form-label">Date Tasted</label>
+                      <input type="date" class="form-control is-invalid" id="tastingDate" required>
+                       <div class="invalid-feedback">
+                        Please provide the tasting date.
+                      </div>
+                    </div>
+                     <div class="col-md-4">
+                       <label for="price" class="form-label">Price Paid (Optional)</label>
+                       <div class="input-group">
+                           <span class="input-group-text">$</span>
+                           <input type="number" step="0.01" class="form-control" id="price" placeholder="e.g., 45.99">
+                       </div>
+                    </div>
+                      <div class="col-12">
+                      <label for="notes" class="form-label">Overall Notes / Impressions</label>
+                      <textarea class="form-control" id="notes" rows="4" placeholder="Any additional thoughts..."></textarea>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <button class="btn btn-primary btn-lg me-2" type="submit">Save Tasting Note</button>
+                  <button class="btn btn-secondary btn-lg" type="button">Cancel</button>
+             </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 12: Confirmation/Success State -->
+    <div class="state-container">
+        <h2>State 12: Confirmation / Success State</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Tasting Note Saved</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">Tasting Notes</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">My Tastings</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Tasting</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5 text-center">
+                <div class="alert alert-success d-inline-block" role="alert">
+                  <h4 class="alert-heading"><i class="bi bi-check-circle-fill"></i> Success!</h4>
+                  <p>Your tasting note for <strong>Chateau Margaux 2015</strong> has been successfully saved.</p>
+                  <hr>
+                  <p class="mb-0">
+                      <a href="#" class="btn btn-success me-2">View Note</a>
+                      <a href="#" class="btn btn-primary me-2">Add Another Tasting</a>
+                      <a href="#" class="btn btn-secondary">Go to My Tastings</a>
+                  </p>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

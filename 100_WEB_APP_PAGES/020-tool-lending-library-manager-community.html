@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Lending Library Manager UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            color: #343a40;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tool Lending Library Manager (Community) - UI Flow</h1>
+
+<!-- State 1: Login Page -->
+<div class="state-container">
+    <h2>State 1: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Tool Lending Library</h3>
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don&apos;t have an account? <a href="#!">Register here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 2: Login Page (Error State) -->
+<div class="state-container">
+    <h2>State 2: Login Page (Error State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Tool Lending Library</h3>
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                            Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="Enter email" value="user@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don&apos;t have an account? <a href="#!">Register here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 3: Registration Page -->
+<div class="state-container">
+    <h2>State 3: Registration Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Tool Lending Library</h3>
+                        <h4>Register New Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="registerName" placeholder="Enter your full name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="registerEmail" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="registerPassword" placeholder="Create password">
+                            </div>
+                             <div class="mb-3">
+                                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm password">
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="agreeTerms">
+                                <label class="form-check-label" for="agreeTerms">
+                                    I agree to the <a href="#!">terms and conditions</a>.
+                                </label>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Already have an account? <a href="#!">Login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 4: Registration Page (Validation Error State) -->
+<div class="state-container">
+    <h2>State 4: Registration Page (Validation Error State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Tool Lending Library</h3>
+                        <h4>Register New Account</h4>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-warning" role="alert">
+                            Please correct the errors below.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="registerName" placeholder="Enter your full name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="registerEmail" placeholder="Enter email" value="invalid-email">
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="registerPassword" placeholder="Create password">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="registerConfirmPassword" placeholder="Confirm password">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                             <div class="form-check mb-3">
+                                <input class="form-check-input is-invalid" type="checkbox" value="" id="agreeTerms">
+                                <label class="form-check-label" for="agreeTerms">
+                                    I agree to the <a href="#!">terms and conditions</a>.
+                                </label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms.
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Already have an account? <a href="#!">Login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 5: Home Page (Logged In) -->
+<div class="state-container">
+    <h2>State 5: Home Page (Logged In)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to the Community Tool Library!</h1>
+                <p class="col-md-8 fs-4">Borrow tools from your neighbors, save money, and reduce waste. Browse our inventory or check your currently borrowed items.</p>
+                <a href="#!" class="btn btn-primary btn-lg" type="button">Browse Available Tools</a>
+                <a href="#!" class="btn btn-outline-secondary btn-lg" type="button">My Borrowed Tools</a>
+            </div>
+        </div>
+
+        <h3 class="mb-3">Recently Added Tools</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Hammer" class="card-img-top" alt="Hammer">
+                    <div class="card-body">
+                        <h5 class="card-title">Claw Hammer</h5>
+                        <p class="card-text">Standard 16 oz claw hammer. Good for general woodworking and repairs.</p>
+                         <span class="badge bg-success">Available</span>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Drill" class="card-img-top" alt="Drill">
+                    <div class="card-body">
+                        <h5 class="card-title">Cordless Drill</h5>
+                        <p class="card-text">18V Cordless drill with battery and charger included.</p>
+                        <span class="badge bg-success">Available</span>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Ladder" class="card-img-top" alt="Ladder">
+                    <div class="card-body">
+                        <h5 class="card-title">6ft Step Ladder</h5>
+                        <p class="card-text">Aluminum step ladder, lightweight and sturdy.</p>
+                         <span class="badge bg-danger">Currently Borrowed</span>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-secondary disabled">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 6: About Page -->
+<div class="state-container">
+    <h2>State 6: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>About the Community Tool Library</h2>
+        <p class="lead">Sharing resources, building community.</p>
+        <hr>
+        <h4>Our Mission</h4>
+        <p>To provide community members with access to tools and equipment, promoting self-sufficiency, resource sharing, and collaboration while reducing consumption and waste.</p>
+
+        <h4>How it Works</h4>
+        <ol>
+            <li>Register for an account (must be a local resident).</li>
+            <li>Browse the inventory of available tools.</li>
+            <li>Request to borrow a tool for a specific period (usually up to 7 days).</li>
+            <li>Pick up the tool during library hours after your request is approved.</li>
+            <li>Use the tool responsibly and return it clean and on time.</li>
+        </ol>
+
+        <h4>Library Rules</h4>
+        <ul>
+            <li>Tools are for personal, non-commercial use only.</li>
+            <li>Users are responsible for the safe operation of tools.</li>
+            <li>Report any damage or malfunction immediately upon return.</li>
+            <li>Late fees may apply for overdue items.</li>
+            <li>Membership may be revoked for misuse or repeated late returns.</li>
+        </ul>
+
+         <h4>Location & Hours</h4>
+         <p><strong>Location:</strong> 123 Community Center Lane, Anytown, USA</p>
+         <p><strong>Hours:</strong>
+            <br>Wednesdays: 4:00 PM - 7:00 PM
+            <br>Saturdays: 9:00 AM - 1:00 PM
+        </p>
+
+        <h4>Contact Us</h4>
+        <p>If you have questions, please email us at <a href="mailto:info@communitytools.org">info@communitytools.org</a> or call (555) 123-4567 during open hours.</p>
+    </div>
+
+     <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 7: Browse Tools Page -->
+<div class="state-container">
+    <h2>State 7: Browse Tools Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Tools - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Browse Tools</h2>
+        <p>Find the tools you need for your next project.</p>
+
+        <!-- Search and Filter -->
+        <div class="row mb-4 g-3 align-items-end">
+            <div class="col-md-6">
+                <label for="toolSearch" class="form-label">Search by Name or Keyword</label>
+                <input type="text" class="form-control" id="toolSearch" placeholder="e.g., hammer, drill, saw">
+            </div>
+            <div class="col-md-4">
+                <label for="toolCategory" class="form-label">Filter by Category</label>
+                <select class="form-select" id="toolCategory">
+                    <option selected>All Categories</option>
+                    <option value="1">Hand Tools</option>
+                    <option value="2">Power Tools</option>
+                    <option value="3">Gardening</option>
+                    <option value="4">Ladders & Scaffolding</option>
+                     <option value="5">Automotive</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-grid">
+                <button type="button" class="btn btn-primary"><i class="bi bi-search"></i> Search</button>
+            </div>
+        </div>
+
+        <!-- Tool Listing -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Tool Card 1 (Available) -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Hammer" class="card-img-top" alt="Hammer">
+                    <div class="card-body">
+                        <h5 class="card-title">Claw Hammer</h5>
+                        <p class="card-text"><small class="text-muted">Category: Hand Tools</small></p>
+                         <span class="badge bg-success">Available</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Tool Card 2 (Available) -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Drill" class="card-img-top" alt="Drill">
+                    <div class="card-body">
+                        <h5 class="card-title">Cordless Drill</h5>
+                        <p class="card-text"><small class="text-muted">Category: Power Tools</small></p>
+                         <span class="badge bg-success">Available</span>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tool Card 3 (Unavailable) -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Ladder" class="card-img-top" alt="Ladder">
+                    <div class="card-body">
+                        <h5 class="card-title">6ft Step Ladder</h5>
+                         <p class="card-text"><small class="text-muted">Category: Ladders & Scaffolding</small></p>
+                         <span class="badge bg-danger">Currently Borrowed</span>
+                    </div>
+                     <div class="card-footer">
+                         <a href="#!" class="btn btn-sm btn-outline-secondary disabled w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Tool Card 4 (Available) -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Shovel" class="card-img-top" alt="Shovel">
+                    <div class="card-body">
+                        <h5 class="card-title">Round Point Shovel</h5>
+                         <p class="card-text"><small class="text-muted">Category: Gardening</small></p>
+                         <span class="badge bg-success">Available</span>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#!" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Tool Card 5 (Needs Repair - Example) -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Saw" class="card-img-top" alt="Saw">
+                    <div class="card-body">
+                        <h5 class="card-title">Circular Saw</h5>
+                         <p class="card-text"><small class="text-muted">Category: Power Tools</small></p>
+                         <span class="badge bg-warning text-dark">Needs Repair</span>
+                    </div>
+                     <div class="card-footer">
+                         <a href="#!" class="btn btn-sm btn-outline-secondary disabled w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Add more tool cards as needed -->
+
+        </div>
+
+        <!-- Pagination (Example) -->
+        <nav aria-label="Tool page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 8: Tool Detail Page (Available) -->
+<div class="state-container">
+    <h2>State 8: Tool Detail Page (Available)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Detail - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                <li class="breadcrumb-item"><a href="#!">Browse Tools</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cordless Drill</li>
+            </ol>
+        </nav>
+
+        <h2>Cordless Drill</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                 <img src="https://via.placeholder.com/500x400/ced4da/6c757d.png?text=Drill+Image" class="img-fluid rounded mb-3" alt="Cordless Drill">
+            </div>
+            <div class="col-md-6">
+                <h4>Details</h4>
+                <p><strong>Brand:</strong> Generic Power Tools</p>
+                <p><strong>Model:</strong> CD-18V</p>
+                <p><strong>Category:</strong> Power Tools</p>
+                <p><strong>Description:</strong> Versatile 18V cordless drill suitable for various home projects. Comes with one battery and a charger. Features variable speed trigger and keyless chuck.</p>
+                <p><strong>Condition:</strong> Good - Minor cosmetic wear, fully functional.</p>
+                <p><strong>Accessories Included:</strong> 1x Battery, 1x Charger, Basic drill bit set</p>
+
+                <h4 class="mt-4">Availability</h4>
+                <p><span class="badge bg-success fs-6">Available for Borrowing</span></p>
+                <p><strong>Max Borrowing Period:</strong> 7 Days</p>
+
+                 <a href="#!" class="btn btn-primary btn-lg mt-3"><i class="bi bi-calendar-plus"></i> Request to Borrow</a>
+
+            </div>
+        </div>
+
+         <div class="mt-5">
+            <h4>Borrowing Guidelines & Safety</h4>
+            <ul>
+                <li>Always wear safety glasses when operating this tool.</li>
+                <li>Ensure battery is fully charged before use.</li>
+                <li>Do not use in wet conditions.</li>
+                <li>Return the tool clean and with all accessories.</li>
+                <li>Refer to the manufacturer&apos;s manual for detailed operating instructions (copy available at library).</li>
+            </ul>
+         </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 9: Tool Detail Page (Unavailable) -->
+<div class="state-container">
+    <h2>State 9: Tool Detail Page (Unavailable)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Detail - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                <li class="breadcrumb-item"><a href="#!">Browse Tools</a></li>
+                <li class="breadcrumb-item active" aria-current="page">6ft Step Ladder</li>
+            </ol>
+        </nav>
+
+        <h2>6ft Step Ladder</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6">
+                 <img src="https://via.placeholder.com/500x400/ced4da/6c757d.png?text=Ladder+Image" class="img-fluid rounded mb-3" alt="Step Ladder">
+            </div>
+            <div class="col-md-6">
+                <h4>Details</h4>
+                 <p><strong>Brand:</strong> Sturdy Steps Inc.</p>
+                 <p><strong>Model:</strong> AL-6</p>
+                 <p><strong>Category:</strong> Ladders & Scaffolding</p>
+                 <p><strong>Description:</strong> Lightweight aluminum 6-foot step ladder. Ideal for reaching high shelves, painting, or general maintenance.</p>
+                 <p><strong>Condition:</strong> Excellent - Like new.</p>
+                 <p><strong>Weight Limit:</strong> 250 lbs</p>
+
+                <h4 class="mt-4">Availability</h4>
+                <p><span class="badge bg-danger fs-6">Currently Borrowed</span></p>
+                <p><strong>Expected Return Date:</strong> December 15, 2023</p>
+                <p><strong>Max Borrowing Period:</strong> 7 Days</p>
+
+                 <button class="btn btn-primary btn-lg mt-3 disabled" aria-disabled="true"><i class="bi bi-calendar-plus"></i> Request to Borrow</button>
+                 <p class="text-muted mt-2"><small>This tool is currently unavailable. Check back after the expected return date.</small></p>
+
+            </div>
+        </div>
+
+         <div class="mt-5">
+            <h4>Borrowing Guidelines & Safety</h4>
+            <ul>
+                <li>Inspect the ladder for damage before each use.</li>
+                <li>Ensure the ladder is placed on a firm, level surface.</li>
+                <li>Always maintain three points of contact while climbing.</li>
+                <li>Do not exceed the weight limit.</li>
+            </ul>
+         </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 10: Borrow Request Form Page -->
+<div class="state-container">
+    <h2>State 10: Borrow Request Form Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Request - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                <li class="breadcrumb-item"><a href="#!">Browse Tools</a></li>
+                <li class="breadcrumb-item"><a href="#!">Cordless Drill</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Borrow Request</li>
+            </ol>
+        </nav>
+
+        <h2>Request to Borrow: Cordless Drill</h2>
+        <p>Please specify your desired borrowing period (max 7 days).</p>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="borrowStartDate" class="form-label">Desired Pick-up Date</label>
+                        <input type="date" class="form-control" id="borrowStartDate" required>
+                        <div class="form-text">Select the date you wish to pick up the tool during library hours.</div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="borrowDuration" class="form-label">Borrowing Duration</label>
+                        <select class="form-select" id="borrowDuration" required>
+                            <option selected disabled value="">Select duration...</option>
+                            <option value="1">1 Day</option>
+                            <option value="2">2 Days</option>
+                            <option value="3">3 Days</option>
+                            <option value="4">4 Days</option>
+                            <option value="5">5 Days</option>
+                            <option value="6">6 Days</option>
+                            <option value="7">7 Days (Max)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="borrowPurpose" class="form-label">Purpose of Borrowing (Optional)</label>
+                        <textarea class="form-control" id="borrowPurpose" rows="3" placeholder="e.g., Hanging pictures, Assembling furniture"></textarea>
+                    </div>
+
+                     <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="agreementCheck" required>
+                        <label class="form-check-label" for="agreementCheck">
+                           I have read and agree to the <a href="#!" target="_blank">Borrowing Agreement and Safety Guidelines</a> for this tool.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <a href="#!" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+            <div class="col-md-4">
+                 <div class="card">
+                    <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Drill" class="card-img-top" alt="Cordless Drill">
+                    <div class="card-body">
+                        <h5 class="card-title">Cordless Drill</h5>
+                        <p class="card-text">18V Cordless drill with battery and charger included.</p>
+                    </div>
+                 </div>
+                 <div class="alert alert-info mt-3" role="alert">
+                    <h4 class="alert-heading">Important!</h4>
+                    <p>Submitting this request does not guarantee the tool. Your request needs to be reviewed and approved by a library volunteer. You will receive an email confirmation once approved.</p>
+                    <hr>
+                    <p class="mb-0">Pick-up is only available during <a href="#!">library hours</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 11: Borrow Request Form Page (Validation Error State) -->
+<div class="state-container">
+    <h2>State 11: Borrow Request Form Page (Validation Error State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Request - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!">Home</a></li>
+                <li class="breadcrumb-item"><a href="#!">Browse Tools</a></li>
+                <li class="breadcrumb-item"><a href="#!">Cordless Drill</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Borrow Request</li>
+            </ol>
+        </nav>
+
+        <h2>Request to Borrow: Cordless Drill</h2>
+        <p>Please specify your desired borrowing period (max 7 days).</p>
+        <div class="alert alert-danger" role="alert">
+          Please fix the errors below before submitting.
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="borrowStartDate" class="form-label">Desired Pick-up Date</label>
+                        <input type="date" class="form-control is-invalid" id="borrowStartDate" required>
+                         <div class="invalid-feedback">
+                            Please select a valid pick-up date.
+                        </div>
+                        <div class="form-text">Select the date you wish to pick up the tool during library hours.</div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="borrowDuration" class="form-label">Borrowing Duration</label>
+                        <select class="form-select is-invalid" id="borrowDuration" required>
+                            <option selected disabled value="">Select duration...</option>
+                            <option value="1">1 Day</option>
+                            <option value="2">2 Days</option>
+                            <option value="3">3 Days</option>
+                            <option value="4">4 Days</option>
+                            <option value="5">5 Days</option>
+                            <option value="6">6 Days</option>
+                            <option value="7">7 Days (Max)</option>
+                        </select>
+                         <div class="invalid-feedback">
+                            Please select the borrowing duration.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="borrowPurpose" class="form-label">Purpose of Borrowing (Optional)</label>
+                        <textarea class="form-control" id="borrowPurpose" rows="3" placeholder="e.g., Hanging pictures, Assembling furniture"></textarea>
+                    </div>
+
+                     <div class="form-check mb-3">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="agreementCheck" required>
+                        <label class="form-check-label" for="agreementCheck">
+                           I have read and agree to the <a href="#!" target="_blank">Borrowing Agreement and Safety Guidelines</a> for this tool.
+                        </label>
+                         <div class="invalid-feedback">
+                            You must agree to the terms.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <a href="#!" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+             <div class="col-md-4">
+                 <div class="card">
+                    <img src="https://via.placeholder.com/300x200/ced4da/6c757d.png?text=Drill" class="card-img-top" alt="Cordless Drill">
+                    <div class="card-body">
+                        <h5 class="card-title">Cordless Drill</h5>
+                        <p class="card-text">18V Cordless drill with battery and charger included.</p>
+                    </div>
+                 </div>
+                 <div class="alert alert-info mt-3" role="alert">
+                    <h4 class="alert-heading">Important!</h4>
+                    <p>Submitting this request does not guarantee the tool. Your request needs to be reviewed and approved by a library volunteer. You will receive an email confirmation once approved.</p>
+                    <hr>
+                    <p class="mb-0">Pick-up is only available during <a href="#!">library hours</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 12: Borrow Request Confirmation Page -->
+<div class="state-container">
+    <h2>State 12: Borrow Request Confirmation Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Submitted - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="alert alert-success text-center" role="alert">
+           <h4 class="alert-heading"><i class="bi bi-check-circle-fill"></i> Borrow Request Submitted Successfully!</h4>
+           <p>Your request to borrow the <strong>Cordless Drill</strong> has been received.</p>
+           <hr>
+           <p class="mb-0">A library volunteer will review your request shortly. You will receive an email notification once it is approved, along with pick-up instructions. Please do not come to the library until you receive the confirmation email.</p>
+        </div>
+
+        <div class="text-center mt-4">
+             <a href="#!" class="btn btn-primary"><i class="bi bi-search"></i> Browse More Tools</a>
+             <a href="#!" class="btn btn-outline-secondary"><i class="bi bi-card-list"></i> View My Requests</a>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light fixed-bottom">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 13: My Borrowed Tools Page (Empty State) -->
+<div class="state-container">
+    <h2>State 13: My Borrowed Tools Page (Empty State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Borrowed Tools - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>My Borrowed Tools & Requests</h2>
+        <hr>
+
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs mb-3" id="myToolsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current-borrowings" type="button" role="tab" aria-controls="current-borrowings" aria-selected="true">Currently Borrowing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-requests" type="button" role="tab" aria-controls="pending-requests" aria-selected="false">Pending Requests</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#borrow-history" type="button" role="tab" aria-controls="borrow-history" aria-selected="false">Borrowing History</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myToolsTabContent">
+            <!-- Currently Borrowing Tab (Empty) -->
+            <div class="tab-pane fade show active" id="current-borrowings" role="tabpanel" aria-labelledby="current-tab">
+                 <div class="alert alert-info" role="alert">
+                    You are not currently borrowing any tools.
+                 </div>
+                 <div class="text-center">
+                    <a href="#!" class="btn btn-primary">Browse Available Tools</a>
+                </div>
+            </div>
+
+            <!-- Pending Requests Tab (Empty) -->
+            <div class="tab-pane fade" id="pending-requests" role="tabpanel" aria-labelledby="pending-tab">
+                <div class="alert alert-info" role="alert">
+                    You have no pending borrow requests.
+                </div>
+            </div>
+
+            <!-- Borrowing History Tab (Empty) -->
+            <div class="tab-pane fade" id="borrow-history" role="tabpanel" aria-labelledby="history-tab">
+                 <div class="alert alert-info" role="alert">
+                    You have no past borrowing history.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 14: My Borrowed Tools Page (With Items) -->
+<div class="state-container">
+    <h2>State 14: My Borrowed Tools Page (With Items)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Borrowed Tools - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>My Borrowed Tools & Requests</h2>
+        <hr>
+
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs mb-3" id="myToolsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current-borrowings" type="button" role="tab" aria-controls="current-borrowings" aria-selected="true">Currently Borrowing (1)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-requests" type="button" role="tab" aria-controls="pending-requests" aria-selected="false">Pending Requests (1)</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#borrow-history" type="button" role="tab" aria-controls="borrow-history" aria-selected="false">Borrowing History (2)</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myToolsTabContent">
+            <!-- Currently Borrowing Tab -->
+            <div class="tab-pane fade show active" id="current-borrowings" role="tabpanel" aria-labelledby="current-tab">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-2 text-center p-3">
+                             <img src="https://via.placeholder.com/100x100/ced4da/6c757d.png?text=Shovel" class="img-fluid rounded-start" alt="Shovel">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title">Round Point Shovel</h5>
+                                <p class="card-text mb-1">Borrowed On: December 5, 2023</p>
+                                <p class="card-text mb-2"><strong>Due Date: December 12, 2023</strong> <span class="badge bg-warning text-dark">Due Soon</span></p>
+                                <a href="#!" class="btn btn-sm btn-info">View Tool Details</a>
+                                <a href="#!" class="btn btn-sm btn-success"><i class="bi bi-check2-square"></i> Mark as Returned</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add more currently borrowed items here -->
+            </div>
+
+            <!-- Pending Requests Tab -->
+            <div class="tab-pane fade" id="pending-requests" role="tabpanel" aria-labelledby="pending-tab">
+                 <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-2 text-center p-3">
+                             <img src="https://via.placeholder.com/100x100/ced4da/6c757d.png?text=Drill" class="img-fluid rounded-start" alt="Drill">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title">Cordless Drill</h5>
+                                <p class="card-text mb-1">Request Submitted: December 10, 2023</p>
+                                <p class="card-text mb-2">Desired Pick-up Date: December 13, 2023</p>
+                                <p class="card-text"><span class="badge bg-secondary">Pending Approval</span></p>
+                                <a href="#!" class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i> Cancel Request</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add more pending requests here -->
+            </div>
+
+            <!-- Borrowing History Tab -->
+            <div class="tab-pane fade" id="borrow-history" role="tabpanel" aria-labelledby="history-tab">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                           <strong>Claw Hammer</strong>
+                           <br><small class="text-muted">Borrowed: Nov 10, 2023 | Returned: Nov 16, 2023</small>
+                        </div>
+                         <span class="badge bg-light text-dark">Returned On Time</span>
+                    </li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                         <div>
+                            <strong>Hand Sander</strong>
+                             <br><small class="text-muted">Borrowed: Oct 20, 2023 | Returned: Oct 29, 2023 (Due: Oct 27)</small>
+                        </div>
+                        <span class="badge bg-danger">Returned Late</span>
+                    </li>
+                     <!-- Add more history items here -->
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 15: Return Confirmation Page -->
+<div class="state-container">
+    <h2>State 15: Return Confirmation Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Confirmation - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="alert alert-success text-center" role="alert">
+           <h4 class="alert-heading"><i class="bi bi-arrow-return-left"></i> Tool Return Initiated!</h4>
+           <p>You have marked the <strong>Round Point Shovel</strong> as ready for return.</p>
+           <hr>
+           <p class="mb-0">Please bring the tool back to the library during our <a href="#!">open hours</a>. A volunteer will check the tool in and confirm the return status in the system.</p>
+           <p>Thank you for using the Community Tool Library!</p>
+        </div>
+
+         <div class="text-center mt-4">
+             <a href="#!" class="btn btn-primary"><i class="bi bi-house-door"></i> Back to Home</a>
+             <a href="#!" class="btn btn-outline-secondary"><i class="bi bi-card-list"></i> View My Borrowed Tools</a>
+        </div>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top bg-light fixed-bottom">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+<!-- State 16: User Profile Page -->
+<div class="state-container">
+    <h2>State 16: User Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Tool Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!"><i class="bi bi-tools"></i> Tool Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Browse Tools</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">My Borrowed Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> John Doe
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#!">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>My Profile</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        Account Information
+                    </div>
+                    <div class="card-body">
+                         <form>
+                            <div class="mb-3 row">
+                                <label for="profileName" class="col-sm-3 col-form-label">Full Name:</label>
+                                <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control-plaintext" id="profileName" value="John Doe">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email Address:</label>
+                                <div class="col-sm-9">
+                                  <input type="email" readonly class="form-control-plaintext" id="profileEmail" value="john.doe@example.com">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileMemberSince" class="col-sm-3 col-form-label">Member Since:</label>
+                                <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control-plaintext" id="profileMemberSince" value="October 1, 2023">
+                                </div>
+                            </div>
+                            <hr>
+                             <h5>Change Password</h5>
+                             <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword">
+                            </div>
+                             <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword">
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Membership Status
+                    </div>
+                    <div class="card-body text-center">
+                         <h5 class="card-title"><span class="badge bg-success p-2">Active Member</span></h5>
+                         <p class="card-text text-muted">You are currently an active member in good standing.</p>
+                         <p class="card-text"><strong>Tools Currently Borrowed:</strong> 1</p>
+                         <p class="card-text"><strong>Pending Requests:</strong> 1</p>
+                         <a href="#!" class="btn btn-sm btn-outline-secondary">View Borrowing History</a>
+                     </div>
+                </div>
+                 <div class="card mt-3">
+                    <div class="card-header">
+                        Notifications
+                    </div>
+                    <div class="card-body">
+                         <div class="form-check">
+                           <input class="form-check-input" type="checkbox" value="" id="emailNotifications" checked>
+                           <label class="form-check-label" for="emailNotifications">
+                             Receive email notifications (requests, returns, reminders)
+                           </label>
+                         </div>
+                           <button type="submit" class="btn btn-sm btn-primary mt-3">Update Preferences</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top bg-light">
+        <p class="text-center text-muted">&copy; 2023 Community Tool Library</p>
+     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+</div>
+
+
+</body>
+</html>

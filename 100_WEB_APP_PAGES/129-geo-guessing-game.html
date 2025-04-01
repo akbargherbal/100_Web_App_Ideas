@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo-Guessing Game UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .state-container { margin-bottom: 40px; padding: 20px; border: 1px solid #dee2e6; border-radius: 5px; background-color: #fff; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; }
+        h2 { margin-bottom: 15px; font-size: 1.5rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to the Geo-Guessing Game!</h1>
+                <p class="col-md-8 fs-4 mx-auto">Explore the world from your browser. Can you guess where you are based on visual clues?</p>
+                <a class="btn btn-success btn-lg me-2" href="#" role="button">Play Now</a>
+                <a class="btn btn-outline-secondary btn-lg" href="#" role="button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h3>Explore</h3>
+                <p>Discover random locations around the globe.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Guess</h3>
+                <p>Pinpoint your guess on an interactive map.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Compete</h3>
+                <p>Challenge friends or climb the global leaderboard.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">About Geo-Guessing Game</h1>
+
+        <p class="lead">Geo-Guessing Game is an interactive web application designed to test and improve your geographical knowledge and observational skills.</p>
+
+        <div class="accordion" id="aboutAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How It Works
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#aboutAccordion">
+                    <div class="accordion-body">
+                        Players are presented with panoramic images or video clips from locations around the world (using services like Google Street View). Based solely on the visual clues – such as road signs, vegetation, architecture, language, or landscape – players must guess the location by placing a marker on a world map. Points are awarded based on the proximity of the guess to the actual location.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Game Modes
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#aboutAccordion">
+                    <div class="accordion-body">
+                        The game offers various modes, including single-player challenges, timed rounds, specific region challenges, and potentially multiplayer competitions in future updates. Challenge yourself against the clock or explore the world at your own pace!
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Technology
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#aboutAccordion">
+                    <div class="accordion-body">
+                        This application utilizes modern web technologies, including HTML5, CSS3 (with Bootstrap 5 for styling), and potentially JavaScript frameworks for interactivity. It integrates with map APIs and visual data providers to deliver an immersive experience.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 text-center">
+            <p>Ready to test your skills?</p>
+            <a href="#" class="btn btn-success btn-lg">Start Playing Now!</a>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2 active" aria-current="page" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                                <div class="form-text">Choose a unique username.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                <div id="emailHelp" class="form-text">We never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms & Conditions</a></label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Already have an account? <a href="#">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up - Error State -->
+    <div class="state-container">
+        <h2>State 4: Sign Up - Error State</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2 active" aria-current="page" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                     <div class="alert alert-danger mx-3 mt-3" role="alert">
+                        Please fix the errors below and try again.
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="username" value="user" required>
+                                <div class="invalid-feedback">
+                                     Username already taken or invalid format.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="email" aria-describedby="emailHelp" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" required>
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" required>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms & Conditions</a></label>
+                                 <div class="invalid-feedback">
+                                     You must agree to the terms.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Already have an account? <a href="#">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Login Page -->
+    <div class="state-container">
+        <h2>State 5: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login to Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Dont have an account? <a href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Login - Error State -->
+    <div class="state-container">
+        <h2>State 6: Login - Error State</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login to Your Account</h3>
+                    </div>
+                    <div class="alert alert-danger mx-3 mt-3" role="alert">
+                        Invalid email/username or password. Please try again.
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control is-invalid" id="loginEmail" value="wronguser@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" required>
+                                 <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                             <div class="text-center mt-3">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Dont have an account? <a href="#">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Game Lobby/Dashboard (Logged In) -->
+    <div class="state-container">
+        <h2>State 7: Game Lobby/Dashboard (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Play</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Leaderboard</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Player123!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Dashboard</h1>
+
+        <div class="row">
+            <!-- Play Options -->
+            <div class="col-md-8">
+                <h2>Start a New Game</h2>
+                <div class="card mb-3">
+                   <div class="card-body">
+                       <h5 class="card-title">World Explorer</h5>
+                       <p class="card-text">Random locations from around the globe. Standard 5 rounds.</p>
+                       <a href="#" class="btn btn-primary">Play World Explorer</a>
+                   </div>
+                </div>
+                 <div class="card mb-3">
+                   <div class="card-body">
+                       <h5 class="card-title">Famous Landmarks</h5>
+                       <p class="card-text">Guess iconic locations and landmarks. Can you recognize them all?</p>
+                       <a href="#" class="btn btn-primary">Play Famous Landmarks</a>
+                   </div>
+                </div>
+                <div class="card mb-3">
+                   <div class="card-body">
+                       <h5 class="card-title">Timed Challenge</h5>
+                       <p class="card-text">Race against the clock! Guess as many locations as possible in 5 minutes.</p>
+                       <a href="#" class="btn btn-warning">Play Timed Challenge</a>
+                   </div>
+                </div>
+                 <div class="card mb-3">
+                   <div class="card-body">
+                       <h5 class="card-title">Custom Game (Coming Soon)</h5>
+                       <p class="card-text">Create your own challenge with specific regions or settings.</p>
+                       <button class="btn btn-secondary" disabled>Play Custom</button>
+                   </div>
+                </div>
+            </div>
+
+            <!-- Player Stats -->
+            <div class="col-md-4">
+                <h2>Your Stats</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Player123</h5>
+                        <p class="card-text"><strong>Total Score:</strong> 12,540 points</p>
+                        <p class="card-text"><strong>Games Played:</strong> 25</p>
+                        <p class="card-text"><strong>Average Score:</strong> 501 points/game</p>
+                        <p class="card-text"><strong>Best Score:</strong> 4980 points</p>
+                        <a href="#" class="btn btn-outline-secondary btn-sm">View Full Profile</a>
+                        <a href="#" class="btn btn-info btn-sm mt-2">View Leaderboard</a>
+                    </div>
+                </div>
+                 <h2 class="mt-4">Recent Games</h2>
+                 <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        World Explorer (Oct 25)
+                        <span class="badge bg-primary rounded-pill">4520 pts</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Famous Landmarks (Oct 24)
+                         <span class="badge bg-primary rounded-pill">3890 pts</span>
+                    </li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Timed Challenge (Oct 23)
+                         <span class="badge bg-warning rounded-pill">15 locations</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Game Play Screen -->
+    <div class="state-container">
+        <h2>State 8: Game Play Screen</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Game Play</title>
+    <style>
+        .visual-clue-container {
+            height: 450px; /* Fixed height for the visual clue */
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #6c757d;
+            background-image: url("https://via.placeholder.com/1200x450/cccccc/969696.png?text=Street+View+Placeholder");
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        .map-container {
+            height: 300px; /* Fixed height for the map */
+            background-color: #d1e7dd;
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0f5132;
+             border: 1px solid #a3cfbb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+             <ul class="navbar-nav mx-auto">
+                 <li class="nav-item"><span class="navbar-text text-white fw-bold">Round 1 of 5</span></li>
+                 <li class="nav-item ms-4"><span class="navbar-text text-white">Score: 0</span></li>
+                 <li class="nav-item ms-4"><span class="navbar-text text-white">Time Left: 4:55</span></li>
+             </ul>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Player123
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Quit Game</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Visual Clue -->
+            <div class="col-lg-8">
+                <div class="visual-clue-container">
+                    <!-- Placeholder or actual Street View embed -->
+                </div>
+            </div>
+
+            <!-- Map & Guessing -->
+            <div class="col-lg-4">
+                <h5>Guess the Location</h5>
+                <p>Click on the map to place your guess.</p>
+                <div class="map-container mb-3">
+                    Map Placeholder
+                </div>
+                <div class="d-grid">
+                    <button type="button" class="btn btn-success btn-lg">Make Guess</button>
+                </div>
+                <div class="mt-3 text-end">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Zoom In</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary ms-1">Zoom Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 9: Guess Confirmation/Feedback -->
+    <div class="state-container">
+        <h2>State 9: Guess Confirmation/Feedback</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Guess Feedback</title>
+     <style>
+        .feedback-map-container {
+            height: 350px;
+            background-color: #e0e0e0;
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #495057;
+             border: 1px solid #ced4da;
+             position: relative; /* For positioning markers */
+        }
+         .marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .guess-marker { background-color: #0d6efd; top: 40%; left: 60%; } /* Example position */
+        .actual-marker { background-color: #dc3545; top: 45%; left: 55%; } /* Example position */
+        .feedback-line { /* Placeholder for line connecting markers */
+             position: absolute;
+             top: 42.5%; left: 57.5%;
+             width: 5%;
+             height: 2px;
+             background-color: #ffc107;
+             transform: rotate(-45deg);
+             transform-origin: left center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+             <ul class="navbar-nav mx-auto">
+                 <li class="nav-item"><span class="navbar-text text-white fw-bold">Round 1 of 5 - Result</span></li>
+                 <li class="nav-item ms-4"><span class="navbar-text text-white">Score: 4520</span></li>
+             </ul>
+              <ul class="navbar-nav ms-auto">
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Player123
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Quit Game</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-7">
+                <h2>Round Result</h2>
+                <div class="feedback-map-container mb-3">
+                    Map Showing Guess vs Actual
+                    <div class="marker guess-marker" title="Your Guess"></div>
+                    <div class="marker actual-marker" title="Actual Location"></div>
+                    <div class="feedback-line"></div>
+                </div>
+                 <p><span class="badge bg-primary">Your Guess</span> <span class="badge bg-danger ms-2">Actual Location</span></p>
+            </div>
+            <div class="col-md-5">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Great Guess!</h3>
+                        <p class="fs-5"><strong>Distance:</strong> 150 km</p>
+                        <p class="fs-3 text-success"><strong>Points Awarded:</strong> 4520</p>
+                        <hr>
+                        <p><strong>Actual Location:</strong> Near Rome, Italy</p>
+                         <div class="alert alert-info mt-3" role="alert">
+                           You were only 150km away! Keep it up!
+                         </div>
+                         <div class="d-grid mt-4">
+                             <a href="#" class="btn btn-primary btn-lg">Next Round</a>
+                         </div>
+                         <!-- OR if last round: -->
+                         <!--
+                         <div class="d-grid mt-4">
+                             <a href="#" class="btn btn-success btn-lg">View Final Results</a>
+                         </div>
+                         -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 10: Game Over/Results Screen -->
+    <div class="state-container">
+        <h2>State 10: Game Over/Results Screen</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Game Over</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Player123
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1 class="display-4">Game Over!</h1>
+        <p class="lead">Congratulations, Player123!</p>
+
+        <div class="card my-4 mx-auto" style="max-width: 500px;">
+            <div class="card-body">
+                <h5 class="card-title">Your Final Score</h5>
+                <p class="display-3 text-success fw-bold">22,850</p>
+                 <p class="text-muted">(Average per round: 4570)</p>
+            </div>
+             <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between"><span>Round 1:</span> <strong>4520 pts</strong></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Round 2:</span> <strong>4810 pts</strong></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Round 3:</span> <strong>3950 pts</strong></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Round 4:</span> <strong>4670 pts</strong></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Round 5:</span> <strong>4900 pts (Best!)</strong></li>
+            </ul>
+            <div class="card-footer">
+                New Personal Best! Previous: 21,500
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="#" class="btn btn-primary btn-lg me-2">Play Again</a>
+            <a href="#" class="btn btn-secondary btn-lg me-2">Go to Dashboard</a>
+            <a href="#" class="btn btn-info btn-lg">View Leaderboard</a>
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 11: Leaderboard Page -->
+    <div class="state-container">
+        <h2>State 11: Leaderboard Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Play</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Leaderboard</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Player123!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Global Leaderboard</h1>
+
+        <!-- Filters -->
+         <div class="d-flex justify-content-center mb-4">
+             <div class="btn-group" role="group" aria-label="Leaderboard Filter">
+               <button type="button" class="btn btn-primary active">All Time High Score</button>
+               <button type="button" class="btn btn-outline-primary">Weekly High Score</button>
+               <button type="button" class="btn btn-outline-primary">Most Games Played</button>
+             </div>
+         </div>
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Highest Score</th>
+                    <th scope="col">Games Played</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1 <span class="text-warning">?</span></th>
+                    <td>GeoMasterX</td>
+                    <td>24,980</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <th scope="row">2 <span class="text-secondary">?</span></th>
+                    <td>AtlasAdventurer</td>
+                    <td>24,750</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <th scope="row">3 <span class="text-danger">?</span></th>
+                    <td>MapMaven</td>
+                    <td>24,500</td>
+                    <td>200</td>
+                </tr>
+                 <tr class="table-info"> <!-- Highlight current user -->
+                    <th scope="row">4</th>
+                    <td><strong>Player123 (You)</strong></td>
+                    <td><strong>22,850</strong></td>
+                    <td><strong>26</strong></td>
+                </tr>
+                 <tr>
+                    <th scope="row">5</th>
+                    <td>LocationLlama</td>
+                    <td>22,500</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>WanderWoman</td>
+                    <td>22,100</td>
+                    <td>110</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>GlobeTrotter99</td>
+                    <td>21,800</td>
+                    <td>80</td>
+                </tr>
+                 <!-- ... more rows -->
+                 <tr>
+                    <th scope="row">...</th>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+
+         <!-- Pagination -->
+         <nav aria-label="Leaderboard navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                 <li class="page-item"><a class="page-link" href="#">...</a></li>
+                 <li class="page-item"><a class="page-link" href="#">10</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 12: Profile Page -->
+    <div class="state-container">
+        <h2>State 12: Profile Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>User Profile</title>
+ </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Play</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Leaderboard</a></li>
+                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                           Player123
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Your Profile</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/150/007bff/ffffff.png?text=Avatar" class="img-thumbnail rounded-circle mb-3" alt="User Avatar">
+                <h4>Player123</h4>
+                <p class="text-muted">Member since: Oct 1, 2023</p>
+                <button class="btn btn-sm btn-outline-secondary">Change Avatar</button>
+                <button class="btn btn-sm btn-outline-primary mt-2">Edit Profile Details</button>
+            </div>
+            <div class="col-md-8">
+                <h3>Account Details</h3>
+                 <form>
+                    <div class="mb-3 row">
+                        <label for="profileUsername" class="col-sm-3 col-form-label">Username:</label>
+                        <div class="col-sm-9">
+                           <input type="text" readonly class="form-control-plaintext" id="profileUsername" value="Player123">
+                        </div>
+                    </div>
+                     <div class="mb-3 row">
+                        <label for="profileEmail" class="col-sm-3 col-form-label">Email:</label>
+                         <div class="col-sm-9">
+                           <input type="email" class="form-control" id="profileEmail" value="player123@example.com" disabled>
+                           <small class="form-text text-muted">Email changes require confirmation.</small>
+                        </div>
+                    </div>
+                     <div class="mb-3 row">
+                         <label class="col-sm-3 col-form-label">Password:</label>
+                        <div class="col-sm-9">
+                            <button type="button" class="btn btn-sm btn-warning">Change Password</button>
+                        </div>
+                    </div>
+                      <div class="text-end">
+                            <button type="submit" class="btn btn-primary" disabled>Save Changes</button>
+                       </div>
+                 </form>
+
+                 <h3 class="mt-5">Game Statistics</h3>
+                 <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">Total Games Played <span class="badge bg-primary rounded-pill">26</span></li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">Highest Score <span class="badge bg-success rounded-pill">22,850</span></li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center">Average Score <span class="badge bg-info rounded-pill">4570</span></li>
+                        </ul>
+                     </div>
+                     <div class="col-sm-6">
+                         <ul class="list-group">
+                             <li class="list-group-item d-flex justify-content-between align-items-center">World Explorer Rank <span class="badge bg-secondary rounded-pill">#15</span></li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center">Landmarks Rank <span class="badge bg-secondary rounded-pill">#22</span></li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center">Achievements Unlocked <span class="badge bg-warning rounded-pill">5 / 20</span></li>
+                         </ul>
+                     </div>
+                 </div>
+
+                <h3 class="mt-5">Recent Game History</h3>
+                <table class="table table-sm table-hover">
+                     <thead>
+                        <tr><th>Date</th><th>Mode</th><th>Score</th><th>Details</th></tr>
+                     </thead>
+                     <tbody>
+                        <tr><td>Oct 26</td><td>World Explorer</td><td>22,850</td><td><a href="#">View</a></td></tr>
+                        <tr><td>Oct 25</td><td>Famous Landmarks</td><td>19,500</td><td><a href="#">View</a></td></tr>
+                        <tr><td>Oct 23</td><td>Timed Challenge</td><td>18 Locations</td><td><a href="#">View</a></td></tr>
+                         <!-- More history -->
+                     </tbody>
+                </table>
+                 <div class="text-center">
+                   <a href="#">View Full Game History</a>
+                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 13: Forgot Password Page -->
+    <div class="state-container">
+        <h2>State 13: Forgot Password Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Reset Your Password</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">Enter the email address associated with your account, and we ll send you a link to reset your password.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="resetEmail" required placeholder="Enter your email">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card-footer text-center">
+                        Remembered your password? <a href="#">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 14: Forgot Password - Confirmation -->
+    <div class="state-container">
+        <h2>State 14: Forgot Password - Confirmation</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Reset Link Sent</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Geo-Guessing Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                 <div class="alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Check Your Email!</h4>
+                    <p>If an account exists for <strong>user@example.com</strong>, you will receive an email with instructions on how to reset your password shortly.</p>
+                    <hr>
+                    <p class="mb-0">Please check your spam folder if you do not see the email within a few minutes.</p>
+                </div>
+                <div class="text-center mt-4">
+                     <a href="#" class="btn btn-secondary">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2023 Geo-Guessing Game. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

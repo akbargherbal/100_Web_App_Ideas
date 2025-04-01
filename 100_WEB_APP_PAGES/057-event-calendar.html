@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Event Calendar - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home - Logged Out</title>
+    <style>
+        .calendar-day { min-height: 100px; border: 1px solid #eee; padding: 5px; }
+        .calendar-header { font-weight: bold; text-align: center; }
+        .event-public { background-color: #d1ecf1; border-radius: 3px; padding: 2px 4px; margin-bottom: 3px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+            <h1>Welcome to Event Calendar</h1>
+            <p class="lead">Organize your events efficiently. Sign up or log in to get started.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+              <h5>October 2024</h5>
+              <div>
+                  <button class="btn btn-sm btn-outline-secondary">&lt; Prev</button>
+                  <button class="btn btn-sm btn-outline-secondary">Next &gt;</button>
+              </div>
+          </div>
+          <div class="card-body p-0">
+              <div class="row g-0 calendar-header">
+                  <div class="col border p-2">Sun</div>
+                  <div class="col border p-2">Mon</div>
+                  <div class="col border p-2">Tue</div>
+                  <div class="col border p-2">Wed</div>
+                  <div class="col border p-2">Thu</div>
+                  <div class="col border p-2">Fri</div>
+                  <div class="col border p-2">Sat</div>
+              </div>
+              <div class="row g-0"> <!-- Week 1 -->
+                  <div class="col calendar-day text-muted">30</div>
+                  <div class="col calendar-day text-muted">31</div>
+                  <div class="col calendar-day">1</div>
+                  <div class="col calendar-day">2 <div class="event-public">Public Holiday</div></div>
+                  <div class="col calendar-day">3</div>
+                  <div class="col calendar-day">4</div>
+                  <div class="col calendar-day">5</div>
+              </div>
+              <div class="row g-0"> <!-- Week 2 -->
+                  <div class="col calendar-day">6</div>
+                  <div class="col calendar-day">7</div>
+                  <div class="col calendar-day">8</div>
+                  <div class="col calendar-day">9</div>
+                  <div class="col calendar-day">10 <div class="event-public">Community Meetup</div></div>
+                  <div class="col calendar-day">11</div>
+                  <div class="col calendar-day">12</div>
+              </div>
+               <!-- More weeks placeholder -->
+               <div class="row g-0">
+                  <div class="col calendar-day">13</div>
+                  <div class="col calendar-day">14</div>
+                  <div class="col calendar-day">15</div>
+                  <div class="col calendar-day">16</div>
+                  <div class="col calendar-day">17</div>
+                  <div class="col calendar-day">18</div>
+                  <div class="col calendar-day">19</div>
+              </div>
+              <div class="row g-0">
+                  <div class="col calendar-day">20</div>
+                  <div class="col calendar-day">21</div>
+                  <div class="col calendar-day">22</div>
+                  <div class="col calendar-day">23</div>
+                  <div class="col calendar-day">24</div>
+                  <div class="col calendar-day">25</div>
+                  <div class="col calendar-day">26</div>
+              </div>
+              <div class="row g-0">
+                  <div class="col calendar-day">27</div>
+                  <div class="col calendar-day">28</div>
+                  <div class="col calendar-day">29</div>
+                  <div class="col calendar-day">30</div>
+                  <div class="col calendar-day">31</div>
+                  <div class="col calendar-day text-muted">1</div>
+                  <div class="col calendar-day text-muted">2</div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About Us</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About Event Calendar</h1>
+        <hr>
+        <p class="lead">Event Calendar is your go-to solution for organizing and managing events seamlessly.</p>
+        <p>Our interactive calendar helps you keep track of your personal and professional commitments, set reminders, and share events with others. Built with simplicity and usability in mind, Event Calendar aims to make scheduling effortless.</p>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Intuitive calendar view (Month, Week, Day)</li>
+            <li>Easy event creation and editing</li>
+            <li>Customizable reminders</li>
+            <li>Event sharing options (placeholder)</li>
+            <li>User accounts for personalized experience</li>
+        </ul>
+
+        <h2>Our Mission</h2>
+        <p>To provide a reliable and user-friendly platform for event management, helping individuals and teams stay organized and connected.</p>
+
+        <h2>Contact Us</h2>
+        <p>For inquiries, please contact us at <a href="mailto:support@eventcalendar.example.com">support@eventcalendar.example.com</a>.</p>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+    <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Login</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#!">Forgot Password?</a>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <span>Don't have an account? </span><a href="#!">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 4: Login Page (Error State) -->
+    <div class="state-container">
+        <h2>State 4: Login Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login Error</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Login</h3>
+                        <div class="alert alert-danger" role="alert">
+                            Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" value="wrong@example.com">
+                             </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password">
+                                <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#!">Forgot Password?</a>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <span>Dont have an account? </span><a href="#!">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 5: Signup Page -->
+    <div class="state-container">
+        <h2>State 5: Signup Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Create Account</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Choose a password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck">
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#!">Terms & Conditions</a></label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <span>Already have an account? </span><a href="#!">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 6: Signup Page (Validation Error State) -->
+    <div class="state-container">
+        <h2>State 6: Signup Page (Validation Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Create Account</h3>
+                         <div class="alert alert-danger" role="alert">
+                            Please fix the errors below.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter email" value="user@domain">
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Choose a password">
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm password">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck">
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#!">Terms & Conditions</a></label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                             <hr>
+                            <div class="text-center">
+                                <span>Already have an account? </span><a href="#!">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 7: Home Page (Logged In) -->
+    <div class="state-container">
+        <h2>State 7: Home Page (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Home - Logged In</title>
+     <style>
+        .calendar-day { min-height: 100px; border: 1px solid #eee; padding: 5px; position: relative; }
+        .calendar-header { font-weight: bold; text-align: center; }
+        .event-user { background-color: #cce5ff; border-radius: 3px; padding: 2px 4px; margin-bottom: 3px; font-size: 0.8em; display: block; cursor: pointer; }
+        .event-shared { background-color: #d4edda; border-radius: 3px; padding: 2px 4px; margin-bottom: 3px; font-size: 0.8em; display: block; cursor: pointer; }
+        .add-event-btn { position: absolute; top: 5px; right: 5px; display: none; }
+        .calendar-day:hover .add-event-btn { display: inline-block; }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3>My Calendar</h3>
+            <a href="#!" class="btn btn-success"><i class="bi bi-plus-circle"></i> Add New Event</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+              <h5>October 2024</h5>
+              <div>
+                  <button class="btn btn-sm btn-outline-secondary">&lt; Prev</button>
+                  <button class="btn btn-sm btn-outline-secondary">Next &gt;</button>
+              </div>
+          </div>
+          <div class="card-body p-0">
+              <div class="row g-0 calendar-header">
+                  <div class="col border p-2">Sun</div>
+                  <div class="col border p-2">Mon</div>
+                  <div class="col border p-2">Tue</div>
+                  <div class="col border p-2">Wed</div>
+                  <div class="col border p-2">Thu</div>
+                  <div class="col border p-2">Fri</div>
+                  <div class="col border p-2">Sat</div>
+              </div>
+              <div class="row g-0"> <!-- Week 1 -->
+                  <div class="col calendar-day text-muted">30 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day text-muted">31 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">1 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">2 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">3 <span class="event-user" title="Team Meeting">Team Meeting</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">4 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">5 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+              </div>
+              <div class="row g-0"> <!-- Week 2 -->
+                  <div class="col calendar-day">6 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">7 <span class="event-user" title="Dentist Appointment">Dentist Appt.</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">8 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">9 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">10 <span class="event-shared" title="Project Deadline (Shared)">Project Deadline</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">11 <span class="event-user" title="Dinner with Friends">Dinner</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">12 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+              </div>
+              <!-- More weeks placeholder -->
+              <div class="row g-0">
+                  <div class="col calendar-day">13 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">14 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">15 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">16 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">17 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">18 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">19 <span class="event-user" title="Weekend Trip">Weekend Trip</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+              </div>
+               <div class="row g-0">
+                  <div class="col calendar-day">20 <span class="event-user" title="Weekend Trip">Weekend Trip</span><a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">21 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">22 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">23 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">24 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">25 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">26 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+              </div>
+               <div class="row g-0">
+                  <div class="col calendar-day">27 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">28 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">29 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">30 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day">31 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day text-muted">1 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+                  <div class="col calendar-day text-muted">2 <a href="#!" class="btn btn-sm btn-outline-primary add-event-btn"><i class="bi bi-plus"></i></a></div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 8: Add Event Form -->
+    <div class="state-container">
+        <h2>State 8: Add Event Form</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Add New Event</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="bi bi-calendar-plus"></i> Add New Event</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="eventTitle" class="form-label">Event Title</label>
+                                <input type="text" class="form-control" id="eventTitle" placeholder="e.g., Team Meeting">
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="eventDescription" rows="3" placeholder="Details about the event"></textarea>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartDate" class="form-label">Start Date</label>
+                                    <input type="date" class="form-control" id="eventStartDate" value="2024-10-26">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartTime" class="form-label">Start Time</label>
+                                    <input type="time" class="form-control" id="eventStartTime">
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndDate" class="form-label">End Date</label>
+                                    <input type="date" class="form-control" id="eventEndDate" value="2024-10-26">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndTime" class="form-label">End Time</label>
+                                    <input type="time" class="form-control" id="eventEndTime">
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="allDayEvent">
+                                <label class="form-check-label" for="allDayEvent">All-day event</label>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventReminder" class="form-label">Reminder</label>
+                                <select class="form-select" id="eventReminder">
+                                    <option selected>No reminder</option>
+                                    <option value="5m">5 minutes before</option>
+                                    <option value="15m">15 minutes before</option>
+                                    <option value="30m">30 minutes before</option>
+                                    <option value="1h">1 hour before</option>
+                                    <option value="1d">1 day before</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventColor" class="form-label">Event Color</label>
+                                <input type="color" class="form-control form-control-color" id="eventColor" value="#0d6efd" title="Choose event color">
+                            </div>
+                             <div class="d-flex justify-content-end">
+                                <a href="#!" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Save Event</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 9: Add Event Form (Error State) -->
+    <div class="state-container">
+        <h2>State 9: Add Event Form (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Add New Event - Error</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="bi bi-calendar-plus"></i> Add New Event</h3>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                             Please correct the errors below.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="eventTitle" class="form-label">Event Title</label>
+                                <input type="text" class="form-control is-invalid" id="eventTitle" placeholder="e.g., Team Meeting">
+                                <div class="invalid-feedback">
+                                    Event title is required.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="eventDescription" rows="3" placeholder="Details about the event"></textarea>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartDate" class="form-label">Start Date</label>
+                                    <input type="date" class="form-control is-invalid" id="eventStartDate" value="">
+                                    <div class="invalid-feedback">
+                                        Start date is required.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartTime" class="form-label">Start Time</label>
+                                    <input type="time" class="form-control" id="eventStartTime">
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndDate" class="form-label">End Date</label>
+                                    <input type="date" class="form-control is-invalid" id="eventEndDate" value="2024-10-25">
+                                    <div class="invalid-feedback">
+                                        End date cannot be before start date.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndTime" class="form-label">End Time</label>
+                                    <input type="time" class="form-control" id="eventEndTime">
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="allDayEvent">
+                                <label class="form-check-label" for="allDayEvent">All-day event</label>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventReminder" class="form-label">Reminder</label>
+                                <select class="form-select" id="eventReminder">
+                                    <option selected>No reminder</option>
+                                    <option value="5m">5 minutes before</option>
+                                    <option value="15m">15 minutes before</option>
+                                    <option value="30m">30 minutes before</option>
+                                    <option value="1h">1 hour before</option>
+                                    <option value="1d">1 day before</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventColor" class="form-label">Event Color</label>
+                                <input type="color" class="form-control form-control-color" id="eventColor" value="#0d6efd" title="Choose event color">
+                            </div>
+                             <div class="d-flex justify-content-end">
+                                <a href="#!" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Save Event</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 10: View Event Details -->
+    <div class="state-container">
+        <h2>State 10: View Event Details</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Event Details</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="card shadow-sm">
+                     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="bi bi-calendar-event"></i> Event Details</h4>
+                         <div>
+                            <a href="#!" class="btn btn-light btn-sm me-1"><i class="bi bi-pencil-square"></i> Edit</a>
+                            <a href="#!" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
+                         </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Team Meeting</h5>
+                        <hr>
+                        <p><strong><i class="bi bi-clock"></i> Date & Time:</strong><br> October 26, 2024, 10:00 AM - 11:30 AM</p>
+                        <p><strong><i class="bi bi-text-paragraph"></i> Description:</strong><br> Weekly sync meeting to discuss project progress and roadblocks. Please come prepared with updates.</p>
+                        <p><strong><i class="bi bi-bell"></i> Reminder:</strong><br> 15 minutes before</p>
+                        <p><strong><i class="bi bi-palette"></i> Color:</strong><br> <span class="badge" style="background-color: #0d6efd;">&nbsp;</span> Default Blue</p>
+                         <div class="mt-4">
+                            <a href="#!" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Calendar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 11: Edit Event Form -->
+    <div class="state-container">
+        <h2>State 11: Edit Event Form</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Edit Event</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="bi bi-pencil-square"></i> Edit Event</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="eventTitle" class="form-label">Event Title</label>
+                                <input type="text" class="form-control" id="eventTitle" value="Team Meeting">
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="eventDescription" rows="3">Weekly sync meeting to discuss project progress and roadblocks. Please come prepared with updates.</textarea>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartDate" class="form-label">Start Date</label>
+                                    <input type="date" class="form-control" id="eventStartDate" value="2024-10-26">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventStartTime" class="form-label">Start Time</label>
+                                    <input type="time" class="form-control" id="eventStartTime" value="10:00">
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndDate" class="form-label">End Date</label>
+                                    <input type="date" class="form-control" id="eventEndDate" value="2024-10-26">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventEndTime" class="form-label">End Time</label>
+                                    <input type="time" class="form-control" id="eventEndTime" value="11:30">
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="allDayEvent">
+                                <label class="form-check-label" for="allDayEvent">All-day event</label>
+                           </div>
+                             <div class="mb-3">
+                                <label for="eventReminder" class="form-label">Reminder</label>
+                                <select class="form-select" id="eventReminder">
+                                    <option>No reminder</option>
+                                    <option value="5m">5 minutes before</option>
+                                    <option value="15m" selected>15 minutes before</option>
+                                    <option value="30m">30 minutes before</option>
+                                    <option value="1h">1 hour before</option>
+                                    <option value="1d">1 day before</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="eventColor" class="form-label">Event Color</label>
+                                <input type="color" class="form-control form-control-color" id="eventColor" value="#0d6efd" title="Choose event color">
+                            </div>
+                             <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-danger"><i class="bi bi-trash"></i> Delete Event</button>
+                                <div>
+                                    <a href="#!" class="btn btn-secondary me-2">Cancel</a>
+                                    <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+     <!-- State 12: Settings/Profile Page -->
+    <div class="state-container">
+        <h2>State 12: Settings/Profile Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Settings</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">My Events</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+                 <div class="navbar-nav ms-auto">
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a class="btn btn-outline-light" href="#!">Logout</a>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Settings</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                  <a href="#!" class="list-group-item list-group-item-action active" aria-current="true"><i class="bi bi-person-fill me-2"></i> Profile</a>
+                  <a href="#!" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill me-2"></i> Notifications</a>
+                  <a href="#!" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock-fill me-2"></i> Security</a>
+                  <a href="#!" class="list-group-item list-group-item-action"><i class="bi bi-palette-fill me-2"></i> Appearance</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Profile Information</h5>
+                         <form>
+                            <div class="mb-3 row">
+                                <label for="profileName" class="col-sm-3 col-form-label">Full Name</label>
+                                <div class="col-sm-9">
+                                <input type="text" class="form-control" id="profileName" value="Current User Name">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                <input type="email" readonly class="form-control-plaintext" id="profileEmail" value="user@example.com">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileTimezone" class="col-sm-3 col-form-label">Timezone</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" id="profileTimezone">
+                                        <option>(GMT-08:00) Pacific Time</option>
+                                        <option selected>(GMT-05:00) Eastern Time</option>
+                                        <option>(GMT+00:00) UTC</option>
+                                        <option>(GMT+01:00) Central European Time</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileLang" class="col-sm-3 col-form-label">Language</label>
+                                <div class="col-sm-9">
+                                    <select class="form-select" id="profileLang">
+                                        <option selected>English</option>
+                                        <option>Español</option>
+                                        <option>Français</option>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="d-flex justify-content-end mt-4">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save Profile Changes</button>
+                            </div>
+                        </form>
+
+                         <hr class="my-4">
+
+                         <h5 class="card-title mb-3">Change Password</h5>
+                         <form>
+                             <div class="mb-3 row">
+                                <label for="currentPassword" class="col-sm-3 col-form-label">Current Password</label>
+                                <div class="col-sm-9">
+                                <input type="password" class="form-control" id="currentPassword">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
+                                <div class="col-sm-9">
+                                <input type="password" class="form-control" id="newPassword">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="confirmNewPassword" class="col-sm-3 col-form-label">Confirm New Password</label>
+                                <div class="col-sm-9">
+                                <input type="password" class="form-control" id="confirmNewPassword">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end mt-3">
+                                <button type="submit" class="btn btn-warning"><i class="bi bi-key-fill"></i> Update Password</button>
+                            </div>
+                         </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+
+    <!-- State 13: Forgot Password Page -->
+    <div class="state-container">
+        <h2>State 13: Forgot Password Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Forgot Password</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-3">Forgot Password?</h3>
+                        <p class="text-center text-muted mb-4">Enter your email address below and we'll send you a link to reset your password.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="resetEmail" placeholder="Enter your registered email">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#!">Back to Login</a>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+
+    <!-- State 14: Forgot Password - Success/Email Sent -->
+    <div class="state-container">
+        <h2>State 14: Forgot Password - Success/Email Sent</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Password Reset Email Sent</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card text-center">
+                    <div class="card-body">
+                         <i class="bi bi-envelope-check-fill text-success display-4 mb-3"></i>
+                        <h3 class="card-title">Check Your Email</h3>
+                        <p class="text-muted">If an account exists for <strong>user@example.com</strong>, you will receive an email with instructions on how to reset your password.</p>
+                         <p class="text-muted small">If you don't receive an email, please check your spam folder or try again.</p>
+                        <a href="#!" class="btn btn-primary mt-3">Back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 15: Reset Password Page -->
+    <div class="state-container">
+        <h2>State 15: Reset Password Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Reset Password</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Reset Your Password</h3>
+                        <form>
+                             <div class="mb-3">
+                                <label for="newResetPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newResetPassword" placeholder="Enter new password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmResetPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmResetPassword" placeholder="Confirm new password">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Reset Password</button>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+     <!-- State 16: Reset Password Page (Error State) -->
+    <div class="state-container">
+        <h2>State 16: Reset Password Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Reset Password Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Reset Your Password</h3>
+                         <div class="alert alert-danger" role="alert">
+                             Password reset failed. Please check the errors.
+                        </div>
+                        <form>
+                             <div class="mb-3">
+                                <label for="newResetPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control is-invalid" id="newResetPassword" placeholder="Enter new password">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmResetPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmResetPassword" placeholder="Confirm new password">
+                                <div class="invalid-feedback">
+                                     Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Reset Password</button>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+                 <div class="alert alert-warning text-center mt-3 small" role="alert">
+                    The password reset link may be invalid or expired. <a href="#!" class="alert-link">Request a new one</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+
+     <!-- State 17: Password Reset Success -->
+    <div class="state-container">
+        <h2>State 17: Password Reset Success</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Password Reset Successful</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Event Calendar</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#!">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card text-center">
+                    <div class="card-body">
+                         <i class="bi bi-check-circle-fill text-success display-4 mb-3"></i>
+                        <h3 class="card-title">Password Reset Successful!</h3>
+                        <p class="text-muted">Your password has been updated. You can now log in with your new password.</p>
+                        <a href="#!" class="btn btn-primary mt-3">Go to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2024 Event Calendar. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

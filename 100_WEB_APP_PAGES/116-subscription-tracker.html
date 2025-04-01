@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .iframe-container {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Subscription Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="iframe-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-light ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Never Overpay for Subscriptions Again</h1>
+                <p class="col-md-8 fs-4 mx-auto">Track all your recurring payments in one place, monitor spending, and get timely reminders before the next billing date.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Get Started for Free</a>
+                <a class="btn btn-outline-secondary btn-lg ms-2" href="#" role="button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Track Everything</h2>
+                    <p>Easily add subscriptions from streaming services, software, memberships, and more. See exactly where your money is going.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Stay Informed</h2>
+                    <p>Get insights into your total monthly and annual subscription costs. Identify subscriptions you no longer need.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="iframe-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-light ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1>About Subscription Tracker</h1>
+                <p class="lead">We help you take control of your recurring expenses.</p>
+                <hr>
+                <p>In today&#39;s world, it&#39;s easy to sign up for numerous subscriptions – streaming services, software licenses, gym memberships, online courses, and more. While individually small, these costs add up quickly and often go unnoticed.</p>
+                <p>Subscription Tracker was built to solve this problem. Our simple yet powerful tool allows you to:</p>
+                <ul>
+                    <li>List all your active subscriptions in one central dashboard.</li>
+                    <li>Track the cost, billing cycle, and start date for each subscription.</li>
+                    <li>Visualize your total monthly and annual spending on subscriptions.</li>
+                    <li>Set reminders for upcoming payments (future feature).</li>
+                    <li>Easily identify and cancel subscriptions you no longer use.</li>
+                </ul>
+                <p>Our mission is to provide clarity and control over your recurring payments, helping you save money and manage your finances more effectively.</p>
+                <p>Get started today and see how much you could be saving!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center footer fixed-bottom bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <div class="iframe-container">
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        html, body { height: 100%; }
+        body { display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; }
+        .form-signup { max-width: 380px; padding: 15px; }
+    </style>
+</head>
+<body>
+    <main class="form-signup w-100 m-auto bg-white p-4 rounded shadow">
+        <form>
+            <div class="text-center mb-4">
+               <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+               <p>Track your subscriptions today!</p>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+                <label for="floatingName">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+             <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                <label for="floatingConfirmPassword">Confirm Password</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <p class="mt-3 mb-1 text-center text-muted">Already have an account? <a href="#">Login</a></p>
+            <p class="mt-4 mb-3 text-muted text-center">&copy; 2023 Subscription Tracker</p>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page (Error State) -->
+    <div class="iframe-container">
+        <h2>State 4: Sign Up Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Error - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style>
+        html, body { height: 100%; }
+        body { display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; }
+        .form-signup { max-width: 380px; padding: 15px; }
+    </style>
+</head>
+<body>
+     <main class="form-signup w-100 m-auto bg-white p-4 rounded shadow">
+        <form>
+            <div class="text-center mb-4">
+               <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+               <p>Track your subscriptions today!</p>
+            </div>
+            
+            <div class="alert alert-danger" role="alert">
+              Please correct the errors below.
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control is-invalid" id="floatingName" placeholder="Your Name" value="Test User">
+                <label for="floatingName">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="invalid-email">
+                <label for="floatingInput">Email address</label>
+                <div class="invalid-feedback">
+                    Please provide a valid email address.
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="short">
+                <label for="floatingPassword">Password</label>
+                 <div class="invalid-feedback">
+                    Password must be at least 8 characters long.
+                </div>
+            </div>
+             <div class="form-floating mb-3">
+                <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" value="notequal">
+                <label for="floatingConfirmPassword">Confirm Password</label>
+                 <div class="invalid-feedback">
+                    Passwords do not match.
+                </div>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+            <p class="mt-3 mb-1 text-center text-muted">Already have an account? <a href="#">Login</a></p>
+            <p class="mt-4 mb-3 text-muted text-center">&copy; 2023 Subscription Tracker</p>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Login Page -->
+    <div class="iframe-container">
+        <h2>State 5: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        html, body { height: 100%; }
+        body { display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; }
+        .form-signin { max-width: 380px; padding: 15px; }
+    </style>
+</head>
+<body>
+    <main class="form-signin w-100 m-auto bg-white p-4 rounded shadow">
+        <form>
+             <div class="text-center mb-4">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+             </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p class="mt-3 mb-1 text-center">
+                <a href="#">Forgot password?</a>
+            </p>
+             <p class="mt-1 mb-1 text-center text-muted">Don't have an account? <a href="#">Sign Up</a></p>
+            <p class="mt-4 mb-3 text-muted text-center">&copy; 2023 Subscription Tracker</p>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Login Page (Error State) -->
+    <div class="iframe-container">
+        <h2>State 6: Login Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Error - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        html, body { height: 100%; }
+        body { display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; }
+        .form-signin { max-width: 380px; padding: 15px; }
+    </style>
+</head>
+<body>
+     <main class="form-signin w-100 m-auto bg-white p-4 rounded shadow">
+        <form>
+             <div class="text-center mb-4">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+             </div>
+
+             <div class="alert alert-danger" role="alert">
+                Invalid email or password. Please try again.
+             </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="user@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="wrongpass">
+                <label for="floatingPassword">Password</label>
+                 <div class="invalid-feedback">
+                    Incorrect password.
+                 </div>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+             <p class="mt-3 mb-1 text-center">
+                <a href="#">Forgot password?</a>
+            </p>
+             <p class="mt-1 mb-1 text-center text-muted">Don't have an account? <a href="#">Sign Up</a></p>
+            <p class="mt-4 mb-3 text-muted text-center">&copy; 2023 Subscription Tracker</p>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 7: Dashboard (Empty State) -->
+    <div class="iframe-container">
+        <h2>State 7: Dashboard (Empty State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                 <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add Subscription
+                 </a>
+            </div>
+        </div>
+
+        <div class="card text-center shadow-sm">
+           <div class="card-body">
+                <h5 class="card-title">No Subscriptions Yet!</h5>
+                <p class="card-text">You haven't added any subscriptions. Click the button below to add your first one.</p>
+                <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Add Your First Subscription</a>
+            </div>
+            <div class="card-footer text-muted">
+                Total Monthly Cost: $0.00 | Total Annual Cost: $0.00
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center fixed-bottom bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Add Subscription Page -->
+    <div class="iframe-container">
+        <h2>State 8: Add Subscription Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Subscription - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="mb-4">Add New Subscription</h1>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="subName" class="form-label">Subscription Name</label>
+                        <input type="text" class="form-control" id="subName" placeholder="e.g., Netflix, Spotify Premium" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subCost" class="form-label">Cost</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" step="0.01" class="form-control" id="subCost" placeholder="e.g., 15.99" required>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <label for="subCycle" class="form-label">Billing Cycle</label>
+                            <select class="form-select" id="subCycle" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Annually">Bi-Annually</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subStartDate" class="form-label">Next Billing Date</label>
+                            <input type="date" class="form-control" id="subStartDate" required>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="subCategory" class="form-label">Category</label>
+                             <select class="form-select" id="subCategory">
+                                <option selected value="">Optional: Select a category...</option>
+                                <option value="Streaming">Streaming</option>
+                                <option value="Software">Software</option>
+                                <option value="Music">Music</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="News">News</option>
+                                <option value="Health & Fitness">Health & Fitness</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="subNotes" class="form-label">Notes (Optional)</label>
+                        <textarea class="form-control" id="subNotes" rows="3" placeholder="e.g., Premium plan, shared account"></textarea>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button type="submit" class="btn btn-primary me-2"><i class="bi bi-check-circle"></i> Save Subscription</button>
+                    <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancel</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: Add Subscription Page (Error State) -->
+    <div class="iframe-container">
+        <h2>State 9: Add Subscription Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Subscription - Error - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="mb-4">Add New Subscription</h1>
+
+                <div class="alert alert-danger" role="alert">
+                  Please fix the errors below before saving.
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="subName" class="form-label">Subscription Name</label>
+                        <input type="text" class="form-control is-invalid" id="subName" placeholder="e.g., Netflix, Spotify Premium" required value="">
+                        <div class="invalid-feedback">
+                            Subscription name is required.
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subCost" class="form-label">Cost</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">$</span>
+                                <input type="number" step="0.01" class="form-control is-invalid" id="subCost" placeholder="e.g., 15.99" required value="-10">
+                                 <div class="invalid-feedback">
+                                    Please enter a valid positive cost.
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <label for="subCycle" class="form-label">Billing Cycle</label>
+                            <select class="form-select is-invalid" id="subCycle" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Annually">Bi-Annually</option>
+                            </select>
+                             <div class="invalid-feedback">
+                                Please select a billing cycle.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subStartDate" class="form-label">Next Billing Date</label>
+                            <input type="date" class="form-control is-invalid" id="subStartDate" required>
+                            <div class="invalid-feedback">
+                                Please select the next billing date.
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="subCategory" class="form-label">Category</label>
+                             <select class="form-select" id="subCategory">
+                                <option selected value="">Optional: Select a category...</option>
+                                <option value="Streaming">Streaming</option>
+                                <option value="Software">Software</option>
+                                <option value="Music">Music</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="News">News</option>
+                                <option value="Health & Fitness">Health & Fitness</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subNotes" class="form-label">Notes (Optional)</label>
+                        <textarea class="form-control" id="subNotes" rows="3" placeholder="e.g., Premium plan, shared account"></textarea>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button type="submit" class="btn btn-primary me-2"><i class="bi bi-check-circle"></i> Save Subscription</button>
+                    <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancel</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 10: Dashboard (With Subscriptions) -->
+    <div class="iframe-container">
+        <h2>State 10: Dashboard (With Subscriptions)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                 <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add Subscription
+                 </a>
+            </div>
+        </div>
+
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+          Subscription "Netflix" added successfully!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Monthly Cost</h5>
+                        <p class="card-text fs-4 fw-bold">$45.98</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6">
+                 <div class="card text-center">
+                     <div class="card-body">
+                        <h5 class="card-title">Total Annual Cost</h5>
+                        <p class="card-text fs-4 fw-bold">$551.76</p> (Calculated from monthly + yearly)
+                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>Your Subscriptions</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Billing Cycle</th>
+                        <th scope="col">Next Billing Date</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Netflix</td>
+                        <td>$15.99</td>
+                        <td>Monthly</td>
+                        <td>2023-12-15</td>
+                        <td><span class="badge bg-info">Streaming</span></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spotify Premium</td>
+                        <td>$10.99</td>
+                        <td>Monthly</td>
+                        <td>2023-12-20</td>
+                         <td><span class="badge bg-success">Music</span></td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adobe Creative Cloud</td>
+                        <td>$54.99</td>
+                        <td>Monthly</td>
+                         <td>2023-12-05</td>
+                         <td><span class="badge bg-warning text-dark">Software</span></td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amazon Prime</td>
+                        <td>$139.00</td>
+                        <td>Yearly</td>
+                        <td>2024-03-01</td>
+                         <td><span class="badge bg-secondary">Other</span></td>
+                          <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 11: Edit Subscription Page -->
+    <div class="iframe-container">
+        <h2>State 11: Edit Subscription Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Subscription - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="mb-4">Edit Subscription: Netflix</h1>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="subName" class="form-label">Subscription Name</label>
+                        <input type="text" class="form-control" id="subName" value="Netflix" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subCost" class="form-label">Cost</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" step="0.01" class="form-control" id="subCost" value="15.99" required>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <label for="subCycle" class="form-label">Billing Cycle</label>
+                            <select class="form-select" id="subCycle" required>
+                                <option disabled value="">Choose...</option>
+                                <option value="Monthly" selected>Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Annually">Bi-Annually</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subStartDate" class="form-label">Next Billing Date</label>
+                            <input type="date" class="form-control" id="subStartDate" value="2023-12-15" required>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="subCategory" class="form-label">Category</label>
+                             <select class="form-select" id="subCategory">
+                                <option value="">Optional: Select a category...</option>
+                                <option value="Streaming" selected>Streaming</option>
+                                <option value="Software">Software</option>
+                                <option value="Music">Music</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="News">News</option>
+                                <option value="Health & Fitness">Health & Fitness</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="subNotes" class="form-label">Notes (Optional)</label>
+                        <textarea class="form-control" id="subNotes" rows="3" placeholder="e.g., Premium plan, shared account">Standard HD Plan</textarea>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button type="submit" class="btn btn-primary me-2"><i class="bi bi-check-circle"></i> Update Subscription</button>
+                    <a href="#" class="btn btn-secondary me-2"><i class="bi bi-x-circle"></i> Cancel</a>
+                    <button type="button" class="btn btn-danger float-end"><i class="bi bi-trash"></i> Delete Subscription</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 12: Edit Subscription Page (Error State) -->
+    <div class="iframe-container">
+        <h2>State 12: Edit Subscription Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Subscription - Error - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="mb-4">Edit Subscription: Netflix</h1>
+
+                <div class="alert alert-danger" role="alert">
+                  Please fix the errors below before saving.
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="subName" class="form-label">Subscription Name</label>
+                        <input type="text" class="form-control is-invalid" id="subName" value="" required>
+                        <div class="invalid-feedback">
+                            Subscription name cannot be empty.
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="subCost" class="form-label">Cost</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">$</span>
+                                <input type="number" step="0.01" class="form-control is-invalid" id="subCost" value="abc" required>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid number for the cost.
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <label for="subCycle" class="form-label">Billing Cycle</label>
+                            <select class="form-select" id="subCycle" required>
+                                <option disabled value="">Choose...</option>
+                                <option value="Monthly" selected>Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Bi-Annually">Bi-Annually</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                         <div class="col-md-6">
+                            <label for="subStartDate" class="form-label">Next Billing Date</label>
+                            <input type="date" class="form-control is-invalid" id="subStartDate" value="" required>
+                              <div class="invalid-feedback">
+                                Billing date is required.
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="subCategory" class="form-label">Category</label>
+                             <select class="form-select" id="subCategory">
+                                <option value="" >Optional: Select a category...</option>
+                                <option value="Streaming" selected>Streaming</option>
+                                <option value="Software">Software</option>
+                                <option value="Music">Music</option>
+                                <option value="Gaming">Gaming</option>
+                                <option value="News">News</option>
+                                <option value="Health & Fitness">Health & Fitness</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="subNotes" class="form-label">Notes (Optional)</label>
+                        <textarea class="form-control" id="subNotes" rows="3" placeholder="e.g., Premium plan, shared account">Standard HD Plan</textarea>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button type="submit" class="btn btn-primary me-2"><i class="bi bi-check-circle"></i> Update Subscription</button>
+                    <a href="#" class="btn btn-secondary me-2"><i class="bi bi-x-circle"></i> Cancel</a>
+                    <button type="button" class="btn btn-danger float-end"><i class="bi bi-trash"></i> Delete Subscription</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 13: Dashboard (Delete Confirmation Shown - simulated visually) -->
+    <div class="iframe-container">
+        <h2>State 13: Dashboard (Delete Confirmation Shown - simulated visually)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Delete Confirm - Subscription Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+      /* Simulate modal backdrop */
+      .modal-backdrop-sim {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1040;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      /* Simulate modal dialog */
+      .modal-dialog-sim {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1050;
+        width: 90%;
+        max-width: 500px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Subscription Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                 <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add Subscription
+                 </a>
+            </div>
+        </div>
+
+         <!-- Background Content (slightly dimmed by modal overlay simulation) -->
+         <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Monthly Cost</h5>
+                        <p class="card-text fs-4 fw-bold">$45.98</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6">
+                 <div class="card text-center">
+                     <div class="card-body">
+                        <h5 class="card-title">Total Annual Cost</h5>
+                        <p class="card-text fs-4 fw-bold">$551.76</p> (Calculated from monthly + yearly)
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Your Subscriptions</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead>
+                     <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Billing Cycle</th>
+                        <th scope="col">Next Billing Date</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                 <tbody>
+                    <tr>
+                        <td>Netflix</td>
+                        <td>$15.99</td>
+                        <td>Monthly</td>
+                        <td>2023-12-15</td>
+                        <td><span class="badge bg-info">Streaming</span></td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <!-- Delete button that triggered the modal -->
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Spotify Premium</td>
+                        <td>$10.99</td>
+                        <td>Monthly</td>
+                        <td>2023-12-20</td>
+                         <td><span class="badge bg-success">Music</span></td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Adobe Creative Cloud</td>
+                        <td>$54.99</td>
+                        <td>Monthly</td>
+                         <td>2023-12-05</td>
+                         <td><span class="badge bg-warning text-dark">Software</span></td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Amazon Prime</td>
+                        <td>$139.00</td>
+                        <td>Yearly</td>
+                        <td>2024-03-01</td>
+                         <td><span class="badge bg-secondary">Other</span></td>
+                          <td>
+                            <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Simulated Modal -->
+    <div class="modal-backdrop-sim"></div>
+    <div class="modal-dialog-sim">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Deletion</h5>
+          <button type="button" class="btn-close" aria-label="Close"></button> <!-- Simulates closing -->
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete the subscription "Netflix"? This action cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary">Cancel</button> <!-- Simulates closing -->
+          <button type="button" class="btn btn-danger">Delete Subscription</button> <!-- Simulates confirm -->
+        </div>
+      </div>
+    </div>
+    <!-- End Simulated Modal -->
+
+
+     <footer class="py-3 my-4 border-top text-center bg-light">
+        <span class="text-muted">&copy; 2023 Subscription Tracker</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

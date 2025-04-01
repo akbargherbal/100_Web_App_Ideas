@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homebrewing Logbook - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height, adjust as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center">Homebrewing Logbook - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Home Page (Logged Out)</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn btn-primary btn-sm text-white ms-2" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="p-5 mb-4 bg-light rounded-3">
+                  <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Welcome to Homebrewing Logbook</h1>
+                    <p class="col-md-8 fs-4">Your digital companion for tracking every step of your brewing journey. Record recipes, monitor fermentation, and capture tasting notes with ease.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Login</a>
+                    <a href="#" class="btn btn-secondary btn-lg ms-2">Register Now</a>
+                  </div>
+                </div>
+
+                <div class="row align-items-md-stretch">
+                  <div class="col-md-6">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                      <h2>Track Your Brews</h2>
+                      <p>Never lose a recipe again. Keep detailed logs of ingredients, processes, and outcomes.</p>
+                      <button class="btn btn-outline-light" type="button">Learn More</button>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                      <h2>Monitor Fermentation</h2>
+                      <p>Log gravity readings, temperature changes, and important fermentation milestones.</p>
+                      <button class="btn btn-outline-secondary" type="button">Discover Features</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>About Page</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn btn-primary btn-sm text-white ms-2" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <h1>About Homebrewing Logbook</h1>
+                <p class="lead">This application was created to help homebrewers organize their brewing process from recipe formulation to final tasting.</p>
+                <hr>
+                <h2>Our Mission</h2>
+                <p>To provide a simple, intuitive, and effective tool for brewers of all levels to document and improve their craft. We believe that meticulous record-keeping is key to consistent and high-quality homebrew.</p>
+                <h2>Features</h2>
+                <ul>
+                    <li>Detailed recipe logging (ingredients, mash schedule, boil schedule, etc.)</li>
+                    <li>Fermentation tracking (gravity, temperature, notes)</li>
+                    <li>Structured tasting notes</li>
+                    <li>Easy access to your complete brew history</li>
+                    <li>Clean, responsive interface</li>
+                </ul>
+                <h2>Contact Us</h2>
+                <p>For questions or feedback, please reach out to contact@homebrewinglogbook.example.com.</p>
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+    <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Login</title>
+            <style> html, body { height: 100%; } body { display: flex; flex-direction: column; } .form-signin { max-width: 330px; padding: 1rem; margin: auto; } </style>
+        </head>
+        <body class="text-center">
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link btn btn-primary btn-sm text-white ms-2" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main class="form-signin w-100 m-auto">
+              <form>
+                <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                <p class="mt-3">
+                    <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-3">
+                    Don't have an account? <a href="#">Register here</a>
+                </p>
+                <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 Homebrewing Logbook</p>
+              </form>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Login Page (Error) -->
+    <div class="state-container">
+        <h2>State 4: Login Page (Error)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Login Error</title>
+            <style> html, body { height: 100%; } body { display: flex; flex-direction: column; } .form-signin { max-width: 330px; padding: 1rem; margin: auto; } </style>
+        </head>
+        <body class="text-center">
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link btn btn-primary btn-sm text-white ms-2" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main class="form-signin w-100 m-auto">
+              <form>
+                 <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                <div class="alert alert-danger" role="alert">
+                  Invalid email or password. Please try again.
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="user@example.com">
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                 <p class="mt-3">
+                    <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-3">
+                    Don't have an account? <a href="#">Register here</a>
+                </p>
+                <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 Homebrewing Logbook</p>
+              </form>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Registration Page -->
+    <div class="state-container">
+        <h2>State 5: Registration Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Register</title>
+             <style> html, body { height: 100%; } body { display: flex; flex-direction: column; } .form-register { max-width: 400px; padding: 1rem; margin: auto; } </style>
+        </head>
+        <body class="text-center">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active btn btn-primary btn-sm text-white ms-2" aria-current="page" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main class="form-register w-100 m-auto">
+              <form>
+                <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Create an Account</h1>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingUsername" placeholder="Username">
+                  <label for="floatingUsername">Username</label>
+                </div>
+                 <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+                 <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                 <p class="mt-3">
+                    Already have an account? <a href="#">Login here</a>
+                </p>
+                <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 Homebrewing Logbook</p>
+              </form>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Registration Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 6: Registration Page (Validation Error)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Register Error</title>
+            <style> html, body { height: 100%; } body { display: flex; flex-direction: column; } .form-register { max-width: 400px; padding: 1rem; margin: auto; } </style>
+        </head>
+        <body class="text-center">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active btn btn-primary btn-sm text-white ms-2" aria-current="page" href="#">Register</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main class="form-register w-100 m-auto">
+              <form>
+                 <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Create an Account</h1>
+
+                 <div class="alert alert-danger" role="alert">
+                  Please fix the errors below.
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control is-invalid" id="floatingUsername" placeholder="Username" value="user-123">
+                  <label for="floatingUsername">Username</label>
+                  <div class="invalid-feedback">
+                    Username is already taken.
+                  </div>
+                </div>
+                 <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" value="test@example.com">
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="short">
+                  <label for="floatingPassword">Password</label>
+                   <div class="invalid-feedback">
+                    Password must be at least 8 characters long.
+                  </div>
+                </div>
+                 <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" value="notsame">
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                   <div class="invalid-feedback">
+                    Passwords do not match.
+                  </div>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                 <p class="mt-3">
+                    Already have an account? <a href="#">Login here</a>
+                </p>
+                <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 Homebrewing Logbook</p>
+              </form>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Home Page/Dashboard (Logged In) -->
+    <div class="state-container">
+        <h2>State 7: Home Page/Dashboard (Logged In)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Dashboard</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">My Brews</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                      <a href="#" class="btn btn-sm btn-outline-primary">
+                        Add New Brew
+                      </a>
+                    </div>
+                 </div>
+
+                 <h2>Recent Brews</h2>
+                 <div class="row">
+                    <div class="col-md-4 mb-3">
+                       <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Pale Ale #5</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">American Pale Ale</h6>
+                            <p class="card-text">Brewed: 2023-10-15 | Status: Fermenting</p>
+                            <a href="#" class="card-link">View Details</a>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3">
+                       <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Stout Experiment</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Milk Stout</h6>
+                            <p class="card-text">Brewed: 2023-09-28 | Status: Bottled</p>
+                            <a href="#" class="card-link">View Details</a>
+                           </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-3">
+                       <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Summer Wheat</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">American Wheat Beer</h6>
+                            <p class="card-text">Brewed: 2023-08-01 | Status: Conditioned</p>
+                            <a href="#" class="card-link">View Details</a>
+                           </div>
+                        </div>
+                    </div>
+                 </div>
+
+                <h2>Brewing Activity</h2>
+                 <p>Placeholder for recent activity feed (e.g., "Added gravity reading for Pale Ale #5", "Tasting notes added for Stout Experiment").</p>
+
+             </div>
+
+            <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Dashboard"] { height: 700px; }</style>
+    </div>
+
+    <!-- State 8: Brew List Page -->
+    <div class="state-container">
+        <h2>State 8: Brew List Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>My Brews</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">My Brews</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">My Brews</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                     <div class="input-group me-2">
+                        <input type="text" class="form-control form-control-sm" placeholder="Search brews...">
+                        <button class="btn btn-sm btn-outline-secondary" type="button">Search</button>
+                      </div>
+                      <a href="#" class="btn btn-sm btn-outline-primary">
+                        Add New Brew
+                      </a>
+                    </div>
+                 </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Brew Name</th>
+                          <th scope="col">Style</th>
+                          <th scope="col">Brew Date</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Pale Ale #5</td>
+                          <td>American Pale Ale</td>
+                          <td>2023-10-15</td>
+                          <td><span class="badge bg-warning text-dark">Fermenting</span></td>
+                          <td><a href="#" class="btn btn-sm btn-info">View</a> <a href="#" class="btn btn-sm btn-secondary">Edit</a></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Stout Experiment</td>
+                          <td>Milk Stout</td>
+                          <td>2023-09-28</td>
+                          <td><span class="badge bg-primary">Bottled</span></td>
+                           <td><a href="#" class="btn btn-sm btn-info">View</a> <a href="#" class="btn btn-sm btn-secondary">Edit</a></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Summer Wheat</td>
+                          <td>American Wheat Beer</td>
+                           <td>2023-08-01</td>
+                          <td><span class="badge bg-success">Conditioned</span></td>
+                           <td><a href="#" class="btn btn-sm btn-info">View</a> <a href="#" class="btn btn-sm btn-secondary">Edit</a></td>
+                        </tr>
+                         <tr>
+                          <th scope="row">4</th>
+                          <td>IPA Challenge</td>
+                          <td>West Coast IPA</td>
+                          <td>2023-07-10</td>
+                          <td><span class="badge bg-success">Finished</span></td>
+                           <td><a href="#" class="btn btn-sm btn-info">View</a> <a href="#" class="btn btn-sm btn-secondary">Edit</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: View Brew Details Page -->
+    <div class="state-container">
+        <h2>State 9: View Brew Details Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>View Brew Details</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">My Brews</a> <!-- Active parent -->
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Pale Ale #5 - Details</h1>
+                     <div class="btn-toolbar mb-2 mb-md-0">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">Edit Brew Recipe</a>
+                         <a href="#" class="btn btn-sm btn-outline-success me-2">Add Fermentation Log</a>
+                         <a href="#" class="btn btn-sm btn-outline-info">Add Tasting Notes</a>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="col-md-4">
+                        <h4>Overview</h4>
+                        <ul class="list-group">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Style:
+                            <span>American Pale Ale</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Brew Date:
+                            <span>2023-10-15</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Batch Size:
+                            <span>5 Gallons</span>
+                          </li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Original Gravity (OG):
+                            <span>1.052</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Final Gravity (FG):
+                            <span>1.010 (Est.)</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            ABV:
+                            <span>5.5% (Est.)</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Status:
+                            <span class="badge bg-warning text-dark">Fermenting</span>
+                          </li>
+                        </ul>
+                    </div>
+                     <div class="col-md-8">
+                        <h4>Recipe</h4>
+                         <p><strong>Fermentables:</strong></p>
+                         <ul>
+                             <li>Pale Malt (2 Row) US: 9 lbs</li>
+                             <li>Caramel/Crystal Malt - 40L: 1 lb</li>
+                             <li>Victory Malt: 0.5 lbs</li>
+                         </ul>
+                         <p><strong>Hops:</strong></p>
+                         <ul>
+                              <li>Cascade (60 min): 1 oz</li>
+                              <li>Centennial (15 min): 0.5 oz</li>
+                              <li>Cascade (5 min): 0.5 oz</li>
+                              <li>Centennial (Dry Hop 3 days): 1 oz</li>
+                         </ul>
+                         <p><strong>Yeast:</strong> Safale US-05</p>
+                         <p><strong>Mash Schedule:</strong> Single infusion at 152°F for 60 minutes.</p>
+                         <p><strong>Boil Schedule:</strong> 60 minutes total boil time.</p>
+                     </div>
+                 </div>
+
+                 <hr class="my-4">
+
+                 <div class="row">
+                    <div class="col-md-6">
+                        <h4>Fermentation Log <a href="#" class="btn btn-sm btn-success float-end">+ Add Entry</a></h4>
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr><th>Date</th><th>SG</th><th>Temp (°F)</th><th>Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2023-10-16</td><td>1.052</td><td>68</td><td>Pitched Yeast, Active Fermentation Started</td></tr>
+                                <tr><td>2023-10-18</td><td>1.030</td><td>70</td><td>Krausen high</td></tr>
+                                <tr><td>2023-10-21</td><td>1.015</td><td>69</td><td>Activity slowing</td></tr>
+                                <!-- More entries -->
+                            </tbody>
+                        </table>
+                    </div>
+                     <div class="col-md-6">
+                        <h4>Tasting Notes <a href="#" class="btn btn-sm btn-info float-end">+ Add Notes</a></h4>
+                         <p>No tasting notes recorded yet.</p>
+                         <!-- Or display existing notes -->
+                         <!-- <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Date: 2023-11-05 | Score: 4/5</h6>
+                                <p class="card-text"><strong>Appearance:</strong> Clear, golden amber. Good head retention.<br><strong>Aroma:</strong> Citrusy hops, slight malt sweetness.<br><strong>Flavor:</strong> Balanced bitterness, grapefruit notes, clean finish.<br><strong>Mouthfeel:</strong> Medium body, moderate carbonation.<br><strong>Overall:</strong> Very drinkable APA. Maybe slightly less Crystal malt next time.</p>
+                           </div>
+                        </div> -->
+                     </div>
+                 </div>
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="View Brew Details"] { height: 850px; }</style>
+    </div>
+
+    <!-- State 10: Add New Brew Page (Recipe) -->
+    <div class="state-container">
+        <h2>State 10: Add New Brew Page (Recipe)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Add New Brew</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">My Brews</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Add New Brew Recipe</h1>
+                 </div>
+
+                 <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="brewName" class="form-label">Brew Name</label>
+                            <input type="text" class="form-control" id="brewName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="brewStyle" class="form-label">Style</label>
+                            <input type="text" class="form-control" id="brewStyle" placeholder="e.g., American IPA">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-4">
+                             <label for="brewDate" class="form-label">Brew Date</label>
+                            <input type="date" class="form-control" id="brewDate" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="batchSize" class="form-label">Batch Size (Gallons)</label>
+                            <input type="number" step="0.1" class="form-control" id="batchSize">
+                        </div>
+                         <div class="col-md-4">
+                            <label for="efficiency" class="form-label">Brewhouse Efficiency (%)</label>
+                            <input type="number" step="1" class="form-control" id="efficiency" placeholder="e.g., 75">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="og" class="form-label">Original Gravity (OG)</label>
+                            <input type="number" step="0.001" class="form-control" id="og" placeholder="e.g., 1.055">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fg" class="form-label">Estimated Final Gravity (FG)</label>
+                            <input type="number" step="0.001" class="form-control" id="fg" placeholder="e.g., 1.012">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4>Ingredients</h4>
+                    <div class="mb-3">
+                        <label for="fermentables" class="form-label">Fermentables</label>
+                        <textarea class="form-control" id="fermentables" rows="3" placeholder="List each fermentable and amount, e.g.:&#10;Pale Malt (2 Row) US: 10 lbs&#10;Crystal 60L: 1 lb"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hops" class="form-label">Hops Schedule</label>
+                        <textarea class="form-control" id="hops" rows="4" placeholder="List hop additions, amounts, and times, e.g.:&#10;Cascade (60 min): 1 oz&#10;Centennial (15 min): 0.5 oz&#10;Citra (Dry Hop 5 days): 2 oz"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yeast" class="form-label">Yeast</label>
+                        <input type="text" class="form-control" id="yeast" placeholder="e.g., Safale US-05, WLP001 California Ale">
+                    </div>
+                     <div class="mb-3">
+                        <label for="otherIngredients" class="form-label">Other Ingredients</label>
+                        <textarea class="form-control" id="otherIngredients" rows="2" placeholder="e.g., Irish Moss (15 min): 1 tsp, Water Salts, Fruit additions..."></textarea>
+                    </div>
+
+                    <hr>
+                     <h4>Process</h4>
+                    <div class="mb-3">
+                        <label for="mashSchedule" class="form-label">Mash Schedule</label>
+                        <textarea class="form-control" id="mashSchedule" rows="3" placeholder="Describe mash steps, temperatures, and durations. e.g., Single infusion at 152°F for 60 minutes. Mash out at 168°F for 10 minutes."></textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="boilSchedule" class="form-label">Boil Information</label>
+                        <textarea class="form-control" id="boilSchedule" rows="2" placeholder="e.g., 60 minute boil. Note any specific timings or additions not covered in hops/other."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fermentationDetails" class="form-label">Fermentation Plan</label>
+                        <textarea class="form-control" id="fermentationDetails" rows="2" placeholder="Planned primary temp, duration, secondary details, dry hopping schedule etc."></textarea>
+                    </div>
+                      <div class="mb-3">
+                        <label for="recipeNotes" class="form-label">General Recipe Notes</label>
+                        <textarea class="form-control" id="recipeNotes" rows="3" placeholder="Any other notes about the recipe, goals, water profile adjustments, etc."></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Save Recipe</button>
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                 </form>
+
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Add New Brew"] { height: 1200px; }</style>
+    </div>
+
+     <!-- State 11: Add New Brew Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 11: Add New Brew Page (Validation Error)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Add New Brew - Error</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">My Brews</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Add New Brew Recipe</h1>
+                 </div>
+
+                  <div class="alert alert-danger" role="alert">
+                    Please correct the errors marked below.
+                  </div>
+
+                 <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="brewName" class="form-label">Brew Name</label>
+                            <input type="text" class="form-control is-invalid" id="brewName" required value="">
+                             <div class="invalid-feedback">
+                                Brew Name is required.
+                              </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="brewStyle" class="form-label">Style</label>
+                            <input type="text" class="form-control" id="brewStyle" placeholder="e.g., American IPA" value="Pale Ale">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-4">
+                             <label for="brewDate" class="form-label">Brew Date</label>
+                            <input type="date" class="form-control is-invalid" id="brewDate" required>
+                             <div class="invalid-feedback">
+                                Brew Date is required.
+                              </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="batchSize" class="form-label">Batch Size (Gallons)</label>
+                            <input type="number" step="0.1" class="form-control" id="batchSize" value="5">
+                        </div>
+                         <div class="col-md-4">
+                            <label for="efficiency" class="form-label">Brewhouse Efficiency (%)</label>
+                            <input type="number" step="1" class="form-control" id="efficiency" placeholder="e.g., 75" value="72">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="og" class="form-label">Original Gravity (OG)</label>
+                            <input type="number" step="0.001" class="form-control" id="og" placeholder="e.g., 1.055" value="1.050">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fg" class="form-label">Estimated Final Gravity (FG)</label>
+                            <input type="number" step="0.001" class="form-control" id="fg" placeholder="e.g., 1.012" value="1.008">
+                        </div>
+                    </div>
+
+                     <hr>
+                    <h4>Ingredients</h4>
+                    <div class="mb-3">
+                        <label for="fermentables" class="form-label">Fermentables</label>
+                        <textarea class="form-control" id="fermentables" rows="3" placeholder="List each fermentable and amount...">Pale Malt: 9lbs&#10;Crystal 40L: 1lb</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hops" class="form-label">Hops Schedule</label>
+                        <textarea class="form-control" id="hops" rows="4" placeholder="List hop additions, amounts, and times...">Cascade (60m): 1oz</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yeast" class="form-label">Yeast</label>
+                        <input type="text" class="form-control" id="yeast" placeholder="e.g., Safale US-05" value="US-05">
+                    </div>
+                     <div class="mb-3">
+                        <label for="otherIngredients" class="form-label">Other Ingredients</label>
+                        <textarea class="form-control" id="otherIngredients" rows="2" placeholder="e.g., Irish Moss (15 min): 1 tsp..."></textarea>
+                    </div>
+
+                    <hr>
+                     <h4>Process</h4>
+                    <div class="mb-3">
+                        <label for="mashSchedule" class="form-label">Mash Schedule</label>
+                        <textarea class="form-control" id="mashSchedule" rows="3" placeholder="Describe mash steps...">152F for 60min</textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="boilSchedule" class="form-label">Boil Information</label>
+                        <textarea class="form-control" id="boilSchedule" rows="2" placeholder="e.g., 60 minute boil..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fermentationDetails" class="form-label">Fermentation Plan</label>
+                        <textarea class="form-control" id="fermentationDetails" rows="2" placeholder="Planned primary temp..."></textarea>
+                    </div>
+                      <div class="mb-3">
+                        <label for="recipeNotes" class="form-label">General Recipe Notes</label>
+                        <textarea class="form-control" id="recipeNotes" rows="3" placeholder="Any other notes..."></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Save Recipe</button>
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                 </form>
+
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Add New Brew - Error"] { height: 1250px; }</style>
+    </div>
+
+
+    <!-- State 12: Edit Brew Page (Recipe) -->
+    <div class="state-container">
+        <h2>State 12: Edit Brew Page (Recipe)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Edit Brew Recipe</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">My Brews</a> <!-- Active parent -->
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Edit Recipe: Pale Ale #5</h1>
+                 </div>
+
+                 <form>
+                    <!-- Form fields pre-filled with data for Pale Ale #5 -->
+                     <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="brewName" class="form-label">Brew Name</label>
+                            <input type="text" class="form-control" id="brewName" required value="Pale Ale #5">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="brewStyle" class="form-label">Style</label>
+                            <input type="text" class="form-control" id="brewStyle" value="American Pale Ale">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-4">
+                             <label for="brewDate" class="form-label">Brew Date</label>
+                            <input type="date" class="form-control" id="brewDate" required value="2023-10-15">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="batchSize" class="form-label">Batch Size (Gallons)</label>
+                            <input type="number" step="0.1" class="form-control" id="batchSize" value="5">
+                        </div>
+                         <div class="col-md-4">
+                            <label for="efficiency" class="form-label">Brewhouse Efficiency (%)</label>
+                            <input type="number" step="1" class="form-control" id="efficiency" value="70">
+                        </div>
+                    </div>
+                     <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="og" class="form-label">Original Gravity (OG)</label>
+                            <input type="number" step="0.001" class="form-control" id="og" value="1.052">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fg" class="form-label">Estimated Final Gravity (FG)</label>
+                            <input type="number" step="0.001" class="form-control" id="fg" value="1.010">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4>Ingredients</h4>
+                    <div class="mb-3">
+                        <label for="fermentables" class="form-label">Fermentables</label>
+                        <textarea class="form-control" id="fermentables" rows="3">Pale Malt (2 Row) US: 9 lbs&#10;Caramel/Crystal Malt - 40L: 1 lb&#10;Victory Malt: 0.5 lbs</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hops" class="form-label">Hops Schedule</label>
+                        <textarea class="form-control" id="hops" rows="4">Cascade (60 min): 1 oz&#10;Centennial (15 min): 0.5 oz&#10;Cascade (5 min): 0.5 oz&#10;Centennial (Dry Hop 3 days): 1 oz</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yeast" class="form-label">Yeast</label>
+                        <input type="text" class="form-control" id="yeast" value="Safale US-05">
+                    </div>
+                     <div class="mb-3">
+                        <label for="otherIngredients" class="form-label">Other Ingredients</label>
+                        <textarea class="form-control" id="otherIngredients" rows="2"></textarea>
+                    </div>
+
+                    <hr>
+                     <h4>Process</h4>
+                    <div class="mb-3">
+                        <label for="mashSchedule" class="form-label">Mash Schedule</label>
+                        <textarea class="form-control" id="mashSchedule" rows="3">Single infusion at 152°F for 60 minutes.</textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="boilSchedule" class="form-label">Boil Information</label>
+                        <textarea class="form-control" id="boilSchedule" rows="2">60 minutes total boil time.</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fermentationDetails" class="form-label">Fermentation Plan</label>
+                        <textarea class="form-control" id="fermentationDetails" rows="2">Primary at 68F for 1 week. Dry hop for 3 days.</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipeNotes" class="form-label">General Recipe Notes</label>
+                        <textarea class="form-control" id="recipeNotes" rows="3"></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Update Recipe</button>
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                    <button type="button" class="btn btn-danger float-end">Delete Brew</button>
+                 </form>
+
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Edit Brew Recipe"] { height: 1200px; }</style>
+    </div>
+
+    <!-- State 13: Log Fermentation Page -->
+    <div class="state-container">
+        <h2>State 13: Log Fermentation Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Log Fermentation</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">My Brews</a> <!-- Active parent -->
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Log Fermentation Entry for: Pale Ale #5</h2>
+                 </div>
+
+                 <form class="col-md-8 col-lg-6">
+                     <div class="mb-3">
+                         <label for="logDate" class="form-label">Date & Time</label>
+                         <input type="datetime-local" class="form-control" id="logDate" required>
+                     </div>
+                     <div class="mb-3">
+                         <label for="specificGravity" class="form-label">Specific Gravity (SG)</label>
+                         <input type="number" step="0.001" class="form-control" id="specificGravity" placeholder="e.g., 1.015">
+                          <div class="form-text">Optional. Leave blank if only logging temp or notes.</div>
+                     </div>
+                      <div class="mb-3">
+                         <label for="temperature" class="form-label">Temperature (°F)</label>
+                         <input type="number" step="0.1" class="form-control" id="temperature" placeholder="e.g., 68.5">
+                         <div class="form-text">Optional. Fermentation temperature reading.</div>
+                     </div>
+                       <div class="mb-3">
+                         <label for="fermentationNotes" class="form-label">Notes</label>
+                         <textarea class="form-control" id="fermentationNotes" rows="4" placeholder="Describe observations, actions taken (e.g., moved fermenter, dry hopped), issues, etc."></textarea>
+                     </div>
+
+                     <button type="submit" class="btn btn-primary">Save Log Entry</button>
+                     <a href="#" class="btn btn-secondary">Cancel</a>
+                 </form>
+
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 14: Log Tasting Notes Page -->
+    <div class="state-container">
+        <h2>State 14: Log Tasting Notes Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Log Tasting Notes</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">My Brews</a> <!-- Active parent -->
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Log Tasting Notes for: Stout Experiment</h2>
+                 </div>
+
+                 <form class="col-md-10 col-lg-8">
+                    <div class="row mb-3">
+                         <div class="col-md-6">
+                             <label for="tastingDate" class="form-label">Tasting Date</label>
+                             <input type="date" class="form-control" id="tastingDate" required>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="overallScore" class="form-label">Overall Score (1-5)</label>
+                              <select class="form-select" id="overallScore">
+                                <option selected disabled value="">Choose...</option>
+                                <option value="1">1 - Poor</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="3">3 - Good</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="5">5 - Excellent</option>
+                              </select>
+                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="appearance" class="form-label">Appearance</label>
+                        <textarea class="form-control" id="appearance" rows="2" placeholder="Color, clarity, head retention, lacing..."></textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="aroma" class="form-label">Aroma</label>
+                        <textarea class="form-control" id="aroma" rows="2" placeholder="Malt, hops, esters, phenols, off-aromas..."></textarea>
+                    </div>
+                      <div class="mb-3">
+                        <label for="flavor" class="form-label">Flavor</label>
+                        <textarea class="form-control" id="flavor" rows="3" placeholder="Malt, hops, bitterness, sweetness, fermentation character, balance, finish/aftertaste..."></textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="mouthfeel" class="form-label">Mouthfeel</label>
+                        <textarea class="form-control" id="mouthfeel" rows="2" placeholder="Body, carbonation, warmth, creaminess, astringency..."></textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="overallImpression" class="form-label">Overall Impression / Notes</label>
+                        <textarea class="form-control" id="overallImpression" rows="4" placeholder="General thoughts, comparison to style, suggestions for improvement..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Tasting Notes</button>
+                    <a href="#" class="btn btn-secondary">Cancel</a>
+                 </form>
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Log Tasting Notes"] { height: 1000px; }</style>
+    </div>
+
+    <!-- State 15: Profile/Settings Page -->
+    <div class="state-container">
+        <h2>State 15: Profile/Settings Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Profile Settings</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">My Brews</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Add New Brew</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                   <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                        Welcome, Brewer!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item active" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Profile & Settings</h2>
+                 </div>
+
+                 <div class="row">
+                    <div class="col-md-6">
+                        <h4>Account Information</h4>
+                        <form>
+                             <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" value="Brewer" readonly>
+                                <div class="form-text">Username cannot be changed.</div>
+                             </div>
+                             <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" value="brewer@example.com" required>
+                             </div>
+                             <button type="submit" class="btn btn-primary">Update Email</button>
+                        </form>
+                    </div>
+                     <div class="col-md-6">
+                        <h4>Change Password</h4>
+                        <form>
+                             <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                             </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                             </div>
+                              <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                             </div>
+                             <button type="submit" class="btn btn-warning">Change Password</button>
+                        </form>
+                     </div>
+                 </div>
+
+                 <hr class="my-4">
+
+                 <div class="row">
+                    <div class="col-md-6">
+                        <h4>Preferences</h4>
+                        <form>
+                             <div class="mb-3 form-check form-switch">
+                               <input class="form-check-input" type="checkbox" role="switch" id="tempUnitF" checked>
+                               <label class="form-check-label" for="tempUnitF">Use Fahrenheit (°F)</label>
+                             </div>
+                              <div class="mb-3 form-check form-switch">
+                               <input class="form-check-input" type="checkbox" role="switch" id="volumeUnitGal">
+                               <label class="form-check-label" for="volumeUnitGal">Use Gallons (US)</label>
+                             </div>
+                             <button type="submit" class="btn btn-primary">Save Preferences</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Account Actions</h4>
+                        <p>Danger Zone: Actions below are irreversible.</p>
+                        <button type="button" class="btn btn-danger">Delete My Account</button>
+                    </div>
+                 </div>
+
+
+            </div>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+        <style>iframe[srcdoc*="Profile Settings"] { height: 850px; }</style>
+    </div>
+
+     <!-- State 16: 404 Not Found Page -->
+    <div class="state-container">
+        <h2>State 16: 404 Not Found Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Page Not Found</title>
+             <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+        </head>
+        <body>
+            <!-- Navbar could be logged-in or logged-out version depending on context -->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Homebrewing Logbook</a>
+                <!-- Toggler and Nav items appropriate for user state -->
+              </div>
+            </nav>
+
+            <main class="container mt-5 text-center">
+                <div class="py-5">
+                    <h1 class="display-1">404</h1>
+                    <h2>Page Not Found</h2>
+                    <p class="lead">Sorry, the page you are looking for does not exist.</p>
+                    <p>It might have been moved or deleted.</p>
+                    <a href="#" class="btn btn-primary mt-3">Go to Homepage</a>
+                    <a href="#" class="btn btn-secondary mt-3">Go to Dashboard</a> <!-- Show if logged in -->
+                </div>
+            </main>
+
+            <footer class="footer mt-auto py-3 bg-light">
+              <div class="container text-center">
+                <span class="text-muted">&copy; 2023 Homebrewing Logbook</span>
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+
+</body>
+</html>

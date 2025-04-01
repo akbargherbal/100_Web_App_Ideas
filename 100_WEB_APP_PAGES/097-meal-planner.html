@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner UI Flow</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 25px; background-color: #f4f7f6; color: #333; }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
+        h2 { margin-top: 40px; border-bottom: 2px solid #1abc9c; padding-bottom: 8px; color: #16a085; }
+        iframe {
+            width: 100%;
+            height: 700px; /* Increased height for better visibility */
+            border: 1px solid #bdc3c7;
+            margin-bottom: 25px;
+            background-color: #fff; /* Ensure iframe background is white */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        /* Style for iframe content */
+        iframe body {
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; /* Attempt to force font */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meal Planner - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Home - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-outline-light ms-2' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <header class='bg-light py-5'>
+                <div class='container px-5'>
+                    <div class='row gx-5 align-items-center justify-content-center'>
+                        <div class='col-lg-8 col-xl-7 col-xxl-6'>
+                            <div class='my-5 text-center text-xl-start'>
+                                <h1 class='display-5 fw-bolder text-dark mb-2'>Plan Your Meals Effortlessly</h1>
+                                <p class='lead fw-normal text-dark-50 mb-4'>Organize your weekly meals, discover new recipes, and generate shopping lists all in one place. Start eating healthier and smarter today!</p>
+                                <div class='d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start'>
+                                    <a class='btn btn-success btn-lg px-4 me-sm-3' href='#'>Get Started</a>
+                                    <a class='btn btn-outline-secondary btn-lg px-4' href='#'>Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-xl-5 col-xxl-6 d-none d-xl-block text-center'><img class='img-fluid rounded-3 my-5' src='https://via.placeholder.com/600x400.png?text=Healthy+Food+Collage' alt='...' /></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class='py-5'>
+                <div class='container px-5 my-5'>
+                    <div class='row gx-5'>
+                        <div class='col-lg-4 mb-5 mb-lg-0'><h2 class='fw-bolder mb-0'>Key Features</h2></div>
+                        <div class='col-lg-8'>
+                            <div class='row gx-5 row-cols-1 row-cols-md-2'>
+                                <div class='col mb-5 h-100'>
+                                    <div class='feature bg-success bg-gradient text-white rounded-3 mb-3 p-2 d-inline-flex align-items-center justify-content-center'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-week' viewBox='0 0 16 16'><path d='M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z'/><path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z'/></svg></div>
+                                    <h2 class='h5'>Weekly Planning</h2>
+                                    <p class='mb-0'>Drag and drop recipes onto your weekly calendar.</p>
+                                </div>
+                                <div class='col mb-5 h-100'>
+                                     <div class='feature bg-success bg-gradient text-white rounded-3 mb-3 p-2 d-inline-flex align-items-center justify-content-center'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-card-checklist' viewBox='0 0 16 16'><path d='M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zM1 13h14V4H1z'/><path d='M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0'/></svg></div>
+                                    <h2 class='h5'>Shopping Lists</h2>
+                                    <p class='mb-0'>Automatically generate lists based on your planned meals.</p>
+                                </div>
+                                <div class='col mb-5 mb-md-0 h-100'>
+                                     <div class='feature bg-success bg-gradient text-white rounded-3 mb-3 p-2 d-inline-flex align-items-center justify-content-center'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-book' viewBox='0 0 16 16'><path d='M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.746c-.917-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783'/></svg></div>
+                                    <h2 class='h5'>Recipe Organization</h2>
+                                    <p class='mb-0'>Store your favorite recipes and discover new ones.</p>
+                                </div>
+                                <div class='col h-100'>
+                                     <div class='feature bg-success bg-gradient text-white rounded-3 mb-3 p-2 d-inline-flex align-items-center justify-content-center'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-add' viewBox='0 0 16 16'><path d='M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4'/><path d='M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.3.49-.564.78-.782C9.077 9.062 8.558 9 8 9c-5 0-6 3-6 4s1 1 1 1z'/></svg></div>
+                                    <h2 class='h5'>Easy Signup</h2>
+                                    <p class='mb-0'>Quickly create an account and start planning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class='py-4 bg-dark text-white'>
+                <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>About - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+             <style>body { padding-top: 56px; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-outline-light ms-2' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-lg-8'>
+                        <h1 class='mb-4 text-center'>About Meal Planner</h1>
+                        <p class='lead'>Welcome to Meal Planner, your ultimate companion for simplifying your weekly meal preparation. We believe that healthy eating and organized living should be accessible to everyone.</p>
+                        <hr class='my-4'>
+                        <h2 class='h4 mb-3'>Our Mission</h2>
+                        <p>Our mission is to empower individuals and families to take control of their nutrition and reduce food waste by providing an intuitive and powerful meal planning tool. We aim to make planning, shopping, and cooking less stressful and more enjoyable.</p>
+                        <h2 class='h4 mt-4 mb-3'>How It Works</h2>
+                        <p>Meal Planner allows you to:</p>
+                        <ul>
+                            <li>Browse a vast library of recipes or add your own family favorites.</li>
+                            <li>Easily drag and drop recipes onto a visual weekly calendar.</li>
+                            <li>Automatically generate a categorized shopping list based on your plan.</li>
+                            <li>Adjust serving sizes and track nutritional information (future feature!).</li>
+                            <li>Save time, reduce stress, and eat better!</li>
+                        </ul>
+                        <h2 class='h4 mt-4 mb-3'>The Team</h2>
+                        <p>We are a small, passionate team of food lovers, developers, and designers dedicated to building the best meal planning experience possible. We are constantly working on improving the app and adding new features based on user feedback.</p>
+                        <p class='text-center mt-5'><a href='#' class='btn btn-success'>Get Started Now</a></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 3: Login Page -->
+    <h2>State 3: Login Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+             <style>body { padding-top: 56px; display: flex; flex-direction: column; min-height: 100vh; } .main-content { flex: 1; } </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-outline-light ms-2' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container main-content mt-5 pt-4 d-flex justify-content-center align-items-center'>
+                <div class='col-md-6 col-lg-4'>
+                    <div class='card shadow-sm'>
+                        <div class='card-body p-4'>
+                            <h2 class='card-title text-center mb-4'>Login</h2>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='email' class='form-label'>Email address</label>
+                                    <input type='email' class='form-control' id='email' placeholder='name@example.com' required>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='password' class='form-label'>Password</label>
+                                    <input type='password' class='form-control' id='password' placeholder='Password' required>
+                                </div>
+                                <div class='mb-3 form-check'>
+                                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                </div>
+                                <div class='d-grid'>
+                                    <button type='submit' class='btn btn-success btn-block'>Login</button>
+                                </div>
+                                <p class='mt-3 text-center'>
+                                    <a href='#' class='text-decoration-none'>Forgot password?</a>
+                                </p>
+                                <hr>
+                                <p class='mt-3 text-center'>
+                                    Don't have an account? <a href='#' class='text-decoration-none'>Sign up</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-auto'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 4: Registration Page -->
+    <h2>State 4: Registration Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Sign Up - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+             <style>body { padding-top: 56px; display: flex; flex-direction: column; min-height: 100vh; } .main-content { flex: 1; } </style>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-outline-light ms-2 active' aria-current='page' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container main-content mt-5 pt-4 d-flex justify-content-center align-items-center'>
+                 <div class='col-md-6 col-lg-5'>
+                    <div class='card shadow-sm'>
+                        <div class='card-body p-4'>
+                            <h2 class='card-title text-center mb-4'>Create Account</h2>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='name' class='form-label'>Full Name</label>
+                                    <input type='text' class='form-control' id='name' placeholder='Your Name' required>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='email' class='form-label'>Email address</label>
+                                    <input type='email' class='form-control' id='email' placeholder='name@example.com' required>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='password' class='form-label'>Password</label>
+                                    <input type='password' class='form-control' id='password' placeholder='Create Password' required>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                    <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm Password' required>
+                                </div>
+                                <div class='mb-3 form-check'>
+                                    <input type='checkbox' class='form-check-input' id='terms' required>
+                                    <label class='form-check-label' for='terms'>I agree to the <a href='#'>Terms of Service</a></label>
+                                </div>
+                                <div class='d-grid'>
+                                    <button type='submit' class='btn btn-success btn-block'>Sign Up</button>
+                                </div>
+                                <hr>
+                                <p class='mt-3 text-center'>
+                                    Already have an account? <a href='#' class='text-decoration-none'>Login</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-auto'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 5: Dashboard / Weekly Meal Plan (Logged In) -->
+    <h2>State 5: Dashboard / Weekly Meal Plan (Logged In)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Dashboard - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>
+                body { padding-top: 56px; background-color: #f8f9fa; }
+                .meal-slot { border: 1px dashed #ccc; min-height: 100px; margin-bottom: 10px; padding: 10px; background-color: #fff; border-radius: 4px; position: relative; }
+                .meal-slot .meal-name { font-weight: bold; }
+                .meal-slot .add-meal-btn { position: absolute; top: 5px; right: 5px; font-size: 0.8em; }
+                .meal-card { background-color: #e9f5e9; border-left: 3px solid #28a745; padding: 8px; margin-top: 5px; border-radius: 3px; }
+                .day-header { background-color: #e2e6ea; font-weight: bold; padding: 8px; text-align: center; border-radius: 4px 4px 0 0; margin-top: 15px; }
+                .calendar-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+            </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                <div class='d-flex justify-content-between align-items-center mb-4'>
+                    <h1 class='h3'>Your Weekly Meal Plan</h1>
+                    <div class='btn-group' role='group'>
+                        <button type='button' class='btn btn-outline-secondary'>&lt; Prev Week</button>
+                        <button type='button' class='btn btn-outline-secondary'>Next Week &gt;</button>
+                    </div>
+                    <button class='btn btn-success'>Generate Shopping List</button>
+                </div>
+
+                <div class='row'>
+                    <!-- Monday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Monday</div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                            <div class='meal-card'>Oatmeal with Berries</div>
+                        </div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                            <div class='meal-card'>Chicken Salad Sandwich</div>
+                        </div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                            <div class='meal-card'>Spaghetti Bolognese</div>
+                        </div>
+                    </div>
+                    <!-- Tuesday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Tuesday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                            <div class='meal-card'>Leftover Spaghetti</div>
+                        </div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                    </div>
+                    <!-- Wednesday -->
+                     <div class='col-md'>
+                        <div class='day-header'>Wednesday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                            <div class='meal-card'>Tacos</div>
+                         </div>
+                    </div>
+                    <!-- Thursday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Thursday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                    </div>
+                    <!-- Friday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Friday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'>
+                            <span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button>
+                             <div class='meal-card'>Tuna Salad</div>
+                        </div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                    </div>
+                    <!-- Saturday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Saturday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                    </div>
+                    <!-- Sunday -->
+                    <div class='col-md'>
+                        <div class='day-header'>Sunday</div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Breakfast</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Lunch</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                        <div class='meal-slot'><span class='badge bg-secondary mb-1'>Dinner</span> <button class='btn btn-outline-success btn-sm add-meal-btn'>+</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 6: Add/Edit Meal Modal (Conceptual) -->
+    <h2>State 6: Add/Edit Meal Modal (Conceptual)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Add Meal - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+             <style>
+                body { background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+                .modal-dialog { max-width: 600px; margin: auto; }
+                .modal-content { background-color: #fff; border-radius: 8px; }
+            </style>
+        </head>
+        <body>
+            <!-- This state represents the content *inside* a modal dialog -->
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h5 class='modal-title'>Add Meal to Monday Dinner</h5>
+                        <button type='button' class='btn-close' aria-label='Close'></button>
+                    </div>
+                    <div class='modal-body'>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='searchRecipe' class='form-label'>Search Recipes</label>
+                                <input type='text' class='form-control' id='searchRecipe' placeholder='Search by name or ingredient...'>
+                            </div>
+                            <div class='list-group mb-3' style='max-height: 200px; overflow-y: auto;'>
+                                <a href='#' class='list-group-item list-group-item-action'>Spaghetti Bolognese</a>
+                                <a href='#' class='list-group-item list-group-item-action'>Chicken Stir-Fry</a>
+                                <a href='#' class='list-group-item list-group-item-action'>Lentil Soup</a>
+                                <a href='#' class='list-group-item list-group-item-action'>Tacos</a>
+                            </div>
+                            <p class='text-center'>Or</p>
+                            <div class='mb-3'>
+                                <label for='addNote' class='form-label'>Add a Quick Note / Meal Name</label>
+                                <input type='text' class='form-control' id='addNote' placeholder='e.g., Leftovers or Restaurant Name'>
+                            </div>
+                        </form>
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-secondary'>Close</button>
+                        <button type='button' class='btn btn-success'>Add Meal</button>
+                    </div>
+                </div>
+            </div>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <!-- State 7: Recipe Browser -->
+    <h2>State 7: Recipe Browser</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Recipes - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                 <div class='d-flex justify-content-between align-items-center mb-4'>
+                    <h1 class='h3'>Recipe Collection</h1>
+                    <a href='#' class='btn btn-success'>Add New Recipe</a>
+                </div>
+
+                <!-- Search and Filter Bar -->
+                <div class='row mb-4'>
+                    <div class='col-md-6'>
+                        <input type='text' class='form-control' placeholder='Search recipes by name or ingredient...'>
+                    </div>
+                    <div class='col-md-3'>
+                         <select class='form-select'>
+                            <option selected>Filter by Tag...</option>
+                            <option value='1'>Quick & Easy</option>
+                            <option value='2'>Vegetarian</option>
+                            <option value='3'>Dinner</option>
+                            <option value='4'>My Recipes</option>
+                        </select>
+                    </div>
+                     <div class='col-md-3'>
+                         <select class='form-select'>
+                            <option selected>Sort by...</option>
+                            <option value='1'>Name (A-Z)</option>
+                            <option value='2'>Date Added</option>
+                            <option value='3'>Rating</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Recipe Cards -->
+                <div class='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
+                    <div class='col'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Spaghetti+Bolognese' class='card-img-top' alt='Recipe Image'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Spaghetti Bolognese</h5>
+                                <p class='card-text'>A classic Italian meat sauce served with pasta. Hearty and delicious.</p>
+                                <span class='badge bg-primary me-1'>Dinner</span> <span class='badge bg-secondary'>Comfort Food</span>
+                            </div>
+                            <div class='card-footer d-flex justify-content-between align-items-center'>
+                                <small class='text-muted'>Prep: 15m | Cook: 45m</small>
+                                <a href='#' class='btn btn-sm btn-outline-success'>View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='col'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Chicken+Stir-Fry' class='card-img-top' alt='Recipe Image'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Quick Chicken Stir-Fry</h5>
+                                <p class='card-text'>A fast and flavorful stir-fry with chicken and mixed vegetables.</p>
+                                <span class='badge bg-primary me-1'>Dinner</span> <span class='badge bg-warning text-dark'>Quick & Easy</span>
+                            </div>
+                             <div class='card-footer d-flex justify-content-between align-items-center'>
+                                <small class='text-muted'>Prep: 10m | Cook: 15m</small>
+                                <a href='#' class='btn btn-sm btn-outline-success'>View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Lentil+Soup' class='card-img-top' alt='Recipe Image'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Hearty Lentil Soup</h5>
+                                <p class='card-text'>A nutritious and warming soup perfect for a cold day.</p>
+                                <span class='badge bg-success me-1'>Vegetarian</span> <span class='badge bg-info text-dark'>Soup</span>
+                            </div>
+                             <div class='card-footer d-flex justify-content-between align-items-center'>
+                                <small class='text-muted'>Prep: 10m | Cook: 40m</small>
+                                <a href='#' class='btn btn-sm btn-outline-success'>View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='col'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Tacos' class='card-img-top' alt='Recipe Image'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Simple Ground Beef Tacos</h5>
+                                <p class='card-text'>Easy and customizable tacos, always a family favorite.</p>
+                                <span class='badge bg-primary me-1'>Dinner</span> <span class='badge bg-warning text-dark'>Quick & Easy</span>
+                            </div>
+                             <div class='card-footer d-flex justify-content-between align-items-center'>
+                                <small class='text-muted'>Prep: 15m | Cook: 20m</small>
+                                <a href='#' class='btn btn-sm btn-outline-success'>View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- More recipe cards -->
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label='Recipe navigation' class='mt-5 d-flex justify-content-center'>
+                    <ul class='pagination'>
+                        <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-disabled='true'>Previous</a></li>
+                        <li class='page-item active' aria-current='page'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 8: Recipe Details -->
+    <h2>State 8: Recipe Details</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Recipe Details - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>Recipes</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Spaghetti Bolognese</li>
+                  </ol>
+                </nav>
+
+                <div class='row'>
+                    <div class='col-lg-8'>
+                        <h1 class='mb-3'>Spaghetti Bolognese</h1>
+                         <img src='https://via.placeholder.com/700x400.png?text=Large+Spaghetti+Bolognese' class='img-fluid rounded mb-4' alt='Spaghetti Bolognese'>
+
+                         <div class='mb-4'>
+                            <span class='badge bg-primary me-1'>Dinner</span>
+                            <span class='badge bg-secondary'>Comfort Food</span>
+                            <span class='badge bg-info text-dark ms-3'>Prep: 15m</span>
+                            <span class='badge bg-info text-dark ms-1'>Cook: 45m</span>
+                            <span class='badge bg-warning text-dark ms-3'>Servings: 4</span>
+                        </div>
+
+                        <p class='lead'>A classic Italian meat sauce made with ground beef, tomatoes, onions, carrots, celery, and herbs, slowly simmered to perfection and served over spaghetti.</p>
+
+                        <h3 class='mt-4'>Ingredients</h3>
+                        <ul class='list-group list-group-flush mb-4'>
+                            <li class='list-group-item'>1 tbsp Olive Oil</li>
+                            <li class='list-group-item'>1 lb Ground Beef</li>
+                            <li class='list-group-item'>1 large Onion, chopped</li>
+                            <li class='list-group-item'>2 Carrots, chopped</li>
+                            <li class='list-group-item'>2 Celery Stalks, chopped</li>
+                            <li class='list-group-item'>2 cloves Garlic, minced</li>
+                            <li class='list-group-item'>1 can (28 oz) Crushed Tomatoes</li>
+                            <li class='list-group-item'>1/2 cup Red Wine (optional)</li>
+                            <li class='list-group-item'>1 tsp Dried Oregano</li>
+                            <li class='list-group-item'>Salt and Pepper to taste</li>
+                            <li class='list-group-item'>1 lb Spaghetti</li>
+                            <li class='list-group-item'>Parmesan Cheese, for serving</li>
+                        </ul>
+
+                        <h3>Instructions</h3>
+                        <ol class='list-group list-group-numbered list-group-flush'>
+                            <li class='list-group-item'>Heat olive oil in a large pot or Dutch oven over medium heat. Add ground beef and cook until browned. Drain excess fat.</li>
+                            <li class='list-group-item'>Add onion, carrots, and celery to the pot. Cook until softened, about 5-7 minutes. Stir in garlic and cook for another minute until fragrant.</li>
+                            <li class='list-group-item'>If using red wine, pour it in and let it simmer for a minute, scraping up any browned bits from the bottom of the pot.</li>
+                            <li class='list-group-item'>Stir in crushed tomatoes, oregano, salt, and pepper. Bring to a simmer, then reduce heat to low, cover, and let it cook for at least 30 minutes (longer is better!) for flavors to meld.</li>
+                            <li class='list-group-item'>Meanwhile, cook spaghetti according to package directions. Drain well.</li>
+                            <li class='list-group-item'>Serve the Bolognese sauce over the cooked spaghetti. Top with grated Parmesan cheese.</li>
+                        </ol>
+                    </div>
+                    <div class='col-lg-4'>
+                         <div class='card sticky-top' style='top: 70px;'> <!-- Adjust top offset as needed -->
+                             <div class='card-body'>
+                                <h5 class='card-title'>Actions</h5>
+                                <div class='d-grid gap-2'>
+                                    <button class='btn btn-success'>Add to Meal Plan</button>
+                                    <button class='btn btn-outline-secondary'>Add to Shopping List</button>
+                                    <button class='btn btn-outline-primary'>Edit Recipe</button>
+                                    <button class='btn btn-outline-danger'>Delete Recipe</button>
+                                    <button class='btn btn-outline-info'>Print Recipe</button>
+                                </div>
+                                <hr>
+                                <h5 class='card-title mt-3'>Notes</h5>
+                                <p>This recipe freezes well. Make a double batch!</p>
+                                <textarea class='form-control' rows='3' placeholder='Add your personal notes...'></textarea>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 9: Add New Recipe Form -->
+    <h2>State 9: Add New Recipe Form</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Add Recipe - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                         <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                <h1 class='mb-4'>Add a New Recipe</h1>
+                <form class='needs-validation' novalidate>
+                    <div class='row'>
+                        <div class='col-md-8'>
+                            <!-- Recipe Name -->
+                            <div class='mb-3'>
+                                <label for='recipeName' class='form-label'>Recipe Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='recipeName' required>
+                                <div class='invalid-feedback'>Please provide a recipe name.</div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class='mb-3'>
+                                <label for='recipeDescription' class='form-label'>Description</label>
+                                <textarea class='form-control' id='recipeDescription' rows='3'></textarea>
+                            </div>
+
+                            <!-- Ingredients -->
+                            <div class='mb-3'>
+                                <label class='form-label'>Ingredients <span class='text-danger'>*</span></label>
+                                <textarea class='form-control' id='recipeIngredients' rows='6' placeholder='Enter each ingredient on a new line, e.g.,&#10;1 cup flour&#10;2 large eggs&#10;1/2 tsp salt' required></textarea>
+                                <div class='invalid-feedback'>Please list the ingredients.</div>
+                            </div>
+
+                            <!-- Instructions -->
+                            <div class='mb-3'>
+                                <label class='form-label'>Instructions <span class='text-danger'>*</span></label>
+                                <textarea class='form-control' id='recipeInstructions' rows='8' placeholder='Enter each step on a new line.' required></textarea>
+                                <div class='invalid-feedback'>Please provide the cooking instructions.</div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-4'>
+                            <!-- Image Upload -->
+                            <div class='mb-3'>
+                                <label for='recipeImage' class='form-label'>Recipe Image</label>
+                                <input class='form-control' type='file' id='recipeImage'>
+                                <div class='form-text'>Upload an image (optional).</div>
+                            </div>
+
+                             <!-- Prep Time -->
+                            <div class='mb-3'>
+                                <label for='prepTime' class='form-label'>Prep Time</label>
+                                <input type='text' class='form-control' id='prepTime' placeholder='e.g., 15 minutes'>
+                            </div>
+
+                            <!-- Cook Time -->
+                            <div class='mb-3'>
+                                <label for='cookTime' class='form-label'>Cook Time</label>
+                                <input type='text' class='form-control' id='cookTime' placeholder='e.g., 30 minutes'>
+                            </div>
+
+                             <!-- Servings -->
+                             <div class='mb-3'>
+                                <label for='servings' class='form-label'>Servings</label>
+                                <input type='number' class='form-control' id='servings' placeholder='e.g., 4'>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class='mb-3'>
+                                <label for='recipeTags' class='form-label'>Tags</label>
+                                <input type='text' class='form-control' id='recipeTags' placeholder='Comma-separated, e.g., dinner, quick, chicken'>
+                                <div class='form-text'>Helps with filtering and organization.</div>
+                            </div>
+
+                             <!-- Source URL -->
+                            <div class='mb-3'>
+                                <label for='recipeSource' class='form-label'>Source URL</label>
+                                <input type='url' class='form-control' id='recipeSource' placeholder='http://www.example.com/recipe'>
+                            </div>
+
+                        </div>
+                    </div>
+
+                     <hr class='my-4'>
+
+                    <div class='d-flex justify-content-end'>
+                         <a href='#' class='btn btn-outline-secondary me-2'>Cancel</a>
+                         <button class='btn btn-success' type='submit'>Save Recipe</button>
+                    </div>
+                </form>
+            </div>
+
+             <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function () {
+                  'use strict'
+                  var forms = document.querySelectorAll('.needs-validation')
+                  Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                      form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                          event.preventDefault()
+                          event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                      }, false)
+                    })
+                })()
+            </script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 10: Shopping List -->
+    <h2>State 10: Shopping List</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Shopping List - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>
+                body { padding-top: 56px; background-color: #f8f9fa; }
+                .category-title { font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #dee2e6; padding-bottom: 0.3rem; }
+                .list-group-item { border-left: 3px solid transparent; }
+                .list-group-item:hover { background-color: #e9ecef; }
+                .list-group-item input[type='checkbox']:checked + label { text-decoration: line-through; color: #6c757d; }
+                .list-group-item label { margin-left: 10px; flex-grow: 1; }
+                .recipe-source { font-size: 0.8em; color: #6c757d; margin-left: auto; padding-left: 10px; }
+            </style>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Shopping List</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                 <div class='d-flex justify-content-between align-items-center mb-4'>
+                    <h1 class='h3'>Shopping List (Week of Oct 23 - Oct 29)</h1>
+                    <div>
+                        <button class='btn btn-outline-secondary'>Print List</button>
+                        <button class='btn btn-outline-danger ms-2'>Clear List</button>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-lg-8 offset-lg-2'>
+                        <div class='card shadow-sm'>
+                            <div class='card-body'>
+                                <div class='category-title'>Produce</div>
+                                <ul class='list-group list-group-flush'>
+                                    <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item1'>
+                                        <label class='form-check-label stretched-link' for='item1'>Oatmeal Berries (Frozen or Fresh)</label>
+                                        <span class='recipe-source'>(Oatmeal)</span>
+                                    </li>
+                                    <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item2' checked>
+                                        <label class='form-check-label stretched-link' for='item2'>Lettuce</label>
+                                        <span class='recipe-source'>(Chicken Salad, Tacos)</span>
+                                    </li>
+                                    <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item3'>
+                                        <label class='form-check-label stretched-link' for='item3'>Onion (1 large)</label>
+                                        <span class='recipe-source'>(Bolognese, Tacos)</span>
+                                    </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item4'>
+                                        <label class='form-check-label stretched-link' for='item4'>Carrots (2)</label>
+                                        <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item5'>
+                                        <label class='form-check-label stretched-link' for='item5'>Celery Stalks (2)</label>
+                                        <span class='recipe-source'>(Bolognese, Chicken Salad)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item6'>
+                                        <label class='form-check-label stretched-link' for='item6'>Garlic (2 cloves)</label>
+                                        <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item7'>
+                                        <label class='form-check-label stretched-link' for='item7'>Tomatoes (for Tacos)</label>
+                                        <span class='recipe-source'>(Tacos)</span>
+                                     </li>
+                                </ul>
+
+                                <div class='category-title'>Meat & Poultry</div>
+                                <ul class='list-group list-group-flush'>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item8'>
+                                        <label class='form-check-label stretched-link' for='item8'>Chicken Breast (for Salad)</label>
+                                         <span class='recipe-source'>(Chicken Salad)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item9' checked>
+                                        <label class='form-check-label stretched-link' for='item9'>Ground Beef (1 lb)</label>
+                                         <span class='recipe-source'>(Bolognese, Tacos)</span>
+                                     </li>
+                                </ul>
+
+                                <div class='category-title'>Pantry</div>
+                                 <ul class='list-group list-group-flush'>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item10'>
+                                        <label class='form-check-label stretched-link' for='item10'>Rolled Oats</label>
+                                         <span class='recipe-source'>(Oatmeal)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item11'>
+                                        <label class='form-check-label stretched-link' for='item11'>Bread (for Sandwich)</label>
+                                         <span class='recipe-source'>(Chicken Salad)</span>
+                                     </li>
+                                      <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item12'>
+                                        <label class='form-check-label stretched-link' for='item12'>Spaghetti (1 lb)</label>
+                                         <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                      <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item13'>
+                                        <label class='form-check-label stretched-link' for='item13'>Crushed Tomatoes (28 oz can)</label>
+                                         <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item14'>
+                                        <label class='form-check-label stretched-link' for='item14'>Taco Shells</label>
+                                         <span class='recipe-source'>(Tacos)</span>
+                                     </li>
+                                      <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item15'>
+                                        <label class='form-check-label stretched-link' for='item15'>Taco Seasoning</label>
+                                         <span class='recipe-source'>(Tacos)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item16'>
+                                        <label class='form-check-label stretched-link' for='item16'>Olive Oil</label>
+                                         <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item17'>
+                                        <label class='form-check-label stretched-link' for='item17'>Dried Oregano</label>
+                                         <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                      <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item18'>
+                                        <label class='form-check-label stretched-link' for='item18'>Tuna (Can)</label>
+                                         <span class='recipe-source'>(Tuna Salad)</span>
+                                     </li>
+                                </ul>
+
+                                 <div class='category-title'>Dairy & Refrigerated</div>
+                                 <ul class='list-group list-group-flush'>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item19'>
+                                        <label class='form-check-label stretched-link' for='item19'>Mayonnaise</label>
+                                         <span class='recipe-source'>(Chicken Salad, Tuna Salad)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item20'>
+                                        <label class='form-check-label stretched-link' for='item20'>Parmesan Cheese</label>
+                                         <span class='recipe-source'>(Bolognese)</span>
+                                     </li>
+                                     <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item21'>
+                                        <label class='form-check-label stretched-link' for='item21'>Shredded Cheese (for Tacos)</label>
+                                         <span class='recipe-source'>(Tacos)</span>
+                                     </li>
+                                      <li class='list-group-item d-flex align-items-center'>
+                                        <input class='form-check-input me-1' type='checkbox' value='' id='item22'>
+                                        <label class='form-check-label stretched-link' for='item22'>Sour Cream (for Tacos)</label>
+                                         <span class='recipe-source'>(Tacos)</span>
+                                     </li>
+                                 </ul>
+
+                                <div class='mt-4'>
+                                    <button class='btn btn-link' type='button'>+ Add Custom Item</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 11: User Profile/Settings -->
+    <h2>State 11: User Profile/Settings</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Profile - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item active' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                <h1 class='mb-4'>Account Settings</h1>
+
+                <div class='row'>
+                    <div class='col-md-3'>
+                        <!-- Settings Navigation -->
+                        <div class='list-group'>
+                            <a href='#' class='list-group-item list-group-item-action active' aria-current='true'>Profile Information</a>
+                            <a href='#' class='list-group-item list-group-item-action'>Change Password</a>
+                            <a href='#' class='list-group-item list-group-item-action'>Notification Preferences</a>
+                            <a href='#' class='list-group-item list-group-item-action'>Billing (Placeholder)</a>
+                            <a href='#' class='list-group-item list-group-item-action text-danger'>Delete Account</a>
+                        </div>
+                    </div>
+                    <div class='col-md-9'>
+                        <!-- Profile Information Form -->
+                        <div class='card shadow-sm'>
+                            <div class='card-header'>
+                                Profile Information
+                            </div>
+                            <div class='card-body'>
+                                <form>
+                                    <div class='mb-3 row'>
+                                        <label for='profileName' class='col-sm-3 col-form-label'>Full Name</label>
+                                        <div class='col-sm-9'>
+                                            <input type='text' class='form-control' id='profileName' value='Current User Name'>
+                                        </div>
+                                    </div>
+                                    <div class='mb-3 row'>
+                                        <label for='profileEmail' class='col-sm-3 col-form-label'>Email Address</label>
+                                        <div class='col-sm-9'>
+                                            <input type='email' readonly class='form-control-plaintext' id='profileEmail' value='user@example.com'>
+                                            <div class='form-text'>Email cannot be changed.</div>
+                                        </div>
+                                    </div>
+                                     <div class='mb-3 row'>
+                                        <label for='profileDiet' class='col-sm-3 col-form-label'>Dietary Preferences</label>
+                                        <div class='col-sm-9'>
+                                            <select class='form-select' id='profileDiet'>
+                                                <option selected>No Preference</option>
+                                                <option value='1'>Vegetarian</option>
+                                                <option value='2'>Vegan</option>
+                                                <option value='3'>Gluten-Free</option>
+                                                <option value='4'>Keto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class='mb-3 row'>
+                                        <label for='profileAllergies' class='col-sm-3 col-form-label'>Allergies/Dislikes</label>
+                                        <div class='col-sm-9'>
+                                            <textarea class='form-control' id='profileAllergies' rows='3' placeholder='e.g., Peanuts, Shellfish, Mushrooms'></textarea>
+                                        </div>
+                                    </div>
+                                     <div class='mb-3 row'>
+                                        <label for='profileHouseholdSize' class='col-sm-3 col-form-label'>Household Size</label>
+                                        <div class='col-sm-9'>
+                                            <input type='number' class='form-control' id='profileHouseholdSize' min='1' value='2'>
+                                            <div class='form-text'>Helps adjust recipe servings (future feature).</div>
+                                        </div>
+                                    </div>
+
+                                    <div class='d-flex justify-content-end mt-4'>
+                                         <button type='submit' class='btn btn-success'>Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 12: Error State (Login Failed) -->
+    <h2>State 12: Error State (Login Failed)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login Error - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; display: flex; flex-direction: column; min-height: 100vh; } .main-content { flex: 1; } </style>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                       <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-outline-light ms-2' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container main-content mt-5 pt-4 d-flex justify-content-center align-items-center'>
+                 <div class='col-md-6 col-lg-4'>
+                    <div class='card shadow-sm'>
+                        <div class='card-body p-4'>
+                            <h2 class='card-title text-center mb-4'>Login</h2>
+
+                            <!-- Error Message -->
+                            <div class='alert alert-danger' role='alert'>
+                              Invalid email or password. Please try again.
+                            </div>
+
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='email' class='form-label'>Email address</label>
+                                    <input type='email' class='form-control is-invalid' id='email' value='wrong@example.com' required> <!-- Added is-invalid -->
+                                     <div class='invalid-feedback'>
+                                        Please enter a valid email. <!-- Example validation message -->
+                                    </div>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='password' class='form-label'>Password</label>
+                                    <input type='password' class='form-control is-invalid' id='password' placeholder='Password' required> <!-- Added is-invalid -->
+                                </div>
+                                <div class='mb-3 form-check'>
+                                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                </div>
+                                <div class='d-grid'>
+                                    <button type='submit' class='btn btn-success btn-block'>Login</button>
+                                </div>
+                                 <p class='mt-3 text-center'>
+                                    <a href='#' class='text-decoration-none'>Forgot password?</a>
+                                </p>
+                                <hr>
+                                <p class='mt-3 text-center'>
+                                    Don't have an account? <a href='#' class='text-decoration-none'>Sign up</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-4 bg-dark text-white mt-auto'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 13: Validation State (Empty Field on Add Recipe) -->
+    <h2>State 13: Validation State (Empty Field on Add Recipe)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Add Recipe Validation - Meal Planner</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <style>body { padding-top: 56px; background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-success fixed-top'>
+                 <div class='container'>
+                    <a class='navbar-brand' href='#'>Meal Planner</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Meal Plan</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recipes</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Shopping List</a></li>
+                        </ul>
+                         <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Welcome, User!
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 pt-3'>
+                <h1 class='mb-4'>Add a New Recipe</h1>
+                <!-- Add was-validated class to show validation states -->
+                <form class='was-validated' novalidate>
+                     <div class='row'>
+                        <div class='col-md-8'>
+                            <!-- Recipe Name - Invalid State Shown -->
+                            <div class='mb-3'>
+                                <label for='recipeName' class='form-label'>Recipe Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control is-invalid' id='recipeName' required> <!-- Add is-invalid manually for demo -->
+                                <div class='invalid-feedback'>Please provide a recipe name.</div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class='mb-3'>
+                                <label for='recipeDescription' class='form-label'>Description</label>
+                                <textarea class='form-control' id='recipeDescription' rows='3'>Tasty recipe...</textarea>
+                            </div>
+
+                            <!-- Ingredients - Valid State Shown -->
+                            <div class='mb-3'>
+                                <label class='form-label'>Ingredients <span class='text-danger'>*</span></label>
+                                <textarea class='form-control is-valid' id='recipeIngredients' rows='6' required>1 cup flour&#10;2 eggs</textarea> <!-- Add is-valid manually for demo -->
+                                <div class='invalid-feedback'>Please list the ingredients.</div>
+                            </div>
+
+                           <!-- Instructions - Invalid State Shown -->
+                            <div class='mb-3'>
+                                <label class='form-label'>Instructions <span class='text-danger'>*</span></label>
+                                <textarea class='form-control is-invalid' id='recipeInstructions' rows='8' placeholder='Enter each step on a new line.' required></textarea>
+                                <div class='invalid-feedback'>Please provide the cooking instructions.</div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-4'>
+                            <!-- Other fields -->
+                             <div class='mb-3'>
+                                <label for='recipeImage' class='form-label'>Recipe Image</label>
+                                <input class='form-control' type='file' id='recipeImage'>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='prepTime' class='form-label'>Prep Time</label>
+                                <input type='text' class='form-control' id='prepTime' value='10 mins'>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='cookTime' class='form-label'>Cook Time</label>
+                                <input type='text' class='form-control' id='cookTime' value='20 mins'>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class='my-4'>
+
+                    <div class='d-flex justify-content-end'>
+                         <a href='#' class='btn btn-outline-secondary me-2'>Cancel</a>
+                         <button class='btn btn-success' type='submit'>Save Recipe</button>
+                    </div>
+                </form>
+            </div>
+
+             <footer class='py-4 bg-dark text-white mt-5'>
+                 <div class='container px-4 px-lg-5'><p class='m-0 text-center'>Copyright &copy; Meal Planner 2023</p></div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+             <!-- Note: No actual JS validation logic needed for static demo -->
+        </body>
+        </html>
+    "></iframe>
+
+</body>
+</html>

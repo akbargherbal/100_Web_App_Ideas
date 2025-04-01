@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .iframe-container {
+          margin-bottom: 30px;
+          padding: 15px;
+          border: 1px solid #dee2e6;
+          border-radius: 5px;
+          background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Budget Planner - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="iframe-container">
+        <h2>State 1: Home Page (Landing)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Budget Planner Home</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='btn btn-outline-primary me-2' href='#'>Login</a></li>
+                                <li class='nav-item'><a class='btn btn-primary' href='#'>Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <header class='bg-primary text-white text-center p-5'>
+                    <div class='container'>
+                        <h1>Take Control of Your Finances</h1>
+                        <p class='lead'>Plan your budget, track expenses, and reach your savings goals effortlessly.</p>
+                        <a href='#' class='btn btn-light btn-lg mt-3'>Get Started Today</a>
+                    </div>
+                </header>
+
+                <section class='container mt-5'>
+                    <div class='row text-center'>
+                        <div class='col-md-4 mb-4'>
+                            <div class='card h-100'>
+                                <div class='card-body'>
+                                    <h3 class='card-title'>Track Income & Expenses</h3>
+                                    <p class='card-text'>Easily log where your money comes from and where it goes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4 mb-4'>
+                            <div class='card h-100'>
+                                <div class='card-body'>
+                                    <h3 class='card-title'>Set Savings Goals</h3>
+                                    <p class='card-text'>Define your financial goals and monitor your progress.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4 mb-4'>
+                             <div class='card h-100'>
+                                <div class='card-body'>
+                                    <h3 class='card-title'>Visualize Your Budget</h3>
+                                    <p class='card-text'>Understand your spending habits with insightful reports.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class='text-center p-4 mt-5 bg-light'>
+                    <p>&copy; 2023 Budget Planner. All rights reserved.</p>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="iframe-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>About Budget Planner</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                                <li class='nav-item'><a class='btn btn-outline-primary me-2' href='#'>Login</a></li>
+                                <li class='nav-item'><a class='btn btn-primary' href='#'>Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <h1 class='mb-4'>About Budget Planner</h1>
+                    <p class='lead'>We believe that managing personal finances should be simple and accessible to everyone.</p>
+                    <p>Budget Planner was created to provide a user-friendly platform for individuals and families to gain clarity on their financial situation, make informed decisions, and work towards their financial goals.</p>
+                    <h3 class='mt-4'>Our Mission</h3>
+                    <p>To empower users with the tools and insights needed to achieve financial well-being through effective budgeting and planning.</p>
+                    <h3 class='mt-4'>Our Team</h3>
+                    <p>We are a passionate team of developers and financial enthusiasts dedicated to building the best budgeting tool on the market. (Placeholder team info).</p>
+                </div>
+
+                 <footer class='text-center p-4 mt-5 bg-light fixed-bottom'>
+                    <p>&copy; 2023 Budget Planner. All rights reserved.</p>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <div class="iframe-container">
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up - Budget Planner</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <style> body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; } .card { width: 100%; max-width: 450px; } </style>
+            </head>
+            <body>
+                <div class='card p-4 shadow-sm'>
+                    <div class='card-body'>
+                        <h2 class='card-title text-center mb-4'>Create Your Account</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='signupName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='signupName' placeholder='John Doe' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='signupEmail' placeholder='name@example.com' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='signupPassword' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                <input type='password' class='form-control' id='confirmPassword' required>
+                            </div>
+                            <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                        </form>
+                        <p class='mt-3 text-center'>Already have an account? <a href='#'>Login</a></p>
+                         <p class='mt-3 text-center'><a href='#'>Back to Home</a></p>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+        <!-- State 4: Sign Up Page (Validation Error) -->
+    <div class="iframe-container">
+        <h2>State 4: Sign Up Page (Validation Error)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up Error - Budget Planner</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <style> body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; } .card { width: 100%; max-width: 450px; } </style>
+            </head>
+            <body>
+               <div class='card p-4 shadow-sm'>
+                    <div class='card-body'>
+                        <div class='alert alert-danger' role='alert'>
+                          Please fix the errors below.
+                        </div>
+                        <h2 class='card-title text-center mb-4'>Create Your Account</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='signupName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='signupName' placeholder='John Doe' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control is-invalid' id='signupEmail' placeholder='name@example.com' required value='invalid-email'>
+                                <div class='invalid-feedback'>
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control is-invalid' id='signupPassword' required>
+                                 <div class='invalid-feedback'>
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                <input type='password' class='form-control is-invalid' id='confirmPassword' required>
+                                 <div class='invalid-feedback'>
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                        </form>
+                        <p class='mt-3 text-center'>Already have an account? <a href='#'>Login</a></p>
+                         <p class='mt-3 text-center'><a href='#'>Back to Home</a></p>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Login Page -->
+    <div class="iframe-container">
+        <h2>State 5: Login Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <style> body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; } .card { width: 100%; max-width: 400px; } </style>
+            </head>
+            <body>
+                 <div class='card p-4 shadow-sm'>
+                    <div class='card-body'>
+                        <h2 class='card-title text-center mb-4'>Login</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='loginEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='loginEmail' placeholder='name@example.com' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='loginPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='loginPassword' required>
+                            </div>
+                             <div class='mb-3 form-check'>
+                                <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                <label class='form-check-label' for='rememberMe'>Remember me</label>
+                            </div>
+                            <button type='submit' class='btn btn-primary w-100'>Login</button>
+                        </form>
+                        <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+                        <p class='mt-1 text-center'><a href='#'>Forgot password?</a></p>
+                         <p class='mt-3 text-center'><a href='#'>Back to Home</a></p>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+        <!-- State 6: Login Page (Error) -->
+    <div class="iframe-container">
+        <h2>State 6: Login Page (Error)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login Error - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <style> body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; } .card { width: 100%; max-width: 400px; } </style>
+            </head>
+            <body>
+                 <div class='card p-4 shadow-sm'>
+                    <div class='card-body'>
+                        <div class='alert alert-danger' role='alert'>
+                          Invalid email or password. Please try again.
+                        </div>
+                        <h2 class='card-title text-center mb-4'>Login</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='loginEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control is-invalid' id='loginEmail' placeholder='name@example.com' required value='wrong@example.com'>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='loginPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control is-invalid' id='loginPassword' required>
+                            </div>
+                             <div class='mb-3 form-check'>
+                                <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                <label class='form-check-label' for='rememberMe'>Remember me</label>
+                            </div>
+                            <button type='submit' class='btn btn-primary w-100'>Login</button>
+                        </form>
+                        <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+                        <p class='mt-1 text-center'><a href='#'>Forgot password?</a></p>
+                         <p class='mt-3 text-center'><a href='#'>Back to Home</a></p>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Dashboard (Empty State) -->
+    <div class="iframe-container">
+        <h2>State 7: Dashboard (Empty State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Dashboard - Budget Planner</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                 <div class='container mt-4'>
+                     <div class='alert alert-info d-flex align-items-center' role='alert'>
+                        <i class='bi bi-info-circle-fill me-2'></i>
+                        <div>
+                           Welcome, John Doe! Get started by adding your income and expenses.
+                        </div>
+                     </div>
+
+                    <h1 class='mb-4'>Dashboard</h1>
+
+                    <div class='row'>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Income</h5>
+                                    <p class='card-text fs-3'>$0.00</p>
+                                    <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-1'></i>Add Income</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Expenses</h5>
+                                    <p class='card-text fs-3'>$0.00</p>
+                                    <a href='#' class='btn btn-danger'><i class='bi bi-dash-circle me-1'></i>Add Expense</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Net Balance</h5>
+                                    <p class='card-text fs-3'>$0.00</p>
+                                    <a href='#' class='btn btn-info'><i class='bi bi-bar-chart me-1'></i>View Reports</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='mt-4 text-center'>
+                        <h3>No transactions yet.</h3>
+                        <p>Add your first income or expense to see your budget overview.</p>
+                    </div>
+                </div>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: Add Income Page -->
+    <div class="iframe-container">
+        <h2>State 8: Add Income Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Income - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Add New Income</h1>
+                  <div class='card mt-3'>
+                    <div class='card-body'>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='incomeSource' class='form-label'>Income Source</label>
+                                <input type='text' class='form-control' id='incomeSource' placeholder='e.g., Salary, Freelance' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='incomeAmount' class='form-label'>Amount</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control' id='incomeAmount' placeholder='0.00' step='0.01' required>
+                                </div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='incomeDate' class='form-label'>Date Received</label>
+                                <input type='date' class='form-control' id='incomeDate' required>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='incomeNotes' class='form-label'>Notes (Optional)</label>
+                                <textarea class='form-control' id='incomeNotes' rows='3'></textarea>
+                            </div>
+                            <button type='submit' class='btn btn-success'><i class='bi bi-check-circle me-1'></i>Add Income</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </form>
+                     </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 9: Add Income Page (Validation Error) -->
+    <div class="iframe-container">
+        <h2>State 9: Add Income Page (Validation Error)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Income Error - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Add New Income</h1>
+                   <div class='alert alert-danger' role='alert'>
+                      Please fix the validation errors below.
+                   </div>
+                  <div class='card mt-3'>
+                    <div class='card-body'>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='incomeSource' class='form-label'>Income Source</label>
+                                <input type='text' class='form-control is-invalid' id='incomeSource' placeholder='e.g., Salary, Freelance' required value=''>
+                                <div class='invalid-feedback'>Income source is required.</div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='incomeAmount' class='form-label'>Amount</label>
+                                <div class='input-group has-validation'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control is-invalid' id='incomeAmount' placeholder='0.00' step='0.01' required value='-10'>
+                                     <div class='invalid-feedback'>Amount must be a positive number.</div>
+                                </div>
+
+                            </div>
+                            <div class='mb-3'>
+                                <label for='incomeDate' class='form-label'>Date Received</label>
+                                <input type='date' class='form-control is-invalid' id='incomeDate' required>
+                                <div class='invalid-feedback'>Please select a valid date.</div>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='incomeNotes' class='form-label'>Notes (Optional)</label>
+                                <textarea class='form-control' id='incomeNotes' rows='3'></textarea>
+                            </div>
+                            <button type='submit' class='btn btn-success'><i class='bi bi-check-circle me-1'></i>Add Income</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </form>
+                     </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+        <!-- State 10: Dashboard (With Data) -->
+    <div class="iframe-container">
+        <h2>State 10: Dashboard (With Data)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Dashboard - Budget Planner</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> John Doe
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                 <div class='container mt-4'>
+                    <h1 class='mb-4'>Dashboard</h1>
+
+                    <div class='row'>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100 bg-light border-success'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Income (This Month)</h5>
+                                    <p class='card-text fs-3 text-success'>$3,500.00</p>
+                                    <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-1'></i>Add Income</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100 bg-light border-danger'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Expenses (This Month)</h5>
+                                    <p class='card-text fs-3 text-danger'>$1,250.50</p>
+                                     <a href='#' class='btn btn-danger'><i class='bi bi-dash-circle me-1'></i>Add Expense</a>
+                                </div>
+                            </div>
+                        </div>
+                       <div class='col-md-4 mb-3'>
+                            <div class='card text-center h-100 bg-light border-primary'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Net Balance (This Month)</h5>
+                                    <p class='card-text fs-3 text-primary'>$2,249.50</p>
+                                    <a href='#' class='btn btn-info'><i class='bi bi-bar-chart me-1'></i>View Reports</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class='row mt-4'>
+                        <div class='col-md-6'>
+                             <h3 class='mb-3'>Recent Transactions</h3>
+                             <ul class='list-group'>
+                               <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                 <div><i class='bi bi-arrow-down-circle-fill text-success me-2'></i>Salary</div>
+                                 <span class='badge bg-success rounded-pill'>+$3,000.00</span>
+                               </li>
+                               <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                 <div><i class='bi bi-arrow-up-circle-fill text-danger me-2'></i>Rent</div>
+                                 <span class='badge bg-danger rounded-pill'>-$800.00</span>
+                               </li>
+                               <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                 <div><i class='bi bi-arrow-up-circle-fill text-danger me-2'></i>Groceries</div>
+                                 <span class='badge bg-danger rounded-pill'>-$150.50</span>
+                               </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                 <div><i class='bi bi-arrow-down-circle-fill text-success me-2'></i>Freelance Work</div>
+                                 <span class='badge bg-success rounded-pill'>+$500.00</span>
+                               </li>
+                                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                 <div><i class='bi bi-arrow-up-circle-fill text-danger me-2'></i>Utilities</div>
+                                 <span class='badge bg-danger rounded-pill'>-$100.00</span>
+                               </li>
+                             </ul>
+                        </div>
+                         <div class='col-md-6'>
+                             <h3 class='mb-3'>Savings Goals Progress</h3>
+                             <div class='card mb-3'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Emergency Fund</h5>
+                                    <p class='card-text'>$1,500 / $5,000</p>
+                                    <div class='progress'>
+                                      <div class='progress-bar' role='progressbar' style='width: 30%;' aria-valuenow='30' aria-valuemin='0' aria-valuemax='100'>30%</div>
+                                    </div>
+                                     <a href='#' class='btn btn-sm btn-outline-primary mt-2'>View Goal</a>
+                                </div>
+                            </div>
+                             <div class='card mb-3'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Vacation Fund</h5>
+                                    <p class='card-text'>$800 / $2,000</p>
+                                    <div class='progress'>
+                                       <div class='progress-bar bg-info' role='progressbar' style='width: 40%;' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100'>40%</div>
+                                    </div>
+                                     <a href='#' class='btn btn-sm btn-outline-primary mt-2'>View Goal</a>
+                                </div>
+                            </div>
+                              <a href='#' class='btn btn-secondary'><i class='bi bi-piggy-bank me-1'></i>Manage Goals</a>
+                        </div>
+                     </div>
+
+                </div>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 11: Add Expense Page -->
+    <div class="iframe-container">
+        <h2>State 11: Add Expense Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Expense - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Add New Expense</h1>
+                  <div class='card mt-3'>
+                    <div class='card-body'>
+                        <form>
+                             <div class='mb-3'>
+                                <label for='expenseDescription' class='form-label'>Description</label>
+                                <input type='text' class='form-control' id='expenseDescription' placeholder='e.g., Groceries, Dinner out' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='expenseAmount' class='form-label'>Amount</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control' id='expenseAmount' placeholder='0.00' step='0.01' required>
+                                </div>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='expenseCategory' class='form-label'>Category</label>
+                                <select class='form-select' id='expenseCategory' required>
+                                    <option selected disabled value=''>Choose...</option>
+                                    <option>Food</option>
+                                    <option>Transportation</option>
+                                    <option>Housing</option>
+                                    <option>Utilities</option>
+                                    <option>Entertainment</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='expenseDate' class='form-label'>Date</label>
+                                <input type='date' class='form-control' id='expenseDate' required>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='expenseNotes' class='form-label'>Notes (Optional)</label>
+                                <textarea class='form-control' id='expenseNotes' rows='3'></textarea>
+                            </div>
+                            <button type='submit' class='btn btn-danger'><i class='bi bi-check-circle me-1'></i>Add Expense</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </form>
+                     </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 12: Add Expense Page (Validation Error) -->
+    <div class="iframe-container">
+        <h2>State 12: Add Expense Page (Validation Error)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Expense Error - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Add New Expense</h1>
+                   <div class='alert alert-danger' role='alert'>
+                      Please fix the validation errors below.
+                   </div>
+                  <div class='card mt-3'>
+                    <div class='card-body'>
+                        <form>
+                           <div class='mb-3'>
+                                <label for='expenseDescription' class='form-label'>Description</label>
+                                <input type='text' class='form-control is-invalid' id='expenseDescription' placeholder='e.g., Groceries, Dinner out' required value=''>
+                                 <div class='invalid-feedback'>Description is required.</div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='expenseAmount' class='form-label'>Amount</label>
+                                <div class='input-group has-validation'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control is-invalid' id='expenseAmount' placeholder='0.00' step='0.01' required value='-5'>
+                                    <div class='invalid-feedback'>Amount must be a positive number.</div>
+                                </div>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='expenseCategory' class='form-label'>Category</label>
+                                <select class='form-select is-invalid' id='expenseCategory' required>
+                                    <option selected disabled value=''>Choose...</option>
+                                    <option>Food</option>
+                                    <option>Transportation</option>
+                                    <option>Housing</option>
+                                    <option>Utilities</option>
+                                    <option>Entertainment</option>
+                                    <option>Other</option>
+                                </select>
+                                 <div class='invalid-feedback'>Please select a category.</div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='expenseDate' class='form-label'>Date</label>
+                                <input type='date' class='form-control' id='expenseDate' required>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='expenseNotes' class='form-label'>Notes (Optional)</label>
+                                <textarea class='form-control' id='expenseNotes' rows='3'></textarea>
+                            </div>
+                            <button type='submit' class='btn btn-danger'><i class='bi bi-check-circle me-1'></i>Add Expense</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </form>
+                     </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 13: Manage Expenses Page -->
+    <div class="iframe-container">
+        <h2>State 13: Manage Expenses Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Manage Expenses - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <div class='d-flex justify-content-between align-items-center mb-3'>
+                       <h1>Manage Expenses</h1>
+                       <a href='#' class='btn btn-danger'><i class='bi bi-dash-circle me-1'></i>Add New Expense</a>
+                  </div>
+
+                   <div class='card'>
+                       <div class='card-body'>
+                           <div class='table-responsive'>
+                               <table class='table table-striped table-hover'>
+                                   <thead>
+                                       <tr>
+                                           <th scope='col'>Date</th>
+                                           <th scope='col'>Description</th>
+                                           <th scope='col'>Category</th>
+                                           <th scope='col' class='text-end'>Amount</th>
+                                           <th scope='col' class='text-center'>Actions</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                       <tr>
+                                           <td>2023-10-26</td>
+                                           <td>Groceries</td>
+                                           <td>Food</td>
+                                           <td class='text-end text-danger'>-$150.50</td>
+                                           <td class='text-center'>
+                                               <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                               <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                           </td>
+                                       </tr>
+                                        <tr>
+                                           <td>2023-10-25</td>
+                                           <td>Rent</td>
+                                           <td>Housing</td>
+                                           <td class='text-end text-danger'>-$800.00</td>
+                                            <td class='text-center'>
+                                               <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                               <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>2023-10-24</td>
+                                           <td>Utilities</td>
+                                           <td>Utilities</td>
+                                           <td class='text-end text-danger'>-$100.00</td>
+                                            <td class='text-center'>
+                                               <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                               <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>2023-10-22</td>
+                                           <td>Dinner Out</td>
+                                           <td>Entertainment</td>
+                                           <td class='text-end text-danger'>-$75.00</td>
+                                            <td class='text-center'>
+                                               <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                               <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                           </td>
+                                       </tr>
+                                        <tr>
+                                           <td>2023-10-20</td>
+                                           <td>Gas</td>
+                                           <td>Transportation</td>
+                                           <td class='text-end text-danger'>-$50.00</td>
+                                            <td class='text-center'>
+                                               <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                               <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                           </td>
+                                       </tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                             <nav aria-label='Page navigation'>
+                              <ul class='pagination justify-content-center mt-3'>
+                                <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                                <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                                <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                                <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                              </ul>
+                            </nav>
+                       </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 14: Savings Goals Page (Empty State) -->
+    <div class="iframe-container">
+        <h2>State 14: Savings Goals Page (Empty State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Savings Goals - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                   <div class='d-flex justify-content-between align-items-center mb-3'>
+                       <h1>Savings Goals</h1>
+                       <a href='#' class='btn btn-primary'><i class='bi bi-plus-lg me-1'></i>Add New Goal</a>
+                  </div>
+
+                   <div class='text-center p-5 border rounded bg-light'>
+                       <i class='bi bi-piggy-bank display-4 text-muted'></i>
+                       <h3 class='mt-3'>No Savings Goals Yet</h3>
+                       <p>Start planning for your future! Add your first savings goal.</p>
+                       <a href='#' class='btn btn-primary mt-2'><i class='bi bi-plus-lg me-1'></i>Add New Goal</a>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+      <!-- State 15: Add Savings Goal Page -->
+    <div class="iframe-container">
+        <h2>State 15: Add Savings Goal Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Savings Goal - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Add New Savings Goal</h1>
+                  <div class='card mt-3'>
+                    <div class='card-body'>
+                        <form>
+                             <div class='mb-3'>
+                                <label for='goalName' class='form-label'>Goal Name</label>
+                                <input type='text' class='form-control' id='goalName' placeholder='e.g., Emergency Fund, New Car' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='targetAmount' class='form-label'>Target Amount</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control' id='targetAmount' placeholder='5000.00' step='0.01' required>
+                                </div>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='currentAmount' class='form-label'>Current Amount Saved</label>
+                                <div class='input-group'>
+                                    <span class='input-group-text'>$</span>
+                                    <input type='number' class='form-control' id='currentAmount' placeholder='0.00' step='0.01' value='0.00' required>
+                                </div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='targetDate' class='form-label'>Target Date (Optional)</label>
+                                <input type='date' class='form-control' id='targetDate'>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='goalNotes' class='form-label'>Notes (Optional)</label>
+                                <textarea class='form-control' id='goalNotes' rows='3'></textarea>
+                            </div>
+                            <button type='submit' class='btn btn-primary'><i class='bi bi-check-circle me-1'></i>Add Goal</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </form>
+                     </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 16: Savings Goals Page (With Data) -->
+    <div class="iframe-container">
+        <h2>State 16: Savings Goals Page (With Data)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Savings Goals - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                   <div class='d-flex justify-content-between align-items-center mb-3'>
+                       <h1>Savings Goals</h1>
+                       <a href='#' class='btn btn-primary'><i class='bi bi-plus-lg me-1'></i>Add New Goal</a>
+                  </div>
+
+                  <div class='row'>
+                      <div class='col-md-6 mb-4'>
+                          <div class='card h-100'>
+                             <div class='card-body'>
+                                <div class='d-flex justify-content-between align-items-center mb-2'>
+                                    <h5 class='card-title mb-0'>Emergency Fund</h5>
+                                     <div>
+                                         <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                         <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                     </div>
+                                </div>
+                                <p class='card-text text-muted'>Target: $5,000.00 | Target Date: 2024-12-31</p>
+                                <p class='card-text fs-5'>$1,500.00 <span class='text-muted'>saved</span></p>
+                                <div class='progress mb-2' style='height: 20px;'>
+                                  <div class='progress-bar' role='progressbar' style='width: 30%;' aria-valuenow='30' aria-valuemin='0' aria-valuemax='100'>30%</div>
+                                </div>
+                                <button class='btn btn-sm btn-success'><i class='bi bi-plus-lg'></i> Add Funds</button>
+                             </div>
+                          </div>
+                      </div>
+                      <div class='col-md-6 mb-4'>
+                         <div class='card h-100'>
+                             <div class='card-body'>
+                                <div class='d-flex justify-content-between align-items-center mb-2'>
+                                    <h5 class='card-title mb-0'>Vacation Fund</h5>
+                                     <div>
+                                         <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                         <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                     </div>
+                                </div>
+                                <p class='card-text text-muted'>Target: $2,000.00 | Target Date: 2024-06-30</p>
+                                <p class='card-text fs-5'>$800.00 <span class='text-muted'>saved</span></p>
+                                <div class='progress mb-2' style='height: 20px;'>
+                                  <div class='progress-bar bg-info' role='progressbar' style='width: 40%;' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100'>40%</div>
+                                </div>
+                                 <button class='btn btn-sm btn-success'><i class='bi bi-plus-lg'></i> Add Funds</button>
+                             </div>
+                          </div>
+                      </div>
+                       <div class='col-md-6 mb-4'>
+                         <div class='card h-100'>
+                             <div class='card-body'>
+                                <div class='d-flex justify-content-between align-items-center mb-2'>
+                                    <h5 class='card-title mb-0'>New Laptop</h5>
+                                     <div>
+                                         <button class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-pencil-square'></i></button>
+                                         <button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button>
+                                     </div>
+                                </div>
+                                <p class='card-text text-muted'>Target: $1,200.00</p>
+                                <p class='card-text fs-5'>$1,200.00 <span class='text-muted'>saved</span></p>
+                                <div class='progress mb-2' style='height: 20px;'>
+                                  <div class='progress-bar bg-success' role='progressbar' style='width: 100%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'>Goal Reached!</div>
+                                </div>
+                                 <button class='btn btn-sm btn-secondary disabled'><i class='bi bi-check-circle-fill'></i> Completed</button>
+                             </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 17: Reports Page -->
+    <div class="iframe-container">
+        <h2>State 17: Reports Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Reports - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                  <style>
+                    .chart-placeholder {
+                        height: 300px;
+                        background-color: #e9ecef;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: #6c757d;
+                        font-size: 1.2rem;
+                        border-radius: .25rem;
+                        margin-bottom: 1.5rem;
+                    }
+                 </style>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link active' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <div class='d-flex justify-content-between align-items-center mb-3'>
+                     <h1>Financial Reports</h1>
+                     <div>
+                        <label for='reportPeriod' class='form-label me-2'>Select Period:</label>
+                        <select class='form-select d-inline-block w-auto' id='reportPeriod'>
+                            <option selected>This Month</option>
+                            <option>Last Month</option>
+                            <option>This Year</option>
+                            <option>All Time</option>
+                            <option>Custom Range...</option>
+                        </select>
+                     </div>
+                  </div>
+
+                   <div class='row'>
+                       <div class='col-md-6'>
+                           <div class='card mb-4'>
+                               <div class='card-header'>Expenses by Category</div>
+                               <div class='card-body'>
+                                   <div class='chart-placeholder'><i class='bi bi-pie-chart me-2'></i>Pie Chart Placeholder</div>
+                               </div>
+                           </div>
+                       </div>
+                        <div class='col-md-6'>
+                           <div class='card mb-4'>
+                               <div class='card-header'>Income vs. Expense Trend</div>
+                               <div class='card-body'>
+                                    <div class='chart-placeholder'><i class='bi bi-graph-up me-2'></i>Line Chart Placeholder</div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class='card'>
+                       <div class='card-header'>Spending Summary</div>
+                       <div class='card-body'>
+                            <table class='table'>
+                                <thead>
+                                    <tr><th>Category</th><th class='text-end'>Amount</th><th>% of Total</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Housing</td><td class='text-end'>$800.00</td><td>64%</td></tr>
+                                    <tr><td>Food</td><td class='text-end'>$150.50</td><td>12%</td></tr>
+                                    <tr><td>Utilities</td><td class='text-end'>$100.00</td><td>8%</td></tr>
+                                    <tr><td>Entertainment</td><td class='text-end'>$75.00</td><td>6%</td></tr>
+                                    <tr><td>Transportation</td><td class='text-end'>$50.00</td><td>4%</td></tr>
+                                     <tr><td>Other</td><td class='text-end'>$75.00</td><td>6%</td></tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class='fw-bold'><td>Total Expenses</td><td class='text-end text-danger'>$1,250.50</td><td>100%</td></tr>
+                                </tfoot>
+                            </table>
+                       </div>
+                   </div>
+
+
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 18: Profile/Settings Page -->
+    <div class="iframe-container">
+        <h2>State 18: Profile/Settings Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Settings - Budget Planner</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+             <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Budget Planner</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#appNavbar' aria-controls='appNavbar' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='appNavbar'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-house-door me-1'></i>Dashboard</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-plus-circle me-1'></i>Add Income</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-dash-circle me-1'></i>Add Expense</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-wallet2 me-1'></i>Manage Expenses</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-piggy-bank me-1'></i>Savings Goals</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-bar-chart me-1'></i>Reports</a></li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                               <li class='nav-item dropdown'>
+                                 <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                   <i class='bi bi-person-circle me-1'></i> Profile
+                                 </a>
+                                 <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                   <li><a class='dropdown-item active' href='#'>Settings</a></li>
+                                   <li><hr class='dropdown-divider'></li>
+                                   <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                 </ul>
+                               </li>
+                             </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                  <h1>Settings</h1>
+
+                   <div class='row mt-4'>
+                       <div class='col-md-8'>
+                           <div class='card mb-4'>
+                               <div class='card-header'>User Profile</div>
+                               <div class='card-body'>
+                                   <form>
+                                       <div class='mb-3'>
+                                           <label for='profileName' class='form-label'>Full Name</label>
+                                           <input type='text' class='form-control' id='profileName' value='John Doe'>
+                                       </div>
+                                       <div class='mb-3'>
+                                           <label for='profileEmail' class='form-label'>Email address</label>
+                                           <input type='email' class='form-control' id='profileEmail' value='john.doe@example.com' readonly disabled>
+                                            <div id='emailHelp' class='form-text'>Email cannot be changed.</div>
+                                       </div>
+                                       <div class='mb-3'>
+                                            <label for='profileCurrency' class='form-label'>Default Currency</label>
+                                            <select class='form-select' id='profileCurrency'>
+                                                <option>GBP (£)</option>
+                                                <option selected>USD ($)</option>
+                                                <option>EUR (€)</option>
+                                                <option>CAD (C$)</option>
+                                            </select>
+                                        </div>
+                                       <button type='submit' class='btn btn-primary'>Save Profile Changes</button>
+                                   </form>
+                               </div>
+                           </div>
+
+                            <div class='card mb-4'>
+                               <div class='card-header'>Change Password</div>
+                               <div class='card-body'>
+                                   <form>
+                                       <div class='mb-3'>
+                                           <label for='currentPassword' class='form-label'>Current Password</label>
+                                           <input type='password' class='form-control' id='currentPassword' required>
+                                       </div>
+                                       <div class='mb-3'>
+                                           <label for='newPassword' class='form-label'>New Password</label>
+                                           <input type='password' class='form-control' id='newPassword' required>
+                                       </div>
+                                        <div class='mb-3'>
+                                           <label for='confirmNewPassword' class='form-label'>Confirm New Password</label>
+                                           <input type='password' class='form-control' id='confirmNewPassword' required>
+                                       </div>
+                                       <button type='submit' class='btn btn-warning'>Change Password</button>
+                                   </form>
+                               </div>
+                           </div>
+
+                             <div class='card border-danger mb-4'>
+                               <div class='card-header text-white bg-danger'>Danger Zone</div>
+                               <div class='card-body'>
+                                   <p>Deleting your account is permanent and cannot be undone. All your budget data will be lost.</p>
+                                   <button type='button' class='btn btn-danger'>Delete My Account</button>
+                               </div>
+                           </div>
+                       </div>
+                       <div class='col-md-4'>
+                            <div class='list-group'>
+                              <a href='#' class='list-group-item list-group-item-action active' aria-current='true'>Profile</a>
+                              <a href='#' class='list-group-item list-group-item-action'>Password</a>
+                              <a href='#' class='list-group-item list-group-item-action'>Notifications</a>
+                              <a href='#' class='list-group-item list-group-item-action'>Categories</a>
+                               <a href='#' class='list-group-item list-group-item-action list-group-item-danger'>Delete Account</a>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</body>
+</html>

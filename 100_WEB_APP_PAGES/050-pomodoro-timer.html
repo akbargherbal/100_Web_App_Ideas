@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .iframe-container {
+            margin-bottom: 40px;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            overflow: hidden; /* Ensure border wraps iframe */
+        }
+        iframe {
+            width: 100%;
+            height: 700px; /* Adjusted height for better visibility */
+            border: none;
+            display: block; /* Remove extra space below iframe */
+        }
+        .state-heading {
+          margin-top: 30px;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+         /* Basic styling for content within iframe for consistency */
+        .iframe-content body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure footer sticks to bottom if content is short */
+            padding-top: 56px; /* Adjust for fixed navbar height */
+        }
+        .iframe-content .main-content {
+            flex: 1; /* Allow main content to grow */
+        }
+        .iframe-content footer {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: auto; /* Push footer to bottom */
+            width: 100%;
+        }
+         .timer-display {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #212529;
+        }
+        .timer-status {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #6c757d;
+        }
+        .timer-controls button {
+            margin: 0 10px;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center">Pomodoro Timer - UI Flow</h1>
+
+        <!-- State 1: Home Page (Default Timer View) -->
+        <h2 class="state-heading">State 1: Home Page (Default Timer View)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+        .timer-display { font-size: 6rem; font-weight: bold; color: #212529; }
+        .timer-status { font-size: 1.5rem; margin-bottom: 1.5rem; color: #6c757d; }
+        .timer-controls button { margin: 0 10px; min-width: 100px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container d-flex flex-column align-items-center justify-content-center text-center py-5">
+        <div class="timer-status">Ready to Work?</div>
+        <div class="timer-display">25:00</div>
+        <div class="timer-controls mt-4">
+             <button class="btn btn-success btn-lg"><i class="bi bi-play-fill"></i> Start</button>
+             <button class="btn btn-secondary btn-lg" disabled><i class="bi bi-pause-fill"></i> Pause</button>
+             <button class="btn btn-warning btn-lg" disabled><i class="bi bi-arrow-clockwise"></i> Reset</button>
+        </div>
+        <div class="mt-4 w-75">
+            <label for="taskInput" class="form-label visually-hidden">Current Task</label>
+            <input type="text" class="form-control form-control-lg" id="taskInput" placeholder="Enter current task (optional)">
+        </div>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Focus on what matters.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 2: Home Page (Timer Running - Work) -->
+        <h2 class="state-heading">State 2: Home Page (Timer Running - Work)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Work Session</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+        .timer-display { font-size: 6rem; font-weight: bold; color: #212529; }
+        .timer-status { font-size: 1.5rem; margin-bottom: 1.5rem; color: #dc3545; font-weight: bold; }
+        .timer-controls button { margin: 0 10px; min-width: 100px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container d-flex flex-column align-items-center justify-content-center text-center py-5">
+        <div class="timer-status">Work Session</div>
+        <div class="timer-display">18:32</div>
+        <div class="timer-controls mt-4">
+             <button class="btn btn-success btn-lg" disabled><i class="bi bi-play-fill"></i> Start</button>
+             <button class="btn btn-secondary btn-lg"><i class="bi bi-pause-fill"></i> Pause</button>
+             <button class="btn btn-warning btn-lg"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+        </div>
+         <div class="mt-4 w-75">
+            <p class="lead">Current Task: Design Homepage Layout</p>
+        </div>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Stay focused!</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 3: Home Page (Timer Running - Short Break) -->
+        <h2 class="state-heading">State 3: Home Page (Timer Running - Short Break)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Short Break</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; background-color: #e0f2f7; /* Light blue background for break */ }
+        .main-content { flex: 1; }
+        footer { background-color: #cfe2ff; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+        .timer-display { font-size: 6rem; font-weight: bold; color: #0d6efd; }
+        .timer-status { font-size: 1.5rem; margin-bottom: 1.5rem; color: #0a58ca; font-weight: bold; }
+        .timer-controls button { margin: 0 10px; min-width: 100px; }
+        .navbar { background-color: #0d6efd !important; /* Blue navbar for break */ }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container d-flex flex-column align-items-center justify-content-center text-center py-5">
+        <div class="timer-status">Short Break</div>
+        <div class="timer-display">04:15</div>
+        <div class="timer-controls mt-4">
+             <button class="btn btn-success btn-lg" disabled><i class="bi bi-play-fill"></i> Start</button>
+             <button class="btn btn-secondary btn-lg"><i class="bi bi-pause-fill"></i> Pause</button>
+             <button class="btn btn-warning btn-lg"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+             <button class="btn btn-info btn-lg"><i class="bi bi-skip-forward-fill"></i> Skip Break</button>
+        </div>
+         <div class="mt-4 w-75">
+             <p class="lead">Take a short break! Stretch or grab some water.</p>
+        </div>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Time to relax.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 4: Home Page (Timer Running - Long Break) -->
+        <h2 class="state-heading">State 4: Home Page (Timer Running - Long Break)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Long Break</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; background-color: #d1e7dd; /* Light green background for long break */ }
+        .main-content { flex: 1; }
+        footer { background-color: #badbcc; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+        .timer-display { font-size: 6rem; font-weight: bold; color: #198754; }
+        .timer-status { font-size: 1.5rem; margin-bottom: 1.5rem; color: #157347; font-weight: bold; }
+        .timer-controls button { margin: 0 10px; min-width: 100px; }
+        .navbar { background-color: #198754 !important; /* Green navbar for long break */ }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container d-flex flex-column align-items-center justify-content-center text-center py-5">
+        <div class="timer-status">Long Break</div>
+        <div class="timer-display">14:59</div>
+        <div class="timer-controls mt-4">
+             <button class="btn btn-success btn-lg" disabled><i class="bi bi-play-fill"></i> Start</button>
+             <button class="btn btn-secondary btn-lg"><i class="bi bi-pause-fill"></i> Pause</button>
+             <button class="btn btn-warning btn-lg"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+             <button class="btn btn-info btn-lg"><i class="bi bi-skip-forward-fill"></i> Skip Break</button>
+        </div>
+        <div class="mt-4 w-75">
+            <p class="lead">Enjoy a longer break! You've earned it after 4 Pomodoros.</p>
+        </div>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Recharge completely.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 5: Home Page (Timer Paused) -->
+        <h2 class="state-heading">State 5: Home Page (Timer Paused)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Paused</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+        .timer-display { font-size: 6rem; font-weight: bold; color: #6c757d; /* Greyed out */ }
+        .timer-status { font-size: 1.5rem; margin-bottom: 1.5rem; color: #ffc107; font-weight: bold; }
+        .timer-controls button { margin: 0 10px; min-width: 100px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container d-flex flex-column align-items-center justify-content-center text-center py-5">
+        <div class="timer-status">Paused (Work Session)</div>
+        <div class="timer-display">18:32</div>
+        <div class="timer-controls mt-4">
+             <button class="btn btn-success btn-lg"><i class="bi bi-play-fill"></i> Resume</button>
+             <button class="btn btn-secondary btn-lg" disabled><i class="bi bi-pause-fill"></i> Pause</button>
+             <button class="btn btn-warning btn-lg"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+        </div>
+        <div class="mt-4 w-75">
+            <p class="lead">Current Task: Design Homepage Layout</p>
+        </div>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Paused.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 6: Settings Page -->
+        <h2 class="state-heading">State 6: Settings Page</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container py-5">
+        <h2 class="mb-4">Timer Settings</h2>
+        <form>
+            <div class="row mb-3">
+                <label for="workDuration" class="col-sm-3 col-form-label">Work Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="workDuration" value="25" min="1" max="60">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="shortBreakDuration" class="col-sm-3 col-form-label">Short Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="shortBreakDuration" value="5" min="1" max="30">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="longBreakDuration" class="col-sm-3 col-form-label">Long Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="longBreakDuration" value="15" min="5" max="60">
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label for="longBreakInterval" class="col-sm-3 col-form-label">Long Break Interval (Pomodoros)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="longBreakInterval" value="4" min="2" max="10">
+                </div>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-sm-9 offset-sm-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartBreaks" checked>
+                        <label class="form-check-label" for="autoStartBreaks">
+                          Automatically start breaks
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartPomodoros">
+                        <label class="form-check-label" for="autoStartPomodoros">
+                          Automatically start Pomodoros
+                        </label>
+                      </div>
+                 </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i> Save Settings</button>
+                <button type="reset" class="btn btn-secondary ms-2"><i class="bi bi-x-lg"></i> Reset to Defaults</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Customize your flow.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+         <!-- State 7: Settings Page (Validation Error) -->
+        <h2 class="state-heading">State 7: Settings Page (Validation Error)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Settings Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container py-5">
+        <h2 class="mb-4">Timer Settings</h2>
+
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+          <div>
+            Please correct the errors below.
+          </div>
+        </div>
+
+        <form class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <label for="workDuration" class="col-sm-3 col-form-label">Work Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control is-invalid" id="workDuration" value="90" min="1" max="60" required>
+                     <div class="invalid-feedback">
+                        Work duration must be between 1 and 60 minutes.
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <label for="shortBreakDuration" class="col-sm-3 col-form-label">Short Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="shortBreakDuration" value="5" min="1" max="30" required>
+                     <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="longBreakDuration" class="col-sm-3 col-form-label">Long Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="longBreakDuration" value="15" min="5" max="60" required>
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label for="longBreakInterval" class="col-sm-3 col-form-label">Long Break Interval (Pomodoros)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control is-invalid" id="longBreakInterval" value="1" min="2" max="10" required>
+                     <div class="invalid-feedback">
+                        Long break interval must be at least 2.
+                    </div>
+                </div>
+            </div>
+             <div class="row mb-3">
+                 <div class="col-sm-9 offset-sm-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartBreaks" checked>
+                        <label class="form-check-label" for="autoStartBreaks">
+                          Automatically start breaks
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartPomodoros">
+                        <label class="form-check-label" for="autoStartPomodoros">
+                          Automatically start Pomodoros
+                        </label>
+                      </div>
+                 </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i> Save Settings</button>
+                <button type="reset" class="btn btn-secondary ms-2"><i class="bi bi-x-lg"></i> Reset to Defaults</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Check your inputs.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 8: Settings Page (Success Message) -->
+        <h2 class="state-heading">State 8: Settings Page (Success Message)</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - Settings Saved</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container py-5">
+        <h2 class="mb-4">Timer Settings</h2>
+
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <i class="bi bi-check-circle-fill flex-shrink-0 me-2"></i>
+          <div>
+            Settings saved successfully!
+          </div>
+        </div>
+
+        <form>
+             <div class="row mb-3">
+                <label for="workDuration" class="col-sm-3 col-form-label">Work Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="workDuration" value="30" min="1" max="60"> <!-- Updated value -->
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="shortBreakDuration" class="col-sm-3 col-form-label">Short Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="shortBreakDuration" value="7" min="1" max="30"> <!-- Updated value -->
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="longBreakDuration" class="col-sm-3 col-form-label">Long Break Duration (minutes)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="longBreakDuration" value="20" min="5" max="60"> <!-- Updated value -->
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="longBreakInterval" class="col-sm-3 col-form-label">Long Break Interval (Pomodoros)</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" id="longBreakInterval" value="3" min="2" max="10"> <!-- Updated value -->
+                </div>
+            </div>
+             <div class="row mb-3">
+                 <div class="col-sm-9 offset-sm-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartBreaks" checked>
+                        <label class="form-check-label" for="autoStartBreaks">
+                          Automatically start breaks
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="autoStartPomodoros">
+                        <label class="form-check-label" for="autoStartPomodoros">
+                          Automatically start Pomodoros
+                        </label>
+                      </div>
+                 </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i> Save Settings</button>
+                 <button type="reset" class="btn btn-secondary ms-2"><i class="bi bi-x-lg"></i> Reset to Defaults</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Settings updated.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 9: About Page -->
+        <h2 class="state-heading">State 9: About Page</h2>
+        <div class="iframe-container">
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; padding-top: 56px; }
+        .main-content { flex: 1; }
+        footer { background-color: #f8f9fa; padding: 1rem 0; text-align: center; margin-top: auto; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container py-5">
+        <h2 class="mb-4">About the Pomodoro Technique</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">What is the Pomodoro Technique?</h5>
+                <p class="card-text">The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen timer Cirillo used as a university student.</p>
+            </div>
+        </div>
+
+         <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">How It Works</h5>
+                <ol class="list-group list-group-numbered">
+                  <li class="list-group-item">Decide on the task to be done.</li>
+                  <li class="list-group-item">Set the pomodoro timer (typically for 25 minutes).</li>
+                  <li class="list-group-item">Work on the task.</li>
+                  <li class="list-group-item">End work when the timer rings and take a short break (typically 5 minutes).</li>
+                   <li class="list-group-item">After four pomodoros, take a longer break (typically 15–30 minutes).</li>
+                </ol>
+             </div>
+        </div>
+
+         <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">About This App</h5>
+                 <p class="card-text">This simple Pomodoro Timer app helps you implement the technique easily. You can customize the durations for work sessions, short breaks, and long breaks in the Settings page.</p>
+                 <p class="card-text">Built with HTML and Bootstrap for a clean and responsive user interface.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="mt-auto">
+        <p>&copy; 2024 Pomodoro Timer. Learn more, achieve more.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

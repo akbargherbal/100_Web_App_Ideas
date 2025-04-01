@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        /* Basic styling for iframe content if needed */
+        .iframe-content { padding: 15px; }
+    </style>
+</head>
+<body>
+
+    <h1>Log Viewer - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold"><i class="bi bi-search"></i> Analyze Your Logs Effortlessly</h1>
+                <p class="col-md-8 fs-4 mx-auto">Log Viewer provides a simple and powerful interface to view, search, and visualize your application logs and system events.</p>
+                <button class="btn btn-primary btn-lg" type="button">Get Started</button>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2><i class="bi bi-upload"></i> Upload Logs</h2>
+                    <p>Easily upload log files from your local machine. Supports various common log formats.</p>
+                    <button class="btn btn-outline-light" type="button">Upload Now</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                    <h2><i class="bi bi-plug"></i> Connect Sources</h2>
+                    <p>Connect directly to live log streams or data sources for real-time monitoring (configuration required).</p>
+                    <button class="btn btn-outline-secondary" type="button">Connect Source</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: Upload/Connect Logs Page -->
+    <h2>State 2: Upload/Connect Logs Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Upload/Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2><i class="bi bi-cloud-arrow-up"></i> Import Your Logs</h2>
+        <p>Choose a method to bring your log data into Log Viewer.</p>
+
+        <ul class="nav nav-tabs mb-3" id="importTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="upload-tab" data-bs-toggle="tab" data-bs-target="#upload-tab-pane" type="button" role="tab" aria-controls="upload-tab-pane" aria-selected="true"><i class="bi bi-upload"></i> Upload File</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="connect-tab" data-bs-toggle="tab" data-bs-target="#connect-tab-pane" type="button" role="tab" aria-controls="connect-tab-pane" aria-selected="false"><i class="bi bi-plug"></i> Connect Source</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="importTabsContent">
+          <div class="tab-pane fade show active p-4 border rounded bg-light" id="upload-tab-pane" role="tabpanel" aria-labelledby="upload-tab" tabindex="0">
+            <h4>Upload Log File</h4>
+            <form>
+              <div class="mb-3">
+                <label for="logFile" class="form-label">Select log file (.log, .txt, .json)</label>
+                <input class="form-control" type="file" id="logFile" accept=".log,.txt,.json">
+              </div>
+              <div class="mb-3">
+                <label for="logSource" class="form-label">Source Name (Optional)</label>
+                <input type="text" class="form-control" id="logSource" placeholder="e.g., Production Web Server">
+              </div>
+              <div class="mb-3">
+                <label for="logFormat" class="form-label">Log Format (If known)</label>
+                <select class="form-select" id="logFormat">
+                  <option selected>Auto-detect</option>
+                  <option value="1">Apache Common Log</option>
+                  <option value="2">Nginx Error Log</option>
+                  <option value="3">JSON Lines</option>
+                  <option value="4">Plain Text</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-bar-up"></i> Upload and Process</button>
+            </form>
+          </div>
+          <div class="tab-pane fade p-4 border rounded bg-light" id="connect-tab-pane" role="tabpanel" aria-labelledby="connect-tab" tabindex="0">
+            <h4>Connect to a Log Source</h4>
+            <p>Configure a connection to a live log source. (Feature placeholder)</p>
+            <form>
+                <div class="mb-3">
+                    <label for="sourceType" class="form-label">Source Type</label>
+                    <select class="form-select" id="sourceType">
+                        <option selected>Select source type...</option>
+                        <option value="1">File Path Monitor</option>
+                        <option value="2">Syslog Server</option>
+                        <option value="3">API Endpoint</option>
+                        <option value="4">Database Query</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="connectionString" class="form-label">Connection Details / Path</label>
+                    <input type="text" class="form-control" id="connectionString" placeholder="e.g., /var/log/app.log or syslog://192.168.1.100:514">
+                </div>
+                <div class="mb-3">
+                    <label for="authDetails" class="form-label">Authentication (If required)</label>
+                    <textarea class="form-control" id="authDetails" rows="2" placeholder="Username/Password, API Key, etc."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary disabled" aria-disabled="true"><i class="bi bi-link-45deg"></i> Test & Connect</button>
+                <small class="text-muted d-block mt-2">Connection functionality is not implemented in this static view.</small>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center text-muted fixed-bottom">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Processing Logs (Loading State) -->
+    <h2>State 3: Processing Logs (Loading State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Processing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+          </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 400px;">
+            <div>
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h3 class="mt-3">Processing Your Logs...</h3>
+                <p class="text-muted">This may take a few moments depending on the size of the log file.</p>
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center text-muted fixed-bottom">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: Log View Dashboard -->
+    <h2>State 4: Log View Dashboard</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <h2><i class="bi bi-card-list"></i> Log Dashboard</h2>
+        <p>Source: Production Web Server (uploaded_log.txt)</p>
+
+        <!-- Filters and Search -->
+        <div class="row mb-3 g-2 align-items-center bg-light p-3 rounded border">
+             <div class="col-md-3">
+                <label for="filterLevel" class="form-label visually-hidden">Level</label>
+                 <select class="form-select form-select-sm" id="filterLevel">
+                    <option selected>All Levels</option>
+                    <option value="ERROR">ERROR</option>
+                    <option value="WARN">WARN</option>
+                    <option value="INFO">INFO</option>
+                    <option value="DEBUG">DEBUG</option>
+                 </select>
+             </div>
+             <div class="col-md-4">
+                <label for="filterTimestamp" class="form-label visually-hidden">Timestamp</label>
+                 <input type="text" class="form-control form-control-sm" id="filterTimestamp" placeholder="Timestamp range (e.g., 2023-10-26 10:00 to 11:00)">
+             </div>
+             <div class="col-md-4">
+                <label for="searchKeyword" class="form-label visually-hidden">Search</label>
+                 <input type="text" class="form-control form-control-sm" id="searchKeyword" placeholder="Search keyword...">
+             </div>
+             <div class="col-md-1 text-end">
+                 <button class="btn btn-primary btn-sm"><i class="bi bi-filter"></i></button>
+             </div>
+        </div>
+
+        <!-- Log Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-sm caption-top">
+                 <caption>Showing 1-10 of 1532 log entries</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-10-27 10:15:32</td>
+                        <td><span class="badge bg-danger">ERROR</span></td>
+                        <td>AuthService</td>
+                        <td>User authentication failed for user `admin`: Invalid credentials</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-27 10:15:30</td>
+                        <td><span class="badge bg-info">INFO</span></td>
+                        <td>RequestLogger</td>
+                        <td>Incoming request: GET /api/users</td>
+                       <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                     <tr>
+                        <td>2023-10-27 10:14:55</td>
+                        <td><span class="badge bg-warning text-dark">WARN</span></td>
+                        <td>DatabasePool</td>
+                        <td>Connection pool nearing capacity. Used: 85/100</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                     <tr>
+                        <td>2023-10-27 10:14:50</td>
+                        <td><span class="badge bg-info">INFO</span></td>
+                        <td>OrderService</td>
+                        <td>Order #12345 processed successfully.</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-27 10:13:10</td>
+                        <td><span class="badge bg-secondary">DEBUG</span></td>
+                        <td>PaymentGateway</td>
+                        <td>Sending request to payment provider... Payload: {...}</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                    <!-- Add more placeholder rows -->
+                     <tr>
+                        <td>2023-10-27 10:12:05</td>
+                        <td><span class="badge bg-info">INFO</span></td>
+                        <td>RequestLogger</td>
+                        <td>Incoming request: POST /api/orders</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                      <tr>
+                        <td>2023-10-27 10:11:45</td>
+                        <td><span class="badge bg-danger">ERROR</span></td>
+                        <td>EmailService</td>
+                        <td>Failed to send confirmation email to user@example.com: SMTP connection error</td>
+                       <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                     <tr>
+                        <td>2023-10-27 10:10:00</td>
+                        <td><span class="badge bg-info">INFO</span></td>
+                        <td>Application</td>
+                        <td>Server started successfully on port 8080.</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Log navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><span class="page-link">...</span></li>
+            <li class="page-item"><a class="page-link" href="#">154</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Log View Dashboard (Filtered) -->
+    <h2>State 5: Log View Dashboard (Filtered)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Dashboard (Filtered)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <h2><i class="bi bi-card-list"></i> Log Dashboard</h2>
+        <p>Source: Production Web Server (uploaded_log.txt)</p>
+
+        <!-- Filters and Search -->
+        <div class="row mb-3 g-2 align-items-center bg-light p-3 rounded border">
+             <div class="col-md-3">
+                 <label for="filterLevel" class="form-label visually-hidden">Level</label>
+                 <select class="form-select form-select-sm" id="filterLevel">
+                    <option>All Levels</option>
+                    <option value="ERROR" selected>ERROR</option>
+                    <option value="WARN">WARN</option>
+                    <option value="INFO">INFO</option>
+                    <option value="DEBUG">DEBUG</option>
+                 </select>
+             </div>
+             <div class="col-md-4">
+                <label for="filterTimestamp" class="form-label visually-hidden">Timestamp</label>
+                 <input type="text" class="form-control form-control-sm" id="filterTimestamp" placeholder="Timestamp range (e.g., 2023-10-26 10:00 to 11:00)" value="2023-10-27 10:11 to 10:16">
+             </div>
+             <div class="col-md-4">
+                <label for="searchKeyword" class="form-label visually-hidden">Search</label>
+                 <input type="text" class="form-control form-control-sm" id="searchKeyword" placeholder="Search keyword..." value="failed">
+             </div>
+              <div class="col-md-1 text-end">
+                 <button class="btn btn-primary btn-sm"><i class="bi bi-filter"></i></button>
+             </div>
+        </div>
+
+         <div class="mb-2">
+            <span class="badge rounded-pill text-bg-secondary">Level: ERROR <button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove filter" style="font-size: 0.6em;"></button></span>
+            <span class="badge rounded-pill text-bg-secondary">Timestamp: 2023-10-27 10:11 to 10:16 <button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove filter" style="font-size: 0.6em;"></button></span>
+             <span class="badge rounded-pill text-bg-secondary">Keyword: "failed" <button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove filter" style="font-size: 0.6em;"></button></span>
+             <a href="#" class="ms-2 link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><small>Clear Filters</small></a>
+        </div>
+
+        <!-- Log Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-sm caption-top">
+                 <caption>Showing 1-2 of 2 log entries</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Source</th>
+                        <th scope="col">Message</th>
+                         <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-10-27 10:15:32</td>
+                        <td><span class="badge bg-danger">ERROR</span></td>
+                        <td>AuthService</td>
+                        <td>User authentication failed for user `admin`: Invalid credentials</td>
+                         <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-10-27 10:11:45</td>
+                        <td><span class="badge bg-danger">ERROR</span></td>
+                        <td>EmailService</td>
+                        <td>Failed to send confirmation email to user@example.com: SMTP connection error</td>
+                        <td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td>
+                    </tr>
+                    <!-- No more rows due to filtering -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination (only one page needed) -->
+        <nav aria-label="Log navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 6: Log Detail Modal (Static Representation) -->
+    <h2>State 6: Log Detail Modal (Static Representation)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Dashboard (Detail Modal)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Simulate modal backdrop */
+        body { position: relative; }
+        .modal-backdrop.show { opacity: .5; position: fixed; top: 0; left: 0; z-index: 1050; width: 100vw; height: 100vh; background-color: #000; }
+        /* Force modal to display */
+        .modal { display: block; background: transparent; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+         <h2><i class="bi bi-card-list"></i> Log Dashboard</h2>
+        <p>Source: Production Web Server (uploaded_log.txt)</p>
+
+        <!-- Filters and Search -->
+        <div class="row mb-3 g-2 align-items-center bg-light p-3 rounded border">
+             <!-- Filter inputs (same as State 4) -->
+             <div class="col-md-3"> <select class="form-select form-select-sm"><option selected>All Levels</option><option>ERROR</option><option>WARN</option><option>INFO</option><option>DEBUG</option></select></div>
+             <div class="col-md-4"><input type="text" class="form-control form-control-sm" placeholder="Timestamp range..."></div>
+             <div class="col-md-4"><input type="text" class="form-control form-control-sm" placeholder="Search keyword..."></div>
+             <div class="col-md-1 text-end"><button class="btn btn-primary btn-sm"><i class="bi bi-filter"></i></button></div>
+        </div>
+
+        <!-- Log Table -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-sm caption-top">
+                 <caption>Showing 1-10 of 1532 log entries</caption>
+                <thead class="table-dark">
+                    <tr><th>Timestamp</th><th>Level</th><th>Source</th><th>Message</th><th>Details</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Highlight the row related to the modal -->
+                    <tr class="table-info">
+                        <td>2023-10-27 10:15:32</td>
+                        <td><span class="badge bg-danger">ERROR</span></td>
+                        <td>AuthService</td>
+                        <td>User authentication failed for user `admin`: Invalid credentials</td>
+                         <td><button class="btn btn-secondary btn-sm py-0 px-1 disabled"><i class="bi bi-eye-fill"></i></button></td>
+                    </tr>
+                    <!-- Other rows -->
+                    <tr><td>2023-10-27 10:15:30</td><td><span class="badge bg-info">INFO</span></td><td>RequestLogger</td><td>Incoming request: GET /api/users</td><td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td></tr>
+                    <tr><td>2023-10-27 10:14:55</td><td><span class="badge bg-warning text-dark">WARN</span></td><td>DatabasePool</td><td>Connection pool nearing capacity. Used: 85/100</td><td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td></tr>
+                    <tr><td>2023-10-27 10:14:50</td><td><span class="badge bg-info">INFO</span></td><td>OrderService</td><td>Order #12345 processed successfully.</td><td><button class="btn btn-outline-secondary btn-sm py-0 px-1"><i class="bi bi-eye"></i></button></td></tr>
+                     <!-- ... more rows ... -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+         <nav aria-label="Log navigation"><ul class="pagination justify-content-center"><li class="page-item disabled"><a class="page-link" href="#">Previous</a></li><li class="page-item active"><a class="page-link" href="#">1</a></li><li class="page-item"><a class="page-link" href="#">2</a></li><li class="page-item"><a class="page-link" href="#">3</a></li><li class="page-item"><span class="page-link">...</span></li><li class="page-item"><a class="page-link" href="#">154</a></li><li class="page-item"><a class="page-link" href="#">Next</a></li></ul></nav>
+    </div>
+
+    <!-- Static Modal Representation -->
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal" tabindex="-1" style="display: block;">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-file-earmark-text"></i> Log Entry Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-3">Timestamp</dt>
+                    <dd class="col-sm-9">2023-10-27 10:15:32.123</dd>
+
+                    <dt class="col-sm-3">Level</dt>
+                    <dd class="col-sm-9"><span class="badge bg-danger">ERROR</span></dd>
+
+                    <dt class="col-sm-3">Source</dt>
+                    <dd class="col-sm-9">AuthService</dd>
+
+                    <dt class="col-sm-3">Thread</dt>
+                    <dd class="col-sm-9">http-nio-8080-exec-5</dd>
+
+                     <dt class="col-sm-3">Logger</dt>
+                    <dd class="col-sm-9">com.example.auth.AuthenticationService</dd>
+
+                    <dt class="col-sm-3">Message</dt>
+                    <dd class="col-sm-9">User authentication failed for user `admin`: Invalid credentials</dd>
+
+                    <dt class="col-sm-3">Request ID</dt>
+                    <dd class="col-sm-9"><code>a3b4c5d6-e7f8-90a1-b2c3-d4e5f6a7b8c9</code></dd>
+
+                     <dt class="col-sm-3">User IP</dt>
+                    <dd class="col-sm-9">192.168.1.101</dd>
+
+                    <dt class="col-sm-3">Stack Trace</dt>
+                    <dd class="col-sm-9">
+                        <pre class="bg-light p-2 rounded border" style="max-height: 150px; overflow-y: auto;"><code>com.example.auth.InvalidCredentialsException: Invalid credentials provided
+    at com.example.auth.AuthenticationService.authenticate(AuthenticationService.java:45)
+    at com.example.controller.AuthController.login(AuthController.java:30)
+    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    ... 25 more</code></pre>
+                    </dd>
+
+                     <dt class="col-sm-3">Full Log Entry</dt>
+                    <dd class="col-sm-9">
+                       <pre class="bg-light p-2 rounded border" style="white-space: pre-wrap; word-break: break-all;">2023-10-27 10:15:32.123 ERROR [http-nio-8080-exec-5] com.example.auth.AuthenticationService - User authentication failed for user `admin`: Invalid credentials (RequestID: a3b4c5d6-e7f8-90a1-b2c3-d4e5f6a7b8c9, UserIP: 192.168.1.101)</pre>
+                    </dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Static Modal -->
+
+
+     <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 7: Visualization Page -->
+    <h2>State 7: Visualization Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Visualizations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2><i class="bi bi-bar-chart-line"></i> Log Visualizations</h2>
+        <p>Source: Production Web Server (uploaded_log.txt)</p>
+
+         <!-- Filters -->
+        <div class="row mb-3 g-2 align-items-center bg-light p-3 rounded border">
+             <div class="col-md-4">
+                <label for="visTimeRange" class="form-label">Time Range</label>
+                 <select class="form-select form-select-sm" id="visTimeRange">
+                    <option selected>Last Hour</option>
+                    <option>Last 6 Hours</option>
+                    <option>Last 24 Hours</option>
+                    <option>Last 7 Days</option>
+                    <option>Custom Range</option>
+                 </select>
+             </div>
+             <div class="col-md-4">
+                <label for="visLevelFilter" class="form-label">Log Levels</label>
+                 <select class="form-select form-select-sm" id="visLevelFilter">
+                    <option selected>All Levels</option>
+                    <option>ERROR, WARN</option>
+                    <option>INFO</option>
+                    <option>DEBUG</option>
+                 </select>
+             </div>
+             <div class="col-md-3">
+                 <label for="visSourceFilter" class="form-label">Source Filter</label>
+                 <input type="text" class="form-control form-control-sm" id="visSourceFilter" placeholder="e.g., AuthService*">
+             </div>
+             <div class="col-md-1 text-end pt-4">
+                 <button class="btn btn-primary btn-sm"><i class="bi bi-arrow-clockwise"></i> Update</button>
+             </div>
+        </div>
+
+        <!-- Visualization Placeholders -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        Log Level Distribution
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center bg-secondary-subtle text-muted">
+                        <div class="text-center">
+                           <i class="bi bi-pie-chart-fill" style="font-size: 3rem;"></i><br>
+                            (Pie Chart Placeholder)
+                            <ul class="list-unstyled mt-2 small">
+                                <li><span class="badge bg-danger">ERROR</span> 15%</li>
+                                <li><span class="badge bg-warning text-dark">WARN</span> 25%</li>
+                                <li><span class="badge bg-info">INFO</span> 50%</li>
+                                <li><span class="badge bg-secondary">DEBUG</span> 10%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                 <div class="card h-100">
+                    <div class="card-header">
+                        Logs Over Time
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center bg-secondary-subtle text-muted">
+                         <div class="text-center">
+                           <i class="bi bi-graph-up" style="font-size: 3rem;"></i><br>
+                            (Line Chart Placeholder - Count per Minute)
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 mb-4">
+                 <div class="card h-100">
+                    <div class="card-header">
+                        Top Error Sources
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center bg-secondary-subtle text-muted">
+                         <div class="text-center">
+                           <i class="bi bi-bar-chart-steps" style="font-size: 3rem;"></i><br>
+                            (Bar Chart Placeholder)
+                             <ul class="list-unstyled mt-2 small">
+                                <li>AuthService: 45</li>
+                                <li>EmailService: 22</li>
+                                <li>DatabasePool: 10</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 mb-4">
+                 <div class="card h-100">
+                    <div class="card-header">
+                        Event Timeline
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center bg-secondary-subtle text-muted">
+                         <div class="text-center">
+                           <i class="bi bi-calendar-event" style="font-size: 3rem;"></i><br>
+                            (Timeline/Gantt Placeholder)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 8: Settings Page -->
+    <h2>State 8: Settings Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2><i class="bi bi-gear"></i> Settings</h2>
+        <hr>
+
+        <form>
+            <h4>User Preferences</h4>
+            <div class="row mb-3">
+                <label for="themeSelect" class="col-sm-3 col-form-label">UI Theme</label>
+                <div class="col-sm-9">
+                     <select class="form-select" id="themeSelect">
+                        <option selected>System Default</option>
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                    </select>
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label for="densitySelect" class="col-sm-3 col-form-label">Table Density</label>
+                <div class="col-sm-9">
+                     <select class="form-select" id="densitySelect">
+                        <option>Compact</option>
+                        <option selected>Default</option>
+                        <option>Comfortable</option>
+                    </select>
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label for="timeZoneSelect" class="col-sm-3 col-form-label">Time Zone Display</label>
+                <div class="col-sm-9">
+                     <select class="form-select" id="timeZoneSelect">
+                        <option>Local Browser Time</option>
+                        <option selected>UTC</option>
+                         <option>Server Time (if available)</option>
+                    </select>
+                </div>
+            </div>
+
+            <h4 class="mt-5">Data Management</h4>
+             <div class="row mb-3">
+                <label for="retentionPolicy" class="col-sm-3 col-form-label">Log Retention Policy</label>
+                <div class="col-sm-9">
+                     <select class="form-select" id="retentionPolicy">
+                        <option>Keep Forever</option>
+                        <option selected>90 Days</option>
+                        <option>30 Days</option>
+                        <option>7 Days</option>
+                     </select>
+                     <div class="form-text">Automatically delete logs older than the selected period.</div>
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Clear Local Cache</label>
+                 <div class="col-sm-9">
+                    <button type="button" class="btn btn-warning btn-sm">Clear Cached Log Data</button>
+                    <div class="form-text">Removes locally processed log data stored by the application. Does not affect original files or connected sources.</div>
+                 </div>
+             </div>
+
+
+            <h4 class="mt-5">Connection Settings (Placeholder)</h4>
+            <div class="alert alert-secondary" role="alert">
+              Manage saved connection profiles for live log sources here (e.g., edit credentials, paths). Functionality not implemented.
+            </div>
+
+
+            <hr>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Save Settings</button>
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+        </form>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center text-muted">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 9: Upload Error State -->
+    <h2>State 9: Upload Error State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - Upload Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2><i class="bi bi-cloud-arrow-up"></i> Import Your Logs</h2>
+        <p>Choose a method to bring your log data into Log Viewer.</p>
+
+         <div class="alert alert-danger d-flex align-items-center" role="alert">
+           <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+           <div>
+             <strong>Upload Failed!</strong> The selected file `error_log_broken.zip` is not a supported log format or is corrupted. Please select a valid .log, .txt, or .json file.
+           </div>
+        </div>
+
+         <ul class="nav nav-tabs mb-3" id="importTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="upload-tab" data-bs-toggle="tab" data-bs-target="#upload-tab-pane" type="button" role="tab" aria-controls="upload-tab-pane" aria-selected="true"><i class="bi bi-upload"></i> Upload File</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="connect-tab" data-bs-toggle="tab" data-bs-target="#connect-tab-pane" type="button" role="tab" aria-controls="connect-tab-pane" aria-selected="false"><i class="bi bi-plug"></i> Connect Source</button>
+          </li>
+        </ul>
+
+         <div class="tab-content" id="importTabsContent">
+          <div class="tab-pane fade show active p-4 border rounded bg-light" id="upload-tab-pane" role="tabpanel" aria-labelledby="upload-tab" tabindex="0">
+            <h4>Upload Log File</h4>
+            <form>
+              <div class="mb-3">
+                <label for="logFile" class="form-label">Select log file (.log, .txt, .json)</label>
+                <input class="form-control is-invalid" type="file" id="logFile" accept=".log,.txt,.json" aria-describedby="logFileFeedback">
+                 <div id="logFileFeedback" class="invalid-feedback">
+                   Invalid file type or file is corrupted. Please select a valid log file.
+                 </div>
+              </div>
+              <div class="mb-3">
+                <label for="logSource" class="form-label">Source Name (Optional)</label>
+                <input type="text" class="form-control" id="logSource" placeholder="e.g., Production Web Server">
+              </div>
+              <div class="mb-3">
+                <label for="logFormat" class="form-label">Log Format (If known)</label>
+                <select class="form-select" id="logFormat">
+                  <option selected>Auto-detect</option>
+                  <option value="1">Apache Common Log</option>
+                  <option value="2">Nginx Error Log</option>
+                  <option value="3">JSON Lines</option>
+                  <option value="4">Plain Text</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-bar-up"></i> Upload and Process</button>
+            </form>
+          </div>
+          <div class="tab-pane fade p-4 border rounded bg-light" id="connect-tab-pane" role="tabpanel" aria-labelledby="connect-tab" tabindex="0">
+             <!-- Connect Source Form (same as State 2) -->
+               <h4>Connect to a Log Source</h4>
+               <p>Configure a connection to a live log source. (Feature placeholder)</p>
+               <form> <!-- Omitted fields for brevity --> <button type="submit" class="btn btn-primary disabled" aria-disabled="true"><i class="bi bi-link-45deg"></i> Test & Connect</button></form>
+          </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center text-muted fixed-bottom">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 10: About Page -->
+    <h2>State 10: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-terminal"></i> Log Viewer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Upload/Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Visualizations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-header">
+                        About Log Viewer
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title"><i class="bi bi-terminal" style="font-size: 1.5em;"></i> Log Viewer</h2>
+                        <p class="card-text">Version 1.0.0 (Static Demo)</p>
+                        <p>This application provides a user-friendly interface for analyzing and visualizing application logs and system events. Upload your log files or configure connections to live data sources to get started.</p>
+                        <p>Built using HTML and Bootstrap 5.</p>
+                         <a href="#" class="btn btn-primary"><i class="bi bi-github"></i> View Source (Placeholder)</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        &copy; 2023 Log Viewer Project
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="py-3 my-4 border-top text-center text-muted fixed-bottom">
+       <p>&copy; 2023 Log Viewer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+</body>
+</html>

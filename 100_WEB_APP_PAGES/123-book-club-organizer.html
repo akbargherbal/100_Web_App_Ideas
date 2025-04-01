@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club Organizer - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjusted height for better visibility */
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            display: block; /* Ensures iframe takes full width */
+        }
+        /* Basic styling for iframe content if needed */
+        .iframe-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Book Club Organizer - UI Flow</h1>
+
+        <!-- State 1: Login Page -->
+        <h2>State 1: Login Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Login</title>
+                <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .login-card { max-width: 400px; width: 100%; } </style>
+            </head>
+            <body>
+                <div class="card login-card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-center mb-4">Login to Book Club Organizer</h3>
+                        <!-- Optional Error Message Placeholder -->
+                        <!-- <div class="alert alert-danger" role="alert"> Invalid email or password. </div> -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <a href="#state2" class="d-block mb-1">Dont have an account? Sign Up</a>
+                                <a href="#state3" class="d-block">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 2: Signup Page -->
+        <h2 id="state2">State 2: Signup Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Sign Up</title>
+                <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .signup-card { max-width: 450px; width: 100%; } </style>
+            </head>
+            <body>
+                <div class="card signup-card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-center mb-4">Create Account</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Create password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            <div class="text-center mt-3">
+                                <a href="#state1">Already have an account? Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 3: Password Reset Page -->
+        <h2 id="state3">State 3: Password Reset Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Password Reset</title>
+                 <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .reset-card { max-width: 400px; width: 100%; } </style>
+            </head>
+            <body>
+                 <div class="card reset-card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-center mb-4">Reset Password</h3>
+                        <p class="text-muted text-center mb-3">Enter your email address and we will send you a link to reset your password.</p>
+                        <!-- Optional Success Message Placeholder -->
+                        <!-- <div class="alert alert-success" role="alert"> Password reset link sent successfully! </div> -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="resetEmail" placeholder="Enter your registered email" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Send Reset Link</button>
+                             <div class="text-center mt-3">
+                                <a href="#state1">Back to Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 4: Home Page (Dashboard - Logged In) -->
+        <h2 id="state4">State 4: Home Page (Dashboard)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Dashboard</title>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1 class="mb-4">Welcome back, User!</h1>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                   My Clubs
+                                   <a href="#state6" class="btn btn-sm btn-outline-secondary">View All</a>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>The Morning Readers</span>
+                                        <small class="text-muted">Next: Jan 15th</small>
+                                        <a href="#state9" class="btn btn-sm btn-primary">View</a>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>Sci-Fi Fans</span>
+                                         <small class="text-muted">Next: Jan 20th</small>
+                                        <a href="#state9" class="btn btn-sm btn-primary">View</a>
+                                    </li>
+                                    <li class="list-group-item text-center">
+                                        <a href="#state7" class="btn btn-success mt-2">Create New Club</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">Upcoming Meetings</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Jan 15th, 10:00 AM</strong> - The Morning Readers
+                                        <p class="mb-0 text-muted small">Discussing "The Midnight Library"</p>
+                                        <a href="#state11" class="btn btn-sm btn-info float-end">Details</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                         <strong>Jan 20th, 7:00 PM</strong> - Sci-Fi Fans
+                                         <p class="mb-0 text-muted small">Discussing "Dune"</p>
+                                         <a href="#state11" class="btn btn-sm btn-info float-end">Details</a>
+                                    </li>
+                                     <li class="list-group-item text-center text-muted">No more upcoming meetings scheduled.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="text-center">
+                         <a href="#state8" class="btn btn-lg btn-outline-primary">Find a New Club</a>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 5: About Page -->
+        <h2 id="state5">State 5: About Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>About Us</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>About Book Club Organizer</h1>
+                    <p class="lead">Your central hub for managing reading groups, schedules, and discussions.</p>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Our Mission</h2>
+                    <p>To connect readers and make managing book clubs easier than ever before. We provide tools to streamline scheduling, track reading progress, and foster engaging discussions.</p>
+                    <h2>Contact Us</h2>
+                    <p>For support or inquiries, please email <a href="mailto:support@bookcluborganizer.example.com">support@bookcluborganizer.example.com</a>.</p>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 6: My Clubs Page -->
+         <h2 id="state6">State 6: My Clubs Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>My Clubs</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                         <h1>My Clubs</h1>
+                         <a href="#state7" class="btn btn-success">Create New Club</a>
+                    </div>
+
+                    <!-- Optional Success Alert Placeholder -->
+                    <!-- <div class="alert alert-success alert-dismissible fade show" role="alert"> Club "Fantasy Readers" created successfully! <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div> -->
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Morning Readers</h5>
+                                    <p class="card-text">Currently reading: "The Midnight Library"</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Jan 15th, 10:00 AM</small></p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sci-Fi Fans</h5>
+                                    <p class="card-text">Currently reading: "Dune"</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Jan 20th, 7:00 PM</small></p>
+                                </div>
+                                 <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Classic Literature Group</h5>
+                                    <p class="card-text">Currently reading: "Pride and Prejudice"</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Feb 1st, 6:30 PM</small></p>
+                                </div>
+                                 <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more club cards as needed -->
+                    </div>
+                     <!-- Placeholder for no clubs -->
+                     <!-- <div class="text-center mt-5">
+                        <p class="lead">You havent joined or created any clubs yet.</p>
+                        <a href="#state7" class="btn btn-success me-2">Create a Club</a>
+                        <a href="#state8" class="btn btn-outline-primary">Find a Club</a>
+                     </div> -->
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 7: Create Club Page -->
+         <h2 id="state7">State 7: Create Club Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Create Club</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Create a New Book Club</h1>
+                    <hr>
+                    <form class="needs-validation" novalidate>
+                         <div class="row">
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="clubName" class="form-label">Club Name</label>
+                                    <input type="text" class="form-control" id="clubName" placeholder="e.g., Fantasy Readers Guild" required>
+                                    <div class="invalid-feedback"> Please provide a club name. </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="clubDescription" class="form-label">Description</label>
+                                    <textarea class="form-control" id="clubDescription" rows="4" placeholder="Describe your clubs focus, meeting style, etc." required></textarea>
+                                     <div class="invalid-feedback"> Please provide a description. </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Visibility</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="visibility" id="publicClub" value="public" checked>
+                                        <label class="form-check-label" for="publicClub"> Public (Visible in Find Clubs) </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="visibility" id="privateClub" value="private">
+                                        <label class="form-check-label" for="privateClub"> Private (Invite only) </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success">Create Club</button>
+                                <a href="#state6" class="btn btn-secondary">Cancel</a>
+                            </div>
+                         </div>
+                    </form>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                <script>
+                  // Example starter JavaScript for disabling form submissions if there are invalid fields (Static demo only)
+                  (() => {
+                    "use strict";
+                    const forms = document.querySelectorAll(".needs-validation");
+                    Array.from(forms).forEach(form => {
+                      form.addEventListener("submit", event => {
+                        if (!form.checkValidity()) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                      }, false);
+                    });
+                  })();
+                </script>
+            </body>
+            </html>
+        '></iframe>
+
+          <!-- State 8: Find Clubs Page -->
+         <h2 id="state8">State 8: Find Clubs Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Find Clubs</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Find Public Book Clubs</h1>
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="Search by name or genre..." aria-label="Search clubs" aria-describedby="button-search">
+                        <button class="btn btn-outline-primary" type="button" id="button-search">Search</button>
+                    </div>
+
+                    <div class="list-group">
+                        <a href="#state9" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Mystery Solvers Book Club</h5>
+                                <small>15 Members</small>
+                            </div>
+                            <p class="mb-1">Focus on classic and modern mystery novels. Meetings bi-weekly.</p>
+                            <small>Genre: Mystery</small>
+                            <button class="btn btn-sm btn-success float-end disabled">Request to Join</button> <!-- Placeholder button -->
+                        </a>
+                         <a href="#state9" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">History Buffs Reading Group</h5>
+                                <small>8 Members</small>
+                            </div>
+                            <p class="mb-1">Exploring historical fiction and non-fiction. Monthly meetings.</p>
+                            <small>Genre: History</small>
+                             <button class="btn btn-sm btn-success float-end disabled">Request to Join</button> <!-- Placeholder button -->
+                        </a>
+                         <a href="#state9" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Contemporary Fiction Circle</h5>
+                                <small>22 Members</small>
+                            </div>
+                            <p class="mb-1">Reading and discussing recent releases in literary fiction.</p>
+                            <small>Genre: Contemporary Fiction</small>
+                             <button class="btn btn-sm btn-success float-end disabled">Request to Join</button> <!-- Placeholder button -->
+                        </a>
+                         <!-- Add more club listings -->
+                    </div>
+                    <!-- Placeholder for no results -->
+                    <!-- <div class="text-center mt-5"><p class="lead">No public clubs found matching your search.</p></div> -->
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+
+        <!-- State 9: Club Details Page -->
+        <h2 id="state9">State 9: Club Details Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                <title>Club Details</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h1>The Morning Readers <span class="badge bg-secondary fs-6 align-middle">Public</span></h1>
+                        <div>
+                             <!-- Admin Only Buttons Placeholder -->
+                            <button class="btn btn-sm btn-outline-secondary me-1 disabled">Edit Club</button>
+                            <button class="btn btn-sm btn-danger disabled">Delete Club</button>
+                             <!-- Member Only Button Placeholder -->
+                             <!-- <button class="btn btn-sm btn-warning">Leave Club</button> -->
+                        </div>
+                    </div>
+
+                    <ul class="nav nav-tabs mb-3" id="clubTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Overview</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="meetings-tab" data-bs-toggle="tab" data-bs-target="#meetings" type="button" role="tab" aria-controls="meetings" aria-selected="false">Meetings</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="members-tab" data-bs-toggle="tab" data-bs-target="#members" type="button" role="tab" aria-controls="members" aria-selected="false">Members (5)</button>
+                      </li>
+                       <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="discussion-tab" data-bs-toggle="tab" data-bs-target="#discussion" type="button" role="tab" aria-controls="discussion" aria-selected="false">Discussion</button>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content" id="clubTabContent">
+                      <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                        <h5>Description</h5>
+                        <p>A friendly group for early risers who love to discuss a variety of genres over coffee. We meet weekly on Wednesdays.</p>
+                        <hr>
+                        <h5>Current Book</h5>
+                        <p><strong>"The Midnight Library" by Matt Haig</strong></p>
+                        <p><em>Reading Progress: Chapters 1-10 due next meeting.</em></p>
+                        <!-- Admin Only Edit Current Book Placeholder -->
+                        <button class="btn btn-sm btn-outline-primary disabled">Change Current Book</button>
+                      </div>
+
+                      <div class="tab-pane fade" id="meetings" role="tabpanel" aria-labelledby="meetings-tab">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5>Scheduled Meetings</h5>
+                            <a href="#state10" class="btn btn-success">Schedule New Meeting</a>
+                        </div>
+                        <ul class="list-group">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div>
+                                  <strong>Jan 15th, 10:00 AM</strong> - Discuss Chapters 1-10 of "The Midnight Library"
+                                  <br><small class="text-muted">Location: Zoom Link / Cafe Central</small>
+                              </div>
+                              <a href="#state11" class="btn btn-sm btn-info">Details</a>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                              <div>
+                                  <strong>Jan 8th, 10:00 AM</strong> - Initial discussion & book selection
+                                  <br><small class="text-muted">Location: Cafe Central</small>
+                              </div>
+                              <span class="badge bg-secondary">Past</span>
+                          </li>
+                          <!-- Add more meetings -->
+                        </ul>
+                      </div>
+
+                      <div class="tab-pane fade" id="members" role="tabpanel" aria-labelledby="members-tab">
+                        <h5>Club Members</h5>
+                        <ul class="list-group">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Alice Smith (Admin)
+                            <!-- Admin Action Placeholder -->
+                            <!-- <button class="btn btn-sm btn-outline-danger disabled">Remove</button> -->
+                          </li>
+                          <li class="list-group-item">Bob Jones</li>
+                          <li class="list-group-item">Charlie Brown</li>
+                          <li class="list-group-item">Diana Prince</li>
+                          <li class="list-group-item">Ethan Hunt</li>
+                        </ul>
+                        <!-- Option for admin to invite members -->
+                         <!-- <button class="btn btn-sm btn-primary mt-3 disabled">Invite Member</button> -->
+                      </div>
+
+                       <div class="tab-pane fade" id="discussion" role="tabpanel" aria-labelledby="discussion-tab">
+                        <h5>General Discussion Forum</h5>
+                        <p class="text-muted">Share thoughts, suggest books, or start conversations!</p>
+                         <!-- Placeholder for discussion thread/form -->
+                          <div class="card mb-3">
+                              <div class="card-body">
+                                  <h6 class="card-subtitle mb-2 text-muted">Alice Smith - Jan 10th</h6>
+                                  <p class="card-text">What did everyone think of the opening chapters?</p>
+                                  <a href="#" class="card-link">Reply</a>
+                              </div>
+                          </div>
+                           <div class="card mb-3">
+                              <div class="card-body">
+                                  <h6 class="card-subtitle mb-2 text-muted">Bob Jones - Jan 9th</h6>
+                                  <p class="card-text">Suggestion for next month: How about "Project Hail Mary"?</p>
+                                   <a href="#" class="card-link">Reply</a> <a href="#" class="card-link">Like (2)</a>
+                              </div>
+                          </div>
+                          <hr>
+                          <h6>Start a New Topic</h6>
+                           <form>
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="discussionPost" rows="3" placeholder="Write your post..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post</button>
+                           </form>
+                      </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+
+        <!-- State 10: Schedule Meeting Page -->
+        <h2 id="state10">State 10: Schedule Meeting Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Schedule Meeting</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Schedule New Meeting for "The Morning Readers"</h1>
+                     <hr>
+                     <form class="needs-validation" novalidate>
+                        <div class="row">
+                           <div class="col-md-8">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="meetingDate" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="meetingDate" required>
+                                         <div class="invalid-feedback"> Please select a date. </div>
+                                    </div>
+                                     <div class="col-md-6">
+                                        <label for="meetingTime" class="form-label">Time</label>
+                                        <input type="time" class="form-control" id="meetingTime" required>
+                                         <div class="invalid-feedback"> Please select a time. </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="meetingLocation" class="form-label">Location / Link</label>
+                                    <input type="text" class="form-control" id="meetingLocation" placeholder="e.g., Cafe Central or Zoom Link" required>
+                                     <div class="invalid-feedback"> Please provide a location or link. </div>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="bookToDiscuss" class="form-label">Book / Topic</label>
+                                    <input type="text" class="form-control" id="bookToDiscuss" value="The Midnight Library - Chapters 11-20" placeholder="What will be discussed?" required>
+                                     <div class="invalid-feedback"> Please specify the discussion topic. </div>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="meetingAgenda" class="form-label">Agenda / Notes (Optional)</label>
+                                    <textarea class="form-control" id="meetingAgenda" rows="4" placeholder="e.g., Specific questions, reading goals..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success">Schedule Meeting</button>
+                                <a href="#state9" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                     </form>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                <script>
+                  (() => {
+                    "use strict";
+                    const forms = document.querySelectorAll(".needs-validation");
+                    Array.from(forms).forEach(form => {
+                      form.addEventListener("submit", event => {
+                        if (!form.checkValidity()) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                      }, false);
+                    });
+                  })();
+                </script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 11: Meeting Details Page -->
+        <h2 id="state11">State 11: Meeting Details Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                <title>Meeting Details</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                     <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#state9">The Morning Readers</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Meeting Details</li>
+                      </ol>
+                    </nav>
+                    <h1>Meeting: Jan 15th, 10:00 AM</h1>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Details</h5>
+                                    <p><strong>Club:</strong> <a href="#state9">The Morning Readers</a></p>
+                                    <p><strong>Date & Time:</strong> Monday, January 15th, 2024 at 10:00 AM</p>
+                                    <p><strong>Location:</strong> Cafe Central (123 Main St)</p>
+                                    <p><strong>Topic:</strong> Discuss Chapters 1-10 of "The Midnight Library"</p>
+                                     <p><strong>Agenda/Notes:</strong> Come prepared with your initial thoughts and questions about the first part of the book. </p>
+
+                                    <h5 class="mt-4">RSVP</h5>
+                                    <p>Let the group know if you can make it:</p>
+                                     <div class="btn-group" role="group" aria-label="RSVP status">
+                                      <button type="button" class="btn btn-outline-success"><i class="bi bi-check-circle-fill"></i> Attending</button>
+                                      <button type="button" class="btn btn-outline-warning"><i class="bi bi-question-circle-fill"></i> Maybe</button>
+                                      <button type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Not Attending</button>
+                                    </div>
+                                    <p class="mt-2 text-muted small">Your current status: Attending</p>
+                                    <!-- Optional Admin Actions -->
+                                     <!-- <div class="mt-3">
+                                         <button class="btn btn-sm btn-outline-secondary disabled">Edit Meeting</button>
+                                         <button class="btn btn-sm btn-outline-danger disabled">Cancel Meeting</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card">
+                                 <div class="card-header">Attendees (3/5)</div>
+                                 <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Alice Smith</li>
+                                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>User Name (You)</li>
+                                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>Charlie Brown</li>
+                                    <li class="list-group-item"><i class="bi bi-question-circle-fill text-warning me-2"></i>Diana Prince</li>
+                                    <li class="list-group-item"><i class="bi bi-x-circle-fill text-danger me-2"></i>Bob Jones</li>
+                                    <li class="list-group-item"><i class="bi bi-dash-circle text-muted me-2"></i>Ethan Hunt (No response)</li>
+                                 </ul>
+                            </div>
+                            <div class="card mt-3">
+                                 <div class="card-header">Meeting Discussion</div>
+                                 <div class="card-body">
+                                     <!-- Placeholder for discussion specific to this meeting -->
+                                    <p class="text-muted small">No discussion yet for this meeting.</p>
+                                     <form>
+                                        <div class="mb-2">
+                                            <textarea class="form-control form-control-sm" rows="2" placeholder="Add a comment or question..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-sm btn-outline-primary">Post Comment</button>
+                                     </form>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 12: User Profile Page -->
+        <h2 id="state12">State 12: User Profile Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>User Profile</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item active" aria-current="page" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h1>My Profile</h1>
+                         <a href="#state13" class="btn btn-primary">Edit Profile</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                             <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label fw-bold">Full Name:</label>
+                                <div class="col-sm-9">
+                                    <p class="form-control-plaintext">User Name</p>
+                                </div>
+                            </div>
+                             <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label fw-bold">Email Address:</label>
+                                <div class="col-sm-9">
+                                     <p class="form-control-plaintext">user.name@example.com</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label fw-bold">Member Since:</label>
+                                <div class="col-sm-9">
+                                     <p class="form-control-plaintext">January 1, 2024</p>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <label class="col-sm-3 col-form-label fw-bold">My Clubs:</label>
+                                <div class="col-sm-9">
+                                     <ul class="list-unstyled">
+                                        <li><a href="#state9">The Morning Readers</a></li>
+                                        <li><a href="#state9">Sci-Fi Fans</a></li>
+                                        <li><a href="#state9">Classic Literature Group</a></li>
+                                     </ul>
+                                </div>
+                            </div>
+                             <hr>
+                             <a href="#state1" class="btn btn-danger">Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+         <!-- State 13: Edit Profile Page -->
+        <h2 id="state13">State 13: Edit Profile Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Edit Profile</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item active" aria-current="page" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Edit Profile</h1>
+                    <hr>
+                     <!-- Optional Success Message Placeholder -->
+                     <!-- <div class="alert alert-success alert-dismissible fade show" role="alert"> Profile updated successfully! <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div> -->
+
+                    <form class="needs-validation" novalidate>
+                         <div class="row">
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="editName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="editName" value="User Name" required>
+                                    <div class="invalid-feedback"> Please enter your name. </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="editEmail" value="user.name@example.com" required>
+                                     <div class="invalid-feedback"> Please enter a valid email address. </div>
+                                </div>
+
+                                <h5 class="mt-4">Change Password (Optional)</h5>
+                                <div class="mb-3">
+                                    <label for="currentPassword" class="form-label">Current Password</label>
+                                    <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                                     <!-- Optional validation message -->
+                                     <!-- <div class="invalid-feedback"> Incorrect current password. </div> -->
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label">New Password</label>
+                                    <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                                     <!-- Optional validation message -->
+                                     <!-- <div class="invalid-feedback"> Password must be at least 8 characters long. </div> -->
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm new password">
+                                     <!-- Optional validation message -->
+                                     <!-- <div class="invalid-feedback"> Passwords do not match. </div> -->
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <a href="#state12" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                 <script>
+                  (() => {
+                    "use strict";
+                    const forms = document.querySelectorAll(".needs-validation");
+                    Array.from(forms).forEach(form => {
+                      form.addEventListener("submit", event => {
+                        if (!form.checkValidity()) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        // Add additional custom validation logic here if needed
+                        form.classList.add("was-validated");
+                      }, false);
+                    });
+                  })();
+                </script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 14: Form Validation Example (Signup) -->
+        <h2 id="state14">State 14: Form Validation Example (Signup)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Sign Up - Validation</title>
+                <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .signup-card { max-width: 450px; width: 100%; } </style>
+            </head>
+            <body>
+                <div class="card signup-card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-center mb-4">Create Account</h3>
+                        <form class="was-validated"> <!-- Added was-validated to show errors -->
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control is-invalid" id="signupName" placeholder="Enter your name" required>
+                                <div class="invalid-feedback"> Please enter your full name. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter email" value="invalid-email" required>
+                                <div class="invalid-feedback"> Please provide a valid email address. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Create password" value="short" required>
+                                <div class="invalid-feedback"> Password must be at least 8 characters. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm password" value="different" required>
+                                 <div class="invalid-feedback"> Passwords do not match. </div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            <div class="text-center mt-3">
+                                <a href="#state1">Already have an account? Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+         <!-- State 15: Success Message Example (Club Created) -->
+        <h2 id="state15">State 15: Success Message Example (Club Created)</h2>
+        <iframe srcdoc='
+             <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>My Clubs - Success</title>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#state4">Book Club Organizer</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="#state4">Home</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#state6">My Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state8">Find Clubs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#state5">About</a></li>
+                            </ul>
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                         <h1>My Clubs</h1>
+                         <a href="#state7" class="btn btn-success">Create New Club</a>
+                    </div>
+
+                    <!-- Success Alert Displayed -->
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Club "Fantasy Readers Guild" created successfully!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                         <div class="col">
+                            <div class="card h-100 border-success"> <!-- Highlight newly added? -->
+                                <div class="card-body">
+                                    <h5 class="card-title">Fantasy Readers Guild</h5>
+                                    <p class="card-text">Currently reading: Not selected</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Not scheduled</small></p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">The Morning Readers</h5>
+                                    <p class="card-text">Currently reading: "The Midnight Library"</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Jan 15th, 10:00 AM</small></p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sci-Fi Fans</h5>
+                                    <p class="card-text">Currently reading: "Dune"</p>
+                                    <p class="card-text"><small class="text-muted">Next Meeting: Jan 20th, 7:00 PM</small></p>
+                                </div>
+                                 <div class="card-footer bg-transparent border-top-0">
+                                     <a href="#state9" class="btn btn-primary w-100">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+
+    </div>
+
+</body>
+</html>

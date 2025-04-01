@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Volunteer Opportunities Board - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+             margin-top: 30px;
+             margin-bottom: 15px;
+             border-bottom: 1px solid #dee2e6;
+             padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 75vh; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+         /* Basic styling for iframe content if needed */
+         M html, body { margin:0; padding:0; height:100%; overflow:auto; }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Local Volunteer Opportunities Board - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">For Organizations</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+             <a href="#" class="btn btn-outline-primary me-2">Login</a>
+             <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center p-5 mb-4">
+        <div class="container">
+            <h1>Find Local Volunteer Opportunities</h1>
+            <p class="lead">Connect with organizations making a difference in your community.</p>
+            <form class="row g-3 justify-content-center mt-4">
+              <div class="col-auto">
+                <label for="keyword" class="visually-hidden">Keyword</label>
+                <input type="text" class="form-control" id="keyword" placeholder="Keyword (e.g., animals, tutoring)">
+              </div>
+              <div class="col-auto">
+                <label for="location" class="visually-hidden">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="City or Zip Code">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-light">Search</button>
+              </div>
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="mb-3">Featured Opportunities</h2>
+        <div class="row">
+            <!-- Opportunity Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Community Garden Helper</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Green Thumbs Org</h6>
+                    <p class="card-text">Help maintain our community garden. Tasks include weeding, planting, and harvesting. No experience necessary!</p>
+                    <span class="badge bg-secondary me-1">Gardening</span>
+                    <span class="badge bg-secondary">Outdoors</span>
+                    <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Details</a>
+                  </div>
+                </div>
+            </div>
+            <!-- Opportunity Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">After-School Tutor</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Bright Futures Center</h6>
+                    <p class="card-text">Assist elementary students with homework and reading skills. Seeking patient and encouraging volunteers.</p>
+                     <span class="badge bg-secondary me-1">Education</span>
+                     <span class="badge bg-secondary">Children</span>
+                    <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Details</a>
+                  </div>
+                </div>
+            </div>
+            <!-- Opportunity Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Animal Shelter Assistant</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Paws & Friends Shelter</h6>
+                    <p class="card-text">Help with animal care, cleaning cages, walking dogs, and socializing cats. Must love animals!</p>
+                    <span class="badge bg-secondary me-1">Animals</span>
+                    <span class="badge bg-secondary">Indoors</span>
+                    <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Details</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+         <div class="text-center mt-3">
+            <a href="#" class="btn btn-primary">See All Opportunities</a>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 2: Search Results Page -->
+    <h2>State 2: Search Results Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">For Organizations</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+             <a href="#" class="btn btn-outline-primary me-2">Login</a>
+             <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-md-3">
+                <h4>Filters</h4>
+                <hr>
+                <form>
+                    <div class="mb-3">
+                        <label for="searchKeyword" class="form-label">Keyword</label>
+                        <input type="text" class="form-control" id="searchKeyword" value="tutoring">
+                    </div>
+                    <div class="mb-3">
+                        <label for="searchLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="searchLocation" placeholder="City or Zip Code">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select class="form-select">
+                            <option selected>Any Category</option>
+                            <option value="1">Animals</option>
+                            <option value="2">Education</option>
+                            <option value="3">Environment</option>
+                            <option value="4">Health</option>
+                            <option value="5">Seniors</option>
+                        </select>
+                    </div>
+                     <div class="mb-3">
+                        <label class="form-label">Commitment</label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckShort">
+                          <label class="form-check-label" for="flexCheckShort">Short-term (Days/Weeks)</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckLong">
+                          <label class="form-check-label" for="flexCheckLong">Long-term (Months+)</label>
+                        </div>
+                         <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckOngoing">
+                          <label class="form-check-label" for="flexCheckOngoing">Ongoing/Flexible</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                </form>
+            </div>
+
+            <!-- Search Results -->
+            <div class="col-md-9">
+                <h2>Search Results for "tutoring"</h2>
+                <p class="text-muted">Showing 1-5 of 12 results</p>
+                <hr>
+
+                <!-- Result Item 1 -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">After-School Tutor</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Bright Futures Center</h6>
+                        <p class="card-text">Assist elementary students with homework and reading skills. Seeking patient and encouraging volunteers. Tuesdays & Thursdays 3-5pm.</p>
+                        <span class="badge bg-secondary me-1">Education</span>
+                        <span class="badge bg-secondary">Children</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Result Item 2 -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Literacy Program Volunteer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Community Reads Initiative</h6>
+                        <p class="card-text">Help adults improve their reading and writing skills. Training provided. Flexible schedule, minimum 2 hours/week.</p>
+                         <span class="badge bg-secondary me-1">Education</span>
+                         <span class="badge bg-secondary">Adults</span>
+                         <span class="badge bg-secondary">Flexible</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Result Item 3 -->
+                 <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Math Homework Helper</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Local Library Branch</h6>
+                        <p class="card-text">Volunteer at the library&#x27;s homework help center, assisting middle school students with math problems. Wednesdays 4-6pm.</p>
+                         <span class="badge bg-secondary me-1">Education</span>
+                         <span class="badge bg-secondary">Youth</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end">View Details</a>
+                    </div>
+                </div>
+
+                 <!-- Result Item 4 -->
+                 <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">ESL Conversation Partner</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Newcomers Support Group</h6>
+                        <p class="card-text">Practice conversational English with recent immigrants. Help them gain confidence and familiarity with the language. Saturdays 10am-12pm.</p>
+                         <span class="badge bg-secondary me-1">Education</span>
+                         <span class="badge bg-secondary">Community</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end">View Details</a>
+                    </div>
+                </div>
+
+                 <!-- Result Item 5 -->
+                 <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Coding Club Mentor</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Tech for Teens Program</h6>
+                        <p class="card-text">Mentor high school students learning basic web development. Basic knowledge of HTML/CSS/JS helpful. Mondays 5-7pm.</p>
+                         <span class="badge bg-secondary me-1">Education</span>
+                         <span class="badge bg-secondary">Technology</span>
+                         <span class="badge bg-secondary">Youth</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary float-end">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 3: Opportunity Details Page -->
+    <h2>State 3: Opportunity Details Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Details - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">For Organizations</a>
+            </li>
+          </ul>
+           <div class="d-flex">
+             <a href="#" class="btn btn-outline-primary me-2">Login</a>
+             <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Search Results</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Opportunity Details</li>
+          </ol>
+        </nav>
+
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2>After-School Tutor</h2>
+                <h5 class="mb-0">Hosted by: <a href="#" class="text-white">Bright Futures Center</a></h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Description</h4>
+                        <p>Bright Futures Center is seeking enthusiastic volunteers to assist elementary school students (grades 1-5) with their homework assignments and help improve their reading skills. This is a great opportunity to make a positive impact on a child&#x27;s education and build meaningful connections.</p>
+                        <p>Volunteers will work one-on-one or in small groups with students in a supportive and supervised environment.</p>
+
+                        <h4 class="mt-4">Responsibilities</h4>
+                        <ul>
+                            <li>Help students understand and complete homework assignments (various subjects).</li>
+                            <li>Read with students and assist with reading comprehension activities.</li>
+                            <li>Provide encouragement and positive reinforcement.</li>
+                            <li>Communicate student progress or concerns to program staff.</li>
+                        </ul>
+
+                        <h4 class="mt-4">Qualifications</h4>
+                        <ul>
+                            <li>Patient, friendly, and reliable.</li>
+                            <li>Good communication skills.</li>
+                            <li>Comfortable working with elementary-aged children.</li>
+                            <li>Basic proficiency in reading, writing, and math.</li>
+                            <li>Background check may be required.</li>
+                        </ul>
+                         <h4 class="mt-4">Time Commitment</h4>
+                         <p>Tuesdays & Thursdays, 3:00 PM - 5:00 PM during the school year. We ask for a commitment of at least one semester.</p>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border p-3 rounded">
+                            <h5>Details</h5>
+                            <hr>
+                            <p><strong>Location:</strong><br> 123 Learning Lane, Anytown, USA 12345 <br> <a href="#">View Map</a></p>
+                            <p><strong>Category:</strong> <span class="badge bg-secondary me-1">Education</span> <span class="badge bg-secondary">Children</span></p>
+                             <p><strong>Date Posted:</strong> October 26, 2023</p>
+                            <p><strong>Contact:</strong> Jane Doe, Volunteer Coordinator<br><a href="mailto:jane.doe@brightfutures.org">jane.doe@brightfutures.org</a></p>
+                             <p><strong>Website:</strong> <a href="#" target="_blank">brightfutures.org</a></p>
+                            <div class="d-grid gap-2 mt-4">
+                               <a href="#" class="btn btn-primary btn-lg">Apply Now / Express Interest</a>
+                               <button type="button" class="btn btn-outline-secondary">Save for Later</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 4: About Page -->
+    <h2>State 4: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">For Organizations</a>
+            </li>
+          </ul>
+           <div class="d-flex">
+             <a href="#" class="btn btn-outline-primary me-2">Login</a>
+             <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About VolunteerHub</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Our Mission</h2>
+                <p class="lead">To connect passionate individuals with meaningful volunteer opportunities in their local communities, fostering civic engagement and supporting non-profit organizations.</p>
+                <p>VolunteerHub was founded on the belief that everyone has something valuable to contribute, and that volunteering strengthens the fabric of our communities. We aim to make it easier than ever for people to find and engage with causes they care about.</p>
+                <p>Whether you have a few hours to spare or are looking for a long-term commitment, our platform lists a diverse range of opportunities across various sectors, including education, environment, health, animal welfare, and more.</p>
+
+                <h2 class="mt-4">How It Works</h2>
+                <p><strong>For Volunteers:</strong> Browse or search for opportunities based on your interests, skills, and availability. Read detailed descriptions, learn about the host organizations, and express your interest or apply directly through the platform.</p>
+                <p><strong>For Organizations:</strong> Register your non-profit or community group to post volunteer needs. Reach a wide audience of potential volunteers, manage applications, and track volunteer engagement.</p>
+
+                 <h2 class="mt-4">Our Values</h2>
+                 <ul>
+                    <li><strong>Community:</strong> We believe in the power of collective action.</li>
+                    <li><strong>Connection:</strong> We strive to build bridges between volunteers and organizations.</li>
+                    <li><strong>Impact:</strong> We focus on facilitating meaningful contributions.</li>
+                    <li><strong>Accessibility:</strong> We aim to make volunteering easy and accessible for everyone.</li>
+                 </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Us</h5>
+                        <p>Have questions or feedback? We&#x27;d love to hear from you.</p>
+                        <p><strong>Email:</strong> <a href="mailto:info@volunteerhub.org">info@volunteerhub.org</a></p>
+                        <p><strong>Address:</strong><br> 456 Community Drive,<br> Anytown, USA 54321</p>
+                    </div>
+                </div>
+                 <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Support Our Work</h5>
+                        <p>Help us keep VolunteerHub running and free for non-profits. Consider making a donation.</p>
+                        <a href="#" class="btn btn-success">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .login-container { max-width: 400px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Back to Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="login-container">
+            <h2 class="text-center mb-4">Login</h2>
+
+            <!-- Error Message Example -->
+            <!-- <div class="alert alert-danger" role="alert">
+              Invalid email or password. Please try again.
+            </div> -->
+
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                    <!-- Validation Example -->
+                    <!-- <input type="email" class="form-control is-invalid" id="email" aria-describedby="emailHelp" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                     <!-- Validation Example -->
+                    <!-- <input type="password" class="form-control is-invalid" id="password" required>
+                     <div class="invalid-feedback">
+                        Password is required.
+                    </div> -->
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <div class="text-center mt-3">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                 <hr>
+                 <p class="text-center">Don't have an account?</p>
+                 <a href="#" class="btn btn-outline-secondary w-100">Sign Up</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 6: Sign Up Page -->
+    <h2>State 6: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style>
+        .signup-container { max-width: 500px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; }
+    </style>
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Back to Home</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="signup-container">
+            <h2 class="text-center mb-4">Create Your Account</h2>
+
+             <!-- Error Message Example -->
+            <!-- <div class="alert alert-danger" role="alert">
+              Please correct the errors below and try again.
+            </div> -->
+
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">I want to:</label>
+                     <div class="form-check">
+                      <input class="form-check-input" type="radio" name="accountType" id="volunteerRadio" value="volunteer" checked>
+                      <label class="form-check-label" for="volunteerRadio">
+                        Find volunteer opportunities
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="accountType" id="organizationRadio" value="organization">
+                      <label class="form-check-label" for="organizationRadio">
+                        Post volunteer opportunities (for an organization)
+                      </label>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="col">
+                         <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="signupEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="signupEmail" required>
+                     <!-- Validation Example -->
+                    <!-- <input type="email" class="form-control is-invalid" id="signupEmail" required>
+                    <div class="invalid-feedback">
+                        A valid email is required.
+                    </div> -->
+                </div>
+
+                <div class="mb-3">
+                    <label for="signupPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signupPassword" aria-describedby="passwordHelp" required>
+                    <div id="passwordHelp" class="form-text">Password must be at least 8 characters long.</div>
+                    <!-- Validation Example -->
+                    <!-- <input type="password" class="form-control is-invalid" id="signupPassword" aria-describedby="passwordHelp" required>
+                     <div class="invalid-feedback">
+                        Password must be at least 8 characters.
+                    </div> -->
+                </div>
+
+                 <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                     <!-- Validation Example -->
+                    <!-- <input type="password" class="form-control is-invalid" id="confirmPassword" required>
+                     <div class="invalid-feedback">
+                        Passwords do not match.
+                    </div> -->
+                </div>
+
+                <!-- Organization Specific Field (Example - could be dynamic) -->
+                 <div class="mb-3" id="organizationNameField" style="display: none;"> <!-- Hide initially -->
+                    <label for="orgName" class="form-label">Organization Name</label>
+                    <input type="text" class="form-control" id="orgName">
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                    <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                    <!-- Validation Example -->
+                     <!-- <input type="checkbox" class="form-check-input is-invalid" id="termsCheck" required>
+                     <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                    <div class="invalid-feedback">
+                        You must agree to the terms.
+                    </div> -->
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+
+                 <hr>
+                 <p class="text-center">Already have an account?</p>
+                 <a href="#" class="btn btn-outline-secondary w-100">Login</a>
+            </form>
+             <script> // Minimal JS just to toggle org field visibility for demo
+                document.getElementById('volunteerRadio').addEventListener('change', function() {
+                    document.getElementById('organizationNameField').style.display = 'none';
+                });
+                document.getElementById('organizationRadio').addEventListener('change', function() {
+                    document.getElementById('organizationNameField').style.display = 'block';
+                });
+            </script>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 7: Password Reset Request Page -->
+    <h2>State 7: Password Reset Request Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .reset-container { max-width: 450px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Back to Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="reset-container">
+            <h2 class="text-center mb-3">Forgot Your Password?</h2>
+            <p class="text-center text-muted mb-4">Enter your email address below, and we&#x27;ll send you a link to reset your password.</p>
+
+             <!-- Success Message Example -->
+            <!-- <div class="alert alert-success" role="alert">
+              Password reset instructions have been sent to your email address (if it exists in our system).
+            </div> -->
+
+            <form>
+                <div class="mb-3">
+                    <label for="resetEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="resetEmail" required>
+                     <!-- Validation Example -->
+                    <!-- <input type="email" class="form-control is-invalid" id="resetEmail" required>
+                    <div class="invalid-feedback">
+                        Please enter the email associated with your account.
+                    </div> -->
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Send Reset Link</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+     <!-- State 8: Password Reset Page -->
+    <h2>State 8: Password Reset Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set New Password - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .reset-form-container { max-width: 450px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 8px; background-color: #fff; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Back to Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="reset-form-container">
+            <h2 class="text-center mb-4">Set a New Password</h2>
+
+             <!-- Error Message Example -->
+            <!-- <div class="alert alert-danger" role="alert">
+              Password reset link is invalid or has expired. Please request a new one.
+            </div> -->
+             <!-- Success Message Example -->
+             <!-- <div class="alert alert-success" role="alert">
+              Your password has been successfully reset. You can now <a href="#">log in</a>.
+            </div> -->
+
+            <form>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" aria-describedby="passwordHelpReset" required>
+                     <div id="passwordHelpReset" class="form-text">Must be at least 8 characters long.</div>
+                    <!-- Validation Example -->
+                    <!-- <input type="password" class="form-control is-invalid" id="newPassword" aria-describedby="passwordHelpReset" required>
+                    <div class="invalid-feedback">
+                       Password must be at least 8 characters.
+                    </div> -->
+                </div>
+                 <div class="mb-3">
+                    <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                     <!-- Validation Example -->
+                    <!-- <input type="password" class="form-control is-invalid" id="confirmNewPassword" required>
+                     <div class="invalid-feedback">
+                        Passwords do not match.
+                    </div> -->
+                </div>
+                <input type="hidden" name="resetToken" value="placeholder_token_value"> <!-- Hidden field for token -->
+                <button type="submit" class="btn btn-primary w-100 mt-3">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 9: Volunteer Dashboard (Logged In) -->
+    <h2>State 9: Volunteer Dashboard (Logged In)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">My Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+           <div class="dropdown">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://via.placeholder.com/32" alt="mdo" width="32" height="32" class="rounded-circle">
+                John Doe
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
+                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                <li><a class="dropdown-item" href="#">Saved Opportunities</a></li>
+                <li><a class="dropdown-item" href="#">My Applications</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Welcome Back, John!</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- My Applications -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        My Recent Applications
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>After-School Tutor</strong> at Bright Futures Center<br>
+                                <small class="text-muted">Applied on: Oct 25, 2023</small>
+                            </div>
+                            <span class="badge bg-warning text-dark">Pending Review</span>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div>
+                                <strong>Community Garden Helper</strong> at Green Thumbs Org<br>
+                                <small class="text-muted">Applied on: Oct 20, 2023</small>
+                           </div>
+                           <span class="badge bg-success">Accepted</span>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div>
+                                <strong>Event Setup Crew</strong> at Annual City Fair<br>
+                                <small class="text-muted">Applied on: Oct 15, 2023</small>
+                           </div>
+                           <span class="badge bg-secondary">Archived</span>
+                        </li>
+                    </ul>
+                     <div class="card-footer text-end">
+                        <a href="#">View All Applications</a>
+                    </div>
+                </div>
+
+                <!-- Saved Opportunities -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Saved Opportunities
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>Animal Shelter Assistant</strong> at Paws & Friends Shelter<br>
+                                <small class="text-muted">Saved on: Oct 26, 2023</small>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>Museum Docent</strong> at City History Museum<br>
+                                <small class="text-muted">Saved on: Oct 24, 2023</small>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </li>
+                     </ul>
+                     <div class="card-footer text-end">
+                        <a href="#">View All Saved</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Quick Actions -->
+                 <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Quick Actions</h5>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-primary">Find New Opportunities</a>
+                            <a href="#" class="btn btn-outline-secondary">Edit My Profile</a>
+                            <a href="#" class="btn btn-outline-info">Update Availability</a>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- Suggested for You -->
+                 <div class="card">
+                     <div class="card-header">
+                         Suggested Opportunities
+                     </div>
+                     <div class="list-group list-group-flush">
+                         <a href="#" class="list-group-item list-group-item-action">
+                             <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Literacy Program Volunteer</h6>
+                                <small class="text-muted">3 days ago</small>
+                             </div>
+                             <p class="mb-1 small">Help adults improve reading skills. Flexible hours.</p>
+                             <small class="text-muted">Community Reads Initiative</small>
+                         </a>
+                          <a href="#" class="list-group-item list-group-item-action">
+                             <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Park Cleanup Crew</h6>
+                                <small class="text-muted">1 week ago</small>
+                             </div>
+                             <p class="mb-1 small">Join us this Saturday to beautify Central Park.</p>
+                             <small class="text-muted">Friends of the Parks</small>
+                         </a>
+                     </div>
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 10: Organization Dashboard (Logged In) -->
+    <h2>State 10: Organization Dashboard (Logged In)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization Dashboard - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub <span class="badge bg-info text-dark">Organization</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">My Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Applicants</a>
+            </li>
+          </ul>
+           <div class="dropdown">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownOrg" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://via.placeholder.com/32/FFA500/FFFFFF?text=BFC" alt="org" width="32" height="32" class="rounded-circle">
+                Bright Futures Center
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownOrg">
+                <li><a class="dropdown-item" href="#">Organization Profile</a></li>
+                 <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Organization Dashboard</h1>
+            <a href="#" class="btn btn-primary btn-lg">Post New Opportunity</a>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- My Active Opportunities -->
+                 <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>My Active Opportunities</span>
+                        <a href="#">View All</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">After-School Tutor</h5>
+                                <small>Posted: Oct 15, 2023</small>
+                            </div>
+                            <p class="mb-1">Assist elementary students with homework and reading skills.</p>
+                            <small>Status: Active</small>
+                             <div class="float-end">
+                                <span class="badge rounded-pill bg-primary me-2">5 Applicants</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-1">Edit</a>
+                                <a href="#" class="btn btn-sm btn-outline-danger">Archive</a>
+                            </div>
+                        </li>
+                         <li class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Summer Camp Counselor</h5>
+                                <small>Posted: Sep 20, 2023</small>
+                            </div>
+                            <p class="mb-1">Lead activities for children aged 6-10 during summer break.</p>
+                            <small>Status: Active (Starts Soon)</small>
+                            <div class="float-end">
+                                <span class="badge rounded-pill bg-primary me-2">12 Applicants</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-1">Edit</a>
+                                <a href="#" class="btn btn-sm btn-outline-danger">Archive</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                 <!-- Recent Applicants -->
+                 <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Recent Applicants</span>
+                        <a href="#">View All Applicants</a>
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>John Doe</strong> applied for <strong>After-School Tutor</strong><br>
+                                <small class="text-muted">Received: Oct 25, 2023</small>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-sm btn-outline-primary me-1">View Profile</a>
+                                <span class="badge bg-warning text-dark">Pending</span>
+                            </div>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <div>
+                                <strong>Sarah Smith</strong> applied for <strong>After-School Tutor</strong><br>
+                                <small class="text-muted">Received: Oct 24, 2023</small>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-sm btn-outline-primary me-1">View Profile</a>
+                                 <span class="badge bg-success">Accepted</span>
+                            </div>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                             <div>
+                                <strong>Mike Johnson</strong> applied for <strong>Summer Camp Counselor</strong><br>
+                                <small class="text-muted">Received: Oct 23, 2023</small>
+                            </div>
+                             <div>
+                                <a href="#" class="btn btn-sm btn-outline-primary me-1">View Profile</a>
+                                 <span class="badge bg-danger">Rejected</span>
+                            </div>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Stats Overview -->
+                 <div class="card mb-4">
+                     <div class="card-header">Stats Overview</div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                           <span>Active Opportunities:</span> <span class="badge bg-info fs-6">2</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                           <span>Total Applicants (Active):</span> <span class="badge bg-primary fs-6">17</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                           <span>Pending Applications:</span> <span class="badge bg-warning text-dark fs-6">6</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                           <span>Filled Positions (Last 30d):</span> <span class="badge bg-success fs-6">8</span>
+                        </div>
+                    </div>
+                 </div>
+                  <!-- Quick Links -->
+                 <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Quick Links</h5>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-success">Post New Opportunity</a>
+                            <a href="#" class="btn btn-outline-secondary">Edit Organization Profile</a>
+                            <a href="#" class="btn btn-outline-info">Manage Users</a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 11: Create/Edit Opportunity Page -->
+    <h2>State 11: Create/Edit Opportunity Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Opportunity - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub <span class="badge bg-info text-dark">Organization</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">My Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Applicants</a>
+            </li>
+          </ul>
+           <div class="dropdown">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownOrg" data-bs-toggle="dropdown" aria-expanded="false">
+                 <img src="https://via.placeholder.com/32/FFA500/FFFFFF?text=BFC" alt="org" width="32" height="32" class="rounded-circle">
+                Bright Futures Center
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownOrg">
+                 <li><a class="dropdown-item" href="#">Organization Profile</a></li>
+                 <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">My Opportunities</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Create Opportunity</li> <!-- Or "Edit Opportunity" -->
+          </ol>
+        </nav>
+
+        <h1>Create New Volunteer Opportunity</h1> <!-- Or "Edit Volunteer Opportunity" -->
+        <hr>
+
+         <!-- Validation Error Summary Example -->
+         <!-- <div class="alert alert-danger" role="alert">
+           Please fix the following errors:
+           <ul>
+               <li>Opportunity Title is required.</li>
+               <li>Description cannot be empty.</li>
+               <li>Please select at least one category.</li>
+           </ul>
+         </div> -->
+
+        <form class="needs-validation" novalidate>
+            <div class="row g-4">
+                <div class="col-md-8">
+                     <div class="card">
+                         <div class="card-header">Opportunity Details</div>
+                         <div class="card-body">
+                             <div class="mb-3">
+                                <label for="oppTitle" class="form-label">Opportunity Title <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="oppTitle" placeholder="e.g., After-School Tutor, Park Cleanup Lead" required>
+                                <div class="invalid-feedback">
+                                    Please provide a title for the opportunity.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="oppDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="oppDescription" rows="5" placeholder="Provide a detailed description of the role, responsibilities, and impact." required></textarea>
+                                <div class="invalid-feedback">
+                                    A description is required.
+                                </div>
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="oppResponsibilities" class="form-label">Key Responsibilities</label>
+                                <textarea class="form-control" id="oppResponsibilities" rows="3" placeholder="List specific tasks (optional, use bullet points if possible)."></textarea>
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="oppQualifications" class="form-label">Qualifications / Skills Needed</label>
+                                <textarea class="form-control" id="oppQualifications" rows="3" placeholder="List desired skills, experience, or requirements (e.g., background check, age limit, specific skills)."></textarea>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                 <div class="col-md-4">
+                     <div class="card mb-4">
+                         <div class="card-header">Logistics</div>
+                         <div class="card-body">
+                            <div class="mb-3">
+                                <label for="oppLocation" class="form-label">Location <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="oppLocation" placeholder="Street Address, City, State, Zip" required>
+                                 <div class="form-check mt-1">
+                                  <input class="form-check-input" type="checkbox" value="" id="remoteCheck">
+                                  <label class="form-check-label" for="remoteCheck">
+                                    This is a remote/virtual opportunity
+                                  </label>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please provide a location or mark as remote.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="oppTimeCommitment" class="form-label">Time Commitment <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="oppTimeCommitment" placeholder="e.g., Tuesdays 3-5pm, 4 hours/week, Flexible" required>
+                                <div class="invalid-feedback">
+                                    Please describe the time commitment.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="oppStartDate" class="form-label">Start Date (Optional)</label>
+                                <input type="date" class="form-control" id="oppStartDate">
+                            </div>
+                             <div class="mb-3">
+                                <label for="oppEndDate" class="form-label">End Date (Optional)</label>
+                                <input type="date" class="form-control" id="oppEndDate">
+                            </div>
+                         </div>
+                     </div>
+
+                     <div class="card">
+                         <div class="card-header">Categorization</div>
+                         <div class="card-body">
+                              <div class="mb-3">
+                                <label class="form-label">Categories <span class="text-danger">*</span></label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="catEdu">
+                                  <label class="form-check-label" for="catEdu">Education</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="catEnv">
+                                  <label class="form-check-label" for="catEnv">Environment</label>
+                                </div>
+                                 <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="catAnimal">
+                                  <label class="form-check-label" for="catAnimal">Animals</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="catHealth">
+                                  <label class="form-check-label" for="catHealth">Health</label>
+                                </div>
+                                 <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="catSenior">
+                                  <label class="form-check-label" for="catSenior">Seniors</label>
+                                </div>
+                                <!-- Add more categories -->
+                                <div class="text-danger small mt-1" style="display:none;"> <!-- Show if no category selected -->
+                                    Please select at least one category.
+                                </div>
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+
+            <div class="mt-4 text-end">
+                <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Opportunity</button> <!-- Or "Update Opportunity" -->
+            </div>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+        const forms = document.querySelectorAll(".needs-validation");
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 12: My Profile Page (Volunteer/Organization) -->
+    <h2>State 12: My Profile Page (Volunteer Example)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Dashboard</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+           <div class="dropdown">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://via.placeholder.com/32" alt="mdo" width="32" height="32" class="rounded-circle">
+                John Doe
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
+                <li><a class="dropdown-item active" aria-current="page" href="#">My Profile</a></li>
+                <li><a class="dropdown-item" href="#">Saved Opportunities</a></li>
+                <li><a class="dropdown-item" href="#">My Applications</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>My Profile</h1>
+        <hr>
+
+         <!-- Success Message Example -->
+         <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+           Profile updated successfully!
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div> -->
+
+        <form>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/150" class="img-thumbnail rounded-circle mb-3" alt="Profile Picture">
+                    <div class="mb-3">
+                        <label for="profilePicUpload" class="form-label">Change Profile Picture</label>
+                        <input class="form-control form-control-sm" type="file" id="profilePicUpload">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">Basic Information</div>
+                        <div class="card-body">
+                             <div class="row mb-3">
+                                <div class="col">
+                                    <label for="profFirstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="profFirstName" value="John" required>
+                                </div>
+                                <div class="col">
+                                     <label for="profLastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="profLastName" value="Doe" required>
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="profEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="profEmail" value="john.doe@email.com" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="profPhone" class="form-label">Phone Number (Optional)</label>
+                                <input type="tel" class="form-control" id="profPhone" placeholder="e.g., 555-123-4567">
+                            </div>
+                            <div class="mb-3">
+                                <label for="profLocation" class="form-label">Your Location (City, State)</label>
+                                <input type="text" class="form-control" id="profLocation" value="Anytown, USA" placeholder="Helps find local opportunities">
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="card mt-4">
+                        <div class="card-header">Volunteering Interests & Skills</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Areas of Interest (Select all that apply)</label>
+                                 <div class="d-flex flex-wrap">
+                                    <div class="form-check me-3 mb-2">
+                                      <input class="form-check-input" type="checkbox" value="" id="intEdu" checked>
+                                      <label class="form-check-label" for="intEdu">Education</label>
+                                    </div>
+                                     <div class="form-check me-3 mb-2">
+                                      <input class="form-check-input" type="checkbox" value="" id="intEnv">
+                                      <label class="form-check-label" for="intEnv">Environment</label>
+                                    </div>
+                                    <div class="form-check me-3 mb-2">
+                                      <input class="form-check-input" type="checkbox" value="" id="intAnimal" checked>
+                                      <label class="form-check-label" for="intAnimal">Animals</label>
+                                    </div>
+                                    <!-- Add more interests -->
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="profSkills" class="form-label">Skills (Optional)</label>
+                                <textarea class="form-control" id="profSkills" rows="3" placeholder="List any relevant skills, e.g., tutoring, graphic design, event planning, languages spoken"></textarea>
+                                <div class="form-text">Separate skills with commas.</div>
+                            </div>
+                              <div class="mb-3">
+                                <label for="profAvailability" class="form-label">General Availability (Optional)</label>
+                                <textarea class="form-control" id="profAvailability" rows="2" placeholder="e.g., Weekday evenings, Weekend mornings, Flexible"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="card mt-4">
+                        <div class="card-header">Account Settings</div>
+                        <div class="card-body">
+                             <a href="#" class="btn btn-outline-secondary">Change Password</a>
+                             <hr>
+                             <h6 class="mb-3">Notification Preferences</h6>
+                             <div class="form-check form-switch">
+                               <input class="form-check-input" type="checkbox" role="switch" id="switchNewOpp" checked>
+                               <label class="form-check-label" for="switchNewOpp">Email me about new opportunities matching my interests</label>
+                             </div>
+                              <div class="form-check form-switch">
+                               <input class="form-check-input" type="checkbox" role="switch" id="switchUpdates" checked>
+                               <label class="form-check-label" for="switchUpdates">Email me about application status updates</label>
+                             </div>
+                              <div class="form-check form-switch">
+                               <input class="form-check-input" type="checkbox" role="switch" id="switchNewsletter">
+                               <label class="form-check-label" for="switchNewsletter">Subscribe to the VolunteerHub newsletter</label>
+                             </div>
+                             <hr>
+                             <button type="button" class="btn btn-sm btn-danger">Delete My Account</button>
+                             <small class="text-muted d-block mt-1">This action is permanent and cannot be undone.</small>
+                        </div>
+                     </div>
+
+                    <div class="mt-4 text-end">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 13: Application Confirmation/Success Page -->
+    <h2>State 13: Application Confirmation/Success Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Dashboard</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <div class="dropdown"> <!-- Assumes user is logged in -->
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://via.placeholder.com/32" alt="mdo" width="32" height="32" class="rounded-circle">
+                John Doe
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser">
+                 <li><a class="dropdown-item" href="#">My Profile</a></li>
+                <li><a class="dropdown-item" href="#">Saved Opportunities</a></li>
+                <li><a class="dropdown-item" href="#">My Applications</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success p-5" role="alert">
+          <h4 class="alert-heading">Application Submitted Successfully!</h4>
+          <p>Thank you for applying to volunteer as an <strong>After-School Tutor</strong> with <strong>Bright Futures Center</strong>.</p>
+          <hr>
+          <p class="mb-0">The organization has received your application and will review it shortly. You can track the status of your application in your <a href="#" class="alert-link">Dashboard</a>.</p>
+        </div>
+
+        <div class="mt-4">
+            <a href="#" class="btn btn-primary me-2">Back to My Dashboard</a>
+            <a href="#" class="btn btn-outline-secondary">Find More Opportunities</a>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 14: Opportunity Posting Confirmation/Success Page -->
+    <h2>State 14: Opportunity Posting Confirmation/Success Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Published - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub <span class="badge bg-info text-dark">Organization</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">My Opportunities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Applicants</a>
+            </li>
+          </ul>
+           <div class="dropdown">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownOrg" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://via.placeholder.com/32/FFA500/FFFFFF?text=BFC" alt="org" width="32" height="32" class="rounded-circle">
+                Bright Futures Center
+              </a>
+              <ul class="dropdown-menu text-small" aria-labelledby="dropdownOrg">
+                 <li><a class="dropdown-item" href="#">Organization Profile</a></li>
+                 <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success p-5" role="alert">
+          <h4 class="alert-heading">Opportunity Published Successfully!</h4>
+          <p>Your volunteer opportunity, "<strong>Weekend Food Bank Assistant</strong>", is now live and visible to potential volunteers.</p>
+          <hr>
+          <p class="mb-0">You can manage this opportunity, view applicants, and make edits from your <a href="#" class="alert-link">Dashboard</a>.</p>
+        </div>
+
+        <div class="mt-4">
+            <a href="#" class="btn btn-primary me-2">View Opportunity</a>
+            <a href="#" class="btn btn-secondary me-2">Back to Dashboard</a>
+            <a href="#" class="btn btn-outline-success">Post Another Opportunity</a>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+     <!-- State 15: Error Page (Generic 404) -->
+    <h2>State 15: Error Page (Generic 404)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Local Volunteer Opportunities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .error-container { margin-top: 10vh; }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">VolunteerHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Find Opportunities</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+           <div class="d-flex"> <!-- Show login/signup if not logged in -->
+             <a href="#" class="btn btn-outline-primary me-2">Login</a>
+             <a href="#" class="btn btn-primary">Sign Up</a>
+          </div>
+          <!-- Or show user dropdown if logged in -->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-center error-container">
+        <h1 class="display-1">404</h1>
+        <h2 class="mb-4">Page Not Found</h2>
+        <p class="lead mb-4">Oops! The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="#" class="btn btn-primary btn-lg">Go to Homepage</a>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="container p-4">
+        <p class="text-center">&copy; 2023 VolunteerHub. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+</body>
+</html>

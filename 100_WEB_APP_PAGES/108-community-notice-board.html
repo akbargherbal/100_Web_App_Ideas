@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Notice Board - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        .navbar-brand img {
+            height: 30px; /* Adjust logo height */
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Community Notice Board - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style> .notice-card { margin-bottom: 1.5rem; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Login</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='btn btn-primary' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='p-5 mb-4 bg-light rounded-3'>
+          <div class='container-fluid py-5'>
+            <h1 class='display-5 fw-bold'>Welcome to Your Neighborhood Hub!</h1>
+            <p class='col-md-8 fs-4'>Stay connected with local announcements, events, and information. Browse notices or sign up to post your own.</p>
+            <a class='btn btn-success btn-lg' href='#'>Post a Notice</a>
+          </div>
+        </div>
+
+        <div class='row mb-3'>
+            <div class='col-md-6'>
+                <input type='text' class='form-control' placeholder='Search notices...'>
+            </div>
+            <div class='col-md-4'>
+                <select class='form-select'>
+                    <option selected>Filter by Category...</option>
+                    <option value='1'>Events</option>
+                    <option value='2'>Lost & Found</option>
+                    <option value='3'>For Sale</option>
+                    <option value='4'>Services</option>
+                    <option value='5'>General</option>
+                </select>
+            </div>
+            <div class='col-md-2'>
+                <button class='btn btn-outline-secondary w-100' type='button'>Filter</button>
+            </div>
+        </div>
+
+        <h2 class='mb-3'>Recent Notices</h2>
+        <div class='row'>
+            <!-- Notice Card Example 1 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Community Garage Sale</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Events</h6>
+                        <p class='card-text'>Annual neighborhood garage sale this Saturday, 9 AM - 2 PM. Maps available at the community center.</p>
+                        <p class='card-text'><small class='text-muted'>Posted by Jane Doe on Oct 25, 2023</small></p>
+                        <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Notice Card Example 2 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Lost Cat - Whiskers</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Lost & Found</h6>
+                        <p class='card-text'>Lost grey tabby cat named Whiskers near Oak Street. Friendly but shy. Please call if seen.</p>
+                         <p class='card-text'><small class='text-muted'>Posted by John Smith on Oct 24, 2023</small></p>
+                       <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Notice Card Example 3 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Babysitter Available</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Services</h6>
+                        <p class='card-text'>Experienced babysitter available weeknights and weekends. CPR certified. References available upon request.</p>
+                         <p class='card-text'><small class='text-muted'>Posted by Emily White on Oct 23, 2023</small></p>
+                        <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Pagination -->
+         <nav aria-label='Page navigation example' class='mt-4 d-flex justify-content-center'>
+            <ul class='pagination'>
+                <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Login</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-primary' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4 text-center'>About the Community Notice Board</h1>
+                <p class='lead text-center'>Connecting neighbors, one notice at a time.</p>
+                <hr class='my-4'>
+                <p>Welcome to the Community Notice Board, your central hub for staying informed about everything happening in our neighborhood. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Our mission is to foster a stronger, more connected community by providing a simple and accessible platform for sharing information. Whether you're looking for local events, trying to find a lost pet, offering services, or selling items, this is the place to post and browse.</p>
+                <h3 class='mt-4'>How it Works</h3>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <ul>
+                    <li>Browse notices freely by category or search.</li>
+                    <li>Sign up for a free account to post your own notices.</li>
+                    <li>Keep your information up-to-date and remove notices once they are resolved.</li>
+                    <li>Be respectful and follow community guidelines.</li>
+                </ul>
+                 <h3 class='mt-4'>Our Team</h3>
+                 <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+    <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style> body { background-color: #f8f9fa; } .login-container { max-width: 400px; margin: 5rem auto; padding: 2rem; background: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);} </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Login</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-primary' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container'>
+        <div class='login-container'>
+            <h2 class='text-center mb-4'>Login</h2>
+            <form>
+                <div class='mb-3'>
+                    <label for='emailInput' class='form-label'>Email address</label>
+                    <input type='email' class='form-control' id='emailInput' aria-describedby='emailHelp' placeholder='Enter email'>
+                </div>
+                <div class='mb-3'>
+                    <label for='passwordInput' class='form-label'>Password</label>
+                    <input type='password' class='form-control' id='passwordInput' placeholder='Password'>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input' id='rememberCheck'>
+                    <label class='form-check-label' for='rememberCheck'>Remember me</label>
+                </div>
+                <button type='submit' class='btn btn-primary w-100'>Login</button>
+                <div class='text-center mt-3'>
+                    <a href='#'>Forgot password?</a>
+                </div>
+                 <hr>
+                 <p class='text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+     <!-- State 3a: Login Page (Error State) -->
+    <div class="state-container">
+        <h2>State 3a: Login Page (Error State)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style> body { background-color: #f8f9fa; } .login-container { max-width: 400px; margin: 5rem auto; padding: 2rem; background: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);} </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Login</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-primary' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container'>
+        <div class='login-container'>
+            <h2 class='text-center mb-4'>Login</h2>
+            <!-- Error Message -->
+            <div class='alert alert-danger' role='alert'>
+              Invalid email or password. Please try again.
+            </div>
+            <form>
+                <div class='mb-3'>
+                    <label for='emailInput' class='form-label'>Email address</label>
+                    <input type='email' class='form-control is-invalid' id='emailInput' aria-describedby='emailHelp' placeholder='Enter email' value='user@example.com'>
+                </div>
+                <div class='mb-3'>
+                    <label for='passwordInput' class='form-label'>Password</label>
+                    <input type='password' class='form-control is-invalid' id='passwordInput' placeholder='Password' value='wrongpassword'>
+                    <div class='invalid-feedback'>
+                        Incorrect password.
+                    </div>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input' id='rememberCheck'>
+                    <label class='form-check-label' for='rememberCheck'>Remember me</label>
+                </div>
+                <button type='submit' class='btn btn-primary w-100'>Login</button>
+                <div class='text-center mt-3'>
+                    <a href='#'>Forgot password?</a>
+                </div>
+                 <hr>
+                 <p class='text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 4: Sign Up Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style> body { background-color: #f8f9fa; } .signup-container { max-width: 450px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);} </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Login</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-primary active' aria-current='page' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class='container'>
+        <div class='signup-container'>
+            <h2 class='text-center mb-4'>Create Account</h2>
+            <form>
+                <div class='mb-3'>
+                    <label for='nameInput' class='form-label'>Full Name</label>
+                    <input type='text' class='form-control' id='nameInput' placeholder='Enter your name'>
+                </div>
+                <div class='mb-3'>
+                    <label for='emailInputSignup' class='form-label'>Email address</label>
+                    <input type='email' class='form-control' id='emailInputSignup' placeholder='Enter email'>
+                </div>
+                <div class='mb-3'>
+                    <label for='passwordInputSignup' class='form-label'>Password</label>
+                    <input type='password' class='form-control' id='passwordInputSignup' placeholder='Choose a password'>
+                </div>
+                 <div class='mb-3'>
+                    <label for='confirmPasswordInput' class='form-label'>Confirm Password</label>
+                    <input type='password' class='form-control' id='confirmPasswordInput' placeholder='Confirm your password'>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input' id='termsCheck'>
+                    <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a></label>
+                </div>
+                <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                 <hr>
+                 <p class='text-center'>Already have an account? <a href='#'>Login</a></p>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+     <!-- State 4a: Sign Up Page (Validation Error State) -->
+    <div class="state-container">
+        <h2>State 4a: Sign Up Page (Validation Error State)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style> body { background-color: #f8f9fa; } .signup-container { max-width: 450px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.1);} </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Login</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-primary active' aria-current='page' href='#'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class='container'>
+        <div class='signup-container'>
+            <h2 class='text-center mb-4'>Create Account</h2>
+             <!-- General Error Message -->
+            <div class='alert alert-warning' role='alert'>
+              Please fix the errors below before submitting.
+            </div>
+            <form>
+                <div class='mb-3'>
+                    <label for='nameInput' class='form-label'>Full Name</label>
+                    <input type='text' class='form-control' id='nameInput' placeholder='Enter your name' value='Test User'>
+                    <!-- No error shown for name in this example -->
+                </div>
+                <div class='mb-3'>
+                    <label for='emailInputSignup' class='form-label'>Email address</label>
+                    <input type='email' class='form-control is-invalid' id='emailInputSignup' placeholder='Enter email' value='invalid-email'>
+                     <div class='invalid-feedback'>
+                        Please enter a valid email address.
+                    </div>
+                </div>
+                <div class='mb-3'>
+                    <label for='passwordInputSignup' class='form-label'>Password</label>
+                    <input type='password' class='form-control' id='passwordInputSignup' placeholder='Choose a password' value='short'>
+                </div>
+                 <div class='mb-3'>
+                    <label for='confirmPasswordInput' class='form-label'>Confirm Password</label>
+                    <input type='password' class='form-control is-invalid' id='confirmPasswordInput' placeholder='Confirm your password' value='mismatch'>
+                     <div class='invalid-feedback'>
+                        Passwords do not match.
+                    </div>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input is-invalid' id='termsCheck'>
+                    <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a></label>
+                     <div class='invalid-feedback'>
+                        You must agree to the terms.
+                    </div>
+                </div>
+                <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                 <hr>
+                 <p class='text-center'>Already have an account? <a href='#'>Login</a></p>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Home Page (Logged In) -->
+    <div class="state-container">
+        <h2>State 5: Home Page (Logged In)</h2>
+       <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style> .notice-card { margin-bottom: 1.5rem; } </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0 align-items-center'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>My Notices</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-success me-2' href='#'>+ Create Notice</a>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <i class='bi bi-person-circle me-1'></i> John Smith
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+         <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            Welcome back, John Smith!
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+
+        <div class='row mb-3'>
+            <div class='col-md-6'>
+                <input type='text' class='form-control' placeholder='Search notices...'>
+            </div>
+            <div class='col-md-4'>
+                <select class='form-select'>
+                    <option selected>Filter by Category...</option>
+                    <option value='1'>Events</option>
+                    <option value='2'>Lost & Found</option>
+                    <option value='3'>For Sale</option>
+                    <option value='4'>Services</option>
+                    <option value='5'>General</option>
+                </select>
+            </div>
+            <div class='col-md-2'>
+                <button class='btn btn-outline-secondary w-100' type='button'>Filter</button>
+            </div>
+        </div>
+
+        <h2 class='mb-3'>Recent Notices</h2>
+        <div class='row'>
+            <!-- Notice Card Example 1 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Community Garage Sale</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Events</h6>
+                        <p class='card-text'>Annual neighborhood garage sale this Saturday, 9 AM - 2 PM. Maps available at the community center.</p>
+                         <p class='card-text'><small class='text-muted'>Posted by Jane Doe on Oct 25, 2023</small></p>
+                        <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Notice Card Example 2 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Lost Cat - Whiskers</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Lost & Found</h6>
+                        <p class='card-text'>Lost grey tabby cat named Whiskers near Oak Street. Friendly but shy. Please call if seen.</p>
+                         <p class='card-text'><small class='text-muted'>Posted by John Smith on Oct 24, 2023</small></p>
+                       <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Notice Card Example 3 -->
+            <div class='col-md-6 col-lg-4'>
+                <div class='card notice-card shadow-sm'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Babysitter Available</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Category: Services</h6>
+                        <p class='card-text'>Experienced babysitter available weeknights and weekends. CPR certified. References available upon request.</p>
+                         <p class='card-text'><small class='text-muted'>Posted by Emily White on Oct 23, 2023</small></p>
+                       <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Pagination -->
+         <nav aria-label='Page navigation example' class='mt-4 d-flex justify-content-center'>
+            <ul class='pagination'>
+                <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: View Notice Detail Page -->
+    <div class="state-container">
+        <h2>State 6: View Notice Detail Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Notice Detail - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0 align-items-center'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>My Notices</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-success me-2' href='#'>+ Create Notice</a>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <i class='bi bi-person-circle me-1'></i> John Smith
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row'>
+            <div class='col-lg-8 offset-lg-2'>
+                 <nav aria-label='breadcrumb'>
+                    <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Home</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Notice Details</li>
+                    </ol>
+                </nav>
+                <div class='card shadow-sm'>
+                    <div class='card-header bg-primary text-white'>
+                        <h2 class='h4 mb-0'>Lost Cat - Whiskers</h2>
+                    </div>
+                    <div class='card-body'>
+                        <p class='card-text'>
+                            <span class='badge bg-secondary me-2'>Lost & Found</span>
+                            Posted by <a href='#'>John Smith</a> on October 24, 2023
+                        </p>
+                        <hr>
+                        <p>We've lost our beloved grey tabby cat, Whiskers. He went missing yesterday evening near the corner of Oak Street and Maple Avenue.</p>
+                        <p>He is a medium-sized male cat, approximately 3 years old, with distinctive dark grey stripes and green eyes. He was wearing a blue collar with a small bell, but it might have come off.</p>
+                        <p>Whiskers is generally friendly but can be shy around strangers. He might be hiding in sheds, garages, or under bushes.</p>
+                        <p>If you have seen him or have any information, please contact us immediately at 555-1234. A reward is offered for his safe return.</p>
+                        <p>Thank you for your help!</p>
+                        <!-- Placeholder for Image Gallery
+                        <div class='mt-4'>
+                            <h5>Images:</h5>
+                            <img src='https://via.placeholder.com/150?text=Cat+Photo+1' class='img-thumbnail me-2' alt='Cat Photo 1'>
+                            <img src='https://via.placeholder.com/150?text=Cat+Photo+2' class='img-thumbnail' alt='Cat Photo 2'>
+                        </div>
+                        -->
+                    </div>
+                     <div class='card-footer text-muted d-flex justify-content-between'>
+                        <span>Last updated: Oct 24, 2023</span>
+                        <a href='#' class='btn btn-outline-secondary btn-sm'><i class='bi bi-flag-fill me-1'></i> Report</a>
+                    </div>
+                </div>
+
+                 <!-- Comments Section Placeholder -->
+                <div class='mt-4'>
+                    <h4>Comments</h4>
+                    <div class='card mb-3'>
+                        <div class='card-body'>
+                             <p class='mb-1'><strong>Sarah K.:</strong> Hope you find Whiskers soon! I'll keep an eye out around Maple Ave.</p>
+                             <small class='text-muted'>Oct 25, 2023</small>
+                        </div>
+                    </div>
+                     <div class='card mb-3'>
+                        <div class='card-body'>
+                             <p class='mb-1'><strong>Mike B.:</strong> Saw a grey cat near the park this morning, might be him?</p>
+                             <small class='text-muted'>Oct 25, 2023</small>
+                        </div>
+                    </div>
+                    <form class='mt-3'>
+                        <div class='mb-3'>
+                            <label for='commentText' class='form-label'>Add a comment:</label>
+                            <textarea class='form-control' id='commentText' rows='3' placeholder='Enter your comment...'></textarea>
+                        </div>
+                        <button type='submit' class='btn btn-primary'>Post Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Create Notice Page -->
+    <div class="state-container">
+        <h2>State 7: Create Notice Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Create Notice - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0 align-items-center'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>My Notices</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-success me-2 active' aria-current='page' href='#'>+ Create Notice</a>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <i class='bi bi-person-circle me-1'></i> John Smith
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4 text-center'>Create a New Notice</h1>
+                <div class='card shadow-sm p-4'>
+                    <form>
+                        <div class='mb-3'>
+                            <label for='noticeTitle' class='form-label'>Notice Title <span class='text-danger'>*</span></label>
+                            <input type='text' class='form-control' id='noticeTitle' placeholder='e.g., Neighborhood Watch Meeting' required>
+                        </div>
+
+                        <div class='mb-3'>
+                            <label for='noticeCategory' class='form-label'>Category <span class='text-danger'>*</span></label>
+                            <select class='form-select' id='noticeCategory' required>
+                                <option selected disabled value=''>Choose...</option>
+                                <option value='Events'>Events</option>
+                                <option value='Lost & Found'>Lost & Found</option>
+                                <option value='For Sale'>For Sale</option>
+                                <option value='Services'>Services</option>
+                                <option value='Housing'>Housing</option>
+                                <option value='General'>General Announcement</option>
+                            </select>
+                        </div>
+
+                        <div class='mb-3'>
+                            <label for='noticeDescription' class='form-label'>Description <span class='text-danger'>*</span></label>
+                            <textarea class='form-control' id='noticeDescription' rows='5' placeholder='Provide details about your notice...' required></textarea>
+                        </div>
+
+                        <div class='mb-3'>
+                            <label for='noticeLocation' class='form-label'>Location (Optional)</label>
+                            <input type='text' class='form-control' id='noticeLocation' placeholder='e.g., Community Center, Park Entrance'>
+                        </div>
+
+                        <div class='mb-3'>
+                             <label for='noticeImage' class='form-label'>Upload Image (Optional)</label>
+                             <input class='form-control' type='file' id='noticeImage'>
+                             <div class='form-text'>You can upload one image (JPG, PNG, GIF) up to 2MB.</div>
+                        </div>
+
+                         <div class='mb-3'>
+                             <label for='noticeExpiry' class='form-label'>Expiry Date (Optional)</label>
+                             <input type='date' class='form-control' id='noticeExpiry'>
+                             <div class='form-text'>The notice will be automatically removed after this date.</div>
+                        </div>
+
+                        <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
+                             <button type='button' class='btn btn-outline-secondary me-md-2'>Cancel</button>
+                             <button type='submit' class='btn btn-primary'>Post Notice</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 7a: Create Notice Page (Validation Error State) -->
+    <div class="state-container">
+        <h2>State 7a: Create Notice Page (Validation Error State)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Create Notice - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0 align-items-center'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>My Notices</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-success me-2 active' aria-current='page' href='#'>+ Create Notice</a>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <i class='bi bi-person-circle me-1'></i> John Smith
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4 text-center'>Create a New Notice</h1>
+                 <div class='alert alert-danger' role='alert'>
+                    Please correct the errors below and try again.
+                 </div>
+                <div class='card shadow-sm p-4'>
+                    <form class='needs-validation' novalidate>
+                        <div class='mb-3'>
+                            <label for='noticeTitle' class='form-label'>Notice Title <span class='text-danger'>*</span></label>
+                            <input type='text' class='form-control is-invalid' id='noticeTitle' placeholder='e.g., Neighborhood Watch Meeting' required value=''>
+                             <div class='invalid-feedback'>
+                                Please provide a title for your notice.
+                            </div>
+                        </div>
+
+                        <div class='mb-3'>
+                            <label for='noticeCategory' class='form-label'>Category <span class='text-danger'>*</span></label>
+                            <select class='form-select is-invalid' id='noticeCategory' required>
+                                <option selected disabled value=''>Choose...</option>
+                                <option value='Events'>Events</option>
+                                <option value='Lost & Found'>Lost & Found</option>
+                                <option value='For Sale'>For Sale</option>
+                                <option value='Services'>Services</option>
+                                <option value='Housing'>Housing</option>
+                                <option value='General'>General Announcement</option>
+                            </select>
+                             <div class='invalid-feedback'>
+                                Please select a category.
+                            </div>
+                        </div>
+
+                        <div class='mb-3'>
+                            <label for='noticeDescription' class='form-label'>Description <span class='text-danger'>*</span></label>
+                            <textarea class='form-control is-invalid' id='noticeDescription' rows='5' placeholder='Provide details about your notice...' required></textarea>
+                            <div class='invalid-feedback'>
+                                Please enter a description.
+                            </div>
+                        </div>
+
+                         <div class='mb-3'>
+                            <label for='noticeLocation' class='form-label'>Location (Optional)</label>
+                            <input type='text' class='form-control' id='noticeLocation' placeholder='e.g., Community Center, Park Entrance'>
+                        </div>
+
+                        <div class='mb-3'>
+                             <label for='noticeImage' class='form-label'>Upload Image (Optional)</label>
+                             <input class='form-control' type='file' id='noticeImage'>
+                             <div class='form-text'>You can upload one image (JPG, PNG, GIF) up to 2MB.</div>
+                        </div>
+
+                         <div class='mb-3'>
+                             <label for='noticeExpiry' class='form-label'>Expiry Date (Optional)</label>
+                             <input type='date' class='form-control' id='noticeExpiry'>
+                             <div class='form-text'>The notice will be automatically removed after this date.</div>
+                        </div>
+
+                         <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
+                             <button type='button' class='btn btn-outline-secondary me-md-2'>Cancel</button>
+                             <button type='submit' class='btn btn-primary'>Post Notice</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: My Notices Page -->
+    <div class="state-container">
+        <h2>State 8: My Notices Page</h2>
+         <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Notices - Community Notice Board</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style> .notice-card { margin-bottom: 1.5rem; } </style>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>
+                 <i class='bi bi-clipboard-check-fill me-2'></i>Community Notice Board
+            </a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0 align-items-center'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>My Notices</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='btn btn-success me-2' href='#'>+ Create Notice</a>
+                    </li>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <i class='bi bi-person-circle me-1'></i> John Smith
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='d-flex justify-content-between align-items-center mb-4'>
+            <h1>My Posted Notices</h1>
+            <a class='btn btn-success' href='#'><i class='bi bi-plus-circle-fill me-2'></i>Create New Notice</a>
+        </div>
+
+        <!-- Example Notice 1 (User's Own) -->
+        <div class='card notice-card shadow-sm'>
+            <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1'>Lost Cat - Whiskers</h5>
+                    <h6 class='card-subtitle mb-2 text-muted'>Category: Lost & Found</h6>
+                    <p class='card-text'><small class='text-muted'>Posted on Oct 24, 2023 | Status: Active</small></p>
+                </div>
+                <div>
+                    <a href='#' class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-eye-fill me-1'></i>View</a>
+                    <a href='#' class='btn btn-sm btn-outline-secondary me-1'><i class='bi bi-pencil-fill me-1'></i>Edit</a>
+                    <button type='button' class='btn btn-sm btn-outline-danger'><i class='bi bi-trash-fill me-1'></i>Delete</button>
+                </div>
+            </div>
+        </div>
+
+         <!-- Example Notice 2 (User's Own - Expired) -->
+        <div class='card notice-card shadow-sm bg-light'>
+            <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1'>Bike for Sale - Gently Used</h5>
+                    <h6 class='card-subtitle mb-2 text-muted'>Category: For Sale</h6>
+                    <p class='card-text'><small class='text-muted'>Posted on Sep 15, 2023 | Status: Expired</small></p>
+                </div>
+                 <div>
+                    <a href='#' class='btn btn-sm btn-outline-primary me-1'><i class='bi bi-eye-fill me-1'></i>View</a>
+                     <a href='#' class='btn btn-sm btn-outline-secondary me-1 disabled' aria-disabled='true'><i class='bi bi-pencil-fill me-1'></i>Edit</a>
+                    <button type='button' class='btn btn-sm btn-outline-danger'><i class='bi bi-trash-fill me-1'></i>Delete</button>
+                </div>
+            </div>
+        </div>
+
+         <!-- Placeholder for No Notices -->
+         <!--
+         <div class='text-center p-5 border rounded bg-light'>
+             <p class='lead'>You haven't posted any notices yet.</p>
+             <a class='btn btn-success' href='#'>Post Your First Notice</a>
+         </div>
+         -->
+
+    </div>
+
+    <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+        <p class='text-center text-muted'>© 2023 Community Notice Board</p>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+        "></iframe>
+    </div>
+
+
+</body>
+</html>

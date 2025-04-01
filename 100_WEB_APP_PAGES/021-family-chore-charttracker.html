@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Chore Chart/Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .iframe-container {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Family Chore Chart/Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out View) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Home Page</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='p-5 mb-4 bg-light rounded-3 text-center'>
+                        <div class='container-fluid py-5'>
+                          <h1 class='display-5 fw-bold'>Welcome to choreTracker!</h1>
+                          <p class='fs-4'>The easy way to manage and track household chores for your family. Assign tasks, monitor completion, and keep everyone accountable.</p>
+                          <a class='btn btn-primary btn-lg' href='#' role='button'>Get Started (Sign Up)</a>
+                          <a class='btn btn-outline-secondary btn-lg ms-2' href='#' role='button'>Login</a>
+                        </div>
+                      </div>
+
+                    <div class='row align-items-md-stretch'>
+                        <div class='col-md-6 mb-3'>
+                          <div class='h-100 p-5 text-bg-dark rounded-3'>
+                            <h2>Assign Chores Easily</h2>
+                            <p>Create custom chores, set frequencies (daily, weekly), and assign them to family members with just a few clicks.</p>
+                            <button class='btn btn-outline-light' type='button'>Learn More</button>
+                          </div>
+                        </div>
+                        <div class='col-md-6 mb-3'>
+                          <div class='h-100 p-5 bg-light border rounded-3'>
+                            <h2>Track Progress</h2>
+                            <p>See who has completed their chores and who needs a reminder. Visual progress tracking keeps everyone motivated.</p>
+                            <button class='btn btn-outline-secondary' type='button'>Learn More</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>About Page</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <h1>About choreTracker</h1>
+                    <p class='lead'>Simplifying household chore management for modern families.</p>
+                    <hr>
+                    <h2>Our Mission</h2>
+                    <p>At choreTracker, our mission is to reduce the stress and conflict often associated with household chores. We believe that a clear, fair, and easy-to-use system can help families work together better, teach responsibility, and create a more harmonious home environment.</p>
+
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Easy Chore Creation & Assignment</li>
+                        <li>Customizable Schedules (Daily, Weekly, Bi-Weekly)</li>
+                        <li>Progress Tracking & Completion Status</li>
+                        <li>Family Member Management</li>
+                        <li>Optional Points/Rewards System (Coming Soon!)</li>
+                        <li>Simple & Intuitive Interface</li>
+                    </ul>
+
+                     <h2>Why Choose Us?</h2>
+                     <p>Built with families in mind, choreTracker focuses on simplicity and effectiveness. No complicated setups, just a straightforward tool to get chores organized and done.</p>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light fixed-bottom'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary active' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-6'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    Create Your Family Account
+                                </div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='familyName' class='form-label'>Family Name</label>
+                                            <input type='text' class='form-control' id='familyName' placeholder='e.g., The Smith Family' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='adminName' class='form-label'>Your Name (Admin)</label>
+                                            <input type='text' class='form-control' id='adminName' placeholder='e.g., Jane Doe' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='email' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control' id='email' placeholder='you@example.com' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='password' class='form-label'>Password</label>
+                                            <input type='password' class='form-control' id='password' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                            <input type='password' class='form-control' id='confirmPassword' required>
+                                        </div>
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-primary'>Sign Up</button>
+                                        </div>
+                                    </form>
+                                    <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light fixed-bottom'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page (Validation Error) -->
+    <h2>State 4: Sign Up Page (Validation Error)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up Error</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                           <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary active' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-6'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    Create Your Family Account
+                                </div>
+                                <div class='card-body'>
+                                     <div class='alert alert-danger' role='alert'>
+                                        Please fix the errors below and try again.
+                                    </div>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='familyName' class='form-label'>Family Name</label>
+                                            <input type='text' class='form-control is-invalid' id='familyName' placeholder='e.g., The Smith Family' required value=''>
+                                            <div class='invalid-feedback'>
+                                              Family name is required.
+                                            </div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='adminName' class='form-label'>Your Name (Admin)</label>
+                                            <input type='text' class='form-control' id='adminName' placeholder='e.g., Jane Doe' required value='Jane Doe'>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='email' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control is-invalid' id='email' placeholder='you@example.com' required value='jane.doe@mail'>
+                                             <div class='invalid-feedback'>
+                                              Please enter a valid email address.
+                                            </div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='password' class='form-label'>Password</label>
+                                            <input type='password' class='form-control is-invalid' id='password' required value='password123'>
+                                            <div class='invalid-feedback'>
+                                              Passwords do not match.
+                                            </div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                            <input type='password' class='form-control is-invalid' id='confirmPassword' required value='password456'>
+                                            <div class='invalid-feedback'>
+                                               Passwords do not match.
+                                            </div>
+                                        </div>
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-primary'>Sign Up</button>
+                                        </div>
+                                    </form>
+                                     <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light fixed-bottom'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                     <div class='row justify-content-center'>
+                        <div class='col-md-5'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    Login to Your Account
+                                </div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='email' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control' id='email' placeholder='you@example.com' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='password' class='form-label'>Password</label>
+                                            <input type='password' class='form-control' id='password' required>
+                                        </div>
+                                         <div class='mb-3 form-check'>
+                                            <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                            <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                        </div>
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-primary'>Login</button>
+                                        </div>
+                                    </form>
+                                     <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+                                     <p class='text-center'><a href='#'>Forgot password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light fixed-bottom'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 6: Login Page (Validation Error) -->
+    <h2>State 6: Login Page (Validation Error)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login Error</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-primary' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                     <div class='row justify-content-center'>
+                        <div class='col-md-5'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    Login to Your Account
+                                </div>
+                                <div class='card-body'>
+                                    <div class='alert alert-danger' role='alert'>
+                                      Invalid email or password. Please try again.
+                                    </div>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='email' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control is-invalid' id='email' placeholder='you@example.com' required value='wrong@email.com'>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='password' class='form-label'>Password</label>
+                                            <input type='password' class='form-control is-invalid' id='password' required value='badpass'>
+                                        </div>
+                                         <div class='mb-3 form-check'>
+                                            <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                            <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                        </div>
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-primary'>Login</button>
+                                        </div>
+                                    </form>
+                                     <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+                                     <p class='text-center'><a href='#'>Forgot password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light fixed-bottom'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Dashboard (Logged In View) -->
+    <h2>State 7: Dashboard (Logged In)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Dashboard</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1 class='mb-4'>Family Dashboard - The Smith Family</h1>
+
+                    <div class='alert alert-info' role='alert'>
+                      Welcome back, Jane! Here's what's happening today.
+                    </div>
+
+                    <div class='row'>
+                        <!-- Today's Chores -->
+                        <div class='col-md-6 mb-4'>
+                            <div class='card'>
+                                <div class='card-header'>
+                                    Today's Chores (October 26)
+                                </div>
+                                <ul class='list-group list-group-flush'>
+                                    <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                        <div><i class='bi bi-square me-2'></i> Walk the dog</div>
+                                        <span class='badge bg-secondary rounded-pill'>Assigned: Alex</span>
+                                    </li>
+                                    <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                        <div><i class='bi bi-check-square-fill text-success me-2'></i> Set the table</div>
+                                        <span class='badge bg-success rounded-pill'>Done: Mia</span>
+                                     </li>
+                                    <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                        <div><i class='bi bi-square me-2'></i> Tidy up room</div>
+                                         <span class='badge bg-secondary rounded-pill'>Assigned: Alex</span>
+                                    </li>
+                                     <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                        <div><i class='bi bi-square me-2'></i> Take out trash</div>
+                                         <span class='badge bg-secondary rounded-pill'>Assigned: Mia</span>
+                                    </li>
+                                </ul>
+                                <div class='card-footer text-end'>
+                                    <a href='#' class='btn btn-sm btn-outline-primary'>View All Today</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member Summary -->
+                        <div class='col-md-6 mb-4'>
+                             <div class='card'>
+                                <div class='card-header'>
+                                    This Week's Progress
+                                </div>
+                                 <ul class='list-group list-group-flush'>
+                                    <li class='list-group-item'>
+                                        <strong>Alex:</strong> 3 / 5 Chores Completed
+                                        <div class='progress mt-1' style='height: 10px;'>
+                                            <div class='progress-bar bg-warning' role='progressbar' style='width: 60%;' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100'></div>
+                                        </div>
+                                    </li>
+                                     <li class='list-group-item'>
+                                        <strong>Mia:</strong> 4 / 4 Chores Completed
+                                        <div class='progress mt-1' style='height: 10px;'>
+                                            <div class='progress-bar bg-success' role='progressbar' style='width: 100%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div>
+                                        </div>
+                                    </li>
+                                     <li class='list-group-item'>
+                                        <strong>Jane (Admin):</strong> 1 / 2 Chores Completed
+                                        <div class='progress mt-1' style='height: 10px;'>
+                                            <div class='progress-bar bg-danger' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100'></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                     <div class='card'>
+                        <div class='card-header'>
+                            Quick Actions
+                        </div>
+                        <div class='card-body text-center'>
+                             <a href='#' class='btn btn-primary'><i class='bi bi-plus-circle me-1'></i> Add New Chore</a>
+                             <a href='#' class='btn btn-secondary'><i class='bi bi-person-plus me-1'></i> Add Family Member</a>
+                             <a href='#' class='btn btn-info text-white'><i class='bi bi-calendar-check me-1'></i> Assign Chores</a>
+                             <a href='#' class='btn btn-success'><i class='bi bi-eye me-1'></i> View My Chores</a>
+                        </div>
+                     </div>
+
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: Manage Family Members Page -->
+    <h2>State 8: Manage Family Members Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Manage Family Members</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Manage Family Members</h1>
+                         <button class='btn btn-primary'><i class='bi bi-person-plus-fill me-1'></i> Add Member</button>
+                    </div>
+
+                    <div class='card'>
+                        <div class='card-body'>
+                             <table class='table table-hover'>
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>Name</th>
+                                        <th scope='col'>Role</th>
+                                        <th scope='col'>Chores Assigned (This Week)</th>
+                                        <th scope='col'>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jane Doe</td>
+                                        <td><span class='badge bg-info'>Admin</span></td>
+                                        <td>2</td>
+                                        <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Remove' disabled><i class='bi bi-trash-fill'></i></button> (Cannot remove Admin)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alex Smith</td>
+                                         <td><span class='badge bg-secondary'>Member</span></td>
+                                        <td>5</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Remove'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td>Mia Smith</td>
+                                         <td><span class='badge bg-secondary'>Member</span></td>
+                                        <td>4</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Remove'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 9: Add Family Member Form (Modal/Section) -->
+    <h2>State 9: Add Family Member Form</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Family Member</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Manage Members</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Add Member</li>
+                      </ol>
+                    </nav>
+                    <h1>Add New Family Member</h1>
+
+                    <div class='card'>
+                        <div class='card-body'>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='memberName' class='form-label'>Member Name</label>
+                                    <input type='text' class='form-control' id='memberName' placeholder='e.g., John Smith' required>
+                                </div>
+                               <div class='mb-3'>
+                                    <label for='memberRole' class='form-label'>Role</label>
+                                      <select class='form-select' id='memberRole' required>
+                                        <option selected disabled value=''>Choose...</option>
+                                        <option value='member'>Member</option>
+                                        <option value='child'>Child (Limited Access - Future)</option>
+                                        <option value='admin'>Admin (Can Manage)</option>
+                                    </select>
+                                </div>
+                                <!-- Optional fields below -->
+                                <div class='mb-3'>
+                                    <label for='memberEmail' class='form-label'>Email (Optional, for login)</label>
+                                    <input type='email' class='form-control' id='memberEmail' placeholder='member@example.com'>
+                                    <div class='form-text'>If provided, this member can log in separately.</div>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='memberPin' class='form-label'>PIN (Optional, for quick check-off)</label>
+                                    <input type='text' class='form-control' id='memberPin' placeholder='e.g., 1234' maxlength='4'>
+                                     <div class='form-text'>A simple 4-digit PIN for marking chores complete without full login.</div>
+                                </div>
+                                <button type='submit' class='btn btn-success'>Add Member</button>
+                                <a href='#' class='btn btn-secondary'>Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 10: Add Family Member Form (Validation Error) -->
+    <h2>State 10: Add Family Member Form (Validation Error)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Family Member Error</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Manage Members</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Add Member</li>
+                      </ol>
+                    </nav>
+                    <h1>Add New Family Member</h1>
+                     <div class='alert alert-danger' role='alert'>
+                        Please correct the errors below.
+                    </div>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='memberName' class='form-label'>Member Name</label>
+                                    <input type='text' class='form-control is-invalid' id='memberName' placeholder='e.g., John Smith' required value=''>
+                                    <div class='invalid-feedback'>
+                                        Member name cannot be empty.
+                                    </div>
+                                </div>
+                               <div class='mb-3'>
+                                    <label for='memberRole' class='form-label'>Role</label>
+                                      <select class='form-select is-invalid' id='memberRole' required>
+                                        <option selected disabled value=''>Choose...</option>
+                                        <option value='member'>Member</option>
+                                        <option value='child'>Child (Limited Access - Future)</option>
+                                        <option value='admin'>Admin (Can Manage)</option>
+                                    </select>
+                                     <div class='invalid-feedback'>
+                                        Please select a role.
+                                    </div>
+                                </div>
+                                <div class='mb-3'>
+                                    <label for='memberEmail' class='form-label'>Email (Optional, for login)</label>
+                                    <input type='email' class='form-control is-invalid' id='memberEmail' placeholder='member@example.com' value='john@com'>
+                                     <div class='invalid-feedback'>
+                                        Please enter a valid email address if providing one.
+                                    </div>
+                                    <div class='form-text'>If provided, this member can log in separately.</div>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='memberPin' class='form-label'>PIN (Optional, for quick check-off)</label>
+                                    <input type='text' class='form-control is-invalid' id='memberPin' placeholder='e.g., 1234' maxlength='4' value='12A'>
+                                     <div class='invalid-feedback'>
+                                        PIN must be 4 digits if provided.
+                                    </div>
+                                     <div class='form-text'>A simple 4-digit PIN for marking chores complete without full login.</div>
+                                </div>
+                                <button type='submit' class='btn btn-success'>Add Member</button>
+                                <a href='#' class='btn btn-secondary'>Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+
+    <!-- State 11: Manage Chores Page -->
+    <h2>State 11: Manage Chores Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Manage Chores</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                          <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Manage Chores</h1>
+                         <button class='btn btn-primary'><i class='bi bi-plus-circle-fill me-1'></i> Add New Chore</button>
+                    </div>
+
+                     <div class='card'>
+                        <div class='card-body'>
+                             <table class='table table-hover'>
+                                <thead>
+                                    <tr>
+                                        <th scope='col'>Chore Name</th>
+                                        <th scope='col'>Description</th>
+                                        <th scope='col'>Frequency</th>
+                                        <th scope='col'>Default Assignee(s)</th>
+                                        <th scope='col'>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Walk the dog</td>
+                                        <td>Morning walk around the block</td>
+                                        <td>Daily</td>
+                                        <td>Alex</td>
+                                        <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Delete'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Set the table</td>
+                                        <td>For dinner</td>
+                                        <td>Daily</td>
+                                        <td>Mia</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Delete'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td>Tidy up room</td>
+                                        <td>Put away clothes, make bed</td>
+                                         <td>Daily</td>
+                                        <td>Alex</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Delete'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td>Take out trash</td>
+                                        <td>Kitchen and bathroom bins</td>
+                                         <td>Weekly (Wed)</td>
+                                         <td>Anyone</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Delete'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                      <tr>
+                                        <td>Clean bathroom</td>
+                                        <td>Sink, toilet, floor</td>
+                                         <td>Weekly (Sat)</td>
+                                         <td>Jane</td>
+                                         <td>
+                                             <button class='btn btn-sm btn-outline-secondary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></button>
+                                             <button class='btn btn-sm btn-outline-danger' title='Delete'><i class='bi bi-trash-fill'></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 12: Add/Edit Chore Form -->
+    <h2>State 12: Add/Edit Chore Form</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Chore</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                      <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Manage Chores</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Add New Chore</li>
+                        <!-- Or Edit Chore -->
+                      </ol>
+                    </nav>
+                    <h1>Add New Chore</h1> <!-- Or Edit Chore -->
+
+                     <div class='card'>
+                        <div class='card-body'>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='choreName' class='form-label'>Chore Name</label>
+                                    <input type='text' class='form-control' id='choreName' placeholder='e.g., Wash Dishes' required>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='choreDescription' class='form-label'>Description (Optional)</label>
+                                   <textarea class='form-control' id='choreDescription' rows='3' placeholder='Add details like time or specific instructions'></textarea>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-6 mb-3'>
+                                        <label for='choreFrequency' class='form-label'>Frequency</label>
+                                        <select class='form-select' id='choreFrequency' required>
+                                            <option selected disabled value=''>Choose...</option>
+                                            <option value='daily'>Daily</option>
+                                            <option value='weekly'>Weekly</option>
+                                            <option value='biweekly'>Bi-Weekly</option>
+                                            <option value='monthly'>Monthly</option>
+                                            <option value='onetime'>One Time</option>
+                                        </select>
+                                    </div>
+                                     <div class='col-md-6 mb-3'>
+                                        <label for='frequencyDetail' class='form-label'>Frequency Detail (Optional)</label>
+                                        <input type='text' class='form-control' id='frequencyDetail' placeholder='e.g., Monday, Wednesday, Friday or Sat/Sun'>
+                                        <div class='form-text'>Specify days if not every day/week.</div>
+                                    </div>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='defaultAssignee' class='form-label'>Default Assignee(s)</label>
+                                    <select class='form-select' id='defaultAssignee' multiple size='4'>
+                                        <option value='anyone'>Anyone (First come, first served)</option>
+                                        <option value='rotate'>Rotate Automatically</option>
+                                        <option value='alex'>Alex Smith</option>
+                                        <option value='mia'>Mia Smith</option>
+                                        <option value='jane'>Jane Doe</option>
+                                    </select>
+                                     <div class='form-text'>Select one or more members (Ctrl/Cmd + click). Default assignment can be overridden during specific assignment.</div>
+                                </div>
+
+                                 <div class='mb-3'>
+                                    <label for='chorePoints' class='form-label'>Points/Reward (Optional)</label>
+                                    <input type='number' class='form-control' id='chorePoints' min='0' placeholder='e.g., 10'>
+                                     <div class='form-text'>Assign points for completion (feature in development).</div>
+                                </div>
+
+                                <button type='submit' class='btn btn-success'>Save Chore</button>
+                                <a href='#' class='btn btn-secondary'>Cancel</a>
+                            </form>
+                        </div>
+                     </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 13: Add/Edit Chore Form (Validation Error) -->
+    <h2>State 13: Add/Edit Chore Form (Validation Error)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Chore Error</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                      <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Manage Chores</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Add New Chore</li>
+                        <!-- Or Edit Chore -->
+                      </ol>
+                    </nav>
+                    <h1>Add New Chore</h1> <!-- Or Edit Chore -->
+                     <div class='alert alert-danger' role='alert'>
+                        Please correct the errors below.
+                    </div>
+                     <div class='card'>
+                        <div class='card-body'>
+                            <form>
+                                <div class='mb-3'>
+                                    <label for='choreName' class='form-label'>Chore Name</label>
+                                    <input type='text' class='form-control is-invalid' id='choreName' placeholder='e.g., Wash Dishes' required value=''>
+                                     <div class='invalid-feedback'>
+                                        Chore name is required.
+                                    </div>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='choreDescription' class='form-label'>Description (Optional)</label>
+                                   <textarea class='form-control' id='choreDescription' rows='3' placeholder='Add details like time or specific instructions'></textarea>
+                                </div>
+                                <div class='row'>
+                                    <div class='col-md-6 mb-3'>
+                                        <label for='choreFrequency' class='form-label'>Frequency</label>
+                                        <select class='form-select is-invalid' id='choreFrequency' required>
+                                            <option selected disabled value=''>Choose...</option>
+                                            <option value='daily'>Daily</option>
+                                            <option value='weekly'>Weekly</option>
+                                            <option value='biweekly'>Bi-Weekly</option>
+                                            <option value='monthly'>Monthly</option>
+                                            <option value='onetime'>One Time</option>
+                                        </select>
+                                          <div class='invalid-feedback'>
+                                            Please select a frequency.
+                                        </div>
+                                    </div>
+                                     <div class='col-md-6 mb-3'>
+                                        <label for='frequencyDetail' class='form-label'>Frequency Detail (Optional)</label>
+                                        <input type='text' class='form-control' id='frequencyDetail' placeholder='e.g., Monday, Wednesday, Friday or Sat/Sun'>
+                                        <div class='form-text'>Specify days if not every day/week.</div>
+                                    </div>
+                                </div>
+                                 <div class='mb-3'>
+                                    <label for='defaultAssignee' class='form-label'>Default Assignee(s)</label>
+                                    <select class='form-select' id='defaultAssignee' multiple size='4'>
+                                        <option value='anyone'>Anyone (First come, first served)</option>
+                                        <option value='rotate'>Rotate Automatically</option>
+                                        <option value='alex'>Alex Smith</option>
+                                        <option value='mia'>Mia Smith</option>
+                                        <option value='jane'>Jane Doe</option>
+                                    </select>
+                                     <div class='form-text'>Select one or more members (Ctrl/Cmd + click). Default assignment can be overridden during specific assignment.</div>
+                                </div>
+
+                                 <div class='mb-3'>
+                                    <label for='chorePoints' class='form-label'>Points/Reward (Optional)</label>
+                                    <input type='number' class='form-control is-invalid' id='chorePoints' min='0' placeholder='e.g., 10' value='-5'>
+                                     <div class='invalid-feedback'>
+                                        Points must be zero or a positive number.
+                                    </div>
+                                     <div class='form-text'>Assign points for completion (feature in development).</div>
+                                </div>
+
+                                <button type='submit' class='btn btn-success'>Save Chore</button>
+                                <a href='#' class='btn btn-secondary'>Cancel</a>
+                            </form>
+                        </div>
+                     </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 14: Assign Chores Page -->
+    <h2>State 14: Assign Chores Page</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Assign Chores</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>
+                    .chore-item { border-left: 3px solid #6c757d; padding-left: 10px; margin-bottom: 10px; }
+                    .chore-item.assigned { border-left-color: #0d6efd; }
+                 </style>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Assign Chores for This Week (Oct 23 - Oct 29)</h1>
+                    <p>Drag chores from the list to a family member, or edit existing assignments.</p>
+                    <div class='alert alert-success d-none' role='alert' id='saveFeedback'>
+                        Assignments saved successfully!
+                    </div>
+                     <div class='row g-3'>
+                        <!-- Available Chores -->
+                        <div class='col-md-4'>
+                            <div class='card'>
+                                <div class='card-header'><i class='bi bi-list-task me-1'></i> Available Chores</div>
+                                <div class='card-body' style='min-height: 300px; background: #f8f9fa;'>
+                                    <div class='chore-item p-2 mb-2 bg-white border rounded'>
+                                        <strong>Clean bathroom</strong> <span class='text-muted small'>(Weekly)</span>
+                                    </div>
+                                     <div class='chore-item p-2 mb-2 bg-white border rounded'>
+                                        <strong>Mow lawn</strong> <span class='text-muted small'>(Weekly)</span>
+                                    </div>
+                                    <div class='chore-item p-2 mb-2 bg-white border rounded'>
+                                        <strong>Grocery Shopping</strong> <span class='text-muted small'>(Weekly)</span>
+                                    </div>
+                                     <!-- More chores -->
+                                      <p class='text-muted small mt-3'>Drag these to a member below.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Family Members -->
+                        <div class='col-md-8'>
+                             <div class='row'>
+                                <!-- Member 1 -->
+                                <div class='col-sm-4 mb-3'>
+                                    <div class='card'>
+                                        <div class='card-header bg-light'><strong><i class='bi bi-person me-1'></i> Alex Smith</strong></div>
+                                        <div class='card-body' style='min-height: 300px;'>
+                                             <div class='chore-item assigned p-2 mb-2 bg-white border rounded'>
+                                                <strong>Walk the dog</strong> <span class='text-muted small'>(Daily)</span>
+                                                <button class='btn btn-sm btn-outline-danger float-end py-0 px-1' title='Remove Assignment'><i class='bi bi-x'></i></button>
+                                            </div>
+                                             <div class='chore-item assigned p-2 mb-2 bg-white border rounded'>
+                                                <strong>Tidy up room</strong> <span class='text-muted small'>(Daily)</span>
+                                                 <button class='btn btn-sm btn-outline-danger float-end py-0 px-1' title='Remove Assignment'><i class='bi bi-x'></i></button>
+                                            </div>
+                                             <div class='chore-item assigned p-2 mb-2 bg-white border rounded'>
+                                                <strong>Take out trash</strong> <span class='text-muted small'>(Weekly - Wed)</span>
+                                                 <button class='btn btn-sm btn-outline-danger float-end py-0 px-1' title='Remove Assignment'><i class='bi bi-x'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <!-- Member 2 -->
+                                <div class='col-sm-4 mb-3'>
+                                    <div class='card'>
+                                        <div class='card-header bg-light'><strong><i class='bi bi-person me-1'></i> Mia Smith</strong></div>
+                                        <div class='card-body' style='min-height: 300px;'>
+                                             <div class='chore-item assigned p-2 mb-2 bg-white border rounded'>
+                                                <strong>Set the table</strong> <span class='text-muted small'>(Daily)</span>
+                                                <button class='btn btn-sm btn-outline-danger float-end py-0 px-1' title='Remove Assignment'><i class='bi bi-x'></i></button>
+                                            </div>
+                                             <div class='chore-item assigned p-2 mb-2 bg-white border rounded'>
+                                                <strong>Feed the cat</strong> <span class='text-muted small'>(Daily)</span>
+                                                <button class='btn btn-sm btn-outline-danger float-end py-0 px-1' title='Remove Assignment'><i class='bi bi-x'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <!-- Member 3 -->
+                                <div class='col-sm-4 mb-3'>
+                                    <div class='card'>
+                                        <div class='card-header bg-light'><strong><i class='bi bi-person-check me-1'></i> Jane Doe</strong></div>
+                                        <div class='card-body' style='min-height: 300px;'>
+                                            <!-- Empty or assigned chores -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='text-end mt-3'>
+                         <button class='btn btn-success'><i class='bi bi-check-lg me-1'></i> Save Assignments</button>
+                         <button class='btn btn-warning'><i class='bi bi-arrow-repeat me-1'></i> Reset Changes</button>
+                         <button class='btn btn-secondary'><i class='bi bi-x-lg me-1'></i> Cancel</button>
+                     </div>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 15: View/Update Chore Status (Member View) -->
+    <h2>State 15: View/Update Chore Status (e.g., Alex's View)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>My Chores - Alex</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-secondary'> <!-- Different color for member view? -->
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>My Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Family Summary</a> <!-- Simplified dashboard? -->
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <span class='navbar-text text-white me-3'>Logged in as: Alex Smith</span>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>My Chores for Today (October 26)</h1>
+                    <p>Check off chores as you complete them!</p>
+
+                     <div class='list-group'>
+                      <label class='list-group-item d-flex gap-3'>
+                        <input class='form-check-input flex-shrink-0' type='checkbox' value='' style='font-size: 1.375em;'>
+                        <span class='pt-1 form-checked-content'>
+                          <strong>Walk the dog</strong>
+                          <small class='d-block text-muted'>
+                            <i class='bi bi-info-circle'></i> Morning walk around the block
+                          </small>
+                        </span>
+                      </label>
+                       <label class='list-group-item d-flex gap-3'>
+                        <input class='form-check-input flex-shrink-0' type='checkbox' value='' checked disabled style='font-size: 1.375em;'>
+                         <span class='pt-1 form-checked-content text-decoration-line-through text-muted'>
+                          <strong>Tidy up room</strong>
+                            <small class='d-block text-muted'>
+                            <i class='bi bi-check-circle-fill text-success'></i> Completed at 9:15 AM
+                          </small>
+                        </span>
+                      </label>
+                       <label class='list-group-item d-flex gap-3 bg-light'>
+                        <input class='form-check-input flex-shrink-0' type='checkbox' value='' disabled style='font-size: 1.375em;'>
+                        <span class='pt-1 form-checked-content'>
+                         <strong>Take out trash</strong> <span class='badge bg-warning text-dark'>Due Tomorrow</span>
+                           <small class='d-block text-muted'>
+                            <i class='bi bi-calendar-event'></i> Weekly chore - assigned for Wednesday
+                          </small>
+                        </span>
+                      </label>
+                       <label class='list-group-item d-flex gap-3'>
+                        <input class='form-check-input flex-shrink-0' type='checkbox' value='' style='font-size: 1.375em;'>
+                        <span class='pt-1 form-checked-content'>
+                          <strong>Practice Piano</strong>
+                          <small class='d-block text-muted'>
+                            <i class='bi bi-clock'></i> 30 minutes
+                          </small>
+                        </span>
+                      </label>
+                    </div>
+
+                    <h2 class='mt-5'>Upcoming Chores (This Week)</h2>
+                    <ul class='list-unstyled'>
+                        <li><i class='bi bi-calendar-date me-2'></i> Fri: Help with groceries</li>
+                        <li><i class='bi bi-calendar-date me-2'></i> Sat: Mow lawn</li>
+                    </ul>
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 16: User Profile/Settings Page -->
+    <h2>State 16: User Profile/Settings Page (Admin View)</h2>
+    <div class="iframe-container">
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Profile & Settings</title>
+                 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'> choreTracker</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Manage Members</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Assign Chores</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Chores</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                  <a class='nav-link dropdown-toggle text-white active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    Jane Doe (Admin)
+                                  </a>
+                                  <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                    <li><a class='dropdown-item active' aria-current='page' href='#'>Profile/Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Profile & Settings</h1>
+
+                    <div class='row'>
+                        <div class='col-md-8'>
+                            <!-- My Profile -->
+                            <div class='card mb-4'>
+                                <div class='card-header'>My Profile</div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3 row'>
+                                            <label for='profileName' class='col-sm-3 col-form-label'>My Name</label>
+                                            <div class='col-sm-9'>
+                                              <input type='text' class='form-control' id='profileName' value='Jane Doe'>
+                                            </div>
+                                        </div>
+                                        <div class='mb-3 row'>
+                                            <label for='profileEmail' class='col-sm-3 col-form-label'>My Email</label>
+                                             <div class='col-sm-9'>
+                                                <input type='email' readonly class='form-control-plaintext' id='profileEmail' value='jane.doe@example.com'>
+                                                <div id='emailHelp' class='form-text'>Email cannot be changed after signup.</div>
+                                            </div>
+                                        </div>
+                                         <div class='mb-3 row'>
+                                            <label for='profilePin' class='col-sm-3 col-form-label'>My PIN</label>
+                                             <div class='col-sm-9'>
+                                                <input type='text' class='form-control' id='profilePin' value='1234'>
+                                                <div id='pinHelp' class='form-text'>4-digit PIN for quick check-off.</div>
+                                            </div>
+                                        </div>
+                                        <button type='submit' class='btn btn-primary'>Update My Profile</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Change Password -->
+                             <div class='card mb-4'>
+                                <div class='card-header'>Change Password</div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='currentPassword' class='form-label'>Current Password</label>
+                                            <input type='password' class='form-control' id='currentPassword' required>
+                                        </div>
+                                         <div class='mb-3'>
+                                            <label for='newPassword' class='form-label'>New Password</label>
+                                            <input type='password' class='form-control' id='newPassword' required>
+                                        </div>
+                                         <div class='mb-3'>
+                                            <label for='confirmNewPassword' class='form-label'>Confirm New Password</label>
+                                            <input type='password' class='form-control' id='confirmNewPassword' required>
+                                        </div>
+                                        <button type='submit' class='btn btn-warning'>Change Password</button>
+                                    </form>
+                                </div>
+                             </div>
+
+                              <!-- Family Settings (Admin Only) -->
+                            <div class='card mb-4'>
+                                <div class='card-header'>Family Settings</div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='familyNameSetting' class='form-label'>Family Name</label>
+                                            <input type='text' class='form-control' id='familyNameSetting' value='The Smith Family'>
+                                        </div>
+                                          <div class='form-check form-switch mb-3'>
+                                              <input class='form-check-input' type='checkbox' role='switch' id='enablePoints' checked>
+                                              <label class='form-check-label' for='enablePoints'>Enable Points/Rewards System (Beta)</label>
+                                           </div>
+                                        <button type='submit' class='btn btn-primary'>Update Family Settings</button>
+                                    </form>
+                                    <hr>
+                                     <h5 class='text-danger'>Danger Zone</h5>
+                                     <p class='text-muted'>These actions are permanent and cannot be undone.</p>
+                                    <button type='button' class='btn btn-danger'>Delete Family Account</button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class='col-md-4'>
+                            <div class='card'>
+                                <div class='card-body text-center'>
+                                    <i class='bi bi-person-circle display-1 text-secondary'></i>
+                                    <h5 class='card-title mt-2'>Jane Doe</h5>
+                                    <p class='card-text text-muted'>Admin</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <footer class='footer mt-auto py-3 bg-light'>
+                    <div class='container text-center'>
+                        <span class='text-muted'>© 2023 choreTracker</span>
+                    </div>
+                </footer>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

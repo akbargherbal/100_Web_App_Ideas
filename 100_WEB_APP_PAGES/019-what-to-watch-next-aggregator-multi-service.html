@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What To Watch Next - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        iframe {
+            width: 100%;
+            height: 700px; /* Increased height */
+            border: 1px solid #dee2e6;
+            margin-bottom: 40px;
+            background-color: #fff; /* Ensure iframe background is white */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add subtle shadow */
+        }
+        h1 { text-align: center; margin-bottom: 40px; color: #343a40; }
+        h2 {
+             margin-top: 40px;
+             border-bottom: 2px solid #0d6efd; /* Use primary color for border */
+             padding-bottom: 10px;
+             color: #0d6efd; /* Use primary color for heading */
+             font-weight: bold;
+        }
+        /* Helper function for escaping HTML within srcdoc */
+        /* Note: Real implementation would use server-side escaping or JS, but for static output, manual care is needed. */
+        /* Basic manual escaping for demonstration: */
+        /* Replace " with &quot; */
+        /* Replace < with &lt; */
+        /* Replace > with &gt; */
+        /* Replace & with &amp; */
+    </style>
+</head>
+<body>
+
+    <h1>What To Watch Next - UI Flow</h1>
+
+    <!-- ====================================================== -->
+    <!-- State 1: Home Page (Logged Out)                       -->
+    <!-- ====================================================== -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Home - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 text-center'>
+                <div class='p-5 mb-4 bg-light rounded-3'>
+                    <div class='container-fluid py-5'>
+                        <h1 class='display-5 fw-bold'>Tired of Endless Scrolling?</h1>
+                        <p class='fs-4'>Find personalized movie and TV show recommendations from all your streaming services in one place.</p>
+                        <a href='#' class='btn btn-primary btn-lg me-2' type='button'>Sign Up Now</a>
+                        <a href='#' class='btn btn-outline-secondary btn-lg' type='button'>Learn More</a>
+                    </div>
+                </div>
+
+                <div class='row mt-5'>
+                    <div class='col-md-4'>
+                        <div class='card h-100'>
+                            <div class='card-body'>
+                                <i class='bi bi-check-circle-fill text-primary fs-1 mb-3'></i>
+                                <h5 class='card-title'>All Your Services</h5>
+                                <p class='card-text'>Connect Netflix, Hulu, Prime Video, HBO Max, Disney+, and more.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class='card h-100'>
+                            <div class='card-body'>
+                                <i class='bi bi-person-check-fill text-primary fs-1 mb-3'></i>
+                                <h5 class='card-title'>Personalized Picks</h5>
+                                <p class='card-text'>Get recommendations tailored to your viewing history and preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class='card h-100'>
+                             <div class='card-body'>
+                                <i class='bi bi-stopwatch-fill text-primary fs-1 mb-3'></i>
+                                <h5 class='card-title'>Save Time</h5>
+                                <p class='card-text'>Stop searching, start watching. Find your next favorite show faster.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 2: About Page                                  -->
+    <!-- ====================================================== -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>About - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <h1 class='mb-4'>About What To Watch Next</h1>
+                <p class='lead'>We help you discover what to watch next across all your favorite streaming platforms.</p>
+
+                <div class='row mt-4'>
+                    <div class='col-md-6'>
+                        <h2>Our Mission</h2>
+                        <p>In a world saturated with streaming options, finding something new to watch can be overwhelming. Our mission is to simplify your viewing experience by consolidating recommendations from services like Netflix, Hulu, HBO Max, Disney+, Prime Video, and more into one easy-to-use platform. We analyze your preferences and viewing habits (where available) to suggest titles you'll actually enjoy.</p>
+                    </div>
+                    <div class='col-md-6'>
+                        <h2>How It Works</h2>
+                        <ol>
+                            <li>Sign up for a free account.</li>
+                            <li>Select the streaming services you subscribe to.</li>
+                            <li>Browse personalized recommendations aggregated just for you.</li>
+                            <li>Click on a title to see which of your services offer it.</li>
+                            <li>Spend less time searching and more time watching!</li>
+                        </ol>
+                    </div>
+                </div>
+
+                 <div class='text-center mt-5'>
+                     <a href='#' class='btn btn-primary btn-lg'>Get Started for Free</a>
+                 </div>
+            </div>
+
+            <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 3: Login Page                                   -->
+    <!-- ====================================================== -->
+    <h2>State 3: Login Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body class='bg-light'>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2 active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class='container'>
+                <div class='row justify-content-center align-items-center' style='min-height: calc(100vh - 56px - 72px);'> <!-- Adjust height accounting for navbar and potential footer -->
+                    <div class='col-md-6 col-lg-4'>
+                        <div class='card shadow-sm'>
+                            <div class='card-body p-4'>
+                                <h2 class='card-title text-center mb-4'>Login</h2>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='loginEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control' id='loginEmail' aria-describedby='emailHelp' placeholder='Enter email' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='loginPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control' id='loginPassword' placeholder='Password' required>
+                                    </div>
+                                     <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                        <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary w-100'>Login</button>
+                                </form>
+                                <div class='text-center mt-3'>
+                                    <a href='#' class='text-decoration-none'><small>Forgot password?</small></a>
+                                </div>
+                                <hr>
+                                <p class='text-center mb-0'>Don't have an account? <a href='#' class='text-decoration-none'>Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <footer class='text-center text-muted py-4 mt-auto bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 3b: Login Page (Error)                          -->
+    <!-- ====================================================== -->
+    <h2>State 3b: Login Page (Error)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login Error - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body class='bg-light'>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2 active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class='container'>
+                 <div class='row justify-content-center align-items-center' style='min-height: calc(100vh - 56px - 72px);'>
+                    <div class='col-md-6 col-lg-4'>
+                        <div class='card shadow-sm'>
+                            <div class='card-body p-4'>
+                                <h2 class='card-title text-center mb-4'>Login</h2>
+                                 <div class='alert alert-danger' role='alert'>
+                                    <i class='bi bi-exclamation-triangle-fill'></i> Invalid email or password. Please try again.
+                                </div>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='loginEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control is-invalid' id='loginEmail' aria-describedby='emailHelp' placeholder='Enter email' required value='user@example.com'>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='loginPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control is-invalid' id='loginPassword' placeholder='Password' required>
+                                        <div class='invalid-feedback'>
+                                            Invalid email or password.
+                                        </div>
+                                    </div>
+                                      <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                        <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary w-100'>Login</button>
+                                </form>
+                                <div class='text-center mt-3'>
+                                    <a href='#' class='text-decoration-none'><small>Forgot password?</small></a>
+                                </div>
+                                <hr>
+                                <p class='text-center mb-0'>Don't have an account? <a href='#' class='text-decoration-none'>Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <footer class='text-center text-muted py-4 mt-auto bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 4: Signup Page                                  -->
+    <!-- ====================================================== -->
+    <h2>State 4: Signup Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Sign Up - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body class='bg-light'>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                          <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm active' aria-current='page' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class='container'>
+                  <div class='row justify-content-center align-items-center' style='min-height: calc(100vh - 56px - 72px);'>
+                    <div class='col-md-8 col-lg-5'>
+                        <div class='card shadow-sm'>
+                            <div class='card-body p-4'>
+                                <h2 class='card-title text-center mb-4'>Create Account</h2>
+                                <form>
+                                     <div class='mb-3'>
+                                        <label for='signupName' class='form-label'>Full Name</label>
+                                        <input type='text' class='form-control' id='signupName' placeholder='Enter your name' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='signupEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control' id='signupEmail' aria-describedby='emailHelp' placeholder='Enter email' required>
+                                        <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='signupPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control' id='signupPassword' placeholder='Create password' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                        <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm password' required>
+                                    </div>
+                                     <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='termsCheck' required>
+                                        <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a></label>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                                </form>
+                                <hr>
+                                <p class='text-center mb-0'>Already have an account? <a href='#' class='text-decoration-none'>Login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <footer class='text-center text-muted py-4 mt-auto bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 4b: Signup Page (Error)                         -->
+    <!-- ====================================================== -->
+    <h2>State 4b: Signup Page (Error)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Sign Up Error - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body class='bg-light'>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                          <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-outline-light btn-sm me-2' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='nav-link btn btn-primary btn-sm active' aria-current='page' href='#'>Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class='container'>
+                  <div class='row justify-content-center align-items-center' style='min-height: calc(100vh - 56px - 72px);'>
+                    <div class='col-md-8 col-lg-5'>
+                        <div class='card shadow-sm'>
+                            <div class='card-body p-4'>
+                                <h2 class='card-title text-center mb-4'>Create Account</h2>
+                                 <div class='alert alert-danger' role='alert'>
+                                    <i class='bi bi-exclamation-triangle-fill'></i> Please fix the errors below.
+                                </div>
+                                <form>
+                                     <div class='mb-3'>
+                                        <label for='signupName' class='form-label'>Full Name</label>
+                                        <input type='text' class='form-control' id='signupName' placeholder='Enter your name' required value='Test User'>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='signupEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control' id='signupEmail' aria-describedby='emailHelp' placeholder='Enter email' required value='test@example.com'>
+                                        <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='signupPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control is-invalid' id='signupPassword' placeholder='Create password' required value='password123'>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                        <input type='password' class='form-control is-invalid' id='confirmPassword' placeholder='Confirm password' required value='password456'>
+                                         <div class='invalid-feedback'>
+                                            Passwords do not match.
+                                        </div>
+                                    </div>
+                                     <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='termsCheck' required>
+                                        <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a></label>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+                                </form>
+                                <hr>
+                                <p class='text-center mb-0'>Already have an account? <a href='#' class='text-decoration-none'>Login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               <footer class='text-center text-muted py-4 mt-auto bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 5: Home Page (Logged In - First Time/No Services) -->
+    <!-- ====================================================== -->
+    <h2>State 5: Home Page (Logged In - First Time/No Services)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Welcome - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5 text-center'>
+                <div class='alert alert-info' role='alert'>
+                     <i class='bi bi-info-circle-fill'></i> Welcome, User Name! Let's get started.
+                </div>
+
+                 <div class='p-5 mb-4 bg-light rounded-3'>
+                    <div class='container-fluid py-5'>
+                        <h1 class='display-5 fw-bold'>Select Your Streaming Services</h1>
+                        <p class='fs-4'>To get personalized recommendations, please tell us which services you subscribe to.</p>
+                        <a href='#' class='btn btn-primary btn-lg' type='button'><i class='bi bi-plus-circle-fill'></i> Select Services</a>
+                    </div>
+                </div>
+                 <p class='text-muted'>Once you select your services, your recommendations will appear here.</p>
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light fixed-bottom'> <!-- Fixed footer -->
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 6: Service Selection Page                       -->
+    <!-- ====================================================== -->
+    <h2>State 6: Service Selection Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Select Services - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+             <style>
+                .service-logo { width: 100px; height: 40px; object-fit: contain; margin-right: 15px; }
+             </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                   <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle active' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item active' aria-current='page' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <h1 class='mb-4'>Manage Your Subscriptions</h1>
+                <p>Select the streaming services you use to get tailored recommendations.</p>
+
+                <form class='mt-4'>
+                    <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                        <!-- Service Example 1 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='netflix' id='serviceNetflix' checked>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceNetflix'>
+                                    <img src='https://via.placeholder.com/100x40/E50914/FFFFFF?text=Netflix' alt='Netflix Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Netflix</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 2 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='hulu' id='serviceHulu'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceHulu'>
+                                    <img src='https://via.placeholder.com/100x40/3DBB3C/FFFFFF?text=Hulu' alt='Hulu Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Hulu</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 3 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='prime' id='servicePrime' checked>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='servicePrime'>
+                                    <img src='https://via.placeholder.com/100x40/00A8E1/000000?text=Prime+Video' alt='Prime Video Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Prime Video</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 4 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='hbo' id='serviceHbo'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceHbo'>
+                                    <img src='https://via.placeholder.com/100x40/7B00FF/FFFFFF?text=Max' alt='Max Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Max (HBO)</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 5 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='disney' id='serviceDisney'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceDisney'>
+                                    <img src='https://via.placeholder.com/100x40/006EBB/FFFFFF?text=Disney+' alt='Disney+ Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Disney+</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 6 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='apple' id='serviceApple'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceApple'>
+                                    <img src='https://via.placeholder.com/100x40/000000/FFFFFF?text=Apple+TV+' alt='Apple TV+ Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Apple TV+</span>
+                                </label>
+                            </div>
+                        </div>
+                       <!-- Add more services as needed -->
+                    </div>
+
+                    <div class='mt-4 text-center'>
+                        <button type='submit' class='btn btn-primary btn-lg'><i class='bi bi-save-fill'></i> Save Services</button>
+                        <a href='#' class='btn btn-secondary btn-lg ms-2'>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- ====================================================== -->
+    <!-- State 6b: Service Selection Page (Error - None Selected) -->
+    <!-- ====================================================== -->
+    <h2>State 6b: Service Selection Page (Error - None Selected)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Select Services Error - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+             <style>
+                .service-logo { width: 100px; height: 40px; object-fit: contain; margin-right: 15px; }
+             </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                   <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle active' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item active' aria-current='page' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                 <div class='alert alert-danger' role='alert'>
+                    <i class='bi bi-exclamation-circle-fill'></i> Please select at least one streaming service to receive recommendations.
+                </div>
+                <h1 class='mb-4'>Manage Your Subscriptions</h1>
+                <p>Select the streaming services you use to get tailored recommendations.</p>
+
+                <form class='mt-4'>
+                     <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 border border-danger p-3 rounded mb-3'> <!-- Highlight area -->
+                        <!-- Service Example 1 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='netflix' id='serviceNetflix'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceNetflix'>
+                                    <img src='https://via.placeholder.com/100x40/E50914/FFFFFF?text=Netflix' alt='Netflix Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Netflix</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 2 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='hulu' id='serviceHulu'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='serviceHulu'>
+                                    <img src='https://via.placeholder.com/100x40/3DBB3C/FFFFFF?text=Hulu' alt='Hulu Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Hulu</span>
+                                </label>
+                            </div>
+                        </div>
+                         <!-- Service Example 3 -->
+                        <div class='col'>
+                            <div class='form-check card p-3 d-flex flex-row align-items-center'>
+                                <input class='form-check-input me-3' type='checkbox' value='prime' id='servicePrime'>
+                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='servicePrime'>
+                                    <img src='https://via.placeholder.com/100x40/00A8E1/000000?text=Prime+Video' alt='Prime Video Logo' class='service-logo me-2'>
+                                    <span class='fw-bold'>Prime Video</span>
+                                </label>
+                            </div>
+                        </div>
+                       <!-- Add more services as needed -->
+                    </div>
+
+                    <div class='mt-4 text-center'>
+                        <button type='submit' class='btn btn-primary btn-lg'><i class='bi bi-save-fill'></i> Save Services</button>
+                        <a href='#' class='btn btn-secondary btn-lg ms-2'>Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <!-- ====================================================== -->
+    <!-- State 7: Home Page (Logged In - Services Selected - Loading) -->
+    <!-- ====================================================== -->
+    <h2>State 7: Home Page (Logged In - Services Selected - Loading)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Loading Recommendations - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                   <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <h1 class='mb-4'>Your Recommendations</h1>
+                <p>Based on your subscriptions: Netflix, Prime Video</p>
+
+                 <!-- Loading State -->
+                 <div class='d-flex justify-content-center align-items-center' style='height: 300px;'>
+                     <div class='spinner-border text-primary' role='status' style='width: 3rem; height: 3rem;'>
+                         <span class='visually-hidden'>Loading...</span>
+                     </div>
+                     <span class='ms-3 fs-4 text-muted'>Finding your next favorite show...</span>
+                 </div>
+
+                <!-- Placeholder cards for loading -->
+                 <div class='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 placeholder-glow mt-4'>
+                     <div class='col'>
+                         <div class='card' aria-hidden='true'>
+                             <div class='card-img-top placeholder' style='height: 180px;'></div>
+                             <div class='card-body'>
+                                 <h5 class='card-title placeholder col-6'></h5>
+                                 <p class='card-text placeholder col-7'></p>
+                                 <p class='card-text placeholder col-4'></p>
+                                 <p class='card-text placeholder col-8'></p>
+                                 <a href='#' tabindex='-1' class='btn btn-primary disabled placeholder col-5'></a>
+                             </div>
+                         </div>
+                     </div>
+                      <div class='col'>
+                         <div class='card' aria-hidden='true'>
+                             <div class='card-img-top placeholder' style='height: 180px;'></div>
+                             <div class='card-body'>
+                                 <h5 class='card-title placeholder col-6'></h5>
+                                 <p class='card-text placeholder col-7'></p>
+                                 <p class='card-text placeholder col-4'></p>
+                                 <p class='card-text placeholder col-8'></p>
+                                 <a href='#' tabindex='-1' class='btn btn-primary disabled placeholder col-5'></a>
+                             </div>
+                         </div>
+                     </div>
+                      <div class='col d-none d-lg-block'> <!-- Hide on smaller screens for brevity -->
+                         <div class='card' aria-hidden='true'>
+                             <div class='card-img-top placeholder' style='height: 180px;'></div>
+                             <div class='card-body'>
+                                 <h5 class='card-title placeholder col-6'></h5>
+                                 <p class='card-text placeholder col-7'></p>
+                                 <p class='card-text placeholder col-4'></p>
+                                 <p class='card-text placeholder col-8'></p>
+                                 <a href='#' tabindex='-1' class='btn btn-primary disabled placeholder col-5'></a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <!-- ====================================================== -->
+    <!-- State 8: Recommendation Display (Results)             -->
+    <!-- ====================================================== -->
+    <h2>State 8: Recommendation Display (Results)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Your Recommendations - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+             <style>
+                .service-icon { width: 24px; height: 24px; margin-right: 5px; border-radius: 4px; vertical-align: middle;}
+                .card-img-top { height: 200px; object-fit: cover; }
+             </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                   <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                 <div class='d-flex justify-content-between align-items-center mb-4'>
+                     <div>
+                        <h1>Your Recommendations</h1>
+                        <p class='text-muted mb-0'>Based on your subscriptions: Netflix, Prime Video</p>
+                     </div>
+                     <div>
+                         <button class='btn btn-outline-secondary'><i class='bi bi-arrow-clockwise'></i> Refresh</button>
+                     </div>
+                 </div>
+
+                 <!-- Filters (Optional) -->
+                 <div class='mb-4'>
+                     <span class='me-2'>Filter by:</span>
+                     <div class='btn-group' role='group' aria-label='Filter type'>
+                         <button type='button' class='btn btn-outline-primary active'>All</button>
+                         <button type='button' class='btn btn-outline-primary'>Movies</button>
+                         <button type='button' class='btn btn-outline-primary'>TV Shows</button>
+                     </div>
+                      <div class='btn-group ms-3' role='group' aria-label='Filter service'>
+                         <button type='button' class='btn btn-outline-secondary active'>All Services</button>
+                         <button type='button' class='btn btn-outline-secondary'>Netflix</button>
+                         <button type='button' class='btn btn-outline-secondary'>Prime Video</button>
+                     </div>
+                 </div>
+
+
+                <!-- Recommendation Results -->
+                <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4'>
+                    <!-- Recommendation Card 1 -->
+                    <div class='col'>
+                        <div class='card h-100 shadow-sm'>
+                            <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Movie+Poster+1' class='card-img-top' alt='Movie Poster 1'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Recommended Movie Title 1</h5>
+                                <p class='card-text text-muted small flex-grow-1'>A brief, engaging synopsis of the movie goes here. Intriguing enough to make the user click.</p>
+                                <div class='mt-auto'>
+                                     <p class='mb-1'><small class='text-muted'>Genre: Sci-Fi, Action | Rating: 8.5/10</small></p>
+                                     <p class='mb-2'>
+                                        <small>Available on:</small>
+                                        <img src='https://via.placeholder.com/24x24/E50914/FFFFFF?text=N' alt='Netflix' class='service-icon' title='Netflix'>
+                                    </p>
+                                    <a href='#' class='btn btn-sm btn-primary'>More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Recommendation Card 2 -->
+                     <div class='col'>
+                        <div class='card h-100 shadow-sm'>
+                            <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Show+Poster+2' class='card-img-top' alt='Show Poster 2'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Exciting TV Show Season 3</h5>
+                                <p class='card-text text-muted small flex-grow-1'>Synopsis for the TV Show. Mentioning it's Season 3 could be relevant.</p>
+                                 <div class='mt-auto'>
+                                     <p class='mb-1'><small class='text-muted'>Genre: Drama, Thriller | Rating: 9.1/10</small></p>
+                                     <p class='mb-2'>
+                                        <small>Available on:</small>
+                                        <img src='https://via.placeholder.com/24x24/00A8E1/000000?text=P' alt='Prime Video' class='service-icon' title='Prime Video'>
+                                    </p>
+                                    <a href='#' class='btn btn-sm btn-primary'>More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Recommendation Card 3 -->
+                     <div class='col'>
+                        <div class='card h-100 shadow-sm'>
+                            <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Movie+Poster+3' class='card-img-top' alt='Movie Poster 3'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Another Great Movie</h5>
+                                <p class='card-text text-muted small flex-grow-1'>Short description highlighting key aspects of this recommended movie.</p>
+                                 <div class='mt-auto'>
+                                     <p class='mb-1'><small class='text-muted'>Genre: Comedy | Rating: 7.8/10</small></p>
+                                     <p class='mb-2'>
+                                        <small>Available on:</small>
+                                        <img src='https://via.placeholder.com/24x24/E50914/FFFFFF?text=N' alt='Netflix' class='service-icon' title='Netflix'>
+                                        <img src='https://via.placeholder.com/24x24/00A8E1/000000?text=P' alt='Prime Video' class='service-icon' title='Prime Video'>
+                                    </p>
+                                    <a href='#' class='btn btn-sm btn-primary'>More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more cards -->
+                     <div class='col'>
+                        <div class='card h-100 shadow-sm'>
+                            <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Show+Poster+4' class='card-img-top' alt='Show Poster 4'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Must-Watch Series Finale</h5>
+                                <p class='card-text text-muted small flex-grow-1'>The epic conclusion you have been waiting for. Don't miss it!</p>
+                                 <div class='mt-auto'>
+                                     <p class='mb-1'><small class='text-muted'>Genre: Fantasy | Rating: 9.5/10</small></p>
+                                     <p class='mb-2'>
+                                        <small>Available on:</small>
+                                        <img src='https://via.placeholder.com/24x24/E50914/FFFFFF?text=N' alt='Netflix' class='service-icon' title='Netflix'>
+                                    </p>
+                                    <a href='#' class='btn btn-sm btn-primary'>More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Pagination (Optional) -->
+                 <nav aria-label='Page navigation example' class='mt-5 d-flex justify-content-center'>
+                    <ul class='pagination'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <!-- ====================================================== -->
+    <!-- State 9: Recommendation Display (No Results)          -->
+    <!-- ====================================================== -->
+    <h2>State 9: Recommendation Display (No Results)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>No Recommendations - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                   <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                 <div class='d-flex justify-content-between align-items-center mb-4'>
+                     <div>
+                        <h1>Your Recommendations</h1>
+                        <p class='text-muted mb-0'>Based on your subscriptions: Netflix, Prime Video</p>
+                     </div>
+                     <div>
+                         <button class='btn btn-outline-secondary'><i class='bi bi-arrow-clockwise'></i> Refresh</button>
+                     </div>
+                 </div>
+                 <!-- Filters (Optional) -->
+                  <div class='mb-4'>
+                     <span class='me-2'>Filter by:</span>
+                     <div class='btn-group' role='group' aria-label='Filter type'>
+                         <button type='button' class='btn btn-outline-primary active'>All</button>
+                         <button type='button' class='btn btn-outline-primary'>Movies</button>
+                         <button type='button' class='btn btn-outline-primary'>TV Shows</button>
+                     </div>
+                      <div class='btn-group ms-3' role='group' aria-label='Filter service'>
+                         <button type='button' class='btn btn-outline-secondary active'>All Services</button>
+                         <button type='button' class='btn btn-outline-secondary'>Netflix</button>
+                         <button type='button' class='btn btn-outline-secondary'>Prime Video</button>
+                     </div>
+                 </div>
+
+                <!-- No Results Message -->
+                 <div class='text-center py-5'>
+                    <i class='bi bi-emoji-frown display-1 text-muted'></i>
+                    <h3 class='mt-3'>No New Recommendations Found</h3>
+                    <p class='text-muted'>We couldn't find any new recommendations matching your criteria right now.</p>
+                    <p>Try adjusting your filters or check back later!</p>
+                    <a href='#' class='btn btn-primary mt-3'><i class='bi bi-gear-fill'></i> Manage Services</a>
+                 </div>
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 10: Profile/Settings Page                       -->
+    <!-- ====================================================== -->
+    <h2>State 10: Profile/Settings Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Settings - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+             <style>
+                .service-logo { width: 100px; height: 40px; object-fit: contain; margin-right: 15px; }
+             </style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                             <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>Recommendations</a></li>
+                        </ul>
+                        <ul class='navbar-nav ms-auto'>
+                             <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle active' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false' aria-current='page'>
+                                    <i class='bi bi-person-circle'></i> User Name
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item active' aria-current='page' href='#'><i class='bi bi-gear-fill'></i> Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <h1 class='mb-4'>Settings</h1>
+
+                <div class='row'>
+                    <div class='col-lg-8'>
+                        <!-- Profile Information -->
+                        <div class='card mb-4'>
+                            <div class='card-header'><i class='bi bi-person-fill'></i> Profile Information</div>
+                            <div class='card-body'>
+                               <form>
+                                    <div class='row mb-3'>
+                                        <label for='profileName' class='col-sm-3 col-form-label'>Full Name</label>
+                                        <div class='col-sm-9'>
+                                            <input type='text' class='form-control' id='profileName' value='User Name' required>
+                                        </div>
+                                    </div>
+                                    <div class='row mb-3'>
+                                        <label for='profileEmail' class='col-sm-3 col-form-label'>Email address</label>
+                                        <div class='col-sm-9'>
+                                            <input type='email' class='form-control' id='profileEmail' value='user@example.com' required>
+                                        </div>
+                                    </div>
+                                     <div class='row mb-3'>
+                                        <label for='profilePassword' class='col-sm-3 col-form-label'>New Password</label>
+                                        <div class='col-sm-9'>
+                                            <input type='password' class='form-control' id='profilePassword' placeholder='Leave blank to keep current password'>
+                                        </div>
+                                    </div>
+                                     <div class='row mb-3'>
+                                        <label for='profileConfirmPassword' class='col-sm-3 col-form-label'>Confirm Password</label>
+                                        <div class='col-sm-9'>
+                                            <input type='password' class='form-control' id='profileConfirmPassword' placeholder='Confirm new password'>
+                                        </div>
+                                    </div>
+                                    <div class='text-end'>
+                                        <button type='submit' class='btn btn-primary'><i class='bi bi-save-fill'></i> Update Profile</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                         <!-- Manage Subscriptions -->
+                        <div class='card mb-4'>
+                            <div class='card-header'><i class='bi bi-collection-play-fill'></i> Manage Subscriptions</div>
+                            <div class='card-body'>
+                                  <p>Select the services you currently subscribe to:</p>
+                                   <form>
+                                      <div class='row row-cols-1 row-cols-sm-2 g-3'>
+                                        <!-- Service Example 1 -->
+                                        <div class='col'>
+                                            <div class='form-check card card-body p-3 d-flex flex-row align-items-center shadow-sm'>
+                                                <input class='form-check-input me-3' type='checkbox' value='netflix' id='settingServiceNetflix' checked>
+                                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='settingServiceNetflix'>
+                                                    <img src='https://via.placeholder.com/100x40/E50914/FFFFFF?text=Netflix' alt='Netflix Logo' class='service-logo me-2'>
+                                                    <span class='fw-bold'>Netflix</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!-- Service Example 2 -->
+                                        <div class='col'>
+                                            <div class='form-check card card-body p-3 d-flex flex-row align-items-center shadow-sm'>
+                                                <input class='form-check-input me-3' type='checkbox' value='prime' id='settingServicePrime' checked>
+                                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='settingServicePrime'>
+                                                    <img src='https://via.placeholder.com/100x40/00A8E1/000000?text=Prime+Video' alt='Prime Video Logo' class='service-logo me-2'>
+                                                    <span class='fw-bold'>Prime Video</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                         <!-- Service Example 3 -->
+                                        <div class='col'>
+                                            <div class='form-check card card-body p-3 d-flex flex-row align-items-center shadow-sm'>
+                                                <input class='form-check-input me-3' type='checkbox' value='hulu' id='settingServiceHulu'>
+                                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='settingServiceHulu'>
+                                                    <img src='https://via.placeholder.com/100x40/3DBB3C/FFFFFF?text=Hulu' alt='Hulu Logo' class='service-logo me-2'>
+                                                    <span class='fw-bold'>Hulu</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                         <!-- Service Example 4 -->
+                                        <div class='col'>
+                                            <div class='form-check card card-body p-3 d-flex flex-row align-items-center shadow-sm'>
+                                                <input class='form-check-input me-3' type='checkbox' value='hbo' id='settingServiceHbo'>
+                                                <label class='form-check-label d-flex align-items-center flex-grow-1' for='settingServiceHbo'>
+                                                    <img src='https://via.placeholder.com/100x40/7B00FF/FFFFFF?text=Max' alt='Max Logo' class='service-logo me-2'>
+                                                    <span class='fw-bold'>Max (HBO)</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                         <!-- Add more services as needed -->
+                                    </div>
+                                    <div class='text-end mt-3'>
+                                        <button type='submit' class='btn btn-success'><i class='bi bi-check-circle-fill'></i> Save Subscriptions</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- End Left Column -->
+
+                    <div class='col-lg-4'>
+                         <!-- Account Actions -->
+                        <div class='card mb-4'>
+                            <div class='card-header'><i class='bi bi-shield-lock-fill'></i> Account Actions</div>
+                            <div class='card-body'>
+                                <div class='d-grid gap-2'>
+                                    <a href='#' class='btn btn-secondary'><i class='bi bi-box-arrow-right'></i> Logout</a>
+                                    <button type='button' class='btn btn-danger mt-3' data-bs-toggle='modal' data-bs-target='#deleteAccountModal'>
+                                        <i class='bi bi-trash-fill'></i> Delete Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Right Column -->
+                </div> <!-- End Row -->
+
+
+                <!-- Delete Account Modal -->
+                <div class='modal fade' id='deleteAccountModal' tabindex='-1' aria-labelledby='deleteAccountModalLabel' aria-hidden='true'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                    <div class='modal-header'>
+                        <h5 class='modal-title' id='deleteAccountModalLabel'>Confirm Account Deletion</h5>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                    </div>
+                    <div class='modal-body'>
+                        Are you sure you want to delete your account? This action cannot be undone, and all your data will be permanently lost.
+                    </div>
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancel</button>
+                        <button type='button' class='btn btn-danger'>Delete My Account</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+
+             <footer class='text-center text-muted py-4 mt-5 bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- ====================================================== -->
+    <!-- State 11: Generic Error Page                          -->
+    <!-- ====================================================== -->
+    <h2>State 11: Generic Error Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Error - What To Watch Next</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+        </head>
+        <body class='bg-light d-flex flex-column min-vh-100'>
+             <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container'>
+                    <a class='navbar-brand' href='#'> <i class='bi bi-film'></i> What To Watch Next</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <!-- Nav might vary depending on logged in state, keeping generic for error -->
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container flex-grow-1 d-flex align-items-center justify-content-center'>
+                <div class='text-center'>
+                     <i class='bi bi-exclamation-octagon-fill display-1 text-danger'></i>
+                    <h1 class='display-4 mt-3'>Oops! Something Went Wrong</h1>
+                    <p class='lead text-muted'>We encountered an unexpected error. Please try again later.</p>
+                     <p>If the problem persists, please contact support.</p>
+                    <a href='#' class='btn btn-primary mt-3'><i class='bi bi-house-door-fill'></i> Go to Home Page</a>
+                    <a href='#' class='btn btn-outline-secondary mt-3 ms-2'><i class='bi bi-arrow-clockwise'></i> Try Again</a>
+                </div>
+            </div>
+
+            <footer class='text-center text-muted py-4 mt-auto bg-light'>
+                <div class='container'>
+                    <p class='mb-0'>&copy; 2023 What To Watch Next. All rights reserved.</p>
+                </div>
+            </footer>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

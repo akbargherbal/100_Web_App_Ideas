@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+        }
+        h2 { margin-top: 20px; margin-bottom: 10px; font-weight: 600; color: #343a40; }
+    </style>
+</head>
+<body>
+
+    <h2>State 1: Home Page (Basic Calculator View)</h2>
+    <iframe title="State 1: Home Page" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - Home</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .calculator { max-width: 400px; margin: auto; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .display { background-color: #f8f9fa; padding: 1rem; text-align: right; font-size: 2rem; border-bottom: 1px solid #ccc; min-height: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .buttons .row > div { padding: 0.5rem; }
+        .buttons .btn { width: 100%; padding: 1rem; font-size: 1.2rem; }
+        .btn-operator { background-color: #ffc107; color: #fff; }
+        .btn-equal { background-color: #28a745; color: #fff; }
+        .btn-clear { background-color: #dc3545; color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='calculator'>
+            <div class='display' id='display'>0</div>
+            <div class='buttons p-3'>
+                <div class='row'>
+                    <div class='col-3'><button type='button' class='btn btn-secondary btn-clear'>C</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-secondary'>+/-</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-secondary'>%</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator'>/</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light'>7</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>8</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>9</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator'>*</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light'>4</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>5</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>6</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator'>-</button></div>
+                </div>
+                 <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light'>1</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>2</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>3</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator'>+</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-6'><button type='button' class='btn btn-light'>0</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light'>.</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-equal'>=</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <h2>State 2: Home Page (Input Error State)</h2>
+    <iframe title="State 2: Home Page - Error State" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - Error</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .calculator { max-width: 400px; margin: auto; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .display { background-color: #f8f9fa; padding: 1rem; text-align: right; font-size: 2rem; border-bottom: 1px solid #ccc; min-height: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #dc3545; }
+        .buttons .row > div { padding: 0.5rem; }
+        .buttons .btn { width: 100%; padding: 1rem; font-size: 1.2rem; }
+        .btn-operator { background-color: #ffc107; color: #fff; }
+        .btn-equal { background-color: #28a745; color: #fff; }
+        .btn-clear { background-color: #dc3545; color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+         <div class='alert alert-danger d-flex align-items-center' role='alert' style='max-width: 400px; margin: 0 auto 1rem auto;'>
+            <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-exclamation-triangle-fill flex-shrink-0 me-2' viewBox='0 0 16 16' role='img' aria-label='Warning:'>
+                <path d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/>
+            </svg>
+            <div>
+                Error: Cannot divide by zero
+            </div>
+        </div>
+        <div class='calculator'>
+            <div class='display' id='display'>Error</div>
+            <div class='buttons p-3'>
+                <div class='row'>
+                    <div class='col-3'><button type='button' class='btn btn-secondary btn-clear'>C</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-secondary' disabled>+/-</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-secondary' disabled>%</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator' disabled>/</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>7</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>8</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>9</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator' disabled>*</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>4</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>5</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>6</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator' disabled>-</button></div>
+                </div>
+                 <div class='row mt-2'>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>1</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>2</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>3</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-operator' disabled>+</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col-6'><button type='button' class='btn btn-light' disabled>0</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-light' disabled>.</button></div>
+                    <div class='col-3'><button type='button' class='btn btn-equal' disabled>=</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <h2>State 3: Scientific Calculator Page</h2>
+     <iframe title="State 3: Scientific Calculator Page" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - Scientific</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .calculator { max-width: 550px; margin: auto; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .display { background-color: #f8f9fa; padding: 1rem; text-align: right; font-size: 2rem; border-bottom: 1px solid #ccc; min-height: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .buttons .row > div { padding: 0.4rem; }
+        .buttons .btn { width: 100%; padding: 0.8rem; font-size: 1rem; }
+        .btn-operator { background-color: #ffc107; color: #fff; }
+        .btn-equal { background-color: #28a745; color: #fff; }
+        .btn-clear { background-color: #dc3545; color: #fff; }
+        .btn-func { background-color: #6c757d; color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='calculator'>
+            <div class='display' id='display'>0</div>
+            <div class='buttons p-3'>
+                <div class='row'>
+                    <div class='col'><button type='button' class='btn btn-func'>Rad</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>Deg</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>x!</button></div>
+                    <div class='col'><button type='button' class='btn btn-secondary'>(</button></div>
+                    <div class='col'><button type='button' class='btn btn-secondary'>)</button></div>
+                    <div class='col'><button type='button' class='btn btn-secondary'>%</button></div>
+                    <div class='col'><button type='button' class='btn btn-secondary btn-clear'>AC</button></div>
+                </div>
+                 <div class='row mt-2'>
+                    <div class='col'><button type='button' class='btn btn-func'>Inv</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>sin</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>ln</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>7</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>8</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>9</button></div>
+                    <div class='col'><button type='button' class='btn btn-operator'>/</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col'><button type='button' class='btn btn-func'>π</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>cos</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>log</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>4</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>5</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>6</button></div>
+                    <div class='col'><button type='button' class='btn btn-operator'>*</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col'><button type='button' class='btn btn-func'>e</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>tan</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>√</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>1</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>2</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>3</button></div>
+                    <div class='col'><button type='button' class='btn btn-operator'>-</button></div>
+                </div>
+                <div class='row mt-2'>
+                    <div class='col'><button type='button' class='btn btn-func'>Ans</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>EXP</button></div>
+                    <div class='col'><button type='button' class='btn btn-func'>x^y</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>0</button></div>
+                    <div class='col'><button type='button' class='btn btn-light'>.</button></div>
+                    <div class='col'><button type='button' class='btn btn-equal'>=</button></div>
+                    <div class='col'><button type='button' class='btn btn-operator'>+</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <h2>State 4: History Page</h2>
+    <iframe title="State 4: History Page" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - History</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h1 class='mb-4'>Calculation History</h1>
+        <div class='d-flex justify-content-end mb-3'>
+             <button type='button' class='btn btn-danger'>Clear History</button>
+        </div>
+        <div class='card'>
+            <div class='card-body p-0'>
+                <table class='table table-striped table-hover mb-0'>
+                    <thead class='table-light'>
+                        <tr>
+                            <th scope='col'>Calculation</th>
+                            <th scope='col'>Result</th>
+                            <th scope='col'>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12 + 5</td>
+                            <td>17</td>
+                            <td>2023-10-27 10:15:30</td>
+                        </tr>
+                        <tr>
+                            <td>100 / 4</td>
+                            <td>25</td>
+                            <td>2023-10-27 10:14:55</td>
+                        </tr>
+                         <tr>
+                            <td>(5 * 3) - 2</td>
+                            <td>13</td>
+                            <td>2023-10-27 10:14:12</td>
+                        </tr>
+                         <tr>
+                            <td>99 + 1</td>
+                             <td>100</td>
+                            <td>2023-10-27 10:13:05</td>
+                        </tr>
+                         <tr>
+                            <td colspan='3' class='text-center text-muted fst-italic py-3'>... older calculations ...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+         <p class='mt-3 text-muted'>History is cleared automatically after 30 days.</p>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <h2>State 5: Settings Page</h2>
+    <iframe title="State 5: Settings Page" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - Settings</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h1 class='mb-4'>Settings</h1>
+        <div class='card'>
+            <div class='card-body'>
+                <form>
+                    <div class='mb-3'>
+                        <label for='themeSelect' class='form-label'>Theme</label>
+                        <select class='form-select' id='themeSelect'>
+                            <option selected>Light</option>
+                            <option>Dark</option>
+                            <option>System Default</option>
+                        </select>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='precisionRange' class='form-label'>Decimal Precision (Digits): <span class='badge bg-secondary'>6</span></label>
+                        <input type='range' class='form-range' id='precisionRange' min='0' max='10' step='1' value='6'>
+                    </div>
+
+                    <div class='mb-3 form-check'>
+                        <input type='checkbox' class='form-check-input' id='historyCheck' checked>
+                        <label class='form-check-label' for='historyCheck'>Enable Calculation History</label>
+                    </div>
+
+                     <div class='mb-4 form-check form-switch'>
+                       <input class='form-check-input' type='checkbox' role='switch' id='soundSwitch'>
+                       <label class='form-check-label' for='soundSwitch'>Button Click Sound</label>
+                    </div>
+
+                    <hr>
+
+                    <button type='submit' class='btn btn-primary'>Save Settings</button>
+                    <button type='button' class='btn btn-secondary ms-2'>Reset to Defaults</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <h2>State 6: About Page</h2>
+    <iframe title="State 6: About Page" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Calculator - About</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div class='container-fluid'>
+        <a class='navbar-brand' href='#'>Calculator App</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='navbarNav'>
+          <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a class='nav-link' href='#'>Basic</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Scientific</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+            <li class='nav-item'><a class='nav-link' href='#'>Settings</a></li>
+            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='card'>
+            <div class='card-body'>
+                <h1 class='card-title mb-4'>About Calculator App</h1>
+                <p class='card-text'>Welcome to the Calculator App, your versatile tool for a wide range of calculations.</p>
+                <p class='card-text'>This application provides standard arithmetic operations, advanced scientific functions, calculation history, and customizable settings to enhance your user experience.</p>
+                <h5 class='mt-4'>Features:</h5>
+                <ul>
+                    <li>Basic Arithmetic (+, -, *, /)</li>
+                    <li>Scientific Functions (sin, cos, tan, log, sqrt, etc.)</li>
+                    <li>Calculation History Tracking</li>
+                    <li>Customizable Themes and Precision</li>
+                    <li>Responsive Design for various devices</li>
+                </ul>
+                <hr>
+                <p class='text-muted'>Version: 1.0.0</p>
+                <p class='text-muted'>Last Updated: October 2023</p>
+                <p class='mt-4'><a href='#' class='btn btn-outline-primary'>Contact Support</a> <a href='#' class='btn btn-outline-secondary ms-2'>View Documentation</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

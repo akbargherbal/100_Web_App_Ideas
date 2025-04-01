@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Dragons Manager - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+        .state-container {
+            margin-bottom: 50px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height, adjust if needed */
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        /* Style for placeholder modal */
+        .static-modal {
+            position: relative;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            z-index: 1;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dungeons & Dragons Manager - UI Flow</h1>
+
+        <!-- State 1: Home Page (Logged Out) -->
+        <div class="state-container">
+            <h2>State 1: Home Page (Logged Out)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Manage Your D&D Characters</h1>
+            <p class="col-md-8 fs-4">The ultimate digital toolset for creating, managing, and tracking your Dungeons & Dragons Fifth Edition character sheets. Never lose your sheet again!</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+            <a class="btn btn-outline-secondary btn-lg ms-2" href="#" role="button">Learn More</a>
+          </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6 mb-4">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+              <h2>Easy Creation</h2>
+              <p>Step-by-step guidance for creating characters based on official 5e rules. Select races, classes, backgrounds, and more with ease.</p>
+              <button class="btn btn-outline-light" type="button">See Features</button>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Digital Management</h2>
+              <p>Track stats, inventory, spell slots, hit points, and conditions digitally. Your character sheet, accessible anywhere, anytime.</p>
+              <button class="btn btn-outline-secondary" type="button">View Demo</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 2: About Page -->
+        <div class="state-container">
+            <h2>State 2: About Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">About D&D Manager</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <p class="lead">D&D Manager was created by passionate role-playing gamers for fellow adventurers.</p>
+                <p>We understand the challenge of keeping track of paper character sheets, especially during long campaigns. Spilled drinks, lost pages, and constant erasing can take their toll. Our goal is to provide a seamless, digital solution that enhances your tabletop experience, allowing you to focus on the story and the fun.</p>
+                <p>This tool aims to support Dungeons & Dragons Fifth Edition rules, automating calculations and making character management intuitive and accessible across devices.</p>
+                <h3>Features:</h3>
+                <ul>
+                    <li>Intuitive character creation workflow.</li>
+                    <li>Digital tracking of stats, skills, inventory, spells, and more.</li>
+                    <li>Automatic calculation of modifiers, saving throws, and skill checks.</li>
+                    <li>Cloud storage for access anywhere.</li>
+                    <li>Clean, user-friendly interface.</li>
+                </ul>
+                <p>We are constantly working on improving D&D Manager and adding new features based on community feedback. Join us and simplify your adventures!</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Our Mission</h5>
+                    <p class="card-text">To provide the best digital companion for Dungeons & Dragons players, making character management effortless and fun.</p>
+                    <h5 class="card-title mt-3">Contact Us</h5>
+                    <p class="card-text">Have feedback or questions? Reach out at contact@dndmanager.example.com</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 3: Sign Up Page -->
+        <div class="state-container">
+            <h2>State 3: Sign Up Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary active" aria-current="page" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                                <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 4: Sign Up - Error State -->
+        <div class="state-container">
+            <h2>State 4: Sign Up - Error State</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up - Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary active" aria-current="page" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                          Please correct the errors below and try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="username" value="ExistingUser" required>
+                                <div class="invalid-feedback">
+                                  This username is already taken.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" value="user@example.com" required>
+                                <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" value="password123" required>
+                                <div class="invalid-feedback">
+                                  Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" value="password456" required>
+                                <div class="invalid-feedback">
+                                  Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 5: Login Page -->
+        <div class="state-container">
+            <h2>State 5: Login Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login to Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </form>
+                         <p class="mt-3 text-center">Don't have an account? <a href="#">Sign up here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 6: Login - Error State -->
+        <div class="state-container">
+            <h2>State 6: Login - Error State</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login - Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header text-center">
+                        <h3>Login to Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                          Invalid username or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control is-invalid" id="email" value="wronguser" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" value="wrongpass" required>
+                                <div class="invalid-feedback">
+                                  Incorrect password.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                             <div class="text-center mt-3">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Don't have an account? <a href="#">Sign up here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 7: Dashboard - Empty State (Logged In) -->
+        <div class="state-container">
+            <h2>State 7: Dashboard - Empty State (Logged In)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard - Empty</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Your Characters</h1>
+            <a href="#" class="btn btn-primary btn-lg">Create New Character</a>
+        </div>
+
+        <div class="text-center p-5 border rounded bg-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-plus mb-3 text-secondary" viewBox="0 0 16 16">
+              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+              <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+            <h3>No characters yet!</h3>
+            <p class="text-muted">Ready to start your adventure? Create your first character now.</p>
+            <a href="#" class="btn btn-success mt-2">Create Character</a>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 8: Dashboard - With Characters (Logged In) -->
+        <div class="state-container">
+            <h2>State 8: Dashboard - With Characters (Logged In)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Your Characters</h1>
+            <a href="#" class="btn btn-primary btn-lg">Create New Character</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Borin Stonefist</h5>
+                        <p class="card-text"><span class="badge bg-secondary">Level 5</span> <span class="badge bg-info text-dark">Dwarf</span> <span class="badge bg-warning text-dark">Fighter</span></p>
+                        <p class="card-text">A sturdy defender of the mountain passes. Last played: 2 days ago.</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 p-3 d-flex justify-content-end">
+                        <a href="#" class="btn btn-outline-primary btn-sm me-2">View/Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Elara Meadowlight</h5>
+                        <p class="card-text"><span class="badge bg-secondary">Level 3</span> <span class="badge bg-success">Half-Elf</span> <span class="badge bg-primary">Druid</span></p>
+                        <p class="card-text">Guardian of the ancient groves. Last played: 1 week ago.</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 p-3 d-flex justify-content-end">
+                        <a href="#" class="btn btn-outline-primary btn-sm me-2">View/Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Zaltar the Mysterious</h5>
+                        <p class="card-text"><span class="badge bg-secondary">Level 8</span> <span class="badge bg-light text-dark border">Human</span> <span class="badge bg-danger">Wizard</span></p>
+                        <p class="card-text">Seeks forbidden knowledge in forgotten libraries. Last played: 1 month ago.</p>
+                     </div>
+                    <div class="card-footer bg-transparent border-0 p-3 d-flex justify-content-end">
+                        <a href="#" class="btn btn-outline-primary btn-sm me-2">View/Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 9: Create Character - Step 1 (Basic Info) -->
+        <div class="state-container">
+            <h2>State 9: Create Character - Step 1 (Basic Info)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Create Character - Step 1</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Create New Character</h1>
+        <!-- Progress Indicator (Optional) -->
+        <div class="progress mb-4">
+          <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Step 1: Basics</div>
+        </div>
+
+        <form class="card p-4 shadow-sm">
+            <h3 class="mb-3 border-bottom pb-2">Step 1: Basic Information</h3>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="characterName" class="form-label">Character Name</label>
+                    <input type="text" class="form-control" id="characterName" placeholder="e.g., Grog Strongjaw" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterRace" class="form-label">Race</label>
+                    <select class="form-select" id="characterRace" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Dragonborn</option>
+                        <option>Dwarf</option>
+                        <option>Elf</option>
+                        <option>Gnome</option>
+                        <option>Half-Elf</option>
+                        <option>Halfling</option>
+                        <option>Half-Orc</option>
+                        <option>Human</option>
+                        <option>Tiefling</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterClass" class="form-label">Class</label>
+                    <select class="form-select" id="characterClass" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Barbarian</option>
+                        <option>Bard</option>
+                        <option>Cleric</option>
+                        <option>Druid</option>
+                        <option>Fighter</option>
+                        <option>Monk</option>
+                        <option>Paladin</option>
+                        <option>Ranger</option>
+                        <option>Rogue</option>
+                        <option>Sorcerer</option>
+                        <option>Warlock</option>
+                        <option>Wizard</option>
+                    </select>
+                </div>
+                 <div class="col-md-6">
+                    <label for="characterLevel" class="form-label">Starting Level</label>
+                    <input type="number" class="form-control" id="characterLevel" value="1" min="1" max="20" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterAlignment" class="form-label">Alignment</label>
+                    <select class="form-select" id="characterAlignment" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Lawful Good</option>
+                        <option>Neutral Good</option>
+                        <option>Chaotic Good</option>
+                        <option>Lawful Neutral</option>
+                        <option>True Neutral</option>
+                        <option>Chaotic Neutral</option>
+                        <option>Lawful Evil</option>
+                        <option>Neutral Evil</option>
+                        <option>Chaotic Evil</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="characterBackground" class="form-label">Background</label>
+                     <select class="form-select" id="characterBackground" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Acolyte</option>
+                        <option>Charlatan</option>
+                        <option>Criminal</option>
+                        <option>Entertainer</option>
+                        <option>Folk Hero</option>
+                        <option>Guild Artisan</option>
+                        <option>Hermit</option>
+                        <option>Noble</option>
+                        <option>Outlander</option>
+                        <option>Sage</option>
+                        <option>Sailor</option>
+                        <option>Soldier</option>
+                        <option>Urchin</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 d-flex justify-content-end">
+                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                <button type="submit" class="btn btn-primary">Next: Attributes &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 10: Create Character - Step 1 - Error State -->
+        <div class="state-container">
+            <h2>State 10: Create Character - Step 1 - Error State</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Create Character - Step 1 Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Create New Character</h1>
+        <div class="progress mb-4">
+          <div class="progress-bar bg-danger" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Step 1: Basics</div>
+        </div>
+
+         <div class="alert alert-danger" role="alert">
+            Please fill in all required fields.
+         </div>
+
+        <form class="card p-4 shadow-sm border-danger">
+            <h3 class="mb-3 border-bottom pb-2">Step 1: Basic Information</h3>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="characterName" class="form-label">Character Name</label>
+                    <input type="text" class="form-control is-invalid" id="characterName" placeholder="e.g., Grog Strongjaw" required>
+                     <div class="invalid-feedback">
+                        Character name is required.
+                     </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterRace" class="form-label">Race</label>
+                    <select class="form-select is-invalid" id="characterRace" required>
+                        <option selected disabled value="">Choose...</option>
+                         <option>Dragonborn</option>
+                        <option>Dwarf</option>
+                        <option>Elf</option>
+                        <!-- etc. -->
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a race.
+                     </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterClass" class="form-label">Class</label>
+                    <select class="form-select is-invalid" id="characterClass" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Barbarian</option>
+                        <option>Bard</option>
+                        <option>Cleric</option>
+                        <!-- etc. -->
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a class.
+                     </div>
+                </div>
+                 <div class="col-md-6">
+                    <label for="characterLevel" class="form-label">Starting Level</label>
+                    <input type="number" class="form-control" id="characterLevel" value="1" min="1" max="20" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="characterAlignment" class="form-label">Alignment</label>
+                    <select class="form-select" id="characterAlignment" required>
+                         <option selected disabled value="">Choose...</option>
+                        <option>Lawful Good</option>
+                        <option>Neutral Good</option>
+                         <!-- etc. -->
+                    </select>
+                     <!-- Assume alignment is not required for error state demo -->
+                </div>
+                  <div class="col-12">
+                    <label for="characterBackground" class="form-label">Background</label>
+                     <select class="form-select" id="characterBackground" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Acolyte</option>
+                        <option>Criminal</option>
+                         <!-- etc. -->
+                    </select>
+                </div>
+            </div>
+             <div class="mt-4 d-flex justify-content-end">
+                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                <button type="submit" class="btn btn-primary">Next: Attributes &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 11: View/Edit Character Sheet -->
+        <div class="state-container">
+            <h2>State 11: View/Edit Character Sheet</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>View Character</title>
+    <style>
+        .stat-box { border: 1px solid #ccc; border-radius: 5px; padding: 10px; text-align: center; margin-bottom: 15px; }
+        .stat-value { font-size: 1.8rem; font-weight: bold; }
+        .stat-modifier { font-size: 1rem; color: #6c757d; }
+        .section-title { border-bottom: 2px solid #dee2e6; padding-bottom: 5px; margin-bottom: 15px; font-size: 1.2rem; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Borin Stonefist</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+             <li class="nav-item ms-2">
+                <button class="btn btn-success">Save Changes</button>
+             </li>
+             <li class="nav-item ms-2">
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal">Delete Character</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Character Header -->
+        <div class="row mb-4 align-items-center p-3 bg-light rounded">
+            <div class="col-md-8">
+                <h2>Borin Stonefist</h2>
+                <p class="lead mb-0">Level 5 Dwarf Fighter (Battle Master)</p>
+                <small class="text-muted">Lawful Good | Background: Soldier</small>
+            </div>
+            <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                <div class="row g-2">
+                    <div class="col">
+                         <label for="currentHP" class="form-label small">Current HP</label>
+                         <input type="number" class="form-control form-control-sm" id="currentHP" value="45">
+                    </div>
+                     <div class="col">
+                         <label for="maxHP" class="form-label small">Max HP</label>
+                         <input type="number" class="form-control form-control-sm" id="maxHP" value="50">
+                    </div>
+                    <div class="col">
+                        <label class="form-label small d-block">AC</label>
+                        <span class="fs-4 fw-bold">18</span>
+                    </div>
+                     <div class="col">
+                        <label class="form-label small d-block">Speed</label>
+                         <span class="fs-4 fw-bold">25 ft.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Column: Stats & Skills -->
+            <div class="col-lg-3">
+                <div class="section-title">Ability Scores</div>
+                <div class="row text-center g-2 mb-3">
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">16</span><br><small>STR</small><div class="stat-modifier">+3</div></div></div>
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">12</span><br><small>DEX</small><div class="stat-modifier">+1</div></div></div>
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">15</span><br><small>CON</small><div class="stat-modifier">+2</div></div></div>
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">10</span><br><small>INT</small><div class="stat-modifier">+0</div></div></div>
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">13</span><br><small>WIS</small><div class="stat-modifier">+1</div></div></div>
+                   <div class="col-6 col-md-4 col-lg-6"><div class="stat-box"><span class="stat-value">9</span> <br><small>CHA</small><div class="stat-modifier">-1</div></div></div>
+                </div>
+
+                <div class="section-title">Skills</div>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Athletics <span class="badge bg-primary rounded-pill">+5*</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Acrobatics <span class="badge bg-secondary rounded-pill">+1</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Intimidation <span class="badge bg-primary rounded-pill">+1*</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">Perception <span class="badge bg-primary rounded-pill">+3*</span></li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">Survival <span class="badge bg-secondary rounded-pill">+1</span></li>
+                     <!-- ... more skills ... -->
+                </ul>
+                <small class="text-muted">* Proficient</small>
+            </div>
+
+            <!-- Middle Column: Combat, Features, Equipment -->
+            <div class="col-lg-6">
+                 <div class="section-title">Combat</div>
+                 <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Attacks</h5>
+                        <table class="table table-sm">
+                          <thead><tr><th>Weapon</th><th>Atk Bonus</th><th>Damage/Type</th></tr></thead>
+                          <tbody>
+                            <tr><td>Warhammer</td><td>+5</td><td>1d8+3 Bludgeoning</td></tr>
+                            <tr><td>Handaxe (x2)</td><td>+5</td><td>1d6+3 Slashing</td></tr>
+                          </tbody>
+                        </table>
+                   </div>
+                 </div>
+                 <div class="card mb-3">
+                     <div class="card-body">
+                          <h5 class="card-title">Features & Traits</h5>
+                          <ul class="list-unstyled">
+                            <li><strong>Action Surge:</strong> Once per short rest.</li>
+                            <li><strong>Second Wind:</strong> Once per short rest (1d10 + 5 HP).</li>
+                            <li><strong>Battle Master Maneuvers:</strong> (4 Superiority Dice - d8) Trip Attack, Pushing Attack, Rally.</li>
+                            <li><strong>Dwarven Resilience:</strong> Advantage on saves vs. poison.</li>
+                            <li><strong>Stonecunning:</strong> Bonus to History (Stone).</li>
+                          </ul>
+                     </div>
+                 </div>
+                 <div class="section-title">Equipment</div>
+                 <textarea class="form-control mb-3" rows="6">Plate Armor, Shield, Warhammer, Handaxe (2), Explorer's Pack, 50ft Hempen Rope, Soldier Insignia, Pouch (15 gp)</textarea>
+            </div>
+
+            <!-- Right Column: Personality, Notes -->
+            <div class="col-lg-3">
+                <div class="section-title">Personality</div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Personality Traits</label>
+                    <textarea class="form-control form-control-sm" rows="2">Gruff but fair. Always ready for a challenge.</textarea>
+                </div>
+                 <div class="mb-3">
+                    <label class="form-label small fw-bold">Ideals</label>
+                    <textarea class="form-control form-control-sm" rows="1">Greater Good. My deeds must benefit the many.</textarea>
+                </div>
+                 <div class="mb-3">
+                    <label class="form-label small fw-bold">Bonds</label>
+                    <textarea class="form-control form-control-sm" rows="1">I fight for those who cannot fight for themselves.</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small fw-bold">Flaws</label>
+                    <textarea class="form-control form-control-sm" rows="1">I have little respect for those who are not straightforward.</textarea>
+                </div>
+
+                <div class="section-title">Notes</div>
+                 <textarea class="form-control" rows="5">Met the party in the Stumbling Ogre tavern. Has a particular dislike for goblins after an incident involving his prize-winning beard.</textarea>
+            </div>
+        </div>
+
+
+        <!-- Static Modal Placeholder -->
+        <div class="modal static-modal" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                Are you sure you want to permanently delete the character "Borin Stonefist"? This action cannot be undone.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete Character</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 12: Delete Character Confirmation (Modal Example on View/Edit page) -->
+         <div class="state-container">
+            <h2>State 12: Delete Character Confirmation (Modal shown on State 11)</h2>
+            <div class="alert alert-info">See the modal confirmation dialog at the bottom of the "State 11: View/Edit Character Sheet" iframe above. It is styled to be visible without JavaScript interaction for this static demo.</div>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Delete Confirmation</title>
+     <style>
+        /* Style for placeholder modal */
+        .static-modal {
+            position: relative;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            z-index: 1;
+            display: block;
+            background: rgba(0,0,0,0.05); /* Simulate modal overlay */
+            padding: 30px;
+        }
+     </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <!-- Minimal nav for context -->
+      </div>
+    </nav>
+     <div class="container mt-4">
+         <h2 class="text-center mb-4">Character Deletion Prompt</h2>
+          <!-- Static Modal Placeholder -->
+         <div class="modal static-modal" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" style="display: block; position: relative;">
+          <div class="modal-dialog">
+            <div class="modal-content border-danger shadow">
+              <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                 <button type="button" class="btn-close btn-close-white" disabled aria-label="Close"></button> <!-- Disabled close button -->
+              </div>
+              <div class="modal-body">
+                Are you sure you want to permanently delete the character "Borin Stonefist"? This action cannot be undone. All associated data will be lost.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-danger">Yes, Delete Character</button>
+              </div>
+            </div>
+          </div>
+        </div>
+         <p class="text-center mt-4 text-muted">This screen demonstrates the confirmation dialog presented before character deletion.</p>
+     </div>
+     <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+
+        <!-- State 13: User Profile Page -->
+        <div class="state-container">
+            <h2>State 13: User Profile Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>User Profile</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">D&D Manager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome, User!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">User Profile</h1>
+         <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
+            Profile updated successfully!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">
+                        Account Information
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3 row">
+                                <label for="profileUsername" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                  <input type="text" readonly class="form-control-plaintext" id="profileUsername" value="CurrentUsername">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="profileEmail" value="user@example.com">
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary">Update Email</button>
+                             </div>
+                        </form>
+                    </div>
+                </div>
+
+                 <div class="card shadow-sm">
+                    <div class="card-header">
+                        Change Password
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                            </div>
+                             <div class="text-end">
+                                <button type="submit" class="btn btn-warning">Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card shadow-sm text-center">
+                     <div class="card-body">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle text-secondary mb-3" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        </svg>
+                        <h4>CurrentUsername</h4>
+                        <p class="text-muted">Member since: Jan 1, 2023</p>
+                         <button class="btn btn-outline-danger btn-sm mt-3">Delete Account</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">&copy; 2023 D&D Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+    </div> <!-- /container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

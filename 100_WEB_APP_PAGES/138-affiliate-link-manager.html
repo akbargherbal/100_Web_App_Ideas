@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Link Manager - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            color: #0d6efd; /* Bootstrap primary blue */
+        }
+        iframe {
+            width: 100%;
+            height: 700px; /* Default height, can be adjusted per iframe if needed */
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* Specific height adjustments if needed */
+        #iframe-home { height: 850px; }
+        #iframe-signup, #iframe-signup-error, #iframe-login, #iframe-login-error { height: 650px; }
+        #iframe-dashboard { height: 900px; }
+        #iframe-add-link, #iframe-add-link-error, #iframe-edit-link { height: 950px; }
+        #iframe-add-link-success { height: 600px; }
+        #iframe-analytics { height: 950px; }
+        #iframe-settings { height: 1000px; }
+        #iframe-about, #iframe-contact { height: 750px; }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Affiliate Link Manager - UI Flow</h1>
+
+        <h2>State 1: Home Page (Landing Page)</h2>
+        <iframe id="iframe-home" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavPublic" aria-controls="navbarNavPublic" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavPublic">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-outline-light ms-lg-2" href="#">Login</a>
+                    </li>
+                     <li class="nav-item mt-2 mt-lg-0">
+                        <a class="btn btn-light ms-lg-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 py-5 text-center bg-light rounded">
+        <h1 class="display-4">Organize Your Affiliate Links Effortlessly</h1>
+        <p class="lead col-lg-8 mx-auto">Track performance, manage campaigns, and boost your earnings with Affiliate Link Manager – the ultimate tool for serious affiliate marketers.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3"><i class="bi bi-rocket-takeoff me-2"></i>Get Started for Free</a>
+        <a href="#" class="btn btn-secondary btn-lg mt-3">Learn More</a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row text-center">
+             <h2 class="mb-4">Key Features</h2>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-speedometer2 fs-1 text-primary mb-3"></i>
+                        <h5 class="card-title">Centralized Dashboard</h5>
+                        <p class="card-text">View all your links and their performance metrics in one convenient place.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                 <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-graph-up-arrow fs-1 text-success mb-3"></i>
+                        <h5 class="card-title">Performance Tracking</h5>
+                        <p class="card-text">Monitor clicks, conversions, and earnings for each link or campaign.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                 <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-pencil-square fs-1 text-info mb-3"></i>
+                        <h5 class="card-title">Easy Link Management</h5>
+                        <p class="card-text">Add, edit, categorize, and search your affiliate links with ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 2: Sign Up Page</h2>
+        <iframe id="iframe-signup" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">Already have an account? Login</a>
+                 </li>
+             </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0 text-center"><i class="bi bi-person-plus-fill me-2"></i>Create Your Account</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Choose a strong password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a></label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                            <p class="mt-3 text-center text-muted">Already have an account? <a href="#">Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 py-3">
+      <div class="text-center">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 3: Sign Up Page (Validation Error)</h2>
+        <iframe id="iframe-signup-error" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">Already have an account? Login</a>
+                 </li>
+             </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                     <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0 text-center"><i class="bi bi-person-plus-fill me-2"></i>Create Your Account</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                          <div>Please correct the errors below and try again.</div>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control is-invalid" id="signupName" placeholder="Enter your full name" value="">
+                                <div class="invalid-feedback">
+                                    Full name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter your email" value="john@test">
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Choose a strong password" value="short">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="Confirm your password" value="notsame">
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck">
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a></label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                           <p class="mt-3 text-center text-muted">Already have an account? <a href="#">Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 py-3">
+      <div class="text-center">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 4: Login Page</h2>
+        <iframe id="iframe-login" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">Don't have an account? Sign Up</a>
+                 </li>
+             </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-4">
+                <div class="card shadow-sm">
+                     <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0 text-center"><i class="bi bi-box-arrow-in-right me-2"></i>Login to Your Account</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                 </div>
+                                 <a href="#" class="small">Forgot Password?</a>
+                             </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            <p class="mt-3 text-center text-muted">Don't have an account? <a href="#">Sign Up here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 py-3 fixed-bottom">
+      <div class="text-center">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 5: Login Page (Validation Error)</h2>
+        <iframe id="iframe-login-error" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+             <ul class="navbar-nav ms-auto">
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">Don't have an account? Sign Up</a>
+                 </li>
+             </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0 text-center"><i class="bi bi-box-arrow-in-right me-2"></i>Login to Your Account</h4>
+                    </div>
+                    <div class="card-body p-4">
+                          <div class="alert alert-danger d-flex align-items-center" role="alert">
+                           <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                          <div>Invalid email or password. Please try again.</div>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="Enter your email" value="wrong@email.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                 </div>
+                                 <a href="#" class="small">Forgot Password?</a>
+                             </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            <p class="mt-3 text-center text-muted">Don't have an account? <a href="#">Sign Up here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 py-3 fixed-bottom">
+      <div class="text-center">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 6: Dashboard (Main View - Link List)</h2>
+        <iframe id="iframe-dashboard" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavApp">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                 <div class="input-group input-group-sm me-2">
+                    <input type="text" class="form-control" placeholder="Search links..." aria-label="Search links">
+                    <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+                </div>
+                <a href="#" class="btn btn-sm btn-primary">
+                    <i class="bi bi-plus-circle me-1"></i> Add New Link
+                </a>
+            </div>
+        </div>
+
+         <div class="row mb-4 g-3">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary h-100 shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                         <i class="bi bi-link-45deg fs-1 me-3"></i>
+                        <div>
+                            <h5 class="card-title mb-0">Total Links</h5>
+                            <p class="card-text fs-3 fw-bold">152</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="card text-white bg-success h-100 shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                         <i class="bi bi-mouse2 fs-1 me-3"></i>
+                        <div>
+                            <h5 class="card-title mb-0">Clicks (30d)</h5>
+                            <p class="card-text fs-3 fw-bold">10,582</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="card text-white bg-info h-100 shadow-sm">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="bi bi-currency-dollar fs-1 me-3"></i>
+                         <div>
+                            <h5 class="card-title mb-0">Earnings (30d)</h5>
+                            <p class="card-text fs-3 fw-bold">$1,234.56</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                 <h4 class="mb-0">My Affiliate Links</h4>
+                 <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-filter me-1"></i> Filter by Category
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        <li><a class="dropdown-item" href="#">Electronics</a></li>
+                        <li><a class="dropdown-item" href="#">Software</a></li>
+                        <li><a class="dropdown-item" href="#">Travel</a></li>
+                        <li><a class="dropdown-item" href="#">Fashion</a></li>
+                         <li><a class="dropdown-item" href="#">Other</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col" class="ps-3">Name</th>
+                                <th scope="col">Short Link</th>
+                                <th scope="col">Original URL</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Clicks (All)</th>
+                                <th scope="col" class="text-end pe-3">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-3">Product A Campaign</td>
+                                <td><a href="#" target="_blank">aff.link/prodA <i class="bi bi-box-arrow-up-right small"></i></a></td>
+                                <td class="text-muted"><span title="https://originalproductsite.com/product-a?ref=user123">https://originalproduct...</span></td>
+                                <td><span class="badge bg-secondary">Electronics</span></td>
+                                <td>5,123</td>
+                                <td class="text-end pe-3">
+                                    <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Copy Link"><i class="bi bi-clipboard"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-info me-1" title="Analytics"><i class="bi bi-bar-chart-line"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td class="ps-3">Software B Discount</td>
+                                <td><a href="#" target="_blank">aff.link/softB <i class="bi bi-box-arrow-up-right small"></i></a></td>
+                                <td class="text-muted"><span title="https://software-b.com/?coupon=SAVE20&ref=user123">https://software-b.com/...</span></td>
+                                <td><span class="badge bg-info">Software</span></td>
+                                <td>2,890</td>
+                                <td class="text-end pe-3">
+                                     <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Copy Link"><i class="bi bi-clipboard"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-info me-1" title="Analytics"><i class="bi bi-bar-chart-line"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td class="ps-3">Travel Deal Site</td>
+                                <td><a href="#" target="_blank">aff.link/travel1 <i class="bi bi-box-arrow-up-right small"></i></a></td>
+                                <td class="text-muted"><span title="https://besttraveldeals.com/page?ref=user123">https://besttraveldeal...</span></td>
+                                <td><span class="badge bg-warning text-dark">Travel</span></td>
+                                <td>11,450</td>
+                                <td class="text-end pe-3">
+                                     <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Copy Link"><i class="bi bi-clipboard"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-info me-1" title="Analytics"><i class="bi bi-bar-chart-line"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td class="ps-3">Fashion Blog Post Link</td>
+                                <td><a href="#" target="_blank">aff.link/fash-post <i class="bi bi-box-arrow-up-right small"></i></a></td>
+                                <td class="text-muted"><span title="https://fashionista.com/blog/summer-trends?ref=user123">https://fashionista.c...</span></td>
+                                <td><span class="badge bg-danger">Fashion</span></td>
+                                <td>978</td>
+                                <td class="text-end pe-3">
+                                     <a href="#" class="btn btn-sm btn-outline-primary me-1" title="Copy Link"><i class="bi bi-clipboard"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary me-1" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-info me-1" title="Analytics"><i class="bi bi-bar-chart-line"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             <div class="card-footer bg-light text-center">
+                 <nav aria-label="Page navigation example">
+                  <ul class="pagination pagination-sm justify-content-center mb-0">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+             </div>
+        </div>
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 7: Add New Link Page</h2>
+        <iframe id="iframe-add-link" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Link - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavApp">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-plus-circle me-2"></i>Add New Affiliate Link</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+             <div class="card shadow-sm mb-4">
+               <div class="card-body p-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="linkName" class="form-label fw-bold">Link Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="linkName" placeholder="e.g., Summer Sale Campaign" required>
+                        <div class="form-text">A descriptive name for easy identification.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="originalUrl" class="form-label fw-bold">Original Affiliate URL <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control" id="originalUrl" placeholder="https://partnernetwork.com/aff?id=123&ref=user..." required>
+                         <div class="form-text">The full, original affiliate link provided by the network/merchant.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shortLink" class="form-label fw-bold">Short Link Path (Optional)</label>
+                         <div class="input-group">
+                          <span class="input-group-text bg-light" id="basic-addon3">aff.link/</span>
+                          <input type="text" class="form-control" id="shortLink" placeholder="custom-path">
+                        </div>
+                         <div class="form-text">Customize the ending part of your short link. Must be unique, letters/numbers/hyphens only. Leave blank for auto-generation.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkCategory" class="form-label fw-bold">Category</label>
+                        <select class="form-select" id="linkCategory">
+                          <option selected value="">-- Select a category --</option>
+                          <option value="1">Electronics</option>
+                          <option value="2">Software</option>
+                          <option value="3">Travel</option>
+                           <option value="4">Fashion</option>
+                           <option value="5">Health & Wellness</option>
+                           <option value="6">Home Goods</option>
+                           <option value="7">Other</option>
+                        </select>
+                    </div>
+                     <div class="mb-3">
+                        <label for="linkTags" class="form-label fw-bold">Tags (Optional, comma-separated)</label>
+                        <input type="text" class="form-control" id="linkTags" placeholder="e.g., promo, video ad, social media, email">
+                        <div class="form-text">Helps in filtering and finding links later.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkNotes" class="form-label fw-bold">Notes (Optional)</label>
+                        <textarea class="form-control" id="linkNotes" rows="3" placeholder="Add any relevant notes about this link or campaign..."></textarea>
+                         <div class="form-text">Campaign details, expiration dates, target audience, etc.</div>
+                    </div>
+
+                    <hr>
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check-circle me-2"></i>Save Link</button>
+                    <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                </form>
+               </div>
+            </div>
+           </div>
+            <div class="col-lg-4">
+                 <div class="card bg-light border shadow-sm sticky-lg-top" style="top: 80px;"> <!-- Adjust top based on navbar height -->
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-lightbulb me-2"></i>Tips for Adding Links</h5>
+                        <ul>
+                            <li>Use a clear, descriptive <strong>Name</strong>.</li>
+                            <li>Double-check the <strong>Original URL</strong> for accuracy, including your affiliate ID.</li>
+                            <li>Choose a relevant <strong>Category</strong> for better organization.</li>
+                            <li>Use <strong>Tags</strong> to track campaigns or sources (e.g., `facebook-ad`, `blog-post`, `q4-promo`).</li>
+                            <li>Keep <strong>Short Link Paths</strong> simple and memorable if customizing.</li>
+                            <li>Add important context in the <strong>Notes</strong> section.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 8: Add New Link Page (Validation Error)</h2>
+        <iframe id="iframe-add-link-error" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Link - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavApp">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-plus-circle me-2"></i>Add New Affiliate Link</h1>
+        </div>
+
+         <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2" ></i>
+           <div>Please fix the errors highlighted below.</div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+               <div class="card shadow-sm mb-4">
+               <div class="card-body p-4">
+                <form>
+                   <div class="mb-3">
+                        <label for="linkName" class="form-label fw-bold">Link Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control is-invalid" id="linkName" placeholder="e.g., Summer Sale Campaign" required>
+                         <div class="invalid-feedback">
+                            Link name is required.
+                        </div>
+                        <div class="form-text">A descriptive name for easy identification.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="originalUrl" class="form-label fw-bold">Original Affiliate URL <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control is-invalid" id="originalUrl" placeholder="https://partnernetwork.com/aff?id=123&ref=user..." value="invalid-url" required>
+                         <div class="invalid-feedback">
+                           Please enter a valid URL (must start with http:// or https://).
+                        </div>
+                         <div class="form-text">The full, original affiliate link provided by the network/merchant.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shortLink" class="form-label fw-bold">Short Link Path (Optional)</label>
+                         <div class="input-group">
+                           <span class="input-group-text bg-light" id="basic-addon3">aff.link/</span>
+                          <input type="text" class="form-control is-invalid" id="shortLink" placeholder="custom-path" value="existing-path">
+                           <div class="invalid-feedback">
+                               This short link path is already taken or contains invalid characters. Please choose another or leave blank.
+                           </div>
+                        </div>
+                         <div class="form-text">Must be unique, letters/numbers/hyphens only. Leave blank for auto-generation.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkCategory" class="form-label fw-bold">Category</label>
+                        <select class="form-select" id="linkCategory">
+                           <option selected value="">-- Select a category --</option>
+                          <option value="1">Electronics</option>
+                          <option value="2">Software</option>
+                          <option value="3">Travel</option>
+                           <option value="4">Fashion</option>
+                           <option value="5">Health & Wellness</option>
+                           <option value="6">Home Goods</option>
+                           <option value="7">Other</option>
+                        </select>
+                    </div>
+                     <div class="mb-3">
+                        <label for="linkTags" class="form-label fw-bold">Tags (Optional, comma-separated)</label>
+                        <input type="text" class="form-control" id="linkTags" placeholder="e.g., promo, video ad, social media, email">
+                        <div class="form-text">Helps in filtering and finding links later.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkNotes" class="form-label fw-bold">Notes (Optional)</label>
+                        <textarea class="form-control" id="linkNotes" rows="3" placeholder="Add any relevant notes about this link or campaign..."></textarea>
+                         <div class="form-text">Campaign details, expiration dates, target audience, etc.</div>
+                    </div>
+
+                    <hr>
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check-circle me-2"></i>Save Link</button>
+                    <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                </form>
+                </div>
+               </div>
+            </div>
+             <div class="col-lg-4">
+                 <div class="card bg-light border shadow-sm sticky-lg-top" style="top: 80px;">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-lightbulb me-2"></i>Tips for Adding Links</h5>
+                        <ul>
+                             <li>Use a clear, descriptive <strong>Name</strong>.</li>
+                            <li>Double-check the <strong>Original URL</strong> for accuracy, including your affiliate ID.</li>
+                            <li>Choose a relevant <strong>Category</strong> for better organization.</li>
+                            <li>Use <strong>Tags</strong> to track campaigns or sources (e.g., `facebook-ad`, `blog-post`, `q4-promo`).</li>
+                            <li>Keep <strong>Short Link Paths</strong> simple and memorable if customizing.</li>
+                            <li>Add important context in the <strong>Notes</strong> section.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 9: Add New Link Page (Success)</h2>
+        <iframe id="iframe-add-link-success" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Added - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavApp">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-plus-circle me-2"></i>Add New Affiliate Link</h1>
+        </div>
+
+         <div class="alert alert-success d-flex align-items-center shadow-sm" role="alert">
+             <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+           <div>
+             <h4 class="alert-heading">Success!</h4>
+              <p class="mb-1">Affiliate link "Summer Sale Campaign" added successfully.</p>
+              <p class="mb-0">Your short link is: <a href="#" class="alert-link fw-bold">aff.link/summer-sale</a> <button class="btn btn-sm btn-outline-success py-0 px-1 ms-1" title="Copy Link"><i class="bi bi-clipboard"></i></button></p>
+           </div>
+        </div>
+
+        <p class="lead">What would you like to do next?</p>
+         <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-2"></i>Add Another Link</a>
+         <a href="#" class="btn btn-secondary"><i class="bi bi-grid-1x2 me-2"></i>Go to Dashboard</a>
+         <a href="#" class="btn btn-info"><i class="bi bi-bar-chart-line me-2"></i>View Link Analytics</a>
+
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 10: Edit Link Page</h2>
+        <iframe id="iframe-edit-link" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Link - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+             <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavApp">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-pencil-square me-2"></i>Edit Affiliate Link</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Back to Dashboard</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                <div class="card-body p-4">
+                <form>
+                    <div class="mb-3">
+                        <label for="linkName" class="form-label fw-bold">Link Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="linkName" value="Product A Campaign" required>
+                        <div class="form-text">A descriptive name for easy identification.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="originalUrl" class="form-label fw-bold">Original Affiliate URL <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="originalUrl" rows="3" required>https://originalproductsite.com/product-a?ref=user123&subid=campaignXYZ</textarea>
+                         <div class="form-text">The full, original affiliate link provided by the network/merchant.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shortLink" class="form-label fw-bold">Short Link Path</label>
+                         <div class="input-group">
+                          <span class="input-group-text bg-light" id="basic-addon3">aff.link/</span>
+                          <input type="text" class="form-control" id="shortLink" value="prodA" aria-describedby="basic-addon3">
+                           <button class="btn btn-outline-secondary" type="button" title="Copy Short Link"><i class="bi bi-clipboard"></i></button>
+                            <a href="#" target="_blank" class="btn btn-outline-secondary" type="button" title="Open Short Link"><i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                         <div class="form-text">Customize the ending part of your short link. Must be unique, letters/numbers/hyphens only.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkCategory" class="form-label fw-bold">Category</label>
+                        <select class="form-select" id="linkCategory">
+                          <option value="">-- Select a category --</option>
+                          <option value="1" selected>Electronics</option>
+                          <option value="2">Software</option>
+                          <option value="3">Travel</option>
+                           <option value="4">Fashion</option>
+                            <option value="5">Health & Wellness</option>
+                           <option value="6">Home Goods</option>
+                            <option value="7">Other</option>
+                        </select>
+                    </div>
+                     <div class="mb-3">
+                        <label for="linkTags" class="form-label fw-bold">Tags (Optional, comma-separated)</label>
+                        <input type="text" class="form-control" id="linkTags" value="promo, campaign, electronics">
+                         <div class="form-text">Helps in filtering and finding links later.</div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="linkNotes" class="form-label fw-bold">Notes (Optional)</label>
+                        <textarea class="form-control" id="linkNotes" rows="3">Initial campaign link for Product A launch. Updated subid for tracking.</textarea>
+                        <div class="form-text">Campaign details, expiration dates, target audience, etc.</div>
+                    </div>
+
+                   <hr>
+                   <div class="d-flex justify-content-between align-items-center">
+                       <div>
+                            <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-save me-2"></i>Update Link</button>
+                            <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                       </div>
+                       <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash me-2"></i>Delete Link</button>
+                   </div>
+                </form>
+                </div>
+                </div>
+            </div>
+             <div class="col-lg-4">
+                 <div class="card bg-light border shadow-sm sticky-lg-top" style="top: 80px;">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-info-circle me-2"></i>Link Info</h5>
+                         <p class="mb-1"><strong>Created:</strong> Jan 15, 2023</p>
+                         <p class="mb-1"><strong>Last Updated:</strong> Mar 01, 2023</p>
+                         <p class="mb-2"><strong>Short Link:</strong> <a href="#" target="_blank">aff.link/prodA <i class="bi bi-box-arrow-up-right small"></i></a></p>
+
+                         <hr>
+                         <h6 class="fw-bold">Performance Snapshot</h6>
+                         <p class="mb-1"><i class="bi bi-mouse2 me-2 text-success"></i><strong>Total Clicks:</strong> 5,123</p>
+                         <p class="mb-1"><i class="bi bi-check2-circle me-2 text-primary"></i><strong>Total Conversions:</strong> 125</p>
+                         <p class="mb-3"><i class="bi bi-currency-dollar me-2 text-info"></i><strong>Total Earnings:</strong> $450.75</p>
+                         <a href="#" class="btn btn-sm btn-info w-100"><i class="bi bi-bar-chart-line me-2"></i> View Full Analytics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 11: Link Performance/Analytics Page</h2>
+        <iframe id="iframe-analytics" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavApp">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-bar-chart-line me-2"></i>Analytics Overview</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                 <div class="dropdown me-2">
+                      <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dateRangeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-calendar3 me-1"></i> Last 30 Days
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dateRangeDropdown">
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">Yesterday</a></li>
+                        <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                        <li><a class="dropdown-item active" href="#">Last 30 Days</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">Last Month</a></li>
+                        <li><a class="dropdown-item" href="#">All Time</a></li>
+                         <li><hr class="dropdown-divider"></li>
+                         <li><a class="dropdown-item" href="#">Custom Range...</a></li>
+                      </ul>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-primary">
+                  <i class="bi bi-download me-1"></i> Export Report
+                </button>
+            </div>
+        </div>
+
+         <div class="card mb-4 shadow-sm">
+             <div class="card-header"><i class="bi bi-graph-up me-2"></i>Clicks & Earnings Over Time (Last 30 Days)</div>
+             <div class="card-body text-center text-muted bg-light d-flex align-items-center justify-content-center" style="height: 300px;">
+                 <span class="fs-5">[Chart Placeholder - e.g., Dual-axis line chart showing daily clicks and earnings]</span>
+             </div>
+         </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                 <div class="card shadow-sm h-100">
+                     <div class="card-header"><i class="bi bi-link me-2"></i>Performance by Link</div>
+                     <div class="card-body p-0">
+                         <div class="table-responsive">
+                            <table class="table table-sm table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr><th class="ps-3">Link Name</th><th>Clicks</th><th>Conv.</th><th>Earnings</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="ps-3"><a href="#">Product A Campaign</a></td><td>1,520</td><td>50</td><td>$250.00</td></tr>
+                                    <tr><td class="ps-3"><a href="#">Software B Discount</a></td><td>890</td><td>35</td><td>$175.50</td></tr>
+                                    <tr><td class="ps-3"><a href="#">Travel Deal Site</a></td><td>3,105</td><td>15</td><td>$75.00</td></tr>
+                                    <tr><td class="ps-3"><a href="#">Fashion Blog Post</a></td><td>650</td><td>5</td><td>$25.00</td></tr>
+                                    <tr><td class="ps-3"><a href="#">Generic Homepage Link</a></td><td>4,417</td><td>20</td><td>$725.06</td></tr>
+                                 </tbody>
+                                  <tfoot class="table-light fw-bold">
+                                    <tr><td class="ps-3">Total</td><td>10,582</td><td>125</td><td>$1,250.56</td></tr>
+                                  </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-6">
+                 <div class="card shadow-sm h-100">
+                    <div class="card-header"><i class="bi bi-compass me-2"></i>Performance by Referrer</div>
+                     <div class="card-body p-0">
+                         <div class="table-responsive">
+                              <table class="table table-sm table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr><th class="ps-3">Referrer Domain</th><th>Clicks</th><th>Conv.</th><th>Earnings</th></tr>
+                                </thead>
+                                 <tbody>
+                                    <tr><td class="ps-3">google.com</td><td>2,300</td><td>40</td><td>$180.00</td></tr>
+                                    <tr><td class="ps-3">facebook.com</td><td>1,800</td><td>30</td><td>$155.50</td></tr>
+                                    <tr><td class="ps-3">twitter.com / t.co</td><td>950</td><td>15</td><td>$90.00</td></tr>
+                                     <tr><td class="ps-3">(direct)</td><td>500</td><td>10</td><td>$50.00</td></tr>
+                                     <tr><td class="ps-3">myblog.com</td><td>1,232</td><td>18</td><td>$450.06</td></tr>
+                                     <tr><td class="ps-3">youtube.com</td><td>3,800</td><td>12</td><td>$325.00</td></tr>
+                                 </tbody>
+                                  <tfoot class="table-light fw-bold">
+                                    <tr><td class="ps-3">Total</td><td>10,582</td><td>125</td><td>$1,250.56</td></tr>
+                                  </tfoot>
+                            </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                 <div class="card shadow-sm h-100">
+                    <div class="card-header"><i class="bi bi-geo-alt me-2"></i>Performance by Country</div>
+                     <div class="card-body p-0">
+                          <div class="table-responsive">
+                              <table class="table table-sm table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr><th class="ps-3">Country</th><th>Clicks</th><th>Conv.</th><th>Earnings</th></tr>
+                                </thead>
+                                 <tbody>
+                                    <tr><td class="ps-3"><i class="bi bi-flag-fill text-danger me-1"></i> United States</td><td>3,500</td><td>60</td><td>$320.00</td></tr>
+                                    <tr><td class="ps-3"><i class="bi bi-flag-fill text-primary me-1"></i> United Kingdom</td><td>900</td><td>15</td><td>$85.50</td></tr>
+                                    <tr><td class="ps-3"><i class="bi bi-flag-fill text-danger me-1"></i> Canada</td><td>750</td><td>12</td><td>$60.00</td></tr>
+                                     <tr><td class="ps-3"><i class="bi bi-flag-fill text-info me-1"></i> Australia</td><td>400</td><td>8</td><td>$40.00</td></tr>
+                                     <tr><td class="ps-3"><i class="bi bi-flag-fill text-warning me-1"></i> Germany</td><td>632</td><td>11</td><td>$245.06</td></tr>
+                                     <tr><td class="ps-3"><i class="bi bi-flag me-1"></i> Other</td><td>4,400</td><td>19</td><td>$500.00</td></tr>
+                                 </tbody>
+                                 <tfoot class="table-light fw-bold">
+                                    <tr><td class="ps-3">Total</td><td>10,582</td><td>125</td><td>$1,250.56</td></tr>
+                                  </tfoot>
+                            </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-6">
+                 <div class="card shadow-sm h-100">
+                     <div class="card-header"><i class="bi bi-tags me-2"></i>Performance by Tag</div>
+                     <div class="card-body p-0">
+                         <div class="table-responsive">
+                              <table class="table table-sm table-striped table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr><th class="ps-3">Tag</th><th>Clicks</th><th>Conv.</th><th>Earnings</th></tr>
+                                </thead>
+                                 <tbody>
+                                    <tr><td class="ps-3"><span class="badge bg-primary">promo</span></td><td>2,300</td><td>40</td><td>$180.00</td></tr>
+                                    <tr><td class="ps-3"><span class="badge bg-success">video ad</span></td><td>1,800</td><td>30</td><td>$155.50</td></tr>
+                                    <tr><td class="ps-3"><span class="badge bg-info">social media</span></td><td>950</td><td>15</td><td>$90.00</td></tr>
+                                     <tr><td class="ps-3"><span class="badge bg-warning text-dark">email</span></td><td>500</td><td>10</td><td>$50.00</td></tr>
+                                     <tr><td class="ps-3"><span class="badge bg-secondary">blog-post</span></td><td>1,232</td><td>18</td><td>$450.06</td></tr>
+                                     <tr><td class="ps-3"><span class="badge bg-dark">q4-campaign</span></td><td>3,800</td><td>12</td><td>$325.00</td></tr>
+                                     <tr><td class="ps-3">(No Tags)</td><td>0</td><td>0</td><td>$0.00</td></tr>
+                                 </tbody>
+                                  <tfoot class="table-light fw-bold">
+                                    <tr><td class="ps-3">Total</td><td>10,582</td><td>125</td><td>$1,250.56</td></tr>
+                                  </tfoot>
+                            </table>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 12: Settings Page</h2>
+        <iframe id="iframe-settings" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavApp">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item active" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2"><i class="bi bi-gear-fill me-2"></i>Settings</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group shadow-sm sticky-lg-top" style="top: 80px;">
+                  <a href="#profile-section" class="list-group-item list-group-item-action active" aria-current="true">
+                   <i class="bi bi-person-badge me-2"></i>Profile
+                  </a>
+                  <a href="#security-section" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock me-2"></i>Account Security</a>
+                  <a href="#billing-section" class="list-group-item list-group-item-action"><i class="bi bi-credit-card me-2"></i>Billing</a>
+                  <a href="#notifications-section" class="list-group-item list-group-item-action"><i class="bi bi-bell me-2"></i>Notifications</a>
+                  <a href="#api-section" class="list-group-item list-group-item-action"><i class="bi bi-code-slash me-2"></i>API Access</a>
+                   <a href="#delete-section" class="list-group-item list-group-item-action text-danger"><i class="bi bi-trash3 me-2"></i>Delete Account</a>
+                </div>
+            </div>
+             <div class="col-md-9">
+                <!-- Profile Section -->
+                <section id="profile-section" class="mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0"><i class="bi bi-person-badge me-2"></i>Profile Information</h4>
+                        </div>
+                        <div class="card-body">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="profileName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="profileName" value="User Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="profileEmail" value="user@example.com" disabled readonly>
+                                     <div class="form-text">Email cannot be changed. Contact support if needed.</div>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="profileCompany" class="form-label">Company (Optional)</label>
+                                    <input type="text" class="form-control" id="profileCompany" placeholder="Your Company Name">
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="profileTimezone" class="form-label">Timezone</label>
+                                     <select class="form-select" id="profileTimezone">
+                                      <option>Select timezone...</option>
+                                      <option value="UTC-8" selected>(UTC-08:00) Pacific Time (US & Canada)</option>
+                                      <option value="UTC-5">(UTC-05:00) Eastern Time (US & Canada)</option>
+                                       <option value="UTC">(UTC) Coordinated Universal Time</option>
+                                        <option value="UTC+1">(UTC+01:00) Amsterdam, Berlin, Rome</option>
+                                        <option value="UTC+10">(UTC+10:00) Brisbane, Sydney</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i>Save Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account Security Section -->
+                 <section id="security-section" class="mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                             <h4 class="mb-0"><i class="bi bi-shield-lock me-2"></i>Account Security</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Change Password</h5>
+                             <form>
+                                <div class="mb-3">
+                                    <label for="currentPassword" class="form-label">Current Password</label>
+                                     <input type="password" class="form-control" id="currentPassword" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                         <div class="form-text">Minimum 8 characters.</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-key me-1"></i>Change Password</button>
+                             </form>
+                             <hr>
+                              <h5>Two-Factor Authentication (2FA)</h5>
+                              <p>Status: <span class="badge bg-danger">Disabled</span></p>
+                              <p>Add an extra layer of security to your account.</p>
+                              <button type="button" class="btn btn-success"><i class="bi bi-shield-check me-1"></i>Enable 2FA</button>
+                        </div>
+                    </div>
+                 </section>
+
+                 <!-- Billing Section (Placeholder) -->
+                 <section id="billing-section" class="mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                             <h4 class="mb-0"><i class="bi bi-credit-card me-2"></i>Billing</h4>
+                        </div>
+                         <div class="card-body">
+                            <p>Current Plan: <strong>Pro Plan ($29/month)</strong></p>
+                            <p>Next Billing Date: October 31, 2023</p>
+                            <p>Payment Method: Visa ending in **** 1234</p>
+                            <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-receipt me-1"></i>View Invoices</a>
+                             <a href="#" class="btn btn-outline-secondary"><i class="bi bi-pencil-square me-1"></i>Change Plan / Payment</a>
+                        </div>
+                    </div>
+                 </section>
+
+                  <!-- Notifications Section (Placeholder) -->
+                  <section id="notifications-section" class="mb-5">
+                    <div class="card shadow-sm">
+                         <div class="card-header bg-light">
+                            <h4 class="mb-0"><i class="bi bi-bell me-2"></i>Notifications</h4>
+                        </div>
+                         <div class="card-body">
+                             <p>Choose how you want to be notified.</p>
+                                <div class="form-check form-switch mb-2">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="notifyWeeklySummary" checked>
+                                  <label class="form-check-label" for="notifyWeeklySummary">Weekly Performance Summary Email</label>
+                                </div>
+                                <div class="form-check form-switch mb-2">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="notifyNewFeatures">
+                                  <label class="form-check-label" for="notifyNewFeatures">New Feature Announcements</label>
+                                </div>
+                                 <div class="form-check form-switch mb-2">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="notifyBilling" checked>
+                                  <label class="form-check-label" for="notifyBilling">Billing and Subscription Updates</label>
+                                </div>
+                             <button type="submit" class="btn btn-primary mt-3"><i class="bi bi-save me-1"></i>Save Notification Preferences</button>
+                        </div>
+                    </div>
+                 </section>
+
+                 <!-- API Access Section (Placeholder) -->
+                 <section id="api-section" class="mb-5">
+                     <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0"><i class="bi bi-code-slash me-2"></i>API Access</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Use our API to integrate link management into your own applications.</p>
+                            <p>Your API Key: <code>****************************************</code> <button class="btn btn-sm btn-outline-secondary py-0 px-1 ms-1" title="Copy Key"><i class="bi bi-clipboard"></i></button> <button class="btn btn-sm btn-outline-warning py-0 px-1 ms-1" title="Regenerate Key"><i class="bi bi-arrow-clockwise"></i></button> </p>
+                            <a href="#" class="btn btn-outline-info"><i class="bi bi-book me-1"></i>View API Documentation</a>
+                        </div>
+                    </div>
+                 </section>
+
+                  <!-- Delete Account Section -->
+                 <section id="delete-section" class="mb-5">
+                     <div class="card border-danger shadow-sm">
+                        <div class="card-header bg-danger text-white">
+                            <h4 class="mb-0"><i class="bi bi-exclamation-triangle me-2"></i>Delete Account</h4>
+                        </div>
+                        <div class="card-body">
+                             <p class="text-danger fw-bold">This action is irreversible!</p>
+                             <p>Deleting your account will permanently remove all your links, analytics data, and personal information. This cannot be undone.</p>
+                             <button type="button" class="btn btn-danger"><i class="bi bi-trash3 me-1"></i>Delete My Account Permanently</button>
+                        </div>
+                    </div>
+                 </section>
+
+            </div>
+        </div>
+    </div>
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 13: About Page</h2>
+        <iframe id="iframe-about" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavApp">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="pt-3 pb-2 mb-4 border-bottom">
+            <h1 class="h2"><i class="bi bi-info-circle me-2"></i>About Affiliate Link Manager</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="card-title mb-3">Our Mission</h3>
+                        <p class="lead">To empower affiliate marketers with the best tools to organize, track, and optimize their links for maximum efficiency and earnings.</p>
+                        <p>We understand the challenges faced by modern affiliate marketers – juggling countless links across multiple platforms, struggling to attribute conversions accurately, and spending too much time on manual tracking. Affiliate Link Manager was born out of a desire to solve these problems.</p>
+                        <p>Our platform provides a simple yet powerful interface to centralize all your affiliate links. We offer robust tracking features, insightful analytics, and automation tools designed to save you time and help you make data-driven decisions.</p>
+
+                        <h4 class="mt-4">Why Choose Us?</h4>
+                        <ul>
+                            <li><strong>Simplicity:</strong> An intuitive interface that is easy to learn and use.</li>
+                            <li><strong>Power:</strong> Advanced tracking, reporting, and management features.</li>
+                            <li><strong>Reliability:</strong> Built on scalable infrastructure for consistent performance.</li>
+                            <li><strong>Support:</strong> Dedicated customer support to help you succeed.</li>
+                         </ul>
+
+                        <h4 class="mt-4">Our Team</h4>
+                         <p>We are a small, passionate team of developers, designers, and marketers based in Tech City. We believe in building software that genuinely helps our users achieve their goals. [Placeholder: Add team member details or photos if desired].</p>
+
+                        <h4 class="mt-4">Get in Touch</h4>
+                        <p>We value your feedback and are always looking for ways to improve. Visit our <a href="#">Contact Page</a> to send us a message or find our support email.</p>
+                   </div>
+                </div>
+            </div>
+             <div class="col-lg-4">
+                 <div class="card bg-light border shadow-sm sticky-lg-top" style="top: 80px;">
+                     <div class="card-body">
+                         <h5 class="card-title"><i class="bi bi-link-45deg me-2"></i>Quick Links</h5>
+                         <ul class="list-unstyled">
+                             <li class="mb-2"><a href="#"><i class="bi bi-list-check me-2"></i>Features Overview</a></li>
+                             <li class="mb-2"><a href="#"><i class="bi bi-tags-fill me-2"></i>Pricing Plans</a></li>
+                             <li class="mb-2"><a href="#"><i class="bi bi-question-circle-fill me-2"></i>Help & Support</a></li>
+                             <li class="mb-2"><a href="#"><i class="bi bi-file-text-fill me-2"></i>Terms of Service</a></li>
+                              <li><a href="#"><i class="bi bi-shield-lock-fill me-2"></i>Privacy Policy</a></li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </div>
+
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Affiliate Link Manager | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <h2>State 14: Contact Page</h2>
+        <iframe id="iframe-contact" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Affiliate Link Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-link-45deg me-2"></i>Affiliate Link Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavApp" aria-controls="navbarNavApp" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavApp">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-grid-1x2-fill me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill me-1"></i>Add Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-bar-chart-line-fill me-1"></i>Analytics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle-fill me-1"></i>About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <i class="bi bi-person-circle me-1"></i>User Name
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="pt-3 pb-2 mb-4 border-bottom">
+            <h1 class="h2"><i class="bi bi-envelope-paper me-2"></i>Contact Us</h1>
+        </div>
+        <p class="lead">We appreciate your interest! Please use the form below to send us your questions, feedback, or support requests.</p>
+
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <!-- Success/Error Alert Placeholder -->
+                         <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+                              <i class="bi bi-check-circle-fill me-2"></i>Your message has been sent successfully! We'll get back to you soon.
+                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div> -->
+                         <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                               <i class="bi bi-exclamation-triangle-fill me-2"></i>Please fill out all required fields.
+                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div> -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label fw-bold">Your Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label fw-bold">Your Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email address" value="user@example.com" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="contactSubject" class="form-label fw-bold">Subject <span class="text-danger">*</span></label>
+                                <select class="form-select" id="contactSubject" required>
+                                    <option value="" selected disabled>-- Select a Subject --</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Technical Support">Technical Support</option>
+                                    <option value="Billing Question">Billing Question</option>
+                                    <option value="Feature Request">Feature Request</option>
+                                    <option value="Feedback">Feedback</option>
+                                     <option value="Other">Other</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="contactMessage" class="form-label fw-bold">Message <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="contactMessage" rows="6" placeholder="Enter your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-send-fill me-2"></i>Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card bg-light border shadow-sm mb-4 sticky-lg-top" style="top: 80px;">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-info-circle-fill me-2"></i>Contact Information</h5>
+                        <hr>
+                        <p><i class="bi bi-envelope-fill me-2 text-primary"></i> Email Support:<br><a href="mailto:support@affiliatelinkmanager.com">support@affiliatelinkmanager.com</a></p>
+                        <p><i class="bi bi-life-preserver me-2 text-success"></i> Help Center:<br><a href="#">Visit our Help Docs</a></p>
+                        <p><i class="bi bi-geo-alt-fill me-2 text-danger"></i> Mailing Address:<br> 123 App Street, Suite 100<br>Tech City, TX 75001<br>United States</p>
+
+                        <h5 class="mt-4 card-title"><i class="bi bi-clock-fill me-2"></i>Business Hours</h5>
+                        <hr>
+                        <p class="mb-0">Monday - Friday</p>
+                        <p>9:00 AM - 5:00 PM (CST / UTC-6)</p>
+                        <p class="fst-italic">We typically respond to inquiries within 24 business hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-white text-center text-lg-start mt-5 border-top">
+       <div class="text-center p-3">
+        © 2023 Affiliate Link Manager | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Habit Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Home</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container text-center py-5'>
+        <h1 class='display-4'>Build Better Habits, One Day at a Time</h1>
+        <p class='lead'>Track your progress, stay motivated, and achieve your goals with Habit Tracker.</p>
+        <a href='#' class='btn btn-primary btn-lg mt-3 mx-2'>Get Started - Sign Up</a>
+        <a href='#' class='btn btn-secondary btn-lg mt-3 mx-2'>Learn More</a>
+    </div>
+
+    <div class='container py-5'>
+        <div class='row'>
+            <div class='col-md-4'>
+                <div class='card text-center mb-3'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Track Your Habits</h5>
+                        <p class='card-text'>Easily monitor your daily routines and see your streaks grow.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='card text-center mb-3'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Visualize Progress</h5>
+                        <p class='card-text'>Charts and statistics help you understand your consistency.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='card text-center mb-3'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Stay Motivated</h5>
+                        <p class='card-text'>Set reminders and celebrate milestones to keep going.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - About</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-5'>
+        <h1>About Habit Tracker</h1>
+        <p class='lead'>Building consistency is key to achieving long-term goals. Habit Tracker is designed to help you establish, monitor, and maintain positive daily habits and routines.</p>
+
+        <h2 class='mt-4'>Our Mission</h2>
+        <p>Our mission is to provide a simple, intuitive, and effective tool that empowers individuals to take control of their habits and build a better version of themselves. We believe that small, consistent actions lead to significant transformations over time.</p>
+
+        <h2 class='mt-4'>Features</h2>
+        <ul>
+            <li>Create and customize your habits.</li>
+            <li>Track daily completion with a simple interface.</li>
+            <li>Visualize your progress with streaks and charts.</li>
+            <li>Set reminders to stay on track.</li>
+            <li>Review your performance over weeks and months.</li>
+        </ul>
+
+        <h2 class='mt-4'>Why Choose Us?</h2>
+        <p>We focus on the core aspects of habit formation without overwhelming you with unnecessary features. Our clean design and user-friendly approach make tracking habits effortless, allowing you to focus on the actions themselves.</p>
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5 fixed-bottom'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Sign Up</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .signup-card { max-width: 450px; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='card signup-card shadow-sm mt-5 pt-5'>
+        <div class='card-body p-4'>
+            <h3 class='card-title text-center mb-4'>Create Your Account</h3>
+            <form>
+                <div class='mb-3'>
+                    <label for='signupName' class='form-label'>Full Name</label>
+                    <input type='text' class='form-control' id='signupName' placeholder='Enter your name' required>
+                </div>
+                <div class='mb-3'>
+                    <label for='signupEmail' class='form-label'>Email address</label>
+                    <input type='email' class='form-control' id='signupEmail' placeholder='name@example.com' required>
+                </div>
+                <div class='mb-3'>
+                    <label for='signupPassword' class='form-label'>Password</label>
+                    <input type='password' class='form-control' id='signupPassword' placeholder='Create a password' required>
+                </div>
+                <div class='mb-3'>
+                    <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                    <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm your password' required>
+                </div>
+                <div class='d-grid'>
+                    <button type='submit' class='btn btn-primary btn-block'>Sign Up</button>
+                </div>
+                <p class='text-center mt-3 mb-0'>
+                    Already have an account? <a href='#'>Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 4: Sign Up Page (with Validation Errors) -->
+    <h2>State 4: Sign Up Page (with Validation Errors)</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Sign Up Error</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .signup-card { max-width: 450px; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+         <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='card signup-card shadow-sm mt-5 pt-5'>
+        <div class='card-body p-4'>
+            <h3 class='card-title text-center mb-4'>Create Your Account</h3>
+             <div class='alert alert-danger' role='alert'>
+                Please correct the errors below.
+             </div>
+            <form>
+                <div class='mb-3'>
+                    <label for='signupName' class='form-label'>Full Name</label>
+                    <input type='text' class='form-control' id='signupName' placeholder='Enter your name' required>
+                </div>
+                <div class='mb-3'>
+                    <label for='signupEmail' class='form-label'>Email address</label>
+                    <input type='email' class='form-control is-invalid' id='signupEmail' placeholder='name@example.com' required value='invalid-email'>
+                     <div class='invalid-feedback'>
+                        Please provide a valid email address.
+                    </div>
+                </div>
+                <div class='mb-3'>
+                    <label for='signupPassword' class='form-label'>Password</label>
+                    <input type='password' class='form-control is-invalid' id='signupPassword' placeholder='Create a password' required value='short'>
+                    <div class='invalid-feedback'>
+                        Password must be at least 8 characters long.
+                    </div>
+                </div>
+                <div class='mb-3'>
+                    <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                    <input type='password' class='form-control is-invalid' id='confirmPassword' placeholder='Confirm your password' required value='mismatch'>
+                     <div class='invalid-feedback'>
+                        Passwords do not match.
+                    </div>
+                </div>
+                <div class='d-grid'>
+                    <button type='submit' class='btn btn-primary btn-block'>Sign Up</button>
+                </div>
+                <p class='text-center mt-3 mb-0'>
+                    Already have an account? <a href='#'>Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Login</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .login-card { max-width: 400px; width: 100%; }
+    </style>
+</head>
+<body>
+     <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light active' aria-current='page' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='card login-card shadow-sm mt-5 pt-5'>
+        <div class='card-body p-4'>
+            <h3 class='card-title text-center mb-4'>Login to Your Account</h3>
+            <form>
+                <div class='mb-3'>
+                    <label for='loginEmail' class='form-label'>Email address</label>
+                    <input type='email' class='form-control' id='loginEmail' placeholder='name@example.com' required>
+                </div>
+                <div class='mb-3'>
+                    <label for='loginPassword' class='form-label'>Password</label>
+                    <input type='password' class='form-control' id='loginPassword' placeholder='Enter your password' required>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                </div>
+                <div class='d-grid'>
+                    <button type='submit' class='btn btn-primary btn-block'>Login</button>
+                </div>
+                 <p class='text-center mt-3 mb-0'>
+                    <a href='#'>Forgot password?</a>
+                </p>
+                <hr>
+                <p class='text-center mb-0'>
+                    Don't have an account? <a href='#'>Sign up now</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 6: Login Page (with Error) -->
+    <h2>State 6: Login Page (with Error)</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Login Error</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <style>
+        body { background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .login-card { max-width: 400px; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Sign Up</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-outline-light active' aria-current='page' href='#'>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='card login-card shadow-sm mt-5 pt-5'>
+        <div class='card-body p-4'>
+            <h3 class='card-title text-center mb-4'>Login to Your Account</h3>
+             <div class='alert alert-danger' role='alert'>
+                Invalid email or password. Please try again.
+             </div>
+            <form>
+                <div class='mb-3'>
+                    <label for='loginEmail' class='form-label'>Email address</label>
+                    <input type='email' class='form-control is-invalid' id='loginEmail' placeholder='name@example.com' required value='user@example.com'>
+                </div>
+                <div class='mb-3'>
+                    <label for='loginPassword' class='form-label'>Password</label>
+                    <input type='password' class='form-control is-invalid' id='loginPassword' placeholder='Enter your password' required value='wrongpass'>
+                      <div class='invalid-feedback'>
+                        Incorrect password.
+                     </div>
+                </div>
+                <div class='mb-3 form-check'>
+                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                </div>
+                <div class='d-grid'>
+                    <button type='submit' class='btn btn-primary btn-block'>Login</button>
+                </div>
+                 <p class='text-center mt-3 mb-0'>
+                    <a href='#'>Forgot password?</a>
+                </p>
+                <hr>
+                <p class='text-center mb-0'>
+                    Don't have an account? <a href='#'>Sign up now</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 7: Dashboard/Home (Logged In) -->
+    <h2>State 7: Dashboard/Home (Logged In)</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Dashboard</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Dashboard</a></li>
+                     <li class='nav-item'><a class='nav-link' href='#'>Add Habit</a></li>
+                 </ul>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-gear me-2'></i>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right me-2'></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-4'>
+        <div class='d-flex justify-content-between align-items-center mb-4'>
+            <h2>Your Habits - Today</h2>
+            <a href='#' class='btn btn-primary'><i class='bi bi-plus-circle me-1'></i> Add New Habit</a>
+        </div>
+
+        <div class='card mb-3'>
+            <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1'>Drink 8 Glasses of Water</h5>
+                    <p class='card-text text-muted mb-0'>Goal: Daily | Streak: <span class='fw-bold text-success'>5 days</span></p>
+                </div>
+                <div>
+                    <button class='btn btn-outline-secondary btn-sm me-1'><i class='bi bi-pencil-square'></i> Edit</button>
+                    <button class='btn btn-success btn-sm'><i class='bi bi-check-lg'></i> Mark Done</button>
+                </div>
+            </div>
+        </div>
+
+        <div class='card mb-3'>
+            <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1'>Read for 30 Minutes</h5>
+                    <p class='card-text text-muted mb-0'>Goal: Daily | Streak: <span class='fw-bold text-success'>12 days</span></p>
+                </div>
+                 <div>
+                    <button class='btn btn-outline-secondary btn-sm me-1'><i class='bi bi-pencil-square'></i> Edit</button>
+                    <button class='btn btn-outline-secondary btn-sm disabled' disabled><i class='bi bi-check-all'></i> Done</button>
+                </div>
+            </div>
+             <div class='progress' style='height: 5px;'>
+              <div class='progress-bar bg-success' role='progressbar' style='width: 100%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div>
+            </div>
+        </div>
+
+         <div class='card mb-3'>
+            <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1'>Morning Exercise</h5>
+                    <p class='card-text text-muted mb-0'>Goal: Mon, Wed, Fri | Streak: <span class='fw-bold text-warning'>0 days</span> (Missed yesterday)</p>
+                </div>
+                <div>
+                    <button class='btn btn-outline-secondary btn-sm me-1'><i class='bi bi-pencil-square'></i> Edit</button>
+                    <button class='btn btn-success btn-sm'><i class='bi bi-check-lg'></i> Mark Done</button>
+                </div>
+            </div>
+        </div>
+
+         <div class='card mb-3 bg-light'>
+             <div class='card-body d-flex justify-content-between align-items-center'>
+                <div>
+                    <h5 class='card-title mb-1 text-muted'>Meditate 10 Minutes (Paused)</h5>
+                    <p class='card-text text-muted mb-0'>Goal: Daily | Streak: <span class='fw-bold'>Paused</span></p>
+                </div>
+                 <div>
+                    <button class='btn btn-outline-secondary btn-sm me-1'><i class='bi bi-pencil-square'></i> Edit</button>
+                    <button class='btn btn-outline-secondary btn-sm' disabled><i class='bi bi-play-fill'></i> Resume</button>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 8: Add New Habit Page -->
+    <h2>State 8: Add New Habit Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Add Habit</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+         <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                     <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Add Habit</a></li>
+                 </ul>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-gear me-2'></i>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right me-2'></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-4'>
+        <h2>Add a New Habit</h2>
+        <p>Define the habit you want to build.</p>
+
+        <form class='card p-4 mt-4'>
+            <div class='mb-3'>
+                <label for='habitName' class='form-label'>Habit Name</label>
+                <input type='text' class='form-control' id='habitName' placeholder='e.g., Go for a run' required>
+            </div>
+
+            <div class='mb-3'>
+                <label for='habitDescription' class='form-label'>Description (Optional)</label>
+                <textarea class='form-control' id='habitDescription' rows='2' placeholder='Any specific details or notes?'></textarea>
+            </div>
+
+            <div class='mb-3'>
+                 <label class='form-label'>Frequency</label>
+                 <div>
+                    <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='frequencyOptions' id='freqDaily' value='daily' checked>
+                        <label class='form-check-label' for='freqDaily'>Daily</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='frequencyOptions' id='freqWeekly' value='weekly'>
+                        <label class='form-check-label' for='freqWeekly'>Specific days of the week</label>
+                    </div>
+                 </div>
+            </div>
+
+             <div class='mb-3' id='weeklyDays'> <!-- Show this only if 'Specific days' is selected -->
+                 <label class='form-label'>Select Days:</label>
+                 <div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='mon' id='dayMon'>
+                        <label class='form-check-label' for='dayMon'>Mon</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='tue' id='dayTue'>
+                        <label class='form-check-label' for='dayTue'>Tue</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='wed' id='dayWed'>
+                        <label class='form-check-label' for='dayWed'>Wed</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='thu' id='dayThu'>
+                        <label class='form-check-label' for='dayThu'>Thu</label>
+                    </div>
+                      <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='fri' id='dayFri'>
+                        <label class='form-check-label' for='dayFri'>Fri</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='sat' id='daySat'>
+                        <label class='form-check-label' for='daySat'>Sat</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='checkbox' value='sun' id='daySun'>
+                        <label class='form-check-label' for='daySun'>Sun</label>
+                    </div>
+                 </div>
+            </div>
+
+
+            <div class='mb-3'>
+                <label for='reminderTime' class='form-label'>Reminder Time (Optional)</label>
+                <input type='time' class='form-control' id='reminderTime'>
+            </div>
+
+            <div class='d-flex justify-content-end'>
+                <button type='button' class='btn btn-secondary me-2'>Cancel</button>
+                <button type='submit' class='btn btn-primary'>Add Habit</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 9: Add New Habit Page (with Validation Errors) -->
+    <h2>State 9: Add New Habit Page (with Validation Errors)</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Add Habit Error</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+         <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                     <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Add Habit</a></li>
+                 </ul>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-gear me-2'></i>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right me-2'></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-4'>
+        <h2>Add a New Habit</h2>
+        <p>Define the habit you want to build.</p>
+        <div class='alert alert-danger' role='alert'>
+            Please fix the errors in the form.
+        </div>
+
+        <form class='card p-4 mt-4'>
+            <div class='mb-3'>
+                <label for='habitName' class='form-label'>Habit Name</label>
+                <input type='text' class='form-control is-invalid' id='habitName' placeholder='e.g., Go for a run' required value=''>
+                 <div class='invalid-feedback'>
+                    Habit name cannot be empty.
+                </div>
+            </div>
+
+            <div class='mb-3'>
+                <label for='habitDescription' class='form-label'>Description (Optional)</label>
+                <textarea class='form-control' id='habitDescription' rows='2' placeholder='Any specific details or notes?'></textarea>
+            </div>
+
+            <div class='mb-3'>
+                 <label class='form-label'>Frequency</label>
+                 <div>
+                    <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='frequencyOptions' id='freqDaily' value='daily'>
+                        <label class='form-check-label' for='freqDaily'>Daily</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input is-invalid' type='radio' name='frequencyOptions' id='freqWeekly' value='weekly' checked>
+                        <label class='form-check-label' for='freqWeekly'>Specific days of the week</label>
+                    </div>
+                 </div>
+            </div>
+
+             <div class='mb-3 border border-danger p-2 rounded' id='weeklyDays'> <!-- Show this only if 'Specific days' is selected -->
+                 <label class='form-label text-danger'>Select Days:</label>
+                 <div>
+                    <!-- Checkboxes omitted for brevity, assume none are checked -->
+                 </div>
+                 <div class='text-danger small mt-1'>
+                    Please select at least one day for weekly habits.
+                </div>
+            </div>
+
+
+            <div class='mb-3'>
+                <label for='reminderTime' class='form-label'>Reminder Time (Optional)</label>
+                <input type='time' class='form-control' id='reminderTime'>
+            </div>
+
+            <div class='d-flex justify-content-end'>
+                <button type='button' class='btn btn-secondary me-2'>Cancel</button>
+                <button type='submit' class='btn btn-primary'>Add Habit</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 10: Habit Details/Edit Page -->
+    <h2>State 10: Habit Details/Edit Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Edit Habit</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+         <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                     <li class='nav-item'><a class='nav-link' href='#'>Add Habit</a></li>
+                 </ul>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-gear me-2'></i>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right me-2'></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-4'>
+        <h2>Edit Habit: Drink 8 Glasses of Water</h2>
+        <p>Update the details for this habit.</p>
+
+        <form class='card p-4 mt-4'>
+            <div class='mb-3'>
+                <label for='habitName' class='form-label'>Habit Name</label>
+                <input type='text' class='form-control' id='habitName' value='Drink 8 Glasses of Water' required>
+            </div>
+
+            <div class='mb-3'>
+                <label for='habitDescription' class='form-label'>Description (Optional)</label>
+                <textarea class='form-control' id='habitDescription' rows='2' placeholder='Any specific details or notes?'></textarea>
+            </div>
+
+            <div class='mb-3'>
+                 <label class='form-label'>Frequency</label>
+                 <div>
+                    <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='frequencyOptions' id='freqDaily' value='daily' checked>
+                        <label class='form-check-label' for='freqDaily'>Daily</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='frequencyOptions' id='freqWeekly' value='weekly'>
+                        <label class='form-check-label' for='freqWeekly'>Specific days of the week</label>
+                    </div>
+                 </div>
+            </div>
+             <!-- Assume Daily is selected, so weekly days section is hidden -->
+
+            <div class='mb-3'>
+                <label for='reminderTime' class='form-label'>Reminder Time (Optional)</label>
+                <input type='time' class='form-control' id='reminderTime' value='08:00'>
+            </div>
+
+            <hr>
+
+             <div class='mb-3'>
+                 <label class='form-label'>Habit Status</label>
+                 <div>
+                    <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='statusOptions' id='statusActive' value='active' checked>
+                        <label class='form-check-label' for='statusActive'>Active</label>
+                    </div>
+                     <div class='form-check form-check-inline'>
+                        <input class='form-check-input' type='radio' name='statusOptions' id='statusPaused' value='paused'>
+                        <label class='form-check-label' for='statusPaused'>Paused</label>
+                    </div>
+                 </div>
+            </div>
+
+            <div class='d-flex justify-content-between align-items-center'>
+                <button type='button' class='btn btn-danger'><i class='bi bi-trash me-1'></i> Delete Habit</button>
+                <div>
+                    <button type='button' class='btn btn-secondary me-2'>Cancel</button>
+                    <button type='submit' class='btn btn-primary'>Save Changes</button>
+                </div>
+            </div>
+        </form>
+
+         <div class='mt-5'>
+            <h4>Completion History (Last 7 Days)</h4>
+            <ul class='list-group'>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    Today (Nov 20)
+                    <span class='badge bg-success rounded-pill'><i class='bi bi-check-lg'></i> Done</span>
+                </li>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    Yesterday (Nov 19)
+                    <span class='badge bg-success rounded-pill'><i class='bi bi-check-lg'></i> Done</span>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    Nov 18
+                    <span class='badge bg-danger rounded-pill'><i class='bi bi-x-lg'></i> Missed</span>
+                 </li>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    Nov 17
+                    <span class='badge bg-success rounded-pill'><i class='bi bi-check-lg'></i> Done</span>
+                 </li>
+                <!-- ... more history items -->
+            </ul>
+         </div>
+
+
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 11: Settings Page -->
+    <h2>State 11: Settings Page</h2>
+    <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Habit Tracker - Settings</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+         <div class='container'>
+            <a class='navbar-brand' href='#'>Habit Tracker</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                     <li class='nav-item'><a class='nav-link' href='#'>Add Habit</a></li>
+                 </ul>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false' aria-current='page'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item active' href='#'><i class='bi bi-gear me-2'></i>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right me-2'></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container py-4'>
+        <h2>Settings</h2>
+
+        <div class='row mt-4'>
+            <div class='col-md-8'>
+                 <div class='card mb-4'>
+                    <div class='card-header'>Profile Information</div>
+                    <div class='card-body'>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='profileName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='profileName' value='User Name' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='profileEmail' class='form-label'>Email Address</label>
+                                <input type='email' class='form-control' id='profileEmail' value='user@example.com' required>
+                                <div class='form-text'>Changing your email requires verification.</div>
+                            </div>
+                            <button type='submit' class='btn btn-primary'>Update Profile</button>
+                        </form>
+                    </div>
+                 </div>
+
+                 <div class='card mb-4'>
+                    <div class='card-header'>Change Password</div>
+                    <div class='card-body'>
+                         <form>
+                             <div class='mb-3'>
+                                <label for='currentPassword' class='form-label'>Current Password</label>
+                                <input type='password' class='form-control' id='currentPassword' required>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='newPassword' class='form-label'>New Password</label>
+                                <input type='password' class='form-control' id='newPassword' required>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='confirmNewPassword' class='form-label'>Confirm New Password</label>
+                                <input type='password' class='form-control' id='confirmNewPassword' required>
+                            </div>
+                            <button type='submit' class='btn btn-primary'>Change Password</button>
+                         </form>
+                    </div>
+                 </div>
+
+                 <div class='card mb-4'>
+                    <div class='card-header'>Notification Settings</div>
+                    <div class='card-body'>
+                        <div class='form-check form-switch mb-2'>
+                          <input class='form-check-input' type='checkbox' role='switch' id='emailNotifications' checked>
+                          <label class='form-check-label' for='emailNotifications'>Enable Email Notifications for Reminders</label>
+                        </div>
+                        <div class='form-check form-switch'>
+                          <input class='form-check-input' type='checkbox' role='switch' id='weeklySummary'>
+                          <label class='form-check-label' for='weeklySummary'>Receive Weekly Summary Report</label>
+                        </div>
+                        <button type='button' class='btn btn-primary mt-3'>Save Notification Settings</button>
+                    </div>
+                 </div>
+
+            </div>
+            <div class='col-md-4'>
+                <div class='card'>
+                    <div class='card-header'>Account Actions</div>
+                    <div class='card-body'>
+                         <p class='text-muted'>Manage your account data or delete your account permanently.</p>
+                         <button class='btn btn-outline-secondary w-100 mb-2'><i class='bi bi-download me-1'></i> Export My Data</button>
+                         <button class='btn btn-outline-danger w-100'><i class='bi bi-exclamation-triangle me-1'></i> Delete My Account</button>
+                         <small class='form-text text-muted mt-2 d-block'>Account deletion is permanent and cannot be undone.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class='bg-light text-center py-3 mt-5'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Habit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+</body>
+</html>

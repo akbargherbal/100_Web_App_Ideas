@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Signing App - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h1, h2 { margin-bottom: 20px; text-align: center; }
+        h2 { margin-top: 40px; color: #6c757d; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height */
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            display: block;
+            margin-bottom: 30px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        /* Adjust height for specific iframes if needed */
+        #iframe-state-7a, #iframe-state-11, #iframe-state-12 { height: 450px; }
+        #iframe-state-8a, #iframe-state-8b, #iframe-state-10 { height: 400px; }
+        #iframe-state-4 { height: 350px; }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4">Document Signing App - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe id="iframe-state-1" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary ms-2" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold">Effortless Electronic Signatures</h1>
+                <p class="lead mb-4">Securely sign and send documents online in minutes. Simple, fast, and legally binding.</p>
+                <a href="#" class="btn btn-primary btn-lg px-4 me-sm-3">Get Started Now</a>
+                <a href="#" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row mt-5 pt-5 text-start">
+             <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Upload & Prepare</h5>
+                        <p class="card-text">Easily upload your PDF, Word, or other document types. Place signature and text fields exactly where needed.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 mb-4">
+                 <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sign or Send</h5>
+                        <p class="card-text">Add your own electronic signature instantly, or invite others to sign via email with a secure link.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 mb-4">
+                 <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Track & Manage</h5>
+                        <p class="card-text">Monitor the status of your documents in real-time and access your signed files anytime from your dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe id="iframe-state-2" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary ms-2" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <h1 class="mb-4">About Document Signing App</h1>
+                <p class="lead">We believe signing documents should be simple, secure, and accessible to everyone.</p>
+                <p>Our mission is to provide an intuitive platform that streamlines the process of electronically signing documents, saving you time, paper, and hassle. Whether you need to sign a contract, approve an invoice, or finalize an agreement, our app offers a reliable solution.</p>
+
+                <h3 class="mt-5">Our Features</h3>
+                <ul>
+                    <li><strong>Easy Upload:</strong> Supports various file formats including PDF, DOCX, PNG, JPG.</li>
+                    <li><strong>Intuitive Interface:</strong> Place signature, initial, date, and text fields with drag-and-drop simplicity.</li>
+                    <li><strong>Secure Signing:</strong> Legally binding electronic signatures compliant with industry standards.</li>
+                    <li><strong>Flexible Options:</strong> Sign documents yourself or easily request signatures from others via email.</li>
+                    <li><strong>Real-time Tracking:</strong> Monitor the status of documents sent for signature.</li>
+                    <li><strong>Secure Storage:</strong> Access your signed documents anytime from your secure account.</li>
+                </ul>
+
+                 <h3 class="mt-5">Our Commitment</h3>
+                 <p>We are committed to data security and user privacy. All documents and signature data are encrypted and handled with the utmost care. Our platform is designed for reliability and ease of use, ensuring a smooth experience for all users.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 3: Upload Document -->
+    <h2>State 3: Upload Document</h2>
+    <iframe id="iframe-state-3" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Documents</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        user@example.com
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                       <h4 class="mb-0">Upload Your Document</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Select a file from your computer to begin the signing process. Supported formats: PDF, DOCX, PNG, JPG.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="documentFile" class="form-label">Document File</label>
+                                <input class="form-control" type="file" id="documentFile" required>
+                                <div class="form-text">Max file size: 25MB.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Upload and Prepare</button>
+                        </form>
+                    </div>
+                </div>
+                 <div class="text-center mt-3">
+                    <a href="#">&laquo; Back to My Documents</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 4: Upload Progress/Processing -->
+    <h2>State 4: Upload Progress/Processing</h2>
+    <iframe id="iframe-state-4" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Document - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 class="mb-4">Processing Your Document</h2>
+                <p>Please wait while we upload and prepare your document...</p>
+                <div class="progress my-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+                </div>
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3 text-muted">This may take a few moments depending on the file size.</p>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 5: Prepare Document - Add Field -->
+    <h2>State 5: Prepare Document - Add Field</h2>
+    <iframe id="iframe-state-5" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepare Document - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .document-viewer { background-color: #e9ecef; height: 450px; border: 1px solid #ced4da; display: flex; align-items: center; justify-content: center; text-align: center; color: #6c757d; overflow-y: auto; }
+        .toolbar { background-color: #f8f9fa; padding: 10px; border: 1px solid #dee2e6; border-radius: 0.25rem; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <div class="ms-auto">
+                 <button class="btn btn-secondary btn-sm">Save Draft</button>
+                 <button class="btn btn-primary btn-sm">Continue</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Sidebar/Toolbar -->
+            <div class="col-md-3">
+                <h5>Add Fields</h5>
+                <p class="small text-muted">Click or drag fields onto the document.</p>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-pen me-2"></i> Signature</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-type me-2"></i> Text</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-calendar-event me-2"></i> Date Signed</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-check-square me-2"></i> Checkbox</button>
+                </div>
+                <hr>
+                <h6>Document: contract_final.pdf</h6>
+                <p class="small text-muted mb-1">Pages: 3</p>
+                <p class="small text-muted">Uploaded: Oct 26, 2023</p>
+                 <a href="#" class="btn btn-sm btn-outline-danger w-100">Cancel</a>
+            </div>
+
+            <!-- Document Viewer -->
+            <div class="col-md-9">
+                <div class="document-viewer p-3">
+                    <div class="text-center">
+                        <i class="bi bi-file-earmark-text" style="font-size: 4rem;"></i>
+                        <p class="mt-2">Document Preview Area</p>
+                        <small>Click on the fields in the sidebar to add them here.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 6: Prepare Document - Field Added -->
+    <h2>State 6: Prepare Document - Field Added</h2>
+    <iframe id="iframe-state-6" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepare Document - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .document-viewer { background-color: #e9ecef; height: 450px; border: 1px solid #ced4da; position: relative; overflow: auto; }
+        .signature-field-placeholder { position: absolute; top: 150px; left: 100px; width: 150px; height: 40px; background-color: rgba(255, 235, 59, 0.5); border: 1px dashed #ffc107; text-align: center; line-height: 40px; font-size: 0.8rem; color: #856404; cursor: pointer; }
+        .text-field-placeholder { position: absolute; top: 220px; left: 100px; width: 200px; height: 30px; background-color: rgba(173, 216, 230, 0.5); border: 1px dashed #0dcaf0; text-align: left; padding-left: 5px; line-height: 30px; font-size: 0.8rem; color: #0a58ca; cursor: pointer; }
+        .toolbar { background-color: #f8f9fa; padding: 10px; border: 1px solid #dee2e6; border-radius: 0.25rem; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+             <div class="ms-auto">
+                 <button class="btn btn-secondary btn-sm">Save Draft</button>
+                 <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Continue
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#">Sign Myself</a></li>
+                      <li><a class="dropdown-item" href="#">Request Signature(s)</a></li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Sidebar/Toolbar -->
+            <div class="col-md-3">
+                <h5>Add Fields</h5>
+                 <p class="small text-muted">Click or drag fields onto the document.</p>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-pen me-2"></i> Signature</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-type me-2"></i> Text</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-calendar-event me-2"></i> Date Signed</button>
+                    <button class="btn btn-outline-secondary text-start"><i class="bi bi-check-square me-2"></i> Checkbox</button>
+                </div>
+                 <hr>
+                 <!-- Field Properties (Example for selected signature field) -->
+                 <h6>Field Properties</h6>
+                 <div class="mb-2">
+                    <label for="signerSelect" class="form-label form-label-sm">Assigned To:</label>
+                    <select class="form-select form-select-sm" id="signerSelect">
+                        <option selected>Me (user@example.com)</option>
+                        <option value="1">Add New Signer...</option>
+                    </select>
+                 </div>
+                 <div class="form-check form-switch form-check-sm">
+                   <input class="form-check-input" type="checkbox" role="switch" id="requiredFieldSwitch" checked>
+                   <label class="form-check-label" for="requiredFieldSwitch">Required Field</label>
+                 </div>
+                 <button class="btn btn-sm btn-outline-danger w-100 mt-3">Delete Field</button>
+                 <hr>
+                 <a href="#" class="btn btn-sm btn-outline-danger w-100">Cancel Setup</a>
+            </div>
+
+            <!-- Document Viewer -->
+            <div class="col-md-9">
+                <div class="document-viewer p-3">
+                     <div class="text-center text-muted small">Document Content Placeholder...</div>
+                     <!-- Placeholder Signature Field -->
+                     <div class="signature-field-placeholder">
+                         Sign Here (Me)
+                     </div>
+                     <!-- Placeholder Text Field -->
+                     <div class="text-field-placeholder">
+                         Enter Full Name
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+     <!-- State 7a: Sign Myself - Add Signature Modal -->
+    <h2>State 7a: Sign Myself - Add Signature (Modal Shown)</h2>
+    <iframe id="iframe-state-7a" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Signature - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Simulate modal visibility */
+        body { background-color: #fff; } /* Avoid inheriting outer background */
+        .modal-backdrop { position: fixed; top: 0; left: 0; z-index: 1040; width: 100vw; height: 100vh; background-color: #000; opacity: 0.5; }
+        .modal { display: block; z-index: 1050; } /* Force modal to display */
+        .draw-area { border: 1px dashed #ccc; height: 150px; background-color: #f8f9fa; cursor: crosshair; }
+        .typed-signature { font-family: "Brush Script MT", cursive; font-size: 2.5rem; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <!-- Background content (dimmed) -->
+    <div class="container mt-5 text-center text-muted">
+        <p>Document viewer area behind modal...</p>
+        <p>Click field to sign...</p>
+    </div>
+
+    <!-- Modal backdrop -->
+    <div class="modal-backdrop fade show"></div>
+
+    <!-- Modal Dialog for Adding Signature -->
+    <div class="modal fade show" id="addSignatureModal" tabindex="-1" aria-labelledby="addSignatureModalLabel" style="display: block;" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addSignatureModalLabel">Adopt Your Signature</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs mb-3" id="signatureTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="draw-tab" data-bs-toggle="tab" data-bs-target="#draw-panel" type="button" role="tab" aria-controls="draw-panel" aria-selected="true">Draw</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="type-tab" data-bs-toggle="tab" data-bs-target="#type-panel" type="button" role="tab" aria-controls="type-panel" aria-selected="false">Type</button>
+              </li>
+               <li class="nav-item" role="presentation">
+                <button class="nav-link" id="upload-tab" data-bs-toggle="tab" data-bs-target="#upload-panel" type="button" role="tab" aria-controls="upload-panel" aria-selected="false">Upload</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="signatureTabsContent">
+              <div class="tab-pane fade show active" id="draw-panel" role="tabpanel" aria-labelledby="draw-tab">
+                <p>Draw your signature in the box below:</p>
+                <div class="draw-area d-flex align-items-center justify-content-center text-muted">
+                  (Drawing Canvas Placeholder)
+                </div>
+                 <button class="btn btn-sm btn-outline-secondary mt-2">Clear</button>
+              </div>
+              <div class="tab-pane fade" id="type-panel" role="tabpanel" aria-labelledby="type-tab">
+                <p>Type your name:</p>
+                <input type="text" class="form-control mb-3" placeholder="Enter your full name" value="John Hancock">
+                <p>Preview:</p>
+                <div class="typed-signature text-center mb-3">John Hancock</div>
+                <button class="btn btn-sm btn-outline-secondary">Change Style</button>
+              </div>
+              <div class="tab-pane fade" id="upload-panel" role="tabpanel" aria-labelledby="upload-tab">
+                 <p>Upload an image of your signature:</p>
+                 <input class="form-control form-control-sm" type="file" id="sigImage">
+                 <div class="form-text">Accepted formats: PNG, JPG. Max size: 2MB.</div>
+              </div>
+            </div>
+             <hr>
+             <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="saveSignatureCheck">
+                <label class="form-check-label" for="saveSignatureCheck">
+                    Save signature for future use
+                </label>
+            </div>
+            <p class="small text-muted mt-3">By clicking Adopt and Sign, you agree that the signature provided will be the electronic representation of your signature for all purposes when you use it.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Adopt and Sign</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 8a: Sign Myself - Document Signed -->
+    <h2>State 8a: Sign Myself - Document Signed</h2>
+    <iframe id="iframe-state-8a" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Signed - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <div class="ms-auto">
+                <a href="#" class="btn btn-outline-primary">My Documents</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="alert alert-success d-flex align-items-center" role="alert">
+                  <i class="bi bi-check-circle-fill flex-shrink-0 me-2" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <h4 class="alert-heading">Document Signed Successfully!</h4>
+                    <p>You have successfully signed "contract_final.pdf".</p>
+                  </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">Signed Document Preview</div>
+                    <div class="card-body" style="background-color: #f8f9fa; height: 150px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <i class="bi bi-file-earmark-check-fill text-success" style="font-size: 3rem;"></i>
+                        <p class="mt-2 mb-0 text-muted">contract_final_signed.pdf</p>
+                         <p class="mt-1 mb-0 text-primary" style="font-family: 'Brush Script MT', cursive; font-size: 1.5rem;">John Hancock</p>
+                    </div>
+                    <div class="card-footer text-center">
+                         <a href="#" class="btn btn-primary"><i class="bi bi-download me-2"></i>Download Signed Document</a>
+                         <a href="#" class="btn btn-secondary ms-2">View Audit Trail</a>
+                    </div>
+                </div>
+
+                <p class="mt-4">A copy has also been saved to your 'My Documents' section.</p>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 7b: Request Signature - Enter Email -->
+    <h2>State 7b: Request Signature - Enter Email</h2>
+    <iframe id="iframe-state-7b" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Signature - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+             <div class="ms-auto">
+                <a href="#" class="btn btn-outline-secondary btn-sm">Back to Prepare</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="mb-4">Request Signature</h2>
+                 <p>Enter the details for the recipient(s) who need to sign "contract_final.pdf".</p>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Signer 1
+                    </div>
+                    <div class="card-body">
+                         <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="signer1Name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="signer1Name" placeholder="Full Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="signer1Email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="signer1Email" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more signer cards dynamically if needed -->
+                 <button type="button" class="btn btn-outline-secondary btn-sm mb-4"><i class="bi bi-plus-circle me-1"></i> Add Another Signer</button>
+
+                <div class="mb-3">
+                    <label for="emailSubject" class="form-label">Email Subject (Optional)</label>
+                    <input type="text" class="form-control" id="emailSubject" value="Signature Requested for contract_final.pdf">
+                </div>
+
+                 <div class="mb-3">
+                    <label for="emailMessage" class="form-label">Message (Optional)</label>
+                    <textarea class="form-control" id="emailMessage" rows="4" placeholder="Add a personal message to the recipient(s)..."></textarea>
+                </div>
+
+                 <div class="form-check mb-3">
+                   <input class="form-check-input" type="checkbox" value="" id="setSigningOrderCheck">
+                   <label class="form-check-label" for="setSigningOrderCheck">
+                    Set signing order (Signers will receive the document sequentially)
+                   </label>
+                 </div>
+
+                 <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Send Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 8b: Request Signature - Sent Confirmation -->
+    <h2>State 8b: Request Signature - Sent Confirmation</h2>
+    <iframe id="iframe-state-8b" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Sent - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+             <div class="ms-auto">
+                <a href="#" class="btn btn-primary">Go to My Documents</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="alert alert-success d-flex align-items-center" role="alert">
+                   <i class="bi bi-envelope-check-fill flex-shrink-0 me-2" style="font-size: 1.5rem;"></i>
+                   <div>
+                    <h4 class="alert-heading">Signature Request Sent!</h4>
+                    <p>The request to sign "contract_final.pdf" has been successfully sent to the recipient(s).</p>
+                  </div>
+                </div>
+
+                <div class="card mt-4 text-start">
+                    <div class="card-header">Summary</div>
+                    <div class="card-body">
+                        <p><strong>Document:</strong> contract_final.pdf</p>
+                        <p><strong>Sent To:</strong></p>
+                        <ul>
+                            <li>Jane Doe (jane.doe@example.com)</li>
+                            <!-- List other recipients if applicable -->
+                        </ul>
+                        <p>You will be notified by email once the document is completed by all signers. You can also track the status in your 'My Documents' section.</p>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-outline-secondary mt-4">Track Document Status</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 9: Recipient View - Signing -->
+    <h2>State 9: Recipient View - Signing</h2>
+    <iframe id="iframe-state-9" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review and Sign Document - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { background-color: #f8f9fa; } /* Recipient view often has simpler background */
+        .document-viewer { background-color: #fff; height: 400px; border: 1px solid #dee2e6; position: relative; overflow: auto; }
+        .signature-field-clickable { position: absolute; top: 150px; left: 100px; width: 150px; height: 40px; background-color: rgba(255, 235, 59, 0.7); border: 2px solid #ffc107; text-align: center; line-height: 36px; font-weight: bold; color: #856404; cursor: pointer; }
+        .signature-field-clickable:hover { background-color: rgba(255, 235, 59, 0.9); }
+        .top-bar { background-color: #e9ecef; padding: 10px 20px; border-bottom: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div>
+             <strong>Review & Sign:</strong> contract_final.pdf <br>
+             <small class="text-muted">Sent by user@example.com</small>
+        </div>
+        <div>
+            <button class="btn btn-secondary btn-sm me-2">Decline to Sign</button>
+            <button class="btn btn-primary btn-sm">Finish Signing</button>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Minimal Sidebar/Instructions -->
+            <div class="col-md-3">
+                <h6>Instructions</h6>
+                <p class="small text-muted">Please review the document below. Click on the yellow fields assigned to you to add your information or signature.</p>
+                <div class="alert alert-warning p-2 small" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-1"></i> Required fields remaining: 1
+                </div>
+                <hr>
+                 <button class="btn btn-sm btn-outline-secondary w-100 mb-2"><i class="bi bi-download me-1"></i> Download PDF</button>
+            </div>
+
+            <!-- Document Viewer for Recipient -->
+            <div class="col-md-9">
+                 <div class="document-viewer p-3">
+                     <div class="text-center text-muted small">Document Content Placeholder... Scroll to view all pages...</div>
+                     <!-- Clickable Signature Field -->
+                     <div class="signature-field-clickable">
+                         Click to Sign
+                     </div>
+                     <!-- Maybe other read-only fields -->
+                      <div style="position: absolute; top: 220px; left: 100px; color: #6c757d;">John Hancock (Read Only)</div>
+                </div>
+                 <!-- Placeholder for signature modal appearing on click - not shown open here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-4 border-top">
+      <div class="text-center p-2 small">
+        Powered by Document Signing App | <a href="#">Terms of Service</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 10: Recipient View - Signed Confirmation -->
+    <h2>State 10: Recipient View - Signed Confirmation</h2>
+    <iframe id="iframe-state-10" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signing Complete - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style> body { background-color: #f8f9fa; } </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                 <i class="bi bi-check2-circle text-success" style="font-size: 4rem;"></i>
+                 <h1 class="display-6 mt-3">Thank You for Signing!</h1>
+                 <p class="lead">You have successfully signed "contract_final.pdf".</p>
+                 <p>The sender (user@example.com) has been notified. You will receive a final copy by email once all parties have signed (if applicable).</p>
+
+                <div class="mt-4">
+                    <a href="#" class="btn btn-primary"><i class="bi bi-download me-2"></i>Download Your Signed Copy</a>
+                </div>
+
+                 <p class="text-muted mt-5 small">You can now safely close this window.</p>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-2 small">
+        Powered by Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 11: Error Example - Upload Failed -->
+    <h2>State 11: Error Example - Upload Failed</h2>
+    <iframe id="iframe-state-11" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Error - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+            <!-- Minimal nav for error state -->
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                  <div>
+                    <strong>Upload Failed!</strong> The selected file format (.zip) is not supported. Please upload a PDF, DOCX, PNG, or JPG file.
+                  </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                       <h4 class="mb-0">Upload Your Document</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Select a file from your computer to begin the signing process. Supported formats: PDF, DOCX, PNG, JPG.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="documentFile" class="form-label">Document File</label>
+                                <!-- Input potentially marked as invalid -->
+                                <input class="form-control is-invalid" type="file" id="documentFile" required aria-describedby="fileHelpBlock validationServerFileFeedback">
+                                 <div id="validationServerFileFeedback" class="invalid-feedback">
+                                     Invalid file type. Please select a supported format.
+                                 </div>
+                                <div id="fileHelpBlock" class="form-text">Max file size: 25MB.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Retry Upload</button>
+                        </form>
+                    </div>
+                </div>
+                 <div class="text-center mt-3">
+                    <a href="#">&laquo; Back to My Documents</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 border-top fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 12: Validation Example - Missing Email -->
+    <h2>State 12: Validation Example - Missing Email</h2>
+    <iframe id="iframe-state-12" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Error - Document Signing App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">DocuSign App</a>
+             <div class="ms-auto">
+                <a href="#" class="btn btn-outline-secondary btn-sm">Back to Prepare</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-warning" role="alert">
+                    <i class="bi bi-exclamation-circle-fill me-2"></i> Please correct the errors below before sending.
+                </div>
+
+                <h2 class="mb-4">Request Signature</h2>
+                 <p>Enter the details for the recipient(s) who need to sign "contract_final.pdf".</p>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Signer 1
+                    </div>
+                    <div class="card-body">
+                         <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-6">
+                                <label for="signer1Name" class="form-label">Name</label>
+                                <input type="text" class="form-control is-valid" id="signer1Name" value="Jane Doe" required>
+                                 <div class="valid-feedback">
+                                     Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="signer1Email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control is-invalid" id="signer1Email" placeholder="email@example.com" required>
+                                <div class="invalid-feedback">
+                                     Please provide a valid email address for the signer.
+                                </div>
+                            </div>
+                        </form> <!-- End inner form for validation styling -->
+                    </div>
+                </div>
+
+                <!-- Other fields -->
+                <div class="mb-3">
+                    <label for="emailSubject" class="form-label">Email Subject (Optional)</label>
+                    <input type="text" class="form-control" id="emailSubject" value="Signature Requested for contract_final.pdf">
+                </div>
+
+                 <div class="mb-3">
+                    <label for="emailMessage" class="form-label">Message (Optional)</label>
+                    <textarea class="form-control" id="emailMessage" rows="3" placeholder="Add a personal message..."></textarea>
+                </div>
+
+
+                 <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-send me-2"></i>Send Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 border-top">
+      <div class="text-center p-3">
+        © 2023 Document Signing App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+</body>
+</html>

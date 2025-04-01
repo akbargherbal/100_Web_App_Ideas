@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Reader UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; }
+        h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ebook Reader - UI Flow</h1>
+
+    <!-- Navigation Structure (Common across most states) -->
+    <script type="text/html" id="nav-logged-out">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ebook Reader</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </script>
+
+    <script type="text/html" id="nav-logged-in">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ebook Reader</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Library</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Upload Ebook</a>
+                         </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                         </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              user@example.com
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#">Settings</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                          </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </script>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Home</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link btn btn-primary text-white ms-2" href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container mt-5">
+                <div class="p-5 mb-4 bg-light rounded-3">
+                  <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Welcome to Ebook Reader</h1>
+                    <p class="col-md-8 fs-4">Your personal digital library. Upload, organize, and read your favorite ebooks anytime, anywhere.</p>
+                    <a href="#" class="btn btn-primary btn-lg" type="button">Login</a>
+                    <a href="#" class="btn btn-secondary btn-lg ms-2" type="button">Sign Up</a>
+                  </div>
+                </div>
+                 <div class="row align-items-md-stretch">
+                      <div class="col-md-6">
+                        <div class="h-100 p-5 text-bg-dark rounded-3">
+                          <h2>Read Anywhere</h2>
+                          <p>Access your ebooks on any device with a web browser. Supports various formats like EPUB, PDF, and MOBI.</p>
+                          <button class="btn btn-outline-light" type="button">Learn More</button>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                          <h2>Organize Your Library</h2>
+                          <p>Keep your collection tidy. Upload your books and manage them easily in your personal library.</p>
+                           <button class="btn btn-outline-secondary" type="button">Explore Features</button>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <footer class="py-3 my-4 border-top text-center">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 2: Login Page -->
+    <h2>State 2: Login Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Login</title>
+            <style> html, body { height: 100%; display: flex; flex-direction: column; } main { flex: 1; display: flex; align-items: center; justify-content: center; } </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main class="form-signin w-100 m-auto text-center">
+                 <div class="container" style="max-width: 400px;">
+                    <form>
+                        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <div class="checkbox mb-3">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                        <p class="mt-3">
+                           <a href="#">Forgot password?</a>
+                        </p>
+                         <p class="mt-3">
+                           Dont have an account? <a href="#">Sign up</a>
+                         </p>
+                        <p class="mt-5 mb-3 text-muted">© 2023 Ebook Reader</p>
+                    </form>
+                 </div>
+            </main>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+     <!-- State 3: Login Page (Error State) -->
+    <h2>State 3: Login Page (Error State)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Login Error</title>
+             <style> html, body { height: 100%; display: flex; flex-direction: column; } main { flex: 1; display: flex; align-items: center; justify-content: center; } </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <main class="form-signin w-100 m-auto text-center">
+                 <div class="container" style="max-width: 400px;">
+                     <form>
+                        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                         <div class="alert alert-danger" role="alert">
+                           Invalid email or password. Please try again.
+                         </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="wrong@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="wrongpass">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <div class="checkbox mb-3">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                         <p class="mt-3">
+                           <a href="#">Forgot password?</a>
+                        </p>
+                         <p class="mt-3">
+                           Dont have an account? <a href="#">Sign up</a>
+                         </p>
+                        <p class="mt-5 mb-3 text-muted">© 2023 Ebook Reader</p>
+                    </form>
+                 </div>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 4: Signup Page -->
+    <h2>State 4: Signup Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Sign Up</title>
+             <style> html, body { height: 100%; display: flex; flex-direction: column; } main { flex: 1; display: flex; align-items: center; justify-content: center; } </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+             <main class="form-signup w-100 m-auto text-center">
+                 <div class="container" style="max-width: 450px;">
+                    <form>
+                        <h1 class="h3 mb-3 fw-normal">Create your account</h1>
+
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                          <label for="floatingEmail">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                         <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+                          <label for="floatingConfirmPassword">Confirm Password</label>
+                        </div>
+
+                         <div class="checkbox mb-3">
+                          <label>
+                            <input type="checkbox" value="agree-terms"> I agree to the <a href="#">Terms of Service</a>
+                          </label>
+                        </div>
+
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                         <p class="mt-3">
+                           Already have an account? <a href="#">Sign in</a>
+                         </p>
+                        <p class="mt-5 mb-3 text-muted">© 2023 Ebook Reader</p>
+                    </form>
+                 </div>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 5: Signup Page (Error State) -->
+    <h2>State 5: Signup Page (Error State)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Sign Up Error</title>
+             <style> html, body { height: 100%; display: flex; flex-direction: column; } main { flex: 1; display: flex; align-items: center; justify-content: center; } </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+             <main class="form-signup w-100 m-auto text-center">
+                 <div class="container" style="max-width: 450px;">
+                    <form>
+                        <h1 class="h3 mb-3 fw-normal">Create your account</h1>
+
+                         <div class="alert alert-danger" role="alert">
+                           Please fix the errors below.
+                         </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control is-invalid" id="floatingEmail" placeholder="name@example.com" value="existing@example.com">
+                          <label for="floatingEmail">Email address</label>
+                           <div class="invalid-feedback">
+                            This email is already registered.
+                          </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" value="pass123">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                         <div class="form-floating mb-3">
+                          <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" value="pass456">
+                          <label for="floatingConfirmPassword">Confirm Password</label>
+                          <div class="invalid-feedback">
+                            Passwords do not match.
+                          </div>
+                        </div>
+
+                         <div class="checkbox mb-3">
+                          <label>
+                            <input type="checkbox" value="agree-terms" class="is-invalid"> I agree to the <a href="#">Terms of Service</a>
+                          </label>
+                           <div class="invalid-feedback d-block">
+                            You must agree to the terms.
+                          </div>
+                        </div>
+
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                         <p class="mt-3">
+                           Already have an account? <a href="#">Sign in</a>
+                         </p>
+                        <p class="mt-5 mb-3 text-muted">© 2023 Ebook Reader</p>
+                    </form>
+                 </div>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 6: Home Page (Logged In) / My Library -->
+    <h2>State 6: My Library (Logged In)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <title>My Library</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">My Library</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">Upload Ebook</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                             </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  user@example.com
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2>My Library</h2>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload Ebook</a>
+                </div>
+
+                <!-- Placeholder for ebook list/grid -->
+                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="https://via.placeholder.com/150x220/dee2e6/6c757d.png?text=Book+Cover" class="card-img-top" alt="Book Cover 1" style="height: 220px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                          <h5 class="card-title">Placeholder Book Title 1</h5>
+                          <p class="card-text small text-muted">Author Name</p>
+                          <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Read Now</a>
+                        </div>
+                         <div class="card-footer text-muted small">
+                            Added: 2 days ago
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                         <img src="https://via.placeholder.com/150x220/e9ecef/6c757d.png?text=Book+Cover" class="card-img-top" alt="Book Cover 2" style="height: 220px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                          <h5 class="card-title">Another Great Story</h5>
+                          <p class="card-text small text-muted">Jane Doe</p>
+                          <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Read Now</a>
+                        </div>
+                         <div class="card-footer text-muted small">
+                            Added: 1 week ago
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                         <img src="https://via.placeholder.com/150x220/adb5bd/495057.png?text=Book+Cover" class="card-img-top" alt="Book Cover 3" style="height: 220px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                           <h5 class="card-title">The Adventure Begins</h5>
+                          <p class="card-text small text-muted">John Smith</p>
+                          <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Read Now</a>
+                        </div>
+                         <div class="card-footer text-muted small">
+                            Added: 1 month ago
+                          </div>
+                      </div>
+                    </div>
+                     <div class="col">
+                      <div class="card h-100">
+                         <img src="https://via.placeholder.com/150x220/ced4da/6c757d.png?text=Book+Cover" class="card-img-top" alt="Book Cover 4" style="height: 220px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                          <h5 class="card-title">Mystery on the Web</h5>
+                          <p class="card-text small text-muted">A. N. Other</p>
+                           <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Read Now</a>
+                        </div>
+                         <div class="card-footer text-muted small">
+                            Added: 3 months ago
+                          </div>
+                      </div>
+                    </div>
+                    <!-- Add more placeholder cards as needed -->
+                  </div>
+
+            </div>
+            <footer class="py-3 my-4 mt-5 border-top text-center">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 7: Upload Ebook Page -->
+    <h2>State 7: Upload Ebook Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <title>Upload Ebook</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">My Library</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Upload Ebook</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                             </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  user@example.com
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+             <div class="container mt-5">
+                 <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <h2 class="mb-4 text-center">Upload New Ebook</h2>
+                         <div class="card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="ebookFile" class="form-label">Select Ebook File</label>
+                                        <input class="form-control" type="file" id="ebookFile" required accept=".epub,.pdf,.mobi">
+                                        <div class="form-text">Supported formats: EPUB, PDF, MOBI. Max size: 50MB.</div>
+                                    </div>
+                                     <!-- Optional: Add fields for Title/Author if needed, or rely on metadata extraction -->
+                                     <div class="mb-3">
+                                        <label for="bookTitle" class="form-label">Title (Optional)</label>
+                                        <input type="text" class="form-control" id="bookTitle" placeholder="Leave blank to use metadata">
+                                     </div>
+                                      <div class="mb-3">
+                                        <label for="bookAuthor" class="form-label">Author (Optional)</label>
+                                        <input type="text" class="form-control" id="bookAuthor" placeholder="Leave blank to use metadata">
+                                     </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+            <footer class="py-3 my-4 mt-5 border-top text-center fixed-bottom bg-light">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 8: Upload Ebook Page (Success State) -->
+    <h2>State 8: Upload Ebook Page (Success State)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <title>Upload Success</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">My Library</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Upload Ebook</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                             </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  user@example.com
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+             <div class="container mt-5">
+                 <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <h2 class="mb-4 text-center">Upload New Ebook</h2>
+
+                         <div class="alert alert-success d-flex align-items-center" role="alert">
+                           <i class="bi bi-check-circle-fill flex-shrink-0 me-2 fs-4"></i>
+                           <div>
+                             Ebook "Placeholder Book Title 1.epub" uploaded successfully! It will appear in your library shortly.
+                           </div>
+                         </div>
+
+                         <div class="card">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="ebookFile" class="form-label">Select Ebook File</label>
+                                        <input class="form-control" type="file" id="ebookFile" required accept=".epub,.pdf,.mobi">
+                                        <div class="form-text">Supported formats: EPUB, PDF, MOBI. Max size: 50MB.</div>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="bookTitle" class="form-label">Title (Optional)</label>
+                                        <input type="text" class="form-control" id="bookTitle" placeholder="Leave blank to use metadata">
+                                     </div>
+                                      <div class="mb-3">
+                                        <label for="bookAuthor" class="form-label">Author (Optional)</label>
+                                        <input type="text" class="form-control" id="bookAuthor" placeholder="Leave blank to use metadata">
+                                     </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload Another</button>
+                                    </div>
+                                </form>
+                                 <div class="text-center mt-3">
+                                     <a href="#">Go back to My Library</a>
+                                 </div>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+            <footer class="py-3 my-4 mt-5 border-top text-center fixed-bottom bg-light">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 9: Upload Ebook Page (Error State) -->
+    <h2>State 9: Upload Ebook Page (Error State)</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <title>Upload Error</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">My Library</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Upload Ebook</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                             </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  user@example.com
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+             <div class="container mt-5">
+                 <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <h2 class="mb-4 text-center">Upload New Ebook</h2>
+
+                         <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 fs-4"></i>
+                           <div>
+                             Upload failed. The selected file format (.txt) is not supported. Please upload EPUB, PDF, or MOBI.
+                           </div>
+                         </div>
+
+                        <div class="card border-danger">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="ebookFile" class="form-label">Select Ebook File</label>
+                                        <input class="form-control is-invalid" type="file" id="ebookFile" required accept=".epub,.pdf,.mobi">
+                                        <div class="invalid-feedback">
+                                            Invalid file format. Please select a supported file type.
+                                        </div>
+                                        <div class="form-text">Supported formats: EPUB, PDF, MOBI. Max size: 50MB.</div>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="bookTitle" class="form-label">Title (Optional)</label>
+                                        <input type="text" class="form-control" id="bookTitle" placeholder="Leave blank to use metadata">
+                                     </div>
+                                      <div class="mb-3">
+                                        <label for="bookAuthor" class="form-label">Author (Optional)</label>
+                                        <input type="text" class="form-control" id="bookAuthor" placeholder="Leave blank to use metadata">
+                                     </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Retry Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+            </div>
+             <footer class="py-3 my-4 mt-5 border-top text-center fixed-bottom bg-light">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 10: Reader View -->
+    <h2>State 10: Reader View</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <title>Reading: Placeholder Book Title</title>
+            <style>
+                body { display: flex; flex-direction: column; min-height: 100vh; background-color: #f8f9fa; }
+                .reader-header { position: sticky; top: 0; z-index: 1030; background-color: rgba(52, 58, 64, 0.95); color: white; padding: 0.5rem 1rem; }
+                .reader-content { flex-grow: 1; max-width: 800px; margin: 2rem auto; background-color: #fff; padding: 2rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15); font-family: Georgia, serif; line-height: 1.8; font-size: 1.1rem; }
+                .reader-footer { position: sticky; bottom: 0; z-index: 1030; background-color: rgba(248, 249, 250, 0.95); border-top: 1px solid #dee2e6; padding: 0.5rem 1rem; }
+                .page-nav { display: flex; justify-content: space-between; align-items: center; }
+                 .settings-menu { min-width: 250px; }
+            </style>
+        </head>
+        <body>
+            <!-- Reader Header -->
+            <div class="reader-header d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="#" class="btn btn-sm btn-outline-light me-2"><i class="bi bi-arrow-left me-1"></i> Back to Library</a>
+                    <span class="navbar-text text-light d-none d-md-inline">Reading: Placeholder Book Title 1</span>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas">
+                        <i class="bi bi-list-ul me-1"></i> Contents
+                    </button>
+                    <div class="dropdown d-inline-block">
+                        <button class="btn btn-sm btn-outline-light" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-gear-fill me-1"></i> Settings
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end settings-menu p-3" aria-labelledby="settingsDropdown">
+                          <li><h6 class="dropdown-header">Text Size</h6></li>
+                          <li>
+                               <input type="range" class="form-range" min="80" max="150" step="10" id="fontSizeRange" value="110">
+                               <div class="d-flex justify-content-between small text-muted"><span>Smaller</span><span>Larger</span></div>
+                          </li>
+                           <li><hr class="dropdown-divider"></li>
+                           <li><h6 class="dropdown-header">Font Family</h6></li>
+                           <li>
+                                <select class="form-select form-select-sm" aria-label="Font Family">
+                                  <option selected>Georgia (Default)</option>
+                                  <option value="1">Times New Roman</option>
+                                  <option value="2">Arial</option>
+                                  <option value="3">Verdana</option>
+                                </select>
+                           </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Theme</h6></li>
+                             <li>
+                                <div class="btn-group btn-group-sm w-100" role="group" aria-label="Theme switcher">
+                                  <input type="radio" class="btn-check" name="theme" id="theme-light" autocomplete="off" checked>
+                                  <label class="btn btn-outline-secondary" for="theme-light"><i class="bi bi-sun-fill me-1"></i> Light</label>
+
+                                  <input type="radio" class="btn-check" name="theme" id="theme-sepia" autocomplete="off">
+                                  <label class="btn btn-outline-secondary" for="theme-sepia"><i class="bi bi-lamp-fill me-1"></i> Sepia</label>
+
+                                  <input type="radio" class="btn-check" name="theme" id="theme-dark" autocomplete="off">
+                                  <label class="btn btn-outline-secondary" for="theme-dark"><i class="bi bi-moon-stars-fill me-1"></i> Dark</label>
+                                </div>
+                           </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reader Content -->
+            <div class="reader-content">
+                <h2>Chapter 1: The Beginning</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum.</p>
+                <p>Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>
+                 <p>Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna, endrerit sit amet, tincidunt ac, viverra sed, nulla.</p>
+            </div>
+
+            <!-- Reader Footer / Pagination -->
+            <div class="reader-footer page-nav">
+                <button class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Previous Page</button>
+                <span class="text-muted">Page 5 of 320</span>
+                <button class="btn btn-outline-secondary">Next Page <i class="bi bi-arrow-right ms-1"></i></button>
+            </div>
+
+             <!-- Table of Contents Offcanvas -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="#">Cover</a></li>
+                  <li class="list-group-item"><a href="#">Dedication</a></li>
+                  <li class="list-group-item active" aria-current="true"><a href="#" class="text-white fw-bold">Chapter 1: The Beginning</a></li>
+                  <li class="list-group-item"><a href="#">Chapter 2: The Journey</a></li>
+                  <li class="list-group-item"><a href="#">Chapter 3: Challenges</a></li>
+                  <li class="list-group-item"><a href="#">Chapter 4: Climax</a></li>
+                   <li class="list-group-item"><a href="#">Chapter 5: Resolution</a></li>
+                   <li class="list-group-item"><a href="#">Epilogue</a></li>
+                   <li class="list-group-item"><a href="#">Acknowledgements</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <!-- State 11: About Page -->
+    <h2>State 11: About Page</h2>
+    <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>About Ebook Reader</title>
+        </head>
+        <body>
+             <!-- Navigation: Adjust based on whether user is logged in or out -->
+             <!-- Using Logged In Nav for example -->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Ebook Reader</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">My Library</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">Upload Ebook</a>
+                             </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">About</a>
+                             </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  user@example.com
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="bg-light p-5 rounded">
+                    <h1>About Ebook Reader</h1>
+                    <p class="lead">Ebook Reader is a simple, web-based application designed to help you manage and read your electronic books online.</p>
+                    <hr class="my-4">
+                    <h2>Features</h2>
+                    <ul>
+                        <li>Upload ebooks in popular formats (EPUB, PDF, MOBI).</li>
+                        <li>Organize your books in a personal library.</li>
+                        <li>Read books directly in your browser.</li>
+                        <li>Adjust reading settings like font size and theme.</li>
+                        <li>Accessible from any device with a web browser.</li>
+                    </ul>
+                    <h2>Our Mission</h2>
+                    <p>Our goal is to provide a straightforward and accessible platform for ebook enthusiasts to enjoy their digital collection without the need for complex software installations.</p>
+                     <h2>Contact Us</h2>
+                    <p>For support or inquiries, please email <a href="mailto:support@ebookreader.example.com">support@ebookreader.example.com</a>.</p>
+                    <p class="text-muted mt-4">Version: 1.0.0</p>
+                </div>
+            </div>
+
+            <footer class="py-3 my-4 mt-5 border-top text-center">
+                <span class="text-muted">© 2023 Ebook Reader</span>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

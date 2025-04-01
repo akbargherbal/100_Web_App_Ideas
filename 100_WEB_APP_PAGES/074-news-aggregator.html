@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; }
+        h2 { margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>News Aggregator - UI Flow</h1>
+
+<!-- State 1: Home Page (Logged Out) -->
+<h2>State 1: Home Page (Logged Out)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='p-5 mb-4 bg-light rounded-3'>
+          <div class='container-fluid py-5'>
+            <h1 class='display-5 fw-bold'>Your News, Consolidated</h1>
+            <p class='col-md-8 fs-4'>Explore articles from your favorite sources all in one place. Sign up or Log in to personalize your feed.</p>
+            <a href='#' class='btn btn-primary btn-lg'>Sign Up</a>
+            <a href='#' class='btn btn-outline-secondary btn-lg ms-2'>Login</a>
+          </div>
+        </div>
+
+        <h2>Latest News</h2>
+        <div class='row'>
+            <!-- Sample Article Card 1 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Tech Giant Announces New Gadget</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: Tech News Today</h6>
+                        <p class='card-text'>A brief summary of the article content goes here, giving the user an idea of what it's about...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>2 hours ago</small></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Article Card 2 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Global Markets React to Economic Data</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: Finance Weekly</h6>
+                        <p class='card-text'>Details about the latest financial news and market movements summarized concisely...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>3 hours ago</small></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Sample Article Card 3 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Breakthrough in Medical Research</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: Science Journal</h6>
+                        <p class='card-text'>An exciting development in the field of medicine is reported, offering new hope...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>5 hours ago</small></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer mt-auto py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 2: Login Page -->
+<h2>State 2: Login Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link active' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-md-6 col-lg-4'>
+                <div class='card'>
+                    <div class='card-body p-4'>
+                        <h2 class='card-title text-center mb-4'>Login</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='loginEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='loginEmail' placeholder='name@example.com' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='loginPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='loginPassword' placeholder='Password' required>
+                            </div>
+                            <div class='d-grid'>
+                                <button type='submit' class='btn btn-primary'>Login</button>
+                            </div>
+                            <hr class='my-4'>
+                            <p class='text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer fixed-bottom py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 3: Login Page (Error State) -->
+<h2>State 3: Login Page (Error State)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login Error - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link active' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-md-6 col-lg-4'>
+                <div class='card'>
+                    <div class='card-body p-4'>
+                        <h2 class='card-title text-center mb-4'>Login</h2>
+                        <div class='alert alert-danger d-flex align-items-center' role='alert'>
+                           <i class='bi bi-exclamation-triangle-fill me-2'></i>
+                           <div>
+                             Invalid email or password. Please try again.
+                           </div>
+                         </div>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='loginEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control is-invalid' id='loginEmail' placeholder='name@example.com' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='loginPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control is-invalid' id='loginPassword' placeholder='Password' required>
+                            </div>
+                            <div class='d-grid'>
+                                <button type='submit' class='btn btn-primary'>Login</button>
+                            </div>
+                            <hr class='my-4'>
+                            <p class='text-center'>Don't have an account? <a href='#'>Sign Up</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer fixed-bottom py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 4: Sign Up Page -->
+<h2>State 4: Sign Up Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link active btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-md-6 col-lg-5'>
+                <div class='card'>
+                    <div class='card-body p-4'>
+                        <h2 class='card-title text-center mb-4'>Create Account</h2>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='signupName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='signupName' placeholder='Your Name' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='signupEmail' placeholder='name@example.com' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='signupPassword' placeholder='Choose a Password' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm Password' required>
+                            </div>
+                             <div class='form-check mb-3'>
+                                <input class='form-check-input' type='checkbox' value='' id='termsCheck' required>
+                                <label class='form-check-label' for='termsCheck'>
+                                  I agree to the <a href='#'>Terms of Service</a>
+                                </label>
+                              </div>
+                            <div class='d-grid'>
+                                <button type='submit' class='btn btn-primary'>Sign Up</button>
+                            </div>
+                            <hr class='my-4'>
+                            <p class='text-center'>Already have an account? <a href='#'>Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 5: Sign Up Page (Error/Validation State) -->
+<h2>State 5: Sign Up Page (Error/Validation State)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up Error - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link active btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-5'>
+        <div class='row justify-content-center'>
+            <div class='col-md-6 col-lg-5'>
+                <div class='card'>
+                    <div class='card-body p-4'>
+                        <h2 class='card-title text-center mb-4'>Create Account</h2>
+                         <div class='alert alert-warning d-flex align-items-center' role='alert'>
+                           <i class='bi bi-exclamation-circle-fill me-2'></i>
+                           <div>
+                             Please fix the errors below.
+                           </div>
+                         </div>
+                        <form>
+                            <div class='mb-3'>
+                                <label for='signupName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='signupName' placeholder='Your Name' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control is-invalid' id='signupEmail' placeholder='name@example.com' value='invalid-email' required>
+                                <div class='invalid-feedback'>
+                                  Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='signupPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control is-invalid' id='signupPassword' placeholder='Choose a Password' required>
+                                 <div class='invalid-feedback'>
+                                  Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                <input type='password' class='form-control is-invalid' id='confirmPassword' placeholder='Confirm Password' required>
+                                 <div class='invalid-feedback'>
+                                  Passwords do not match.
+                                </div>
+                            </div>
+                             <div class='form-check mb-3'>
+                                <input class='form-check-input is-invalid' type='checkbox' value='' id='termsCheck' required>
+                                <label class='form-check-label' for='termsCheck'>
+                                  I agree to the <a href='#'>Terms of Service</a>
+                                </label>
+                                 <div class='invalid-feedback'>
+                                  You must agree before submitting.
+                                </div>
+                              </div>
+                            <div class='d-grid'>
+                                <button type='submit' class='btn btn-primary'>Sign Up</button>
+                            </div>
+                            <hr class='my-4'>
+                            <p class='text-center'>Already have an account? <a href='#'>Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 6: Home Page (Logged In) -->
+<h2>State 6: Home Page (Logged In)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>My Feed</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>Manage Sources</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                    <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                         </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                         </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='d-flex justify-content-between align-items-center mb-3'>
+            <h2>My News Feed</h2>
+            <form class='d-flex'>
+              <input class='form-control me-2' type='search' placeholder='Search feed...' aria-label='Search'>
+              <button class='btn btn-outline-success' type='submit'>Search</button>
+            </form>
+        </div>
+
+        <div class='row'>
+            <!-- Logged In User Article Card 1 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Personalized Tech Update for User</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: Custom Feed 1</h6>
+                        <p class='card-text'>Content tailored to the user's interests, possibly based on selected sources or past reading history...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>15 minutes ago</small></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Logged In User Article Card 2 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Market Analysis from Subscribed Source</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: Finance Pro</h6>
+                        <p class='card-text'>Specific financial news from a source the user explicitly added to their feed...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>1 hour ago</small></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Logged In User Article Card 3 -->
+            <div class='col-md-4 mb-3'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Latest Posts from Your Favorite Blog</h5>
+                        <h6 class='card-subtitle mb-2 text-muted'>Source: My Tech Blog Feed</h6>
+                        <p class='card-text'>Updates from smaller, user-added RSS feeds like personal blogs or niche websites...</p>
+                        <a href='#' class='card-link'>Read More</a>
+                        <span class='text-muted ms-2'><small>2 hours ago</small></span>
+                    </div>
+                </div>
+            </div>
+             <!-- More Cards... -->
+        </div>
+         <nav aria-label='Page navigation example' class='mt-4 d-flex justify-content-center'>
+          <ul class='pagination'>
+            <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+            <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+            <li class='page-item'><a class='page-link' href='#'>2</a></li>
+            <li class='page-item'><a class='page-link' href='#'>3</a></li>
+            <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <footer class='footer mt-auto py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 7: Manage Sources Page -->
+<h2>State 7: Manage Sources Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Manage Sources - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>My Feed</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Manage Sources</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                      <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                         </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                         </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h2>Manage Your RSS Feeds</h2>
+
+        <div class='card mb-4'>
+            <div class='card-header'>Add New Feed</div>
+            <div class='card-body'>
+                 <form class='row g-3 align-items-end'>
+                    <div class='col-md-8'>
+                        <label for='rssUrl' class='form-label'>RSS Feed URL</label>
+                        <input type='url' class='form-control' id='rssUrl' placeholder='https://example.com/feed.xml' required>
+                    </div>
+                    <div class='col-md-4'>
+                        <button type='submit' class='btn btn-primary w-100'><i class='bi bi-plus-circle me-1'></i> Add Feed</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='card'>
+             <div class='card-header'>Current Feeds</div>
+             <ul class='list-group list-group-flush'>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Tech News Today (https://technewstoday.com/rss)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Finance Weekly (https://financeweekly.co/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                  <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>My Tech Blog Feed (https://mytechblog.xyz/rss.xml)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Local News Channel (http://localnews.org/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+             </ul>
+        </div>
+
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 8: Manage Sources Page (Add Success) -->
+<h2>State 8: Manage Sources Page (Add Success)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Manage Sources - Success - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>My Feed</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Manage Sources</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                      <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                         </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                         </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h2>Manage Your RSS Feeds</h2>
+
+        <div class='alert alert-success d-flex align-items-center' role='alert'>
+            <i class='bi bi-check-circle-fill me-2'></i>
+           <div>
+             Feed 'New Awesome Blog (https://newblog.com/rss)' added successfully!
+           </div>
+        </div>
+
+
+        <div class='card mb-4'>
+            <div class='card-header'>Add New Feed</div>
+            <div class='card-body'>
+                 <form class='row g-3 align-items-end'>
+                    <div class='col-md-8'>
+                        <label for='rssUrl' class='form-label'>RSS Feed URL</label>
+                        <input type='url' class='form-control' id='rssUrl' placeholder='https://example.com/feed.xml' required>
+                    </div>
+                    <div class='col-md-4'>
+                        <button type='submit' class='btn btn-primary w-100'><i class='bi bi-plus-circle me-1'></i> Add Feed</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='card'>
+             <div class='card-header'>Current Feeds</div>
+             <ul class='list-group list-group-flush'>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>New Awesome Blog (https://newblog.com/rss)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Tech News Today (https://technewstoday.com/rss)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Finance Weekly (https://financeweekly.co/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                  <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>My Tech Blog Feed (https://mytechblog.xyz/rss.xml)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Local News Channel (http://localnews.org/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+             </ul>
+        </div>
+
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 9: Manage Sources Page (Add Error) -->
+<h2>State 9: Manage Sources Page (Add Error)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Manage Sources - Error - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>My Feed</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Manage Sources</a></li>
+                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                </ul>
+                 <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                      <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                            <i class='bi bi-person-circle me-1'></i> User Name
+                         </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                         </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h2>Manage Your RSS Feeds</h2>
+
+        <div class='alert alert-danger d-flex align-items-center' role='alert'>
+            <i class='bi bi-x-octagon-fill me-2'></i>
+           <div>
+             Error adding feed: The URL provided is not a valid RSS feed or could not be reached.
+           </div>
+        </div>
+
+
+        <div class='card mb-4'>
+            <div class='card-header'>Add New Feed</div>
+            <div class='card-body'>
+                 <form class='row g-3 align-items-end'>
+                    <div class='col-md-8'>
+                        <label for='rssUrl' class='form-label'>RSS Feed URL</label>
+                        <input type='url' class='form-control is-invalid' id='rssUrl' placeholder='https://example.com/feed.xml' value='invalid-url' required>
+                         <div class='invalid-feedback'>
+                            Please enter a valid URL.
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <button type='submit' class='btn btn-primary w-100'><i class='bi bi-plus-circle me-1'></i> Add Feed</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class='card'>
+             <div class='card-header'>Current Feeds</div>
+             <ul class='list-group list-group-flush'>
+                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Tech News Today (https://technewstoday.com/rss)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Finance Weekly (https://financeweekly.co/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                  <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>My Tech Blog Feed (https://mytechblog.xyz/rss.xml)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                    <span>Local News Channel (http://localnews.org/feed)</span>
+                    <button class='btn btn-danger btn-sm'><i class='bi bi-trash3'></i> Remove</button>
+                </li>
+             </ul>
+        </div>
+
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+<!-- State 10: About Page -->
+<h2>State 10: About Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - News Aggregator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+</head>
+<body>
+    <!-- Dynamic Navbar based on login status - Showing Logged Out for example -->
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>News Aggregator</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAbout' aria-controls='navbarNavAbout' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNavAbout'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                    <!-- Add 'Manage Sources' here if logged in -->
+                </ul>
+                <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+                     <!-- Show Login/Signup OR User Dropdown -->
+                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                    <li class='nav-item'><a class='nav-link btn btn-primary btn-sm text-white' href='#'>Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4'>About News Aggregator</h1>
+                <p class='lead'>Welcome to News Aggregator, your central hub for staying informed with the latest news from various sources across the web.</p>
+                <hr>
+                <h2>Our Mission</h2>
+                <p>Our mission is to simplify your news consumption by bringing together articles from multiple publications and blogs using RSS technology. We believe in providing a clean, customizable, and efficient way to access the information that matters most to you.</p>
+
+                <h2>How It Works</h2>
+                <p>News Aggregator fetches content from publicly available RSS feeds provided by news websites, blogs, and other content creators. </p>
+                <ul>
+                    <li><strong>Discover:</strong> Browse a selection of popular news sources or discover new ones.</li>
+                    <li><strong>Subscribe:</strong> Add the RSS feed URLs of your favorite sources to your personalized feed.</li>
+                    <li><strong>Read:</strong> Access headlines and summaries all in one place, with links to the original articles.</li>
+                    <li><strong>Organize:</strong> (Future Feature) Categorize your feeds and manage your subscriptions easily.</li>
+                </ul>
+
+                <h2>Technology</h2>
+                <p>This application utilizes standard web technologies including HTML, CSS, and relies on the power of RSS (Really Simple Syndication) feeds. The user interface is built with the Bootstrap framework for a responsive and modern look.</p>
+
+                 <h2>Contact Us</h2>
+                <p>Have questions or feedback? We'd love to hear from you. Please reach out to us at <a href='mailto:support@newsaggregator.example.com'>support@newsaggregator.example.com</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class='footer mt-5 py-3 bg-light border-top'>
+        <div class='container text-center'>
+            <span class='text-muted'>© 2023 News Aggregator. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+</body>
+</html>

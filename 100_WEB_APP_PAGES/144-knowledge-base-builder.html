@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Base Builder - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h1, h2 { margin-bottom: 20px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
+        .state-container { margin-bottom: 40px; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height, can be adjusted */
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        /* Ensure iframes display block content correctly */
+        iframe body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Knowledge Base Builder - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="https://via.placeholder.com/700x500/dee2e6/6c757d.png?text=App+Screenshot" class="d-block mx-lg-auto img-fluid" alt="App Screenshot" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Build Your Help Center Effortlessly</h1>
+                <p class="lead">Create, manage, and publish beautiful, searchable knowledge bases for your customers or team. No coding required.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Get Started Free</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Key Features</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded">
+                   <i class="bi bi-pencil-square"></i>
+                </div>
+                <h3 class="fs-2">Easy Content Creation</h3>
+                <p>Use our intuitive editor to write and format articles quickly. Add images, videos, and code snippets.</p>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded">
+                     <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="fs-2">Organize Intuitively</h3>
+                <p>Structure your documentation with nested categories. Keep everything tidy and easy to navigate.</p>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded">
+                     <i class="bi bi-search"></i>
+                </div>
+                <h3 class="fs-2">Powerful Search</h3>
+                <p>Help users find answers fast with built-in, lightning-fast search across all your articles.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="display-4 mb-4">About Knowledge Base Builder</h1>
+                <p class="lead">Our mission is to empower businesses and individuals to share knowledge effectively.</p>
+                <p>We believe that well-organized, easily accessible documentation is crucial for customer support, internal team collaboration, and product success. Knowledge Base Builder was created to provide a simple, yet powerful platform to achieve this.</p>
+                <hr class="my-4">
+                <h2>Our Vision</h2>
+                <p>To be the go-to solution for creating beautiful and functional knowledge bases without the technical overhead. We focus on user experience, powerful search, and seamless integration possibilities.</p>
+                <h2>Placeholder Team Section</h2>
+                <p>Imagine pictures and bios of our dedicated (placeholder) team here!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+         <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2 active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Choose a strong password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Re-enter your password" required>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <p class="text-center text-muted">Already have an account? <a href="#">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 4: Sign Up Page (Validation Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Error - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2 active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form with Errors -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                        <!-- General Error Message -->
+                        <div class="alert alert-danger" role="alert">
+                          Please fix the errors below and try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control is-invalid" id="signupName" placeholder="John Doe" required value=""> <!-- Empty value to show required error -->
+                                <div class="invalid-feedback">
+                                    Please enter your full name.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" required value="invalid-email">
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Choose a strong password" required value="short">
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="Re-enter your password" required value="mismatch">
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                             <div class="form-check mb-3">
+                                <input class="form-check-input is-invalid" type="checkbox" value="" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">
+                                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                                </label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <p class="text-center text-muted">Already have an account? <a href="#">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Login Page -->
+    <div class="state-container">
+        <h2>State 5: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Log In to Your Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <div class="mb-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="form-text">Forgot password?</a>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <p class="text-center text-muted">Don't have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 6: Login Page (Authentication Error) -->
+    <div class="state-container">
+        <h2>State 6: Login Page (Authentication Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Error - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form with Error -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Log In to Your Account</h2>
+                        <!-- Authentication Error Message -->
+                        <div class="alert alert-danger" role="alert">
+                          Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" required value="user@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter your password" required>
+                                 <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                           <div class="mb-3 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="form-text">Forgot password?</a>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <p class="text-center text-muted">Dont have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Forgot Password Page -->
+    <div class="state-container">
+        <h2>State 7: Forgot Password Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <!-- Minimal nav for this process -->
+         </div>
+    </nav>
+
+    <!-- Forgot Password Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Reset Your Password</h2>
+                        <p class="text-center text-muted mb-4">Enter your email address below, and we'll send you a link to reset your password.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="resetEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Reset Link</button>
+                            </div>
+                        </form>
+                         <div class="text-center mt-4">
+                            <a href="#">Back to Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Password Reset Page -->
+    <div class="state-container">
+        <h2>State 8: Password Reset Page (Using Token Link)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set New Password - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Logged Out Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">Knowledge Base Builder</a>
+            <!-- Minimal nav for this process -->
+         </div>
+    </nav>
+
+    <!-- Password Reset Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Choose a New Password</h2>
+                        <form>
+                            <!-- Hidden token field would be here in a real app -->
+                            <input type="hidden" name="token" value="placeholder_reset_token">
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" placeholder="Enter your new password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" placeholder="Re-enter your new password" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Set New Password</button>
+                            </div>
+                        </form>
+                        <!-- Validation errors would appear here -->
+                        <!-- e.g., <div class="alert alert-danger mt-3">Passwords do not match.</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container fixed-bottom">
+         <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: Dashboard / My Knowledge Bases -->
+    <div class="state-container">
+        <h2>State 9: Dashboard / My Knowledge Bases (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+             <h1 class="h2">My Knowledge Bases</h1>
+             <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Create New Knowledge Base</a>
+        </div>
+
+        <!-- List of Knowledge Bases -->
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">Product Documentation</h5>
+                    <p class="mb-1 text-muted small">Public facing help center for our main product.</p>
+                    <small class="text-muted">Last updated: 2 hours ago</small>
+                </div>
+                <span class="badge bg-primary rounded-pill">15 Articles</span>
+             </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                 <div>
+                    <h5 class="mb-1">Internal Team Wiki</h5>
+                    <p class="mb-1 text-muted small">Onboarding guides and internal processes.</p>
+                    <small class="text-muted">Last updated: 1 day ago</small>
+                 </div>
+                 <span class="badge bg-secondary rounded-pill">8 Articles</span>
+             </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">API Reference</h5>
+                    <p class="mb-1 text-muted small">Technical documentation for developers.</p>
+                    <small class="text-muted">Last updated: 5 days ago</small>
+                </div>
+                <span class="badge bg-info rounded-pill">25 Articles</span>
+             </a>
+        </div>
+
+        <!-- Empty State Example (if no KBs exist) -->
+        <!--
+        <div class="text-center py-5">
+            <i class="bi bi-journal-x" style="font-size: 4rem; color: #6c757d;"></i>
+            <p class="lead mt-3">You haven t created any knowledge bases yet.</p>
+            <a href="#" class="btn btn-primary mt-2"><i class="bi bi-plus-lg"></i> Create Your First Knowledge Base</a>
+        </div>
+        -->
+
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Knowledge Base Builder</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Help</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 10: Create New Knowledge Base Page -->
+    <div class="state-container">
+        <h2>State 10: Create New Knowledge Base Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create KB - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create KB Form -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <h1 class="mb-4">Create a New Knowledge Base</h1>
+                 <form>
+                     <div class="mb-3">
+                         <label for="kbName" class="form-label">Knowledge Base Name</label>
+                         <input type="text" class="form-control" id="kbName" placeholder="e.g., Product Help Center" required>
+                         <div class="form-text">This will be the main title of your knowledge base.</div>
+                     </div>
+                     <div class="mb-3">
+                         <label for="kbDescription" class="form-label">Description (Optional)</label>
+                         <textarea class="form-control" id="kbDescription" rows="3" placeholder="A brief description of what this knowledge base contains."></textarea>
+                     </div>
+                      <div class="mb-3">
+                         <label for="kbSlug" class="form-label">URL Slug</label>
+                         <div class="input-group">
+                            <span class="input-group-text" id="kb-url-prefix">yourdomain.kbbuilder.com/</span>
+                            <input type="text" class="form-control" id="kbSlug" aria-describedby="kb-url-prefix" placeholder="product-help" required>
+                         </div>
+                         <div class="form-text">Used in the public URL. Use lowercase letters, numbers, and hyphens only.</div>
+                     </div>
+                      <div class="mb-3">
+                        <label class="form-label">Visibility</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kbVisibility" id="visibilityPublic" value="public" checked>
+                            <label class="form-check-label" for="visibilityPublic">
+                                Public (Accessible to anyone with the link)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kbVisibility" id="visibilityPrivate" value="private">
+                            <label class="form-check-label" for="visibilityPrivate">
+                                Private (Only accessible to logged-in team members)
+                            </label>
+                        </div>
+                    </div>
+                     <hr class="my-4">
+                     <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create Knowledge Base</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Knowledge Base Builder</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Help</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 11: Create New Knowledge Base Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 11: Create New Knowledge Base Page (Validation Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create KB Error - Knowledge Base Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create KB Form with Errors -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <h1 class="mb-4">Create a New Knowledge Base</h1>
+                  <!-- General Error Message -->
+                 <div class="alert alert-danger" role="alert">
+                     Please fix the errors below.
+                 </div>
+                 <form>
+                     <div class="mb-3">
+                         <label for="kbName" class="form-label">Knowledge Base Name</label>
+                         <input type="text" class="form-control is-invalid" id="kbName" placeholder="e.g., Product Help Center" required value=""> <!-- Empty value -->
+                         <div class="invalid-feedback">
+                            Knowledge Base Name is required.
+                         </div>
+                         <div class="form-text">This will be the main title of your knowledge base.</div>
+                     </div>
+                     <div class="mb-3">
+                         <label for="kbDescription" class="form-label">Description (Optional)</label>
+                         <textarea class="form-control" id="kbDescription" rows="3" placeholder="A brief description of what this knowledge base contains."></textarea>
+                     </div>
+                      <div class="mb-3">
+                         <label for="kbSlug" class="form-label">URL Slug</label>
+                         <div class="input-group">
+                            <span class="input-group-text" id="kb-url-prefix">yourdomain.kbbuilder.com/</span>
+                            <!-- Invalid characters -->
+                            <input type="text" class="form-control is-invalid" id="kbSlug" aria-describedby="kb-url-prefix" placeholder="product-help" required value="Invalid Slug!">
+                         </div>
+                         <div class="invalid-feedback">
+                            URL Slug can only contain lowercase letters, numbers, and hyphens.
+                         </div>
+                         <div class="form-text">Used in the public URL. Use lowercase letters, numbers, and hyphens only.</div>
+                     </div>
+                      <div class="mb-3">
+                        <label class="form-label">Visibility</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kbVisibility" id="visibilityPublic" value="public" checked>
+                            <label class="form-check-label" for="visibilityPublic">
+                                Public (Accessible to anyone with the link)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="kbVisibility" id="visibilityPrivate" value="private">
+                            <label class="form-check-label" for="visibilityPrivate">
+                                Private (Only accessible to logged-in team members)
+                            </label>
+                        </div>
+                    </div>
+                     <hr class="my-4">
+                     <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create Knowledge Base</button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Knowledge Base Builder</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Help</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 12: Knowledge Base View (Editor - Empty State) -->
+    <div class="state-container">
+        <h2>State 12: Knowledge Base View (Editor - Empty State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Documentation - KB Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        .sidebar { height: calc(100vh - 56px); overflow-y: auto; } /* Adjust based on navbar height */
+        .category-item { padding-left: 20px; }
+        .article-item { padding-left: 40px; }
+    </style>
+</head>
+<body>
+    <!-- Logged In Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light btn-sm ms-2 mt-1">View Public Site</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- KB Editor Layout -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse p-3">
+                <div class="position-sticky">
+                    <h4 class="mb-3">Product Documentation</h4>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-muted small">CONTENT</span>
+                         <div>
+                            <button class="btn btn-sm btn-outline-secondary me-1" title="Add Category"><i class="bi bi-folder-plus"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary" title="Add Article"><i class="bi bi-file-earmark-plus"></i></button>
+                        </div>
+                    </div>
+                    <ul class="nav flex-column">
+                        <!-- Categories and articles will be listed here -->
+                         <li class="nav-item text-muted fst-italic">No categories yet.</li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content Area (Empty State) -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div class="text-center py-5">
+                    <i class="bi bi-layout-text-sidebar-reverse" style="font-size: 4rem; color: #6c757d;"></i>
+                    <h1 class="h3 mt-3">Welcome to your Knowledge Base!</h1>
+                    <p class="lead text-muted">Start by adding your first category or article using the buttons in the sidebar.</p>
+                    <div class="mt-4">
+                        <button class="btn btn-primary me-2"><i class="bi bi-folder-plus"></i> Add Category</button>
+                        <button class="btn btn-success"><i class="bi bi-file-earmark-plus"></i> Add Article</button>
+                    </div>
+                </div>
+                <!-- Modal for Adding/Editing Category (Example) -->
+                <!--
+                <div class="modal fade" id="categoryModal" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="categoryModalLabel">Add New Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="categoryName" class="form-label">Category Name</label>
+                            <input type="text" class="form-control" id="categoryName" required>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save Category</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                -->
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 13: Knowledge Base View (Editor - With Content) -->
+    <div class="state-container">
+        <h2>State 13: Knowledge Base View (Editor - With Content)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Documentation - KB Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        .sidebar { height: calc(100vh - 56px); overflow-y: auto; border-right: 1px solid #dee2e6;}
+        .category-item > a, .article-item > a { display: block; padding: .3rem 1rem; text-decoration: none; color: #212529; }
+        .category-item > a:hover, .article-item > a:hover { background-color: #e9ecef; }
+        .category-item > a.active, .article-item > a.active { background-color: #0d6efd; color: white; }
+        .action-icons { visibility: hidden; }
+        .category-item:hover .action-icons, .article-item:hover .action-icons { visibility: visible; }
+    </style>
+</head>
+<body>
+    <!-- Logged In Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light btn-sm ms-2 mt-1">View Public Site</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- KB Editor Layout -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse p-0">
+                <div class="position-sticky pt-3">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-1 text-muted text-uppercase">
+                        <span>Product Documentation</span>
+                    </h6>
+                     <div class="d-flex justify-content-between align-items-center px-3 mb-2">
+                        <span class="text-muted small">CONTENT</span>
+                         <div>
+                            <button class="btn btn-sm btn-outline-secondary me-1" title="Add Category"><i class="bi bi-folder-plus"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary" title="Add Article"><i class="bi bi-file-earmark-plus"></i></button>
+                        </div>
+                    </div>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item category-item">
+                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-folder me-1"></i> Getting Started</span>
+                                <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Category"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Category"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item article-item ms-3">
+                             <a href="#" class="active d-flex justify-content-between align-items-center"> <!-- Active Article -->
+                                <span><i class="bi bi-file-text me-1"></i> Introduction</span>
+                                <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Article"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Article"></i>
+                                </span>
+                            </a>
+                        </li>
+                         <li class="nav-item article-item ms-3">
+                             <a href="#" class="d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-file-text me-1"></i> Creating Your First KB</span>
+                                 <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Article"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Article"></i>
+                                </span>
+                            </a>
+                        </li>
+                         <li class="nav-item category-item">
+                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-folder me-1"></i> Account Management</span>
+                                 <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Category"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Category"></i>
+                                </span>
+                           </a>
+                        </li>
+                         <li class="nav-item article-item ms-3">
+                             <a href="#" class="d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-file-text me-1"></i> Updating Profile</span>
+                                 <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Article"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Article"></i>
+                                </span>
+                            </a>
+                        </li>
+                         <li class="nav-item article-item ms-3">
+                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                <span><i class="bi bi-file-text me-1"></i> Changing Password</span>
+                                 <span class="action-icons small">
+                                    <i class="bi bi-pencil-square text-primary me-1" title="Edit Article"></i>
+                                    <i class="bi bi-trash text-danger" title="Delete Article"></i>
+                                </span>
+                           </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content Area (Showing Selected Article for Edit) -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Edit Article: Introduction</h1>
+                     <div class="btn-toolbar mb-2 mb-md-0">
+                         <button type="button" class="btn btn-sm btn-outline-secondary me-2">Discard Changes</button>
+                        <button type="button" class="btn btn-sm btn-primary">Save Article</button>
+                    </div>
+                </div>
+                 <!-- This would load the Edit Article Form/Content -->
+                 <p><em>Placeholder: The content editing interface for the 'Introduction' article would load here. See 'State 14: Create/Edit Article Page' for the form structure.</em></p>
+                 <div class="alert alert-info mt-4">Select an article or category from the sidebar to view or edit, or use the '+' buttons to create new content.</div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 14: Create/Edit Article Page -->
+    <div class="state-container">
+        <h2>State 14: Create/Edit Article Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article - KB Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- SimpleMDE or similar WYSIWYG editor CSS could be linked here -->
+    <style>
+        .editor-placeholder {
+            border: 1px dashed #ccc;
+            min-height: 300px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Product Documentation</a> <!-- Breadcrumb/Link back to KB -->
+                    </li>
+                </ul>
+                  <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Editor -->
+    <div class="container-fluid py-4">
+         <form>
+            <div class="row">
+                <!-- Main Editor Area -->
+                <div class="col-md-9">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                         <h1 class="h3">Edit Article</h1> <!-- Or "Create New Article" -->
+                         <div>
+                            <button type="button" class="btn btn-outline-secondary me-2">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Article</button>
+                            <!-- Could also have "Save as Draft" or "Publish" -->
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="articleTitle" class="form-label visually-hidden">Article Title</label>
+                        <input type="text" class="form-control form-control-lg" id="articleTitle" placeholder="Article Title" required value="Introduction">
+                    </div>
+
+                    <!-- Placeholder for Rich Text / Markdown Editor -->
+                    <div class="mb-3">
+                        <label for="articleContent" class="form-label visually-hidden">Article Content</label>
+                        <div class="editor-placeholder" id="articleContent">
+                            <span>Rich Text / Markdown Editor Area (e.g., TinyMCE, SimpleMDE, CKEditor)</span>
+                            <!-- Actual editor JS would initialize here -->
+                            <!-- Placeholder Content: -->
+                            <p>This is the introductory article for the Product Documentation knowledge base. It explains the purpose and structure...</p>
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Sidebar/Settings -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            Settings
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="articleCategory" class="form-label">Category</label>
+                                <select class="form-select" id="articleCategory" required>
+                                    <option value="">Select Category...</option>
+                                    <option value="cat1" selected>Getting Started</option>
+                                    <option value="cat2">Account Management</option>
+                                    <option value="cat3">Advanced Features</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="articleSlug" class="form-label">URL Slug</label>
+                                <input type="text" class="form-control form-control-sm" id="articleSlug" value="introduction" required>
+                                <div class="form-text small">e.g., /getting-started/introduction</div>
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="articlePublished" checked>
+                                    <label class="form-check-label" for="articlePublished">Published</label>
+                                </div>
+                                <div class="form-text small">Uncheck to save as draft.</div>
+                             </div>
+                             <hr>
+                             <div class="d-grid">
+                                <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete Article</button>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+     <div class="container-fluid border-top mt-4">
+        <footer class="py-3">
+            <p class="text-center text-muted small">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 15: Create/Edit Article Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 15: Create/Edit Article Page (Validation Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article Error - KB Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .editor-placeholder {
+            border: 1px dashed #ccc;
+            min-height: 300px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+         .is-invalid + .editor-placeholder { border-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Product Documentation</a>
+                    </li>
+                </ul>
+                  <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Editor with Errors -->
+    <div class="container-fluid py-4">
+         <form>
+            <div class="row">
+                <!-- Main Editor Area -->
+                <div class="col-md-9">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                         <h1 class="h3">Edit Article</h1>
+                         <div>
+                            <button type="button" class="btn btn-outline-secondary me-2">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Article</button>
+                        </div>
+                    </div>
+
+                    <!-- General Error Message -->
+                    <div class="alert alert-danger" role="alert">
+                        Please fix the errors below before saving.
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="articleTitle" class="form-label visually-hidden">Article Title</label>
+                        <input type="text" class="form-control form-control-lg is-invalid" id="articleTitle" placeholder="Article Title" required value=""> <!-- Empty Title -->
+                        <div class="invalid-feedback">
+                            Article Title cannot be empty.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="articleContent" class="form-label visually-hidden">Article Content</label>
+                        <!-- Adding is-invalid manually for demo, JS would normally handle this or the wrapper -->
+                        <div class="editor-placeholder is-invalid" id="articleContent">
+                            <span>Rich Text / Markdown Editor Area (e.g., TinyMCE, SimpleMDE, CKEditor)</span>
+                        </div>
+                         <div class="invalid-feedback d-block"> <!-- Force display for demo -->
+                            Article content cannot be empty.
+                        </div>
+                     </div>
+                </div>
+
+                <!-- Sidebar/Settings -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            Settings
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="articleCategory" class="form-label">Category</label>
+                                <select class="form-select is-invalid" id="articleCategory" required> <!-- No category selected -->
+                                    <option value="" selected>Select Category...</option>
+                                    <option value="cat1">Getting Started</option>
+                                    <option value="cat2">Account Management</option>
+                                    <option value="cat3">Advanced Features</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a category.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="articleSlug" class="form-label">URL Slug</label>
+                                <input type="text" class="form-control form-control-sm is-invalid" id="articleSlug" value="" required> <!-- Empty Slug -->
+                                 <div class="invalid-feedback">
+                                    URL Slug is required.
+                                </div>
+                                <div class="form-text small">e.g., /getting-started/introduction</div>
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="articlePublished" checked>
+                                    <label class="form-check-label" for="articlePublished">Published</label>
+                                </div>
+                                <div class="form-text small">Uncheck to save as draft.</div>
+                             </div>
+                              <hr>
+                             <div class="d-grid">
+                                <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete Article</button>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+     <div class="container-fluid border-top mt-4">
+        <footer class="py-3">
+            <p class="text-center text-muted small">&copy; 2023 Knowledge Base Builder</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 16: Public Article View -->
+    <div class="state-container">
+        <h2>State 16: Public Article View</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Product Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .public-sidebar { height: calc(100vh - 56px); overflow-y: auto; border-right: 1px solid #dee2e6; }
+        .public-nav .nav-link { padding: 0.5rem 1rem; color: #6c757d; }
+        .public-nav .nav-link.active { color: #0d6efd; font-weight: bold; }
+        .public-nav .nav-link.category { font-weight: bold; color: #212529; margin-top: 0.5rem; }
+        .article-content img { max-width: 100%; height: auto; }
+        .breadcrumb-item + .breadcrumb-item::before { content: ">"; } /* Simple breadcrumb separator */
+    </style>
+</head>
+<body>
+    <!-- Public Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Documentation</a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search documentation..." aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Public View Layout -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Public Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-none d-md-block public-sidebar p-3">
+                <nav class="nav flex-column public-nav">
+                    <a class="nav-link category" href="#">Getting Started</a>
+                    <a class="nav-link active ms-3" aria-current="page" href="#">Introduction</a> <!-- Active Link -->
+                    <a class="nav-link ms-3" href="#">Creating Your First KB</a>
+
+                    <a class="nav-link category" href="#">Account Management</a>
+                    <a class="nav-link ms-3" href="#">Updating Profile</a>
+                    <a class="nav-link ms-3" href="#">Changing Password</a>
+
+                    <a class="nav-link category" href="#">Advanced Features</a>
+                    <a class="nav-link ms-3" href="#">Custom Domains</a>
+                    <a class="nav-link ms-3" href="#">Integrations</a>
+                </nav>
+            </nav>
+
+            <!-- Article Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-3 article-content">
+                 <!-- Breadcrumbs -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-light p-2 rounded-1 small">
+                        <li class="breadcrumb-item"><a href="#">Product Documentation</a></li>
+                        <li class="breadcrumb-item"><a href="#">Getting Started</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Introduction</li>
+                    </ol>
+                </nav>
+
+                <h1 class="display-6 mb-3">Introduction</h1>
+                <p class="text-muted small mb-4">Last updated: October 26, 2023</p>
+
+                <p class="lead">Welcome to the official documentation for the Knowledge Base Builder platform. This guide will help you get started quickly.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <h2>What is Knowledge Base Builder?</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <img src="https://via.placeholder.com/600x300/e9ecef/6c757d.png?text=Placeholder+Image" class="img-fluid rounded my-3" alt="Placeholder">
+                <pre><code class="language-html rounded d-block p-2 bg-dark text-light small"> A sample code block
+&lt;div class="example"&gt;
+  Hello World!
+&lt;/div&gt;</code></pre>
+                <h2>Key Concepts</h2>
+                <ul>
+                    <li><strong>Knowledge Base:</strong> The top-level container for your documentation.</li>
+                    <li><strong>Category:</strong> Used to group related articles.</li>
+                    <li><strong>Article:</strong> An individual piece of documentation content.</li>
+                </ul>
+                 <hr class="my-4">
+                 <div class="text-center text-muted small">Was this article helpful? <a href="#">Yes</a> / <a href="#">No</a></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Your Company Name</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Go back to main site</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 17: Search Results Page (Public View) -->
+    <div class="state-container">
+        <h2>State 17: Search Results Page (Public View)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Product Documentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+         .search-result-item { margin-bottom: 1.5rem; }
+         .search-result-item h5 a { text-decoration: none; }
+         .search-result-item .breadcrumb { font-size: 0.85em; margin-bottom: 0.25rem; }
+         .search-result-item p { font-size: 0.95em; color: #6c757d; }
+         .search-highlight { background-color: #fff3cd; font-weight: bold;} /* Example highlight */
+    </style>
+</head>
+<body>
+    <!-- Public Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Documentation</a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search documentation..." aria-label="Search" value="password"> <!-- Search term pre-filled -->
+                <button class="btn btn-primary" type="submit">Search</button> <!-- Changed to primary -->
+            </form>
+        </div>
+    </nav>
+
+    <!-- Search Results Content -->
+    <div class="container mt-4">
+        <h1 class="h3 mb-4">Search Results for "password"</h1>
+
+        <div class="search-results-list">
+            <!-- Search Result Item 1 -->
+            <div class="search-result-item">
+                <h5><a href="#">Changing <span class="search-highlight">Password</span></a></h5>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-muted small">
+                        <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Account Management</a></li>
+                    </ol>
+                </nav>
+                <p>Learn how to update your account <span class="search-highlight">password</span> through the account settings page. Make sure to choose a strong, unique <span class="search-highlight">password</span>.</p>
+            </div>
+
+            <!-- Search Result Item 2 -->
+            <div class="search-result-item">
+                 <h5><a href="#">Account Security Best Practices</a></h5>
+                <nav aria-label="breadcrumb">
+                     <ol class="breadcrumb text-muted small">
+                        <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Account Management</a></li>
+                    </ol>
+                </nav>
+                <p>... includes using a strong <span class="search-highlight">password</span>, enabling two-factor authentication, and regularly reviewing your account activity for any suspicious logins.</p>
+            </div>
+
+             <!-- Search Result Item 3 -->
+            <div class="search-result-item">
+                 <h5><a href="#">Getting Started with Login</a></h5>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-muted small">
+                        <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Getting Started</a></li>
+                    </ol>
+                </nav>
+                <p>Enter your email address and the <span class="search-highlight">password</span> you chose during sign-up. If you have forgotten your <span class="search-highlight">password</span>, click the "Forgot <span class="search-highlight">Password</span>?" link.</p>
+            </div>
+
+             <!-- No Results Found (Example) -->
+            <!--
+            <div class="text-center py-5">
+                <i class="bi bi-search" style="font-size: 3rem; color: #6c757d;"></i>
+                <p class="lead mt-3">No results found for "your search term".</p>
+                <p class="text-muted">Try searching for something else or browse the categories.</p>
+            </div>
+            -->
+        </div>
+
+        <!-- Pagination (Optional) -->
+        <nav aria-label="Search results pages" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Footer -->
+     <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Your Company Name</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Go back to main site</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+
+    <!-- State 18: Account Settings Page -->
+    <div class="state-container">
+        <h2>State 18: Account Settings Page (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - KB Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Logged In Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">KB Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#loggedInNavbar" aria-controls="loggedInNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="loggedInNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Knowledge Bases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Knowledge Base</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end show"> <!-- Force show for demo -->
+                            <li><a class="dropdown-item active" aria-current="page" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Account Settings Content -->
+    <div class="container py-5">
+         <h1 class="mb-4">Account Settings</h1>
+
+         <div class="row">
+             <div class="col-lg-8">
+                <!-- Profile Information -->
+                 <div class="card mb-4">
+                     <div class="card-header">
+                         Profile Information
+                     </div>
+                     <div class="card-body">
+                         <form>
+                            <div class="mb-3 row">
+                                <label for="profileName" class="col-sm-3 col-form-label">Full Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="profileName" value="John Doe">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="email" readonly class="form-control-plaintext text-muted" id="profileEmail" value="john.doe@example.com">
+                                    <div class="form-text">Email cannot be changed.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </div>
+                         </form>
+                     </div>
+                 </div>
+
+                <!-- Change Password -->
+                 <div class="card mb-4">
+                     <div class="card-header">
+                         Change Password
+                     </div>
+                     <div class="card-body">
+                         <form>
+                              <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                            </div>
+                             <!-- Success/Error message placeholder -->
+                            <!-- <div class="alert alert-success mt-3">Password updated successfully.</div> -->
+                            <!-- <div class="alert alert-danger mt-3">Incorrect current password.</div> -->
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </div>
+                         </form>
+                     </div>
+                 </div>
+
+                 <!-- Danger Zone -->
+                 <div class="card border-danger mb-4">
+                    <div class="card-header bg-danger text-white">
+                        Danger Zone
+                    </div>
+                    <div class="card-body text-danger">
+                        <h5 class="card-title">Delete Account</h5>
+                        <p class="card-text">Permanently delete your account and all associated data, including your knowledge bases and articles. This action cannot be undone.</p>
+                        <button type="button" class="btn btn-outline-danger">Delete My Account</button>
+                    </div>
+                </div>
+
+             </div>
+         </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2023 Knowledge Base Builder</p>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Help</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Terms</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+</body>
+</html>

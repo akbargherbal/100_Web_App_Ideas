@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Reader UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height */
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        /* Adjust height for specific complex views */
+        .iframe-tall { height: 700px; }
+        .iframe-xtall { height: 800px; }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Comic Book Reader - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home - Logged Out</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link btn btn-primary text-white ms-2" href="#">Login</a>
+                    <a class="nav-link btn btn-success text-white ms-2" href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to Comic Book Reader</h1>
+                <p class="col-md-8 fs-4">Your personal digital comic book collection manager and viewer. Organize, read, and enjoy your comics anywhere.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
+                <a class="btn btn-success btn-lg ms-2" href="#" role="button">Sign Up Free</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>Organize Your Collection</h2>
+                    <p>Easily upload and categorize your CBR, CBZ, PDF, and other comic book files. Keep track of what you own and what you have read.</p>
+                    <button class="btn btn-outline-light" type="button">Learn More</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Read Anywhere</h2>
+                    <p>Access your comics on any device with a web browser. Our reader provides a seamless and immersive reading experience.</p>
+                    <button class="btn btn-outline-secondary" type="button">See Features</button>
+                </div>
+            </div>
+        </div>
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: Login Page -->
+    <h2>State 2: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        .login-container { max-width: 400px; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+            <div class="navbar-nav ms-auto">
+                 <a class="nav-link" href="#">Home</a>
+                 <a class="nav-link" href="#">About</a>
+                 <a class="nav-link btn btn-success text-white ms-2" href="#">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center vh-80 mt-5">
+        <div class="card login-container shadow-sm">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4">Login</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                    <p class="mt-3 text-center">
+                        <a href="#">Forgot Password?</a>
+                    </p>
+                    <hr>
+                    <p class="text-center mb-0">
+                        Don't have an account? <a href="#">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+     <footer class="pt-3 mt-4 text-muted border-top text-center container">
+         &copy; 2023 Comic Book Reader
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+    <style>
+        .signup-container { max-width: 450px; }
+    </style>
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <div class="navbar-nav ms-auto">
+                 <a class="nav-link" href="#">Home</a>
+                 <a class="nav-link" href="#">About</a>
+                 <a class="nav-link btn btn-primary text-white ms-2" href="#">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center vh-80 mt-5">
+        <div class="card signup-container shadow-sm">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4">Create Account</h3>
+                <form>
+                     <div class="mb-3">
+                        <label for="signupUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                     <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                      <label class="form-check-label" for="termsCheck">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                      </label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Sign Up</button>
+                    </div>
+                     <hr>
+                    <p class="text-center mb-0">
+                        Already have an account? <a href="#">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+     <footer class="pt-3 mt-4 text-muted border-top text-center container">
+         &copy; 2023 Comic Book Reader
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: Home Page (Logged In - Library Overview) -->
+    <h2>State 4: Home Page (Logged In - Library Overview)</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Home - Logged In</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h2 class="mb-0">Dashboard</h2>
+             <a href="#" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload New Comic</a>
+        </div>
+
+        <!-- Recently Read Section -->
+        <h3 class="mt-4 mb-3">Recently Read</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Comic Card Placeholder -->
+            <div class="col">
+                <div class="card shadow-sm h-100">
+                     <img src="https://via.placeholder.com/200x300/DC3545/FFFFFF?text=Comic+Cover+1" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Amazing Fantasy #15</h5>
+                        <p class="card-text small text-muted mb-2">Marvel Comics</p>
+                        <p class="card-text small">Progress: 75%</p>
+                        <div class="progress mb-3" style="height: 5px;">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary mt-auto">Continue Reading</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/200x300/0D6EFD/FFFFFF?text=Comic+Cover+2" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Detective Comics #27</h5>
+                        <p class="card-text small text-muted mb-2">DC Comics</p>
+                        <p class="card-text small">Progress: 10%</p>
+                        <div class="progress mb-3" style="height: 5px;">
+                          <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                         <a href="#" class="btn btn-sm btn-primary mt-auto">Continue Reading</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards -->
+             <div class="col">
+                <div class="card shadow-sm h-100">
+                     <img src="https://via.placeholder.com/200x300/198754/FFFFFF?text=Comic+Cover+3" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Walking Dead #1</h5>
+                         <p class="card-text small text-muted mb-2">Image Comics</p>
+                         <p class="card-text small">Progress: 100% (Completed)</p>
+                          <div class="progress mb-3" style="height: 5px;">
+                          <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-secondary mt-auto disabled">Completed</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card shadow-sm h-100">
+                     <img src="https://via.placeholder.com/200x300/FFC107/000000?text=Comic+Cover+4" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Saga #1</h5>
+                         <p class="card-text small text-muted mb-2">Image Comics</p>
+                         <p class="card-text small">Progress: 0%</p>
+                          <div class="progress mb-3" style="height: 5px;">
+                          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary mt-auto">Start Reading</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Recently Added Section -->
+        <h3 class="mt-5 mb-3">Recently Added</h3>
+         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Comic Card Placeholder -->
+            <div class="col">
+                <div class="card shadow-sm h-100">
+                     <img src="https://via.placeholder.com/200x300/6F42C1/FFFFFF?text=New+Comic+1" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Action Comics #1</h5>
+                        <p class="card-text small text-muted mb-2">DC Comics</p>
+                        <p class="card-text small">Added: 2 days ago</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card shadow-sm h-100">
+                    <img src="https://via.placeholder.com/200x300/FD7E14/FFFFFF?text=New+Comic+2" class="card-img-top" alt="Comic Cover">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Watchmen #1</h5>
+                        <p class="card-text small text-muted mb-2">DC Comics</p>
+                         <p class="card-text small">Added: 5 days ago</p>
+                         <a href="#" class="btn btn-sm btn-outline-primary mt-auto">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards -->
+        </div>
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Collection View (Grid/List) -->
+    <h2>State 5: Collection View (Grid/List)</h2>
+    <iframe class="iframe-xtall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Collection</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link active" aria-current="page" href="#">Collection</a>
+                      <a class="nav-link" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h2 class="mb-0">My Collection</h2>
+             <div>
+                <button class="btn btn-outline-secondary"><i class="bi bi-grid-fill"></i></button>
+                <button class="btn btn-outline-secondary active"><i class="bi bi-list-ul"></i></button>
+                 <a href="#" class="btn btn-primary ms-2"><i class="bi bi-cloud-arrow-up-fill me-2"></i>Upload Comic</a>
+             </div>
+        </div>
+
+        <!-- Filters and Sorting -->
+        <div class="row g-3 mb-4 align-items-center">
+            <div class="col-md-4">
+                <label for="filterPublisher" class="form-label visually-hidden">Publisher</label>
+                <select class="form-select" id="filterPublisher">
+                    <option selected>Filter by Publisher...</option>
+                    <option value="1">Marvel Comics</option>
+                    <option value="2">DC Comics</option>
+                    <option value="3">Image Comics</option>
+                    <option value="4">Dark Horse</option>
+                </select>
+            </div>
+             <div class="col-md-4">
+                <label for="filterSeries" class="form-label visually-hidden">Series</label>
+                 <input type="text" class="form-control" id="filterSeries" placeholder="Filter by Series...">
+             </div>
+            <div class="col-md-4">
+                <label for="sortOrder" class="form-label visually-hidden">Sort By</label>
+                <select class="form-select" id="sortOrder">
+                    <option selected>Sort by...</option>
+                    <option value="1">Title (A-Z)</option>
+                    <option value="2">Date Added (Newest)</option>
+                    <option value="3">Date Added (Oldest)</option>
+                    <option value="4">Publisher</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Collection List View -->
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/DC3545/FFFFFF?text=C1" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1">Amazing Fantasy #15</h6>
+                    <p class="mb-1 opacity-75">Marvel Comics - August 10, 1962</p>
+                     <small class="text-muted">Added: 3 weeks ago</small>
+                </div>
+                <small class="opacity-50 text-nowrap">Unread</small>
+                </div>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/0D6EFD/FFFFFF?text=C2" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1">Detective Comics #27</h6>
+                    <p class="mb-1 opacity-75">DC Comics - March 30, 1939</p>
+                     <small class="text-muted">Added: 1 month ago</small> <br>
+                     <span class="badge bg-success">Reading (10%)</span>
+                </div>
+                <small class="opacity-50 text-nowrap">In Progress</small>
+                </div>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/198754/FFFFFF?text=C3" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1">The Walking Dead #1</h6>
+                    <p class="mb-1 opacity-75">Image Comics - October 8, 2003</p>
+                     <small class="text-muted">Added: 2 weeks ago</small><br>
+                      <span class="badge bg-secondary">Completed</span>
+                </div>
+                <small class="opacity-50 text-nowrap">Read</small>
+                </div>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/FFC107/000000?text=C4" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1">Saga #1</h6>
+                    <p class="mb-1 opacity-75">Image Comics - March 14, 2012</p>
+                     <small class="text-muted">Added: 1 week ago</small>
+                </div>
+                <small class="opacity-50 text-nowrap">Unread</small>
+                </div>
+            </a>
+            <!-- Add more list items -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4 d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 6: Comic Book Detail Page -->
+    <h2>State 6: Comic Book Detail Page</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Comic Detail</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Collection</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Amazing Fantasy #15</li>
+          </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-4">
+                 <img src="https://via.placeholder.com/300x450/DC3545/FFFFFF?text=Amazing+Fantasy+%2315" class="img-fluid rounded shadow-sm mb-3" alt="Comic Cover">
+                 <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-success btn-lg"><i class="bi bi-book-fill me-2"></i>Read Now</a>
+                    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square me-2"></i>Edit Details</button>
+                    <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash-fill me-2"></i>Delete Comic</button>
+                 </div>
+                 <div class="mt-3">
+                     <p class="mb-1"><span class="fw-bold">Status:</span> Unread</p>
+                     <p class="mb-1"><span class="fw-bold">Format:</span> CBZ</p>
+                     <p class="mb-1"><span class="fw-bold">File Size:</span> 55.3 MB</p>
+                     <p class="mb-1"><span class="fw-bold">Added:</span> 2023-10-26</p>
+                     <p class="mb-1"><span class="fw-bold">Last Read:</span> Never</p>
+                 </div>
+            </div>
+            <div class="col-md-8">
+                <h2>Amazing Fantasy #15</h2>
+                <p class="lead text-muted">The Introduction of Spider-Man</p>
+                <hr>
+                <dl class="row">
+                  <dt class="col-sm-3">Series</dt>
+                  <dd class="col-sm-9">Amazing Fantasy</dd>
+
+                  <dt class="col-sm-3">Issue</dt>
+                  <dd class="col-sm-9">#15</dd>
+
+                  <dt class="col-sm-3">Publisher</dt>
+                  <dd class="col-sm-9">Marvel Comics</dd>
+
+                  <dt class="col-sm-3">Publication Date</dt>
+                  <dd class="col-sm-9">August 10, 1962</dd>
+
+                  <dt class="col-sm-3">Writer</dt>
+                  <dd class="col-sm-9">Stan Lee</dd>
+
+                  <dt class="col-sm-3">Artist</dt>
+                  <dd class="col-sm-9">Steve Ditko</dd>
+
+                   <dt class="col-sm-3">Characters</dt>
+                   <dd class="col-sm-9">
+                        <span class="badge bg-info text-dark me-1">Spider-Man (Peter Parker)</span>
+                        <span class="badge bg-secondary me-1">Aunt May</span>
+                        <span class="badge bg-secondary me-1">Uncle Ben</span>
+                   </dd>
+
+                  <dt class="col-sm-3">Summary</dt>
+                  <dd class="col-sm-9">
+                      <p>Placeholder summary: Bitten by a radioactive spider, high school student Peter Parker gains the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hopes to start a career using his new abilities. Taught that with great power comes great responsibility, Spidey has vowed to use his powers to help people.</p>
+                  </dd>
+
+                   <dt class="col-sm-3">Tags</dt>
+                   <dd class="col-sm-9">
+                        <span class="badge bg-light text-dark border me-1">Superhero</span>
+                        <span class="badge bg-light text-dark border me-1">Origin</span>
+                        <span class="badge bg-light text-dark border me-1">Silver Age</span>
+                        <span class="badge bg-light text-dark border me-1">Marvel</span>
+                   </dd>
+                </dl>
+
+
+            </div>
+        </div>
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 7: Reader View -->
+    <h2>State 7: Reader View</h2>
+    <iframe class="iframe-xtall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Reader</title>
+    <style>
+        body, html { height: 100%; margin: 0; }
+        .reader-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: #343a40;
+            color: white;
+        }
+        .reader-header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem 1rem;
+            z-index: 10;
+        }
+        .reader-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Prevents scrollbars on the container */
+             position: relative;
+        }
+        .reader-page img {
+            max-width: 100%;
+            max-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+         .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 5;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 5px;
+            border-radius: 5px;
+        }
+        .nav-arrow:hover { color: rgba(255, 255, 255, 0.9); }
+        .nav-prev { left: 10px; }
+        .nav-next { right: 10px; }
+
+        .reader-footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem 1rem;
+            text-align: center;
+            z-index: 10;
+        }
+        .page-slider { width: 300px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="reader-container">
+        <div class="reader-header d-flex justify-content-between align-items-center">
+            <div>
+                <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-arrow-left"></i> Back to Details</a>
+                 <span class="ms-3">Amazing Fantasy #15</span>
+            </div>
+            <div>
+                <button class="btn btn-outline-light btn-sm me-2" title="Fit Width"><i class="bi bi-arrows-expand"></i></button>
+                <button class="btn btn-outline-light btn-sm me-2" title="Fit Height"><i class="bi bi-arrows-collapse"></i></button>
+                <button class="btn btn-outline-light btn-sm me-2" title="Two Page View"><i class="bi bi-book"></i></button>
+                <button class="btn btn-outline-light btn-sm me-2" title="Fullscreen"><i class="bi bi-fullscreen"></i></button>
+                <button class="btn btn-outline-light btn-sm" title="Close Reader"><i class="bi bi-x-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="reader-content">
+            <!-- Navigation Arrows -->
+             <a class="nav-arrow nav-prev"><i class="bi bi-chevron-left"></i></a>
+             <a class="nav-arrow nav-next"><i class="bi bi-chevron-right"></i></a>
+
+            <!-- Comic Page -->
+            <div class="reader-page">
+                 <img src="https://via.placeholder.com/800x1200/CCCCCC/000000?text=Comic+Page+15" alt="Comic Page">
+            </div>
+        </div>
+
+        <div class="reader-footer d-flex justify-content-center align-items-center">
+             <span class="me-3">Page</span>
+             <input type="number" class="form-control form-control-sm" value="15" style="width: 60px; text-align: center;">
+             <span class="mx-2">of 32</span>
+            <input type="range" class="form-range mx-3 page-slider" id="pageSlider" min="1" max="32" value="15">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 8: Upload Comic Page -->
+    <h2>State 8: Upload Comic Page</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Upload Comic</title>
+    <style>
+        .drop-zone {
+            border: 2px dashed #0d6efd;
+            border-radius: .375rem;
+            padding: 50px;
+            text-align: center;
+            background-color: #e9ecef;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .drop-zone.dragover {
+             background-color: #cfe2ff;
+             border-color: #0a58ca;
+        }
+        .drop-zone .bi { font-size: 3rem; color: #0d6efd; }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link active" aria-current="page" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Upload Comics</h2>
+        <p class="lead">Add new comics to your collection. Supports CBR, CBZ, PDF, and other formats.</p>
+        <hr>
+
+        <div class="card">
+            <div class="card-body">
+                 <form>
+                     <div class="mb-4">
+                         <label for="comicFiles" class="form-label">Select Files or Drag & Drop</label>
+                         <div class="drop-zone" id="dropZone">
+                             <i class="bi bi-cloud-arrow-up"></i>
+                             <p class="mt-2 mb-0">Drag & drop files here or click to select files</p>
+                             <small class="text-muted">Max file size: 500MB per file</small>
+                             <input type="file" id="comicFiles" class="form-control" multiple hidden>
+                         </div>
+                     </div>
+
+                     <div class="mb-3">
+                        <label class="form-label">Selected Files:</label>
+                        <ul class="list-group" id="fileList">
+                            <!-- File items will be added here by JS, static placeholder: -->
+                             <li class="list-group-item d-flex justify-content-between align-items-center">
+                                comic_book_01.cbz (55.3 MB)
+                                <span class="badge bg-secondary">Pending</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center">
+                                another_issue_02.cbr (42.1 MB)
+                                <span class="badge bg-secondary">Pending</span>
+                              </li>
+                        </ul>
+                     </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="autoMetadata">
+                        <label class="form-check-label" for="autoMetadata">Attempt to automatically fetch metadata (Optional)</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-upload me-2"></i>Start Upload</button>
+                     <button type="reset" class="btn btn-secondary ms-2">Clear Selection</button>
+
+                 </form>
+
+                 <!-- Upload Progress Placeholder -->
+                 <div class="mt-4" id="uploadProgressArea" style="display: none;"> <!-- Initially hidden -->
+                    <h5>Upload Progress</h5>
+                    <div class="progress mb-2">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">Uploading comic_book_01.cbz... 45%</div>
+                    </div>
+                     <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Waiting for another_issue_02.cbr...</div>
+                    </div>
+                 </div>
+
+            </div>
+        </div>
+
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Basic Drag & Drop Visual Feedback (Static Only) -->
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('comicFiles');
+        if(dropZone) {
+            dropZone.addEventListener('click', () => fileInput.click());
+            // Placeholder for visual dragover state - no actual JS logic
+            // dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+            // dropZone.addEventListener('dragleave', () => { dropZone.classList.remove('dragover'); });
+            // dropZone.addEventListener('drop', (e) => { e.preventDefault(); dropZone.classList.remove('dragover'); /* handle files */ });
+        }
+    </script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 9: Search Results Page -->
+    <h2>State 9: Search Results Page</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Search Results</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search" value="Spider-Man">
+                    <button class="btn btn-primary" type="submit">Search</button> <!-- Changed to primary -->
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Search Results for "Spider-Man"</h2>
+        <p class="text-muted">Found 3 results matching your query.</p>
+        <hr>
+
+        <!-- Search Results List -->
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/DC3545/FFFFFF?text=C1" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1"><mark>Spider-Man</mark>: Amazing Fantasy #15</h6>
+                    <p class="mb-1 opacity-75">Marvel Comics - August 10, 1962</p>
+                     <p class="mb-1 opacity-75 small">Characters: <mark>Spider-Man</mark> (Peter Parker), Aunt May, Uncle Ben</p>
+                     <small class="text-muted">Added: 3 weeks ago</small>
+                </div>
+                <small class="opacity-50 text-nowrap">Unread</small>
+                </div>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/FD7E14/FFFFFF?text=ASM1" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1">The Amazing <mark>Spider-Man</mark> #1</h6>
+                     <p class="mb-1 opacity-75">Marvel Comics - March 1, 1963</p>
+                     <p class="mb-1 opacity-75 small">Features the first appearance of J. Jonah Jameson and Chameleon. <mark>Spider-Man</mark> tries to join the Fantastic Four.</p>
+                     <small class="text-muted">Added: 1 week ago</small> <br>
+                      <span class="badge bg-success">Reading (50%)</span>
+                </div>
+               <small class="opacity-50 text-nowrap">In Progress</small>
+                </div>
+            </a>
+             <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://via.placeholder.com/64x96/6C757D/FFFFFF?text=SMT1" alt="twbs" width="64" height="96" class="rounded-1 flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h6 class="mb-1"><mark>Spider-Man</mark>: Torment #1</h6>
+                     <p class="mb-1 opacity-75">Marvel Comics - August 1, 1990</p>
+                     <p class="mb-1 opacity-75 small">Writer/Artist: Todd McFarlane. <mark>Spider-Man</mark> faces off against the Lizard.</p>
+                     <small class="text-muted">Added: 2 months ago</small>
+                </div>
+                <small class="opacity-50 text-nowrap">Unread</small>
+                </div>
+            </a>
+        </div>
+
+        <!-- Pagination (if many results) -->
+        <nav aria-label="Page navigation" class="mt-4 d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li> <!-- Disabled as only 1 page of results -->
+            </ul>
+        </nav>
+
+        <!-- No Results Found Placeholder -->
+         <div class="text-center mt-5" style="display: none;"> <!-- Hidden by default -->
+           <i class="bi bi-search" style="font-size: 4rem; color: #6c757d;"></i>
+           <h4 class="mt-3">No Results Found</h4>
+           <p class="text-muted">We couldn't find any comics matching "Your Search Term". Try refining your search.</p>
+         </div>
+
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 10: Settings/Profile Page -->
+    <h2>State 10: Settings/Profile Page</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Settings</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <h2>Settings</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                 <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true"><i class="bi bi-person-circle me-2"></i>Profile</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock-fill me-2"></i>Account Security</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-book-half me-2"></i>Reader Preferences</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill me-2"></i>Notifications</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-cloud-fill me-2"></i>Storage</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                 <div class="card">
+                     <div class="card-header">
+                        Profile Information
+                     </div>
+                     <div class="card-body">
+                         <form>
+                             <div class="row mb-3">
+                                <label for="profileUsername" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="profileUsername" value="ComicFan123">
+                                </div>
+                              </div>
+                               <div class="row mb-3">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="profileEmail" value="user@example.com">
+                                </div>
+                              </div>
+                               <div class="row mb-3">
+                                <label for="profileFullName" class="col-sm-3 col-form-label">Full Name (Optional)</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="profileFullName" placeholder="Enter your full name">
+                                </div>
+                              </div>
+                              <div class="row mb-3">
+                                <label for="profileAvatar" class="col-sm-3 col-form-label">Avatar</label>
+                                <div class="col-sm-9">
+                                     <div class="d-flex align-items-center">
+                                         <img src="https://via.placeholder.com/80/777/fff?text=User" class="rounded-circle me-3" alt="Avatar" width="80" height="80">
+                                        <input class="form-control" type="file" id="profileAvatar">
+                                     </div>
+
+                                </div>
+                              </div>
+                               <div class="row mb-3">
+                                <label for="profileBio" class="col-sm-3 col-form-label">Bio (Optional)</label>
+                                <div class="col-sm-9">
+                                  <textarea class="form-control" id="profileBio" rows="3" placeholder="Tell us a bit about yourself"></textarea>
+                                </div>
+                              </div>
+
+                              <div class="d-flex justify-content-end">
+                                   <button type="submit" class="btn btn-primary">Save Changes</button>
+                              </div>
+
+                         </form>
+                     </div>
+                 </div>
+
+                 <!-- Placeholder for other setting sections -->
+                  <div class="card mt-4" style="opacity: 0.5;"> <!-- Dimmed to show it's not the active tab -->
+                     <div class="card-header">
+                        Reader Preferences
+                     </div>
+                     <div class="card-body">
+                         <p class="text-muted">Reader preferences settings would appear here...</p>
+                         <!-- Example setting -->
+                         <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch" checked disabled>
+                            <label class="form-check-label" for="darkModeSwitch">Default Dark Mode for Reader</label>
+                         </div>
+                         <div class="mb-3">
+                             <label for="defaultViewMode" class="form-label">Default View Mode</label>
+                             <select class="form-select" id="defaultViewMode" disabled>
+                                <option>Single Page</option>
+                                <option selected>Two Page</option>
+                                <option>Fit Width</option>
+                             </select>
+                         </div>
+                     </div>
+                 </div>
+
+
+            </div>
+        </div>
+
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 11: About Page -->
+    <h2>State 11: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>About Us</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">Home</a> <!-- Adjust based on logged in/out state -->
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                    <!-- Add Login/Signup or User Menu based on state -->
+                     <a class="nav-link btn btn-primary text-white ms-2" href="#">Login</a>
+                    <a class="nav-link btn btn-success text-white ms-2" href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 text-center mb-4">About Comic Book Reader</h1>
+                <p class="lead text-center mb-5">Your ultimate destination for organizing and reading your digital comic book collection.</p>
+
+                <div class="card mb-4 shadow-sm">
+                     <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-gem me-2 text-primary"></i>Our Mission</h5>
+                        <p class="card-text">Placeholder text: Our mission is to provide comic book enthusiasts with a simple, elegant, and powerful platform to manage and enjoy their digital comics. We believe reading comics should be an immersive and effortless experience, accessible from anywhere.</p>
+                     </div>
+                </div>
+
+                 <div class="card mb-4 shadow-sm">
+                     <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-list-check me-2 text-success"></i>Key Features</h5>
+                            <ul>
+                                <li>Support for multiple comic book formats (CBR, CBZ, PDF, etc.).</li>
+                                <li>Intuitive interface for browsing and organizing your library.</li>
+                                <li>Cloud synchronization across devices (Placeholder Feature).</li>
+                                <li>Advanced reader with multiple viewing modes.</li>
+                                <li>Automatic metadata fetching for your comics.</li>
+                                <li>Secure storage for your collection.</li>
+                            </ul>
+                     </div>
+                 </div>
+
+                 <div class="card mb-4 shadow-sm">
+                     <div class="card-body">
+                         <h5 class="card-title"><i class="bi bi-people-fill me-2 text-info"></i>The Team</h5>
+                        <p class="card-text">Placeholder text: Comic Book Reader was created by a passionate team of developers and comic book lovers who wanted a better way to manage their digital collections. We are constantly working to improve the app and add new features based on user feedback.</p>
+                     </div>
+                 </div>
+
+                 <div class="text-center">
+                    <p>Version: 1.0.0 (Static Demo)</p>
+                    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                 </div>
+            </div>
+        </div>
+         <footer class="pt-3 mt-4 text-muted border-top text-center">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 12: Login Page (Error State) -->
+    <h2>State 12: Login Page (Error State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Login Error</title>
+    <style>
+        .login-container { max-width: 400px; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <div class="navbar-nav ms-auto">
+                 <a class="nav-link" href="#">Home</a>
+                 <a class="nav-link" href="#">About</a>
+                 <a class="nav-link btn btn-success text-white ms-2" href="#">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center vh-80 mt-5">
+        <div class="card login-container shadow-sm">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4">Login</h3>
+
+                 <!-- Error Alert -->
+                 <div class="alert alert-danger d-flex align-items-center" role="alert">
+                   <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                   <div>
+                     Invalid email or password. Please try again.
+                   </div>
+                 </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" required value="user@example.com"> <!-- Added is-invalid -->
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password" required> <!-- Added is-invalid -->
+                         <div class="invalid-feedback"> <!-- Example feedback -->
+                            Incorrect password.
+                         </div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                     <p class="mt-3 text-center">
+                        <a href="#">Forgot Password?</a>
+                    </p>
+                     <hr>
+                    <p class="text-center mb-0">
+                        Don't have an account? <a href="#">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+     <footer class="pt-3 mt-4 text-muted border-top text-center container">
+         &copy; 2023 Comic Book Reader
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 13: Sign Up Page (Error State) -->
+    <h2>State 13: Sign Up Page (Error State)</h2>
+     <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Sign Up Error</title>
+    <style>
+        .signup-container { max-width: 450px; }
+    </style>
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <div class="navbar-nav ms-auto">
+                 <a class="nav-link" href="#">Home</a>
+                 <a class="nav-link" href="#">About</a>
+                 <a class="nav-link btn btn-primary text-white ms-2" href="#">Login</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center vh-80 mt-5">
+        <div class="card signup-container shadow-sm">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4">Create Account</h3>
+
+                 <!-- Error Summary Alert -->
+                  <div class="alert alert-danger" role="alert">
+                      <h4 class="alert-heading">Registration Failed!</h4>
+                      <p>Please correct the following errors:</p>
+                      <hr>
+                      <ul class="mb-0">
+                          <li>Email address is already in use.</li>
+                          <li>Passwords do not match.</li>
+                      </ul>
+                  </div>
+
+                <form>
+                     <div class="mb-3">
+                        <label for="signupUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username" required value="ExistingUser">
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" required value="existing@example.com">
+                         <div class="invalid-feedback">
+                           This email address is already registered. Please <a href="#">login</a> or use a different email.
+                         </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Create a password" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm your password" required>
+                         <div class="invalid-feedback">
+                           Passwords do not match.
+                         </div>
+                    </div>
+                     <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" value="" id="termsCheck" required checked> <!-- Keep checked if previously submitted -->
+                      <label class="form-check-label" for="termsCheck">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                      </label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Sign Up</button>
+                    </div>
+                     <hr>
+                    <p class="text-center mb-0">
+                        Already have an account? <a href="#">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+     <footer class="pt-3 mt-4 text-muted border-top text-center container">
+         &copy; 2023 Comic Book Reader
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 14: Upload Comic Page (Success State) -->
+    <h2>State 14: Upload Comic Page (Success State)</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Upload Success</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link active" aria-current="page" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Upload Comics</h2>
+        <hr>
+
+         <!-- Success Alert -->
+          <div class="alert alert-success d-flex align-items-center" role="alert">
+           <i class="bi bi-check-circle-fill flex-shrink-0 me-2"></i>
+           <div>
+             Upload complete! 2 comics were successfully added to your collection. 1 comic failed (see details below).
+           </div>
+         </div>
+
+        <div class="card">
+            <div class="card-body">
+                 <form>
+                     <!-- Upload Form can be shown again or hidden -->
+                     <div class="mb-4">
+                         <label for="comicFiles" class="form-label">Select More Files or Drag & Drop</label>
+                          <div class="drop-zone" id="dropZone">
+                             <i class="bi bi-cloud-arrow-up"></i>
+                             <p class="mt-2 mb-0">Drag & drop files here or click to select files</p>
+                             <small class="text-muted">Max file size: 500MB per file</small>
+                             <input type="file" id="comicFiles" class="form-control" multiple hidden>
+                         </div>
+                     </div>
+                 </form>
+
+                 <!-- Upload Results -->
+                 <div class="mt-4">
+                    <h5>Upload Summary</h5>
+                     <ul class="list-group" id="fileList">
+                         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                           <div>
+                                comic_book_01.cbz (55.3 MB) <br>
+                                <small class="text-muted">Metadata found: Amazing Fantasy #15</small>
+                           </div>
+                           <span>
+                                <i class="bi bi-check-circle-fill text-success me-2"></i> Success
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-2">View</a>
+                           </span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                           <div>
+                               another_issue_02.cbr (42.1 MB) <br>
+                               <small class="text-muted">Metadata automatically applied.</small>
+                           </div>
+                            <span>
+                                <i class="bi bi-check-circle-fill text-success me-2"></i> Success
+                                <a href="#" class="btn btn-sm btn-outline-primary ms-2">View</a>
+                           </span>
+                          </li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
+                           <div>
+                               corrupted_file.pdf (1.2 MB) <br>
+                                <small class="text-danger">Error: File is corrupted or invalid format.</small>
+                           </div>
+                            <span>
+                                <i class="bi bi-x-octagon-fill text-danger me-2"></i> Failed
+                                <button class="btn btn-sm btn-outline-secondary ms-2">Retry</button>
+                           </span>
+                          </li>
+                    </ul>
+                 </div>
+                 <div class="mt-3 d-flex justify-content-end">
+                     <a href="#" class="btn btn-secondary me-2">Upload More</a>
+                     <a href="#" class="btn btn-primary">Go to Collection</a>
+                 </div>
+
+            </div>
+        </div>
+
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 15: Upload Comic Page (Error State - e.g., Server Error) -->
+    <h2>State 15: Upload Comic Page (Error State)</h2>
+    <iframe class="iframe-tall" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Upload Error</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Comic Book Reader</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                 <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <a class="nav-link" href="#">Home</a>
+                      <a class="nav-link" href="#">Collection</a>
+                      <a class="nav-link active" aria-current="page" href="#">Upload</a>
+                      <a class="nav-link" href="#">About</a>
+                 </div>
+                 <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Library" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                 </form>
+                <div class="navbar-nav">
+                     <a class="nav-link" href="#">Settings</a>
+                     <a class="nav-link" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Upload Comics</h2>
+        <hr>
+
+         <!-- General Error -->
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+           <i class="bi bi-exclamation-octagon-fill flex-shrink-0 me-2"></i>
+           <div>
+             An unexpected error occurred during the upload process. Please try again later. If the problem persists, contact support. (Error Code: 500)
+           </div>
+         </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                 <form>
+                     <div class="mb-4">
+                         <label for="comicFiles" class="form-label">Select Files or Drag & Drop</label>
+                         <div class="drop-zone" id="dropZone">
+                             <i class="bi bi-cloud-arrow-up"></i>
+                             <p class="mt-2 mb-0">Drag & drop files here or click to select files</p>
+                             <small class="text-muted">Max file size: 500MB per file</small>
+                             <input type="file" id="comicFiles" class="form-control" multiple hidden>
+                         </div>
+                     </div>
+
+                     <div class="mb-3">
+                        <label class="form-label">Selected Files:</label>
+                         <ul class="list-group" id="fileList">
+                            <!-- Show files that were attempted -->
+                             <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning">
+                                comic_book_01.cbz (55.3 MB)
+                                <span class="badge bg-warning text-dark">Upload Failed</span>
+                              </li>
+                              <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning">
+                                another_issue_02.cbr (42.1 MB)
+                                 <span class="badge bg-warning text-dark">Upload Failed</span>
+                              </li>
+                        </ul>
+                     </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="autoMetadata" checked>
+                        <label class="form-check-label" for="autoMetadata">Attempt to automatically fetch metadata (Optional)</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-repeat me-2"></i>Retry Upload</button>
+                     <button type="reset" class="btn btn-secondary ms-2">Clear Selection</button>
+
+                 </form>
+
+            </div>
+        </div>
+
+
+         <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Comic Book Reader
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

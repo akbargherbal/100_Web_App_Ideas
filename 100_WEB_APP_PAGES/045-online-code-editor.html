@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        /* Basic placeholder for editor */
+        .code-editor-placeholder {
+            background-color: #282c34;
+            color: #abb2bf;
+            font-family: monospace;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre;
+            overflow: auto;
+            border-radius: 4px;
+        }
+         .output-placeholder {
+            background-color: #f1f1f1;
+            color: #333;
+            font-family: monospace;
+            padding: 15px;
+            min-height: 150px;
+            white-space: pre-wrap;
+            overflow: auto;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Online Code Editor - UI Flow</h1>
+
+        <!-- State 1: Home Page (Logged Out) -->
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; min-height: 200px; white-space: pre; overflow: auto; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Write & Share Code Instantly</h1>
+            <p class="col-md-8 fs-4">A simple, fast, and reliable online code editor. Start coding in seconds, save your snippets, and share them with others.</p>
+            <a href="#" class="btn btn-primary btn-lg">Start Coding Now</a>
+            <a href="#" class="btn btn-outline-secondary btn-lg ms-2">Learn More</a>
+          </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+              <div class="col-md-12">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                  <h2>Quick Example</h2>
+                  <p>Try out a simple HTML snippet right here.</p>
+                  <div class="code-editor-placeholder">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello from the Editor!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                   <button class="btn btn-outline-light mt-3" type="button">Run Code (Visual Only)</button>
+                </div>
+              </div>
+        </div>
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Online Code Editor
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 2: About Page -->
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About Online Code Editor</h1>
+        <hr>
+        <p class="lead">Welcome to Online Code Editor, your go-to platform for writing, testing, and sharing code snippets seamlessly in your browser.</p>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Our Mission</h3>
+                <p>To provide developers, students, and enthusiasts with a simple, accessible, and powerful tool for coding on the web. Whether you need to quickly test an idea, collaborate on a piece of code, or share your work, we aim to make the process effortless.</p>
+            </div>
+             <div class="col-md-6">
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Support for multiple languages (HTML, CSS, JavaScript, Python, etc. - *visual representation only*)</li>
+                    <li>Real-time preview for web languages</li>
+                    <li>Save and organize your code snippets</li>
+                    <li>Share snippets easily via unique links</li>
+                    <li>Clean and intuitive user interface</li>
+                </ul>
+            </div>
+        </div>
+
+         <div class="mt-4 p-4 bg-light border rounded">
+            <h3>Technology Stack (Conceptual)</h3>
+            <p>This application UI is built using HTML and Bootstrap for demonstration purposes. A real implementation would involve server-side languages, databases, and potentially frontend frameworks.</p>
+         </div>
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Online Code Editor
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 3: Login Page -->
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                       <h3>Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMeCheck">
+                                <label class="form-check-label" for="rememberMeCheck">Remember me</label>
+                             </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <div class="text-center mt-3">
+                           <p>Dont have an account? <a href="#">Sign Up</a></p>
+                           <a href="#" class="text-decoration-none"><small>Forgot Password?</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+     <footer class="pt-3 mt-5 text-center text-muted border-top">
+            &copy; 2023 Online Code Editor
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 4: Login Page (Error State) -->
+        <h2>State 4: Login Page (Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Error - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                       <h3>Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                          Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="emailInput" placeholder="name@example.com" value="user@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="passwordInput" placeholder="Password" value="wrongpass" required>
+                                <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMeCheck">
+                                <label class="form-check-label" for="rememberMeCheck">Remember me</label>
+                             </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <div class="text-center mt-3">
+                           <p>Dont have an account? <a href="#">Sign Up</a></p>
+                            <a href="#" class="text-decoration-none"><small>Forgot Password?</small></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+     <footer class="pt-3 mt-5 text-center text-muted border-top">
+            &copy; 2023 Online Code Editor
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 5: Sign Up Page -->
+        <h2>State 5: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                     <div class="card-header text-center">
+                       <h3>Create Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                             <div class="mb-3">
+                                <label for="usernameInput" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="usernameInput" placeholder="Choose a username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="passwordInput" placeholder="Create a password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm your password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <div class="text-center mt-3">
+                           <p>Already have an account? <a href="#">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+     <footer class="pt-3 mt-5 text-center text-muted border-top">
+            &copy; 2023 Online Code Editor
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 6: Sign Up Page (Validation Error) -->
+        <h2>State 6: Sign Up Page (Validation Error)</h2>
+         <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Error - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card">
+                     <div class="card-header text-center">
+                       <h3>Create Account</h3>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-warning" role="alert">
+                          Please fix the errors below.
+                        </div>
+                        <form>
+                             <div class="mb-3">
+                                <label for="usernameInput" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="usernameInput" placeholder="Choose a username" value="user!" required>
+                                <div class="invalid-feedback">
+                                    Username can only contain letters, numbers, and underscores.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passwordInput" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="passwordInput" placeholder="Create a password" value="pass" required>
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPasswordInput" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPasswordInput" placeholder="Confirm your password" value="password" required>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <div class="text-center mt-3">
+                           <p>Already have an account? <a href="#">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+     <footer class="pt-3 mt-5 text-center text-muted border-top">
+            &copy; 2023 Online Code Editor
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+
+        <!-- State 7: Home Page (Logged In) -->
+        <h2>State 7: Home Page (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; min-height: 150px; white-space: pre; overflow: auto; border-radius: 4px; margin-bottom: 15px;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Snippets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, User!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert alert-info" role="alert">
+          Welcome back! Ready to code?
+        </div>
+
+         <div class="row mb-4">
+            <div class="col-md-8">
+                <h2>Dashboard</h2>
+                <p>Quick access to your recent work and common actions.</p>
+            </div>
+             <div class="col-md-4 text-md-end">
+                 <a href="#" class="btn btn-success btn-lg">Create New Snippet</a>
+             </div>
+         </div>
+
+
+        <div class="row">
+          <div class="col-md-7">
+            <h4>Recent Snippets</h4>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">My Awesome Script</h5>
+                  <small>3 days ago</small>
+                </div>
+                <p class="mb-1">A quick Python script for data processing.</p>
+                <small>Python</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Cool CSS Animation</h5>
+                  <small class="text-muted">1 week ago</small>
+                </div>
+                <p class="mb-1">Experimenting with keyframe animations.</p>
+                <small class="text-muted">CSS</small>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Navbar Example</h5>
+                  <small class="text-muted">2 weeks ago</small>
+                </div>
+                <p class="mb-1">Basic Bootstrap navbar structure.</p>
+                <small class="text-muted">HTML</small>
+              </a>
+            </div>
+              <a href="#" class="btn btn-outline-secondary mt-3">View All Snippets</a>
+          </div>
+          <div class="col-md-5">
+            <h4>Quick Create</h4>
+             <div class="card">
+                 <div class="card-body">
+                     <h5 class="card-title">Start a new snippet:</h5>
+                       <div class="mb-3">
+                            <label for="quickSnippetName" class="form-label">Snippet Name (Optional)</label>
+                            <input type="text" class="form-control form-control-sm" id="quickSnippetName" placeholder="e.g., My Test Function">
+                        </div>
+                       <div class="mb-3">
+                            <label for="quickLanguage" class="form-label">Language</label>
+                            <select class="form-select form-select-sm" id="quickLanguage">
+                              <option selected>Choose...</option>
+                              <option value="1">HTML</option>
+                              <option value="2">CSS</option>
+                              <option value="3">JavaScript</option>
+                              <option value="4">Python</option>
+                            </select>
+                        </div>
+                       <a href="#" class="btn btn-primary w-100">Go to Editor</a>
+                 </div>
+             </div>
+          </div>
+        </div>
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Online Code Editor
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 8: Code Editor (New Snippet) -->
+        <h2>State 8: Code Editor (New Snippet)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; height: 400px; white-space: pre; overflow: auto; border-radius: 4px; border: 1px solid #444; }
+        .output-placeholder { background-color: #f1f1f1; color: #333; font-family: monospace; padding: 15px; min-height: 150px; white-space: pre-wrap; overflow: auto; border-radius: 4px; border: 1px solid #ddd; }
+        body { display: flex; flex-direction: column; min-height: 100vh; margin:0; }
+        .editor-container { flex-grow: 1; display: flex; flex-direction: column; padding-top: 56px; /* Height of navbar */ }
+        .editor-main { flex-grow: 1; display: flex; flex-direction: column; padding: 15px; }
+        .editor-area { flex-grow: 1; }
+        .output-area { height: 200px; margin-top: 15px; }
+         .navbar { position: fixed; top: 0; width: 100%; z-index: 1030; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+             <input type="text" class="form-control form-control-sm w-25 bg-dark text-light border-secondary" placeholder="Untitled Snippet">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+                     <li class="nav-item">
+                        <select class="form-select form-select-sm bg-dark text-light border-secondary" aria-label="Language select">
+                          <option selected>JavaScript</option>
+                          <option value="1">HTML</option>
+                          <option value="2">CSS</option>
+                          <option value="3">Python</option>
+                          <option value="4">Plain Text</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-success me-2" type="button">Run</button>
+                    </li>
+                     <li class="nav-item">
+                        <button class="btn btn-primary me-2" type="button">Save</button>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                         <li><a class="dropdown-item" href="#">Home</a></li>
+                        <li><a class="dropdown-item" href="#">My Snippets</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="editor-container">
+        <div class="editor-main">
+            <div class="editor-area mb-3">
+                <label for="codeInput" class="form-label visually-hidden">Code Input</label>
+                <textarea id="codeInput" class="code-editor-placeholder" spellcheck="false">console.log("Hello, Editor!");
+// Start writing your code here...</textarea>
+            </div>
+            <div class="output-area">
+                 <label for="outputArea" class="form-label">Output / Console</label>
+                <div id="outputArea" class="output-placeholder">Click "Run" to see the output...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+         <!-- State 9: Code Editor (Saving Snippet - Modal) -->
+        <h2>State 9: Code Editor (Saving Snippet - Modal)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Snippet - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; height: 400px; white-space: pre; overflow: auto; border-radius: 4px; border: 1px solid #444; }
+        .output-placeholder { background-color: #f1f1f1; color: #333; font-family: monospace; padding: 15px; min-height: 150px; white-space: pre-wrap; overflow: auto; border-radius: 4px; border: 1px solid #ddd; }
+        body { display: flex; flex-direction: column; min-height: 100vh; margin:0; }
+        .editor-container { flex-grow: 1; display: flex; flex-direction: column; padding-top: 56px; }
+        .editor-main { flex-grow: 1; display: flex; flex-direction: column; padding: 15px; }
+        .editor-area { flex-grow: 1; }
+        .output-area { height: 200px; margin-top: 15px; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1030; }
+        .modal-backdrop { opacity: 0.5; } /* Ensure backdrop is visible */
+        .modal { display: block; } /* Force modal visible for static demo */
+    </style>
+</head>
+<body>
+    <!-- Background Editor UI -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+             <input type="text" class="form-control form-control-sm w-25 bg-dark text-light border-secondary" placeholder="Untitled Snippet">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+                     <li class="nav-item">
+                        <select class="form-select form-select-sm bg-dark text-light border-secondary" aria-label="Language select">
+                          <option selected>JavaScript</option>
+                          <option value="1">HTML</option>
+                          <option value="2">CSS</option>
+                          <option value="3">Python</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-success me-2" type="button">Run</button>
+                    </li>
+                     <li class="nav-item">
+                        <button class="btn btn-primary me-2" type="button">Save</button>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">User</a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                         <li><a class="dropdown-item" href="#">Home</a></li><li><a class="dropdown-item" href="#">My Snippets</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <div class="editor-container">
+        <div class="editor-main">
+            <div class="editor-area mb-3">
+                 <textarea class="code-editor-placeholder" spellcheck="false">console.log("Hello, Editor!");
+// Saving this code...</textarea>
+            </div>
+            <div class="output-area">
+                 <div class="output-placeholder">...</div>
+            </div>
+        </div>
+    </div>
+    <!-- End Background Editor UI -->
+
+
+    <!-- Save Modal -->
+    <div class="modal fade show" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" style="display: block;" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="saveModalLabel">Save Snippet</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                    <label for="snippetName" class="form-label">Snippet Name</label>
+                    <input type="text" class="form-control" id="snippetName" placeholder="Enter a name for your snippet" required>
+                     <div class="invalid-feedback">
+                        Snippet name is required.
+                     </div>
+                </div>
+                 <div class="mb-3">
+                    <label for="snippetDescription" class="form-label">Description (Optional)</label>
+                    <textarea class="form-control" id="snippetDescription" rows="3" placeholder="Add a brief description..."></textarea>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="makePublicCheck">
+                  <label class="form-check-label" for="makePublicCheck">
+                    Make Public (Shareable link)
+                  </label>
+                </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Save Snippet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+    <!-- End Save Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+         <!-- State 10: Code Editor (Save Success) -->
+        <h2>State 10: Code Editor (Save Success)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Snippet Saved</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; height: 400px; white-space: pre; overflow: auto; border-radius: 4px; border: 1px solid #444; }
+        .output-placeholder { background-color: #f1f1f1; color: #333; font-family: monospace; padding: 15px; min-height: 150px; white-space: pre-wrap; overflow: auto; border-radius: 4px; border: 1px solid #ddd; }
+        body { display: flex; flex-direction: column; min-height: 100vh; margin:0; }
+        .editor-container { flex-grow: 1; display: flex; flex-direction: column; padding-top: 56px; /* Height of navbar */ position: relative; } /* Relative positioning for alert */
+        .editor-main { flex-grow: 1; display: flex; flex-direction: column; padding: 15px; }
+        .editor-area { flex-grow: 1; }
+        .output-area { height: 200px; margin-top: 15px; }
+         .navbar { position: fixed; top: 0; width: 100%; z-index: 1030; }
+         .alert-container { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: auto; z-index: 1050; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+             <input type="text" class="form-control form-control-sm w-25 bg-dark text-light border-secondary" value="My JavaScript Example"> <!-- Updated Name -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
+                     <li class="nav-item">
+                        <select class="form-select form-select-sm bg-dark text-light border-secondary" aria-label="Language select">
+                          <option selected>JavaScript</option>
+                          <option value="1">HTML</option>
+                          <option value="2">CSS</option>
+                          <option value="3">Python</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-success me-2" type="button">Run</button>
+                    </li>
+                     <li class="nav-item">
+                        <button class="btn btn-primary me-2" type="button">Save</button> <!-- Could be disabled or change to "Update" -->
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">User</a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                           <li><a class="dropdown-item" href="#">Home</a></li><li><a class="dropdown-item" href="#">My Snippets</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="editor-container">
+        <!-- Success Alert -->
+        <div class="alert-container">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              Snippet "My JavaScript Example" saved successfully!
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        <!-- End Success Alert -->
+
+        <div class="editor-main">
+            <div class="editor-area mb-3">
+                <label for="codeInput" class="form-label visually-hidden">Code Input</label>
+                <textarea id="codeInput" class="code-editor-placeholder" spellcheck="false">console.log("Hello, Editor!");
+// Saving this code...</textarea>
+            </div>
+            <div class="output-area">
+                 <label for="outputArea" class="form-label">Output / Console</label>
+                <div id="outputArea" class="output-placeholder">...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 11: My Snippets Page -->
+        <h2>State 11: My Snippets Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Snippets - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Snippets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, User!
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Snippets</h1>
+            <a href="#" class="btn btn-success">Create New Snippet</a>
+        </div>
+
+         <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Search snippets..." aria-label="Search snippets">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+
+
+        <div class="list-group">
+            <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><a href="#" class="text-decoration-none">My JavaScript Example</a></h5>
+                  <small>1 hour ago</small>
+                </div>
+                <p class="mb-1">Simple console log example.</p>
+                <small class="me-2"><span class="badge bg-warning text-dark">JavaScript</span></small>
+                <small><span class="badge bg-secondary">Private</span></small>
+                <div class="float-end">
+                     <a href="#" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                     <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+              </div>
+
+              <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><a href="#" class="text-decoration-none">My Awesome Script</a></h5>
+                  <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">A quick Python script for data processing.</p>
+                <small class="me-2"><span class="badge bg-info text-dark">Python</span></small>
+                 <small><span class="badge bg-success">Public</span></small>
+                 <div class="float-end">
+                     <a href="#" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                     <a href="#" class="btn btn-sm btn-outline-secondary me-1">Share</a>
+                     <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+              </div>
+
+              <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><a href="#" class="text-decoration-none">Cool CSS Animation</a></h5>
+                  <small class="text-muted">1 week ago</small>
+                </div>
+                <p class="mb-1">Experimenting with keyframe animations.</p>
+                <small class="me-2"><span class="badge bg-primary">CSS</span></small>
+                <small><span class="badge bg-secondary">Private</span></small>
+                 <div class="float-end">
+                     <a href="#" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                     <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+              </div>
+
+               <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><a href="#" class="text-decoration-none">Navbar Example</a></h5>
+                  <small class="text-muted">2 weeks ago</small>
+                </div>
+                <p class="mb-1">Basic Bootstrap navbar structure.</p>
+                <small class="me-2"><span class="badge bg-danger">HTML</span></small>
+                <small><span class="badge bg-success">Public</span></small>
+                 <div class="float-end">
+                     <a href="#" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                     <a href="#" class="btn btn-sm btn-outline-secondary me-1">Share</a>
+                     <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+              </div>
+        </div>
+
+          <!-- Pagination Placeholder -->
+        <nav aria-label="Snippet navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Online Code Editor
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 12: View Snippet Page -->
+        <h2>State 12: View Snippet Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Snippet - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .code-editor-placeholder { background-color: #282c34; color: #abb2bf; font-family: monospace; padding: 15px; min-height: 300px; white-space: pre; overflow: auto; border-radius: 4px; border: 1px solid #444; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Snippets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <!-- Logged in / Logged out status could vary here -->
+                 <ul class="navbar-nav">
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        User
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h1 class="mb-0">My Awesome Script</h1>
+                <small class="text-muted">Created by User on YYYY-MM-DD</small>
+            </div>
+            <div>
+                <span class="badge bg-info text-dark me-2">Python</span>
+                <span class="badge bg-success">Public</span>
+            </div>
+        </div>
+
+        <p class="lead">A quick Python script for data processing.</p>
+        <hr>
+
+        <div class="mb-3">
+             <label for="codeView" class="form-label fw-bold">Code:</label>
+            <div id="codeView" class="code-editor-placeholder">import pandas as pd
+
+def process_data(file_path):
+    """Loads and processes data from a CSV file."""
+    try:
+        df = pd.read_csv(file_path)
+        # Example processing: fill missing values
+        df.fillna(0, inplace=True)
+        print("Data processed successfully!")
+        print(df.head())
+        return df
+    except FileNotFoundError:
+        print(f"Error: File not found at {file_path}")
+        return None
+
+# Example usage:
+# data = process_data("data.csv")</div>
+        </div>
+
+        <div class="mt-3">
+             <button class="btn btn-outline-secondary me-2" type="button">Copy Code</button>
+             <!-- Show Edit only if owner -->
+             <a href="#" class="btn btn-primary me-2">Edit Snippet</a>
+             <a href="#" class="btn btn-danger">Delete Snippet</a>
+             <!-- Show Fork/Clone if not owner -->
+             <!-- <button class="btn btn-outline-success me-2" type="button">Fork Snippet</button> -->
+        </div>
+
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2023 Online Code Editor
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+         <!-- State 13: View Snippet Page (Not Found/Error) -->
+        <h2>State 13: View Snippet Page (Not Found/Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snippet Not Found - Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">New Snippet</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Snippets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">Error 404: Snippet Not Found</h4>
+          <p>The code snippet you are looking for does not exist or you may not have permission to view it.</p>
+          <hr>
+          <p class="mb-0">Please check the URL or go back to <a href="#" class="alert-link">your snippets</a>.</p>
+        </div>
+
+         <a href="#" class="btn btn-primary mt-3">Go to Home Page</a>
+
+    </div>
+
+     <footer class="pt-3 mt-5 text-center text-muted border-top">
+            &copy; 2023 Online Code Editor
+     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

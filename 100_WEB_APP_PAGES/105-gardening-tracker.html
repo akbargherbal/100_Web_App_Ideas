@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+        }
+        .iframe-container {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Gardening Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="iframe-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold"><i class="bi bi-brightness-high-fill text-warning"></i> Welcome to Gardening Tracker!</h1>
+                <p class="col-md-8 fs-4 mx-auto">Your digital companion for nurturing a thriving garden. Keep track of your plants, manage care schedules, and plan your green space effortlessly.</p>
+                <a href="#" class="btn btn-success btn-lg me-2" type="button">Sign Up Now</a>
+                <a href="#" class="btn btn-outline-secondary btn-lg" type="button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-list-check text-success"></i> Track Plant Care</h5>
+                        <p class="card-text">Never miss a watering or fertilizing schedule again. Log activities and monitor your plants growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                     <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-calendar-event text-success"></i> Manage Schedules</h5>
+                        <p class="card-text">Set up recurring tasks and get timely reminders for all your gardening needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                     <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-map text-success"></i> Plan Your Garden</h5>
+                        <p class="card-text">Visualize and organize your garden layout, whether it is pots on a balcony or beds in a yard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 2: Sign Up Page -->
+    <div class="iframe-container">
+        <h2>State 2: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2 active" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Create Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Sign Up</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page (with Validation Errors) -->
+    <div class="iframe-container">
+        <h2>State 3: Sign Up Page (with Validation Errors)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Sign Up Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2 active" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">Create Your Account - Errors Found</h4>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                            Please correct the errors below.
+                         </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="signupUsername" placeholder="Choose a username" required value="user">
+                                 <div class="invalid-feedback">
+                                    Username must be at least 5 characters long.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter your email" required value="invalid-email">
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-valid" id="signupPassword" placeholder="Create a password" required value="password123">
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="Confirm your password" required value="password456">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                 </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Sign Up</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 4: Login Page -->
+    <div class="iframe-container">
+        <h2>State 4: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Login to Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Login</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Dont have an account? <a href="#">Sign up here</a></p>
+                        <p class="text-center"><a href="#">Forgot password?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 5: Login Page (with Validation Errors) -->
+    <div class="iframe-container">
+        <h2>State 5: Login Page (with Validation Errors)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Login Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0">Login Failed</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                           Invalid email or password. Please try again.
+                         </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="Enter your email" required value="user@example.com">
+                                <div class="invalid-feedback">
+                                    Please enter a valid email.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter your password" required value="wrongpass">
+                                 <div class="invalid-feedback">
+                                    Password is required.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Login</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 text-center">Dont have an account? <a href="#">Sign up here</a></p>
+                         <p class="text-center"><a href="#">Forgot password?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+        <!-- State 6: Home Page (Logged In) / Dashboard -->
+    <div class="iframe-container">
+        <h2>State 6: Home Page (Logged In) / Dashboard</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Plants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Care Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Garden Planner</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add New Plant
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Upcoming Tasks -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                       <h5 class="mb-0"><i class="bi bi-calendar-check text-primary"></i> Upcoming Tasks</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-droplet-fill text-info me-2"></i> Water Tomato Plant
+                                    <small class="d-block text-muted">Due: Today</small>
+                                </div>
+                                <button class="btn btn-sm btn-outline-success">Done</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-droplet-fill text-info me-2"></i> Water Basil
+                                    <small class="d-block text-muted">Due: Tomorrow</small>
+                                </div>
+                               <button class="btn btn-sm btn-outline-secondary disabled">Done</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-thermometer-sun text-warning me-2"></i> Fertilize Roses
+                                    <small class="d-block text-muted">Due: In 3 days</small>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary disabled">Done</button>
+                            </li>
+                             <li class="list-group-item text-center">
+                                <a href="#">View Full Schedule</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Garden Overview -->
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0"><i class="bi bi-grid-3x3-gap-fill text-success"></i> Garden Overview</h5>
+                    </div>
+                    <div class="card-body">
+                         <div class="row text-center">
+                            <div class="col-4">
+                                <h4>12</h4>
+                                <p>Total Plants</p>
+                            </div>
+                             <div class="col-4">
+                                <h4>3</h4>
+                                <p>Tasks Today</p>
+                            </div>
+                            <div class="col-4">
+                                <h4>1</h4>
+                                <p>Alerts</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p><strong>Recent Activity:</strong> Added "Mint" plant yesterday.</p>
+                        <p><strong>Quick Alert:</strong> Low moisture detected for "Fern".</p>
+                         <div class="d-grid gap-2">
+                         <a href="#" class="btn btn-outline-success">View My Plants</a>
+                         <a href="#" class="btn btn-outline-secondary">View Garden Plan</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Recently Added Plants -->
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0"><i class="bi bi-clock-history text-info"></i> Recently Added Plants</h5>
+                    </div>
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col-md-4 mb-3">
+                                 <div class="card">
+                                     <img src="https://via.placeholder.com/150x100/28a745/ffffff?text=Mint" class="card-img-top" alt="Mint">
+                                     <div class="card-body">
+                                         <h6 class="card-title">Mint</h6>
+                                         <p class="card-text"><small class="text-muted">Added: Yesterday</small></p>
+                                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-md-4 mb-3">
+                                 <div class="card">
+                                      <img src="https://via.placeholder.com/150x100/28a745/ffffff?text=Lavender" class="card-img-top" alt="Lavender">
+                                     <div class="card-body">
+                                         <h6 class="card-title">Lavender</h6>
+                                         <p class="card-text"><small class="text-muted">Added: 3 days ago</small></p>
+                                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col-md-4 mb-3">
+                                 <div class="card">
+                                      <img src="https://via.placeholder.com/150x100/28a745/ffffff?text=Succulent" class="card-img-top" alt="Succulent">
+                                     <div class="card-body">
+                                         <h6 class="card-title">Succulent Mix</h6>
+                                         <p class="card-text"><small class="text-muted">Added: 1 week ago</small></p>
+                                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 7: My Plants Page -->
+    <div class="iframe-container">
+        <h2>State 7: My Plants Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - My Plants</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Plants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Care Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Garden Planner</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">My Plants (12)</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                 <div class="input-group me-2">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search plants...">
+                    <button class="btn btn-sm btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+                 </div>
+                <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add New Plant
+                </a>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Plant Card 1 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Tomato" class="card-img-top" alt="Tomato Plant">
+                    <div class="card-body">
+                        <h5 class="card-title">Tomato Plant</h5>
+                        <p class="card-text"><small>Next Task: Water (Today)</small></p>
+                        <span class="badge bg-primary">Vegetable</span>
+                        <span class="badge bg-warning text-dark">Needs Water</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Plant Card 2 -->
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Basil" class="card-img-top" alt="Basil Plant">
+                    <div class="card-body">
+                        <h5 class="card-title">Basil</h5>
+                        <p class="card-text"><small>Next Task: Water (Tomorrow)</small></p>
+                        <span class="badge bg-success">Herb</span>
+                         <span class="badge bg-light text-dark">Healthy</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Plant Card 3 -->
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Rose+Bush" class="card-img-top" alt="Rose Bush">
+                    <div class="card-body">
+                        <h5 class="card-title">Rose Bush</h5>
+                        <p class="card-text"><small>Next Task: Fertilize (In 3 days)</small></p>
+                        <span class="badge bg-danger">Flower</span>
+                         <span class="badge bg-light text-dark">Healthy</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Plant Card 4 -->
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Fern" class="card-img-top" alt="Fern">
+                    <div class="card-body">
+                        <h5 class="card-title">Fern</h5>
+                        <p class="card-text"><small>Next Task: Mist (Today)</small></p>
+                        <span class="badge bg-info">Houseplant</span>
+                        <span class="badge bg-danger">Needs Attention</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more plant cards as needed -->
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Mint" class="card-img-top" alt="Mint">
+                    <div class="card-body">
+                        <h5 class="card-title">Mint</h5>
+                        <p class="card-text"><small>Next Task: Water (Today)</small></p>
+                        <span class="badge bg-success">Herb</span>
+                         <span class="badge bg-light text-dark">Healthy</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/200x150/28a745/ffffff?text=Lavender" class="card-img-top" alt="Lavender">
+                    <div class="card-body">
+                        <h5 class="card-title">Lavender</h5>
+                         <p class="card-text"><small>Next Task: Prune (Next week)</small></p>
+                        <span class="badge bg-danger">Flower</span>
+                         <span class="badge bg-light text-dark">Healthy</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="#" class="btn btn-sm btn-outline-primary me-1">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+         <nav aria-label="Plant list navigation" class="mt-4 d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 8: Add New Plant Page -->
+    <div class="iframe-container">
+        <h2>State 8: Add New Plant Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Add Plant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">My Plants</a> <!-- Active parent section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Care Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Garden Planner</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add New Plant</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary">
+                 <i class="bi bi-arrow-left"></i> Back to My Plants
+             </a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantName" class="form-label">Plant Name *</label>
+                            <input type="text" class="form-control" id="plantName" placeholder="e.g., Cherry Tomato" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="plantSpecies" class="form-label">Species / Variety</label>
+                            <input type="text" class="form-control" id="plantSpecies" placeholder="e.g., Solanum lycopersicum var. cerasiforme">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="plantLocation" placeholder="e.g., Backyard Plot 3, Kitchen Window">
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="plantAcquiredDate" class="form-label">Date Acquired</label>
+                            <input type="date" class="form-control" id="plantAcquiredDate">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="plantImage" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" id="plantImage">
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="plantNotes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="plantNotes" rows="3" placeholder="Enter any specific notes about this plant..."></textarea>
+                    </div>
+
+                    <hr>
+                    <h5 class="mb-3">Care Requirements (Optional)</h5>
+
+                    <div class="row">
+                         <div class="col-md-4 mb-3">
+                            <label for="wateringFrequency" class="form-label"><i class="bi bi-droplet-fill text-info"></i> Watering Frequency</label>
+                             <select class="form-select" id="wateringFrequency">
+                                <option selected>Select...</option>
+                                <option value="daily">Daily</option>
+                                <option value="every_other_day">Every other day</option>
+                                <option value="twice_weekly">Twice a week</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="bi_weekly">Bi-weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="custom">Custom</option>
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="sunlightNeeds" class="form-label"><i class="bi bi-sun-fill text-warning"></i> Sunlight Needs</label>
+                            <select class="form-select" id="sunlightNeeds">
+                                <option selected>Select...</option>
+                                <option value="full_sun">Full Sun (6+ hours)</option>
+                                <option value="part_sun">Part Sun (4-6 hours)</option>
+                                <option value="part_shade">Part Shade (2-4 hours)</option>
+                                <option value="full_shade">Full Shade (<2 hours)</option>
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="fertilizingNeeds" class="form-label"><i class="bi bi-thermometer-sun text-danger"></i> Fertilizing Needs</label>
+                            <input type="text" class="form-control" id="fertilizingNeeds" placeholder="e.g., Monthly during growing season">
+                         </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add Plant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+    <!-- State 9: Add New Plant Page (with Validation Errors) -->
+    <div class="iframe-container">
+        <h2>State 9: Add New Plant Page (with Validation Errors)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Add Plant Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">My Plants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Care Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Garden Planner</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add New Plant</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary">
+                 <i class="bi bi-arrow-left"></i> Back to My Plants
+             </a>
+        </div>
+
+         <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> Please fix the errors in the form below.
+         </div>
+
+        <div class="card border-danger">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantName" class="form-label">Plant Name *</label>
+                            <input type="text" class="form-control is-invalid" id="plantName" placeholder="e.g., Cherry Tomato" required value="">
+                             <div class="invalid-feedback">
+                                Plant name is required.
+                             </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="plantSpecies" class="form-label">Species / Variety</label>
+                            <input type="text" class="form-control" id="plantSpecies" placeholder="e.g., Solanum lycopersicum var. cerasiforme" value="Tomato">
+                        </div>
+                    </div>
+
+                     <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="plantLocation" placeholder="e.g., Backyard Plot 3, Kitchen Window">
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="plantAcquiredDate" class="form-label">Date Acquired</label>
+                            <input type="date" class="form-control is-invalid" id="plantAcquiredDate" value="2025-01-01">
+                            <div class="invalid-feedback">
+                                Acquired date cannot be in the future.
+                             </div>
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="plantImage" class="form-label">Upload Image</label>
+                        <input class="form-control" type="file" id="plantImage">
+                    </div>
+
+
+                     <div class="mb-3">
+                        <label for="plantNotes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="plantNotes" rows="3" placeholder="Enter any specific notes about this plant..."></textarea>
+                    </div>
+
+                    <hr>
+                    <h5 class="mb-3">Care Requirements (Optional)</h5>
+
+                     <div class="row">
+                         <div class="col-md-4 mb-3">
+                            <label for="wateringFrequency" class="form-label"><i class="bi bi-droplet-fill text-info"></i> Watering Frequency</label>
+                             <select class="form-select is-invalid" id="wateringFrequency">
+                                <option selected>Select...</option>
+                                <!-- other options -->
+                            </select>
+                             <div class="invalid-feedback">
+                                Please select a watering frequency.
+                             </div>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="sunlightNeeds" class="form-label"><i class="bi bi-sun-fill text-warning"></i> Sunlight Needs</label>
+                            <select class="form-select is-valid" id="sunlightNeeds">
+                                <option>Select...</option>
+                                <option value="full_sun" selected>Full Sun (6+ hours)</option>
+                                <!-- other options -->
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="fertilizingNeeds" class="form-label"><i class="bi bi-thermometer-sun text-danger"></i> Fertilizing Needs</label>
+                            <input type="text" class="form-control" id="fertilizingNeeds" placeholder="e.g., Monthly during growing season">
+                         </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add Plant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+
+     <!-- State 10: Plant Detail Page -->
+    <div class="iframe-container">
+        <h2>State 10: Plant Detail Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Plant Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">My Plants</a> <!-- Active parent section -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Care Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Garden Planner</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Plant Details: Tomato Plant</h1>
+            <div>
+                 <a href="#" class="btn btn-sm btn-outline-secondary me-2">
+                     <i class="bi bi-arrow-left"></i> Back to My Plants
+                 </a>
+                 <a href="#" class="btn btn-sm btn-primary">
+                     <i class="bi bi-pencil-square"></i> Edit Plant
+                 </a>
+                  <button type="button" class="btn btn-sm btn-danger ms-2">
+                     <i class="bi bi-trash"></i> Delete Plant
+                 </button>
+             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="https://via.placeholder.com/300x250/28a745/ffffff?text=Tomato" class="img-fluid rounded shadow-sm mb-3" alt="Tomato Plant">
+                 <div class="card">
+                    <div class="card-header">Quick Info</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Species:</strong> Solanum lycopersicum</li>
+                        <li class="list-group-item"><strong>Location:</strong> Backyard Plot 3</li>
+                        <li class="list-group-item"><strong>Acquired:</strong> 2023-05-15</li>
+                        <li class="list-group-item"><strong>Status:</strong> <span class="badge bg-warning text-dark">Needs Water</span></li>
+                    </ul>
+                 </div>
+                  <button class="btn btn-success w-100 mt-3"><i class="bi bi-check-circle-fill"></i> Mark Watering Complete</button>
+
+            </div>
+            <div class="col-md-8 mb-4">
+                 <ul class="nav nav-tabs mb-3" id="plantDetailTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="true">Care Info</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="schedule-tab" data-bs-toggle="tab" data-bs-target="#schedule" type="button" role="tab" aria-controls="schedule" aria-selected="false">Schedule</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="log-tab" data-bs-toggle="tab" data-bs-target="#log" type="button" role="tab" aria-controls="log" aria-selected="false">Care Log</button>
+                    </li>
+                     <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="notes-tab" data-bs-toggle="tab" data-bs-target="#notes" type="button" role="tab" aria-controls="notes" aria-selected="false">Notes</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="plantDetailTabsContent">
+                    <!-- Care Info Tab -->
+                    <div class="tab-pane fade show active" id="care" role="tabpanel" aria-labelledby="care-tab">
+                        <h5>Care Requirements</h5>
+                        <table class="table table-sm table-striped">
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><i class="bi bi-droplet-fill text-info me-2"></i>Watering</th>
+                                    <td>Every other day, check soil moisture first. Needs about 1 inch per week.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="bi bi-sun-fill text-warning me-2"></i>Sunlight</th>
+                                    <td>Full Sun (6+ hours direct sunlight).</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="bi bi-thermometer-sun text-danger me-2"></i>Fertilizing</th>
+                                    <td>Every 2 weeks during fruiting season with balanced liquid fertilizer.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="bi bi-scissors text-secondary me-2"></i>Pruning</th>
+                                    <td>Remove lower leaves and suckers regularly.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="bi bi-map text-success me-2"></i>Soil</th>
+                                    <td>Well-draining loam, slightly acidic (pH 6.0-6.8).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Schedule Tab -->
+                    <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                         <h5>Upcoming Tasks for Tomato Plant</h5>
+                         <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Water
+                                <span class="badge bg-primary rounded-pill">Due: Today</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Check for Pests
+                                <span class="badge bg-secondary rounded-pill">Due: In 2 days</span>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Fertilize
+                                <span class="badge bg-secondary rounded-pill">Due: In 5 days</span>
+                            </li>
+                         </ul>
+                         <a href="#" class="btn btn-sm btn-outline-success mt-3"><i class="bi bi-plus-circle"></i> Add Custom Task</a>
+                    </div>
+                    <!-- Care Log Tab -->
+                    <div class="tab-pane fade" id="log" role="tabpanel" aria-labelledby="log-tab">
+                        <h5>Recent Care Activities</h5>
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr><th>Date</th><th>Activity</th><th>Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2024-03-09</td><td>Watered</td><td>Soil was dry.</td></tr>
+                                <tr><td>2024-03-07</td><td>Pruned</td><td>Removed lower leaves.</td></tr>
+                                <tr><td>2024-03-07</td><td>Watered</td><td>-</td></tr>
+                                <tr><td>2024-03-05</td><td>Fertilized</td><td>Used tomato fertilizer.</td></tr>
+                                <tr><td>2024-03-05</td><td>Watered</td><td>-</td></tr>
+                            </tbody>
+                         </table>
+                         <a href="#" class="btn btn-sm btn-outline-secondary mt-2">View Full History</a>
+                    </div>
+                     <!-- Notes Tab -->
+                    <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                        <h5>Notes</h5>
+                        <p>Started seeing some yellowing on lower leaves around March 1st, possibly needs more nitrogen. Seems to be recovering after fertilizing on March 5th.</p>
+                        <p>First fruit appeared on March 8th!</p>
+                        <textarea class="form-control mt-3" rows="3" placeholder="Add a new note..."></textarea>
+                        <button class="btn btn-sm btn-primary mt-2">Save Note</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+    <!-- State 11: Edit Plant Page -->
+    <div class="iframe-container">
+        <h2>State 11: Edit Plant Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Edit Plant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Care Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Edit Plant: Tomato Plant</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary">
+                 <i class="bi bi-x-lg"></i> Cancel Edit
+             </a>
+        </div>
+
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+           <i class="bi bi-check-circle-fill"></i> Plant details updated successfully!
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantName" class="form-label">Plant Name *</label>
+                            <input type="text" class="form-control" id="plantName" value="Tomato Plant" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="plantSpecies" class="form-label">Species / Variety</label>
+                            <input type="text" class="form-control" id="plantSpecies" value="Solanum lycopersicum">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="plantLocation" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="plantLocation" value="Backyard Plot 3">
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="plantAcquiredDate" class="form-label">Date Acquired</label>
+                            <input type="date" class="form-control" id="plantAcquiredDate" value="2023-05-15">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                         <label for="plantImageCurrent" class="form-label">Current Image</label>
+                         <div>
+                            <img src="https://via.placeholder.com/100x75/28a745/ffffff?text=Tomato" class="img-thumbnail mb-2" alt="Current Image">
+                         </div>
+                        <label for="plantImage" class="form-label">Change Image</label>
+                        <input class="form-control" type="file" id="plantImage">
+
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="plantNotes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="plantNotes" rows="4">Started seeing some yellowing on lower leaves around March 1st, possibly needs more nitrogen. Seems to be recovering after fertilizing on March 5th. First fruit appeared on March 8th!</textarea>
+                    </div>
+
+                    <hr>
+                    <h5 class="mb-3">Update Care Requirements</h5>
+
+                     <div class="row">
+                         <div class="col-md-4 mb-3">
+                            <label for="wateringFrequency" class="form-label"><i class="bi bi-droplet-fill text-info"></i> Watering Frequency</label>
+                             <select class="form-select" id="wateringFrequency">
+                                <option>Select...</option>
+                                <option value="daily">Daily</option>
+                                <option value="every_other_day" selected>Every other day</option>
+                                <option value="twice_weekly">Twice a week</option>
+                                <!-- other options -->
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="sunlightNeeds" class="form-label"><i class="bi bi-sun-fill text-warning"></i> Sunlight Needs</label>
+                            <select class="form-select" id="sunlightNeeds">
+                                <option>Select...</option>
+                                <option value="full_sun" selected>Full Sun (6+ hours)</option>
+                                <!-- other options -->
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <label for="fertilizingNeeds" class="form-label"><i class="bi bi-thermometer-sun text-danger"></i> Fertilizing Needs</label>
+                            <input type="text" class="form-control" id="fertilizingNeeds" value="Every 2 weeks during fruiting season">
+                         </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                        <button type="submit" class="btn btn-success">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+
+    <!-- State 12: Care Schedule Page -->
+    <div class="iframe-container">
+        <h2>State 12: Care Schedule Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Care Schedule</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .calendar-day { border: 1px solid #eee; padding: 10px; min-height: 100px; background-color: white; font-size: 0.85rem;}
+        .calendar-header { font-weight: bold; text-align: center; padding: 5px; background-color: #f8f9fa;}
+        .calendar-day.today { background-color: #e9f5ec; border: 1px solid #28a745;}
+        .calendar-day.other-month { background-color: #f8f9fa; color: #aaa; }
+        .task { background-color: #d1ecf1; border-left: 3px solid #0c5460; padding: 2px 5px; margin-bottom: 3px; border-radius: 3px; font-size: 0.8rem; cursor: pointer;}
+        .task-water { background-color: #cce5ff; border-left-color: #004085; }
+        .task-fertilize { background-color: #fff3cd; border-left-color: #856404; }
+        .task-prune { background-color: #d4edda; border-left-color: #155724; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Care Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Care Schedule</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group me-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary active">Calendar View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">List View</button>
+                  </div>
+                <a href="#" class="btn btn-sm btn-success">
+                    <i class="bi bi-plus-circle"></i> Add Custom Task
+                </a>
+            </div>
+        </div>
+
+         <!-- Calendar Navigation -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button class="btn btn-outline-secondary"><i class="bi bi-chevron-left"></i> Previous Month</button>
+            <h4 class="mb-0">March 2024</h4>
+            <button class="btn btn-outline-secondary">Next Month <i class="bi bi-chevron-right"></i></button>
+        </div>
+
+
+        <!-- Calendar View -->
+        <div class="calendar">
+            <div class="calendar-header">Sun</div>
+            <div class="calendar-header">Mon</div>
+            <div class="calendar-header">Tue</div>
+            <div class="calendar-header">Wed</div>
+            <div class="calendar-header">Thu</div>
+            <div class="calendar-header">Fri</div>
+            <div class="calendar-header">Sat</div>
+
+            <!-- Example Week -->
+             <div class="calendar-day other-month">25</div>
+             <div class="calendar-day other-month">26</div>
+             <div class="calendar-day other-month">27</div>
+             <div class="calendar-day other-month">28</div>
+             <div class="calendar-day other-month">29</div>
+             <div class="calendar-day">1 <div class="task task-water">Water Basil</div></div>
+             <div class="calendar-day">2</div>
+             <div class="calendar-day">3 <div class="task task-water">Water Basil</div></div>
+             <div class="calendar-day">4</div>
+             <div class="calendar-day">5 <div class="task task-water">Water Basil</div> <div class="task task-fertilize">Fertilize Tomato</div></div>
+             <div class="calendar-day">6</div>
+             <div class="calendar-day">7 <div class="task task-water">Water Basil</div> <div class="task task-prune">Prune Tomato</div></div>
+             <div class="calendar-day">8</div>
+             <div class="calendar-day today">9 (Today) <div class="task task-water">Water Tomato</div><div class="task task-water">Water Mint</div><div class="task task-prune">Mist Fern</div></div>
+             <div class="calendar-day">10 <div class="task task-water">Water Basil</div></div>
+             <div class="calendar-day">11</div>
+             <div class="calendar-day">12 <div class="task task-fertilize">Fertilize Roses</div></div>
+             <div class="calendar-day">13</div>
+             <div class="calendar-day">14</div>
+             <div class="calendar-day">15</div>
+
+             <!-- Fill remaining days -->
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+            <div class="calendar-day other-month">1</div>
+            <div class="calendar-day other-month">2</div>
+            <div class="calendar-day other-month">3</div>
+            <div class="calendar-day other-month">4</div>
+            <div class="calendar-day other-month">5</div>
+            <div class="calendar-day other-month">6</div>
+            <div class="calendar-day other-month">7</div>
+
+        </div>
+
+         <!-- Legend -->
+        <div class="mt-3">
+            <strong>Legend:</strong>
+            <span class="badge bg-info text-dark ms-2">Water</span>
+            <span class="badge bg-warning text-dark ms-2">Fertilize</span>
+            <span class="badge bg-success text-white ms-2">Prune/Mist</span>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 13: Garden Planner Page -->
+    <div class="iframe-container">
+        <h2>State 13: Garden Planner Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Garden Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .garden-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr); /* Example 10x10 grid */
+            grid-template-rows: repeat(10, 50px); /* Fixed height rows */
+            gap: 2px;
+            border: 1px solid #ccc;
+            background-color: #f8f0e3; /* Soil color */
+            margin-bottom: 20px;
+            overflow: auto; /* Add scroll for smaller screens */
+            max-width: 600px; /* Limit width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid-cell {
+            border: 1px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            text-align: center;
+             cursor: pointer;
+             position: relative;
+        }
+        .grid-cell.occupied {
+            background-color: #d4edda; /* Light green for occupied cell */
+            border: 1px solid #155724;
+            font-weight: bold;
+            overflow: hidden;
+             white-space: nowrap;
+        }
+         .grid-cell.occupied img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+         }
+         .plant-icon {
+             width: 30px; height: 30px; object-fit: contain; position: absolute;
+         }
+
+        .plant-toolbox { list-style: none; padding: 0; }
+        .plant-toolbox li {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            cursor: grab;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+         .plant-toolbox li img {
+            width: 20px; height: 20px; margin-right: 8px;
+         }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Care Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Garden Planner: Backyard Plot</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                <button class="btn btn-sm btn-outline-secondary me-2">Load Plan</button>
+                <button class="btn btn-sm btn-success">Save Plan</button>
+             </div>
+        </div>
+
+        <div class="row">
+            <!-- Garden Grid -->
+            <div class="col-md-9">
+                <p class="text-center text-muted">Drag plants from the toolbox onto the grid.</p>
+                 <div class="garden-grid">
+                    <!-- Generate 100 grid cells -->
+                    <div class="grid-cell occupied" style="grid-column: 2 / span 2; grid-row: 2;">Tomato</div>
+                    <div class="grid-cell occupied" style="grid-column: 4; grid-row: 2;">Basil</div>
+                    <div class="grid-cell occupied" style="grid-column: 2; grid-row: 3;">Tomato</div>
+                    <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                    <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                    <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell occupied" style="grid-column: 7; grid-row: 4"> Mint</div><div class="grid-cell"></div><div class="grid-cell"></div>
+                    <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                    <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                    <!-- ... repeat for all 100 cells, showing some occupied -->
+                     <script>
+                         // Placeholder script to fill grid - ignored as per instructions, but needed for visual completeness concept
+                        //for(let i=0; i<84; i++) document.write("<div class='grid-cell'></div>");
+                     </script>
+                     <!-- Manually fill remaining for static example -->
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                      <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                      <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                      <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                     <div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div>
+                 </div>
+            </div>
+
+            <!-- Plant Toolbox -->
+            <div class="col-md-3">
+                <h5>Plant Toolbox</h5>
+                 <input type="text" class="form-control form-control-sm mb-2" placeholder="Filter plants...">
+                <ul class="plant-toolbox">
+                    <li draggable="true"><img src="https://via.placeholder.com/20/dc3545/ffffff?text=T" alt="T"> Tomato Plant</li>
+                    <li draggable="true"><img src="https://via.placeholder.com/20/198754/ffffff?text=B" alt="B"> Basil</li>
+                    <li draggable="true"><img src="https://via.placeholder.com/20/fd7e14/ffffff?text=R" alt="R"> Rose Bush</li>
+                    <li draggable="true"><img src="https://via.placeholder.com/20/0dcaf0/ffffff?text=F" alt="F"> Fern</li>
+                    <li draggable="true"><img src="https://via.placeholder.com/20/198754/ffffff?text=M" alt="M"> Mint</li>
+                    <li draggable="true"><img src="https://via.placeholder.com/20/fd7e14/ffffff?text=L" alt="L"> Lavender</li>
+                     <li draggable="true"><img src="https://via.placeholder.com/20/6f42c1/ffffff?text=S" alt="S"> Succulent Mix</li>
+                     <!-- Add more plants -->
+                </ul>
+                 <h5 class="mt-3">Garden Features</h5>
+                 <ul class="plant-toolbox">
+                    <li draggable="true"><i class="bi bi-square-fill text-secondary me-2"></i> Path</li>
+                    <li draggable="true"><i class="bi bi-bricks text-danger me-2"></i> Raised Bed</li>
+                    <li draggable="true"><i class="bi bi-tree-fill text-success me-2"></i> Tree</li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 14: Add Task Page -->
+    <div class="iframe-container">
+        <h2>State 14: Add Task Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Add Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" href="#">Care Schedule</a> </li> <!-- Active parent -->
+                    <li class="nav-item"> <a class="nav-link" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Add Custom Care Task</h1>
+             <a href="#" class="btn btn-sm btn-outline-secondary">
+                 <i class="bi bi-arrow-left"></i> Back to Schedule
+             </a>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                 <form>
+                    <div class="mb-3">
+                        <label for="taskName" class="form-label">Task Name *</label>
+                        <input type="text" class="form-control" id="taskName" placeholder="e.g., Repot Lavender, Check Soil pH" required>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="taskPlant" class="form-label">Assign to Plant (Optional)</label>
+                        <select class="form-select" id="taskPlant">
+                            <option selected>Select a plant...</option>
+                            <option value="all">All Plants</option>
+                            <option value="1">Tomato Plant</option>
+                            <option value="2">Basil</option>
+                            <option value="3">Rose Bush</option>
+                            <option value="4">Fern</option>
+                            <!-- Populate with user plants -->
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="taskDate" class="form-label">Due Date *</label>
+                            <input type="date" class="form-control" id="taskDate" required>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="taskTime" class="form-label">Time (Optional)</label>
+                            <input type="time" class="form-control" id="taskTime">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="taskRepeat" class="form-label">Repeat Task</label>
+                         <select class="form-select" id="taskRepeat">
+                            <option value="no" selected>Does not repeat</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="bi_weekly">Every 2 weeks</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="taskNotes" class="form-label">Notes</label>
+                        <textarea class="form-control" id="taskNotes" rows="3" placeholder="Add details or instructions..."></textarea>
+                    </div>
+
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 15: About Page -->
+    <div class="iframe-container">
+        <h2>State 15: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navbar (adapt logged-in/out state as needed) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Assuming logged in -->
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Care Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto"> <!-- Assuming logged in -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 <!-- Example for logged out state -->
+                 <!--
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-light ms-2" href="#">Sign Up</a></li>
+                </ul>
+                 -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="text-center mb-5">
+                    <i class="bi bi-flower1 display-1 text-success"></i>
+                    <h1 class="display-4">About Gardening Tracker</h1>
+                    <p class="lead">Helping you cultivate a greener thumb, one plant at a time.</p>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Our Mission</h5>
+                        <p>Gardening Tracker was created out of a passion for plants and a need for better organization. We aim to provide a simple, intuitive tool for gardeners of all levels – from windowsill herb enthusiasts to backyard vegetable growers – to successfully manage their plant care routines and garden layouts.</p>
+                        <p>We believe that technology can enhance the joy of gardening by taking the guesswork out of plant care, allowing you to focus on the rewarding experience of watching your garden flourish.</p>
+                    </div>
+                </div>
+
+                 <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Key Features</h5>
+                        <ul>
+                            <li><strong>Plant Database:</strong> Keep a detailed record of all your plants, including photos, species, location, and acquisition date.</li>
+                            <li><strong>Care Scheduling:</strong> Set up customizable watering, fertilizing, pruning, and other task schedules with reminders.</li>
+                            <li><strong>Task Management:</strong> View upcoming tasks in a clear calendar or list format and log completed activities.</li>
+                            <li><strong>Garden Planner:</strong> Visually design and map out your garden plots, containers, or indoor plant arrangements.</li>
+                            <li><strong>Notes & Logging:</strong> Track plant progress, issues, and treatments with detailed notes and a care history log.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Get in Touch</h5>
+                        <p>Have questions, feedback, or suggestions? Wed love to hear from you!</p>
+                        <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:support@gardeningtracker.example.com">support@gardeningtracker.example.com</a></p>
+                        <p><i class="bi bi-twitter-x me-2"></i> <a href="#">@GardeningTrackApp</a></p>
+                         <p><i>Gardening Tracker Version 1.0.0</i></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+     <!-- State 16: Settings/Profile Page -->
+    <div class="iframe-container">
+        <h2>State 16: Settings/Profile Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardening Tracker - Profile & Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-flower1"></i> Gardening Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Plants</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Care Schedule</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Garden Planner</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#">Profile/Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Profile & Settings</h1>
+        </div>
+
+         <div class="alert alert-info alert-dismissible fade show" role="alert">
+           <i class="bi bi-info-circle-fill"></i> Profile updated successfully.
+           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-8">
+                 <!-- Profile Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                       <i class="bi bi-person-fill me-2"></i> Profile Information
+                    </div>
+                    <div class="card-body">
+                         <form>
+                            <div class="mb-3 row">
+                                <label for="profileUsername" class="col-sm-3 col-form-label">Username</label>
+                                <div class="col-sm-9">
+                                <input type="text" readonly class="form-control-plaintext" id="profileUsername" value="UserName">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                <input type="email" class="form-control" id="profileEmail" value="user.name@example.com">
+                                </div>
+                            </div>
+                             <div class="mb-3 row">
+                                <label for="profileName" class="col-sm-3 col-form-label">Display Name</label>
+                                <div class="col-sm-9">
+                                <input type="text" class="form-control" id="profileName" value="User Name" placeholder="Your full name (optional)">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+
+                 <!-- Password Change -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                       <i class="bi bi-key-fill me-2"></i> Change Password
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                            </div>
+                             <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-warning">Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+
+
+                <!-- Notification Settings -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                       <i class="bi bi-bell-fill me-2"></i> Notification Settings
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-check form-switch mb-2">
+                              <input class="form-check-input" type="checkbox" role="switch" id="emailNotifications" checked>
+                              <label class="form-check-label" for="emailNotifications">Receive email reminders for upcoming tasks</label>
+                            </div>
+                             <div class="form-check form-switch mb-2">
+                              <input class="form-check-input" type="checkbox" role="switch" id="inAppNotifications">
+                              <label class="form-check-label" for="inAppNotifications">Show in-app notifications for alerts</label>
+                            </div>
+                             <div class="form-check form-switch mb-3">
+                              <input class="form-check-input" type="checkbox" role="switch" id="newsletterSub">
+                              <label class="form-check-label" for="newsletterSub">Subscribe to gardening tips newsletter</label>
+                            </div>
+                             <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Save Notification Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                 <!-- Account Deletion -->
+                <div class="card border-danger mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <i class="bi bi-exclamation-octagon-fill me-2"></i> Danger Zone
+                    </div>
+                    <div class="card-body">
+                        <p>Deleting your account is permanent and cannot be undone. All your plant data, schedules, and plans will be lost.</p>
+                        <button type="button" class="btn btn-danger">Delete My Account Permanently</button>
+                    </div>
+                </div>
+
+            </div>
+             <div class="col-lg-4">
+                 <div class="card">
+                     <div class="card-header">Account Overview</div>
+                     <div class="card-body text-center">
+                         <i class="bi bi-person-circle display-4 text-secondary mb-2"></i>
+                         <h5>User Name</h5>
+                         <p class="text-muted">user.name@example.com</p>
+                         <hr>
+                         <p>Member Since: January 1, 2024</p>
+                         <p>Total Plants: 12</p>
+                         <p>Active Tasks: 5</p>
+                     </div>
+                 </div>
+             </div>
+
+        </div>
+
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Gardening Tracker
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+    </div>
+
+
+</div>
+
+</body>
+</html>

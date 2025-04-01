@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B Testing Tool - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .state-container h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">A/B Testing Tool - UI Flow</h1>
+    <p class="text-center text-muted">Process Type: CRUD (Create/Read/Update/Delete) for A/B Tests</p>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Optimize Your Web Pages with A/B Testing</h1>
+                <p class="col-md-8 fs-4">Easily compare two versions of your webpage to see which one performs better. Make data-driven decisions to improve conversions.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+                <a class="btn btn-outline-secondary btn-lg" href="#" role="button">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>Simple Setup</h2>
+                    <p>Create new A/B tests in minutes. Just provide the URLs for your original page and the variation.</p>
+                    <button class="btn btn-outline-light" type="button">See Features</button>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Clear Results</h2>
+                    <p>Understand your test performance with easy-to-read reports showing visitors, conversions, and statistical significance.</p>
+                    <button class="btn btn-outline-secondary" type="button">View Demo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About A/B Test Pro</h1>
+        <p class="lead">Empowering businesses to make informed decisions through simple and effective A/B testing.</p>
+        <hr>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide an accessible and user-friendly platform for website owners, marketers, and developers to conduct A/B tests without complexity. We believe that data-driven optimization should be straightforward.</p>
+
+        <h2>What We Offer</h2>
+        <p>A/B Test Pro allows you to:</p>
+        <ul>
+            <li>Easily set up experiments comparing two versions of a webpage.</li>
+            <li>Define clear conversion goals to track performance.</li>
+            <li>View real-time results and statistical significance.</li>
+            <li>Manage multiple tests from a central dashboard.</li>
+        </ul>
+
+         <h2>Contact Us</h2>
+         <p>Have questions? Reach out to us at <a href="mailto:info@abtestpro.example.com">info@abtestpro.example.com</a>.</p>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+    <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login</title>
+    <style>
+      .login-container { max-width: 400px; margin: 50px auto; padding: 30px; border: 1px solid #dee2e6; border-radius: 5px; background-color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <h2 class="text-center mb-4">Login</h2>
+        <form>
+            <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+             <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+             </div>
+             <p class="mt-3 text-center">
+                <a href="#">Forgot Password?</a>
+             </p>
+             <p class="mt-2 text-center">
+                Don't have an account? <a href="#">Sign Up</a>
+             </p>
+        </form>
+
+        <!-- Error Message Example -->
+        <!-- <div class="alert alert-danger mt-3" role="alert">
+            Invalid email or password. Please try again.
+       </div> -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Signup Page -->
+    <div class="state-container">
+        <h2>State 4: Signup Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up</title>
+     <style>
+      .signup-container { max-width: 450px; margin: 50px auto; padding: 30px; border: 1px solid #dee2e6; border-radius: 5px; background-color: #fff; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="signup-container">
+        <h2 class="text-center mb-4">Create Your Account</h2>
+        <form>
+            <div class="mb-3">
+                <label for="signupName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="signupName" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+                <label for="signupEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="signupPassword" placeholder="Create a password">
+                 <div id="passwordHelpBlock" class="form-text">
+                    Your password must be 8-20 characters long.
+                </div>
+            </div>
+             <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+            </div>
+             <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck">
+                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a></label>
+            </div>
+             <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+             </div>
+              <p class="mt-3 text-center">
+                Already have an account? <a href="#">Login</a>
+             </p>
+        </form>
+         <!-- Error Example -->
+         <!-- <div class="alert alert-warning mt-3" role="alert">
+            Please fill out all required fields. Passwords do not match.
+       </div> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Dashboard (Logged In) -->
+    <div class="state-container">
+        <h2>State 5: Dashboard (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create New Test</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i> user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Dashboard</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Create New Test</a>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Your A/B Tests
+            </div>
+            <div class="card-body">
+                 <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Test Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Variants</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Homepage Headline Test</td>
+                                <td><span class="badge bg-success">Running</span></td>
+                                <td>2</td>
+                                <td>2023-10-15</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-info" title="View Results"><i class="bi bi-graph-up"></i></a>
+                                    <button class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-secondary" title="Stop Test"><i class="bi bi-stop-circle"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pricing Page Button Color</td>
+                                <td><span class="badge bg-secondary">Paused</span></td>
+                                <td>2</td>
+                                <td>2023-09-01</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-info" title="View Results"><i class="bi bi-graph-up"></i></a>
+                                    <button class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                     <button class="btn btn-sm btn-success" title="Start Test"><i class="bi bi-play-circle"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Signup Form Layout</td>
+                                <td><span class="badge bg-primary">Completed</span></td>
+                                <td>2</td>
+                                <td>2023-08-10</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-info" title="View Results"><i class="bi bi-graph-up"></i></a>
+                                    <button class="btn btn-sm btn-danger" title="Delete" disabled><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Product Image Size Test</td>
+                                <td><span class="badge bg-warning text-dark">Draft</span></td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-secondary" title="Edit Draft"><i class="bi bi-pencil"></i></a>
+                                    <button class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <!-- Placeholder for empty state -->
+                 <!-- <div class="text-center p-5">
+                     <p>You haven't created any tests yet.</p>
+                     <a href="#" class="btn btn-primary">Create Your First Test</a>
+                 </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Create New Test - Step 1 (Basic Info) -->
+    <div class="state-container">
+        <h2>State 6: Create New Test - Step 1 (Basic Info)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Create Test - Step 1</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Create New Test</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle me-1"></i> user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New A/B Test</h1>
+        <hr>
+
+        <!-- Progress Indicator (Optional but good UX) -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><strong>1. Basic Info</strong></li>
+            <li class="breadcrumb-item">2. Define Variants</li>
+            <li class="breadcrumb-item">3. Define Goal</li>
+            <li class="breadcrumb-item">4. Review & Start</li>
+          </ol>
+        </nav>
+
+         <div class="card mt-4">
+            <div class="card-header">Step 1: Basic Information</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="testName" class="form-label">Test Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="testName" placeholder="e.g., Homepage Headline Test" required>
+                         <div class="form-text">Give your test a descriptive name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="testDescription" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="testDescription" rows="3" placeholder="Describe the hypothesis or purpose of this test"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="originalUrl" class="form-label">Original Page URL (Control) <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control" id="originalUrl" placeholder="https://www.example.com/your-page" required>
+                        <div class="form-text">The URL of the current page you want to test against.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                         <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                         <button type="submit" class="btn btn-primary">Next: Define Variants <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 7: Create New Test - Step 2 (Define Variants) -->
+    <div class="state-container">
+        <h2>State 7: Create New Test - Step 2 (Define Variants)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Create Test - Step 2</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+             <!-- ... (rest of nav) ... -->
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New A/B Test</h1>
+        <hr>
+
+        <!-- Progress Indicator -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">1. Basic Info</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>2. Define Variants</strong></li>
+            <li class="breadcrumb-item">3. Define Goal</li>
+            <li class="breadcrumb-item">4. Review & Start</li>
+          </ol>
+        </nav>
+
+         <div class="card mt-4">
+            <div class="card-header">Step 2: Define Variants</div>
+            <div class="card-body">
+                 <p>You have already defined the Original Page (Control). Now define the Variation page you want to test against it.</p>
+                <form>
+                    <div class="row mb-3">
+                         <div class="col-md-6">
+                             <h5>Variant A (Control)</h5>
+                             <label for="originalUrlDisplay" class="form-label">Original Page URL</label>
+                             <input type="url" class="form-control" id="originalUrlDisplay" value="https://www.example.com/your-page" disabled readonly>
+                             <div class="form-text">This is your control version (taken from Step 1).</div>
+                         </div>
+                         <div class="col-md-6">
+                             <h5>Variant B (Variation)</h5>
+                            <label for="variantBUrl" class="form-label">Variation Page URL <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control" id="variantBUrl" placeholder="https://www.example.com/your-variation" required>
+                            <div class="form-text">The URL of the alternative version you want to test.</div>
+                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="trafficSplit" class="form-label">Traffic Distribution</label>
+                         <div class="input-group">
+                            <span class="input-group-text">Variant A</span>
+                            <input type="number" class="form-control text-center" value="50" min="0" max="100" disabled>
+                            <span class="input-group-text">%</span>
+                             <span class="input-group-text">Variant B</span>
+                             <input type="number" class="form-control text-center" value="50" min="0" max="100" disabled>
+                             <span class="input-group-text">%</span>
+                         </div>
+                         <div class="form-text">Traffic will be split 50/50 between the two variants. (Advanced options may allow adjustment).</div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back: Basic Info</button>
+                         <div>
+                             <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                             <button type="submit" class="btn btn-primary">Next: Define Goal <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Create New Test - Step 3 (Define Goal) -->
+    <div class="state-container">
+        <h2>State 8: Create New Test - Step 3 (Define Goal)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Create Test - Step 3</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+             <!-- ... (rest of nav) ... -->
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New A/B Test</h1>
+        <hr>
+
+        <!-- Progress Indicator -->
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">1. Basic Info</a></li>
+            <li class="breadcrumb-item"><a href="#">2. Define Variants</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>3. Define Goal</strong></li>
+            <li class="breadcrumb-item">4. Review & Start</li>
+          </ol>
+        </nav>
+
+        <div class="card mt-4">
+            <div class="card-header">Step 3: Define Conversion Goal</div>
+            <div class="card-body">
+                <p>How will you measure the success of this test? Define the action a user takes that counts as a conversion.</p>
+                <form>
+                     <div class="mb-3">
+                        <label for="goalName" class="form-label">Goal Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="goalName" placeholder="e.g., Signed Up, Purchased Item, Visited Contact Page" required>
+                         <div class="form-text">A short name for your conversion goal.</div>
+                    </div>
+
+                    <label class="form-label">Goal Type <span class="text-danger">*</span></label>
+                     <div class="form-check">
+                        <input class="form-check-input" type="radio" name="goalType" id="goalTypePageVisit" value="pageVisit" checked>
+                        <label class="form-check-label" for="goalTypePageVisit">
+                            Page Visit
+                        </label>
+                    </div>
+                     <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="goalType" id="goalTypeEvent" value="event" disabled> <!-- Example: Event tracking might need JS -->
+                        <label class="form-check-label" for="goalTypeEvent">
+                            Custom Event (Advanced - Requires code snippet)
+                        </label>
+                    </div>
+
+                    <div id="pageVisitGoalOptions"> <!-- Show this div only if Page Visit is selected -->
+                        <div class="mb-3">
+                            <label for="goalUrl" class="form-label">Conversion Page URL <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control" id="goalUrl" placeholder="https://www.example.com/thank-you" required>
+                            <div class="form-text">A conversion is counted when a visitor reaches this URL (e.g., a thank you page after signup/purchase).</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back: Define Variants</button>
+                         <div>
+                             <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                             <button type="submit" class="btn btn-primary">Next: Review & Start <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 9: Create New Test - Confirmation/Summary -->
+    <div class="state-container">
+        <h2>State 9: Create New Test - Confirmation/Summary</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Create Test - Step 4</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+             <!-- ... (rest of nav) ... -->
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New A/B Test</h1>
+        <hr>
+
+        <!-- Progress Indicator -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">1. Basic Info</a></li>
+            <li class="breadcrumb-item"><a href="#">2. Define Variants</a></li>
+            <li class="breadcrumb-item"><a href="#">3. Define Goal</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>4. Review & Start</strong></li>
+          </ol>
+        </nav>
+
+        <div class="card mt-4">
+            <div class="card-header">Step 4: Review and Start Test</div>
+            <div class="card-body">
+                <p class="lead">Please review the details of your A/B test before starting.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Test Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Name:</strong> Homepage Headline Test</li>
+                            <li class="list-group-item"><strong>Description:</strong> Testing a new headline for better engagement.</li>
+                            <li class="list-group-item"><strong>Original URL (A):</strong> https://www.example.com/your-page</li>
+                            <li class="list-group-item"><strong>Variation URL (B):</strong> https://www.example.com/your-variation</li>
+                        </ul>
+                     </div>
+                     <div class="col-md-6">
+                         <h5>Conversion Goal</h5>
+                         <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Goal Name:</strong> Visited Contact Page</li>
+                            <li class="list-group-item"><strong>Type:</strong> Page Visit</li>
+                            <li class="list-group-item"><strong>Conversion URL:</strong> https://www.example.com/thank-you</li>
+                        </ul>
+                        <h5 class="mt-3">Traffic Distribution</h5>
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item">Variant A (Control): 50%</li>
+                           <li class="list-group-item">Variant B (Variation): 50%</li>
+                       </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4" role="alert">
+                  <i class="bi bi-info-circle-fill me-2"></i> Starting the test will begin redirecting traffic according to the specified distribution. Ensure both page URLs are live and accessible.
+                </div>
+
+                 <div class="d-flex justify-content-between mt-4">
+                      <button type="button" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back: Define Goal</button>
+                     <div>
+                         <a href="#" class="btn btn-secondary me-2">Save as Draft</a>
+                         <button type="submit" class="btn btn-success"><i class="bi bi-play-circle-fill me-1"></i> Start Test Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 10: View Test Results -->
+    <div class="state-container">
+        <h2>State 10: View Test Results</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Test Results</title>
+     <style>
+        .placeholder-chart {
+            height: 300px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            border-radius: .25rem;
+            margin-top: 20px;
+        }
+     </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create New Test</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle me-1"></i> user@example.com
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Test Results</li>
+          </ol>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h1>Results: Homepage Headline Test</h1>
+             <div class="d-flex align-items-center">
+                 <span class="badge bg-success me-2 fs-6">Running</span>
+                 <button class="btn btn-sm btn-danger me-2"><i class="bi bi-stop-circle me-1"></i> Stop Test</button>
+                 <button class="btn btn-sm btn-secondary"><i class="bi bi-pencil me-1"></i> Edit Test Setup</button> <!-- Might be disabled if running -->
+            </div>
+        </div>
+         <p><strong>Goal:</strong> Visited Contact Page | <strong>Started:</strong> 2023-10-15 | <strong>Duration:</strong> 10 days</p>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                 <div class="card h-100 text-center border-primary">
+                    <div class="card-header bg-primary text-white">Variant A (Control)</div>
+                    <div class="card-body">
+                         <p class="card-text"><a href="https://www.example.com/your-page" target="_blank" rel="noopener noreferrer">https://www.example.com/your-page</a></p>
+                         <h5 class="card-title">Visitors</h5>
+                         <p class="display-6">1,530</p>
+                         <hr>
+                         <h5 class="card-title">Conversions</h5>
+                         <p class="display-6">75</p>
+                         <hr>
+                         <h5 class="card-title">Conversion Rate</h5>
+                         <p class="display-6">4.90%</p>
+                    </div>
+                     <div class="card-footer text-muted">
+                        Baseline
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 mb-4">
+                 <div class="card h-100 text-center border-success">
+                    <div class="card-header bg-success text-white">Variant B (Variation)</div>
+                     <div class="card-body">
+                         <p class="card-text"><a href="https://www.example.com/your-variation" target="_blank" rel="noopener noreferrer">https://www.example.com/your-variation</a></p>
+                         <h5 class="card-title">Visitors</h5>
+                         <p class="display-6">1,485</p>
+                         <hr>
+                         <h5 class="card-title">Conversions</h5>
+                         <p class="display-6">112</p>
+                          <hr>
+                         <h5 class="card-title">Conversion Rate</h5>
+                         <p class="display-6 fw-bold">7.54%</p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <strong class="text-success">+53.8%</strong> improvement vs Control <br> <small>(Statistically Significant: 98% confidence)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">Performance Over Time (Placeholder)</div>
+            <div class="card-body">
+                 <div class="placeholder-chart">
+                    [ Chart Showing Conversion Rate Trend ]
+                 </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 11: Create New Test - Validation Error Example -->
+    <div class="state-container">
+        <h2>State 11: Create New Test - Validation Error Example</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Create Test - Validation Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">A/B Test Pro</a>
+             <!-- ... (rest of nav) ... -->
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New A/B Test</h1>
+        <hr>
+
+        <!-- Progress Indicator -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><strong>1. Basic Info</strong></li>
+            <li class="breadcrumb-item">2. Define Variants</li>
+            <li class="breadcrumb-item">3. Define Goal</li>
+            <li class="breadcrumb-item">4. Review & Start</li>
+          </ol>
+        </nav>
+
+         <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <div>
+            Please fix the errors below before proceeding.
+          </div>
+        </div>
+
+         <div class="card mt-4">
+            <div class="card-header">Step 1: Basic Information</div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="testName" class="form-label">Test Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control is-invalid" id="testName" placeholder="e.g., Homepage Headline Test" required value=""> <!-- Empty Value causing error -->
+                        <div class="invalid-feedback">
+                          Please provide a name for your test.
+                        </div>
+                         <div class="form-text">Give your test a descriptive name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="testDescription" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="testDescription" rows="3" placeholder="Describe the hypothesis or purpose of this test"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="originalUrl" class="form-label">Original Page URL (Control) <span class="text-danger">*</span></label>
+                        <input type="url" class="form-control is-invalid" id="originalUrl" placeholder="https://www.example.com/your-page" required value="invalid-url-format"> <!-- Invalid Value ->
+                        <div class="invalid-feedback">
+                          Please enter a valid URL (e.g., https://www.example.com).
+                        </div>
+                        <div class="form-text">The URL of the current page you want to test against.</div>
+                    </div>
+
+                     <div class="d-flex justify-content-end">
+                         <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                         <button type="submit" class="btn btn-primary">Next: Define Variants <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

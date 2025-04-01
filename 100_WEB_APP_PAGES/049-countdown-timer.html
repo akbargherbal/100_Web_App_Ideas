@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .iframe-nav {
+             height: 60px;
+             border: 1px solid #ccc;
+             background-color: #fff;
+             width: 100%;
+             margin-bottom: 5px;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">Countdown Timer - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Initial View)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Home</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5 text-center">
+                <div class="p-5 mb-4 bg-light rounded-3">
+                  <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Welcome to Countdown Timer</h1>
+                    <p class="col-md-8 fs-4 mx-auto">Easily set timers for tasks, events, or anything you need to track.</p>
+                    <button class="btn btn-primary btn-lg" type="button">Set a New Timer <i class="bi bi-plus-circle"></i></button>
+                  </div>
+                </div>
+
+                <h3 class="mb-3">Your Active Timers</h3>
+                 <div class="list-group mx-auto" style="max-width: 500px;">
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <div><i class="bi bi-alarm"></i> Project Deadline</div>
+                    <span class="badge bg-primary rounded-pill">02:15:45</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                     <div><i class="bi bi-hourglass-split"></i> Cooking Pasta</div>
+                    <span class="badge bg-warning text-dark rounded-pill">00:08:30</span>
+                  </a>
+                   <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center text-muted">
+                     <div><i class="bi bi-calendar-event"></i> Birthday Countdown</div>
+                    <span class="badge bg-secondary rounded-pill">15 days</span>
+                  </a>
+                </div>
+                 <p class="mt-4 text-muted">No active timers? Start one now!</p>
+            </div>
+
+             <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Set Timer Page -->
+    <div class="state-container">
+        <h2>State 2: Set Timer Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Set Timer</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <h2 class="mb-4 text-center">Set a New Countdown</h2>
+
+                <ul class="nav nav-tabs justify-content-center mb-4" id="timerTypeTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="duration-tab" data-bs-toggle="tab" data-bs-target="#duration-tab-pane" type="button" role="tab" aria-controls="duration-tab-pane" aria-selected="true">Set Duration</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="datetime-tab" data-bs-toggle="tab" data-bs-target="#datetime-tab-pane" type="button" role="tab" aria-controls="datetime-tab-pane" aria-selected="false">Set Date & Time</button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="timerTypeTabContent">
+                  <div class="tab-pane fade show active" id="duration-tab-pane" role="tabpanel" aria-labelledby="duration-tab" tabindex="0">
+                     <form class="row g-3 justify-content-center needs-validation" novalidate>
+                         <div class="col-md-8 mb-3">
+                           <label for="timerLabelDuration" class="form-label">Timer Label (Optional)</label>
+                           <input type="text" class="form-control" id="timerLabelDuration" placeholder="e.g., Work Session">
+                         </div>
+                         <div class="col-md-2">
+                           <label for="hours" class="form-label">Hours</label>
+                           <input type="number" class="form-control" id="hours" placeholder="0" min="0" value="">
+                         </div>
+                         <div class="col-md-2">
+                           <label for="minutes" class="form-label">Minutes</label>
+                           <input type="number" class="form-control" id="minutes" placeholder="0" min="0" max="59" value="">
+                         </div>
+                         <div class="col-md-2">
+                           <label for="seconds" class="form-label">Seconds</label>
+                           <input type="number" class="form-control" id="seconds" placeholder="0" min="0" max="59" value="">
+                         </div>
+                          <div class="col-12 text-center mt-4">
+                           <button type="submit" class="btn btn-success btn-lg">Start Timer <i class="bi bi-play-circle"></i></button>
+                         </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="datetime-tab-pane" role="tabpanel" aria-labelledby="datetime-tab" tabindex="0">
+                     <form class="row g-3 justify-content-center needs-validation" novalidate>
+                         <div class="col-md-8 mb-3">
+                           <label for="timerLabelDateTime" class="form-label">Event Label</label>
+                           <input type="text" class="form-control" id="timerLabelDateTime" placeholder="e.g., New Year's Eve" required>
+                            <div class="invalid-feedback">Please provide an event label.</div>
+                         </div>
+                         <div class="col-md-4">
+                           <label for="eventDate" class="form-label">Date</label>
+                           <input type="date" class="form-control" id="eventDate" required>
+                           <div class="invalid-feedback">Please select a valid date.</div>
+                         </div>
+                          <div class="col-md-4">
+                           <label for="eventTime" class="form-label">Time</label>
+                           <input type="time" class="form-control" id="eventTime" required>
+                            <div class="invalid-feedback">Please select a valid time.</div>
+                         </div>
+                          <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">Start Countdown <i class="bi bi-calendar-event"></i></button>
+                         </div>
+                     </form>
+                  </div>
+                </div>
+            </div>
+
+             <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Set Timer Page (Validation Error) -->
+    <div class="state-container">
+        <h2>State 3: Set Timer Page (Validation Error)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Set Timer - Error</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                 <div class="alert alert-danger d-flex align-items-center" role="alert">
+                   <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                   <div>
+                     Please fix the errors below and try again.
+                   </div>
+                 </div>
+
+                <h2 class="mb-4 text-center">Set a New Countdown</h2>
+
+                 <ul class="nav nav-tabs justify-content-center mb-4" id="timerTypeTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="duration-tab" data-bs-toggle="tab" data-bs-target="#duration-tab-pane" type="button" role="tab" aria-controls="duration-tab-pane" aria-selected="true">Set Duration</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="datetime-tab" data-bs-toggle="tab" data-bs-target="#datetime-tab-pane" type="button" role="tab" aria-controls="datetime-tab-pane" aria-selected="false">Set Date & Time</button>
+                  </li>
+                </ul>
+
+                 <div class="tab-content" id="timerTypeTabContent">
+                  <div class="tab-pane fade show active" id="duration-tab-pane" role="tabpanel" aria-labelledby="duration-tab" tabindex="0">
+                     <form class="row g-3 justify-content-center was-validated" novalidate> <!-- Using was-validated to show errors -->
+                          <div class="col-md-8 mb-3">
+                           <label for="timerLabelDuration" class="form-label">Timer Label (Optional)</label>
+                           <input type="text" class="form-control" id="timerLabelDuration" placeholder="e.g., Work Session">
+                         </div>
+                         <div class="col-md-2">
+                           <label for="hours" class="form-label">Hours</label>
+                           <input type="number" class="form-control" id="hours" placeholder="0" min="0" value="">
+                         </div>
+                         <div class="col-md-2">
+                           <label for="minutes" class="form-label">Minutes</label>
+                           <input type="number" class="form-control is-invalid" id="minutes" placeholder="0" min="0" max="59" value="-5" required> <!-- Example Error -->
+                            <div class="invalid-feedback">
+                             Minutes must be between 0 and 59.
+                            </div>
+                         </div>
+                         <div class="col-md-2">
+                           <label for="seconds" class="form-label">Seconds</label>
+                           <input type="number" class="form-control is-invalid" id="seconds" placeholder="0" min="0" max="59" value="" required> <!-- Example Error -->
+                            <div class="invalid-feedback">
+                             Seconds are required (0-59).
+                            </div>
+                         </div>
+                         <div class="col-12 text-center mt-4">
+                           <button type="submit" class="btn btn-success btn-lg">Start Timer <i class="bi bi-play-circle"></i></button>
+                         </div>
+                         <div class="col-12 text-center mt-2">
+                             <span class="text-danger">At least one time field (Hours, Minutes, or Seconds) must be greater than zero.</span>
+                         </div>
+                    </form>
+                  </div>
+                   <div class="tab-pane fade" id="datetime-tab-pane" role="tabpanel" aria-labelledby="datetime-tab" tabindex="0">
+                     <form class="row g-3 justify-content-center needs-validation" novalidate>
+                         <!-- Content for Date/Time tab if needed for error state demo -->
+                          <div class="col-md-8 mb-3">
+                           <label for="timerLabelDateTime" class="form-label">Event Label</label>
+                           <input type="text" class="form-control" id="timerLabelDateTime" placeholder="e.g., New Year's Eve" required>
+                            <div class="invalid-feedback">Please provide an event label.</div>
+                         </div>
+                         <div class="col-md-4">
+                           <label for="eventDate" class="form-label">Date</label>
+                           <input type="date" class="form-control" id="eventDate" required>
+                           <div class="invalid-feedback">Please select a valid date.</div>
+                         </div>
+                          <div class="col-md-4">
+                           <label for="eventTime" class="form-label">Time</label>
+                           <input type="time" class="form-control" id="eventTime" required>
+                            <div class="invalid-feedback">Please select a valid time.</div>
+                         </div>
+                          <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">Start Countdown <i class="bi bi-calendar-event"></i></button>
+                         </div>
+                     </form>
+                  </div>
+                </div>
+            </div>
+
+             <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Running Timer View -->
+    <div class="state-container">
+        <h2>State 4: Running Timer View</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Timer Running</title>
+            <style>
+                .timer-display {
+                    font-size: 5rem; /* Larger font size */
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 40px 0;
+                    background-color: #e9ecef;
+                    padding: 30px;
+                    border-radius: 10px;
+                }
+                 @media (max-width: 768px) {
+                     .timer-display { font-size: 3rem; padding: 20px; }
+                 }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <h2 class="text-center mb-3">Project Deadline</h2> <!-- Example Label -->
+                <div class="timer-display">
+                    <span>02:15:30</span>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-warning btn-lg mx-2"><i class="bi bi-pause-fill"></i> Pause</button>
+                    <button class="btn btn-danger btn-lg mx-2"><i class="bi bi-stop-fill"></i> Reset</button>
+                    <button class="btn btn-secondary btn-lg mx-2"><i class="bi bi-plus-circle"></i> Set New Timer</button>
+                </div>
+
+                 <div class="progress mt-4 mx-auto" role="progressbar" aria-label="Timer progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="max-width: 600px; height: 20px;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 75%"></div>
+                </div>
+
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Timer Finished View -->
+    <div class="state-container">
+        <h2>State 5: Timer Finished View</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Timer Finished</title>
+             <style>
+                .timer-display-finished {
+                    font-size: 4rem;
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 40px 0;
+                    color: var(--bs-danger);
+                }
+                 .alert-finished {
+                     font-size: 1.5rem;
+                 }
+                 @media (max-width: 768px) {
+                     .timer-display-finished { font-size: 2.5rem; }
+                      .alert-finished { font-size: 1.2rem; }
+                 }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5 text-center">
+
+                <div class="alert alert-success alert-finished d-flex align-items-center justify-content-center" role="alert">
+                   <i class="bi bi-check-circle-fill flex-shrink-0 me-3"></i>
+                   <div>
+                     Time's up for "Project Deadline"!
+                   </div>
+                 </div>
+
+                <div class="timer-display-finished">
+                    <span>00:00:00</span>
+                    <i class="bi bi-bell-fill"></i>
+                </div>
+
+                <div>
+                    <button class="btn btn-primary btn-lg mx-2"><i class="bi bi-arrow-clockwise"></i> Set New Timer</button>
+                    <button class="btn btn-secondary btn-lg mx-2"><i class="bi bi-house-door"></i> Back to Home</button>
+                </div>
+            </div>
+
+             <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: About Page -->
+    <div class="state-container">
+        <h2>State 6: About Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>About</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2 class="mb-4">About Countdown Timer</h2>
+                        <p>Welcome to Countdown Timer, your simple and reliable solution for tracking time intervals and counting down to important events. Whether you need to time your cooking, manage work sessions using the Pomodoro technique, or anticipate an upcoming celebration, our application provides an easy-to-use interface for all your countdown needs.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Set countdown timers by duration (hours, minutes, seconds).</li>
+                            <li>Set countdowns to specific future dates and times.</li>
+                            <li>Add labels to your timers for better organization.</li>
+                            <li>Clean and intuitive user interface.</li>
+                            <li>Visual progress indicator for running timers.</li>
+                            <li>Clear notification when the timer finishes.</li>
+                        </ul>
+                        <p>This application is built using modern web technologies like HTML, CSS, and Bootstrap to ensure a responsive and accessible experience across all devices.</p>
+                        <p>Thank you for using Countdown Timer!</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+        <!-- State 7: Contact Page -->
+    <div class="state-container">
+        <h2>State 7: Contact Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Contact Us</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><i class="bi bi-stopwatch"></i> Countdown Timer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Set Timer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2 class="mb-4 text-center">Contact Us</h2>
+                        <p class="text-center mb-4">Have questions or feedback? Send us a message!</p>
+
+                        <form class="needs-validation" novalidate>
+                          <div class="mb-3">
+                            <label for="contactName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+                            <div class="invalid-feedback">
+                              Please enter your name.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+                             <div class="invalid-feedback">
+                              Please enter a valid email address.
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" placeholder="Subject">
+                          </div>
+                          <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" placeholder="Your message here..." required></textarea>
+                             <div class="invalid-feedback">
+                              Please enter your message.
+                            </div>
+                          </div>
+                          <div class="d-grid">
+                           <button type="submit" class="btn btn-primary btn-lg">Send Message <i class="bi bi-send"></i></button>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Countdown Timer
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

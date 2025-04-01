@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Group Finder - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #dee2e6; padding-bottom: 5px; }
+        iframe { width: 100%; height: 700px; border: 1px solid #dee2e6; background-color: #fff; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Study Group Finder - UI Flow</h1>
+
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Find Your Perfect Study Group</h1>
+            <p class="col-md-8 fs-4 mx-auto">Connect with fellow students, collaborate on coursework, and achieve your academic goals together.</p>
+            <a href="#" class="btn btn-primary btn-lg me-2">Sign Up Now</a>
+            <a href="#" class="btn btn-outline-secondary btn-lg">Learn More</a>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h3>Easy searching</h3>
+                <p>Quickly find groups by subject, course, or location.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Collaborate effectively</h3>
+                <p>Join groups that fit your schedule and learning style.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Stay organized</h3>
+                <p>Manage your group memberships and schedules easily.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About Study Group Finder</h1>
+        <p class="lead">Connecting students for better learning outcomes.</p>
+        <hr>
+        <p>Study Group Finder was created to address the common challenge students face in finding compatible study partners and forming effective study groups. We believe that collaborative learning enhances understanding, improves motivation, and leads to academic success.</p>
+        <p>Our platform allows students to easily:</p>
+        <ul>
+            <li>Search for study groups based on specific courses, subjects, locations, or availability.</li>
+            <li>Create their own study groups and invite others to join.</li>
+            <li>Communicate with group members (placeholder for future feature).</li>
+            <li>Manage their study schedule and group commitments.</li>
+        </ul>
+        <p>Our mission is to foster a supportive academic community where students can connect, collaborate, and thrive together.</p>
+
+        <div class="mt-4 p-4 bg-light border rounded">
+            <h4>Our Team</h4>
+            <p>We are a passionate group of educators and developers dedicated to improving the student learning experience. (Placeholder team info)</p>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">Create Your Account</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="signupName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="signupName" placeholder="e.g., Jane Doe">
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="******">
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="signupConfirmPassword" placeholder="******">
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupSchool" class="form-label">School/University</label>
+                        <input type="text" class="form-control" id="signupSchool" placeholder="e.g., State University">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheck">
+                        <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                </form>
+                <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 3a: Sign Up Page - Error State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Error - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-danger" role="alert">
+                  Please correct the errors below and try again.
+                </div>
+                <h2 class="text-center mb-4">Create Your Account</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="signupName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control is-invalid" id="signupName" placeholder="e.g., Jane Doe" value="">
+                         <div class="invalid-feedback">
+                            Please enter your full name.
+                        </div>
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" value="invalid-email">
+                         <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="******">
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="******">
+                         <div class="invalid-feedback">
+                            Passwords do not match.
+                        </div>
+                    </div>
+                     <div class="mb-3">
+                        <label for="signupSchool" class="form-label">School/University</label>
+                        <input type="text" class="form-control" id="signupSchool" placeholder="e.g., State University" value="State University">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input is-invalid" id="termsCheck">
+                        <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+                         <div class="invalid-feedback">
+                            You must agree to the terms and conditions.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                </form>
+                <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 4: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h2 class="text-center mb-4">Login to Your Account</h2>
+                <form>
+                     <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="******">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMeCheck">
+                        <label class="form-check-label" for="rememberMeCheck">Remember me</label>
+                         <a href="#" class="float-end">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                <p class="mt-3 text-center">Don't have an account? <a href="#">Sign up here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 4a: Login Page - Error State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Error - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                 <div class="alert alert-danger" role="alert">
+                  Invalid email or password. Please try again.
+                </div>
+                <h2 class="text-center mb-4">Login to Your Account</h2>
+                <form>
+                     <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" value="user@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="******">
+                         <div class="invalid-feedback">
+                            Incorrect password.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMeCheck">
+                        <label class="form-check-label" for="rememberMeCheck">Remember me</label>
+                         <a href="#" class="float-end">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                <p class="mt-3 text-center">Don't have an account? <a href="#">Sign up here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 5: Home Page (Logged In) / Dashboard</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Find Groups (e.g., CHEM 101)" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Welcome back, Jane!</h1>
+
+        <div class="row">
+            <!-- My Groups Section -->
+            <div class="col-md-8">
+                <h3><i class="bi bi-people-fill"></i> Your Upcoming Study Sessions</h3>
+                 <div class="list-group mb-4">
+                   <a href="#" class="list-group-item list-group-item-action">
+                     <div class="d-flex w-100 justify-content-between">
+                       <h5 class="mb-1">Calculus II Study Group</h5>
+                       <small>Today, 7:00 PM</small>
+                     </div>
+                     <p class="mb-1">Reviewing Chapter 5 - Integration Techniques.</p>
+                     <small>Location: Library Room 3B / Zoom Link</small>
+                   </a>
+                   <a href="#" class="list-group-item list-group-item-action">
+                     <div class="d-flex w-100 justify-content-between">
+                       <h5 class="mb-1">Organic Chemistry - Problem Set 4</h5>
+                       <small>Tomorrow, 5:30 PM</small>
+                     </div>
+                     <p class="mb-1">Working through assigned problems.</p>
+                     <small>Location: Online</small>
+                   </a>
+                   <a href="#" class="list-group-item list-group-item-action text-center text-primary">View All My Groups</a>
+                 </div>
+
+                 <h3><i class="bi bi-binoculars-fill"></i> Suggested Groups For You</h3>
+                 <div class="row row-cols-1 row-cols-md-2 g-4">
+                     <div class="col">
+                         <div class="card h-100">
+                           <div class="card-body">
+                             <h5 class="card-title">PHYS 201 - Mechanics</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Monday & Wednesday 6 PM</h6>
+                             <p class="card-text">Looking for 2 more members to review lecture notes and practice problems.</p>
+                             <span class="badge bg-secondary me-1">Physics</span>
+                             <span class="badge bg-info text-dark">In-Person</span>
+                           </div>
+                           <div class="card-footer bg-transparent border-top-0">
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                           </div>
+                         </div>
+                     </div>
+                      <div class="col">
+                         <div class="card h-100">
+                           <div class="card-body">
+                             <h5 class="card-title">CS 310 - Data Structures</h5>
+                             <h6 class="card-subtitle mb-2 text-muted">Flexible Schedule (Online)</h6>
+                             <p class="card-text">Advanced group focusing on coding interview preparation using data structures.</p>
+                               <span class="badge bg-secondary me-1">Comp Sci</span>
+                               <span class="badge bg-success">Online</span>
+                           </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                           </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Quick Actions Section -->
+            <div class="col-md-4">
+                <div class="card sticky-top" style="top: 80px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick Actions</h5>
+                        <div class="d-grid gap-2">
+                            <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Create a New Group</a>
+                            <a href="#" class="btn btn-info text-white"><i class="bi bi-search"></i> Find More Groups</a>
+                            <a href="#" class="btn btn-outline-secondary"><i class="bi bi-person-gear"></i> Edit Your Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 6: Search Results Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Find Groups (e.g., CHEM 101)" aria-label="Search" value="CHEM 101">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Search Results for "CHEM 101"</h2>
+        <p class="text-muted">Found 3 groups matching your criteria.</p>
+        <hr>
+
+        <div class="row">
+            <!-- Filters -->
+            <div class="col-md-3">
+                <h4>Filters</h4>
+                 <div class="mb-3">
+                    <label for="filterSubject" class="form-label">Subject/Course</label>
+                    <input type="text" class="form-control" id="filterSubject" value="CHEM 101">
+                 </div>
+                 <div class="mb-3">
+                    <label class="form-label">Meeting Type</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="filterInPerson">
+                      <label class="form-check-label" for="filterInPerson">In-Person</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="filterOnline" checked>
+                      <label class="form-check-label" for="filterOnline">Online</label>
+                    </div>
+                 </div>
+                 <div class="mb-3">
+                    <label class="form-label">Day of Week</label>
+                     <select class="form-select">
+                        <option selected>Any Day</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                    </select>
+                 </div>
+                 <button class="btn btn-outline-secondary w-100">Apply Filters</button>
+            </div>
+
+            <!-- Results List -->
+            <div class="col-md-9">
+                <div class="list-group">
+                   <a href="#" class="list-group-item list-group-item-action mb-3 shadow-sm">
+                     <div class="d-flex w-100 justify-content-between">
+                       <h5 class="mb-1">CHEM 101 - Midterm Review</h5>
+                       <small><span class="badge bg-success">Online</span> <span class="badge bg-info text-dark">3/5 Members</span></small>
+                     </div>
+                     <p class="mb-1">Focusing on chapters 1-4 for the upcoming midterm. Meets Tues/Thurs evenings via Zoom.</p>
+                     <small>Tags: Chemistry, Exam Prep, Online</small>
+                   </a>
+                    <a href="#" class="list-group-item list-group-item-action mb-3 shadow-sm">
+                     <div class="d-flex w-100 justify-content-between">
+                       <h5 class="mb-1">General Chemistry I (CHEM 101) Study Buddies</h5>
+                       <small><span class="badge bg-warning text-dark">In-Person</span> <span class="badge bg-info text-dark">Full (5/5)</span></small>
+                     </div>
+                     <p class="mb-1">Weekly problem-solving sessions in the Science Building lobby. Currently full but check back later!</p>
+                      <small>Tags: Chemistry, Problem Solving, In-Person</small>
+                     </a>
+                   <a href="#" class="list-group-item list-group-item-action mb-3 shadow-sm">
+                     <div class="d-flex w-100 justify-content-between">
+                       <h5 class="mb-1">CHEM 101 Lab Report Help</h5>
+                       <small><span class="badge bg-success">Online</span> <span class="badge bg-info text-dark">1/4 Members</span></small>
+                     </div>
+                     <p class="mb-1">Need help with lab reports? Let's collaborate online. Flexible schedule.</p>
+                     <small>Tags: Chemistry, Lab Work, Online, Flexible</small>
+                   </a>
+                 </div>
+                 <!-- Pagination (Placeholder) -->
+                  <nav aria-label="Page navigation example" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 7: Group Details Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Details - Study Group Finder</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Find Groups (e.g., CHEM 101)" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Search Results</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Group Details</li>
+                  </ol>
+                </nav>
+
+                <h2 class="display-6">CHEM 101 - Midterm Review</h2>
+                <span class="badge bg-primary me-1">CHEM 101</span>
+                <span class="badge bg-secondary me-1">Chemistry</span>
+                <span class="badge bg-info me-1">Exam Prep</span>
+                <span class="badge bg-success">Online</span>
+
+                <p class="lead mt-3">Focusing on chapters 1-4 for the upcoming midterm. Meets Tues/Thurs evenings via Zoom.</p>
+
+                <div class="card my-4">
+                    <div class="card-header">
+                        Group Information
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Subject:</strong> General Chemistry I</li>
+                        <li class="list-group-item"><strong>Course Code:</strong> CHEM 101</li>
+                        <li class="list-group-item"><strong>Schedule:</strong> Tuesdays & Thursdays, 7:00 PM - 8:30 PM</li>
+                        <li class="list-group-item"><strong>Location/Platform:</strong> Zoom (Link provided upon joining)</li>
+                        <li class="list-group-item"><strong>Group Size:</strong> 3 / 5 members</li>
+                        <li class="list-group-item"><strong>Description:</strong> We aim to thoroughly review the material covered in the first four chapters, work through practice problems, and clarify doubts before the midterm exam. Open to all CHEM 101 students looking for a collaborative review environment.</li>
+                     </ul>
+                </div>
+
+                <div class="card my-4">
+                    <div class="card-header">
+                        Members (3)
+                    </div>
+                     <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-3 me-3 text-primary"></i>
+                            <div>
+                                <h6 class="mb-0">David Lee (Creator)</h6>
+                                <small class="text-muted">Joined 2 days ago</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-3 me-3 text-secondary"></i>
+                            <div>
+                                <h6 class="mb-0">Sarah Chen</h6>
+                                <small class="text-muted">Joined 1 day ago</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item d-flex align-items-center">
+                             <i class="bi bi-person-circle fs-3 me-3 text-secondary"></i>
+                            <div>
+                                <h6 class="mb-0">Michael Rodriguez</h6>
+                                <small class="text-muted">Joined 1 day ago</small>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                 <div class="card sticky-top" style="top: 80px;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Join this Group?</h5>
+                        <p>Spots Available: 2</p>
+                        <button class="btn btn-success btn-lg w-100 mb-2"><i class="bi bi-person-plus-fill"></i> Request to Join</button>
+                        <button class="btn btn-outline-secondary btn-sm w-100"><i class="bi bi-chat-dots"></i> Message Creator (Placeholder)</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 8: Create Group Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Group - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Create a New Study Group</h2>
+        <p>Fill out the details below to create your group.</p>
+        <hr>
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label for="groupName" class="form-label">Group Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="groupName" placeholder="e.g., Biology 101 Final Exam Cram">
+            </div>
+             <div class="col-md-6">
+                <label for="groupSubject" class="form-label">Subject <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="groupSubject" placeholder="e.g., Biology">
+            </div>
+            <div class="col-md-6">
+                <label for="groupCourseCode" class="form-label">Course Code (Optional)</label>
+                <input type="text" class="form-control" id="groupCourseCode" placeholder="e.g., BIO 101">
+            </div>
+             <div class="col-md-12">
+                 <label for="groupDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="groupDescription" rows="3" placeholder="Describe the goals, topics, and activities of your group."></textarea>
+            </div>
+             <div class="col-md-4">
+                <label for="groupSize" class="form-label">Max Group Size <span class="text-danger">*</span></label>
+                <select id="groupSize" class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10+</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Meeting Type <span class="text-danger">*</span></label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetOnline" value="online" checked>
+                  <label class="form-check-label" for="meetOnline">Online</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetInPerson" value="inperson">
+                  <label class="form-check-label" for="meetInPerson">In-Person</label>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetHybrid" value="hybrid">
+                  <label class="form-check-label" for="meetHybrid">Hybrid</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="groupLocation" class="form-label">Location/Platform <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="groupLocation" placeholder="e.g., Library Room 2, Zoom, Discord">
+            </div>
+             <div class="col-md-12">
+                 <label for="groupSchedule" class="form-label">Schedule Details</label>
+                <input type="text" class="form-control" id="groupSchedule" placeholder="e.g., Wednesdays 6 PM - 8 PM, Flexible, TBD">
+            </div>
+            <div class="col-md-12">
+                 <label for="groupTags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="groupTags" placeholder="e.g., exam prep, homework help, final project">
+            </div>
+
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Create Group</button>
+                 <a href="#" class="btn btn-outline-secondary btn-lg ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 8a: Create Group Page - Success State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Created - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <div>
+            Success! Your study group "Biology 101 Final Exam Cram" has been created.
+          </div>
+        </div>
+
+        <h2>Create a New Study Group</h2>
+        <p>Fill out the details below to create your group.</p>
+         <hr>
+         <!-- Form can be shown again or replaced with next steps -->
+          <div class="text-center p-5 border rounded bg-light">
+             <h4>What's next?</h4>
+             <p>Your group is now listed and visible to other students.</p>
+             <a href="#" class="btn btn-primary me-2">View Your Group</a>
+             <a href="#" class="btn btn-secondary me-2">Invite Members (Placeholder)</a>
+             <a href="#" class="btn btn-success">Create Another Group</a>
+         </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 8b: Create Group Page - Error State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Group - Error - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="alert alert-danger" role="alert">
+           Please fix the errors below. Required fields are marked with <span class="text-danger">*</span>.
+        </div>
+        <h2>Create a New Study Group</h2>
+        <p>Fill out the details below to create your group.</p>
+        <hr>
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label for="groupName" class="form-label">Group Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control is-invalid" id="groupName" placeholder="e.g., Biology 101 Final Exam Cram">
+                 <div class="invalid-feedback">
+                    Group name is required.
+                 </div>
+            </div>
+             <div class="col-md-6">
+                <label for="groupSubject" class="form-label">Subject <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="groupSubject" placeholder="e.g., Biology" value="Biology">
+            </div>
+            <div class="col-md-6">
+                <label for="groupCourseCode" class="form-label">Course Code (Optional)</label>
+                <input type="text" class="form-control" id="groupCourseCode" placeholder="e.g., BIO 101">
+            </div>
+             <div class="col-md-12">
+                 <label for="groupDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control is-invalid" id="groupDescription" rows="3" placeholder="Describe the goals, topics, and activities of your group."></textarea>
+                 <div class="invalid-feedback">
+                     Please provide a description for your group.
+                 </div>
+            </div>
+             <div class="col-md-4">
+                <label for="groupSize" class="form-label">Max Group Size <span class="text-danger">*</span></label>
+                <select id="groupSize" class="form-select is-invalid">
+                    <option selected>Choose...</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10+</option>
+                </select>
+                 <div class="invalid-feedback">
+                     Please select a maximum group size.
+                 </div>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Meeting Type <span class="text-danger">*</span></label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetOnline" value="online" checked>
+                  <label class="form-check-label" for="meetOnline">Online</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetInPerson" value="inperson">
+                  <label class="form-check-label" for="meetInPerson">In-Person</label>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="radio" name="meetingType" id="meetHybrid" value="hybrid">
+                  <label class="form-check-label" for="meetHybrid">Hybrid</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="groupLocation" class="form-label">Location/Platform <span class="text-danger">*</span></label>
+                <input type="text" class="form-control is-invalid" id="groupLocation" placeholder="e.g., Library Room 2, Zoom, Discord">
+                 <div class="invalid-feedback">
+                     Please specify the meeting location or platform.
+                 </div>
+            </div>
+             <div class="col-md-12">
+                 <label for="groupSchedule" class="form-label">Schedule Details</label>
+                <input type="text" class="form-control" id="groupSchedule" placeholder="e.g., Wednesdays 6 PM - 8 PM, Flexible, TBD">
+            </div>
+            <div class="col-md-12">
+                 <label for="groupTags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="groupTags" placeholder="e.g., exam prep, homework help, final project">
+            </div>
+
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Create Group</button>
+                 <a href="#" class="btn btn-outline-secondary btn-lg ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 9: My Groups Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Groups - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h1>My Study Groups</h1>
+             <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Create New Group</a>
+        </div>
+
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="joined-tab" data-bs-toggle="tab" data-bs-target="#joined-tab-pane" type="button" role="tab" aria-controls="joined-tab-pane" aria-selected="true">Groups I've Joined (2)</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="created-tab" data-bs-toggle="tab" data-bs-target="#created-tab-pane" type="button" role="tab" aria-controls="created-tab-pane" aria-selected="false">Groups I've Created (1)</button>
+          </li>
+           <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="false">Pending Requests (1)</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="joined-tab-pane" role="tabpanel" aria-labelledby="joined-tab" tabindex="0">
+            <h4>Groups I've Joined</h4>
+             <div class="list-group">
+               <div class="list-group-item list-group-item-action mb-3">
+                 <div class="d-flex w-100 justify-content-between">
+                   <h5 class="mb-1">Calculus II Study Group</h5>
+                   <small>Joined 3 weeks ago</small>
+                 </div>
+                 <p class="mb-1">Reviewing Chapter 5 - Integration Techniques. Meets Today, 7:00 PM.</p>
+                 <small>Location: Library Room 3B / Zoom Link</small>
+                 <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                    <button class="btn btn-sm btn-outline-danger">Leave Group</button>
+                 </div>
+               </div>
+               <div class="list-group-item list-group-item-action mb-3">
+                 <div class="d-flex w-100 justify-content-between">
+                   <h5 class="mb-1">Organic Chemistry - Problem Set 4</h5>
+                   <small>Joined 1 week ago</small>
+                 </div>
+                 <p class="mb-1">Working through assigned problems. Meets Tomorrow, 5:30 PM.</p>
+                 <small>Location: Online</small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary me-2">View Details</a>
+                    <button class="btn btn-sm btn-outline-danger">Leave Group</button>
+                 </div>
+               </div>
+             </div>
+          </div>
+          <div class="tab-pane fade" id="created-tab-pane" role="tabpanel" aria-labelledby="created-tab" tabindex="0">
+             <h4>Groups I've Created</h4>
+             <div class="list-group">
+                 <div class="list-group-item list-group-item-action mb-3">
+                 <div class="d-flex w-100 justify-content-between">
+                   <h5 class="mb-1">Biology 101 Final Exam Cram</h5>
+                   <small>Created 5 days ago</small>
+                 </div>
+                 <p class="mb-1">Focusing on final exam review for introductory biology. Schedule TBD.</p>
+                 <small>Members: 1/6 | <span class="text-warning">1 Pending Request</span></small>
+                  <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-primary me-2">Manage Group</a>
+                     <a href="#" class="btn btn-sm btn-outline-secondary me-2">Edit Details</a>
+                    <button class="btn btn-sm btn-danger">Delete Group</button>
+                 </div>
+               </div>
+             </div>
+            </div>
+            <div class="tab-pane fade" id="pending-tab-pane" role="tabpanel" aria-labelledby="pending-tab" tabindex="0">
+                <h4>Pending Join Requests</h4>
+                 <div class="list-group">
+                   <div class="list-group-item list-group-item-action mb-3">
+                       <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1">Request to join "PHYS 201 - Mechanics"</h5>
+                           <small>Submitted 1 day ago</small>
+                       </div>
+                       <p class="mb-1">You requested to join this group focusing on mechanics problems.</p>
+                       <small>Status: <span class="badge bg-warning text-dark">Pending Approval</span></small>
+                       <div class="mt-2">
+                           <button class="btn btn-sm btn-outline-danger">Cancel Request</button>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 10: Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                 <i class="bi bi-person-circle display-1 text-primary"></i>
+                 <h2 class="mt-2">Jane Doe</h2>
+                 <p class="text-muted">Student at State University</p>
+                 <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit Profile</a>
+                 <hr>
+                 <p><small>Member Since: October 20, 2023</small></p>
+            </div>
+            <div class="col-md-8">
+                <h3>Profile Information</h3>
+                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Full Name:</strong> Jane Doe</li>
+                    <li class="list-group-item"><strong>Email:</strong> jane.doe@email.com</li>
+                    <li class="list-group-item"><strong>School/University:</strong> State University</li>
+                    <li class="list-group-item"><strong>Major/Program:</strong> Computer Science (Placeholder)</li>
+                    <li class="list-group-item"><strong>Year/Level:</strong> 3rd Year (Placeholder)</li>
+                    <li class="list-group-item"><strong>Bio:</strong> Passionate about programming and collaborative learning. Looking for groups in advanced CS topics. (Placeholder)</li>
+                </ul>
+
+                <h3 class="mt-4">Study Interests / Courses</h3>
+                <p>
+                    <span class="badge bg-secondary me-1 fs-6">Computer Science</span>
+                    <span class="badge bg-info text-dark me-1 fs-6">Calculus II</span>
+                    <span class="badge bg-light text-dark border me-1 fs-6">Data Structures</span>
+                     <span class="badge bg-light text-dark border me-1 fs-6">Physics</span>
+                     <!-- Add Edit button for interests -->
+                 </p>
+
+                 <h3 class="mt-4">Account Settings</h3>
+                 <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><a href="#">Change Password</a></li>
+                      <li class="list-group-item"><a href="#">Notification Preferences</a></li>
+                      <li class="list-group-item"><a href="#" class="text-danger">Delete Account</a></li>
+                  </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 11: Edit Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Edit Your Profile</h2>
+        <hr>
+        <form class="row g-3">
+             <div class="col-md-3 text-center">
+                 <i class="bi bi-person-circle display-1 text-primary mb-2"></i><br>
+                 <button type="button" class="btn btn-sm btn-outline-secondary">Change Photo (Placeholder)</button>
+             </div>
+             <div class="col-md-9 row g-3">
+                <div class="col-md-12">
+                    <label for="profileName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="profileName" value="Jane Doe">
+                </div>
+                <div class="col-md-12">
+                    <label for="profileEmail" class="form-label">Email address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="profileEmail" value="jane.doe@email.com" disabled readonly>
+                    <small class="text-muted">Email cannot be changed.</small>
+                </div>
+                <div class="col-md-6">
+                    <label for="profileSchool" class="form-label">School/University</label>
+                    <input type="text" class="form-control" id="profileSchool" value="State University">
+                </div>
+                 <div class="col-md-6">
+                    <label for="profileMajor" class="form-label">Major/Program</label>
+                    <input type="text" class="form-control" id="profileMajor" value="Computer Science">
+                </div>
+                 <div class="col-md-6">
+                    <label for="profileYear" class="form-label">Year/Level</label>
+                    <select id="profileYear" class="form-select">
+                        <option>Choose...</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3" selected>3rd Year</option>
+                        <option value="4">4th Year</option>
+                         <option value="5">Graduate</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                     <label for="profileBio" class="form-label">Bio</label>
+                     <textarea class="form-control" id="profileBio" rows="3">Passionate about programming and collaborative learning. Looking for groups in advanced CS topics.</textarea>
+                </div>
+                 <div class="col-12">
+                     <label for="profileInterests" class="form-label">Study Interests / Courses (comma-separated)</label>
+                     <input type="text" class="form-control" id="profileInterests" value="Computer Science, Calculus II, Data Structures, Physics">
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <a href="#" class="btn btn-outline-secondary ms-2">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <h2>State 11a: Edit Profile Page - Success State</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Updated - Study Group Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">StudyGroupFinder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">My Groups</a>
+            </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Create Group</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav">
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Jane Doe Updated
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+       <div class="alert alert-success d-flex align-items-center" role="alert">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          <div>
+            Your profile has been successfully updated.
+          </div>
+        </div>
+
+        <h2>Edit Your Profile</h2>
+        <hr>
+        <!-- Form can be hidden or shown again with updated values -->
+         <p>Your changes have been saved. <a href="#">View Your Profile</a></p>
+
+        <form class="row g-3">
+             <div class="col-md-3 text-center">
+                 <i class="bi bi-person-circle display-1 text-primary mb-2"></i><br>
+                 <button type="button" class="btn btn-sm btn-outline-secondary">Change Photo (Placeholder)</button>
+             </div>
+             <div class="col-md-9 row g-3">
+                <div class="col-md-12">
+                    <label for="profileName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="profileName" value="Jane Doe Updated" readonly>
+                </div>
+                <div class="col-md-12">
+                    <label for="profileEmail" class="form-label">Email address <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="profileEmail" value="jane.doe@email.com" disabled readonly>
+                    <small class="text-muted">Email cannot be changed.</small>
+                </div>
+                <div class="col-md-6">
+                    <label for="profileSchool" class="form-label">School/University</label>
+                    <input type="text" class="form-control" id="profileSchool" value="State University - Campus B" readonly>
+                </div>
+                 <div class="col-md-6">
+                    <label for="profileMajor" class="form-label">Major/Program</label>
+                    <input type="text" class="form-control" id="profileMajor" value="Data Science" readonly>
+                </div>
+                 <div class="col-md-6">
+                    <label for="profileYear" class="form-label">Year/Level</label>
+                    <input type="text" class="form-control" id="profileYear_display" value="3rd Year" readonly>
+                </div>
+
+                <div class="col-12">
+                     <label for="profileBio" class="form-label">Bio</label>
+                     <textarea class="form-control" id="profileBio" rows="3" readonly>Updated Bio: Passionate about programming and collaborative learning. Looking for groups in advanced CS topics and Data Science.</textarea>
+                </div>
+                 <div class="col-12">
+                     <label for="profileInterests" class="form-label">Study Interests / Courses (comma-separated)</label>
+                     <input type="text" class="form-control" id="profileInterests" value="Data Science, Machine Learning, Calculus II, Data Structures" readonly>
+                </div>
+
+                <div class="col-12 mt-4">
+                     <a href="#" class="btn btn-outline-primary">Edit Again</a>
+                     <a href="#" class="btn btn-secondary ms-2">Back to Profile</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 StudyGroupFinder
+      </div>
+    </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

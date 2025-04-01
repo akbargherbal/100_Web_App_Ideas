@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CRM UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h1, h2 { text-align: center; margin-bottom: 20px; }
+        .state-container { margin-bottom: 40px; padding: 20px; background-color: #e9ecef; border-radius: 8px; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; background-color: #fff; }
+    </style>
+</head>
+<body>
+
+    <h1>Simple CRM for Freelancers - UI Flow</h1>
+
+    <!-- State 1: Home Page (Dashboard) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Dashboard)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <title>State 1: Home</title>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1 class='mb-4'>Dashboard</h1>
+
+                    <div class='row g-4 mb-4'>
+                        <div class='col-md-4'>
+                            <div class='card text-center'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Clients</h5>
+                                    <p class='card-text display-4'>15</p>
+                                    <a href='#' class='btn btn-primary'>View Clients</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4'>
+                             <div class='card text-center'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Active Projects</h5>
+                                    <p class='card-text display-4'>8</p>
+                                    <a href='#' class='btn btn-primary'>View Projects</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4'>
+                             <div class='card text-center'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Logs This Week</h5>
+                                    <p class='card-text display-4'>23</p>
+                                    <a href='#' class='btn btn-primary'>View Logs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='row g-4'>
+                        <div class='col-md-6'>
+                            <h2>Quick Actions</h2>
+                            <div class='list-group'>
+                              <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-person-plus-fill me-2'></i>Add New Client</a>
+                              <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-folder-plus me-2'></i>Add New Project</a>
+                              <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-chat-left-text-fill me-2'></i>Log Communication</a>
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <h2>Recent Communications</h2>
+                            <ul class='list-group'>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    <div><i class='bi bi-envelope me-2'></i>Email with Client A (Project X)</div>
+                                    <span class='badge bg-secondary rounded-pill'>Yesterday</span>
+                                </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    <div><i class='bi bi-telephone me-2'></i>Call with Client B</div>
+                                    <span class='badge bg-secondary rounded-pill'>2 days ago</span>
+                                </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    <div><i class='bi bi-people me-2'></i>Meeting about Project Y</div>
+                                    <span class='badge bg-secondary rounded-pill'>3 days ago</span>
+                                 </li>
+                                 <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    <div><i class='bi bi-envelope me-2'></i>Email with Client C (Project Z)</div>
+                                    <span class='badge bg-secondary rounded-pill'>4 days ago</span>
+                                </li>
+                            </ul>
+                            <div class='text-end mt-2'>
+                                <a href='#'>View All Logs &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 2: About</title>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='row justify-content-center'>
+                        <div class='col-lg-8'>
+                            <div class='card'>
+                                <div class='card-body'>
+                                    <h1 class='card-title text-center mb-4'>About Simple CRM for Freelancers</h1>
+                                    <p class='card-text'>This application provides a straightforward way for freelancers to manage their client relationships, focusing specifically on tracking communication history.</p>
+                                    <p class='card-text'>Unlike complex, enterprise-level CRMs, this tool prioritizes simplicity and the core need of freelancers: knowing who you talked to, when, and about what project.</p>
+                                    <h5 class='mt-4'>Key Features:</h5>
+                                    <ul>
+                                        <li>Client Management: Store contact details for all your clients.</li>
+                                        <li>Project Tracking: Associate projects with specific clients.</li>
+                                        <li>Communication Logging: Record emails, calls, and meetings for each client or project.</li>
+                                        <li>Simple Interface: Easy-to-use dashboard and navigation built with Bootstrap.</li>
+                                    </ul>
+                                    <p class='text-center text-muted mt-4'>Version 1.0.0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Clients List Page -->
+    <div class="state-container">
+        <h2>State 3: Clients List Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+               <title>State 3: Clients</title>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Clients</h1>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-2'></i>Add New Client</a>
+                    </div>
+
+                    <table class='table table-striped table-hover align-middle'>
+                        <thead class='table-dark'>
+                            <tr>
+                                <th>Name</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alice Wonderland</td>
+                                <td>Wonderland Inc.</td>
+                                <td>alice@wonderland.com</td>
+                                <td>555-1234</td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bob The Builder</td>
+                                <td>Construction Co.</td>
+                                <td>bob@build.it</td>
+                                <td>555-5678</td>
+                               <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Charlie Chaplin</td>
+                                <td>Silent Films Ltd.</td>
+                                <td>charlie@silent.film</td>
+                                <td>555-9988</td>
+                               <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <!-- More client rows -->
+                        </tbody>
+                    </table>
+                     <nav aria-label='Client navigation'>
+                      <ul class='pagination justify-content-center'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Add New Client Page -->
+    <div class="state-container">
+        <h2>State 4: Add New Client Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 4: Add Client</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Add New Client</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientName' class='form-label'>Client Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='clientName' required>
+                                <div class='invalid-feedback'>
+                                    Client name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='companyName' class='form-label'>Company Name</label>
+                                <input type='text' class='form-control' id='companyName'>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='clientEmail' class='form-label'>Email Address <span class='text-danger'>*</span></label>
+                                <input type='email' class='form-control' id='clientEmail' required>
+                                 <div class='invalid-feedback'>
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientPhone' class='form-label'>Phone Number</label>
+                                <input type='tel' class='form-control' id='clientPhone'>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientAddress' class='form-label'>Address</label>
+                                <textarea class='form-control' id='clientAddress' rows='3'></textarea>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientNotes' class='form-label'>Notes</label>
+                                <textarea class='form-control' id='clientNotes' rows='3'></textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Client</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Add New Client Page (Error State) -->
+    <div class="state-container">
+        <h2>State 5: Add New Client Page (Error State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 5: Add Client Error</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Add New Client</h1>
+                     <div class='alert alert-danger' role='alert'>
+                      Please fix the errors below before submitting.
+                    </div>
+                    <form class='was-validated' novalidate>
+                        <div class='row g-3'>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientName' class='form-label'>Client Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control is-invalid' id='clientName' required>
+                                <div class='invalid-feedback'>
+                                    Client name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='companyName' class='form-label'>Company Name</label>
+                                <input type='text' class='form-control' id='companyName' value='ACME Corp'>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='clientEmail' class='form-label'>Email Address <span class='text-danger'>*</span></label>
+                                <input type='email' class='form-control is-invalid' id='clientEmail' required value='not-an-email'>
+                                 <div class='invalid-feedback'>
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientPhone' class='form-label'>Phone Number</label>
+                                <input type='tel' class='form-control' id='clientPhone'>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientAddress' class='form-label'>Address</label>
+                                <textarea class='form-control' id='clientAddress' rows='3'></textarea>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientNotes' class='form-label'>Notes</label>
+                                <textarea class='form-control' id='clientNotes' rows='3'></textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Client</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: Client Detail Page -->
+    <div class="state-container">
+        <h2>State 6: Client Detail Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <title>State 6: Client Details</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Clients</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Alice Wonderland</li>
+                      </ol>
+                    </nav>
+
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                        <h1>Alice Wonderland</h1>
+                         <div>
+                             <a href='#' class='btn btn-warning me-2'><i class='bi bi-pencil me-1'></i>Edit Client</a>
+                             <a href='#' class='btn btn-danger'><i class='bi bi-trash me-1'></i>Delete Client</a>
+                         </div>
+                    </div>
+
+                    <div class='card mb-4'>
+                        <div class='card-header'>
+                           Client Information
+                        </div>
+                        <div class='card-body'>
+                            <dl class='row'>
+                              <dt class='col-sm-3'>Company:</dt>
+                              <dd class='col-sm-9'>Wonderland Inc.</dd>
+
+                              <dt class='col-sm-3'>Email:</dt>
+                              <dd class='col-sm-9'><a href='mailto:alice@wonderland.com'>alice@wonderland.com</a></dd>
+
+                              <dt class='col-sm-3'>Phone:</dt>
+                              <dd class='col-sm-9'>555-1234</dd>
+
+                              <dt class='col-sm-3'>Address:</dt>
+                              <dd class='col-sm-9'>123 Rabbit Hole Lane<br>Curious City, WND 12345</dd>
+
+                              <dt class='col-sm-3'>Notes:</dt>
+                              <dd class='col-sm-9'>Prefers communication via email. Interested in website redesign.</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+
+                    <div class='card mb-4'>
+                         <div class='card-header d-flex justify-content-between align-items-center'>
+                           Associated Projects
+                           <a href='#' class='btn btn-sm btn-success'><i class='bi bi-plus-circle me-1'></i>Add Project</a>
+                         </div>
+                        <div class='list-group list-group-flush'>
+                            <a href='#' class='list-group-item list-group-item-action'>Project X - Website Redesign</a>
+                            <a href='#' class='list-group-item list-group-item-action'>Project Alpha - Logo Design</a>
+                         </div>
+                    </div>
+
+
+                    <div class='card mb-4'>
+                        <div class='card-header d-flex justify-content-between align-items-center'>
+                           Recent Communications
+                           <a href='#' class='btn btn-sm btn-success'><i class='bi bi-plus-circle me-1'></i>Log Communication</a>
+                         </div>
+                           <ul class='list-group list-group-flush'>
+                                <li class='list-group-item'>
+                                  <div class='d-flex w-100 justify-content-between'>
+                                    <h5 class='mb-1'><i class='bi bi-envelope me-2'></i>Follow up on proposal (Project X)</h5>
+                                    <small>Yesterday</small>
+                                  </div>
+                                  <p class='mb-1'>Sent email asking for feedback on the redesign proposal.</p>
+                                  <small>
+                                      <a href='#' class='me-2'>View Details</a>
+                                      <a href='#' class='text-warning'>Edit</a>
+                                   </small>
+                                </li>
+                               <li class='list-group-item'>
+                                  <div class='d-flex w-100 justify-content-between'>
+                                    <h5 class='mb-1'><i class='bi bi-telephone me-2'></i>Initial Call (Project X)</h5>
+                                    <small>5 days ago</small>
+                                  </div>
+                                  <p class='mb-1'>Discussed initial requirements for the website redesign project.</p>
+                                   <small>
+                                      <a href='#' class='me-2'>View Details</a>
+                                      <a href='#' class='text-warning'>Edit</a>
+                                   </small>
+                                </li>
+                                <li class='list-group-item'>
+                                  <div class='d-flex w-100 justify-content-between'>
+                                    <h5 class='mb-1'><i class='bi bi-envelope me-2'></i>Logo options sent (Project Alpha)</h5>
+                                    <small>1 week ago</small>
+                                  </div>
+                                  <p class='mb-1'>Emailed three logo design options for review.</p>
+                                  <small>
+                                      <a href='#' class='me-2'>View Details</a>
+                                      <a href='#' class='text-warning'>Edit</a>
+                                   </small>
+                                </li>
+                            </ul>
+                        <div class='card-footer text-end'>
+                            <a href='#'>View All Communications for Alice Wonderland &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 7: Edit Client Page -->
+    <div class="state-container">
+        <h2>State 7: Edit Client Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 7: Edit Client</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Clients</a></li>
+                        <li class='breadcrumb-item'><a href='#'>Alice Wonderland</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Edit</li>
+                      </ol>
+                    </nav>
+                    <h1>Edit Client: Alice Wonderland</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientName' class='form-label'>Client Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='clientName' value='Alice Wonderland' required>
+                                <div class='invalid-feedback'>
+                                    Client name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='companyName' class='form-label'>Company Name</label>
+                                <input type='text' class='form-control' id='companyName' value='Wonderland Inc.'>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='clientEmail' class='form-label'>Email Address <span class='text-danger'>*</span></label>
+                                <input type='email' class='form-control' id='clientEmail' value='alice@wonderland.com' required>
+                                 <div class='invalid-feedback'>
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='clientPhone' class='form-label'>Phone Number</label>
+                                <input type='tel' class='form-control' id='clientPhone' value='555-1234'>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientAddress' class='form-label'>Address</label>
+                                <textarea class='form-control' id='clientAddress' rows='3'>123 Rabbit Hole Lane\nCurious City, WND 12345</textarea>
+                            </div>
+                             <div class='col-12 mb-3'>
+                                <label for='clientNotes' class='form-label'>Notes</label>
+                                <textarea class='form-control' id='clientNotes' rows='3'>Prefers communication via email. Interested in website redesign.</textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Changes</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                            <button type='button' class='btn btn-danger float-end'>Delete Client</button>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 8: Projects List Page -->
+    <div class="state-container">
+        <h2>State 8: Projects List Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+               <title>State 8: Projects</title>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Projects</h1>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-2'></i>Add New Project</a>
+                    </div>
+
+                     <div class='mb-3'>
+                         <form class='row g-3 align-items-end'>
+                              <div class='col-md-4'>
+                                <label for='filterClient' class='form-label'>Filter by Client</label>
+                                <select class='form-select' id='filterClient'>
+                                    <option selected>All Clients</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                </select>
+                              </div>
+                              <div class='col-md-4'>
+                                <label for='filterStatus' class='form-label'>Filter by Status</label>
+                                <select class='form-select' id='filterStatus'>
+                                  <option selected>All Statuses</option>
+                                  <option value='active'>Active</option>
+                                  <option value='completed'>Completed</option>
+                                  <option value='on_hold'>On Hold</option>
+                                </select>
+                              </div>
+                              <div class='col-md-2'>
+                                <button type='submit' class='btn btn-primary w-100'>Filter</button>
+                              </div>
+                               <div class='col-md-2'>
+                                <button type='reset' class='btn btn-secondary w-100'>Clear</button>
+                              </div>
+                        </form>
+                    </div>
+
+                    <table class='table table-striped table-hover align-middle'>
+                        <thead class='table-dark'>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Website Redesign</td>
+                                <td>Alice Wonderland</td>
+                                <td><span class='badge bg-primary'>Active</span></td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Logo Design</td>
+                                <td>Alice Wonderland</td>
+                                <td><span class='badge bg-success'>Completed</span></td>
+                               <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Build a House</td>
+                                <td>Bob The Builder</td>
+                                 <td><span class='badge bg-warning text-dark'>On Hold</span></td>
+                               <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Short Film Script</td>
+                                <td>Charlie Chaplin</td>
+                               <td><span class='badge bg-primary'>Active</span></td>
+                               <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <!-- More project rows -->
+                        </tbody>
+                    </table>
+                     <nav aria-label='Project navigation'>
+                      <ul class='pagination justify-content-center'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 9: Add New Project Page -->
+    <div class="state-container">
+        <h2>State 9: Add New Project Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 9: Add Project</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Add New Project</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                            <div class='col-12 mb-3'>
+                                <label for='projectName' class='form-label'>Project Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='projectName' required>
+                                <div class='invalid-feedback'>
+                                    Project name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='projectClient' class='form-label'>Associated Client <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='projectClient' required>
+                                    <option selected disabled value=''>Choose...</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                     <option value='4'>Diana Prince</option>
+                                     <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='projectStatus' class='form-label'>Status</label>
+                                <select class='form-select' id='projectStatus'>
+                                  <option value='active' selected>Active</option>
+                                  <option value='completed'>Completed</option>
+                                  <option value='on_hold'>On Hold</option>
+                                  <option value='cancelled'>Cancelled</option>
+                                </select>
+                              </div>
+                             <div class='col-12 mb-3'>
+                                <label for='projectDescription' class='form-label'>Description / Scope</label>
+                                <textarea class='form-control' id='projectDescription' rows='5'></textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Project</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 10: Add New Project Page (Error State) -->
+    <div class="state-container">
+        <h2>State 10: Add New Project Page (Error State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 10: Add Project Error</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Add New Project</h1>
+                     <div class='alert alert-danger' role='alert'>
+                      Please fix the errors below before submitting.
+                    </div>
+                    <form class='was-validated' novalidate>
+                         <div class='row g-3'>
+                            <div class='col-12 mb-3'>
+                                <label for='projectName' class='form-label'>Project Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control is-invalid' id='projectName' required>
+                                <div class='invalid-feedback'>
+                                    Project name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='projectClient' class='form-label'>Associated Client <span class='text-danger'>*</span></label>
+                                <select class='form-select is-invalid' id='projectClient' required>
+                                    <option selected disabled value=''>Choose...</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                     <option value='4'>Diana Prince</option>
+                                     <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='projectStatus' class='form-label'>Status</label>
+                                <select class='form-select' id='projectStatus'>
+                                  <option value='active' selected>Active</option>
+                                  <option value='completed'>Completed</option>
+                                  <option value='on_hold'>On Hold</option>
+                                  <option value='cancelled'>Cancelled</option>
+                                </select>
+                              </div>
+                             <div class='col-12 mb-3'>
+                                <label for='projectDescription' class='form-label'>Description / Scope</label>
+                                <textarea class='form-control' id='projectDescription' rows='5'></textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Project</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 11: Project Detail Page -->
+    <div class="state-container">
+        <h2>State 11: Project Detail Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <title>State 11: Project Details</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Projects</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Website Redesign</li>
+                      </ol>
+                    </nav>
+
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                        <h1>Project: Website Redesign</h1>
+                         <div>
+                             <a href='#' class='btn btn-warning me-2'><i class='bi bi-pencil me-1'></i>Edit Project</a>
+                             <a href='#' class='btn btn-danger'><i class='bi bi-trash me-1'></i>Delete Project</a>
+                         </div>
+                    </div>
+
+                    <div class='card mb-4'>
+                        <div class='card-header'>
+                           Project Information
+                        </div>
+                        <div class='card-body'>
+                            <dl class='row'>
+                              <dt class='col-sm-3'>Client:</dt>
+                              <dd class='col-sm-9'><a href='#'>Alice Wonderland</a></dd>
+
+                              <dt class='col-sm-3'>Status:</dt>
+                              <dd class='col-sm-9'><span class='badge bg-primary'>Active</span></dd>
+
+                              <dt class='col-sm-3'>Description:</dt>
+                              <dd class='col-sm-9'>Complete redesign of the Wonderland Inc. corporate website. Focus on modern UI/UX, mobile responsiveness, and improved navigation. Phase 1: Design mockups. Phase 2: Development. Phase 3: Testing & Launch.</dd>
+
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class='card mb-4'>
+                        <div class='card-header d-flex justify-content-between align-items-center'>
+                           Recent Communications for this Project
+                           <a href='#' class='btn btn-sm btn-success'><i class='bi bi-plus-circle me-1'></i>Log Communication</a>
+                         </div>
+                           <ul class='list-group list-group-flush'>
+                                <li class='list-group-item'>
+                                  <div class='d-flex w-100 justify-content-between'>
+                                    <h5 class='mb-1'><i class='bi bi-envelope me-2'></i>Follow up on proposal</h5>
+                                    <small>Yesterday</small>
+                                  </div>
+                                  <p class='mb-1'>Sent email asking for feedback on the redesign proposal. Attached latest mockups.</p>
+                                   <small>
+                                      <a href='#' class='me-2'>View Details</a>
+                                      <a href='#' class='text-warning'>Edit</a>
+                                   </small>
+                                </li>
+                               <li class='list-group-item'>
+                                  <div class='d-flex w-100 justify-content-between'>
+                                    <h5 class='mb-1'><i class='bi bi-telephone me-2'></i>Initial Call</h5>
+                                    <small>5 days ago</small>
+                                  </div>
+                                  <p class='mb-1'>Discussed initial requirements for the website redesign project. Client emphasized mobile-first approach.</p>
+                                  <small>
+                                      <a href='#' class='me-2'>View Details</a>
+                                      <a href='#' class='text-warning'>Edit</a>
+                                   </small>
+                                </li>
+                            </ul>
+                        <div class='card-footer text-end'>
+                            <a href='#'>View All Communications for this Project &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 12: Edit Project Page -->
+    <div class="state-container">
+        <h2>State 12: Edit Project Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 12: Edit Project</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Projects</a></li>
+                        <li class='breadcrumb-item'><a href='#'>Website Redesign</a></li>
+                         <li class='breadcrumb-item active' aria-current='page'>Edit</li>
+                     </ol>
+                    </nav>
+                    <h1>Edit Project: Website Redesign</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                            <div class='col-12 mb-3'>
+                                <label for='projectName' class='form-label'>Project Name <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='projectName' value='Website Redesign' required>
+                                <div class='invalid-feedback'>
+                                    Project name is required.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='projectClient' class='form-label'>Associated Client <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='projectClient' required>
+                                    <option disabled value=''>Choose...</option>
+                                    <option value='1' selected>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                    <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                             <div class='col-md-6 mb-3'>
+                                <label for='projectStatus' class='form-label'>Status</label>
+                                <select class='form-select' id='projectStatus'>
+                                  <option value='active' selected>Active</option>
+                                  <option value='completed'>Completed</option>
+                                  <option value='on_hold'>On Hold</option>
+                                  <option value='cancelled'>Cancelled</option>
+                                </select>
+                              </div>
+                             <div class='col-12 mb-3'>
+                                <label for='projectDescription' class='form-label'>Description / Scope</label>
+                                <textarea class='form-control' id='projectDescription' rows='5'>Complete redesign of the Wonderland Inc. corporate website. Focus on modern UI/UX, mobile responsiveness, and improved navigation. Phase 1: Design mockups. Phase 2: Development. Phase 3: Testing & Launch.</textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Changes</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                             <button type='button' class='btn btn-danger float-end'>Delete Project</button>
+                       </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 13: Communication Logs List Page -->
+    <div class="state-container">
+        <h2>State 13: Communication Logs List Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+               <title>State 13: Communications</title>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Communication Logs</h1>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-2'></i>Log New Communication</a>
+                    </div>
+
+                     <div class='mb-4 p-3 bg-light border rounded'>
+                         <form class='row g-3 align-items-end'>
+                              <div class='col-md-3'>
+                                <label for='filterClient' class='form-label'>Filter by Client</label>
+                                <select class='form-select' id='filterClient'>
+                                    <option selected>All Clients</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                </select>
+                              </div>
+                               <div class='col-md-3'>
+                                <label for='filterProject' class='form-label'>Filter by Project</label>
+                                <select class='form-select' id='filterProject'>
+                                    <option selected>All Projects</option>
+                                    <option value='proj1'>Website Redesign</option>
+                                    <option value='proj2'>Logo Design</option>
+                                    <option value='proj3'>Build a House</option>
+                                </select>
+                              </div>
+                               <div class='col-md-2'>
+                                <label for='filterType' class='form-label'>Filter by Type</label>
+                                <select class='form-select' id='filterType'>
+                                    <option selected>All Types</option>
+                                    <option value='email'>Email</option>
+                                    <option value='call'>Call</option>
+                                    <option value='meeting'>Meeting</option>
+                                </select>
+                              </div>
+                              <div class='col-md-2'>
+                                <label for='filterDate' class='form-label'>Date</label>
+                                <input type='date' class='form-control' id='filterDate'>
+                              </div>
+                              <div class='col-md-2'>
+                                <button type='submit' class='btn btn-primary w-100'>Filter</button>
+                              </div>
+                        </form>
+                    </div>
+
+
+                    <table class='table table-striped table-hover align-middle'>
+                        <thead class='table-dark'>
+                            <tr>
+                                <th>Type</th>
+                                <th>Date</th>
+                                <th>Client</th>
+                                <th>Project</th>
+                                <th>Summary</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class='bi bi-envelope-fill me-1' title='Email'></i>Email</td>
+                                <td>2023-10-26</td>
+                                <td><a href='#'>Alice Wonderland</a></td>
+                                <td><a href='#'>Website Redesign</a></td>
+                                <td>Follow up on proposal...</td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td><i class='bi bi-telephone-fill me-1' title='Call'></i>Call</td>
+                                <td>2023-10-22</td>
+                                <td><a href='#'>Alice Wonderland</a></td>
+                                <td><a href='#'>Website Redesign</a></td>
+                                <td>Initial Call about requirements...</td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td><i class='bi bi-envelope-fill me-1' title='Email'></i>Email</td>
+                                <td>2023-10-20</td>
+                                <td><a href='#'>Alice Wonderland</a></td>
+                                <td><a href='#'>Logo Design</a></td>
+                                <td>Logo options sent...</td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                              <tr>
+                                <td><i class='bi bi-people-fill me-1' title='Meeting'></i>Meeting</td>
+                                <td>2023-10-18</td>
+                                <td><a href='#'>Bob The Builder</a></td>
+                                <td><a href='#'>Build a House</a></td>
+                                <td>Discussed project pause...</td>
+                                <td>
+                                    <a href='#' class='btn btn-sm btn-info me-1' title='View Details'><i class='bi bi-eye'></i></a>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                            <!-- More log rows -->
+                        </tbody>
+                    </table>
+                     <nav aria-label='Log navigation'>
+                      <ul class='pagination justify-content-center'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 14: Add New Communication Log Page -->
+    <div class="state-container">
+        <h2>State 14: Add New Communication Log Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 14: Log Communication</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Log New Communication</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                             <div class='col-md-6 mb-3'>
+                                <label for='logClient' class='form-label'>Client <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='logClient' required>
+                                    <option selected disabled value=''>Choose Client...</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                     <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logProject' class='form-label'>Associated Project (Optional)</label>
+                                <select class='form-select' id='logProject'>
+                                    <option selected value=''>None</option>
+                                    <option value='proj1'>Website Redesign (Alice)</option>
+                                     <option value='proj2'>Logo Design (Alice)</option>
+                                     <option value='proj3'>Build a House (Bob)</option>
+                                      <!-- List of projects, potentially filtered by selected client -->
+                                </select>
+                            </div>
+
+                            <div class='col-md-6 mb-3'>
+                                 <label for='logType' class='form-label'>Communication Type <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='logType' required>
+                                     <option selected disabled value=''>Choose Type...</option>
+                                     <option value='email'>Email</option>
+                                     <option value='call'>Call</option>
+                                     <option value='meeting'>Meeting</option>
+                                     <option value='other'>Other</option>
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a communication type.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logDate' class='form-label'>Date & Time <span class='text-danger'>*</span></label>
+                                <input type='datetime-local' class='form-control' id='logDate' required>
+                                 <div class='invalid-feedback'>
+                                    Please select a date and time.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logSubject' class='form-label'>Subject / Summary <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='logSubject' placeholder='E.g., Call about project scope, Email confirming meeting' required>
+                                <div class='invalid-feedback'>
+                                    Please provide a brief summary or subject.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logNotes' class='form-label'>Detailed Notes</label>
+                                <textarea class='form-control' id='logNotes' rows='6' placeholder='Enter detailed notes about the communication...'></textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Log Entry</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 15: Add New Communication Log Page (Error State) -->
+    <div class="state-container">
+        <h2>State 15: Add New Communication Log Page (Error State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <title>State 15: Log Communication Error</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h1>Log New Communication</h1>
+                    <div class='alert alert-danger' role='alert'>
+                      Please fix the errors below before submitting.
+                    </div>
+                    <form class='was-validated' novalidate>
+                        <div class='row g-3'>
+                             <div class='col-md-6 mb-3'>
+                                <label for='logClient' class='form-label'>Client <span class='text-danger'>*</span></label>
+                                <select class='form-select is-invalid' id='logClient' required>
+                                    <option selected disabled value=''>Choose Client...</option>
+                                    <option value='1'>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                     <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logProject' class='form-label'>Associated Project (Optional)</label>
+                                <select class='form-select' id='logProject'>
+                                    <option selected value=''>None</option>
+                                     <option value='proj1'>Website Redesign (Alice)</option>
+                                     <option value='proj2'>Logo Design (Alice)</option>
+                                     <option value='proj3'>Build a House (Bob)</option>
+                                </select>
+                            </div>
+
+                            <div class='col-md-6 mb-3'>
+                                 <label for='logType' class='form-label'>Communication Type <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='logType' required>
+                                     <option selected disabled value=''>Choose Type...</option>
+                                     <option value='email'>Email</option>
+                                     <option value='call' selected>Call</option>
+                                     <option value='meeting'>Meeting</option>
+                                     <option value='other'>Other</option>
+                                </select>
+                                <!-- No error shown if valid value selected -->
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logDate' class='form-label'>Date & Time <span class='text-danger'>*</span></label>
+                                <input type='datetime-local' class='form-control is-invalid' id='logDate' required>
+                                 <div class='invalid-feedback'>
+                                    Please select a date and time.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logSubject' class='form-label'>Subject / Summary <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control is-invalid' id='logSubject' placeholder='E.g., Call about project scope, Email confirming meeting' required>
+                                <div class='invalid-feedback'>
+                                    Please provide a brief summary or subject.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logNotes' class='form-label'>Detailed Notes</label>
+                                <textarea class='form-control' id='logNotes' rows='6' placeholder='Enter detailed notes about the communication...'>Discussed things.</textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Log Entry</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 16: Communication Log Detail Page (View Modal Example) -->
+    <div class="state-container">
+        <h2>State 16: Communication Log Detail Page (Modal Example on List Page)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+               <title>State 16: Comm Log Detail (Modal)</title>
+            </head>
+            <body>
+                <!-- Nav Bar (same as State 13) -->
+                <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                 <div class='container mt-4'>
+                    <!-- Page Title & Add Button (same as State 13) -->
+                     <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h1>Communication Logs</h1>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle me-2'></i>Log New Communication</a>
+                    </div>
+                    <!-- Filters (same as State 13) -->
+                    <div class='mb-4 p-3 bg-light border rounded'> ... Filters ... </div>
+                    <!-- Table (same as State 13) -->
+                    <table class='table table-striped table-hover align-middle'>
+                        <thead class='table-dark'>
+                            <tr><th>Type</th><th>Date</th><th>Client</th><th>Project</th><th>Summary</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class='bi bi-envelope-fill me-1' title='Email'></i>Email</td>
+                                <td>2023-10-26</td>
+                                <td><a href='#'>Alice Wonderland</a></td>
+                                <td><a href='#'>Website Redesign</a></td>
+                                <td>Follow up on proposal...</td>
+                                <td>
+                                    <button type='button' class='btn btn-sm btn-info me-1' data-bs-toggle='modal' data-bs-target='#logDetailModal' title='View Details'><i class='bi bi-eye'></i></button>
+                                    <a href='#' class='btn btn-sm btn-warning me-1' title='Edit'><i class='bi bi-pencil'></i></a>
+                                    <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash'></i></a>
+                                </td>
+                            </tr>
+                             <!-- ... other rows ... -->
+                        </tbody>
+                    </table>
+                     <!-- Pagination (same as State 13) -->
+                     <nav aria-label='Log navigation'> ... Pagination ... </nav>
+                </div>
+
+                <!-- Modal -->
+                <div class='modal fade' id='logDetailModal' tabindex='-1' aria-labelledby='logDetailModalLabel' aria-hidden='true'>
+                  <div class='modal-dialog modal-lg'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <h1 class='modal-title fs-5' id='logDetailModalLabel'><i class='bi bi-envelope-fill me-2'></i>Communication Log Details</h1>
+                        <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                      </div>
+                      <div class='modal-body'>
+                        <dl class='row'>
+                           <dt class='col-sm-3'>Type:</dt>
+                           <dd class='col-sm-9'>Email</dd>
+
+                           <dt class='col-sm-3'>Date & Time:</dt>
+                           <dd class='col-sm-9'>October 26, 2023, 10:30 AM</dd>
+
+                           <dt class='col-sm-3'>Client:</dt>
+                           <dd class='col-sm-9'><a href='#'>Alice Wonderland</a></dd>
+
+                           <dt class='col-sm-3'>Project:</dt>
+                           <dd class='col-sm-9'><a href='#'>Website Redesign</a></dd>
+
+                           <dt class='col-sm-3'>Subject:</dt>
+                           <dd class='col-sm-9'>Follow up on proposal</dd>
+
+                           <dt class='col-sm-3'>Notes:</dt>
+                           <dd class='col-sm-9'>Sent email asking for feedback on the redesign proposal. Attached latest mockups version 3. Highlighted changes to the contact page based on previous call.</dd>
+                        </dl>
+                      </div>
+                      <div class='modal-footer'>
+                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                        <a href='#' class='btn btn-warning'><i class='bi bi-pencil me-1'></i>Edit Log Entry</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Need Bootstrap JS for Modal -->
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                <!-- Fake modal show on load for static demo -->
+                <script>
+                    /* In a real app, this would be triggered by clicking the button.
+                       For static demo, we show it on load. */
+                    /* document.addEventListener('DOMContentLoaded', function() {
+                       var myModal = new bootstrap.Modal(document.getElementById('logDetailModal'));
+                       myModal.show();
+                    }); */
+                    // Note: Will not actually show automatically in iframe srcdoc without interaction or more JS.
+                    // The button is present to simulate the trigger.
+                </script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 17: Edit Communication Log Page -->
+    <div class="state-container">
+        <h2>State 17: Edit Communication Log Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+               <title>State 17: Edit Communication</title>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'>Freelancer CRM</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Clients</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Projects</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Communications</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <nav aria-label='breadcrumb'>
+                      <ol class='breadcrumb'>
+                        <li class='breadcrumb-item'><a href='#'>Communications</a></li>
+                        <li class='breadcrumb-item active' aria-current='page'>Edit Log Entry</li>
+                      </ol>
+                    </nav>
+                    <h1>Edit Communication Log Entry</h1>
+                    <form class='needs-validation' novalidate>
+                        <div class='row g-3'>
+                             <div class='col-md-6 mb-3'>
+                                <label for='logClient' class='form-label'>Client <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='logClient' required>
+                                    <option disabled value=''>Choose Client...</option>
+                                    <option value='1' selected>Alice Wonderland</option>
+                                    <option value='2'>Bob The Builder</option>
+                                    <option value='3'>Charlie Chaplin</option>
+                                     <!-- List of clients -->
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a client.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logProject' class='form-label'>Associated Project (Optional)</label>
+                                <select class='form-select' id='logProject'>
+                                    <option value=''>None</option>
+                                    <option value='proj1' selected>Website Redesign (Alice)</option>
+                                     <option value='proj2'>Logo Design (Alice)</option>
+                                     <option value='proj3'>Build a House (Bob)</option>
+                                      <!-- List of projects, potentially filtered by selected client -->
+                                </select>
+                            </div>
+
+                            <div class='col-md-6 mb-3'>
+                                 <label for='logType' class='form-label'>Communication Type <span class='text-danger'>*</span></label>
+                                <select class='form-select' id='logType' required>
+                                     <option disabled value=''>Choose Type...</option>
+                                     <option value='email' selected>Email</option>
+                                     <option value='call'>Call</option>
+                                     <option value='meeting'>Meeting</option>
+                                     <option value='other'>Other</option>
+                                </select>
+                                 <div class='invalid-feedback'>
+                                    Please select a communication type.
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-3'>
+                                <label for='logDate' class='form-label'>Date & Time <span class='text-danger'>*</span></label>
+                                <input type='datetime-local' class='form-control' id='logDate' value='2023-10-26T10:30' required>
+                                 <div class='invalid-feedback'>
+                                    Please select a date and time.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logSubject' class='form-label'>Subject / Summary <span class='text-danger'>*</span></label>
+                                <input type='text' class='form-control' id='logSubject' value='Follow up on proposal' required>
+                                <div class='invalid-feedback'>
+                                    Please provide a brief summary or subject.
+                                </div>
+                            </div>
+
+                             <div class='col-12 mb-3'>
+                                <label for='logNotes' class='form-label'>Detailed Notes</label>
+                                <textarea class='form-control' id='logNotes' rows='6'>Sent email asking for feedback on the redesign proposal. Attached latest mockups version 3. Highlighted changes to the contact page based on previous call.</textarea>
+                            </div>
+                        </div>
+                        <div class='mt-3'>
+                            <button class='btn btn-primary' type='submit'>Save Changes</button>
+                            <a href='#' class='btn btn-secondary'>Cancel</a>
+                            <button type='button' class='btn btn-danger float-end'><i class='bi bi-trash me-1'></i>Delete Log Entry</button>
+                        </div>
+                    </form>
+                </div>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+             </body>
+            </html>
+        "></iframe>
+    </div>
+
+</body>
+</html>

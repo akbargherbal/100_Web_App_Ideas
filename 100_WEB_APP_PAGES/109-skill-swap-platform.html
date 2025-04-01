@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Swap Platform - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjusted height for better visibility */
+            border: 1px solid #dee2e6;
+            margin-bottom: 30px;
+            background-color: #ffffff; /* Ensure iframe background is white */
+        }
+        h2 {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center">Skill Swap Platform - UI Flow</h1>
+
+        <!-- State 1: Home Page (Logged Out) -->
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+                <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class='container my-5 text-center'>
+        <div class='p-5 mb-4 bg-light rounded-3'>
+            <div class='container-fluid py-5'>
+                <h1 class='display-5 fw-bold'>Learn, Teach, Exchange Skills</h1>
+                <p class='col-md-8 fs-4 mx-auto'>Join our community to share your expertise and learn new things from others. Offer what you know, find what you need.</p>
+                <form class='d-flex justify-content-center mt-4' role='search'>
+                    <input class='form-control me-2 w-50' type='search' placeholder='Search for skills (e.g., Guitar Lessons, Web Design)' aria-label='Search'>
+                    <button class='btn btn-success' type='submit'>Search</button>
+                </form>
+                 <a class='btn btn-primary btn-lg mt-4' href='#' role='button'>Get Started - Sign Up!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Skills Section -->
+    <div class='container my-5'>
+        <h2 class='text-center mb-4'>Featured Skills & Services</h2>
+        <div class='row'>
+            <!-- Skill Card 1 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=Skill+Image' class='card-img-top' alt='Skill Image'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Introduction to Python Programming</h5>
+                        <p class='card-text'>Learn the basics of Python from an experienced developer. Perfect for beginners.</p>
+                        <span class='badge bg-secondary me-1'>Programming</span>
+                        <span class='badge bg-info text-dark'>Online</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Skill Card 2 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=Service+Image' class='card-img-top' alt='Service Image'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Graphic Design: Logo Creation</h5>
+                        <p class='card-text'>Need a logo for your project? Offering custom logo design services.</p>
+                        <span class='badge bg-secondary me-1'>Design</span>
+                         <span class='badge bg-warning text-dark'>Service</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Skill Card 3 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=Lesson+Image' class='card-img-top' alt='Lesson Image'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Conversational Spanish Lessons</h5>
+                        <p class='card-text'>Practice your Spanish speaking skills with a native speaker. All levels welcome.</p>
+                        <span class='badge bg-secondary me-1'>Language</span>
+                         <span class='badge bg-info text-dark'>In Person</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='text-center mt-4'>
+             <a href='#' class='btn btn-secondary'>Browse All Skills</a>
+        </div>
+    </div>
+
+    <!-- How it Works Section -->
+     <div class='container my-5 py-5 bg-white rounded shadow-sm'>
+        <h2 class='text-center mb-5'>How Skill Swap Works</h2>
+        <div class='row text-center'>
+            <div class='col-md-4'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='currentColor' class='bi bi-person-plus-fill mb-3 text-primary' viewBox='0 0 16 16'>
+                  <path d='M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6'/>
+                  <path fill-rule='evenodd' d='M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5'/>
+                </svg>
+                <h4>1. Sign Up</h4>
+                <p>Create your free account and set up your profile.</p>
+            </div>
+            <div class='col-md-4'>
+                 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='currentColor' class='bi bi-search mb-3 text-success' viewBox='0 0 16 16'>
+                  <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/>
+                </svg>
+                <h4>2. Find or Offer</h4>
+                <p>Search for skills you want to learn or list skills you can teach/offer.</p>
+            </div>
+            <div class='col-md-4'>
+                 <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='currentColor' class='bi bi-arrow-repeat mb-3 text-info' viewBox='0 0 16 16'>
+                  <path d='M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9'/>
+                  <path fill-rule='evenodd' d='M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.5A5 5 0 0 0 8 3M3.143 8.182a.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.5A5 5 0 0 0 8 13c1.552 0 2.94-.707 3.857-1.818a.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z'/>
+                </svg>
+                <h4>3. Connect & Swap</h4>
+                <p>Connect with other users and arrange the skill exchange.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 2: About Page -->
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Assuming Logged Out for simplicity, can be adjusted) -->
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+                <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <div class='container my-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='text-center mb-4'>About Skill Swap Platform</h1>
+                <p class='lead text-center'>Connecting people through the power of shared knowledge and skills.</p>
+                <hr class='my-4'>
+                
+                <h2>Our Mission</h2>
+                <p>Our mission is to foster a vibrant community where individuals can easily exchange services, teach valuable skills, and learn new things from one another without the primary barrier of cost. We believe everyone has something unique to offer and something new they wish to learn.</p>
+
+                <h2>What We Do</h2>
+                <p>Skill Swap Platform provides a user-friendly marketplace for people within a community (local or online) to:</p>
+                <ul>
+                    <li><strong>Offer Skills:</strong> List skills you are proficient in and willing to teach others (e.g., playing an instrument, coding basics, cooking, crafting).</li>
+                    <li><strong>Offer Services:</strong> Provide services based on your expertise in exchange for other services or skills (e.g., tutoring, graphic design help, gardening assistance).</li>
+                    <li><strong>Request Skills/Services:</strong> Post requests for skills you want to learn or services you need.</li>
+                    <li><strong>Connect:</strong> Find and connect with other users who have complementary needs and offers.</li>
+                    <li><strong>Exchange:</strong> Arrange mutually beneficial swaps, either through direct barter, time banking (future feature idea), or simple goodwill.</li>
+                </ul>
+
+                <h2>Our Vision</h2>
+                <p>We envision a world where learning and skill development are accessible to everyone, powered by collaboration and mutual support within communities. We aim to break down traditional barriers to education and service exchange, making it easier for people to grow and connect.</p>
+
+                <h2>Join Us!</h2>
+                <p>Become a part of the Skill Swap movement today. Sign up, list your skills, browse what others are offering, and start connecting!</p>
+                 <div class='text-center mt-4'>
+                     <a href='#' class='btn btn-success btn-lg'>Join the Community</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+             <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 3: Browse Skills/Services -->
+        <h2>State 3: Browse Skills/Services</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Browse Skills - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .filter-sidebar { border-right: 1px solid #dee2e6; padding-right: 15px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Assuming Logged Out) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Browse Skills</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+                <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Browse Section -->
+    <div class='container my-5'>
+        <h1 class='mb-4'>Browse Skills & Services</h1>
+        <div class='row'>
+            <!-- Filters Sidebar -->
+            <div class='col-lg-3 filter-sidebar'>
+                <h4>Filters</h4>
+                <hr>
+                <form>
+                    <div class='mb-3'>
+                        <label for='searchKeyword' class='form-label'>Keyword Search</label>
+                        <input type='text' class='form-control' id='searchKeyword' placeholder='e.g., Cooking, Python'>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='categorySelect' class='form-label'>Category</label>
+                        <select class='form-select' id='categorySelect'>
+                            <option selected>All Categories</option>
+                            <option value='1'>Technology & Programming</option>
+                            <option value='2'>Arts & Crafts</option>
+                            <option value='3'>Music & Instruments</option>
+                            <option value='4'>Languages</option>
+                            <option value='5'>Cooking & Baking</option>
+                            <option value='6'>Health & Wellness</option>
+                            <option value='7'>Home & Garden</option>
+                            <option value='8'>Tutoring & Academics</option>
+                            <option value='9'>Other Services</option>
+                        </select>
+                    </div>
+                     <div class='mb-3'>
+                        <label class='form-label'>Mode</label>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='checkbox' value='' id='modeOnline'>
+                            <label class='form-check-label' for='modeOnline'>Online</label>
+                        </div>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='checkbox' value='' id='modeInPerson'>
+                            <label class='form-check-label' for='modeInPerson'>In Person</label>
+                        </div>
+                    </div>
+                     <div class='mb-3'>
+                        <label class='form-label'>Type</label>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='offerType' id='typeOffer' checked>
+                            <label class='form-check-label' for='typeOffer'>Offering Skill/Service</label>
+                        </div>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='offerType' id='typeRequest'>
+                            <label class='form-check-label' for='typeRequest'>Requesting Skill/Service</label>
+                        </div>
+                         <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='offerType' id='typeAll'>
+                            <label class='form-check-label' for='typeAll'>Show All</label>
+                        </div>
+                    </div>
+
+                    <button type='submit' class='btn btn-primary w-100'>Apply Filters</button>
+                </form>
+            </div>
+
+            <!-- Listings Area -->
+            <div class='col-lg-9'>
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <span>Showing 1-9 of 50 results</span>
+                    <select class='form-select w-auto'>
+                        <option selected>Sort by: Relevance</option>
+                        <option value='1'>Newest First</option>
+                        <option value='2'>Oldest First</option>
+                    </select>
+                </div>
+                <div class='row'>
+                    <!-- Listing Card 1 -->
+                    <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Skill+1' class='card-img-top' alt='Skill'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Advanced JavaScript Tutoring</h5>
+                                <p class='card-text text-muted flex-grow-1'>Offered by: <a href='#'>CodeMasterJane</a></p>
+                                <span class='badge bg-secondary me-1'>Programming</span>
+                                <span class='badge bg-info text-dark'>Online</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Listing Card 2 -->
+                    <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Skill+2' class='card-img-top' alt='Skill'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Learn to Knit Scarves</h5>
+                                <p class='card-text text-muted flex-grow-1'>Offered by: <a href='#'>CraftyChris</a></p>
+                                <span class='badge bg-secondary me-1'>Arts & Crafts</span>
+                                <span class='badge bg-info text-dark'>In Person</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Listing Card 3 -->
+                     <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                            <img src='https://via.placeholder.com/300x200.png?text=Request+1' class='card-img-top' alt='Request'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Need Help with Basic Plumbing</h5>
+                                <p class='card-text text-muted flex-grow-1'>Requested by: <a href='#'>HandyAndy</a></p>
+                                <span class='badge bg-secondary me-1'>Home & Garden</span>
+                                <span class='badge bg-warning text-dark'>Request</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Add more cards -->
+                      <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                             <img src='https://via.placeholder.com/300x200.png?text=Skill+4' class='card-img-top' alt='Skill'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Beginner Guitar Lessons</h5>
+                                <p class='card-text text-muted flex-grow-1'>Offered by: <a href='#'>MusicMike</a></p>
+                                <span class='badge bg-secondary me-1'>Music</span>
+                                <span class='badge bg-info text-dark'>Online/In Person</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                             </div>
+                        </div>
+                    </div>
+                     <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                             <img src='https://via.placeholder.com/300x200.png?text=Service+5' class='card-img-top' alt='Service'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Proofreading Essays</h5>
+                                <p class='card-text text-muted flex-grow-1'>Offered by: <a href='#'>EditorElle</a></p>
+                                <span class='badge bg-secondary me-1'>Tutoring</span>
+                                <span class='badge bg-warning text-dark'>Service</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                             </div>
+                        </div>
+                    </div>
+                      <div class='col-md-6 col-lg-4 mb-4'>
+                        <div class='card h-100'>
+                             <img src='https://via.placeholder.com/300x200.png?text=Skill+6' class='card-img-top' alt='Skill'>
+                            <div class='card-body d-flex flex-column'>
+                                <h5 class='card-title'>Sourdough Bread Baking</h5>
+                                <p class='card-text text-muted flex-grow-1'>Offered by: <a href='#'>BakerBen</a></p>
+                                <span class='badge bg-secondary me-1'>Cooking & Baking</span>
+                                <span class='badge bg-info text-dark'>In Person</span>
+                                <a href='#' class='btn btn-outline-primary mt-3 align-self-start'>View Details</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label='Page navigation'>
+                    <ul class='pagination justify-content-center mt-4'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- End Listings Area -->
+        </div> <!-- End Row -->
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+             <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 4: Skill/Service Detail Page -->
+        <h2>State 4: Skill/Service Detail Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Skill Details - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Assuming Logged Out) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+                 <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Skill Detail Section -->
+    <div class='container my-5'>
+        <div class='row'>
+            <div class='col-lg-8'>
+                <!-- Skill Title and Basic Info -->
+                <h1 class='mb-3'>Introduction to Python Programming</h1>
+                <div class='mb-3'>
+                    <span class='badge bg-secondary me-1 fs-6'>Technology & Programming</span>
+                    <span class='badge bg-info text-dark me-1 fs-6'>Online</span>
+                     <span class='badge bg-success fs-6'>Offering Skill</span>
+                </div>
+                 <img src='https://via.placeholder.com/700x400.png?text=Detailed+Skill+Image' class='img-fluid rounded mb-4' alt='Skill Image'>
+
+                <!-- Description -->
+                <h2>Description</h2>
+                <p>This is a beginner-friendly introduction to the Python programming language. Over several sessions (flexible timing), we will cover variables, data types, loops, conditional statements, functions, and basic data structures. By the end, you'll be able to write simple scripts and understand fundamental programming concepts.</p>
+                <p>No prior programming experience is required, just enthusiasm to learn! Sessions will be conducted online via video call (e.g., Zoom, Google Meet).</p>
+
+                <!-- Details -->
+                <h3 class='mt-4'>Details</h3>
+                <ul class='list-unstyled'>
+                    <li><strong>Level:</strong> Beginner</li>
+                    <li><strong>Duration:</strong> Approx. 5-6 sessions, 1 hour each (negotiable)</li>
+                    <li><strong>Mode:</strong> Online (Video Call)</li>
+                    <li><strong>Availability:</strong> Weekday evenings, Weekend afternoons (flexible, discuss with instructor)</li>
+                </ul>
+
+                 <!-- What I'm Looking For (Optional) -->
+                 <h3 class='mt-4'>In Exchange, I'm Looking For:</h3>
+                 <p>Open to various exchanges! Particularly interested in:</p>
+                 <ul>
+                    <li>Help with gardening basics</li>
+                    <li>Learning conversational French</li>
+                    <li>Graphic design assistance for a small project</li>
+                    <li>Trying out homemade baked goods!</li>
+                 </ul>
+                 <p><em>(Or just offer a skill/service you think might be interesting!)</em></p>
+            </div>
+
+            <!-- User Info & Actions Sidebar -->
+            <div class='col-lg-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                       Offered By
+                    </div>
+                    <div class='card-body text-center'>
+                        <img src='https://via.placeholder.com/100.png?text=User' class='rounded-circle mb-2' alt='User Avatar'>
+                        <h5 class='card-title'><a href='#'>CodeMasterJane</a></h5>
+                         <p class='text-muted'>Member Since: Jan 2023</p>
+                         <p><span class='badge bg-light text-dark'>Rating: 4.8/5 (12 Reviews)</span></p>
+                         <a href='#' class='btn btn-secondary btn-sm mb-3'>View Profile</a>
+                         <hr>
+                         <p class='card-text'>Interested in this skill?</p>
+                         <a href='#' class='btn btn-primary w-100 mb-2'>Contact CodeMasterJane</a>
+                         <small class='text-muted'>You might need to log in first.</small>
+                    </div>
+                    <div class='card-footer text-muted text-center'>
+                        Posted: 3 days ago
+                    </div>
+                </div>
+
+                 <div class='card mt-4'>
+                    <div class='card-header'>
+                        Similar Skills
+                    </div>
+                    <ul class='list-group list-group-flush'>
+                        <li class='list-group-item'><a href='#'>Web Development Basics (HTML/CSS)</a></li>
+                        <li class='list-group-item'><a href='#'>Data Analysis with Python</a></li>
+                        <li class='list-group-item'><a href='#'>Intro to Java Programming</a></li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+             <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 5: Sign Up Page -->
+        <h2>State 5: Sign Up Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+        .form-container { max-width: 450px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class='form-container'>
+        <h2 class='text-center mb-4'>Create Your Skill Swap Account</h2>
+        <form>
+            <div class='mb-3'>
+                <label for='username' class='form-label'>Username</label>
+                <input type='text' class='form-control' id='username' required>
+                <div class='form-text'>Choose a unique username.</div>
+            </div>
+            <div class='mb-3'>
+                <label for='email' class='form-label'>Email address</label>
+                <input type='email' class='form-control' id='email' aria-describedby='emailHelp' required>
+                <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
+            </div>
+            <div class='mb-3'>
+                <label for='password' class='form-label'>Password</label>
+                <input type='password' class='form-control' id='password' required>
+            </div>
+             <div class='mb-3'>
+                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                <input type='password' class='form-control' id='confirmPassword' required>
+            </div>
+            <div class='mb-3 form-check'>
+                <input type='checkbox' class='form-check-input' id='termsCheck' required>
+                <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a> and <a href='#'>Privacy Policy</a>.</label>
+            </div>
+            <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+            <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+        </form>
+         <div class='text-center mt-4'>
+             <a href='#' class='text-muted small'>Back to Home</a>
+         </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 6: Sign Up Page (with Validation Errors) -->
+        <h2>State 6: Sign Up Page (with Validation Errors)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Sign Up Error - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+        .form-container { max-width: 450px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+     <div class='form-container'>
+        <h2 class='text-center mb-4'>Create Your Skill Swap Account</h2>
+         <div class='alert alert-danger' role='alert'>
+           Please fix the errors below and try again.
+         </div>
+        <form>
+            <div class='mb-3'>
+                <label for='username' class='form-label'>Username</label>
+                <input type='text' class='form-control is-invalid' id='username' required value='User'> <!-- Example invalid value -->
+                 <div class='invalid-feedback'>
+                    Username must be at least 3 characters long.
+                </div>
+            </div>
+            <div class='mb-3'>
+                <label for='email' class='form-label'>Email address</label>
+                <input type='email' class='form-control is-invalid' id='email' aria-describedby='emailHelp' required value='invalid-email'> <!-- Example invalid value -->
+                 <div class='invalid-feedback'>
+                    Please enter a valid email address.
+                </div>
+                 <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
+            </div>
+            <div class='mb-3'>
+                <label for='password' class='form-label'>Password</label>
+                <input type='password' class='form-control is-invalid' id='password' required>
+                <div class='invalid-feedback'>
+                    Password cannot be empty and must be at least 8 characters.
+                </div>
+            </div>
+             <div class='mb-3'>
+                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                <input type='password' class='form-control is-invalid' id='confirmPassword' required>
+                 <div class='invalid-feedback'>
+                    Passwords do not match.
+                </div>
+            </div>
+            <div class='mb-3 form-check'>
+                 <input type='checkbox' class='form-check-input is-invalid' id='termsCheck' required>
+                <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a> and <a href='#'>Privacy Policy</a>.</label>
+                 <div class='invalid-feedback'>
+                    You must agree to the terms and conditions.
+                </div>
+            </div>
+            <button type='submit' class='btn btn-primary w-100'>Sign Up</button>
+            <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+        </form>
+         <div class='text-center mt-4'>
+             <a href='#' class='text-muted small'>Back to Home</a>
+         </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 7: Login Page -->
+        <h2>State 7: Login Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+     <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+        .form-container { max-width: 400px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+     <div class='form-container'>
+        <h2 class='text-center mb-4'>Welcome Back!</h2>
+        <form>
+            <div class='mb-3'>
+                <label for='loginEmail' class='form-label'>Email address or Username</label>
+                <input type='text' class='form-control' id='loginEmail' required>
+            </div>
+            <div class='mb-3'>
+                <label for='loginPassword' class='form-label'>Password</label>
+                <input type='password' class='form-control' id='loginPassword' required>
+            </div>
+            <div class='mb-3 form-check d-flex justify-content-between'>
+                <div>
+                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                </div>
+                <a href='#' class='small'>Forgot password?</a>
+            </div>
+            <button type='submit' class='btn btn-primary w-100'>Login</button>
+            <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+        </form>
+         <div class='text-center mt-4'>
+             <a href='#' class='text-muted small'>Back to Home</a>
+         </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 8: Login Page (with Error) -->
+        <h2>State 8: Login Page (with Error)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Login Error - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+        .form-container { max-width: 400px; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+     <div class='form-container'>
+        <h2 class='text-center mb-4'>Welcome Back!</h2>
+         <div class='alert alert-danger' role='alert'>
+           Invalid username/email or password. Please try again.
+         </div>
+        <form>
+            <div class='mb-3'>
+                <label for='loginEmail' class='form-label'>Email address or Username</label>
+                <input type='text' class='form-control is-invalid' id='loginEmail' required value='user@example.com'> <!-- Keep entered value -->
+            </div>
+            <div class='mb-3'>
+                <label for='loginPassword' class='form-label'>Password</label>
+                <input type='password' class='form-control is-invalid' id='loginPassword' required>
+                 <div class='invalid-feedback'> <!-- Optional specific feedback -->
+                    Incorrect password.
+                </div>
+            </div>
+            <div class='mb-3 form-check d-flex justify-content-between'>
+                 <div>
+                    <input type='checkbox' class='form-check-input' id='rememberMe'>
+                    <label class='form-check-label' for='rememberMe'>Remember me</label>
+                </div>
+                <a href='#' class='small'>Forgot password?</a>
+            </div>
+            <button type='submit' class='btn btn-primary w-100'>Login</button>
+             <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+        </form>
+           <div class='text-center mt-4'>
+             <a href='#' class='text-muted small'>Back to Home</a>
+         </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 9: Home Page (Logged In) -->
+        <h2>State 9: Home Page (Logged In)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+ </head>
+<body>
+    <!-- Navigation (Logged In) -->
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Dashboard</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Offer a Skill</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                </ul>
+                <form class='d-flex me-3' role='search'>
+                    <input class='form-control me-2' type='search' placeholder='Search Skills' aria-label='Search'>
+                    <button class='btn btn-outline-success' type='submit'>Search</button>
+                </form>
+                <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                            <li><a class='dropdown-item' href='#'>My Profile</a></li>
+                            <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                            <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Welcome Section -->
+    <div class='container my-5'>
+        <div class='p-5 mb-4 bg-light rounded-3'>
+            <div class='container-fluid py-4'>
+                <h1 class='display-6 fw-bold'>Welcome back, UserName!</h1>
+                <p class='col-md-8 fs-5'>Ready to learn something new or share your expertise?</p>
+                 <a href='#' class='btn btn-success me-2'>Offer Your Skill</a>
+                 <a href='#' class='btn btn-info'>Browse Available Skills</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- Personalized Recommendations / Dashboard Snippet -->
+    <div class='container my-5'>
+        <h2 class='mb-4'>Skills You Might Like</h2>
+         <div class='row'>
+            <!-- Skill Card 1 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=Recommended+1' class='card-img-top' alt='Skill Image'>
+                    <div class='card-body'>
+                         <h5 class='card-title'>Intermediate French Conversation</h5>
+                        <p class='card-text'>Based on your interest in learning French.</p>
+                        <span class='badge bg-secondary me-1'>Language</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Skill Card 2 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=Recommended+2' class='card-img-top' alt='Skill Image'>
+                    <div class='card-body'>
+                         <h5 class='card-title'>Gardening for Beginners</h5>
+                        <p class='card-text'>Matches a skill you requested.</p>
+                         <span class='badge bg-secondary me-1'>Home & Garden</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Skill Card 3 -->
+            <div class='col-md-4 mb-4'>
+                <div class='card'>
+                    <img src='https://via.placeholder.com/300x200.png?text=New+Nearby' class='card-img-top' alt='Skill Image'>
+                    <div class='card-body'>
+                         <h5 class='card-title'>Local Pottery Workshop</h5>
+                        <p class='card-text'>New skill offered near your location.</p>
+                         <span class='badge bg-secondary me-1'>Arts & Crafts</span>
+                        <a href='#' class='btn btn-outline-primary mt-3 float-end'>View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class='text-center mt-3'>
+             <a href='#' class='btn btn-secondary'>See More Recommendations</a>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 10: User Dashboard -->
+        <h2>State 10: User Dashboard</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Dashboard - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .dashboard-card { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Logged In) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Dashboard</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Offer a Skill</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                </ul>
+                <form class='d-flex me-3' role='search'>
+                    <input class='form-control me-2' type='search' placeholder='Search Skills' aria-label='Search'>
+                    <button class='btn btn-outline-success' type='submit'>Search</button>
+                </form>
+                <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                            <li><a class='dropdown-item' href='#'>My Profile</a></li>
+                            <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                            <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class='container my-5'>
+        <h1 class='mb-4'>My Dashboard</h1>
+        <div class='row'>
+            <!-- Sidebar / Quick Links -->
+            <div class='col-lg-3'>
+                <div class='list-group'>
+                    <a href='#' class='list-group-item list-group-item-action active' aria-current='true'>Overview</a>
+                    <a href='#' class='list-group-item list-group-item-action'>My Listings <span class='badge bg-primary rounded-pill float-end'>2</span></a>
+                    <a href='#' class='list-group-item list-group-item-action'>My Requests <span class='badge bg-secondary rounded-pill float-end'>1</span></a>
+                    <a href='#' class='list-group-item list-group-item-action'>Messages <span class='badge bg-danger rounded-pill float-end'>3 New</span></a>
+                    <a href='#' class='list-group-item list-group-item-action'>Ongoing Swaps <span class='badge bg-warning text-dark rounded-pill float-end'>1</span></a>
+                    <a href='#' class='list-group-item list-group-item-action'>Past Swaps</a>
+                    <a href='#' class='list-group-item list-group-item-action'>My Profile</a>
+                    <a href='#' class='list-group-item list-group-item-action'>Settings</a>
+                </div>
+                 <a href='#' class='btn btn-success w-100 mt-4'>+ Offer a New Skill</a>
+            </div>
+
+            <!-- Main Dashboard Area -->
+            <div class='col-lg-9'>
+                <h2 class='mb-3'>Overview</h2>
+                <div class='row'>
+                    <!-- Quick Stats Cards -->
+                    <div class='col-md-4 dashboard-card'>
+                        <div class='card text-center h-100'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Active Listings</h5>
+                                <p class='display-4'>2</p>
+                                <a href='#' class='btn btn-sm btn-outline-primary'>Manage Listings</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4 dashboard-card'>
+                        <div class='card text-center h-100'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Open Requests</h5>
+                                <p class='display-4'>1</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>Manage Requests</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='col-md-4 dashboard-card'>
+                        <div class='card text-center h-100'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Unread Messages</h5>
+                                <p class='display-4 text-danger'>3</p>
+                                <a href='#' class='btn btn-sm btn-outline-danger'>View Messages</a>
+                             </div>
+                        </div>
+                    </div>
+                 </div> <!-- End Quick Stats Row -->
+
+                 <!-- Recent Activity -->
+                <h3 class='mt-4 mb-3'>Recent Activity</h3>
+                 <div class='card dashboard-card'>
+                    <div class='card-header'>
+                        Latest Message
+                    </div>
+                    <div class='card-body'>
+                        <p><strong>From: CraftyChris</strong> - Re: Knitting Lessons</p>
+                        <p>'Hi UserName, I saw your request for knitting help! Are you available next Tuesday evening to chat...' <a href='#'>Read More</a></p>
+                         <small class='text-muted'>Received: 1 hour ago</small>
+                    </div>
+                 </div>
+                 <div class='card dashboard-card'>
+                    <div class='card-header'>
+                        New Interest in your Listing
+                    </div>
+                    <div class='card-body'>
+                        <p><a href='#'>LearnerLarry</a> showed interest in your '<a href='#'>Introduction to Python Programming</a>' listing.</p>
+                         <a href='#' class='btn btn-sm btn-info'>View Message</a>
+                         <small class='text-muted'>Received: 5 hours ago</small>
+                    </div>
+                 </div>
+                 <div class='card dashboard-card'>
+                     <div class='card-header'>
+                        Ongoing Swap Update
+                    </div>
+                    <div class='card-body'>
+                         <p>Status update for swap: 'Gardening Help' with <a href='#'>GreenThumbGail</a>.</p>
+                         <p><span class='badge bg-warning text-dark'>Scheduled: Next Sat @ 10 AM</span></p>
+                        <a href='#' class='btn btn-sm btn-secondary'>View Swap Details</a>
+                    </div>
+                </div>
+
+            </div> <!-- End Main Dashboard Area -->
+        </div> <!-- End Row -->
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                 <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 11: Create Listing Page -->
+        <h2>State 11: Create Listing Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Offer Skill/Service - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Logged In) -->
+    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Dashboard</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                    <li class='nav-item'>
+                         <a class='nav-link active' aria-current='page' href='#'>Offer a Skill</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                </ul>
+                 <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                            <li><a class='dropdown-item' href='#'>My Profile</a></li>
+                            <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                             <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Listing Form -->
+    <div class='container my-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4'>Offer a Skill or Service</h1>
+                 <div class='alert alert-info' role='alert'>
+                    Fill out the details below to create your listing. Be descriptive and clear about what you're offering!
+                </div>
+                <form>
+                    <div class='mb-3'>
+                        <label for='listingType' class='form-label'>What are you listing?</label>
+                        <select class='form-select' id='listingType' required>
+                            <option selected disabled value=''>Choose...</option>
+                            <option value='offer_skill'>I want to teach a skill</option>
+                            <option value='offer_service'>I want to offer a service</option>
+                             <option value='request_skill'>I am looking for a skill</option>
+                             <option value='request_service'>I am looking for a service</option>
+                        </select>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='listingTitle' class='form-label'>Listing Title</label>
+                        <input type='text' class='form-control' id='listingTitle' placeholder='e.g., Beginner Spanish Lessons, Logo Design Service' required>
+                        <div class='form-text'>Make it catchy and informative.</div>
+                    </div>
+
+                     <div class='mb-3'>
+                        <label for='listingCategory' class='form-label'>Category</label>
+                        <select class='form-select' id='listingCategory' required>
+                             <option selected disabled value=''>Select a category...</option>
+                             <option value='1'>Technology & Programming</option>
+                            <option value='2'>Arts & Crafts</option>
+                            <option value='3'>Music & Instruments</option>
+                            <option value='4'>Languages</option>
+                            <option value='5'>Cooking & Baking</option>
+                            <option value='6'>Health & Wellness</option>
+                            <option value='7'>Home & Garden</option>
+                            <option value='8'>Tutoring & Academics</option>
+                            <option value='9'>Other Services</option>
+                        </select>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='listingDescription' class='form-label'>Description</label>
+                        <textarea class='form-control' id='listingDescription' rows='5' placeholder='Describe the skill/service in detail. What will someone learn or receive? What is your experience level? Any prerequisites?' required></textarea>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-6 mb-3'>
+                            <label class='form-label'>Mode</label>
+                             <div class='form-check'>
+                                <input class='form-check-input' type='radio' name='listingMode' id='modeOnline' value='online' checked>
+                                <label class='form-check-label' for='modeOnline'>Online</label>
+                            </div>
+                             <div class='form-check'>
+                                <input class='form-check-input' type='radio' name='listingMode' id='modeInPerson' value='inperson'>
+                                <label class='form-check-label' for='modeInPerson'>In Person</label>
+                            </div>
+                             <div class='form-check'>
+                                <input class='form-check-input' type='radio' name='listingMode' id='modeBoth' value='both'>
+                                <label class='form-check-label' for='modeBoth'>Both Online & In Person</label>
+                            </div>
+                        </div>
+                        <div class='col-md-6 mb-3'>
+                            <label for='listingLocation' class='form-label'>Location (if applicable)</label>
+                            <input type='text' class='form-control' id='listingLocation' placeholder='e.g., Downtown Cityville, Zoom/Online'>
+                            <div class='form-text'>Required if 'In Person' or 'Both' is selected.</div>
+                        </div>
+                    </div>
+
+                     <div class='mb-3'>
+                        <label for='listingAvailability' class='form-label'>Availability</label>
+                        <input type='text' class='form-control' id='listingAvailability' placeholder='e.g., Weekday evenings after 6 PM, Flexible weekends' required>
+                         <div class='form-text'>Let others know when you're generally available.</div>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='listingExchange' class='form-label'>What you're looking for in return (Optional)</label>
+                        <textarea class='form-control' id='listingExchange' rows='3' placeholder='Mention specific skills, services, or general types of exchanges you are interested in.'></textarea>
+                         <div class='form-text'>Helps others understand what kind of swap you prefer.</div>
+                    </div>
+
+                    <div class='mb-3'>
+                         <label for='listingImage' class='form-label'>Upload an Image (Optional)</label>
+                         <input class='form-control' type='file' id='listingImage'>
+                         <div class='form-text'>A relevant image can make your listing stand out.</div>
+                    </div>
+
+
+                    <hr class='my-4'>
+                    <button type='submit' class='btn btn-primary btn-lg'>Create Listing</button>
+                    <a href='#' class='btn btn-secondary btn-lg ms-2'>Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+   <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                 <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 12: Create Listing Page (with Validation Errors) -->
+        <h2>State 12: Create Listing Page (with Validation Errors)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Offer Skill Error - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Logged In) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+              <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                     <li class='nav-item'> <a class='nav-link' href='#'>Home</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Dashboard</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Browse Skills</a> </li>
+                    <li class='nav-item'> <a class='nav-link active' aria-current='page' href='#'>Offer a Skill</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>About</a> </li>
+                 </ul>
+                 <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                        <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                             <li><a class='dropdown-item' href='#'>My Profile</a></li>
+                            <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                            <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Listing Form with Errors -->
+    <div class='container my-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4'>Offer a Skill or Service</h1>
+                 <div class='alert alert-danger' role='alert'>
+                     Please correct the errors highlighted below.
+                </div>
+                <form>
+                     <div class='mb-3'>
+                        <label for='listingType' class='form-label'>What are you listing?</label>
+                         <select class='form-select is-invalid' id='listingType' required>
+                             <option selected disabled value=''>Choose...</option>
+                            <option value='offer_skill'>I want to teach a skill</option>
+                            <option value='offer_service'>I want to offer a service</option>
+                            <option value='request_skill'>I am looking for a skill</option>
+                             <option value='request_service'>I am looking for a service</option>
+                        </select>
+                         <div class='invalid-feedback'>Please select the type of listing.</div>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='listingTitle' class='form-label'>Listing Title</label>
+                        <input type='text' class='form-control is-invalid' id='listingTitle' placeholder='e.g., Beginner Spanish Lessons, Logo Design Service' required>
+                         <div class='invalid-feedback'>Listing title cannot be empty.</div>
+                         <div class='form-text'>Make it catchy and informative.</div>
+                    </div>
+
+                     <div class='mb-3'>
+                        <label for='listingCategory' class='form-label'>Category</label>
+                         <select class='form-select is-invalid' id='listingCategory' required>
+                             <option selected disabled value=''>Select a category...</option>
+                             <option value='1'>Technology & Programming</option>
+                             <!-- other options -->
+                        </select>
+                         <div class='invalid-feedback'>Please select a category.</div>
+                    </div>
+
+                    <div class='mb-3'>
+                        <label for='listingDescription' class='form-label'>Description</label>
+                        <textarea class='form-control is-invalid' id='listingDescription' rows='5' placeholder='Describe the skill/service in detail...' required></textarea>
+                         <div class='invalid-feedback'>Description is required and should be at least 20 characters.</div>
+                    </div>
+
+                     <div class='row'>
+                        <div class='col-md-6 mb-3'>
+                            <label class='form-label'>Mode</label>
+                            <!-- Radio buttons as before -->
+                            <div class='form-check'> <input class='form-check-input' type='radio' name='listingMode' id='modeOnline' value='online' checked> <label class='form-check-label' for='modeOnline'>Online</label> </div>
+                            <div class='form-check'> <input class='form-check-input' type='radio' name='listingMode' id='modeInPerson' value='inperson'> <label class='form-check-label' for='modeInPerson'>In Person</label> </div>
+                            <div class='form-check'> <input class='form-check-input' type='radio' name='listingMode' id='modeBoth' value='both'> <label class='form-check-label' for='modeBoth'>Both Online & In Person</label> </div>
+                        </div>
+                        <div class='col-md-6 mb-3'>
+                            <label for='listingLocation' class='form-label'>Location (if applicable)</label>
+                             <input type='text' class='form-control is-invalid' id='listingLocation' placeholder='e.g., Downtown Cityville, Zoom/Online'> <!-- Invalid state added for demo if 'In Person' was selected -->
+                            <div class='invalid-feedback'>Location is required for In Person/Both modes.</div>
+                             <div class='form-text'>Required if 'In Person' or 'Both' is selected.</div>
+                        </div>
+                    </div>
+
+
+                     <div class='mb-3'>
+                        <label for='listingAvailability' class='form-label'>Availability</label>
+                        <input type='text' class='form-control is-invalid' id='listingAvailability' placeholder='e.g., Weekday evenings after 6 PM, Flexible weekends' required>
+                         <div class='invalid-feedback'>Please provide your general availability.</div>
+                        <div class='form-text'>Let others know when you're generally available.</div>
+                    </div>
+
+                    <!-- Optional fields don't typically show validation unless specifically triggered -->
+                     <div class='mb-3'>
+                        <label for='listingExchange' class='form-label'>What you're looking for in return (Optional)</label>
+                        <textarea class='form-control' id='listingExchange' rows='3' placeholder='Mention specific skills, services, or general types of exchanges you are interested in.'></textarea>
+                    </div>
+                     <div class='mb-3'>
+                         <label for='listingImage' class='form-label'>Upload an Image (Optional)</label>
+                         <input class='form-control' type='file' id='listingImage'>
+                     </div>
+
+                    <hr class='my-4'>
+                    <button type='submit' class='btn btn-primary btn-lg'>Create Listing</button>
+                    <a href='#' class='btn btn-secondary btn-lg ms-2'>Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 13: My Profile Page (View) -->
+        <h2>State 13: My Profile Page (View)</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>My Profile - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .profile-header { background-color: #e9ecef; padding: 40px 0; margin-bottom: 30px; }
+        .profile-avatar { width: 150px; height: 150px; border: 5px solid #fff; margin-top: -75px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+        .nav-tabs .nav-link.active { background-color: #f8f9fa; border-bottom-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Logged In) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Home</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Dashboard</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Browse Skills</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Offer a Skill</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>About</a> </li>
+                </ul>
+                 <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle active' href='#' aria-current='page' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                         <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                             <li><a class='dropdown-item active' href='#'>My Profile</a></li>
+                            <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                             <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                            <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <div class='profile-header text-center'>
+        <img src='https://via.placeholder.com/150.png?text=User' class='rounded-circle profile-avatar' alt='User Avatar'>
+     </div>
+
+    <div class='container'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-10'>
+                 <div class='text-center mb-4'>
+                    <h1>UserName</h1>
+                    <p class='text-muted'>Member Since: Jan 2023 | Location: Cityville (Optional)</p>
+                    <p><span class='badge bg-light text-dark border me-2'>Rating: 4.8/5</span> <span class='badge bg-success'>Verified Email</span></p>
+                    <a href='#' class='btn btn-outline-primary btn-sm'>Edit Profile</a>
+                </div>
+
+                <!-- Profile Bio/About -->
+                 <div class='card mb-4'>
+                     <div class='card-body'>
+                         <h5 class='card-title'>About Me</h5>
+                         <p class='card-text'>Lifelong learner and enthusiast for sharing knowledge. I work in software development but have many hobbies, including cooking, playing the guitar (badly!), and trying to keep my houseplants alive. Always open to learning new practical skills or helping others with tech stuff. Looking forward to connecting!</p>
+                     </div>
+                 </div>
+
+                <!-- Tabs for Skills/Listings/Reviews -->
+                 <ul class='nav nav-tabs nav-fill mb-4' id='profileTab' role='tablist'>
+                    <li class='nav-item' role='presentation'>
+                        <button class='nav-link active' id='skills-offered-tab' data-bs-toggle='tab' data-bs-target='#skills-offered' type='button' role='tab' aria-controls='skills-offered' aria-selected='true'>Skills I Offer (2)</button>
+                    </li>
+                    <li class='nav-item' role='presentation'>
+                        <button class='nav-link' id='skills-wanted-tab' data-bs-toggle='tab' data-bs-target='#skills-wanted' type='button' role='tab' aria-controls='skills-wanted' aria-selected='false'>Skills I Want (1)</button>
+                    </li>
+                     <li class='nav-item' role='presentation'>
+                        <button class='nav-link' id='reviews-tab' data-bs-toggle='tab' data-bs-target='#reviews' type='button' role='tab' aria-controls='reviews' aria-selected='false'>Reviews (12)</button>
+                    </li>
+                     <li class='nav-item' role='presentation'>
+                        <button class='nav-link' id='activity-tab' data-bs-toggle='tab' data-bs-target='#activity' type='button' role='tab' aria-controls='activity' aria-selected='false'>Activity Feed</button>
+                    </li>
+                </ul>
+
+                <div class='tab-content' id='profileTabContent'>
+                    <!-- Skills Offered Tab Pane -->
+                    <div class='tab-pane fade show active' id='skills-offered' role='tabpanel' aria-labelledby='skills-offered-tab'>
+                        <div class='list-group'>
+                            <a href='#' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <h6 class='mb-1'>Introduction to Python Programming</h6>
+                                    <small class='text-muted'>Category: Technology | Mode: Online</small>
+                                 </div>
+                                 <span class='badge bg-primary rounded-pill'>View</span>
+                             </a>
+                             <a href='#' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <h6 class='mb-1'>Basic Guitar Chords Tutoring</h6>
+                                     <small class='text-muted'>Category: Music | Mode: In Person/Online</small>
+                                 </div>
+                                  <span class='badge bg-primary rounded-pill'>View</span>
+                             </a>
+                             <!-- Add more offered skills -->
+                        </div>
+                         <div class='text-center mt-3'> <a href='#' class='btn btn-success btn-sm'>+ Add New Offering</a></div>
+                    </div>
+
+                    <!-- Skills Wanted Tab Pane -->
+                    <div class='tab-pane fade' id='skills-wanted' role='tabpanel' aria-labelledby='skills-wanted-tab'>
+                        <div class='list-group'>
+                             <a href='#' class='list-group-item list-group-item-action d-flex justify-content-between align-items-center'>
+                                <div>
+                                    <h6 class='mb-1'>Help with Indoor Plant Care</h6>
+                                    <small class='text-muted'>Category: Home & Garden | Mode: Online/In Person</small>
+                                 </div>
+                                 <span class='badge bg-secondary rounded-pill'>View Request</span>
+                             </a>
+                            <!-- Add more wanted skills -->
+                        </div>
+                         <div class='text-center mt-3'> <a href='#' class='btn btn-info btn-sm'>+ Add New Request</a></div>
+                    </div>
+
+                     <!-- Reviews Tab Pane -->
+                    <div class='tab-pane fade' id='reviews' role='tabpanel' aria-labelledby='reviews-tab'>
+                         <div class='card mb-3'>
+                             <div class='card-body'>
+                                 <h6 class='card-title'>Review from CraftyChris <span class='float-end text-warning'>★★★★☆</span></h6>
+                                 <small class='text-muted'>For: Basic Guitar Chords Tutoring | Date: 2023-10-15</small>
+                                 <p class='card-text mt-2'>UserName was very patient and explained the chords clearly. Helped me get started!</p>
+                            </div>
+                         </div>
+                          <div class='card mb-3'>
+                             <div class='card-body'>
+                                <h6 class='card-title'>Review from LearnerLarry <span class='float-end text-warning'>★★★★★</span></h6>
+                                 <small class='text-muted'>For: Introduction to Python Programming | Date: 2023-09-20</small>
+                                <p class='card-text mt-2'>Excellent introduction, very knowledgeable and helpful. Highly recommended.</p>
+                             </div>
+                         </div>
+                         <!-- Add more reviews -->
+                         <nav aria-label='Review navigation'>
+                             <ul class='pagination pagination-sm justify-content-center'>
+                                <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                                <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                                <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                                <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                     <!-- Activity Feed Tab Pane -->
+                    <div class='tab-pane fade' id='activity' role='tabpanel' aria-labelledby='activity-tab'>
+                         <ul class='list-group'>
+                            <li class='list-group-item'>Completed a swap: 'Basic Guitar Chords Tutoring' with CraftyChris <span class='text-muted float-end'>3 weeks ago</span></li>
+                            <li class='list-group-item'>Posted a new listing: 'Introduction to Python Programming' <span class='text-muted float-end'>1 month ago</span></li>
+                            <li class='list-group-item'>Joined Skill Swap Platform <span class='text-muted float-end'>10 months ago</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+             <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 14: Edit Profile Page -->
+        <h2>State 14: Edit Profile Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Edit Profile - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Logged In) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+             <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                 <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Home</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Dashboard</a> </li>
+                     <li class='nav-item'> <a class='nav-link' href='#'>Browse Skills</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Offer a Skill</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>About</a> </li>
+                </ul>
+                <ul class='navbar-nav'>
+                     <li class='nav-item dropdown'>
+                         <a class='nav-link dropdown-toggle active' aria-current='page' href='#' id='navbarDropdownUser' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                           <img src='https://via.placeholder.com/30.png?text=U' class='rounded-circle me-1' alt='User'> UserName
+                        </a>
+                          <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUser'>
+                             <li><a class='dropdown-item active' href='#'>My Profile</a></li> <!-- Assumes edit is accessed from profile -->
+                             <li><a class='dropdown-item' href='#'>My Listings</a></li>
+                             <li><a class='dropdown-item' href='#'>Messages <span class='badge bg-danger'>3</span></a></li>
+                            <li><a class='dropdown-item' href='#'>Settings</a></li>
+                             <li><hr class='dropdown-divider'></li>
+                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Edit Profile Form -->
+    <div class='container my-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='mb-4'>Edit Your Profile</h1>
+                 <div class='alert alert-success d-none' role='alert' id='profileUpdateSuccess'> <!-- Placeholder for success message -->
+                  Profile updated successfully!
+                </div>
+
+                <form>
+                    <!-- Profile Picture -->
+                    <div class='mb-4 text-center'>
+                        <img src='https://via.placeholder.com/150.png?text=User' class='rounded-circle mb-3' alt='User Avatar' style='width: 150px; height: 150px; object-fit: cover;'>
+                        <div>
+                             <label for='profilePicture' class='form-label'>Change Profile Picture</label>
+                            <input class='form-control form-control-sm w-auto d-inline-block ms-2' type='file' id='profilePicture'>
+                         </div>
+                    </div>
+
+                    <!-- Basic Information -->
+                    <h4 class='mb-3 border-bottom pb-2'>Basic Information</h4>
+                     <div class='mb-3 row'>
+                        <label for='profileUsername' class='col-sm-3 col-form-label'>Username</label>
+                        <div class='col-sm-9'>
+                            <input type='text' class='form-control' id='profileUsername' value='UserName' disabled>
+                            <div class='form-text'>Username cannot be changed.</div>
+                         </div>
+                    </div>
+                     <div class='mb-3 row'>
+                        <label for='profileEmail' class='col-sm-3 col-form-label'>Email Address</label>
+                        <div class='col-sm-9'>
+                            <input type='email' class='form-control' id='profileEmail' value='user@example.com' required>
+                            <div class='form-text'>Used for login and notifications.</div>
+                        </div>
+                    </div>
+                     <div class='mb-3 row'>
+                        <label for='profileLocation' class='col-sm-3 col-form-label'>Location (Optional)</label>
+                        <div class='col-sm-9'>
+                             <input type='text' class='form-control' id='profileLocation' value='Cityville' placeholder='e.g., City, State or Neighborhood'>
+                            <div class='form-text'>Helps find local swaps. Leave blank if you prefer not to share.</div>
+                        </div>
+                    </div>
+
+                    <!-- About Me -->
+                     <h4 class='mb-3 mt-5 border-bottom pb-2'>About Me</h4>
+                    <div class='mb-3'>
+                        <label for='profileBio' class='form-label'>Bio / Introduction</label>
+                        <textarea class='form-control' id='profileBio' rows='6' placeholder='Tell the community about yourself, your interests, and what you hope to gain from Skill Swap...'>Lifelong learner and enthusiast for sharing knowledge. I work in software development but have many hobbies, including cooking, playing the guitar (badly!), and trying to keep my houseplants alive. Always open to learning new practical skills or helping others with tech stuff. Looking forward to connecting!</textarea>
+                    </div>
+
+                     <!-- Skills (Maybe just link to management pages) -->
+                     <h4 class='mb-3 mt-5 border-bottom pb-2'>My Skills & Interests</h4>
+                    <div class='mb-3'>
+                         <p>Manage the skills you offer and want to learn on your dashboard:</p>
+                        <a href='#' class='btn btn-outline-secondary me-2'>Manage Skills I Offer</a>
+                        <a href='#' class='btn btn-outline-info'>Manage Skills I Want</a>
+                    </div>
+
+                     <!-- Change Password (Optional Section) -->
+                    <h4 class='mb-3 mt-5 border-bottom pb-2'>Change Password</h4>
+                    <div class='mb-3 row'>
+                        <label for='currentPassword' class='col-sm-3 col-form-label'>Current Password</label>
+                        <div class='col-sm-9'>
+                            <input type='password' class='form-control' id='currentPassword'>
+                             <div class='form-text'>Required only if changing password.</div>
+                        </div>
+                    </div>
+                     <div class='mb-3 row'>
+                        <label for='newPassword' class='col-sm-3 col-form-label'>New Password</label>
+                        <div class='col-sm-9'>
+                            <input type='password' class='form-control' id='newPassword'>
+                         </div>
+                    </div>
+                     <div class='mb-3 row'>
+                        <label for='confirmNewPassword' class='col-sm-3 col-form-label'>Confirm New Password</label>
+                        <div class='col-sm-9'>
+                            <input type='password' class='form-control' id='confirmNewPassword'>
+                        </div>
+                    </div>
+
+                    <hr class='my-4'>
+                    <button type='submit' class='btn btn-primary btn-lg'>Save Changes</button>
+                    <a href='#' class='btn btn-secondary btn-lg ms-2'>Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+             <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 15: Contact Page -->
+        <h2>State 15: Contact Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact Us - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<body>
+    <!-- Navigation (Assuming Logged Out for generic contact page) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Browse Skills</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+                 <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class='container my-5'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h1 class='text-center mb-4'>Contact Us</h1>
+                <p class='lead text-center mb-5'>Have questions, feedback, or need support? Reach out to us!</p>
+
+                <div class='alert alert-success d-none' role='alert' id='contactSuccess'> <!-- Placeholder for success message -->
+                  Thank you for your message! We'll get back to you soon.
+                </div>
+                 <div class='alert alert-danger d-none' role='alert' id='contactError'> <!-- Placeholder for error message -->
+                   Please fill out all required fields correctly.
+                </div>
+
+                <form>
+                    <div class='row'>
+                        <div class='col-md-6 mb-3'>
+                            <label for='contactName' class='form-label'>Your Name</label>
+                            <input type='text' class='form-control' id='contactName' required>
+                        </div>
+                        <div class='col-md-6 mb-3'>
+                            <label for='contactEmail' class='form-label'>Your Email Address</label>
+                            <input type='email' class='form-control' id='contactEmail' required>
+                        </div>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactSubject' class='form-label'>Subject</label>
+                         <select class='form-select' id='contactSubject' required>
+                            <option selected disabled value=''>Choose a subject...</option>
+                            <option>General Inquiry</option>
+                            <option>Technical Support</option>
+                            <option>Feedback & Suggestions</option>
+                            <option>Account Issue</option>
+                             <option>Partnership</option>
+                             <option>Other</option>
+                        </select>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactMessage' class='form-label'>Message</label>
+                        <textarea class='form-control' id='contactMessage' rows='6' required></textarea>
+                    </div>
+                    <button type='submit' class='btn btn-primary btn-lg'>Send Message</button>
+                </form>
+
+                <hr class='my-5'>
+
+                <h3 class='text-center mb-4'>Other Ways to Connect</h3>
+                 <div class='row text-center'>
+                    <div class='col-md-4 mb-3'>
+                        <h5>Email Support</h5>
+                        <p><a href='mailto:support@skillswapplatform.com'>support@skillswapplatform.com</a></p>
+                    </div>
+                     <div class='col-md-4 mb-3'>
+                        <h5>Check our FAQ</h5>
+                        <p><a href='#'>Frequently Asked Questions</a></p>
+                    </div>
+                     <div class='col-md-4 mb-3'>
+                        <h5>Community Forum</h5>
+                        <p><a href='#'>Visit the Forum (Coming Soon!)</a></p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+        <!-- State 16: Search Results Page -->
+        <h2>State 16: Search Results Page</h2>
+        <iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Search Results - Skill Swap</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+    <style>
+        .filter-sidebar { border-right: 1px solid #dee2e6; padding-right: 15px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Can be Logged In or Out) -->
+     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Skill Swap</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Home</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>About</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Browse Skills</a> </li>
+                    <li class='nav-item'> <a class='nav-link' href='#'>Contact</a> </li>
+                </ul>
+                <!-- Simple Search Bar -->
+                <form class='d-flex me-3' role='search'>
+                    <input class='form-control me-2' type='search' placeholder='Search Skills' aria-label='Search' value='Guitar Lessons'> <!-- Pre-filled with search term -->
+                    <button class='btn btn-outline-success' type='submit'>Search</button>
+                </form>
+                 <div class='d-flex'>
+                    <a href='#' class='btn btn-outline-primary me-2'>Login</a>
+                    <a href='#' class='btn btn-primary'>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Results Section -->
+    <div class='container my-5'>
+         <h1 class='mb-4'>Search Results for 'Guitar Lessons'</h1>
+         <div class='row'>
+            <!-- Filters Sidebar (Can be pre-filled or adjusted based on search) -->
+            <div class='col-lg-3 filter-sidebar'>
+                <h4>Refine Results</h4>
+                <hr>
+                <form>
+                     <!-- Filters like category, mode, type can be here -->
+                     <div class='mb-3'>
+                        <label for='categorySelect' class='form-label'>Category</label>
+                        <select class='form-select' id='categorySelect'>
+                            <option>All Categories</option>
+                            <option value='3' selected>Music & Instruments</option> <!-- Pre-selected based on search? -->
+                            <!-- Other categories -->
+                         </select>
+                    </div>
+                     <div class='mb-3'>
+                        <label class='form-label'>Mode</label>
+                         <div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='modeOnline' checked> <label class='form-check-label' for='modeOnline'>Online</label> </div>
+                        <div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='modeInPerson' checked> <label class='form-check-label' for='modeInPerson'>In Person</label> </div>
+                    </div>
+                     <div class='mb-3'>
+                        <label for='skillLevel' class='form-label'>Skill Level</label>
+                        <select class='form-select' id='skillLevel'>
+                            <option selected>Any Level</option>
+                            <option value='beginner'>Beginner</option>
+                            <option value='intermediate'>Intermediate</option>
+                             <option value='advanced'>Advanced</option>
+                        </select>
+                    </div>
+                    <button type='submit' class='btn btn-primary w-100'>Update Results</button>
+                </form>
+            </div>
+
+            <!-- Listings Area -->
+            <div class='col-lg-9'>
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <span>Showing 1-4 of 4 results for 'Guitar Lessons'</span>
+                    <select class='form-select w-auto'>
+                        <option selected>Sort by: Relevance</option>
+                        <option value='1'>Newest First</option>
+                        <option value='2'>Rating</option>
+                    </select>
+                </div>
+                <div class='list-group'>
+                    <!-- Search Result Item 1 -->
+                     <a href='#' class='list-group-item list-group-item-action mb-3 p-3'>
+                        <div class='d-flex w-100 justify-content-between'>
+                            <h5 class='mb-1'>Beginner Guitar Lessons</h5>
+                            <small class='text-muted'>Posted 5 days ago</small>
+                        </div>
+                         <p class='mb-1'>Friendly and patient guitar teacher offering lessons for absolute beginners. Learn basic chords and strumming patterns.</p>
+                         <small>
+                            <span class='badge bg-secondary me-1'>Music</span>
+                            <span class='badge bg-info text-dark me-1'>Online/In Person</span>
+                            <span class='badge bg-light text-dark me-1'>By: MusicMike</span>
+                            <span class='badge bg-warning'>★★★★☆ (8 Reviews)</span>
+                        </small>
+                    </a>
+                     <!-- Search Result Item 2 -->
+                     <a href='#' class='list-group-item list-group-item-action mb-3 p-3'>
+                        <div class='d-flex w-100 justify-content-between'>
+                            <h5 class='mb-1'>Acoustic Guitar Fingerstyle Basics</h5>
+                             <small class='text-muted'>Posted 2 weeks ago</small>
+                        </div>
+                        <p class='mb-1'>Learn the fundamentals of fingerstyle guitar playing. Suitable for those who know basic chords.</p>
+                          <small>
+                            <span class='badge bg-secondary me-1'>Music</span>
+                            <span class='badge bg-info text-dark me-1'>Online</span>
+                            <span class='badge bg-light text-dark me-1'>By: GuitarGail</span>
+                             <span class='badge bg-warning'>★★★★★ (5 Reviews)</span>
+                        </small>
+                    </a>
+                     <!-- Search Result Item 3 -->
+                     <a href='#' class='list-group-item list-group-item-action mb-3 p-3'>
+                        <div class='d-flex w-100 justify-content-between'>
+                            <h5 class='mb-1'>REQUEST: Looking for Rock Guitar Teacher</h5>
+                            <small class='text-muted'>Posted 1 day ago</small>
+                        </div>
+                        <p class='mb-1'>Want to learn classic rock riffs and techniques. Intermediate level preferred. Can swap for web design help!</p>
+                         <small>
+                            <span class='badge bg-secondary me-1'>Music</span>
+                             <span class='badge bg-warning text-dark me-1'>Request</span>
+                            <span class='badge bg-light text-dark me-1'>By: RockerRick</span>
+                         </small>
+                    </a>
+                     <!-- Search Result Item 4 -->
+                    <a href='#' class='list-group-item list-group-item-action mb-3 p-3'>
+                        <div class='d-flex w-100 justify-content-between'>
+                            <h5 class='mb-1'>Basic Guitar Chords Tutoring</h5>
+                            <small class='text-muted'>Posted 1 month ago</small>
+                         </div>
+                        <p class='mb-1'>Just offering help with the very basics - major and minor chords, simple songs. Very casual.</p>
+                         <small>
+                            <span class='badge bg-secondary me-1'>Music</span>
+                            <span class='badge bg-info text-dark me-1'>In Person/Online</span>
+                            <span class='badge bg-light text-dark me-1'>By: UserName</span> <!-- Example result by logged-in user -->
+                           <span class='badge bg-warning'>★★★★☆ (12 Reviews)</span>
+                        </small>
+                    </a>
+                 </div>
+
+                <!-- Pagination (if more results exist) -->
+                 <!-- <nav aria-label='Page navigation'>
+                    <ul class='pagination justify-content-center mt-4'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                    </ul>
+                </nav> -->
+                 <div class='alert alert-light text-center mt-4' role='alert'>
+                    End of search results. Try broadening your search or adjusting filters.
+                </div>
+            </div> <!-- End Listings Area -->
+        </div> <!-- End Row -->
+    </div> <!-- End Container -->
+
+    <!-- Footer -->
+   <footer class='py-4 mt-5 bg-dark text-white'>
+        <div class='container text-center'>
+            <p>&copy; 2023 Skill Swap Platform. All Rights Reserved.</p>
+            <ul class='list-inline'>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Privacy Policy</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Terms of Service</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>FAQ</a></li>
+                <li class='list-inline-item'><a href='#' class='text-white-50'>Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+</body>
+</html>
+"></iframe>
+
+    </div><!-- /.container-fluid -->
+
+</body>
+</html>

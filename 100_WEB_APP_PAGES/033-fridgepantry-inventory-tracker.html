@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge/Pantry Inventory Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .state-header {
+            background-color: #e9ecef;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-bottom: 1px solid #dee2e6;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Fridge/Pantry Inventory Tracker - UI Flow</h1>
+
+    <!-- State 1: Login Page -->
+    <div class="state-container">
+        <div class="state-header">State 1: Login Page</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Login</title>
+            <style>
+                body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+                .login-card { max-width: 400px; width: 100%; }
+            </style>
+        </head>
+        <body>
+            <div class="card login-card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Login</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small>Don&apos;t have an account? <a href="#state2">Sign Up</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Sign Up Page -->
+    <div class="state-container" id="state2">
+        <div class="state-header">State 2: Sign Up Page</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <title>Sign Up</title>
+            <style>
+                body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+                .signup-card { max-width: 450px; width: 100%; }
+            </style>
+        </head>
+        <body>
+            <div class="card signup-card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Sign Up</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Sign Up</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small>Already have an account? <a href="#state1">Login</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Home Page (Dashboard) -->
+    <div class="state-container" id="state3">
+        <div class="state-header">State 3: Home Page (Dashboard)</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Dashboard</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <h2 class="mb-4">Dashboard</h2>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                       <div class="card text-white bg-warning">
+                           <div class="card-header">Expiring Soon (Next 7 Days)</div>
+                           <div class="card-body">
+                               <h5 class="card-title">3 Items</h5>
+                               <ul class="list-group list-group-flush list-group-numbered">
+                                   <li class="list-group-item bg-warning text-dark">Milk (Fridge) - Expires in 2 days</li>
+                                   <li class="list-group-item bg-warning text-dark">Yogurt (Fridge) - Expires in 5 days</li>
+                                   <li class="list-group-item bg-warning text-dark">Bread (Pantry) - Expires in 6 days</li>
+                               </ul>
+                               <a href="#" class="btn btn-outline-light mt-3 btn-sm">View All Expiring</a>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card text-white bg-danger">
+                            <div class="card-header">Expired Items</div>
+                            <div class="card-body">
+                                <h5 class="card-title">1 Item</h5>
+                                <ul class="list-group list-group-flush list-group-numbered">
+                                    <li class="list-group-item bg-danger text-white">Lettuce (Fridge) - Expired 3 days ago</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-light mt-3 btn-sm">View Expired</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Fridge Items</h5>
+                                <p class="card-text display-4">15</p>
+                                <a href="#state5" class="btn btn-primary">View Fridge</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Pantry Items</h5>
+                                <p class="card-text display-4">28</p>
+                                <a href="#state6" class="btn btn-secondary">View Pantry</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                     <a href="#state7" class="btn btn-success btn-lg"><i class="bi bi-plus-circle-fill"></i> Add New Item</a>
+                </div>
+
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: About Page -->
+    <div class="state-container" id="state4">
+        <div class="state-header">State 4: About Page</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>About</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body p-5">
+                                <h2 class="card-title text-center mb-4">About Fridge/Pantry Inventory Tracker</h2>
+                                <p class="lead">This application is designed to help you keep track of the food items in your fridge and pantry, manage expiration dates, and ultimately reduce food waste.</p>
+                                <hr class="my-4">
+                                <h5>Our Mission</h5>
+                                <p>We aim to provide a simple and effective tool for households to manage their food inventory. By knowing what you have and when it expires, you can plan meals better, avoid buying duplicates, and ensure less food ends up in the bin.</p>
+                                <h5>Key Features</h5>
+                                <ul>
+                                    <li>Track items in both your fridge and pantry.</li>
+                                    <li>Record purchase dates and expiration dates.</li>
+                                    <li>Get reminders for items nearing expiration.</li>
+                                    <li>Easily add, edit, and remove items.</li>
+                                    <li>View inventory summaries and statistics.</li>
+                                </ul>
+                                <p class="mt-4 text-muted text-center"><small>Version 1.0.0</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Fridge Inventory List -->
+    <div class="state-container" id="state5">
+        <div class="state-header">State 5: Fridge Inventory List</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+             <title>Fridge Inventory</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2>Fridge Inventory (15 Items)</h2>
+                     <a href="#state7" class="btn btn-success"><i class="bi bi-plus-lg"></i> Add Item</a>
+                </div>
+
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                  <div>
+                    <strong>Warning:</strong> 2 items expiring within the next 7 days. 1 item has expired.
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Purchase Date</th>
+                                <th scope="col">Expiration Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-danger">
+                                <td>Lettuce</td>
+                                <td>1 head</td>
+                                <td>Vegetables</td>
+                                <td>2024-02-20</td>
+                                <td>2024-02-28</td>
+                                <td><span class="badge bg-danger">Expired</span></td>
+                                <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td>Milk</td>
+                                <td>1 Gallon</td>
+                                <td>Dairy</td>
+                                <td>2024-03-01</td>
+                                <td>2024-03-08</td>
+                                <td><span class="badge bg-warning text-dark">Expires Soon</span></td>
+                               <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                             <tr class="table-warning">
+                                <td>Yogurt</td>
+                                <td>4 pack</td>
+                                <td>Dairy</td>
+                                <td>2024-02-28</td>
+                                <td>2024-03-10</td>
+                                 <td><span class="badge bg-warning text-dark">Expires Soon</span></td>
+                               <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Eggs</td>
+                                <td>1 dozen</td>
+                                <td>Dairy</td>
+                                <td>2024-02-25</td>
+                                <td>2024-03-25</td>
+                                <td><span class="badge bg-success">Good</span></td>
+                               <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cheese Slices</td>
+                                <td>1 pack</td>
+                                <td>Dairy</td>
+                                <td>2024-02-15</td>
+                                <td>2024-04-15</td>
+                                <td><span class="badge bg-success">Good</span></td>
+                                <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                             <!-- More items... -->
+                        </tbody>
+                    </table>
+                </div>
+                 <nav aria-label="Page navigation example" class="mt-3">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 6: Pantry Inventory List -->
+    <div class="state-container" id="state6">
+        <div class="state-header">State 6: Pantry Inventory List</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+             <title>Pantry Inventory</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2>Pantry Inventory (28 Items)</h2>
+                     <a href="#state7" class="btn btn-success"><i class="bi bi-plus-lg"></i> Add Item</a>
+                </div>
+
+                 <div class="alert alert-warning d-flex align-items-center" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                  <div>
+                    <strong>Warning:</strong> 1 item expiring within the next 7 days.
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Purchase Date</th>
+                                <th scope="col">Expiration Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-warning">
+                                <td>Bread</td>
+                                <td>1 loaf</td>
+                                <td>Bakery</td>
+                                <td>2024-03-02</td>
+                                <td>2024-03-09</td>
+                                <td><span class="badge bg-warning text-dark">Expires Soon</span></td>
+                               <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pasta</td>
+                                <td>2 boxes</td>
+                                <td>Dry Goods</td>
+                                <td>2024-01-15</td>
+                                <td>2025-01-15</td>
+                                <td><span class="badge bg-success">Good</span></td>
+                               <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Canned Tomatoes</td>
+                                <td>5 cans</td>
+                                <td>Canned Goods</td>
+                                <td>2024-02-01</td>
+                                <td>2026-02-01</td>
+                               <td><span class="badge bg-success">Good</span></td>
+                                <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Flour</td>
+                                <td>1 bag (5lb)</td>
+                                <td>Baking</td>
+                                <td>2023-12-10</td>
+                                <td>2024-12-10</td>
+                               <td><span class="badge bg-success">Good</span></td>
+                                <td>
+                                    <a href="#state9" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="#state11" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                            </tr>
+                             <!-- More items... -->
+                        </tbody>
+                    </table>
+                </div>
+                 <nav aria-label="Page navigation example" class="mt-3">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                         <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+
+    <!-- State 7: Add Item Form -->
+    <div class="state-container" id="state7">
+        <div class="state-header">State 7: Add Item Form</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Add Item</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm">
+                           <div class="card-header">
+                                Add New Inventory Item
+                           </div>
+                            <div class="card-body p-4">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label">Item Name</label>
+                                        <input type="text" class="form-control" id="itemName" placeholder="e.g., Apples" required>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="itemQuantity" class="form-label">Quantity</label>
+                                            <input type="text" class="form-control" id="itemQuantity" placeholder="e.g., 6 pack, 1 kg" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label for="itemLocation" class="form-label">Location</label>
+                                             <select class="form-select" id="itemLocation" required>
+                                                 <option selected disabled value="">Choose...</option>
+                                                 <option value="fridge">Fridge</option>
+                                                 <option value="pantry">Pantry</option>
+                                             </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itemCategory" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="itemCategory" placeholder="e.g., Fruits, Dairy, Canned Goods">
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                            <input type="date" class="form-control" id="purchaseDate">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="expirationDate" class="form-label">Expiration Date</label>
+                                            <input type="date" class="form-control" id="expirationDate" required>
+                                        </div>
+                                    </div>
+
+                                     <div class="mb-3">
+                                        <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                                        <textarea class="form-control" id="itemNotes" rows="3" placeholder="e.g., Use for pie, Organic"></textarea>
+                                    </div>
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a href="#state5" class="btn btn-secondary me-md-2">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">Add Item</button>
+                                         <!-- On error, link to #state8 -->
+                                        <!-- <a href="#state8" class="btn btn-primary">Add Item (Simulate Error)</a> -->
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Add Item Form - Validation Error -->
+   <div class="state-container" id="state8">
+        <div class="state-header">State 8: Add Item Form - Validation Error</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Add Item - Error</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                           <i class="bi bi-exclamation-octagon-fill flex-shrink-0 me-2"></i>
+                           <div>
+                               Please fix the errors below and try again.
+                           </div>
+                        </div>
+                        <div class="card shadow-sm border-danger">
+                           <div class="card-header bg-danger text-white">
+                                Add New Inventory Item
+                           </div>
+                            <div class="card-body p-4">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label">Item Name</label>
+                                        <input type="text" class="form-control is-invalid" id="itemName" placeholder="e.g., Apples" required>
+                                         <div class="invalid-feedback">
+                                            Please provide an item name.
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="itemQuantity" class="form-label">Quantity</label>
+                                            <input type="text" class="form-control" id="itemQuantity" placeholder="e.g., 6 pack, 1 kg" required value="1 kg"> <!-- Assume valid input here -->
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label for="itemLocation" class="form-label">Location</label>
+                                             <select class="form-select is-invalid" id="itemLocation" required>
+                                                 <option selected disabled value="">Choose...</option>
+                                                 <option value="fridge">Fridge</option>
+                                                 <option value="pantry">Pantry</option>
+                                             </select>
+                                              <div class="invalid-feedback">
+                                                Please select a location.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itemCategory" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="itemCategory" placeholder="e.g., Fruits, Dairy, Canned Goods">
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                            <input type="date" class="form-control" id="purchaseDate" value="2024-03-04"> <!-- Assume valid input here -->
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="expirationDate" class="form-label">Expiration Date</label>
+                                            <input type="date" class="form-control is-invalid" id="expirationDate" required>
+                                            <div class="invalid-feedback">
+                                                Expiration date is required.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <div class="mb-3">
+                                        <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                                        <textarea class="form-control" id="itemNotes" rows="3" placeholder="e.g., Use for pie, Organic"></textarea>
+                                    </div>
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a href="#state5" class="btn btn-secondary me-md-2">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">Add Item</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: Edit Item Form -->
+    <div class="state-container" id="state9">
+        <div class="state-header">State 9: Edit Item Form</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Edit Item</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                 <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#state5">Fridge</a> <!-- Assume we came from Fridge -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                         <div class="card shadow-sm">
+                            <div class="card-header">
+                                Edit Inventory Item: Milk
+                           </div>
+                            <div class="card-body p-4">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label">Item Name</label>
+                                        <input type="text" class="form-control" id="itemName" value="Milk" required>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="itemQuantity" class="form-label">Quantity</label>
+                                            <input type="text" class="form-control" id="itemQuantity" value="1 Gallon" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label for="itemLocation" class="form-label">Location</label>
+                                             <select class="form-select" id="itemLocation" required>
+                                                 <option value="fridge" selected>Fridge</option>
+                                                 <option value="pantry">Pantry</option>
+                                             </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itemCategory" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="itemCategory" value="Dairy">
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                            <input type="date" class="form-control" id="purchaseDate" value="2024-03-01">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="expirationDate" class="form-label">Expiration Date</label>
+                                            <input type="date" class="form-control" id="expirationDate" value="2024-03-08" required>
+                                        </div>
+                                    </div>
+
+                                     <div class="mb-3">
+                                        <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                                        <textarea class="form-control" id="itemNotes" rows="3" placeholder="e.g., Use for pie, Organic"></textarea>
+                                    </div>
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                                         <a href="#state11" class="btn btn-outline-danger"> <i class="bi bi-trash"></i> Delete Item</a>
+                                         <div>
+                                            <a href="#state5" class="btn btn-secondary me-md-2">Cancel</a>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            <!-- On error, link to #state10 -->
+                                            <!-- <a href="#state10" class="btn btn-primary">Save Changes (Simulate Error)</a> -->
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 10: Edit Item Form - Validation Error -->
+   <div class="state-container" id="state10">
+        <div class="state-header">State 10: Edit Item Form - Validation Error</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Edit Item - Error</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                 <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                           <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#state5">Fridge</a> <!-- Assume we came from Fridge -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                           <i class="bi bi-exclamation-octagon-fill flex-shrink-0 me-2"></i>
+                           <div>
+                               Please fix the errors below and try again.
+                           </div>
+                        </div>
+                        <div class="card shadow-sm border-danger">
+                            <div class="card-header bg-danger text-white">
+                                Edit Inventory Item: Milk
+                           </div>
+                            <div class="card-body p-4">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="itemName" class="form-label">Item Name</label>
+                                        <input type="text" class="form-control is-invalid" id="itemName" value="" required> <!-- Simulate empty field -->
+                                        <div class="invalid-feedback">
+                                            Item name cannot be empty.
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="itemQuantity" class="form-label">Quantity</label>
+                                            <input type="text" class="form-control" id="itemQuantity" value="1 Gallon" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <label for="itemLocation" class="form-label">Location</label>
+                                             <select class="form-select" id="itemLocation" required>
+                                                 <option value="fridge" selected>Fridge</option>
+                                                 <option value="pantry">Pantry</option>
+                                             </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="itemCategory" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="itemCategory" value="Dairy">
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="purchaseDate" class="form-label">Purchase Date</label>
+                                            <input type="date" class="form-control" id="purchaseDate" value="2024-03-01">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="expirationDate" class="form-label">Expiration Date</label>
+                                            <input type="date" class="form-control is-invalid" id="expirationDate" value="2024-03-08" required>
+                                             <div class="invalid-feedback">
+                                                Expiration date seems invalid or missing. <!-- Example feedback -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <div class="mb-3">
+                                        <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                                        <textarea class="form-control" id="itemNotes" rows="3" placeholder="e.g., Use for pie, Organic"></textarea>
+                                    </div>
+
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                                         <a href="#state11" class="btn btn-outline-danger"> <i class="bi bi-trash"></i> Delete Item</a>
+                                         <div>
+                                            <a href="#state5" class="btn btn-secondary me-md-2">Cancel</a>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 11: Delete Confirmation (Simulated) -->
+    <div class="state-container" id="state11">
+        <div class="state-header">State 11: Delete Confirmation</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>Confirm Delete</title>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                   <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#state5">Fridge</a> <!-- Assume we came from Fridge -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#state12">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card text-center shadow">
+                            <div class="card-header bg-danger text-white">
+                                Confirm Deletion
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-exclamation-triangle text-danger fs-3"></i> Are you sure?</h5>
+                                <p class="card-text">Do you really want to delete the item "<strong>Milk (1 Gallon)</strong>"? This action cannot be undone.</p>
+                                <a href="#state5" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancel</a>
+                                <a href="#state5" class="btn btn-danger"><i class="bi bi-trash-fill"></i> Yes, Delete It</a>
+                            </div>
+                             <div class="card-footer text-muted">
+                                Deleting item from Fridge
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 12: User Profile/Settings -->
+    <div class="state-container" id="state12">
+        <div class="state-header">State 12: User Profile/Settings</div>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <title>User Profile</title>
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#state3">Inventory Tracker</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state3">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state5">Fridge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state6">Pantry</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#state7">Add Item</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#state4">About</a>
+                            </li>
+                        </ul>
+                         <ul class="navbar-nav ms-auto">
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                   <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item active" href="#">Profile</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#state1">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-4">
+                 <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4">User Profile & Settings</h2>
+                        <div class="card shadow-sm">
+                             <div class="card-body p-4">
+                                <h5 class="card-title">Account Information</h5>
+                                <form class="mb-4">
+                                    <div class="mb-3">
+                                        <label for="profileName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="profileName" value="John Doe" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profileEmail" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="profileEmail" value="john.doe@example.com" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                                </form>
+
+                                <hr>
+
+                                <h5 class="card-title mt-4">Change Password</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword" required>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-warning">Change Password</button>
+                                </form>
+
+                                <hr>
+
+                                <h5 class="card-title mt-4">Notification Settings</h5>
+                                <form>
+                                    <div class="form-check form-switch mb-2">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="expiringSoonEmail" checked>
+                                        <label class="form-check-label" for="expiringSoonEmail">Email notifications for items expiring soon</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="expiringDays" class="form-label">Notify for items expiring within:</label>
+                                        <select class="form-select w-auto d-inline-block" id="expiringDays">
+                                            <option value="1">1 day</option>
+                                            <option value="3">3 days</option>
+                                            <option value="7" selected>7 days</option>
+                                            <option value="14">14 days</option>
+                                        </select>
+                                    </div>
+                                     <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="expiredEmail">
+                                        <label class="form-check-label" for="expiredEmail">Email notifications for expired items</label>
+                                    </div>
+                                     <button type="submit" class="btn btn-info">Save Notification Settings</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

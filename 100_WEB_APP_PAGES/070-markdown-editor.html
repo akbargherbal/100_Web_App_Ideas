@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        iframe {
+            width: 100%;
+            height: 70vh; /* Default height */
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+        /* Adjust height for specific iframes if needed */
+        #iframe-state-1, #iframe-state-2, #iframe-state-3 { height: 80vh; }
+        #iframe-state-4, #iframe-state-5, #iframe-state-6 { height: 60vh; }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4">Markdown Editor - UI Flow</h1>
+
+    <!-- State 1: Home Page (Editor View - Initial/Empty State) -->
+    <h2>State 1: Home Page (Editor View - Initial/Empty State)</h2>
+    <iframe id="iframe-state-1" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 1: Home - Empty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } textarea { min-height: 55vh; font-family: monospace; } .preview-pane { min-height: 55vh; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.375rem; padding: 1rem; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                     <button class="btn btn-outline-light me-2" type="button"><i class="bi bi-folder-plus"></i> New</button>
+                     <button class="btn btn-outline-primary me-2" type="button"><i class="bi bi-upload"></i> Load</button>
+                     <button class="btn btn-primary" type="button"><i class="bi bi-save"></i> Save</button>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid mt-3">
+        <div class="row g-3">
+            <div class="col-lg-6">
+                <h5>Markdown Input</h5>
+                <textarea class="form-control" placeholder="Enter your Markdown here..." aria-label="Markdown Input"></textarea>
+            </div>
+            <div class="col-lg-6">
+                <h5>Live Preview</h5>
+                <div class="preview-pane">
+                   <p class="text-muted">Preview will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: Home Page (Editor View - With Content & Preview) -->
+    <h2>State 2: Home Page (Editor View - With Content & Preview)</h2>
+    <iframe id="iframe-state-2" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 2: Home - Content</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } textarea { min-height: 55vh; font-family: monospace; } .preview-pane { min-height: 55vh; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.375rem; padding: 1rem; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                     <button class="btn btn-outline-light me-2" type="button"><i class="bi bi-folder-plus"></i> New</button>
+                     <button class="btn btn-outline-primary me-2" type="button"><i class="bi bi-upload"></i> Load</button>
+                     <button class="btn btn-primary" type="button"><i class="bi bi-save"></i> Save</button>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid mt-3">
+        <div class="row g-3">
+            <div class="col-lg-6">
+                <h5>Markdown Input</h5>
+                <textarea class="form-control" aria-label="Markdown Input"># Welcome to Markdown!
+
+This is a *simple* example of some **Markdown text**.
+
+## Features
+- Live Preview
+- Bootstrap Styling
+- Easy to use
+
+```javascript
+function greet() {
+  console.log("Hello, Markdown!");
+}
+```
+
+[Learn more about Markdown](https://www.markdownguide.org)
+</textarea>
+            </div>
+            <div class="col-lg-6">
+                <h5>Live Preview</h5>
+                <div class="preview-pane">
+                   <h1>Welcome to Markdown!</h1>
+                   <p>This is a <em>simple</em> example of some <strong>Markdown text</strong>.</p>
+                   <h2>Features</h2>
+                   <ul>
+                        <li>Live Preview</li>
+                        <li>Bootstrap Styling</li>
+                        <li>Easy to use</li>
+                   </ul>
+                   <pre><code class="language-javascript">function greet() {
+  console.log("Hello, Markdown!");
+}</code></pre>
+                   <p><a href="https://www.markdownguide.org">Learn more about Markdown</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Home Page (Editor View - Validation Error State) -->
+    <h2>State 3: Home Page (Editor View - Validation Error State)</h2>
+    <iframe id="iframe-state-3" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 3: Home - Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } textarea { min-height: 55vh; font-family: monospace; } .preview-pane { min-height: 55vh; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 0.375rem; padding: 1rem; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+                 <div class="d-flex">
+                     <button class="btn btn-outline-light me-2" type="button"><i class="bi bi-folder-plus"></i> New</button>
+                     <button class="btn btn-outline-primary me-2" type="button"><i class="bi bi-upload"></i> Load</button>
+                     <button class="btn btn-primary" type="button"><i class="bi bi-save"></i> Save</button>
+                 </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid mt-3">
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> Could not save the file. Please check permissions or try again.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-lg-6">
+                <h5>Markdown Input</h5>
+                <textarea class="form-control is-invalid" aria-label="Markdown Input" aria-describedby="validationError"># Welcome to Markdown!
+
+This is a *simple* example of some **Markdown text**.
+
+## Features
+- Live Preview
+- Bootstrap Styling
+- Easy to use
+
+```javascript
+function greet() {
+  console.log("Hello, Markdown!");
+}
+```
+
+[Learn more about Markdown](https://www.markdownguide.org)
+</textarea>
+                <div id="validationError" class="invalid-feedback">
+                    (Static example: This field might be marked invalid due to the save error above)
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h5>Live Preview</h5>
+                <div class="preview-pane">
+                   <h1>Welcome to Markdown!</h1>
+                   <p>This is a <em>simple</em> example of some <strong>Markdown text</strong>.</p>
+                   <h2>Features</h2>
+                   <ul>
+                        <li>Live Preview</li>
+                        <li>Bootstrap Styling</li>
+                        <li>Easy to use</li>
+                   </ul>
+                    <pre><code class="language-javascript">function greet() {
+  console.log("Hello, Markdown!");
+}</code></pre>
+                   <p><a href="https://www.markdownguide.org">Learn more about Markdown</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: About Page -->
+    <h2>State 4: About Page</h2>
+    <iframe id="iframe-state-4" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 4: About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1>About Markdown Editor</h1>
+        <hr>
+        <p class="lead">A simple, web-based text editor with live Markdown preview.</p>
+        <p>This application allows you to write text using Markdown syntax and see the rendered HTML output in real-time. It is built using modern web technologies to provide a seamless editing experience.</p>
+        <h2>Features</h2>
+        <ul>
+            <li>Real-time preview panel</li>
+            <li>Clean, intuitive interface</li>
+            <li>Support for standard Markdown syntax</li>
+            <li>Built with HTML & Bootstrap</li>
+            <li>(Placeholder: File operations like Save/Load)</li>
+        </ul>
+        <h2>Technology Stack</h2>
+        <p>This user interface demonstration uses:</p>
+        <ul>
+            <li>HTML5</li>
+            <li>Bootstrap 5</li>
+        </ul>
+         <p>Version: 1.0.0 (UI Mockup)</p>
+    </main>
+
+   <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Help/Syntax Guide Page -->
+    <h2>State 5: Help/Syntax Guide Page</h2>
+    <iframe id="iframe-state-5" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 5: Help/Syntax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } pre { background-color: #e9ecef; padding: 10px; border-radius: 5px; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1>Markdown Syntax Guide</h1>
+        <p class="lead">A quick reference for common Markdown formatting.</p>
+        <hr>
+
+        <h2>Headings</h2>
+        <pre><code># Heading 1
+## Heading 2
+### Heading 3</code></pre>
+
+        <h2>Emphasis</h2>
+        <pre><code>*Italic text* or _Italic text_
+**Bold text** or __Bold text__
+~~Strikethrough text~~</code></pre>
+
+        <h2>Lists</h2>
+        <h5>Unordered</h5>
+        <pre><code>- Item 1
+- Item 2
+  - Subitem 2a
++ Item 3</code></pre>
+        <h5>Ordered</h5>
+        <pre><code>1. First item
+2. Second item
+3. Third item</code></pre>
+
+        <h2>Links</h2>
+        <pre><code>[Link text](https://www.example.com "Optional Title")</code></pre>
+
+        <h2>Images</h2>
+        <pre><code>![Alt text](/path/to/image.jpg "Optional Title")</code></pre>
+
+        <h2>Code</h2>
+        <h5>Inline</h5>
+        <pre><code>Use backticks for `inline code`.</code></pre>
+        <h5>Fenced Code Blocks</h5>
+        <pre><code>```javascript
+function example() {
+  return true;
+}
+```</code></pre>
+
+        <h2>Blockquotes</h2>
+        <pre><code>> This is a blockquote.
+> It can span multiple lines.</code></pre>
+
+        <h2>Horizontal Rule</h2>
+        <pre><code>---
+***
+___</code></pre>
+
+        <p>For a more comprehensive guide, visit <a href="https://www.markdownguide.org/basic-syntax/" target="_blank">MarkdownGuide.org Basic Syntax</a>.</p>
+
+    </main>
+
+    <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 6: Settings Page (Placeholder) -->
+    <h2>State 6: Settings Page (Placeholder)</h2>
+    <iframe id="iframe-state-6" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State 6: Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-markdown-fill"></i> Markdown Editor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-house-door"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> <i class="bi bi-question-circle"></i> Help/Syntax</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1>Settings</h1>
+        <p class="text-muted">Configure editor preferences (Visual placeholders only).</p>
+        <hr>
+
+        <form>
+            <div class="row g-3">
+                <div class="col-md-6">
+                     <label for="themeSelect" class="form-label">Editor Theme</label>
+                     <select class="form-select" id="themeSelect" aria-label="Editor Theme Selection">
+                       <option selected>Default (Light)</option>
+                       <option value="1">Dark</option>
+                       <option value="2">Solarized Light</option>
+                       <option value="3">Solarized Dark</option>
+                     </select>
+                </div>
+                 <div class="col-md-6">
+                     <label for="fontSizeSelect" class="form-label">Font Size</label>
+                     <select class="form-select" id="fontSizeSelect" aria-label="Font Size Selection">
+                       <option>Small</option>
+                       <option selected>Medium</option>
+                       <option>Large</option>
+                     </select>
+                </div>
+                 <div class="col-12">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="syncScrollSwitch" checked>
+                      <label class="form-check-label" for="syncScrollSwitch">Enable Synchronized Scrolling</label>
+                    </div>
+                 </div>
+                 <div class="col-12">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="autoSaveSwitch">
+                      <label class="form-check-label" for="autoSaveSwitch">Enable Auto-Save (Conceptual)</label>
+                    </div>
+                 </div>
+                  <div class="col-12 mt-4">
+                     <button type="submit" class="btn btn-primary"><i class="bi bi-check-lg"></i> Apply Settings</button>
+                     <button type="reset" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise"></i> Reset to Defaults</button>
+                 </div>
+            </div>
+        </form>
+
+    </main>
+
+   <footer class="bg-light text-center text-muted p-3 mt-auto">
+        <small>Markdown Editor &copy; 2023</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

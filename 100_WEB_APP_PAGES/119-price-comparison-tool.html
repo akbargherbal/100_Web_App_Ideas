@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison Tool - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            color: #343a40;
+        }
+         h2 {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #495057;
+         }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ced4da;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Price Comparison Tool - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial State) -->
+    <h2>State 1: Home Page (Initial State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="display-4">Find the Best Prices Online</h1>
+            <p class="lead mb-4">Compare prices for millions of products across your favorite retailers.</p>
+            <form class="d-flex justify-content-center">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control form-control-lg" placeholder="Enter product name or URL..." aria-label="Product search" aria-describedby="button-search">
+                    <button class="btn btn-light btn-lg" type="button" id="button-search"><i class="bi bi-search"></i> Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <!-- Features/Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Popular Categories</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-laptop display-4 text-primary"></i>
+                            <h5 class="card-title mt-3">Electronics</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-house-door display-4 text-success"></i>
+                            <h5 class="card-title mt-3">Home & Garden</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                     <div class="card h-100 shadow-sm">
+                         <div class="card-body">
+                            <i class="bi bi-person-standing display-4 text-warning"></i>
+                            <h5 class="card-title mt-3">Fashion</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                     <div class="card h-100 shadow-sm">
+                         <div class="card-body">
+                            <i class="bi bi-heart display-4 text-danger"></i>
+                            <h5 class="card-title mt-3">Health & Beauty</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+     <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">How It Works</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="p-3">
+                        <i class="bi bi-search display-4 text-primary"></i>
+                        <h5 class="mt-3">1. Search</h5>
+                        <p>Enter the product you are looking for.</p>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                     <div class="p-3">
+                        <i class="bi bi-bar-chart-line display-4 text-primary"></i>
+                        <h5 class="mt-3">2. Compare</h5>
+                        <p>We scan multiple retailers for the best prices.</p>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                     <div class="p-3">
+                        <i class="bi bi-tag display-4 text-primary"></i>
+                        <h5 class="mt-3">3. Save</h5>
+                        <p>Choose the best offer and save money.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-auto">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+            <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 2: Home Page (Search Input Validation Error) -->
+    <h2>State 2: Home Page (Search Input Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page - Validation Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="display-4">Find the Best Prices Online</h1>
+            <p class="lead mb-4">Compare prices for millions of products across your favorite retailers.</p>
+            <form class="d-flex justify-content-center needs-validation was-validated">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control form-control-lg is-invalid" placeholder="Enter product name or URL..." aria-label="Product search" aria-describedby="button-search" required>
+                     <button class="btn btn-light btn-lg" type="button" id="button-search"><i class="bi bi-search"></i> Search</button>
+                    <div class="invalid-feedback text-white bg-danger p-1 rounded w-100 text-center mt-2">
+                        Please enter a product name or URL to search.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+
+     <!-- Features/Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Popular Categories</h2>
+             <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-laptop display-4 text-primary"></i>
+                            <h5 class="card-title mt-3">Electronics</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-house-door display-4 text-success"></i>
+                            <h5 class="card-title mt-3">Home & Garden</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                     <div class="card h-100 shadow-sm">
+                         <div class="card-body">
+                            <i class="bi bi-person-standing display-4 text-warning"></i>
+                            <h5 class="card-title mt-3">Fashion</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                     <div class="card h-100 shadow-sm">
+                         <div class="card-body">
+                            <i class="bi bi-heart display-4 text-danger"></i>
+                            <h5 class="card-title mt-3">Health & Beauty</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+     <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">How It Works</h2>
+             <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="p-3">
+                        <i class="bi bi-search display-4 text-primary"></i>
+                        <h5 class="mt-3">1. Search</h5>
+                        <p>Enter the product you are looking for.</p>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                     <div class="p-3">
+                        <i class="bi bi-bar-chart-line display-4 text-primary"></i>
+                        <h5 class="mt-3">2. Compare</h5>
+                        <p>We scan multiple retailers for the best prices.</p>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                     <div class="p-3">
+                        <i class="bi bi-tag display-4 text-primary"></i>
+                        <h5 class="mt-3">3. Save</h5>
+                        <p>Choose the best offer and save money.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-auto">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+            <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 3: Search Results Page (Loading State) -->
+    <h2>State 3: Search Results Page (Loading State)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Loading</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0" style="width: 300px;">
+                    <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State Content -->
+    <div class="container py-5 text-center">
+        <h2 class="mb-3">Searching for "Wireless Headphones"...</h2>
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Please wait while we fetch the best prices for you.</p>
+         <!-- Placeholder Structure -->
+         <div class="row mt-5 placeholder-glow">
+             <div class="col-md-4 mb-4">
+                 <div class="card shadow-sm">
+                     <span class="placeholder card-img-top" style="height: 180px;"></span>
+                     <div class="card-body">
+                         <h5 class="card-title placeholder-glow">
+                             <span class="placeholder col-8"></span>
+                         </h5>
+                         <p class="card-text placeholder-glow">
+                             <span class="placeholder col-4"></span> <span class="placeholder col-6"></span>
+                             <span class="placeholder col-7"></span>
+                         </p>
+                         <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                     </div>
+                 </div>
+             </div>
+              <div class="col-md-4 mb-4">
+                 <div class="card shadow-sm">
+                      <span class="placeholder card-img-top" style="height: 180px;"></span>
+                     <div class="card-body">
+                         <h5 class="card-title placeholder-glow">
+                             <span class="placeholder col-7"></span>
+                         </h5>
+                         <p class="card-text placeholder-glow">
+                              <span class="placeholder col-5"></span> <span class="placeholder col-4"></span>
+                             <span class="placeholder col-6"></span>
+                         </p>
+                         <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                     </div>
+                 </div>
+             </div>
+              <div class="col-md-4 mb-4">
+                 <div class="card shadow-sm">
+                      <span class="placeholder card-img-top" style="height: 180px;"></span>
+                     <div class="card-body">
+                         <h5 class="card-title placeholder-glow">
+                             <span class="placeholder col-9"></span>
+                         </h5>
+                         <p class="card-text placeholder-glow">
+                             <span class="placeholder col-6"></span> <span class="placeholder col-5"></span>
+                             <span class="placeholder col-8"></span>
+                         </p>
+                         <a href="#" tabindex="-1" class="btn btn-primary disabled placeholder col-6"></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-5 fixed-bottom">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 4: Search Results Page (Results Found) -->
+    <h2>State 4: Search Results Page (Results Found)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0" style="width: 300px;">
+                    <input class="form-control me-2" type="search" value="Wireless Headphones" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Results Content -->
+    <div class="container py-5">
+        <h2 class="mb-4">Search Results for "Wireless Headphones"</h2>
+
+        <!-- Filters and Sorting -->
+        <div class="row mb-4">
+            <div class="col-md-4 mb-2">
+                <div class="input-group">
+                    <label class="input-group-text" for="sortOptions"><i class="bi bi-sort-down"></i></label>
+                    <select class="form-select" id="sortOptions">
+                        <option selected>Sort by Relevance</option>
+                        <option value="1">Price: Low to High</option>
+                        <option value="2">Price: High to Low</option>
+                        <option value="3">Rating</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-8 d-flex justify-content-end">
+                <button class="btn btn-outline-secondary me-2" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                    <i class="bi bi-filter"></i> Filters
+                </button>
+            </div>
+             <div class="collapse mt-3" id="filterCollapse">
+                <div class="card card-body bg-light border">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <h6>Price Range</h6>
+                            <div class="d-flex align-items-center">
+                                <input type="number" class="form-control form-control-sm" placeholder="Min $">
+                                <span class="mx-2">-</span>
+                                <input type="number" class="form-control form-control-sm" placeholder="Max $">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h6>Brand</h6>
+                            <select class="form-select form-select-sm">
+                                <option selected>Any Brand</option>
+                                <option>Brand A</option>
+                                <option>Brand B</option>
+                                <option>Brand C</option>
+                            </select>
+                        </div>
+                         <div class="col-md-4 mb-3">
+                            <h6>Features</h6>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="feature1">
+                              <label class="form-check-label" for="feature1">Noise Cancelling</label>
+                            </div>
+                             <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="feature2">
+                              <label class="form-check-label" for="feature2">Water Resistant</label>
+                            </div>
+                        </div>
+                    </div>
+                     <button class="btn btn-primary btn-sm mt-2">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="row">
+            <!-- Product Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Product+Image" class="card-img-top" alt="Product Image">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Brand A Wireless Over-Ear Headphones</h5>
+                        <p class="card-text text-muted small">Noise Cancelling, 30h Battery</p>
+                        <div class="mt-auto">
+                            <p class="lead mb-1">From <strong class="text-success">$99.99</strong></p>
+                            <p class="small text-muted mb-2">Compared across 5 retailers</p>
+                            <a href="#" class="btn btn-primary w-100">Compare Prices</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="col-md-4 mb-4">
+                 <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Product+Image" class="card-img-top" alt="Product Image">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Brand B True Wireless Earbuds</h5>
+                         <p class="card-text text-muted small">Water Resistant, Compact Case</p>
+                        <div class="mt-auto">
+                             <p class="lead mb-1">From <strong class="text-success">$75.50</strong></p>
+                            <p class="small text-muted mb-2">Compared across 8 retailers</p>
+                            <a href="#" class="btn btn-primary w-100">Compare Prices</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Product+Image" class="card-img-top" alt="Product Image">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Generic Sport Wireless Headphones</h5>
+                        <p class="card-text text-muted small">Sweatproof, Secure Fit</p>
+                        <div class="mt-auto">
+                             <p class="lead mb-1">From <strong class="text-success">$49.00</strong></p>
+                              <p class="small text-muted mb-2">Compared across 3 retailers</p>
+                            <a href="#" class="btn btn-primary w-100">Compare Prices</a>
+                        </div>
+                     </div>
+                </div>
+            </div>
+             <!-- Add more product cards as needed -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4">
+            <ul class="pagination shadow-sm">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Footer -->
+     <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 5: Search Results Page (No Results Found) -->
+    <h2>State 5: Search Results Page (No Results Found)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0" style="width: 300px;">
+                    <input class="form-control me-2" type="search" value="xyzasdfqwerty" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- No Results Content -->
+    <div class="container py-5 text-center" style="min-height: calc(100vh - 150px);">
+         <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <i class="bi bi-emoji-frown display-1 text-warning mb-3"></i>
+            <h2 class="mb-3">No Results Found for "xyzasdfqwerty"</h2>
+            <p class="lead text-muted mb-4">Sorry, we couldn't find any products matching your search term.</p>
+            <p>Try searching for something else or check your spelling.</p>
+             <a href="#" class="btn btn-primary mt-3"><i class="bi bi-house"></i> Back to Home</a>
+         </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-auto">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 6: Product Detail/Comparison Page -->
+    <h2>State 6: Product Detail/Comparison Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Comparison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0" style="width: 300px;">
+                    <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details -->
+    <div class="container py-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Search Results</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Brand A Wireless Over-Ear Headphones</li>
+          </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <img src="https://via.placeholder.com/500x400/dee2e6/6c757d.png?text=Product+Image" class="img-fluid rounded shadow-sm" alt="Product Image">
+            </div>
+            <div class="col-md-7 mb-4">
+                <h2>Brand A Wireless Over-Ear Headphones</h2>
+                <p class="lead text-muted">Model: WH-1000XM5</p>
+                <p>Experience industry-leading noise cancellation with these premium wireless headphones. Enjoy crystal clear calls, long battery life, and exceptional sound quality. Lightweight design for comfortable all-day wear.</p>
+                <h6>Key Features:</h6>
+                <ul>
+                    <li>Advanced Noise Cancellation</li>
+                    <li>Up to 30 hours battery life</li>
+                    <li>Multi-point connection</li>
+                    <li>Speak-to-Chat function</li>
+                    <li>High-Resolution Audio support</li>
+                </ul>
+                 <p class="display-6 mt-3">Best Price: <strong class="text-success">$99.99</strong></p>
+            </div>
+        </div>
+
+        <!-- Price Comparison Table -->
+        <h3 class="mb-3">Compare Prices</h3>
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Retailer</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Stock Status</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="https://via.placeholder.com/100x30/0d6efd/ffffff.png?text=Retailer+A" alt="Retailer A Logo" style="height: 30px;">
+                            <span class="ms-2 fw-bold">Amazon</span>
+                        </td>
+                        <td class="fw-bold fs-5 text-success">$99.99</td>
+                        <td><span class="badge bg-success">In Stock</span></td>
+                        <td><a href="#" class="btn btn-primary btn-sm">Go to Store <i class="bi bi-box-arrow-up-right"></i></a></td>
+                    </tr>
+                    <tr>
+                         <td>
+                            <img src="https://via.placeholder.com/100x30/198754/ffffff.png?text=Retailer+B" alt="Retailer B Logo" style="height: 30px;">
+                            <span class="ms-2 fw-bold">Best Buy</span>
+                        </td>
+                        <td class="fw-bold fs-5">$105.00</td>
+                        <td><span class="badge bg-success">In Stock</span></td>
+                        <td><a href="#" class="btn btn-primary btn-sm">Go to Store <i class="bi bi-box-arrow-up-right"></i></a></td>
+                    </tr>
+                     <tr>
+                         <td>
+                            <img src="https://via.placeholder.com/100x30/ffc107/000000.png?text=Retailer+C" alt="Retailer C Logo" style="height: 30px;">
+                             <span class="ms-2 fw-bold">Walmart</span>
+                        </td>
+                        <td class="fw-bold fs-5">$109.99</td>
+                         <td><span class="badge bg-danger">Out of Stock</span></td>
+                         <td><a href="#" class="btn btn-secondary btn-sm disabled">Notify Me</a></td>
+                    </tr>
+                     <tr>
+                          <td>
+                             <img src="https://via.placeholder.com/100x30/dc3545/ffffff.png?text=Retailer+D" alt="Retailer D Logo" style="height: 30px;">
+                             <span class="ms-2 fw-bold">Target</span>
+                        </td>
+                        <td class="fw-bold fs-5">$102.50</td>
+                         <td><span class="badge bg-warning text-dark">Low Stock</span></td>
+                         <td><a href="#" class="btn btn-primary btn-sm">Go to Store <i class="bi bi-box-arrow-up-right"></i></a></td>
+                    </tr>
+                    <tr>
+                          <td>
+                             <img src="https://via.placeholder.com/100x30/6c757d/ffffff.png?text=Retailer+E" alt="Retailer E Logo" style="height: 30px;">
+                             <span class="ms-2 fw-bold">Other Electronics</span>
+                        </td>
+                        <td class="fw-bold fs-5">$115.00</td>
+                         <td><span class="badge bg-success">In Stock</span></td>
+                         <td><a href="#" class="btn btn-primary btn-sm">Go to Store <i class="bi bi-box-arrow-up-right"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+         <!-- Related Products -->
+         <h3 class="mt-5 mb-3">Related Products</h3>
+         <div class="row">
+             <div class="col-md-3 mb-3">
+                 <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Related+1" class="card-img-top" alt="Related Product">
+                     <div class="card-body">
+                         <h6 class="card-title">Brand A Wireless Earbuds</h6>
+                         <p class="card-text small text-muted">From $79.99</p>
+                         <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-3 mb-3">
+                 <div class="card h-100 shadow-sm">
+                     <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Related+2" class="card-img-top" alt="Related Product">
+                     <div class="card-body">
+                         <h6 class="card-title">Brand C Premium Headphones</h6>
+                          <p class="card-text small text-muted">From $149.00</p>
+                          <a href="#" class="btn btn-outline-primary btn-sm">View</a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Add more related products -->
+         </div>
+
+    </div>
+
+    <!-- Footer -->
+     <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 7: About Page -->
+    <h2>State 7: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <h1 class="display-5">About Price Comparison Tool</h1>
+                <p class="lead">Our mission is to empower consumers like you to make informed purchasing decisions by providing transparent and up-to-date price comparisons across a wide range of online retailers.</p>
+                <p>We understand that finding the best deal can be time-consuming and frustrating. That's why we built this tool – to simplify the process and help you save money effortlessly.</p>
+                 <p>Our technology constantly scans numerous online stores, gathering price information, stock availability, and product details, presenting them in an easy-to-understand format.</p>
+            </div>
+            <div class="col-lg-6 mb-4">
+                 <img src="https://via.placeholder.com/600x400/0dcaf0/ffffff.png?text=Our+Team+Working" class="img-fluid rounded shadow" alt="Team working">
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row text-center">
+            <h2 class="mb-4">How It Works</h2>
+            <div class="col-md-4 mb-3">
+                <div class="p-3 border rounded shadow-sm h-100">
+                    <i class="bi bi-cpu display-4 text-primary"></i>
+                    <h5 class="mt-3">Data Aggregation</h5>
+                    <p>We utilize sophisticated algorithms to collect product data and prices from various online sources.</p>
+                </div>
+            </div>
+             <div class="col-md-4 mb-3">
+                 <div class="p-3 border rounded shadow-sm h-100">
+                    <i class="bi bi-check2-circle display-4 text-success"></i>
+                    <h5 class="mt-3">Accuracy & Updates</h5>
+                    <p>Our systems strive for accuracy, with prices updated regularly to reflect the latest offers.</p>
+                </div>
+            </div>
+             <div class="col-md-4 mb-3">
+                 <div class="p-3 border rounded shadow-sm h-100">
+                    <i class="bi bi-shield-lock display-4 text-info"></i>
+                    <h5 class="mt-3">User Focused</h5>
+                    <p>Designed with you in mind, offering a simple interface to compare prices and find the best deals quickly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 8: Contact Page -->
+    <h2>State 8: Contact Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                         <p class="text-center mb-4">Have questions or feedback? Fill out the form below and we will get back to you as soon as possible.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="your.email@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Subject of your message">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" placeholder="Enter your message here..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-send"></i> Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                 <div class="text-center mt-5">
+                    <h5>Alternatively, reach us at:</h5>
+                    <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i> support@pricecomparisontool.com</p>
+                    <p class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567</p>
+                    <p><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Comparison Way, Suite 100, Tech City, USA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 9: Contact Page (Form Submission Success) -->
+    <h2>State 9: Contact Page (Form Submission Success)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Success</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+
+                <!-- Success Alert -->
+                <div class="alert alert-success d-flex align-items-center shadow-sm" role="alert">
+                  <i class="bi bi-check-circle-fill flex-shrink-0 me-2 fs-4"></i>
+                  <div>
+                    <strong>Thank you for your message!</strong> We have received your inquiry and will get back to you shortly.
+                  </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mt-4">
+                    <div class="card-body p-4">
+                         <p class="text-center mb-4">Have more questions? Fill out the form below.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="your.email@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Subject of your message">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" placeholder="Enter your message here..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-send"></i> Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                 <!-- Contact Info -->
+                 <div class="text-center mt-5">
+                    <h5>Alternatively, reach us at:</h5>
+                    <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i> support@pricecomparisontool.com</p>
+                    <p class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567</p>
+                    <p><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Comparison Way, Suite 100, Tech City, USA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    <!-- State 10: Contact Page (Form Validation Error) -->
+    <h2>State 10: Contact Page (Form Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Validation Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-tags-fill text-primary"></i> Price Comparison Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+
+                <!-- Error Alert -->
+                <div class="alert alert-danger d-flex align-items-center shadow-sm" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 fs-4"></i>
+                  <div>
+                    <strong>Please fix the errors below</strong> before submitting the form.
+                  </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mt-4">
+                    <div class="card-body p-4">
+                         <p class="text-center mb-4">Have questions or feedback? Fill out the form below.</p>
+                        <form class="needs-validation was-validated">
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control is-invalid" id="contactName" placeholder="Your Name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="contactEmail" value="invalid-email" placeholder="your.email@example.com" required>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="contactSubject" placeholder="Subject of your message">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control is-invalid" id="contactMessage" rows="5" placeholder="Enter your message here..." required></textarea>
+                                 <div class="invalid-feedback">
+                                    Please enter your message.
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-send"></i> Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                 <!-- Contact Info -->
+                 <div class="text-center mt-5">
+                    <h5>Alternatively, reach us at:</h5>
+                    <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i> support@pricecomparisontool.com</p>
+                    <p class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567</p>
+                    <p><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Comparison Way, Suite 100, Tech City, USA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <footer class="py-4 bg-dark text-white mt-5">
+        <div class="container text-center">
+            <small>Copyright &copy; Price Comparison Tool 2024</small>
+             <div class="mt-2">
+                <a href="#" class="text-white me-2">Privacy Policy</a>
+                <a href="#" class="text-white">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+</body>
+</html>

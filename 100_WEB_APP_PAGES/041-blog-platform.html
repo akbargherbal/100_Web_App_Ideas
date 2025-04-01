@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 75vh; /* Adjusted height */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center">Blog Platform - UI Flow</h1>
+
+        <!-- State 1: Home Page (Public View) -->
+        <div class="state-container">
+            <h2>State 1: Home Page (Public View)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Recent Posts</h1>
+        <div class="row">
+            <!-- Blog Post Snippet 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">First Blog Post Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author One - Oct 26, 2023</h6>
+                        <p class="card-text">This is a short snippet of the first blog post. It gives a brief overview of the content...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post Snippet 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploring Bootstrap 5</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author Two - Oct 25, 2023</h6>
+                        <p class="card-text">Bootstrap 5 offers many new features and improvements. This post explores some of them...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Blog Post Snippet 3 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development Trends</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author One - Oct 24, 2023</h6>
+                        <p class="card-text">Staying updated with the latest web development trends is crucial. Here are some key trends...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 2: About Page (Public View) -->
+        <div class="state-container">
+            <h2>State 2: About Page (Public View)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About Us</h1>
+        <p class="lead">Welcome to the Blog Platform!</p>
+        <p>This platform is designed to provide a space for creators to share their thoughts, ideas, and stories with the world. We aim to foster a community where knowledge and experiences can be easily exchanged.</p>
+        <p>Our features include easy post creation, management, and user interaction through comments. We are constantly working to improve the platform and add new features.</p>
+        <p>Thank you for being a part of our community!</p>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 3: Blog Post Detail Page (Public View) -->
+        <div class="state-container">
+            <h2>State 3: Blog Post Detail Page (Public View)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <article>
+            <header class="mb-4">
+                <h1 class="fw-bolder mb-1">First Blog Post Title</h1>
+                <div class="text-muted fst-italic mb-2">Posted on October 26, 2023 by Author One</div>
+                <!-- Categories/Tags placeholder -->
+                <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">Web Design</a>
+                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Tutorial</a>
+            </header>
+            <section class="mb-5">
+                <p class="fs-5 mb-4">This is the full content of the first blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p class="fs-5 mb-4">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                <h2 class="fw-bolder mb-4 mt-5">Subheading Example</h2>
+                <p class="fs-5 mb-4">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            </section>
+        </article>
+
+        <!-- Comments section -->
+        <section class="mb-5">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <!-- Comment form (disabled for public view) -->
+                    <form class="mb-4">
+                        <textarea class="form-control" rows="3" placeholder="Log in to leave a comment..." disabled></textarea>
+                        <button type="submit" class="btn btn-primary mt-2" disabled>Submit Comment</button>
+                         <small class="d-block mt-2 text-muted">Please <a href="#">login</a> or <a href="#">register</a> to comment.</small>
+                    </form>
+                    <!-- Single comment -->
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>
+                            This is a great post! Very informative.
+                            <div class="text-muted small">Posted on Oct 26, 2023</div>
+                        </div>
+                    </div>
+                    <!-- Another comment -->
+                    <div class="d-flex">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Another User</div>
+                            Thanks for sharing! Looking forward to more content.
+                             <div class="text-muted small">Posted on Oct 27, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 4: Login Page -->
+        <div class="state-container">
+            <h2>State 4: Login Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                             <div class="text-center mt-2">
+                                Don't have an account? <a href="#">Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+         <!-- State 5: Login Page (Error State) -->
+        <div class="state-container">
+            <h2>State 5: Login Page (Error State)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                 <div class="alert alert-danger" role="alert">
+                    Invalid email or password. Please try again.
+                 </div>
+                <div class="card">
+                    <div class="card-header">Login</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="email" aria-describedby="emailHelp" required value="user@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password" required>
+                                <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                            <div class="text-center mt-2">
+                                Don't have an account? <a href="#">Register here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 6: Registration Page -->
+        <div class="state-container">
+            <h2>State 6: Registration Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg-email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="reg-email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg-password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="reg-password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirm-password" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm-password" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                             <div class="text-center mt-2">
+                                Already have an account? <a href="#">Login here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+         <!-- State 7: Registration Page (Error State) -->
+        <div class="state-container">
+            <h2>State 7: Registration Page (Error State)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                 <div class="alert alert-danger" role="alert">
+                    Please fix the errors below.
+                 </div>
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="username" required value="user">
+                                <div class="invalid-feedback">
+                                    Username must be at least 3 characters long.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg-email" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="reg-email" required value="existing@example.com">
+                                 <div class="invalid-feedback">
+                                    Email address is already registered.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg-password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="reg-password" required value="pass">
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirm-password" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirm-password" required value="word">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                             <div class="text-center mt-2">
+                                Already have an account? <a href="#">Login here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 8: Home Page (Logged In) -->
+         <div class="state-container">
+            <h2>State 8: Home Page (Logged In)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home (Logged In)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="alert alert-success" role="alert">
+          Welcome back, UserName!
+        </div>
+        <h1>Recent Posts</h1>
+        <div class="row">
+            <!-- Blog Post Snippet 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">First Blog Post Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author One - Oct 26, 2023</h6>
+                        <p class="card-text">This is a short snippet of the first blog post. It gives a brief overview of the content...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post Snippet 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploring Bootstrap 5</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author Two - Oct 25, 2023</h6>
+                        <p class="card-text">Bootstrap 5 offers many new features and improvements. This post explores some of them...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Blog Post Snippet 3 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Development Trends</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">By Author One - Oct 24, 2023</h6>
+                        <p class="card-text">Staying updated with the latest web development trends is crucial. Here are some key trends...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 9: Blog Post Detail Page (Logged In - Can Comment) -->
+        <div class="state-container">
+            <h2>State 9: Blog Post Detail Page (Logged In - Can Comment)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail (Logged In)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <article>
+            <header class="mb-4">
+                <h1 class="fw-bolder mb-1">First Blog Post Title</h1>
+                <div class="text-muted fst-italic mb-2">Posted on October 26, 2023 by Author One</div>
+                <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">Web Design</a>
+                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Tutorial</a>
+                 <!-- Edit/Delete Buttons if user is author -->
+                 <!-- <div class="mt-2">
+                     <a href="#" class="btn btn-sm btn-outline-secondary">Edit Post</a>
+                     <a href="#" class="btn btn-sm btn-outline-danger">Delete Post</a>
+                 </div> -->
+            </header>
+            <section class="mb-5">
+                <p class="fs-5 mb-4">This is the full content of the first blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p class="fs-5 mb-4">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            </section>
+        </article>
+
+        <!-- Comments section -->
+        <section class="mb-5">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <!-- Comment form (enabled for logged-in view) -->
+                    <form class="mb-4">
+                        <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">Submit Comment</button>
+                    </form>
+                    <!-- Single comment -->
+                     <div class="d-flex mb-4">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>
+                            This is a great post! Very informative.
+                            <div class="text-muted small">Posted on Oct 26, 2023</div>
+                        </div>
+                    </div>
+                    <!-- Another comment -->
+                    <div class="d-flex">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Another User</div>
+                            Thanks for sharing! Looking forward to more content.
+                             <div class="text-muted small">Posted on Oct 27, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 10: Blog Post Detail Page (Comment Submitted) -->
+        <div class="state-container">
+            <h2>State 10: Blog Post Detail Page (Comment Submitted)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail (Comment Submitted)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="alert alert-success" role="alert">
+          Your comment has been submitted successfully!
+        </div>
+        <article>
+            <header class="mb-4">
+                <h1 class="fw-bolder mb-1">First Blog Post Title</h1>
+                <div class="text-muted fst-italic mb-2">Posted on October 26, 2023 by Author One</div>
+                <a class="badge bg-secondary text-decoration-none link-light me-1" href="#!">Web Design</a>
+                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Tutorial</a>
+            </header>
+            <section class="mb-5">
+                 <p class="fs-5 mb-4">This is the full content of the first blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                 <p class="fs-5 mb-4">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            </section>
+        </article>
+
+        <!-- Comments section -->
+        <section class="mb-5">
+            <div class="card bg-light">
+                <div class="card-body">
+                     <!-- Comment form (reset or hidden after successful submission) -->
+                     <form class="mb-4">
+                        <textarea class="form-control" rows="3" placeholder="Leave another comment..."></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">Submit Comment</button>
+                    </form>
+                    <!-- Newly added comment -->
+                    <div class="d-flex mb-4 border-bottom pb-3">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">UserName</div>
+                            This is the new comment I just submitted!
+                             <div class="text-muted small">Posted just now</div>
+                        </div>
+                    </div>
+                    <!-- Existing comments -->
+                     <div class="d-flex mb-4">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>
+                            This is a great post! Very informative.
+                            <div class="text-muted small">Posted on Oct 26, 2023</div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="User avatar"></div>
+                        <div class="ms-3">
+                            <div class="fw-bold">Another User</div>
+                            Thanks for sharing! Looking forward to more content.
+                             <div class="text-muted small">Posted on Oct 27, 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 11: User Dashboard -->
+        <div class="state-container">
+            <h2>State 11: User Dashboard</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>My Posts</h1>
+            <a href="#" class="btn btn-success">Create New Post</a>
+        </div>
+
+        <div class="list-group">
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">My First Awesome Post</h5>
+                    <small>Oct 20, 2023</small>
+                </div>
+                <p class="mb-1">A snippet of the post content goes here...</p>
+                <small class="text-muted">Status: Published</small>
+                <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+            </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Another Post Draft</h5>
+                     <small>Oct 22, 2023</small>
+                </div>
+                <p class="mb-1">Working on this one, still needs more content...</p>
+                <small class="text-muted">Status: Draft</small>
+                 <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary disabled">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                 </div>
+            </div>
+             <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Thoughts on Web Design</h5>
+                     <small>Oct 15, 2023</small>
+                </div>
+                <p class="mb-1">Sharing some ideas about modern web design trends...</p>
+                <small class="text-muted">Status: Published</small>
+                 <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 12: Create New Post Page -->
+        <div class="state-container">
+            <h2>State 12: Create New Post Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New Blog Post</h1>
+        <form>
+            <div class="mb-3">
+                <label for="postTitle" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" placeholder="Enter post title" required>
+            </div>
+            <div class="mb-3">
+                 <label for="postCategory" class="form-label">Category</label>
+                 <select class="form-select" id="postCategory">
+                     <option selected>Choose...</option>
+                     <option value="1">Technology</option>
+                     <option value="2">Lifestyle</option>
+                     <option value="3">Travel</option>
+                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Content</label>
+                <textarea class="form-control" id="postContent" rows="10" placeholder="Write your blog post content here..." required></textarea>
+                 <small class="form-text text-muted">Use Markdown or HTML for formatting (visual editor placeholder).</small>
+            </div>
+             <div class="mb-3">
+                <label for="postTags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="postTags" placeholder="e.g., webdev, tutorial, opinion">
+            </div>
+            <button type="submit" class="btn btn-primary">Publish Post</button>
+            <button type="button" class="btn btn-secondary">Save as Draft</button>
+            <a href="#" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 13: Create/Edit Post Page (Validation Error) -->
+        <div class="state-container">
+            <h2>State 13: Create/Edit Post Page (Validation Error)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New Blog Post</h1>
+         <div class="alert alert-danger" role="alert">
+             Please fix the validation errors below.
+         </div>
+        <form>
+            <div class="mb-3">
+                <label for="postTitle" class="form-label">Post Title</label>
+                <input type="text" class="form-control is-invalid" id="postTitle" placeholder="Enter post title" required value="">
+                 <div class="invalid-feedback">
+                    Post title cannot be empty.
+                 </div>
+            </div>
+             <div class="mb-3">
+                 <label for="postCategory" class="form-label">Category</label>
+                 <select class="form-select" id="postCategory">
+                     <option selected>Choose...</option>
+                     <option value="1">Technology</option>
+                     <option value="2">Lifestyle</option>
+                     <option value="3">Travel</option>
+                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Content</label>
+                <textarea class="form-control is-invalid" id="postContent" rows="10" placeholder="Write your blog post content here..." required></textarea>
+                 <div class="invalid-feedback">
+                    Post content cannot be empty.
+                 </div>
+                 <small class="form-text text-muted">Use Markdown or HTML for formatting (visual editor placeholder).</small>
+            </div>
+             <div class="mb-3">
+                <label for="postTags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="postTags" placeholder="e.g., webdev, tutorial, opinion" value="webdev, tutorial, opinion">
+            </div>
+            <button type="submit" class="btn btn-primary">Publish Post</button>
+            <button type="button" class="btn btn-secondary">Save as Draft</button>
+             <a href="#" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 14: Edit Post Page -->
+        <div class="state-container">
+            <h2>State 14: Edit Post Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Edit Blog Post</h1>
+        <form>
+            <div class="mb-3">
+                <label for="postTitle" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" placeholder="Enter post title" required value="My First Awesome Post">
+            </div>
+             <div class="mb-3">
+                 <label for="postCategory" class="form-label">Category</label>
+                 <select class="form-select" id="postCategory">
+                     <option>Choose...</option>
+                     <option value="1" selected>Technology</option>
+                     <option value="2">Lifestyle</option>
+                     <option value="3">Travel</option>
+                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Content</label>
+                <textarea class="form-control" id="postContent" rows="10" placeholder="Write your blog post content here..." required>A snippet of the post content goes here... This would be the full existing content ready for editing.</textarea>
+                 <small class="form-text text-muted">Use Markdown or HTML for formatting (visual editor placeholder).</small>
+            </div>
+             <div class="mb-3">
+                <label for="postTags" class="form-label">Tags (comma-separated)</label>
+                <input type="text" class="form-control" id="postTags" placeholder="e.g., webdev, tutorial, opinion" value="tech, intro">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Post</button>
+            <button type="button" class="btn btn-secondary">Revert Changes</button>
+             <a href="#" class="btn btn-outline-secondary">Cancel</a>
+             <button type="button" class="btn btn-danger float-end">Delete Post</button>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+        <!-- State 15: User Dashboard (Post Created/Updated Confirmation) -->
+        <div class="state-container">
+            <h2>State 15: User Dashboard (Post Created/Updated Confirmation)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Success</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Blog Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">My Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout (UserName)</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success!</strong> Your post "My Newly Created Post" has been published successfully.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- Alternative message for update:
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success!</strong> Your post "My First Awesome Post" has been updated successfully.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        -->
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>My Posts</h1>
+            <a href="#" class="btn btn-success">Create New Post</a>
+        </div>
+
+        <div class="list-group">
+             <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">My Newly Created Post</h5>
+                    <small>Just now</small>
+                </div>
+                <p class="mb-1">The beginning of the new post content...</p>
+                <small class="text-muted">Status: Published</small>
+                <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+            </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">My First Awesome Post</h5>
+                    <small>Oct 20, 2023</small>
+                </div>
+                <p class="mb-1">A snippet of the post content goes here...</p>
+                <small class="text-muted">Status: Published</small>
+                <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+            </div>
+            <div class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Another Post Draft</h5>
+                     <small>Oct 22, 2023</small>
+                </div>
+                <p class="mb-1">Working on this one, still needs more content...</p>
+                <small class="text-muted">Status: Draft</small>
+                 <div class="mt-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary disabled">View</a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <div class="container">
+            &copy; 2023 Blog Platform. All Rights Reserved.
+        </div>
+    </footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>'></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>

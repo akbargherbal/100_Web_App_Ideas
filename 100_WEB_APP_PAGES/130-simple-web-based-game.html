@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web-Based Game - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 550px; /* Adjusted height for better visibility */
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+        /* Specific styles for game boards */
+        .tic-tac-toe-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            width: 200px;
+            height: 200px;
+            gap: 5px;
+            margin: 20px auto;
+        }
+        .tic-tac-toe-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: #e9ecef;
+            border: 1px solid #adb5bd;
+            cursor: pointer;
+        }
+        .hangman-display {
+            letter-spacing: 0.5em;
+            font-size: 1.5rem;
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+        .hangman-graphic {
+            width: 150px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 15px auto;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        .hangman-guesses {
+            margin-top: 10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+        .hangman-letters button {
+            margin: 2px;
+            width: 35px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Simple Web-Based Game - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Home</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h1>Welcome to Simple Web Games!</h1>
+            <p class="lead">Choose a game below to start playing.</p>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tic-Tac-Toe</h5>
+                            <p class="card-text">The classic game of X and O. Try to get three in a row!</p>
+                            <a href="#" class="btn btn-primary">Play Tic-Tac-Toe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hangman</h5>
+                            <p class="card-text">Guess the letters to find the hidden word before time runs out!</p>
+                            <a href="#" class="btn btn-success">Play Hangman</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>About</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4">
+            <h1>About Simple Web Games</h1>
+            <p>This is a collection of simple, classic games that you can play directly in your web browser.</p>
+            <p>Current games available:</p>
+            <ul>
+                <li><strong>Tic-Tac-Toe:</strong> A strategy game for two players who take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</li>
+                <li><strong>Hangman:</strong> A word guessing game. One player thinks of a word and the other tries to guess it by suggesting letters within a certain number of guesses.</li>
+            </ul>
+            <p>Enjoy your time playing!</p>
+            <hr>
+            <p class="text-muted">Built with HTML and Bootstrap.</p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 3: Tic-Tac-Toe Game Page - In Progress -->
+    <h2>State 3: Tic-Tac-Toe Game Page - In Progress</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .tic-tac-toe-board { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); width: 200px; height: 200px; gap: 5px; margin: 20px auto; }
+            .tic-tac-toe-cell { display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; background-color: #e9ecef; border: 1px solid #adb5bd; cursor: pointer; }
+            .tic-tac-toe-cell:hover { background-color: #ced4da; }
+        </style>
+        <title>Tic-Tac-Toe</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Tic-Tac-Toe</h2>
+            <div class="alert alert-info" role="alert">Player X&apos;s Turn</div>
+            <div class="tic-tac-toe-board">
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell"></div>
+            </div>
+            <button class="btn btn-secondary mt-3">Reset Game</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 4: Tic-Tac-Toe Game Page - Player X Wins -->
+    <h2>State 4: Tic-Tac-Toe Game Page - Player X Wins</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .tic-tac-toe-board { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); width: 200px; height: 200px; gap: 5px; margin: 20px auto; }
+            .tic-tac-toe-cell { display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; background-color: #e9ecef; border: 1px solid #adb5bd; }
+            .win { background-color: #d1e7dd !important; }
+        </style>
+        <title>Tic-Tac-Toe - X Wins!</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Tic-Tac-Toe</h2>
+            <div class="alert alert-success" role="alert">Player X Wins!</div>
+            <div class="tic-tac-toe-board">
+                <div class="tic-tac-toe-cell win">X</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell win">X</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell"></div>
+                <div class="tic-tac-toe-cell win">X</div>
+            </div>
+            <button class="btn btn-primary mt-3">Play Again</button>
+            <button class="btn btn-secondary mt-3">Back to Home</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 5: Tic-Tac-Toe Game Page - Draw -->
+    <h2>State 5: Tic-Tac-Toe Game Page - Draw</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .tic-tac-toe-board { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); width: 200px; height: 200px; gap: 5px; margin: 20px auto; }
+            .tic-tac-toe-cell { display: flex; justify-content: center; align-items: center; font-size: 2rem; font-weight: bold; background-color: #e9ecef; border: 1px solid #adb5bd; }
+        </style>
+        <title>Tic-Tac-Toe - Draw!</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Tic-Tac-Toe</h2>
+            <div class="alert alert-warning" role="alert">It&apos;s a Draw!</div>
+            <div class="tic-tac-toe-board">
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell">O</div>
+                <div class="tic-tac-toe-cell">X</div>
+                <div class="tic-tac-toe-cell">X</div>
+            </div>
+            <button class="btn btn-primary mt-3">Play Again</button>
+            <button class="btn btn-secondary mt-3">Back to Home</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 6: Hangman Game Page - In Progress -->
+    <h2>State 6: Hangman Game Page - In Progress</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .hangman-display { letter-spacing: 0.5em; font-size: 1.5rem; font-family: monospace; margin-bottom: 15px; }
+            .hangman-graphic { width: 150px; height: 200px; border: 1px solid #ccc; margin: 15px auto; position: relative; background-color: #f8f9fa;}
+            /* Placeholder graphic elements */
+            .hangman-graphic::before { content: ""; position: absolute; bottom: 10px; left: 10px; right: 10px; height: 5px; background: #8B4513; } /* Base */
+            .hangman-graphic::after { content: ""; position: absolute; bottom: 10px; left: 25px; width: 5px; top: 10px; background: #8B4513; } /* Pole */
+            .hangman-top { position: absolute; top: 10px; left: 25px; right: 50px; height: 5px; background: #8B4513; } /* Top bar */
+            .hangman-rope { position: absolute; top: 10px; right: 50px; width: 5px; height: 30px; background: #8B4513; } /* Rope */
+            .hangman-head { position: absolute; top: 40px; right: 37.5px; width: 30px; height: 30px; border: 3px solid black; border-radius: 50%; } /* Head */
+            .hangman-body { position: absolute; top: 70px; right: 50px; width: 5px; height: 50px; background: black;} /* Body */
+            .hangman-guesses { margin-top: 10px; font-style: italic; color: #6c757d; }
+            .hangman-letters button { margin: 2px; width: 35px; }
+        </style>
+        <title>Hangman</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Hangman</h2>
+            <div class="hangman-graphic">
+                <div class="hangman-top"></div>
+                <div class="hangman-rope"></div>
+                <div class="hangman-head"></div>
+                <div class="hangman-body"></div>
+                <!-- Add more parts for incorrect guesses -->
+            </div>
+            <p>Remaining Guesses: 4</p>
+            <div class="hangman-display">B _ _ T S T R _ P</div>
+            <div class="hangman-guesses">Guessed letters: A, E, I, O, U, S, T, R, P</div>
+            <div class="mb-3">
+                <label for="guessInput" class="form-label">Guess a letter:</label>
+                <input type="text" class="form-control w-25 mx-auto" id="guessInput" maxlength="1" pattern="[A-Za-z]">
+                <button type="submit" class="btn btn-primary mt-2">Guess</button>
+            </div>
+             <div class="hangman-letters d-none d-lg-block">
+                <p>Or click a letter:</p>
+                <!-- Add buttons for letters A-Z -->
+                <button class="btn btn-outline-secondary" disabled>A</button>
+                <button class="btn btn-outline-primary">B</button>
+                <button class="btn btn-outline-primary">C</button>
+                <button class="btn btn-outline-primary">D</button>
+                <button class="btn btn-outline-secondary" disabled>E</button>
+                <button class="btn btn-outline-primary">F</button>
+                 ... (more letters) ...
+                 <button class="btn btn-outline-primary">Z</button>
+            </div>
+            <button class="btn btn-secondary mt-3">Reset Game</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 7: Hangman Game Page - Player Wins -->
+    <h2>State 7: Hangman Game Page - Player Wins</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style>
+            .hangman-display { letter-spacing: 0.5em; font-size: 1.5rem; font-family: monospace; margin-bottom: 15px; }
+            .hangman-graphic { width: 150px; height: 200px; border: 1px solid #ccc; margin: 15px auto; position: relative; background-color: #f8f9fa;}
+            .hangman-graphic::before { content: ""; position: absolute; bottom: 10px; left: 10px; right: 10px; height: 5px; background: #8B4513; } /* Base */
+            .hangman-graphic::after { content: ""; position: absolute; bottom: 10px; left: 25px; width: 5px; top: 10px; background: #8B4513; } /* Pole */
+            .hangman-top { position: absolute; top: 10px; left: 25px; right: 50px; height: 5px; background: #8B4513; } /* Top bar */
+        </style>
+        <title>Hangman - You Win!</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Hangman</h2>
+             <div class="hangman-graphic">
+                 <!-- Empty or simplified graphic for win state -->
+                <div style="font-size: 5rem; padding-top: 50px;">🎉</div>
+             </div>
+            <div class="alert alert-success" role="alert">Congratulations! You guessed the word!</div>
+            <div class="hangman-display">BOOTSTRAP</div>
+            <button class="btn btn-primary mt-3">Play Again</button>
+            <button class="btn btn-secondary mt-3">Back to Home</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 8: Hangman Game Page - Player Loses -->
+    <h2>State 8: Hangman Game Page - Player Loses</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .hangman-display { letter-spacing: 0.5em; font-size: 1.5rem; font-family: monospace; margin-bottom: 15px; }
+            .hangman-graphic { width: 150px; height: 200px; border: 1px solid #ccc; margin: 15px auto; position: relative; background-color: #f8f9fa;}
+            /* Full hangman graphic */
+            .hangman-graphic::before { content: ""; position: absolute; bottom: 10px; left: 10px; right: 10px; height: 5px; background: #8B4513; }
+            .hangman-graphic::after { content: ""; position: absolute; bottom: 10px; left: 25px; width: 5px; top: 10px; background: #8B4513; }
+            .hangman-top { position: absolute; top: 10px; left: 25px; right: 50px; height: 5px; background: #8B4513; }
+            .hangman-rope { position: absolute; top: 10px; right: 50px; width: 5px; height: 30px; background: #8B4513; }
+            .hangman-head { position: absolute; top: 40px; right: 37.5px; width: 30px; height: 30px; border: 3px solid black; border-radius: 50%; background: #fff;}
+            .hangman-body { position: absolute; top: 70px; right: 50px; width: 5px; height: 50px; background: black;}
+            .hangman-arm-l { position: absolute; top: 80px; right: 55px; width: 30px; height: 5px; background: black; transform: rotate(45deg); }
+            .hangman-arm-r { position: absolute; top: 80px; right: 20px; width: 30px; height: 5px; background: black; transform: rotate(-45deg); }
+            .hangman-leg-l { position: absolute; top: 115px; right: 55px; width: 30px; height: 5px; background: black; transform: rotate(45deg); }
+            .hangman-leg-r { position: absolute; top: 115px; right: 20px; width: 30px; height: 5px; background: black; transform: rotate(-45deg); }
+        </style>
+        <title>Hangman - Game Over</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Hangman</h2>
+             <div class="hangman-graphic">
+                <div class="hangman-top"></div><div class="hangman-rope"></div><div class="hangman-head"></div><div class="hangman-body"></div><div class="hangman-arm-l"></div><div class="hangman-arm-r"></div><div class="hangman-leg-l"></div><div class="hangman-leg-r"></div>
+            </div>
+            <div class="alert alert-danger" role="alert">Game Over! You ran out of guesses.</div>
+            <p>The word was:</p>
+            <div class="hangman-display">BOOTSTRAP</div>
+            <button class="btn btn-primary mt-3">Play Again</button>
+            <button class="btn btn-secondary mt-3">Back to Home</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 9: Hangman Game Page - Input Error -->
+    <h2>State 9: Hangman Game Page - Input Error</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .hangman-display { letter-spacing: 0.5em; font-size: 1.5rem; font-family: monospace; margin-bottom: 15px; }
+            .hangman-graphic { width: 150px; height: 200px; border: 1px solid #ccc; margin: 15px auto; position: relative; background-color: #f8f9fa;}
+            .hangman-graphic::before { content: ""; position: absolute; bottom: 10px; left: 10px; right: 10px; height: 5px; background: #8B4513; }
+            .hangman-graphic::after { content: ""; position: absolute; bottom: 10px; left: 25px; width: 5px; top: 10px; background: #8B4513; }
+            .hangman-top { position: absolute; top: 10px; left: 25px; right: 50px; height: 5px; background: #8B4513; }
+            .hangman-rope { position: absolute; top: 10px; right: 50px; width: 5px; height: 30px; background: #8B4513; }
+            .hangman-head { position: absolute; top: 40px; right: 37.5px; width: 30px; height: 30px; border: 3px solid black; border-radius: 50%; }
+            .hangman-body { position: absolute; top: 70px; right: 50px; width: 5px; height: 50px; background: black;}
+            .hangman-guesses { margin-top: 10px; font-style: italic; color: #6c757d; }
+            .hangman-letters button { margin: 2px; width: 35px; }
+            .is-invalid { border-color: #dc3545 !important; } /* Bootstrap class for errors */
+            .invalid-feedback { display: block; /* Make feedback visible */ }
+        </style>
+        <title>Hangman</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Game Center</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link" href="#">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container mt-4 text-center">
+            <h2>Hangman</h2>
+             <div class="hangman-graphic">
+                <div class="hangman-top"></div><div class="hangman-rope"></div><div class="hangman-head"></div><div class="hangman-body"></div>
+            </div>
+            <p>Remaining Guesses: 4</p>
+            <div class="hangman-display">B _ _ T S T R _ P</div>
+            <div class="hangman-guesses">Guessed letters: A, E, I, O, U, S, T, R, P</div>
+            <div class="mb-3">
+                <label for="guessInput" class="form-label">Guess a letter:</label>
+                <input type="text" class="form-control w-25 mx-auto is-invalid" id="guessInput" maxlength="1" pattern="[A-Za-z]" value="S"> <!-- Error state -->
+                <div class="invalid-feedback">
+                  You already guessed &apos;S&apos;. Please try a different letter.
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Guess</button>
+            </div>
+            <div class="hangman-letters d-none d-lg-block">
+                 <p>Or click a letter:</p>
+                 <button class="btn btn-outline-secondary" disabled>A</button>
+                 <button class="btn btn-outline-primary">B</button>
+                 <button class="btn btn-outline-primary">C</button>
+                 <button class="btn btn-outline-primary">D</button>
+                 <button class="btn btn-outline-secondary" disabled>E</button>
+                 ... (more letters) ...
+                 <button class="btn btn-outline-secondary" disabled>S</button>
+                 ...
+                 <button class="btn btn-outline-primary">Z</button>
+            </div>
+            <button class="btn btn-secondary mt-3">Reset Game</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

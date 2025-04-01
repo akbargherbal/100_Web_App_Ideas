@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h1, h2 { text-align: center; margin-bottom: 30px; }
+        iframe { width: 100%; height: 600px; border: 1px solid #dee2e6; margin-bottom: 30px; background-color: #fff; }
+    </style>
+</head>
+<body>
+
+    <h1>Stock Market Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Home - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <div class='p-5 mb-4 bg-light rounded-3'>
+                    <div class='container-fluid py-5'>
+                        <h1 class='display-5 fw-bold'>Track Your Investments</h1>
+                        <p class='col-md-8 fs-4'>Monitor stock prices, analyze market trends, and manage your portfolio performance with ease.</p>
+                        <a href='#' class='btn btn-primary btn-lg' type='button'>Get Started</a>
+                        <a href='#' class='btn btn-outline-secondary btn-lg ms-2' type='button'>Learn More</a>
+                    </div>
+                </div>
+
+                <div class='row align-items-md-stretch'>
+                    <div class='col-md-6'>
+                        <div class='h-100 p-5 text-white bg-primary rounded-3'>
+                            <h2>Real-Time Data</h2>
+                            <p>Access up-to-the-minute stock quotes and market information from major exchanges worldwide.</p>
+                        </div>
+                    </div>
+                    <div class='col-md-6'>
+                        <div class='h-100 p-5 bg-light border rounded-3'>
+                            <h2>Portfolio Management</h2>
+                            <p>Track your holdings, view performance charts, and analyze your investment strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>About - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <h1 class='mb-4'>About Stock Market Tracker</h1>
+                <p class='lead'>Our mission is to provide retail investors with powerful, easy-to-use tools for tracking the stock market and managing their portfolios effectively.</p>
+                <hr>
+                <h2>Our Vision</h2>
+                <p>We believe that everyone should have access to high-quality financial data and analysis tools, regardless of their experience level. Stock Market Tracker aims to democratize financial information and empower individuals to make informed investment decisions.</p>
+                <h2>Features</h2>
+                <ul>
+                    <li>Real-time stock quotes and charts</li>
+                    <li>Customizable watchlists</li>
+                    <li>Detailed portfolio tracking and performance analysis</li>
+                    <li>Market news and insights</li>
+                    <li>User-friendly interface</li>
+                </ul>
+
+                 <h2>Contact Us</h2>
+                 <p>If you have any questions or feedback, please feel free to reach out to us at support@stocktrackerexample.com.</p>
+            </div>
+
+            <footer class='py-3 my-4 fixed-bottom bg-light'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 3: Registration Page -->
+    <h2>State 3: Registration Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Register - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2 active' aria-current='page' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-md-6'>
+                        <div class='card'>
+                            <div class='card-header text-center'>
+                                <h2>Create Account</h2>
+                            </div>
+                            <div class='card-body'>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='registerName' class='form-label'>Full Name</label>
+                                        <input type='text' class='form-control' id='registerName' placeholder='John Doe' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='registerEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control' id='registerEmail' placeholder='name@example.com' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='registerPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control' id='registerPassword' required>
+                                    </div>
+                                     <div class='mb-3'>
+                                        <label for='registerConfirmPassword' class='form-label'>Confirm Password</label>
+                                        <input type='password' class='form-control' id='registerConfirmPassword' required>
+                                    </div>
+                                    <div class='d-grid'>
+                                        <button type='submit' class='btn btn-primary'>Register</button>
+                                    </div>
+                                </form>
+                                <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 4: Registration Page (Validation Error) -->
+    <h2>State 4: Registration Page (Validation Error)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Register Error - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2 active' aria-current='page' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-md-6'>
+                        <div class='card'>
+                            <div class='card-header text-center'>
+                                <h2>Create Account</h2>
+                            </div>
+                            <div class='card-body'>
+                                <div class='alert alert-danger' role='alert'>
+                                  Please correct the errors below.
+                                </div>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='registerName' class='form-label'>Full Name</label>
+                                        <input type='text' class='form-control' id='registerName' placeholder='John Doe' value='John Doe' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='registerEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control is-invalid' id='registerEmail' placeholder='name@example.com' value='invalid-email' required>
+                                        <div class='invalid-feedback'>
+                                            Please provide a valid email address.
+                                        </div>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='registerPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control is-invalid' id='registerPassword' value='short' required>
+                                         <div class='invalid-feedback'>
+                                            Password must be at least 8 characters long.
+                                        </div>
+                                    </div>
+                                     <div class='mb-3'>
+                                        <label for='registerConfirmPassword' class='form-label'>Confirm Password</label>
+                                        <input type='password' class='form-control is-invalid' id='registerConfirmPassword' value='mismatch' required>
+                                         <div class='invalid-feedback'>
+                                            Passwords do not match.
+                                        </div>
+                                    </div>
+                                    <div class='d-grid'>
+                                        <button type='submit' class='btn btn-primary'>Register</button>
+                                    </div>
+                                </form>
+                                <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-md-6'>
+                        <div class='card'>
+                            <div class='card-header text-center'>
+                                <h2>Login</h2>
+                            </div>
+                            <div class='card-body'>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='loginEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control' id='loginEmail' placeholder='name@example.com' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='loginPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control' id='loginPassword' required>
+                                    </div>
+                                     <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                        <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                    </div>
+                                    <div class='d-grid'>
+                                        <button type='submit' class='btn btn-primary'>Login</button>
+                                    </div>
+                                </form>
+                                <p class='mt-3 text-center'>Don't have an account? <a href='#'>Register here</a></p>
+                                <p class='mt-1 text-center'><a href='#'>Forgot password?</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 6: Login Page (Error) -->
+    <h2>State 6: Login Page (Error)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Login Error - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                         <ul class='navbar-nav ms-auto'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Login</a></li>
+                            <li class='nav-item'><a class='btn btn-primary ms-2' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-md-6'>
+                        <div class='card'>
+                            <div class='card-header text-center'>
+                                <h2>Login</h2>
+                            </div>
+                            <div class='card-body'>
+                                <div class='alert alert-danger' role='alert'>
+                                  Invalid email or password. Please try again.
+                                </div>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='loginEmail' class='form-label'>Email address</label>
+                                        <input type='email' class='form-control is-invalid' id='loginEmail' placeholder='name@example.com' required>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='loginPassword' class='form-label'>Password</label>
+                                        <input type='password' class='form-control is-invalid' id='loginPassword' required>
+                                    </div>
+                                     <div class='mb-3 form-check'>
+                                        <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                        <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                    </div>
+                                    <div class='d-grid'>
+                                        <button type='submit' class='btn btn-primary'>Login</button>
+                                    </div>
+                                </form>
+                                <p class='mt-3 text-center'>Don't have an account? <a href='#'>Register here</a></p>
+                                <p class='mt-1 text-center'><a href='#'>Forgot password?</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 7: Dashboard / Home Page (Logged In) -->
+    <h2>State 7: Dashboard / Home Page (Logged In)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Dashboard - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Search Stocks</a></li>
+                             <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <form class='d-flex me-3' role='search'>
+                            <input class='form-control me-2' type='search' placeholder='Search Symbol (e.g., AAPL)' aria-label='Search'>
+                            <button class='btn btn-outline-success' type='submit'>Search</button>
+                        </form>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                 <h1 class='mb-4'>Dashboard</h1>
+                 <div class='row'>
+                    <!-- Portfolio Summary -->
+                    <div class='col-md-6 mb-4'>
+                        <div class='card'>
+                            <div class='card-header'>Portfolio Summary</div>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Total Value: $15,850.75</h5>
+                                <p class='card-text text-success'>Today's Gain/Loss: +$120.50 (+0.77%)</p>
+                                <p class='card-text'>Total Gain/Loss: +$1,850.75 (+13.22%)</p>
+                                <a href='#' class='btn btn-primary'>View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Market Overview -->
+                    <div class='col-md-6 mb-4'>
+                        <div class='card'>
+                            <div class='card-header'>Market Overview</div>
+                            <ul class='list-group list-group-flush'>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    Dow Jones
+                                    <span>34,500.10 <span class='text-danger'>-150.20 (-0.43%)</span></span>
+                                </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    S&P 500
+                                    <span>4,400.50 <span class='text-success'>+10.80 (+0.25%)</span></span>
+                                </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    Nasdaq
+                                    <span>13,750.90 <span class='text-success'>+80.15 (+0.58%)</span></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class='row'>
+                    <!-- Watchlist -->
+                    <div class='col-12 mb-4'>
+                        <div class='card'>
+                            <div class='card-header'>My Watchlist</div>
+                             <div class='table-responsive'>
+                                <table class='table table-hover mb-0'>
+                                    <thead>
+                                        <tr>
+                                            <th>Symbol</th>
+                                            <th>Name</th>
+                                            <th>Last Price</th>
+                                            <th>Change</th>
+                                            <th>% Change</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>AAPL</td>
+                                            <td>Apple Inc.</td>
+                                            <td>$175.50</td>
+                                            <td class='text-success'>+$1.20</td>
+                                            <td class='text-success'>+0.69%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GOOGL</td>
+                                            <td>Alphabet Inc.</td>
+                                            <td>$135.80</td>
+                                            <td class='text-danger'>-$0.45</td>
+                                            <td class='text-danger'>-0.33%</td>
+                                        </tr>
+                                         <tr>
+                                            <td>MSFT</td>
+                                            <td>Microsoft Corp.</td>
+                                            <td>$330.10</td>
+                                            <td class='text-success'>+$2.50</td>
+                                            <td class='text-success'>+0.76%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                             <div class='card-footer text-end'>
+                                <a href='#' class='btn btn-sm btn-secondary'>Edit Watchlist</a>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 8: Stock Search Results Page -->
+    <h2>State 8: Stock Search Results Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Search Results - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Search Stocks</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <form class='d-flex me-3' role='search'>
+                            <input class='form-control me-2' type='search' placeholder='Search Symbol (e.g., AAPL)' value='Micro' aria-label='Search'>
+                            <button class='btn btn-outline-success' type='submit'>Search</button>
+                        </form>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <h1>Search Results for 'Micro'</h1>
+                <p>Found 3 matching results.</p>
+
+                 <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Company Name</th>
+                            <th>Exchange</th>
+                            <th>Last Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MSFT</td>
+                            <td>Microsoft Corporation</td>
+                            <td>NASDAQ</td>
+                            <td>$330.10</td>
+                            <td><a href='#' class='btn btn-sm btn-info'>View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>MU</td>
+                            <td>Micron Technology, Inc.</td>
+                            <td>NASDAQ</td>
+                            <td>$68.50</td>
+                            <td><a href='#' class='btn btn-sm btn-info'>View Details</a></td>
+                        </tr>
+                         <tr>
+                            <td>AMD</td>
+                            <td>Advanced Micro Devices, Inc.</td>
+                            <td>NASDAQ</td>
+                            <td>$105.20</td>
+                             <td><a href='#' class='btn btn-sm btn-info'>View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- No results found state (alternative content) -->
+                <!--
+                <div class='alert alert-warning mt-4' role='alert'>
+                  No stocks found matching your search criteria 'XYZABC'. Please try a different symbol or company name.
+                </div>
+                -->
+
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 9: Stock Details Page -->
+    <h2>State 9: Stock Details Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>AAPL Details - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Search Stocks</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <form class='d-flex me-3' role='search'>
+                            <input class='form-control me-2' type='search' placeholder='Search Symbol (e.g., AAPL)' aria-label='Search'>
+                            <button class='btn btn-outline-success' type='submit'>Search</button>
+                        </form>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <div>
+                        <h1>Apple Inc. (AAPL)</h1>
+                        <p class='lead'>NASDAQ</p>
+                    </div>
+                    <div>
+                         <button type='button' class='btn btn-outline-secondary'>+ Add to Watchlist</button>
+                         <button type='button' class='btn btn-success ms-2'>+ Add to Portfolio</button>
+                    </div>
+                </div>
+
+
+                <div class='mb-4 p-3 bg-light rounded'>
+                    <span class='fs-3 me-3'>$175.50</span>
+                    <span class='fs-5 text-success'>+$1.20 (+0.69%)</span>
+                    <span class='text-muted ms-3'>As of Oct 26, 2023, 4:00 PM EDT</span>
+                </div>
+
+                 <div class='row'>
+                    <div class='col-lg-8 mb-4'>
+                        <div class='card'>
+                            <div class='card-header'>Price Chart</div>
+                            <div class='card-body'>
+                                <!-- Placeholder for Chart -->
+                                <div style='height: 300px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;'>
+                                    <p class='text-muted'>Stock Chart Placeholder</p>
+                                </div>
+                                <div class='mt-2 text-center'>
+                                    <button class='btn btn-sm btn-outline-secondary'>1D</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>5D</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>1M</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>6M</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>YTD</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>1Y</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>5Y</button>
+                                    <button class='btn btn-sm btn-outline-secondary'>Max</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 mb-4'>
+                         <div class='card'>
+                            <div class='card-header'>Key Statistics</div>
+                            <ul class='list-group list-group-flush'>
+                                <li class='list-group-item d-flex justify-content-between'><span>Previous Close:</span> <span>$174.30</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>Open:</span> <span>$174.80</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>Day's Range:</span> <span>$174.50 - $176.00</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>52 Week Range:</span> <span>$124.17 - $198.23</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>Volume:</span> <span>55,123,456</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>Market Cap:</span> <span>$2.75T</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>P/E Ratio:</span> <span>29.50</span></li>
+                                <li class='list-group-item d-flex justify-content-between'><span>Dividend Yield:</span> <span>0.55%</span></li>
+                            </ul>
+                         </div>
+                    </div>
+                 </div>
+
+                 <div class='row'>
+                    <div class='col-12'>
+                        <h2>Recent News</h2>
+                         <div class='list-group'>
+                              <a href='#' class='list-group-item list-group-item-action'>
+                                <div class='d-flex w-100 justify-content-between'>
+                                  <h5 class='mb-1'>Apple Announces Quarterly Earnings</h5>
+                                  <small>3 days ago</small>
+                                </div>
+                                <p class='mb-1'>Apple reported strong earnings, beating analyst expectations...</p>
+                                <small>Source: Financial News Site</small>
+                              </a>
+                              <a href='#' class='list-group-item list-group-item-action'>
+                                <div class='d-flex w-100 justify-content-between'>
+                                  <h5 class='mb-1'>New iPhone Sales Drive Growth</h5>
+                                  <small class='text-muted'>5 days ago</small>
+                                </div>
+                                <p class='mb-1'>Analysts point to the success of the latest iPhone model...</p>
+                                <small class='text-muted'>Source: Tech News Outlet</small>
+                              </a>
+                            </div>
+                    </div>
+                 </div>
+
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 10: Portfolio Page -->
+    <h2>State 10: Portfolio Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>My Portfolio - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Search Stocks</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <form class='d-flex me-3' role='search'>
+                            <input class='form-control me-2' type='search' placeholder='Search Symbol (e.g., AAPL)' aria-label='Search'>
+                            <button class='btn btn-outline-success' type='submit'>Search</button>
+                        </form>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <h1>My Portfolio</h1>
+                     <button class='btn btn-primary'>+ Add Transaction</button>
+                </div>
+
+                 <div class='card mb-4'>
+                     <div class='card-body'>
+                        <div class='row text-center'>
+                            <div class='col-md-3'>
+                                <h5>Total Value</h5>
+                                <p class='fs-4'>$15,850.75</p>
+                            </div>
+                            <div class='col-md-3'>
+                                <h5>Day Gain/Loss</h5>
+                                <p class='fs-4 text-success'>+$120.50 (+0.77%)</p>
+                            </div>
+                             <div class='col-md-3'>
+                                <h5>Total Gain/Loss</h5>
+                                <p class='fs-4 text-success'>+$1,850.75 (+13.22%)</p>
+                            </div>
+                             <div class='col-md-3'>
+                                <h5>Total Cost Basis</h5>
+                                <p class='fs-4'>$14,000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Holdings</h2>
+                 <div class='table-responsive'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Shares</th>
+                                <th>Avg. Cost</th>
+                                <th>Last Price</th>
+                                <th>Market Value</th>
+                                <th>Day Gain/Loss</th>
+                                <th>Total Gain/Loss</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AAPL</td>
+                                <td>50</td>
+                                <td>$150.00</td>
+                                <td>$175.50</td>
+                                <td>$8,775.00</td>
+                                <td class='text-success'>+$60.00 (+0.69%)</td>
+                                <td class='text-success'>+$1,275.00 (+17.00%)</td>
+                                <td>
+                                    <button class='btn btn-sm btn-outline-secondary'>Edit</button>
+                                    <button class='btn btn-sm btn-outline-danger ms-1'>Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MSFT</td>
+                                <td>15</td>
+                                <td>$300.00</td>
+                                <td>$330.10</td>
+                                <td>$4,951.50</td>
+                                <td class='text-success'>+$37.50 (+0.76%)</td>
+                                <td class='text-success'>+$451.50 (+10.03%)</td>
+                                 <td>
+                                    <button class='btn btn-sm btn-outline-secondary'>Edit</button>
+                                    <button class='btn btn-sm btn-outline-danger ms-1'>Remove</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>GOOGL</td>
+                                <td>15</td>
+                                <td>$140.00</td>
+                                <td>$135.80</td>
+                                <td>$2,037.00</td>
+                                <td class='text-danger'>-$6.75 (-0.33%)</td>
+                                <td class='text-danger'>-$63.00 (-3.00%)</td>
+                                 <td>
+                                    <button class='btn btn-sm btn-outline-secondary'>Edit</button>
+                                    <button class='btn btn-sm btn-outline-danger ms-1'>Remove</button>
+                                </td>
+                            </tr>
+                             <tr>
+                               <td>Cash</td>
+                               <td>-</td>
+                               <td>-</td>
+                               <td>-</td>
+                               <td>$87.25</td>
+                               <td>-</td>
+                               <td>-</td>
+                               <td>-</td>
+                             </tr>
+                        </tbody>
+                         <tfoot>
+                            <tr class='fw-bold table-light'>
+                                <td colspan='4' class='text-end'>Totals:</td>
+                                <td>$15,850.75</td>
+                                <td class='text-success'>+$90.75</td> <!-- Sum of row day gains -->
+                                <td class='text-success'>+$1,663.50</td> <!-- Sum of row total gains -->
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 11: Add Transaction Form (within Portfolio) -->
+    <h2>State 11: Add Transaction Form</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Add Transaction - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Search Stocks</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+             <div class='container mt-5'>
+                <div class='row justify-content-center'>
+                    <div class='col-md-8'>
+                        <div class='card'>
+                           <div class='card-header'>
+                                <h2>Add New Transaction</h2>
+                           </div>
+                            <div class='card-body'>
+                                <form>
+                                    <div class='mb-3'>
+                                        <label for='transactionType' class='form-label'>Transaction Type</label>
+                                        <select class='form-select' id='transactionType' required>
+                                            <option selected disabled value=''>Choose...</option>
+                                            <option value='buy'>Buy</option>
+                                            <option value='sell'>Sell</option>
+                                            <option value='dividend'>Dividend</option>
+                                            <option value='deposit'>Deposit Cash</option>
+                                            <option value='withdraw'>Withdraw Cash</option>
+                                        </select>
+                                    </div>
+
+                                    <div class='mb-3'>
+                                        <label for='stockSymbol' class='form-label'>Stock Symbol</label>
+                                        <input type='text' class='form-control text-uppercase' id='stockSymbol' placeholder='e.g., AAPL'>
+                                        <div class='form-text'>Required for Buy/Sell/Dividend transactions.</div>
+                                    </div>
+
+                                    <div class='row g-3 mb-3'>
+                                        <div class='col-md-6'>
+                                            <label for='quantity' class='form-label'>Quantity / Amount</label>
+                                            <input type='number' step='any' class='form-control' id='quantity' placeholder='e.g., 10 or 100.50'>
+                                            <div class='form-text'>Number of shares or cash amount for Deposit/Withdraw.</div>
+                                        </div>
+                                        <div class='col-md-6'>
+                                             <label for='price' class='form-label'>Price Per Share</label>
+                                             <div class='input-group'>
+                                                <span class='input-group-text'>$</span>
+                                                <input type='number' step='0.01' class='form-control' id='price' placeholder='e.g., 175.50'>
+                                             </div>
+                                             <div class='form-text'>Required for Buy/Sell transactions.</div>
+                                        </div>
+                                    </div>
+
+                                     <div class='row g-3 mb-3'>
+                                        <div class='col-md-6'>
+                                            <label for='transactionDate' class='form-label'>Transaction Date</label>
+                                            <input type='date' class='form-control' id='transactionDate' required>
+                                        </div>
+                                         <div class='col-md-6'>
+                                             <label for='commission' class='form-label'>Commission/Fees</label>
+                                              <div class='input-group'>
+                                                <span class='input-group-text'>$</span>
+                                                <input type='number' step='0.01' class='form-control' id='commission' placeholder='e.g., 4.95' value='0.00'>
+                                              </div>
+                                        </div>
+                                    </div>
+
+                                     <div class='mb-3'>
+                                        <label for='notes' class='form-label'>Notes (Optional)</label>
+                                        <textarea class='form-control' id='notes' rows='3'></textarea>
+                                    </div>
+
+                                    <div class='d-flex justify-content-end'>
+                                         <button type='button' class='btn btn-secondary me-2'>Cancel</button>
+                                         <button type='submit' class='btn btn-primary'>Add Transaction</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 12: Account Settings Page -->
+    <h2>State 12: Account Settings Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Account Settings - Stock Market Tracker</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Stock Tracker</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                           <li class='nav-item'><a class='nav-link' href='#'>Dashboard</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Portfolio</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Search Stocks</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle active' href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false' aria-current='page'>
+                                    John Doe
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end'>
+                                    <li><a class='dropdown-item active' href='#'>Account Settings</a></li>
+                                    <li><hr class='dropdown-divider'></li>
+                                    <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <h1>Account Settings</h1>
+                <hr>
+
+                <div class='row'>
+                    <div class='col-md-8'>
+                       <!-- Profile Information -->
+                        <h2 class='h4'>Profile Information</h2>
+                        <form class='mb-4'>
+                            <div class='mb-3'>
+                                <label for='profileName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='profileName' value='John Doe' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='profileEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='profileEmail' value='john.doe@example.com' required>
+                            </div>
+
+                            <button type='submit' class='btn btn-primary'>Update Profile</button>
+                            <div class='mt-2'>
+                                <div class='alert alert-success d-none' role='alert'>Profile updated successfully!</div> <!-- Placeholder for success message -->
+                            </div>
+                        </form>
+
+                         <!-- Change Password -->
+                        <h2 class='h4 mt-5'>Change Password</h2>
+                        <form class=mb-4>
+                             <div class='mb-3'>
+                                <label for='currentPassword' class='form-label'>Current Password</label>
+                                <input type='password' class='form-control' id='currentPassword' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='newPassword' class='form-label'>New Password</label>
+                                <input type='password' class='form-control' id='newPassword' required>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='confirmNewPassword' class='form-label'>Confirm New Password</label>
+                                <input type='password' class='form-control' id='confirmNewPassword' required>
+                            </div>
+                             <button type='submit' class='btn btn-primary'>Change Password</button>
+                             <div class='mt-2'>
+                                <div class='alert alert-danger d-none' role='alert'>Password update failed. Please check your input.</div> <!-- Placeholder for error message -->
+                             </div>
+                        </form>
+
+                        <!-- Preferences -->
+                        <h2 class='h4 mt-5'>Preferences</h2>
+                         <form class='mb-4'>
+                            <div class='mb-3 form-check form-switch'>
+                              <input class='form-check-input' type='checkbox' role='switch' id='emailNotifications' checked>
+                              <label class='form-check-label' for='emailNotifications'>Enable Email Notifications (e.g., price alerts)</label>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='defaultCurrency' class='form-label'>Default Currency</label>
+                                <select class='form-select' id='defaultCurrency'>
+                                    <option value='USD' selected>USD - United States Dollar</option>
+                                    <option value='EUR'>EUR - Euro</option>
+                                    <option value='GBP'>GBP - British Pound</option>
+                                     <option value='CAD'>CAD - Canadian Dollar</option>
+                                </select>
+                            </div>
+                             <button type='submit' class='btn btn-primary'>Save Preferences</button>
+                         </form>
+
+                    </div>
+                    <div class='col-md-4'>
+                        <!-- Account Actions -->
+                         <div class='card'>
+                             <div class='card-header'>Account Actions</div>
+                             <div class='list-group list-group-flush'>
+                                <a href='#' class='list-group-item list-group-item-action text-danger'>Delete Account</a>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <footer class='py-3 my-4'>
+                <p class='text-center text-muted'>© 2023 Stock Market Tracker, Inc</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+</body>
+</html>

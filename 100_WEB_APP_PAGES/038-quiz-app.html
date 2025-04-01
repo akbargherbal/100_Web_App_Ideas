@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 40px;
+            color: #6c757d;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #dee2e6;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        /* Basic styles for content within iframes */
+        .iframe-content {
+            padding: 20px;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz App - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <div class="p-5 mb-4 bg-light rounded-3">
+              <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to QuizApp!</h1>
+                <p class="col-md-8 fs-4">Create, share, and take fun quizzes on any topic. Test your knowledge or discover your personality type.</p>
+                <a href="#" class="btn btn-primary btn-lg me-2">Browse Quizzes</a>
+                <a href="#" class="btn btn-secondary btn-lg">Create a Quiz</a>
+              </div>
+            </div>
+
+            <h2 class="mt-5 mb-3">Featured Quizzes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Trivia+Quiz" class="card-img-top" alt="Trivia Quiz">
+                        <div class="card-body">
+                            <h5 class="card-title">General Knowledge Trivia</h5>
+                            <p class="card-text">How much do you know about everything?</p>
+                            <a href="#" class="btn btn-primary">Take Quiz</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Personality+Test" class="card-img-top" alt="Personality Test">
+                        <div class="card-body">
+                            <h5 class="card-title">What's Your Spirit Animal?</h5>
+                            <p class="card-text">Discover the animal that best represents you.</p>
+                            <a href="#" class="btn btn-primary">Take Quiz</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=History+Quiz" class="card-img-top" alt="History Quiz">
+                        <div class="card-body">
+                            <h5 class="card-title">World History Challenge</h5>
+                            <p class="card-text">Test your knowledge of historical events.</p>
+                            <a href="#" class="btn btn-primary">Take Quiz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>About QuizApp</h1>
+            <p class="lead">Your destination for fun and engaging quizzes!</p>
+            <hr>
+            <p>QuizApp is a platform designed for quiz enthusiasts. Whether you love testing your knowledge with trivia questions or exploring your personality through insightful tests, QuizApp has something for you. </p>
+            <p>Our mission is to provide an easy-to-use interface for both creating and taking quizzes. Share your creations with friends, challenge yourself, or simply discover something new.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Create diverse quizzes: Trivia, Personality, and more.</li>
+                <li>Browse a wide range of quizzes created by the community.</li>
+                <li>Track your scores and results.</li>
+                <li>Easy sharing options.</li>
+                <li>Clean and intuitive user interface.</li>
+            </ul>
+            <p>Thank you for visiting QuizApp. We hope you enjoy your time here!</p>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 3: Browse Quizzes Page -->
+    <h2>State 3: Browse Quizzes Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Browse Quizzes</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .search-bar { margin-bottom: 20px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Browse Quizzes</h1>
+            <div class="row search-bar">
+               <div class="col-md-8">
+                 <input type="text" class="form-control" placeholder="Search quizzes...">
+               </div>
+               <div class="col-md-4">
+                  <select class="form-select">
+                      <option selected>Filter by Category...</option>
+                      <option value="1">Trivia</option>
+                      <option value="2">Personality</option>
+                      <option value="3">History</option>
+                      <option value="4">Science</option>
+                      <option value="5">Entertainment</option>
+                  </select>
+               </div>
+            </div>
+
+            <div class="row">
+                <!-- Repeat card structure for each quiz -->
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Quiz+1" class="card-img-top" alt="Quiz 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Advanced Science Trivia</h5>
+                            <p class="card-text">Think you know science? Test your limits.</p>
+                            <span class="badge bg-secondary me-1">Trivia</span> <span class="badge bg-info">Science</span>
+                            <a href="#" class="btn btn-primary mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Quiz+2" class="card-img-top" alt="Quiz 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Which Movie Character Are You?</h5>
+                            <p class="card-text">Find out which iconic movie character matches your personality.</p>
+                             <span class="badge bg-secondary me-1">Personality</span> <span class="badge bg-warning">Entertainment</span>
+                            <a href="#" class="btn btn-primary mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Quiz+3" class="card-img-top" alt="Quiz 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Ancient Civilizations Quiz</h5>
+                            <p class="card-text">Journey back in time and test your history knowledge.</p>
+                             <span class="badge bg-secondary me-1">Trivia</span> <span class="badge bg-success">History</span>
+                            <a href="#" class="btn btn-primary mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x150?text=Quiz+4" class="card-img-top" alt="Quiz 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Pop Music Trivia (2000s)</h5>
+                            <p class="card-text">Relive the hits of the early 2000s!</p>
+                             <span class="badge bg-secondary me-1">Trivia</span> <span class="badge bg-warning">Entertainment</span>
+                            <a href="#" class="btn btn-primary mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more quiz cards here -->
+            </div>
+             <!-- Pagination -->
+             <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center mt-4">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 4: Quiz Detail Page -->
+    <h2>State 4: Quiz Detail Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .quiz-image { max-width: 100%; height: auto; margin-bottom: 20px; max-height: 400px; object-fit: cover; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/600x400?text=Advanced+Science+Trivia" class="img-fluid rounded quiz-image" alt="Quiz Image">
+                </div>
+                <div class="col-md-6">
+                    <h1>Advanced Science Trivia</h1>
+                    <p class="lead">Think you know science? Test your limits with these challenging questions covering physics, chemistry, and biology.</p>
+                    <hr>
+                    <p><strong>Category:</strong> Trivia / Science</p>
+                    <p><strong>Number of Questions:</strong> 15</p>
+                    <p><strong>Estimated Time:</strong> 10 minutes</p>
+                    <p><strong>Created by:</strong> ScienceBuff123</p>
+                    <a href="#" class="btn btn-success btn-lg w-100 mt-3">Start Quiz</a>
+                 </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 5: Quiz Taking Screen (Trivia) -->
+    <h2>State 5: Quiz Taking Screen (Trivia)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taking Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .question-card { margin-top: 30px; } .answer-option { margin-bottom: 10px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Science Trivia</a>
+                <span class="navbar-text text-light">Question 3 of 15</span>
+             </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <div class="progress mb-4" role="progressbar" aria-label="Quiz progress" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: 20%">20%</div>
+            </div>
+
+            <div class="card question-card">
+                <div class="card-header">
+                    Question 3
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">What is the chemical symbol for Gold?</h5>
+                    <form>
+                        <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q3_options" id="q3_option1" value="option1">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q3_option1">
+                            Go
+                          </label>
+                        </div>
+                        <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q3_options" id="q3_option2" value="option2">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q3_option2">
+                            Ag
+                          </label>
+                        </div>
+                         <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q3_options" id="q3_option3" value="option3">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q3_option3">
+                            Au
+                          </label>
+                        </div>
+                         <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q3_options" id="q3_option4" value="option4">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q3_option4">
+                            Gd
+                          </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 float-end">Next Question</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 6: Quiz Taking Screen (Personality) -->
+    <h2>State 6: Quiz Taking Screen (Personality)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taking Quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .question-card { margin-top: 30px; } .answer-option { margin-bottom: 10px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Spirit Animal</a>
+                 <span class="navbar-text text-light">Question 5 of 12</span>
+             </div>
+        </nav>
+
+        <div class="iframe-content container">
+             <div class="progress mb-4" role="progressbar" aria-label="Quiz progress" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: 41%">41%</div>
+            </div>
+
+            <div class="card question-card">
+                <div class="card-header">
+                    Question 5
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">When faced with a challenge, you tend to:</h5>
+                    <form>
+                        <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q5_options" id="q5_option1" value="option1">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q5_option1">
+                            Analyze it carefully before acting (Strongly Agree)
+                          </label>
+                        </div>
+                        <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q5_options" id="q5_option2" value="option2">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q5_option2">
+                            Analyze it carefully before acting (Agree)
+                          </label>
+                        </div>
+                         <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q5_options" id="q5_option3" value="option3">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q5_option3">
+                            React instinctively (Neutral)
+                          </label>
+                        </div>
+                         <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q5_options" id="q5_option4" value="option4">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q5_option4">
+                            React instinctively (Disagree)
+                          </label>
+                        </div>
+                        <div class="form-check answer-option">
+                          <input class="form-check-input" type="radio" name="q5_options" id="q5_option5" value="option5">
+                          <label class="form-check-label w-100 p-2 border rounded" for="q5_option5">
+                            React instinctively (Strongly Disagree)
+                          </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 float-end">Next Question</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 7: Quiz Results Page (Trivia) -->
+    <h2>State 7: Quiz Results Page (Trivia)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Results</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .results-summary { text-align: center; margin-bottom: 30px; } .answer-review { margin-top: 20px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <div class="results-summary">
+                <h1>Quiz Complete!</h1>
+                <h2>Advanced Science Trivia</h2>
+                <p class="display-4">Your Score: 12 / 15 (80%)</p>
+                <p class="lead">Well done! You have a good grasp of science concepts.</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-primary me-2">Retake Quiz</a>
+                    <a href="#" class="btn btn-success me-2">Share Results</a>
+                    <a href="#" class="btn btn-secondary">Browse More Quizzes</a>
+                </div>
+            </div>
+
+            <div class="answer-review">
+                <h3>Review Your Answers:</h3>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-success">Q1: Correct!</li>
+                  <li class="list-group-item list-group-item-success">Q2: Correct!</li>
+                  <li class="list-group-item list-group-item-danger">Q3: Incorrect. Your answer: Ag, Correct answer: Au</li>
+                  <li class="list-group-item list-group-item-success">Q4: Correct!</li>
+                  <li class="list-group-item list-group-item-danger">Q5: Incorrect. Your answer: Option B, Correct answer: Option C</li>
+                  <!-- ... more items ... -->
+                   <li class="list-group-item list-group-item-success">Q15: Correct!</li>
+                </ul>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 8: Quiz Results Page (Personality) -->
+    <h2>State 8: Quiz Results Page (Personality)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Results</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .results-summary { text-align: center; margin-bottom: 30px; } .personality-image { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <div class="results-summary">
+                <h1>Quiz Complete!</h1>
+                <h2>What's Your Spirit Animal?</h2>
+                <img src="https://via.placeholder.com/150?text=Wolf" class="personality-image mt-3" alt="Wolf">
+                <p class="display-5">Your Spirit Animal is the Wolf!</p>
+                <p class="lead">Wolves symbolize intelligence, strong instincts, an appetite for freedom, and awareness of the importance of social connections. You are likely a deep thinker, loyal to your pack, and possess a strong sense of self.</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-success me-2">Share Result</a>
+                    <a href="#" class="btn btn-secondary">Browse More Quizzes</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 9: Login Page -->
+    <h2>State 9: Login Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .navbar { margin-bottom: 20px; } .form-signin { text-align: center; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+        </nav>
+
+        <div class="iframe-content container form-signin">
+            <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+             <form>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                <p class="mt-3 mb-1">
+                  <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-1 mb-3 text-muted">Don't have an account? <a href="#">Sign Up</a></p>
+              </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 10: Login Page (Error State) -->
+    <h2>State 10: Login Page (Error State)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .navbar { margin-bottom: 20px; } .form-signin { text-align: center; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+        </nav>
+
+        <div class="iframe-content container form-signin">
+            <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+            <div class="alert alert-danger" role="alert">
+              Invalid email or password. Please try again.
+            </div>
+             <form>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="user@example.com" required>
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required>
+                  <label for="floatingPassword">Password</label>
+                   <div class="invalid-feedback text-start">
+                    Incorrect password.
+                  </div>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+                <p class="mt-3 mb-1">
+                  <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-1 mb-3 text-muted">Don't have an account? <a href="#">Sign Up</a></p>
+              </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 11: Sign Up Page -->
+    <h2>State 11: Sign Up Page</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .navbar { margin-bottom: 20px; } .form-signup { text-align: center; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2 active" aria-current="page" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+        </nav>
+
+        <div class="iframe-content container form-signup">
+            <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+             <form>
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingUsername" placeholder="Username" required>
+                  <label for="floatingUsername">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                 <p class="mt-3 mb-3 text-muted">Already have an account? <a href="#">Log In</a></p>
+              </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 12: Sign Up Page (Error State) -->
+    <h2>State 12: Sign Up Page (Error State)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; max-width: 500px; margin: 50px auto; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } .navbar { margin-bottom: 20px; } .form-signup { text-align: center; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-light text-primary ms-2 active" aria-current="page" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+        </nav>
+
+        <div class="iframe-content container form-signup">
+            <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+             <div class="alert alert-danger" role="alert">
+              Please fix the errors below.
+            </div>
+             <form>
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control is-invalid" id="floatingUsername" placeholder="Username" required value="user!">
+                  <label for="floatingUsername">Username</label>
+                   <div class="invalid-feedback text-start">
+                    Username can only contain letters and numbers.
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required value="test@example.com">
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required value="pass">
+                  <label for="floatingPassword">Password</label>
+                  <div class="invalid-feedback text-start">
+                    Password must be at least 8 characters long.
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" required value="word">
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                   <div class="invalid-feedback text-start">
+                    Passwords do not match.
+                  </div>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                 <p class="mt-3 mb-3 text-muted">Already have an account? <a href="#">Log In</a></p>
+              </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 13: User Dashboard/Profile Page -->
+    <h2>State 13: User Dashboard/Profile Page</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .section-title { margin-top: 30px; margin-bottom: 15px; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, User123
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Welcome to your Dashboard, User123!</h1>
+             <a href="#" class="btn btn-success btn-lg mb-4">Create New Quiz</a>
+
+            <h2 class="section-title">My Created Quizzes</h2>
+            <div class="list-group mb-4">
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">My Awesome Trivia Quiz</h5>
+                    <small>Created: 2 days ago | Status: Published</small>
+                </div>
+                <div>
+                   <span class="badge bg-primary rounded-pill me-2">15 Questions</span>
+                   <button class="btn btn-sm btn-outline-secondary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </div>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                 <div>
+                    <h5 class="mb-1">Personality Test Draft</h5>
+                    <small>Created: 1 hour ago | Status: Draft</small>
+                 </div>
+                 <div>
+                    <span class="badge bg-primary rounded-pill me-2">5 Questions</span>
+                     <button class="btn btn-sm btn-outline-secondary me-1">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                 </div>
+              </a>
+              <!-- More created quizzes -->
+            </div>
+
+             <h2 class="section-title">My Quiz History</h2>
+             <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-1">Advanced Science Trivia</h5>
+                    <small>Taken: Yesterday | Score: 12/15</small>
+                </div>
+                <span class="badge bg-success rounded-pill">80%</span>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                 <div>
+                    <h5 class="mb-1">Whats Your Spirit Animal?</h5>
+                    <small>Taken: 3 days ago | Result: Wolf</small>
+                 </div>
+                 <button class="btn btn-sm btn-outline-info">View Result</button>
+              </a>
+              <!-- More taken quizzes -->
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 14: Create Quiz - Step 1 (Details) -->
+    <h2>State 14: Create Quiz - Step 1 (Details)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Quiz - Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Create Quiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Step 1: Details</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Step 2: Questions</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Step 3: Review</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Create New Quiz - Step 1: Details</h1>
+            <form>
+                 <div class="mb-3">
+                    <label for="quizTitle" class="form-label">Quiz Title</label>
+                    <input type="text" class="form-control" id="quizTitle" placeholder="Enter a catchy title" required>
+                 </div>
+                 <div class="mb-3">
+                    <label for="quizDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="quizDescription" rows="3" placeholder="Describe your quiz briefly"></textarea>
+                 </div>
+                 <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="quizType" class="form-label">Quiz Type</label>
+                        <select class="form-select" id="quizType" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option value="trivia">Trivia (Score-based)</option>
+                          <option value="personality">Personality (Outcome-based)</option>
+                        </select>
+                    </div>
+                     <div class="col-md-6">
+                        <label for="quizCategory" class="form-label">Category</label>
+                        <select class="form-select" id="quizCategory">
+                          <option selected disabled value="">Choose...</option>
+                           <option>General Knowledge</option>
+                           <option>History</option>
+                           <option>Science</option>
+                           <option>Entertainment</option>
+                           <option>Lifestyle</option>
+                           <option>Other</option>
+                        </select>
+                    </div>
+                 </div>
+                 <div class="mb-3">
+                    <label for="quizImage" class="form-label">Cover Image (Optional)</label>
+                    <input class="form-control" type="file" id="quizImage">
+                 </div>
+                 <hr>
+                 <button type="submit" class="btn btn-primary float-end">Next: Add Questions</button>
+                 <a href="#" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 15: Create Quiz - Step 2 (Add Questions - Trivia) -->
+    <h2>State 15: Create Quiz - Step 2 (Add Questions - Trivia)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Quiz - Add Questions</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .question-box { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; background: #f8f9fa; } .answer-input { display: flex; align-items: center; margin-bottom: 5px; } .answer-input input[type="text"] { flex-grow: 1; margin-right: 5px; } .remove-btn { cursor: pointer; color: red; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Create Quiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Step 1: Details</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Step 2: Questions</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Step 3: Review</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Add Questions (Trivia)</h1>
+            <p>Quiz: My Awesome Trivia Quiz</p>
+
+            <!-- Question 1 Box -->
+             <div class="question-box">
+                 <h5>Question 1 <i class="bi bi-trash float-end remove-btn"></i></h5>
+                 <div class="mb-3">
+                     <label class="form-label">Question Text</label>
+                     <input type="text" class="form-control" placeholder="Enter the question">
+                 </div>
+                 <label class="form-label">Answers (Mark the correct one)</label>
+                 <div class="answer-input">
+                     <input type="radio" name="q1_correct" class="form-check-input me-2" title="Mark as correct">
+                     <input type="text" class="form-control" placeholder="Answer option 1">
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <div class="answer-input">
+                     <input type="radio" name="q1_correct" class="form-check-input me-2" title="Mark as correct">
+                     <input type="text" class="form-control" placeholder="Answer option 2">
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <div class="answer-input">
+                     <input type="radio" name="q1_correct" class="form-check-input me-2" title="Mark as correct">
+                     <input type="text" class="form-control" placeholder="Answer option 3">
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <button class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-plus-circle"></i> Add Answer Option</button>
+             </div>
+
+             <!-- Question 2 Box -->
+             <div class="question-box">
+                 <h5>Question 2 <i class="bi bi-trash float-end remove-btn"></i></h5>
+                 <div class="mb-3">
+                     <label class="form-label">Question Text</label>
+                     <input type="text" class="form-control" placeholder="Enter the question">
+                 </div>
+                 <label class="form-label">Answers (Mark the correct one)</label>
+                  <div class="answer-input">
+                     <input type="radio" name="q2_correct" class="form-check-input me-2" title="Mark as correct">
+                     <input type="text" class="form-control" placeholder="Answer option 1">
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <div class="answer-input">
+                     <input type="radio" name="q2_correct" class="form-check-input me-2" title="Mark as correct" checked>
+                     <input type="text" class="form-control" placeholder="Answer option 2" value="Correct Answer Example">
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <button class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-plus-circle"></i> Add Answer Option</button>
+             </div>
+
+            <button class="btn btn-success mt-3"><i class="bi bi-plus-lg"></i> Add Another Question</button>
+            <hr>
+            <a href="#" class="btn btn-secondary">Back to Details</a>
+            <button type="submit" class="btn btn-primary float-end">Next: Review & Publish</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 16: Create Quiz - Step 2 (Add Questions - Personality) -->
+    <h2>State 16: Create Quiz - Step 2 (Add Questions - Personality)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Quiz - Add Questions (Personality)</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .question-box { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; background: #f8f9fa; } .outcome-box { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 5px; background: #e9ecef; } .answer-input { display: flex; align-items: center; margin-bottom: 5px; } .answer-input input[type="text"] { flex-grow: 1; margin-right: 5px; } .remove-btn { cursor: pointer; color: red; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Create Quiz</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Step 1: Details</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Step 2: Questions & Outcomes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Step 3: Review</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Add Questions & Define Outcomes (Personality)</h1>
+            <p>Quiz: My Amazing Personality Test</p>
+
+            <!-- Outcomes Section -->
+            <div class="outcome-box">
+                <h4>Define Possible Outcomes <i class="bi bi-plus-circle float-end" style="cursor: pointer; color: green;" title="Add Outcome"></i></h4>
+                <div class="mb-2">
+                    <label class="form-label">Outcome 1: The Explorer <i class="bi bi-trash remove-btn ms-1"></i></label>
+                    <textarea class="form-control form-control-sm" rows="2" placeholder="Description for The Explorer..."></textarea>
+                </div>
+                 <div class="mb-2">
+                    <label class="form-label">Outcome 2: The Thinker <i class="bi bi-trash remove-btn ms-1"></i></label>
+                    <textarea class="form-control form-control-sm" rows="2" placeholder="Description for The Thinker..."></textarea>
+                </div>
+                 <div class="mb-2">
+                    <label class="form-label">Outcome 3: The Builder <i class="bi bi-trash remove-btn ms-1"></i></label>
+                    <textarea class="form-control form-control-sm" rows="2" placeholder="Description for The Builder..."></textarea>
+                </div>
+                <!-- Add more outcomes here -->
+            </div>
+
+
+            <!-- Question 1 Box -->
+             <div class="question-box">
+                 <h5>Question 1 <i class="bi bi-trash float-end remove-btn"></i></h5>
+                 <div class="mb-3">
+                     <label class="form-label">Question Text/Statement</label>
+                     <input type="text" class="form-control" placeholder="Enter the question or statement">
+                 </div>
+                 <label class="form-label">Answers & Outcome Association</label>
+                 <div class="answer-input">
+                     <input type="text" class="form-control form-control-sm me-2" placeholder="Answer option 1">
+                      <select class="form-select form-select-sm w-50" title="Corresponds to Outcome">
+                         <option selected disabled>Maps to...</option>
+                         <option>Outcome 1: The Explorer</option>
+                         <option>Outcome 2: The Thinker</option>
+                         <option>Outcome 3: The Builder</option>
+                     </select>
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                  <div class="answer-input">
+                     <input type="text" class="form-control form-control-sm me-2" placeholder="Answer option 2">
+                      <select class="form-select form-select-sm w-50" title="Corresponds to Outcome">
+                         <option disabled>Maps to...</option>
+                         <option>Outcome 1: The Explorer</option>
+                         <option selected>Outcome 2: The Thinker</option>
+                         <option>Outcome 3: The Builder</option>
+                     </select>
+                     <i class="bi bi-x-circle remove-btn ms-1" title="Remove answer"></i>
+                 </div>
+                 <button class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-plus-circle"></i> Add Answer Option</button>
+             </div>
+
+            <!-- Add more question boxes -->
+
+            <button class="btn btn-success mt-3"><i class="bi bi-plus-lg"></i> Add Another Question</button>
+            <hr>
+            <a href="#" class="btn btn-secondary">Back to Details</a>
+            <button type="submit" class="btn btn-primary float-end">Next: Review & Publish</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 17: Create Quiz - Step 3 (Review & Publish) -->
+    <h2>State 17: Create Quiz - Step 3 (Review & Publish)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Quiz - Review</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .review-section { margin-bottom: 20px; } .review-question { margin-left: 20px; margin-bottom: 5px; } .correct-answer { font-weight: bold; color: green; }</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp - Create Quiz</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Step 1: Details</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Step 2: Questions</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Step 3: Review</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+            <h1>Review Your Quiz</h1>
+            <p>Please review all details and questions before publishing.</p>
+
+            <div class="card review-section">
+                <div class="card-header">Quiz Details <a href="#" class="btn btn-sm btn-outline-secondary float-end">Edit Details</a></div>
+                <div class="card-body">
+                    <h5 class="card-title">My Awesome Trivia Quiz</h5>
+                    <p class="card-text">A fun quiz about general knowledge topics.</p>
+                    <p><strong>Type:</strong> Trivia</p>
+                    <p><strong>Category:</strong> General Knowledge</p>
+                    <p><strong>Cover Image:</strong> my_image.jpg</p>
+                </div>
+            </div>
+
+             <div class="card review-section">
+                <div class="card-header">Questions (Total: 2) <a href="#" class="btn btn-sm btn-outline-secondary float-end">Edit Questions</a></div>
+                <div class="card-body">
+                   <p><strong>Question 1:</strong> What is the capital of France?</p>
+                   <ul class="list-unstyled ms-3">
+                        <li class="review-question">London</li>
+                        <li class="review-question correct-answer">Paris (Correct)</li>
+                        <li class="review-question">Berlin</li>
+                   </ul>
+                   <hr>
+                    <p><strong>Question 2:</strong> What is H2O?</p>
+                   <ul class="list-unstyled ms-3">
+                        <li class="review-question">Salt</li>
+                        <li class="review-question correct-answer">Water (Correct)</li>
+                        <li class="review-question">Sugar</li>
+                        <li class="review-question">Acid</li>
+                   </ul>
+                   <!-- More questions -->
+                </div>
+            </div>
+
+            <hr>
+            <a href="#" class="btn btn-secondary">Back to Questions</a>
+            <button type="submit" class="btn btn-success float-end">Publish Quiz</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 18: Quiz Creation Confirmation/Success Page -->
+    <h2>State 18: Quiz Creation Confirmation/Success Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Published</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>.iframe-content { padding: 20px; text-align: center; } .navbar { margin-bottom: 20px; } .success-icon { font-size: 5rem; color: green; margin-bottom: 20px; }</style>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Browse Quizzes</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="iframe-content container">
+             <i class="bi bi-check-circle-fill success-icon"></i>
+            <h1>Success!</h1>
+            <h2>Your quiz "My Awesome Trivia Quiz" has been published.</h2>
+            <p class="lead">It's now available for others to take.</p>
+             <div class="mt-4">
+                <a href="#" class="btn btn-primary me-2">View Your Quiz</a>
+                <a href="#" class="btn btn-success me-2">Create Another Quiz</a>
+                <a href="#" class="btn btn-secondary">Go to Dashboard</a>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

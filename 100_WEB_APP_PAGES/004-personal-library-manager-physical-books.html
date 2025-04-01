@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Library Manager - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        /* Basic styling for iframe content */
+        .iframe-content {
+            padding: 20px;
+        }
+        .navbar-placeholder { /* Height matching Bootstrap navbar */
+             height: 56px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Personal Library Manager - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page (Dashboard)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Home</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <h1 class="mb-4"><i class="bi bi-house-door-fill"></i> Dashboard</h1>
+             <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-book-half"></i> Total Books</h5>
+                            <p class="card-text fs-1 fw-bold">157</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Library</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center text-bg-warning">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi bi-arrow-left-right"></i> Books on Loan</h5>
+                            <p class="card-text fs-1 fw-bold">5</p>
+                            <a href="#" class="btn btn-light btn-sm">Manage Loans</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center text-bg-info">
+                        <div class="card-body">
+                             <h5 class="card-title"><i class="bi bi-eyeglasses"></i> Currently Reading</h5>
+                            <p class="card-text fs-1 fw-bold">3</p>
+                           <a href="#" class="btn btn-light btn-sm">View Reading List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="mt-4 p-4 bg-light rounded">
+                 <h2><i class="bi bi-lightning-fill"></i> Quick Actions</h2>
+                 <a href="#" class="btn btn-success me-2"><i class="bi bi-plus-circle-fill"></i> Add New Book</a>
+                 <a href="#" class="btn btn-secondary"><i class="bi bi-search"></i> Search Library</a>
+            </div>
+
+            <div class="mt-4">
+                <h2><i class="bi bi-clock-history"></i> Recent Activity</h2>
+                <ul class="list-group">
+                  <li class="list-group-item">Added "The Midnight Library"</li>
+                  <li class="list-group-item">Marked "Dune" as Read</li>
+                  <li class="list-group-item">Loaned "Project Hail Mary" to John Doe</li>
+                   <li class="list-group-item">Updated notes for "Atomic Habits"</li>
+                </ul>
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>About</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <h1><i class="bi bi-info-circle-fill"></i> About Personal Library Manager</h1>
+            <p class="lead">Your personal assistant for managing your physical book collection.</p>
+            <hr>
+            <p>This application helps you catalog all the books you own, keep track of who you have loaned them to, and manage your reading progress.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Catalog books with details like Title, Author, ISBN, Publisher, Genre, etc.</li>
+                <li>Track reading status (To Read, Reading, Read).</li>
+                <li>Manage loans: record who borrowed a book and when it is due.</li>
+                <li>Search and filter your library easily.</li>
+                <li>Add personal notes for each book.</li>
+            </ul>
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p>Built with HTML, Bootstrap, and lots of love for books!</p>
+            <footer class="mt-5 text-center text-muted">
+                &copy; 2023 Personal Library Manager
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 3: My Library (List View) -->
+    <h2>State 3: My Library (List View)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>My Library</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                 <h1><i class="bi bi-collection-fill"></i> My Library</h1>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add New Book</a>
+            </div>
+
+             <div class="row mb-3 g-2">
+                 <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Search by Title, Author, ISBN...">
+                 </div>
+                 <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Filter by Status...</option>
+                        <option value="1">Available</option>
+                        <option value="2">On Loan</option>
+                        <option value="3">Reading</option>
+                        <option value="4">Read</option>
+                        <option value="5">To Read</option>
+                    </select>
+                 </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary w-100"><i class="bi bi-search"></i> Search / Filter</button>
+                 </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://via.placeholder.com/50x75/cccccc/808080?text=Book" alt="Book Cover" style="max-width: 50px;"></td>
+                            <td>The Great Gatsby</td>
+                            <td>F. Scott Fitzgerald</td>
+                            <td><span class="badge bg-success">Available</span></td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info" title="View Details"><i class="bi bi-eye-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-secondary" title="Loan Out"><i class="bi bi-person-up-arrow"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><img src="https://via.placeholder.com/50x75/cccccc/808080?text=Book" alt="Book Cover" style="max-width: 50px;"></td>
+                            <td>Dune</td>
+                            <td>Frank Herbert</td>
+                            <td><span class="badge bg-primary">Read</span></td>
+                                                         <td>
+                                <a href="#" class="btn btn-sm btn-info" title="View Details"><i class="bi bi-eye-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-secondary disabled" title="Loan Out"><i class="bi bi-person-up-arrow"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="https://via.placeholder.com/50x75/cccccc/808080?text=Book" alt="Book Cover" style="max-width: 50px;"></td>
+                            <td>Project Hail Mary</td>
+                            <td>Andy Weir</td>
+                            <td><span class="badge bg-warning text-dark">On Loan</span></td>
+                                                         <td>
+                                <a href="#" class="btn btn-sm btn-info" title="View Details"><i class="bi bi-eye-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-success" title="Mark as Returned"><i class="bi bi-person-down-arrow"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><img src="https://via.placeholder.com/50x75/cccccc/808080?text=Book" alt="Book Cover" style="max-width: 50px;"></td>
+                            <td>Atomic Habits</td>
+                            <td>James Clear</td>
+                            <td><span class="badge bg-info text-dark">Reading</span></td>
+                                                         <td>
+                                <a href="#" class="btn btn-sm btn-info" title="View Details"><i class="bi bi-eye-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-secondary" title="Loan Out"><i class="bi bi-person-up-arrow"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><img src="https://via.placeholder.com/50x75/cccccc/808080?text=Book" alt="Book Cover" style="max-width: 50px;"></td>
+                            <td>1984</td>
+                            <td>George Orwell</td>
+                           <td><span class="badge bg-secondary">To Read</span></td>
+                                                        <td>
+                                <a href="#" class="btn btn-sm btn-info" title="View Details"><i class="bi bi-eye-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="#" class="btn btn-sm btn-secondary" title="Loan Out"><i class="bi bi-person-up-arrow"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                        <!-- More rows -->
+                    </tbody>
+                </table>
+            </div>
+             <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center mt-3">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 4: Add New Book -->
+    <h2>State 4: Add New Book Form</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Add New Book</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <h1><i class="bi bi-book-fill"></i> Add New Book</h1>
+             <form>
+                <div class="row g-3">
+                    <div class="col-md-8">
+                         <div class="mb-3">
+                            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="author" required>
+                        </div>
+                         <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input type="text" class="form-control" id="isbn">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="publisher" class="form-label">Publisher</label>
+                                <input type="text" class="form-control" id="publisher">
+                            </div>
+                         </div>
+                          <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="year" class="form-label">Publication Year</label>
+                                <input type="number" class="form-control" id="year">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" class="form-control" id="genre">
+                            </div>
+                         </div>
+                          <div class="mb-3">
+                            <label for="coverUrl" class="form-label">Cover Image URL</label>
+                            <input type="url" class="form-control" id="coverUrl" placeholder="https://example.com/cover.jpg">
+                        </div>
+                         <div class="mb-3">
+                            <label for="status" class="form-label">Reading Status</label>
+                            <select class="form-select" id="status">
+                                <option value="available" selected>Available / To Read</option>
+                                <option value="reading">Currently Reading</option>
+                                <option value="read">Read</option>
+                            </select>
+                        </div>
+                         <div class="mb-3">
+                            <label for="notes" class="form-label">Personal Notes</label>
+                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                         <label class="form-label">Cover Preview</label>
+                        <img src="https://via.placeholder.com/200x300/e9ecef/6c757d?text=Cover+Preview" class="img-fluid rounded border" alt="Cover Preview">
+                    </div>
+                 </div>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Save Book</button>
+                <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle-fill"></i> Cancel</a>
+            </form>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 5: Add New Book (Validation Error) -->
+    <h2>State 5: Add New Book Form (Validation Error)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Add New Book - Error</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <h1><i class="bi bi-book-fill"></i> Add New Book</h1>
+
+             <div class="alert alert-danger d-flex align-items-center" role="alert">
+                 <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                 <div>
+                    Please fix the errors below before saving.
+                 </div>
+            </div>
+
+             <form>
+                <div class="row g-3">
+                    <div class="col-md-8">
+                         <div class="mb-3">
+                            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control is-invalid" id="title" required>
+                             <div class="invalid-feedback">
+                                Book title is required.
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control is-invalid" id="author" required>
+                            <div class="invalid-feedback">
+                                Author name is required.
+                             </div>
+                        </div>
+                         <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input type="text" class="form-control" id="isbn">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="publisher" class="form-label">Publisher</label>
+                                <input type="text" class="form-control" id="publisher">
+                            </div>
+                         </div>
+                          <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="year" class="form-label">Publication Year</label>
+                                <input type="number" class="form-control" id="year">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" class="form-control" id="genre">
+                            </div>
+                         </div>
+                          <div class="mb-3">
+                            <label for="coverUrl" class="form-label">Cover Image URL</label>
+                            <input type="url" class="form-control" id="coverUrl" placeholder="https://example.com/cover.jpg">
+                        </div>
+                         <div class="mb-3">
+                            <label for="status" class="form-label">Reading Status</label>
+                            <select class="form-select" id="status">
+                                <option value="available" selected>Available / To Read</option>
+                                <option value="reading">Currently Reading</option>
+                                <option value="read">Read</option>
+                            </select>
+                        </div>
+                         <div class="mb-3">
+                            <label for="notes" class="form-label">Personal Notes</label>
+                            <textarea class="form-control" id="notes" rows="3"></textarea>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                         <label class="form-label">Cover Preview</label>
+                        <img src="https://via.placeholder.com/200x300/e9ecef/6c757d?text=Cover+Preview" class="img-fluid rounded border" alt="Cover Preview">
+                    </div>
+                 </div>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Save Book</button>
+                <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle-fill"></i> Cancel</a>
+            </form>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 6: Book Details (View) -->
+    <h2>State 6: Book Details (View)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Book Details</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Library</a> <!-- Active as user came from here -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+             <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">My Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The Great Gatsby</li>
+              </ol>
+            </nav>
+
+            <h1>The Great Gatsby</h1>
+             <hr>
+
+             <div class="row g-4">
+                <div class="col-md-4">
+                     <img src="https://via.placeholder.com/300x450/cccccc/808080?text=The+Great+Gatsby" class="img-fluid rounded shadow-sm" alt="The Great Gatsby Cover">
+                      <div class="d-grid gap-2 mt-3">
+                         <a href="#" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit Book Details</a>
+                         <a href="#" class="btn btn-secondary"><i class="bi bi-person-up-arrow"></i> Loan Out This Book</a>
+                         <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i> Delete Book</a>
+                     </div>
+                 </div>
+                <div class="col-md-8">
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Author:</strong> F. Scott Fitzgerald</li>
+                        <li class="list-group-item"><strong>ISBN:</strong> 978-0743273565</li>
+                        <li class="list-group-item"><strong>Publisher:</strong> Scribner</li>
+                        <li class="list-group-item"><strong>Publication Year:</strong> 2004 (Originally 1925)</li>
+                        <li class="list-group-item"><strong>Genre:</strong> Classic, Fiction</li>
+                         <li class="list-group-item"><strong>Status:</strong> <span class="badge bg-success">Available</span></li>
+                        <li class="list-group-item">
+                            <strong>Reading Status:</strong>
+                             <select class="form-select form-select-sm d-inline-block w-auto ms-2">
+                                <option value="available" selected>Available / To Read</option>
+                                <option value="reading">Currently Reading</option>
+                                <option value="read">Read</option>
+                            </select>
+                            <button class="btn btn-outline-primary btn-sm ms-2">Update Status</button>
+                        </li>
+                        <li class="list-group-item">
+                             <strong>Personal Notes:</strong>
+                            <p class="mt-1 fst-italic">A timeless classic exploring themes of wealth, love, and the American Dream. Read during college.</p>
+                        </li>
+                    </ul>
+
+
+                     <div class="card mt-4">
+                      <div class="card-header">
+                        <i class="bi bi-clock-history"></i> Loan History
+                      </div>
+                      <div class="card-body">
+                         <p class="text-muted">No loan history for this book yet.</p>
+                        <!-- Or show a table if history exists -->
+                        <!--
+                        <table class="table table-sm">
+                          <thead><tr><th>Borrower</th><th>Loan Date</th><th>Return Date</th></tr></thead>
+                          <tbody>
+                            <tr><td>Jane Smith</td><td>2023-05-10</td><td>2023-06-01</td></tr>
+                          </tbody>
+                        </table>
+                        -->
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+
+    <!-- State 7: Edit Book -->
+    <h2>State 7: Edit Book Form</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Edit Book</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Library</a> <!-- Active as user came from here -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+             <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">My Library</a></li>
+                <li class="breadcrumb-item"><a href="#">The Great Gatsby</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+              </ol>
+            </nav>
+
+            <h1><i class="bi bi-pencil-square"></i> Edit: The Great Gatsby</h1>
+             <form>
+                <div class="row g-3">
+                    <div class="col-md-8">
+                         <div class="mb-3">
+                            <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="title" value="The Great Gatsby" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="author" value="F. Scott Fitzgerald" required>
+                        </div>
+                         <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input type="text" class="form-control" id="isbn" value="978-0743273565">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="publisher" class="form-label">Publisher</label>
+                                <input type="text" class="form-control" id="publisher" value="Scribner">
+                            </div>
+                         </div>
+                          <div class="row">
+                             <div class="col-md-6 mb-3">
+                                <label for="year" class="form-label">Publication Year</label>
+                                <input type="number" class="form-control" id="year" value="2004">
+                             </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" class="form-control" id="genre" value="Classic, Fiction">
+                            </div>
+                         </div>
+                          <div class="mb-3">
+                            <label for="coverUrl" class="form-label">Cover Image URL</label>
+                            <input type="url" class="form-control" id="coverUrl" value="https://via.placeholder.com/300x450/cccccc/808080?text=The+Great+Gatsby" placeholder="https://example.com/cover.jpg">
+                        </div>
+                         <div class="mb-3">
+                            <label for="status" class="form-label">Reading Status</label>
+                            <select class="form-select" id="status">
+                                <option value="available" selected>Available / To Read</option>
+                                <option value="reading">Currently Reading</option>
+                                <option value="read">Read</option>
+                            </select>
+                        </div>
+                         <div class="mb-3">
+                            <label for="notes" class="form-label">Personal Notes</label>
+                            <textarea class="form-control" id="notes" rows="3">A timeless classic exploring themes of wealth, love, and the American Dream. Read during college.</textarea>
+                        </div>
+                    </div>
+                     <div class="col-md-4">
+                         <label class="form-label">Cover Preview</label>
+                        <img src="https://via.placeholder.com/300x450/cccccc/808080?text=The+Great+Gatsby" class="img-fluid rounded border" alt="Cover Preview">
+                    </div>
+                 </div>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Save Changes</button>
+                <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle-fill"></i> Cancel</a>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 8: Manage Loans (List View) -->
+    <h2>State 8: Manage Loans (List View)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Manage Loans</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Library</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Book</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <span class="navbar-text">
+                        Welcome, User!
+                     </span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4 iframe-content">
+            <h1><i class="bi bi-arrow-left-right"></i> Manage Loans</h1>
+            <p>View and manage books currently loaned out.</p>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                     <thead class="table-light">
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Borrower</th>
+                            <th>Loan Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td><a href="#">Project Hail Mary</a></td>
+                            <td>John Doe</td>
+                            <td>2023-10-15</td>
+                            <td>2023-11-15</td>
+                             <td><span class="badge bg-warning text-dark">On Loan</span></td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-success" title="Mark as Returned"><i class="bi bi-check-lg"></i> Mark Returned</a>
+                                <a href="#" class="btn btn-sm btn-info" title="View Book Details"><i class="bi bi-book"></i> Book Details</a>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td><a href="#">Klara and the Sun</a></td>
+                            <td>Jane Smith</td>
+                            <td>2023-10-20</td>
+                            <td>2023-11-20</td>
+                             <td><span class="badge bg-warning text-dark">On Loan</span></td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-success" title="Mark as Returned"><i class="bi bi-check-lg"></i> Mark Returned</a>
+                                <a href="#" class="btn btn-sm btn-info" title="View Book Details"><i class="bi bi-book"></i> Book Details</a>
+                           </td>
+                        </tr>
+                       <tr>
+                            <td><a href="#">The Martian</a></td>
+                            <td>Peter Jones</td>
+                            <td>2023-09-01</td>
+                            <td>2023-10-01</td>
+                             <td><span class="badge bg-danger">Overdue</span></td>
+                           <td>
+                                <a href="#" class="btn btn-sm btn-success" title="Mark as Returned"><i class="bi bi-check-lg"></i> Mark Returned</a>
+                                <a href="#" class="btn btn-sm btn-info" title="View Book Details"><i class="bi bi-book"></i> Book Details</a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary" title="Send Reminder"><i class="bi bi-envelope"></i> Remind</a>
+                            </td>
+                        </tr>
+                        <!-- More loan rows -->
+                    </tbody>
+                </table>
+            </div>
+              <div class="alert alert-info mt-3" role="alert">
+                 You have <strong>5</strong> books currently on loan. <strong>1</strong> book is overdue.
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 9: Loan Out Book Form (Could be Modal or Separate Page) -->
+    <h2>State 9: Loan Out Book Form</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Loan Out Book</title>
+    </head>
+    <body>
+        <!-- No Navbar - Simulating Modal/Sub-page -->
+         <div class="navbar-placeholder bg-light border-bottom">
+             <p class="text-center pt-3 text-muted">Conceptual Header - Normally part of previous page or modal</p>
+         </div>
+
+        <div class="container mt-4 iframe-content">
+             <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">My Library</a></li>
+                <li class="breadcrumb-item"><a href="#">The Great Gatsby</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Loan Out</li>
+              </ol>
+            </nav>
+
+            <h1><i class="bi bi-person-up-arrow"></i> Loan Out: The Great Gatsby</h1>
+             <hr>
+            <form>
+                 <div class="mb-3">
+                    <label for="borrowerName" class="form-label">Borrower Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="borrowerName" placeholder="e.g., John Doe" required>
+                 </div>
+                 <div class="mb-3">
+                    <label for="borrowerContact" class="form-label">Borrower Contact (Email or Phone)</label>
+                    <input type="text" class="form-control" id="borrowerContact" placeholder="Optional contact info">
+                 </div>
+                 <div class="row">
+                    <div class="col-md-6 mb-3">
+                         <label for="loanDate" class="form-label">Loan Date <span class="text-danger">*</span></label>
+                         <input type="date" class="form-control" id="loanDate" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        <input type="date" class="form-control" id="dueDate">
+                        <div class="form-text">Leave blank if no specific due date.</div>
+                    </div>
+                 </div>
+
+                <div class="alert alert-warning" role="alert">
+                  <i class="bi bi-exclamation-triangle"></i> Make sure the book <span class="fw-bold">The Great Gatsby</span> is marked as "On Loan" after saving.
+                </div>
+
+                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Record Loan</button>
+                <a href="#" class="btn btn-secondary"><i class="bi bi-x-circle-fill"></i> Cancel</a>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 10: Login Page -->
+    <h2>State 10: Login Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Login</title>
+         <style> body { display: flex; align-items: center; justify-content: center; min-height: 90vh; background-color: #f8f9fa;} .login-card { max-width: 400px; width: 100%; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; background-color: #fff; } </style>
+    </head>
+    <body>
+        <div class="login-card iframe-content text-center">
+            <h1 class="mb-4"><i class="bi bi-book"></i> Personal Library</h1>
+            <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
+             <form>
+                 <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+                 <div class="checkbox mb-3 text-start">
+                  <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                  </label>
+                </div>
+                 <button class="w-100 btn btn-lg btn-primary" type="submit"><i class="bi bi-box-arrow-in-right"></i> Sign in</button>
+                 <p class="mt-3 mb-1 text-muted">
+                    <a href="#">Forgot password?</a>
+                 </p>
+                 <p class="mb-3 text-muted">
+                    Don’t have an account? <a href="#">Sign up</a>
+                 </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+            </form>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 11: Registration Page -->
+    <h2>State 11: Registration Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Register</title>
+         <style> body { display: flex; align-items: center; justify-content: center; min-height: 90vh; background-color: #f8f9fa;} .register-card { max-width: 450px; width: 100%; padding: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; background-color: #fff; } </style>
+    </head>
+    <body>
+        <div class="register-card iframe-content text-center">
+            <h1 class="mb-4"><i class="bi bi-book"></i> Personal Library</h1>
+            <h2 class="h3 mb-3 fw-normal">Create your account</h2>
+             <form>
+                 <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required>
+                  <label for="floatingName">Full Name</label>
+                </div>
+                 <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                </div>
+                 <button class="w-100 btn btn-lg btn-primary" type="submit"><i class="bi bi-person-plus-fill"></i> Sign Up</button>
+                 <p class="mt-3 mb-3 text-muted">
+                    Already have an account? <a href="#">Sign in</a>
+                 </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+            </form>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 12: Generic Error Page (e.g., 404 Not Found) -->
+    <h2>State 12: Error Page (404 Not Found)</h2>
+     <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <title>Error - Not Found</title>
+         <style> body { display: flex; align-items: center; justify-content: center; min-height: 90vh; background-color: #f8f9fa;} .error-content { text-align: center; } </style>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"> <!-- Added fixed-top for context -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Personal Library</a>
+                <!-- Simplified navbar for error page -->
+            </div>
+        </nav>
+        <div class="error-content iframe-content">
+             <h1 class="display-1 text-danger fw-bold">404</h1>
+             <h2><i class="bi bi-emoji-frown"></i> Page Not Found</h2>
+             <p class="lead">Sorry, the page you are looking for does not exist or may have been moved.</p>
+            <p>Perhaps you were trying to access a book that has been deleted?</p>
+            <a href="#" class="btn btn-primary mt-3"><i class="bi bi-house-door"></i> Go to Home Page</a>
+             <a href="#" class="btn btn-secondary mt-3"><i class="bi bi-arrow-left"></i> Go Back</a>
+         </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 700px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Symptom Checker - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4">Welcome to Symptom Checker</h1>
+                <p class="lead">An informational tool to help you research possible conditions based on your symptoms.</p>
+                <hr class="my-4">
+                <div class="alert alert-warning" role="alert">
+                    <strong>Disclaimer:</strong> This tool does not provide medical advice. It is intended for informational purposes only. Consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.
+                </div>
+                <p>Ready to start?</p>
+                <a href="#" class="btn btn-primary btn-lg">Start Symptom Check</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3">
+        © 2023 Symptom Checker - For Informational Purposes Only.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>About Symptom Checker</h2>
+        <p>This Symptom Checker is designed as an informational resource to help users explore potential health conditions based on the symptoms they are experiencing. Our goal is to provide structured information that may guide further research or discussion with a healthcare provider.</p>
+
+        <h4>How it Works</h4>
+        <p>The tool uses a simplified process where users input their primary symptoms. Based on this input, it may ask further clarifying questions regarding the symptoms duration, severity, or related factors. Finally, it presents a list of potential conditions commonly associated with the provided information.</p>
+
+        <h4>Important Limitations</h4>
+        <div class="alert alert-danger" role="alert">
+            <strong>This Tool Is Not a Substitute for Professional Medical Advice.</strong>
+            <ul>
+                <li>The information provided is generated based on common patterns and general knowledge, it may not be accurate, complete, or applicable to your specific situation.</li>
+                <li>It does not consider your full medical history, genetic factors, lifestyle, or other crucial elements that a healthcare professional would.</li>
+                <li>Self-diagnosing can be dangerous. Always consult a qualified doctor or other healthcare provider for diagnosis and treatment.</li>
+                <li>If you are experiencing a medical emergency, call your local emergency number immediately.</li>
+            </ul>
+        </div>
+
+        <h4>Our Mission</h4>
+        <p>To empower users with accessible health information while strongly emphasizing the importance of professional medical consultation.</p>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3">
+        © 2023 Symptom Checker - For Informational Purposes Only.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 3: Start Symptom Check (Input Step 1) -->
+    <h2>State 3: Start Symptom Check (Input Step 1)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Symptoms - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 25%">Step 1 of 4</div>
+        </div>
+
+        <h2>Step 1: What are your main symptoms?</h2>
+        <p>Start typing your primary symptom below. Select from the list or add multiple symptoms if needed.</p>
+
+        <form>
+            <div class="mb-3">
+                <label for="symptomInput" class="form-label">Enter a symptom (e.g., "headache", "fever", "cough")</label>
+                <input type="text" class="form-control form-control-lg" id="symptomInput" placeholder="Type your symptom here...">
+                <!-- In a real app, this would likely be an autocomplete input -->
+            </div>
+
+             <div class="mb-3">
+                 <label class="form-label">Selected Symptoms:</label>
+                 <div id="selectedSymptoms">
+                    <span class="badge bg-secondary me-1">Headache <button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove"></button></span>
+                    <span class="badge bg-secondary me-1">Fatigue <button type="button" class="btn-close btn-close-white ms-1" aria-label="Remove"></button></span>
+                    <!-- Placeholder selected symptoms -->
+                 </div>
+                 <small class="form-text text-muted">You can add more symptoms by typing above.</small>
+            </div>
+
+            <div class="alert alert-warning mt-4" role="alert">
+                <strong>Remember:</strong> This tool is for informational purposes only. Always consult a doctor for medical advice.
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Next Step</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+     <!-- State 4: Symptom Input Validation Error -->
+    <h2>State 4: Symptom Input Validation Error</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Symptoms - Error - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+         <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 25%">Step 1 of 4</div>
+        </div>
+
+        <h2>Step 1: What are your main symptoms?</h2>
+        <p>Start typing your primary symptom below. Select from the list or add multiple symptoms if needed.</p>
+
+        <div class="alert alert-danger" role="alert">
+          Please enter at least one symptom to continue.
+        </div>
+
+        <form>
+            <div class="mb-3">
+                <label for="symptomInput" class="form-label">Enter a symptom (e.g., "headache", "fever", "cough")</label>
+                <input type="text" class="form-control form-control-lg is-invalid" id="symptomInput" placeholder="Type your symptom here..." required>
+                 <div class="invalid-feedback">
+                    This field is required. Please enter a symptom.
+                 </div>
+            </div>
+
+             <div class="mb-3">
+                 <label class="form-label">Selected Symptoms:</label>
+                 <div id="selectedSymptoms">
+                    <!-- No symptoms selected in this error state -->
+                 </div>
+                 <small class="form-text text-muted">You can add more symptoms by typing above.</small>
+            </div>
+
+            <div class="alert alert-warning mt-4" role="alert">
+                <strong>Remember:</strong> This tool is for informational purposes only. Always consult a doctor for medical advice.
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Next Step</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 5: Refine Symptoms (Input Step 2) -->
+    <h2>State 5: Refine Symptoms (Input Step 2)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refine Symptoms - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 50%">Step 2 of 4</div>
+        </div>
+
+        <h2>Step 2: Tell us more about your symptoms</h2>
+        <p>Answer the following questions to help refine the possibilities. Based on: <strong>Headache, Fatigue</strong>.</p>
+
+        <form>
+            <div class="mb-4">
+                <label class="form-label fw-bold">How long have you had the Headache?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="headacheDuration" id="headacheDuration1">
+                  <label class="form-check-label" for="headacheDuration1">Less than a day</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="headacheDuration" id="headacheDuration2">
+                  <label class="form-check-label" for="headacheDuration2">1-3 days</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="headacheDuration" id="headacheDuration3">
+                  <label class="form-check-label" for="headacheDuration3">More than 3 days</label>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="radio" name="headacheDuration" id="headacheDuration4">
+                  <label class="form-check-label" for="headacheDuration4">Comes and goes</label>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">How would you describe the Fatigue?</label>
+                 <select class="form-select" aria-label="Fatigue description">
+                  <option selected>Select intensity...</option>
+                  <option value="1">Mild tiredness</option>
+                  <option value="2">Moderate exhaustion</option>
+                  <option value="3">Severe, difficulty functioning</option>
+                </select>
+            </div>
+
+             <div class="mb-4">
+                <label class="form-label fw-bold">Do you have any of the following related symptoms?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="relatedSymptom1">
+                  <label class="form-check-label" for="relatedSymptom1">Fever</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="relatedSymptom2">
+                  <label class="form-check-label" for="relatedSymptom2">Nausea or Vomiting</label>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="relatedSymptom3">
+                  <label class="form-check-label" for="relatedSymptom3">Sensitivity to light</label>
+                </div>
+                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="relatedSymptom4">
+                  <label class="form-check-label" for="relatedSymptom4">Muscle aches</label>
+                </div>
+            </div>
+
+            <div class="alert alert-secondary mt-4" role="alert">
+               Answering these questions helps narrow down potential causes. Skip any question if unsure.
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-secondary btn-lg">Back</button>
+                <button type="submit" class="btn btn-primary btn-lg">Next Step</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 6: Demographics Input (Input Step 3) -->
+    <h2>State 6: Demographics Input (Input Step 3)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographics - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 75%">Step 3 of 4</div>
+        </div>
+
+        <h2>Step 3: Tell us a bit about you</h2>
+        <p>This information helps tailor the results, as some conditions are more common in certain groups. Providing this information is optional but recommended for better results.</p>
+
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="ageInput" class="form-label">Age (Years)</label>
+                    <input type="number" class="form-control" id="ageInput" placeholder="e.g., 35" min="0" max="120">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="sexInput" class="form-label">Sex assigned at birth</label>
+                    <select class="form-select" id="sexInput">
+                        <option selected value="">Prefer not to say / Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4" role="alert">
+               This information is used solely for the purpose of refining the potential conditions list during this session and is not stored.
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-secondary btn-lg">Back</button>
+                <button type="submit" class="btn btn-primary btn-lg">View Results</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+     <!-- State 7: Demographics Validation Error -->
+    <h2>State 7: Demographics Validation Error</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demographics - Error - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 75%">Step 3 of 4</div>
+        </div>
+
+        <h2>Step 3: Tell us a bit about you</h2>
+         <p>This information helps tailor the results, as some conditions are more common in certain groups. Providing this information is optional but recommended for better results.</p>
+
+         <div class="alert alert-danger" role="alert">
+           Please correct the errors below. Age must be a valid number.
+         </div>
+
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="ageInput" class="form-label">Age (Years)</label>
+                    <input type="number" class="form-control is-invalid" id="ageInput" placeholder="e.g., 35" value="-5" min="0" max="120">
+                     <div class="invalid-feedback">
+                        Please enter a valid age (0-120).
+                     </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="sexInput" class="form-label">Sex assigned at birth</label>
+                    <select class="form-select" id="sexInput">
+                         <option selected value="">Prefer not to say / Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option> <!-- Example pre-selected -->
+                    </select>
+                </div>
+            </div>
+
+             <div class="alert alert-info mt-4" role="alert">
+               This information is used solely for the purpose of refining the potential conditions list during this session and is not stored.
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-outline-secondary btn-lg">Back</button>
+                <button type="submit" class="btn btn-primary btn-lg">View Results</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 8: Results Page -->
+    <h2>State 8: Results Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 100%">Step 4 of 4: Results</div>
+        </div>
+
+        <h2>Potential Conditions</h2>
+        <p>Based on the information provided (Symptoms: Headache, Fatigue; Age: 35; Sex: Female), here are some possibilities. This is not a diagnosis.</p>
+
+         <div class="alert alert-danger fw-bold" role="alert">
+          <h4 class="alert-heading">Medical Disclaimer!</h4>
+          <p>This list is for informational purposes only and does not constitute medical advice. Many conditions can cause similar symptoms. The order does not indicate likelihood.</p>
+          <hr>
+          <p class="mb-0">Always consult a qualified healthcare professional for an accurate diagnosis and treatment plan. Do not disregard or delay seeking professional medical advice because of information obtained from this tool.</p>
+        </div>
+
+        <div class="list-group mt-4">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Migraine</h5>
+              <small class="text-muted">Common</small>
+            </div>
+            <p class="mb-1">Often characterized by severe headache, sometimes accompanied by nausea, vomiting, and sensitivity to light or sound. Fatigue can be a pre- or post-migraine symptom.</p>
+            <small class="text-primary">Click for more info (Placeholder)</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Tension Headache</h5>
+              <small class="text-muted">Very Common</small>
+            </div>
+            <p class="mb-1">A common type of headache often described as a constant ache or pressure around the head, especially at the temples or back of the head and neck. Can be associated with stress and fatigue.</p>
+             <small class="text-primary">Click for more info (Placeholder)</small>
+          </a>
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Common Cold / Flu</h5>
+               <small class="text-muted">Common</small>
+            </div>
+            <p class="mb-1">Viral infections that can cause headache, fatigue, muscle aches, fever, and respiratory symptoms.</p>
+             <small class="text-primary">Click for more info (Placeholder)</small>
+          </a>
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Anemia</h5>
+               <small class="text-muted">Less Common</small>
+            </div>
+            <p class="mb-1">A condition where you lack enough healthy red blood cells to carry adequate oxygen. Can cause fatigue, weakness, pale skin, and sometimes headaches.</p>
+             <small class="text-primary">Click for more info (Placeholder)</small>
+          </a>
+        </div>
+
+        <div class="mt-5 text-center">
+            <p>Need to check different symptoms?</p>
+            <a href="#" class="btn btn-secondary btn-lg">Start New Check</a>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3">
+        © 2023 Symptom Checker - For Informational Purposes Only.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+     <!-- State 9: No Results Found -->
+    <h2>State 9: No Results Found</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+         <div class="progress mb-4" role="progressbar" aria-label="Symptom Check Progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-warning" style="width: 100%">Step 4 of 4: Results</div>
+        </div>
+
+        <h2>No Matching Conditions Found</h2>
+
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Unable to find common matches.</h4>
+            <p>Based on the symptoms and information you provided (e.g., Symptom: Rare Symptom X), our system could not identify common potential conditions. This could be due to:</p>
+            <ul>
+                <li>The symptom combination being unusual or rare.</li>
+                <li>The symptom description needing more detail or different phrasing.</li>
+                <li>Limitations in our informational database.</li>
+            </ul>
+            <hr>
+             <p class="mb-0 fw-bold">This does NOT mean there is no issue. It is crucial to consult a healthcare professional for any persistent or concerning symptoms.</p>
+        </div>
+
+         <div class="alert alert-danger fw-bold mt-4" role="alert">
+          <strong>Medical Disclaimer Reminder:</strong> This tool is informational and cannot replace a professional medical evaluation.
+        </div>
+
+         <div class="mt-5 text-center">
+            <p>You can try again with different symptoms or phrasing.</p>
+            <a href="#" class="btn btn-secondary btn-lg">Start New Check</a>
+            <button type="button" class="btn btn-outline-secondary btn-lg ms-2">Go Back</button>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3">
+        © 2023 Symptom Checker - For Informational Purposes Only.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 10: Condition Information (Example) -->
+    <h2>State 10: Condition Information (Example)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition: Migraine - Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Symptom Checker</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Results</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Migraine Information</li>
+          </ol>
+        </nav>
+
+        <h2>Migraine (General Information)</h2>
+
+         <div class="alert alert-danger fw-bold" role="alert">
+          <strong>Medical Disclaimer!</strong> This information is general and educational. It is not medical advice. Consult a healthcare professional for diagnosis and treatment specific to your situation.
+         </div>
+
+        <h4>Overview</h4>
+        <p>A migraine is a neurological condition that can cause multiple symptoms. It is frequently characterized by intense, debilitating headaches. Symptoms may include nausea, vomiting, difficulty speaking, numbness or tingling, and sensitivity to light and sound. Migraines often run in families and affect all ages.</p>
+
+         <h4>Common Symptoms</h4>
+         <ul>
+             <li>Severe, often throbbing or pounding headache, usually on one side of the head</li>
+             <li>Nausea and/or vomiting</li>
+             <li>Increased sensitivity to light (photophobia)</li>
+             <li>Increased sensitivity to sound (phonophobia)</li>
+             <li>Visual disturbances (aura) such as flashing lights or blind spots (occurs in some types of migraine)</li>
+             <li>Fatigue</li>
+         </ul>
+
+         <h4>Possible Triggers (Varies by Person)</h4>
+         <p>Stress, hormonal changes, certain foods and drinks, changes in sleep patterns, sensory stimuli (like bright lights or strong smells).</p>
+
+         <h4>When to See a Doctor</h4>
+         <p>Consult a doctor if you experience frequent or severe headaches, especially if they are different from previous headaches, accompanied by fever, stiff neck, confusion, seizure, double vision, weakness, numbness, or difficulty speaking. Seek immediate medical attention for a sudden, severe headache like a "thunderclap."</p>
+
+
+        <div class="mt-5 d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-secondary btn-lg">Back to Results</a>
+            <a href="#" class="btn btn-secondary btn-lg">Start New Check</a>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3">
+        © 2023 Symptom Checker - For Informational Purposes Only.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+</body>
+</html>

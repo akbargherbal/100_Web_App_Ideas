@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Search Interface - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .state-container { margin-bottom: 40px; padding: 20px; border: 1px solid #dee2e6; border-radius: .375rem; background-color: #ffffff; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
+        h1.main-title { margin-bottom: 30px; }
+        h2.state-title { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-size: 1.5rem; color: #495057; }
+        iframe { width: 100%; height: 550px; border: 1px solid #ced4da; border-radius: .25rem; }
+    </style>
+</head>
+<body>
+    <h1 class="text-center main-title">Wikipedia Search Interface - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial State) -->
+    <div class="state-container">
+        <h2 class="state-title">State 1: Home Page (Initial State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav ms-auto mb-2 mb-lg-0&quot;>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <div class=&quot;row justify-content-center&quot;>
+                        <div class=&quot;col-md-8 text-center mt-4&quot;>
+                            <h1 class=&quot;display-5 mb-4 fw-bold&quot;>Search Wikipedia</h1>
+                            <p class=&quot;lead mb-4&quot;>Enter a term below to search the world's largest encyclopedia.</p>
+                            <form class=&quot;d-flex&quot; role=&quot;search&quot;>
+                                <input class=&quot;form-control form-control-lg me-2&quot; type=&quot;search&quot; placeholder=&quot;Enter search term...&quot; aria-label=&quot;Search&quot;>
+                                <button class=&quot;btn btn-primary btn-lg&quot; type=&quot;submit&quot;>Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: Home Page (Typing State) -->
+    <div class="state-container">
+        <h2 class="state-title">State 2: Home Page (Typing State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav ms-auto mb-2 mb-lg-0&quot;>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <div class=&quot;row justify-content-center&quot;>
+                         <div class=&quot;col-md-8 text-center mt-4&quot;>
+                            <h1 class=&quot;display-5 mb-4 fw-bold&quot;>Search Wikipedia</h1>
+                             <p class=&quot;lead mb-4&quot;>Enter a term below to search the world's largest encyclopedia.</p>
+                            <form class=&quot;d-flex&quot; role=&quot;search&quot;>
+                                <input class=&quot;form-control form-control-lg me-2&quot; type=&quot;search&quot; placeholder=&quot;Enter search term...&quot; aria-label=&quot;Search&quot; value=&quot;JavaScript&quot;>
+                                <button class=&quot;btn btn-primary btn-lg&quot; type=&quot;submit&quot;>Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Search Results Page (Loading State) -->
+    <div class="state-container">
+        <h2 class="state-title">State 3: Search Results Page (Loading State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav ms-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5 text-center&quot;>
+                    <h2 class=&quot;mb-4 mt-4&quot;>Searching for 'JavaScript'...</h2>
+                    <div class=&quot;d-flex justify-content-center mt-4&quot;>
+                      <div class=&quot;spinner-border text-primary&quot; style=&quot;width: 3rem; height: 3rem;&quot; role=&quot;status&quot;>
+                          <span class=&quot;visually-hidden&quot;>Loading...</span>
+                      </div>
+                    </div>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Search Results Page (Results Found) -->
+    <div class="state-container">
+        <h2 class="state-title">State 4: Search Results Page (Results Found)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                      <form class=&quot;d-flex ms-auto&quot; role=&quot;search&quot;>
+                        <input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;Search again...&quot; aria-label=&quot;Search&quot; value=&quot;JavaScript&quot;>
+                        <button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;>Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <h2 class=&quot;mb-4 mt-4&quot;>Results for 'JavaScript'</h2>
+                    <div class=&quot;list-group&quot;>
+                      <a href=&quot;#&quot; class=&quot;list-group-item list-group-item-action&quot; aria-current=&quot;true&quot;>
+                        <div class=&quot;d-flex w-100 justify-content-between&quot;>
+                          <h5 class=&quot;mb-1&quot;>JavaScript</h5>
+                          <small>Page</small>
+                        </div>
+                        <p class=&quot;mb-1&quot;>JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.</p>
+                        <small>Primary result for the query.</small>
+                      </a>
+                      <a href=&quot;#&quot; class=&quot;list-group-item list-group-item-action&quot;>
+                        <div class=&quot;d-flex w-100 justify-content-between&quot;>
+                          <h5 class=&quot;mb-1&quot;>Node.js</h5>
+                          <small class=&quot;text-muted&quot;>Page</small>
+                        </div>
+                        <p class=&quot;mb-1&quot;>Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment.</p>
+                        <small class=&quot;text-muted&quot;>Related technology.</small>
+                      </a>
+                      <a href=&quot;#&quot; class=&quot;list-group-item list-group-item-action&quot;>
+                        <div class=&quot;d-flex w-100 justify-content-between&quot;>
+                          <h5 class=&quot;mb-1&quot;>React (JavaScript library)</h5>
+                          <small class=&quot;text-muted&quot;>Page</small>
+                        </div>
+                        <p class=&quot;mb-1&quot;>React is a free and open-source front-end JavaScript library for building user interfaces based on components.</p>
+                        <small class=&quot;text-muted&quot;>Popular library using JavaScript.</small>
+                      </a>
+                    </div>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Search Results Page (No Results Found) -->
+    <div class="state-container">
+        <h2 class="state-title">State 5: Search Results Page (No Results Found)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                     <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                      <form class=&quot;d-flex ms-auto&quot; role=&quot;search&quot;>
+                        <input class=&quot;form-control me-2 is-invalid&quot; type=&quot;search&quot; placeholder=&quot;Search again...&quot; aria-label=&quot;Search&quot; value=&quot;asdfqweriuoyxcv&quot;>
+                        <button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;>Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <h2 class=&quot;mb-4 mt-4&quot;>Results for 'asdfqweriuoyxcv'</h2>
+                    <div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;>
+                      <h4 class=&quot;alert-heading&quot;>No Results Found</h4>
+                      <p>Your search - <strong>asdfqweriuoyxcv</strong> - did not match any documents.</p>
+                      <hr>
+                      <p class=&quot;mb-0&quot;>Suggestions:</p>
+                      <ul>
+                        <li>Make sure all words are spelled correctly.</li>
+                        <li>Try different keywords.</li>
+                        <li>Try more general keywords.</li>
+                      </ul>
+                    </div>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: Search Results Page (Error State) -->
+    <div class="state-container">
+        <h2 class="state-title">State 6: Search Results Page (Error State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                      <form class=&quot;d-flex ms-auto&quot; role=&quot;search&quot;>
+                        <input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;Search again...&quot; aria-label=&quot;Search&quot; value=&quot;Some Topic&quot;>
+                        <button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;>Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                     <h2 class=&quot;mb-4 mt-4 text-danger&quot;>Search Error</h2>
+                    <div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;>
+                       <h4 class=&quot;alert-heading&quot;>Search Failed!</h4>
+                       <p>An error occurred while trying to fetch search results. This could be due to a network issue or a problem with the search service.</p>
+                       <hr>
+                       <p class=&quot;mb-0&quot;>Please check your internet connection and try searching again in a few moments.</p>
+                    </div>
+                     <button class=&quot;btn btn-primary&quot; type=&quot;button&quot;>Try Again</button>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Article View Page -->
+    <div class="state-container">
+        <h2 class="state-title">State 7: Article View Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } .article-content { line-height: 1.8; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                     <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                      <form class=&quot;d-flex ms-auto&quot; role=&quot;search&quot;>
+                        <input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;New search...&quot; aria-label=&quot;Search&quot;>
+                        <button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;>Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+                 <div class=&quot;container mt-5&quot;>
+                    <nav aria-label=&quot;breadcrumb&quot; class=&quot;mt-4&quot;>
+                      <ol class=&quot;breadcrumb&quot;>
+                        <li class=&quot;breadcrumb-item&quot;><a href=&quot;#&quot;>Search Results</a></li>
+                        <li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;>JavaScript</li>
+                      </ol>
+                    </nav>
+                    <h1 class=&quot;display-6 mb-3 border-bottom pb-2&quot;>JavaScript</h1>
+                    <article class=&quot;article-content&quot;>
+                        <p class=&quot;lead&quot;>JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.</p>
+                        <h2 class=&quot;mt-4 h4&quot;>History</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed viverra, tortor eu sollicitudin commodo, velit magna fringilla eros, sit amet lacinia dui neque eget quam. Fusce vitae urna nec nisl aliquam tincidunt. Vivamus euismod, libero id consequat ullamcorper, sapien justo vestibulum nunc, nec tincidunt risus eros id est. Sed eu efficitur odio.</p>
+                        <h3 class=&quot;mt-3 h5&quot;>Early Development</h3>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                         <h2 class=&quot;mt-4 h4&quot;>Features</h2>
+                        <p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.</p>
+                        <ul>
+                          <li>Dynamic typing</li>
+                          <li>Prototype-based object orientation</li>
+                          <li>First-class functions</li>
+                          <li>Event-driven architecture</li>
+                        </ul>
+                         <p>Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                     </article>
+                 </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: Article View Page (Error State) -->
+    <div class="state-container">
+        <h2 class="state-title">State 8: Article View Page (Error State)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;>
+                         <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                      <form class=&quot;d-flex ms-auto&quot; role=&quot;search&quot;>
+                        <input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;New search...&quot; aria-label=&quot;Search&quot;>
+                        <button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;>Search</button>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <nav aria-label=&quot;breadcrumb&quot; class=&quot;mt-4&quot;>
+                      <ol class=&quot;breadcrumb&quot;>
+                        <li class=&quot;breadcrumb-item&quot;><a href=&quot;#&quot;>Search Results</a></li>
+                        <li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;>Article Error</li>
+                      </ol>
+                    </nav>
+                     <h2 class=&quot;mb-4 text-danger&quot;>Error Loading Article</h2>
+                    <div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;>
+                       <h4 class=&quot;alert-heading&quot;>Could Not Load Article!</h4>
+                       <p>We were unable to retrieve the content for the requested article. This might happen if the article does not exist, was moved, or if there was a network problem connecting to the source.</p>
+                       <hr>
+                       <p class=&quot;mb-0&quot;>Please try going back to the search results or performing a new search.</p>
+                    </div>
+                     <a href=&quot;#&quot; class=&quot;btn btn-secondary me-2&quot;>Back to Results</a>
+                     <a href=&quot;#&quot; class=&quot;btn btn-primary&quot;>New Search</a>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 9: About Page -->
+    <div class="state-container">
+        <h2 class="state-title">State 9: About Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang=&quot;en&quot;>
+            <head>
+                <meta charset=&quot;UTF-8&quot;>
+                <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+                <link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN&quot; crossorigin=&quot;anonymous&quot;>
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark fixed-top&quot;>
+                  <div class=&quot;container-fluid&quot;>
+                    <a class=&quot;navbar-brand&quot; href=&quot;#&quot;>WikiSearch</a>
+                    <button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;>
+                      <span class=&quot;navbar-toggler-icon&quot;></span>
+                    </button>
+                    <div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;>
+                      <ul class=&quot;navbar-nav ms-auto mb-2 mb-lg-0&quot;>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link&quot; href=&quot;#&quot;>Home</a>
+                        </li>
+                        <li class=&quot;nav-item&quot;>
+                          <a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;>About</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class=&quot;container mt-5&quot;>
+                    <div class=&quot;row justify-content-center&quot;>
+                        <div class=&quot;col-md-10 mt-4&quot;>
+                            <h1 class=&quot;mb-4 border-bottom pb-2&quot;>About WikiSearch</h1>
+                            <p class=&quot;lead&quot;>WikiSearch provides a streamlined, custom front-end interface for exploring the vast knowledge base of Wikipedia.</p>
+                            <p>This application aims to offer a clean, fast, and user-friendly experience for searching and reading Wikipedia articles. It focuses on presenting information clearly without the clutter sometimes found on the standard Wikipedia interface.</p>
+                             <h2 class=&quot;mt-4 h4&quot;>Technology (Conceptual)</h2>
+                             <p>While this is a static HTML/Bootstrap prototype, a functional version would typically involve:</p>
+                             <ul>
+                                <li>A front-end framework (like React, Vue, or Angular) or vanilla JavaScript.</li>
+                                <li>Bootstrap or another CSS framework for styling and layout.</li>
+                                <li>Utilizing the official <a href=&quot;https://www.mediawiki.org/wiki/API:Main_page&quot; target=&quot;_blank&quot;>MediaWiki Action API</a> to fetch search results and article content dynamically.</li>
+                                <li>Handling API responses, including parsing JSON data and managing potential errors.</li>
+                             </ul>
+                             <p>This demonstration focuses solely on the visual representation of the user interface flow and its various states.</p>
+                             <footer class=&quot;mt-5 text-muted text-center&quot;>
+                                <small>WikiSearch Prototype - Not affiliated with Wikipedia or the Wikimedia Foundation.</small>
+                             </footer>
+                        </div>
+                    </div>
+                </div>
+                 <script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL&quot; crossorigin=&quot;anonymous&quot;></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

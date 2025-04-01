@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map Route Planner - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 40px; margin-bottom: 20px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
+        iframe {
+            width: 100%;
+            height: 70vh; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+         /* Basic CSS to simulate map/graph placeholders */
+        .map-placeholder {
+            background-color: #e0e0e0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+            min-height: 300px; /* Ensure minimum height */
+        }
+        .elevation-placeholder {
+            background-color: #f0f0f0;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1rem;
+            margin-top: 15px;
+            border: 1px dashed #ccc;
+        }
+        .route-line-placeholder {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 40%;
+            height: 40%;
+            border: 3px dashed #0d6efd;
+            border-radius: 5px;
+            pointer-events: none; /* Ignore clicks */
+        }
+         .route-point-placeholder {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #dc3545;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+         }
+         .point1 { top: 30%; left: 30%; }
+         .point2 { top: 50%; left: 70%; }
+         .point3 { top: 70%; left: 50%; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Interactive Map Route Planner - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Home - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+             <style>
+                .hero {
+                    background: url("https://via.placeholder.com/1200x400.png?text=Scenic+Mountain+Trail") no-repeat center center;
+                    background-size: cover;
+                    color: white;
+                    padding: 100px 0;
+                    text-shadow: 1px 1px 2px black;
+                 }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Plan Route</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">My Routes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">About</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hero text-center">
+                <div class="container">
+                    <h1 class="display-4">Plan Your Next Adventure</h1>
+                    <p class="lead">Easily create, analyze, and export hiking and cycling routes with interactive maps and elevation profiles.</p>
+                    <a href="#!" class="btn btn-primary btn-lg mt-3"><i class="bi bi-pencil-square"></i> Start Planning Now</a>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                           <div class="card-body">
+                                <i class="bi bi-map display-4 text-primary mb-3"></i>
+                                <h5 class="card-title">Draw Your Route</h5>
+                                <p class="card-text">Click on the interactive map to plot your custom hiking or cycling path.</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                             <div class="card-body">
+                                <i class="bi bi-graph-up display-4 text-success mb-3"></i>
+                                <h5 class="card-title">Analyze Elevation</h5>
+                                <p class="card-text">Instantly view the elevation profile for your planned route to gauge difficulty.</p>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                         <div class="card h-100">
+                             <div class="card-body">
+                                <i class="bi bi-box-arrow-down display-4 text-info mb-3"></i>
+                                <h5 class="card-title">Save & Export</h5>
+                                <p class="card-text">Save your routes for later and export them as GPX files for your GPS device.</p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>About - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Plan Route</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">My Routes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">About</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <h1 class="mb-4">About Interactive Map Route Planner</h1>
+                <p class="lead">This tool is designed for outdoor enthusiasts, hikers, and cyclists who want to plan their routes with ease.</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h3>Our Mission</h3>
+                        <p>To provide a simple, intuitive, and powerful platform for planning outdoor adventures. We believe that understanding your route, especially its elevation changes, is key to a safe and enjoyable experience.</p>
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Interactive map interface for drawing routes.</li>
+                            <li>Automatic calculation of route distance.</li>
+                            <li>Real-time elevation profile generation.</li>
+                            <li>Ability to save planned routes to your account.</li>
+                            <li>Export routes in standard GPX format.</li>
+                            <li>Support for both hiking and cycling modes (future).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://via.placeholder.com/500x300.png?text=Illustration+of+App+Usage" class="img-fluid rounded" alt="App illustration">
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h3>Technology Used</h3>
+                    <p>This application utilizes modern web technologies including:</p>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>Bootstrap 5 for responsive design</li>
+                        <li>(Placeholder for mapping library like Leaflet or Mapbox GL JS)</li>
+                        <li>(Placeholder for backend technology like Node.js, Python/Django, etc.)</li>
+                    </ul>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <p>Ready to plan your trip?</p>
+                    <a href="#!" class="btn btn-success btn-lg"><i class="bi bi-geo-alt-fill"></i> Start Planning</a>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+     <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Login - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                         <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Plan Route</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">About</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-4">Login</h3>
+                                <!-- Login Form -->
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="loginEmail" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                                         <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="loginPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password" required>
+                                        <div class="invalid-feedback">
+                                            Incorrect password. Please try again. <!-- Example Error State -->
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">Login</button>
+                                    </div>
+                                </form>
+                                <div class="text-center mt-3">
+                                    <a href="#!" class="text-decoration-none"><small>Forgot password?</small></a>
+                                </div>
+                                <hr>
+                                <p class="text-center mb-0">Don&apos;t have an account? <a href="#!" class="text-decoration-none">Sign Up</a></p>
+                             </div>
+                        </div>
+                         <!-- Example Global Error Message -->
+                        <div class="alert alert-danger mt-3" role="alert">
+                           Invalid email or password. Please check your credentials.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 4: Signup Page -->
+     <div class="state-container">
+        <h2>State 4: Signup Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Sign Up - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                         <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Plan Route</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">About</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#!">Login</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                 <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                         <div class="card">
+                             <div class="card-body">
+                                <h3 class="card-title text-center mb-4">Create Account</h3>
+                                <!-- Signup Form -->
+                                <form>
+                                     <div class="mb-3">
+                                        <label for="signupName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="signupName" placeholder="John Doe" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your name.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="signupEmail" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="signupPassword" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="signupPassword" placeholder="Choose a strong password" required>
+                                        <div class="invalid-feedback">
+                                            Password must be at least 8 characters long. <!-- Example Validation -->
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm your password" required>
+                                        <div class="invalid-feedback">
+                                             Passwords do not match. <!-- Example Validation Error State -->
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                        <label class="form-check-label" for="termsCheck">I agree to the <a href="#!">Terms of Service</a></label>
+                                        <div class="invalid-feedback">
+                                            You must agree to the terms.
+                                        </div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success">Sign Up</button>
+                                    </div>
+                                </form>
+                                <hr>
+                                 <p class="text-center mb-0">Already have an account? <a href="#!" class="text-decoration-none">Login</a></p>
+                            </div>
+                        </div>
+                          <!-- Example Global Error Message -->
+                        <div class="alert alert-danger mt-3" role="alert">
+                           An account with this email already exists. Please <a href="#!" class="alert-link">Login</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Route Planner (Initial State) -->
+    <div class="state-container">
+        <h2>State 5: Route Planner (Initial State)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Plan Route - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                         <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#!">Plan Route</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">My Routes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                <div class="map-container">
+                    <div class="map-placeholder">Interactive Map Area <br><small>(Click to start drawing)</small></div>
+                    <!-- Add map controls overlay here if needed -->
+                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;">
+                         <button class="btn btn-light btn-sm mb-1"><i class="bi bi-zoom-in"></i></button><br>
+                         <button class="btn btn-light btn-sm"><i class="bi bi-zoom-out"></i></button>
+                     </div>
+                </div>
+                <div class="sidebar">
+                    <h5>Route Details</h5>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="routeName" class="form-label">Route Name (Optional)</label>
+                        <input type="text" class="form-control" id="routeName" placeholder="e.g., Scenic Mountain Loop">
+                    </div>
+                    <div class="mb-3">
+                        <label for="activityType" class="form-label">Activity Type</label>
+                        <select class="form-select" id="activityType">
+                            <option selected>Hiking</option>
+                            <option value="1">Cycling</option>
+                            <option value="2">Running</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <h6>Instructions</h6>
+                    <p><small>Click on the map to add points and draw your route. Double-click the last point to finish.</small></p>
+                    <hr>
+                    <h6>Statistics</h6>
+                    <p>Distance: <span class="fw-bold">0.0 km</span></p>
+                    <p>Estimated Time: <span class="fw-bold">0h 0m</span></p>
+                    <p>Total Ascent: <span class="fw-bold">0 m</span></p>
+                    <p>Total Descent: <span class="fw-bold">0 m</span></p>
+                    <hr>
+                     <h6>Elevation Profile</h6>
+                    <div class="elevation-placeholder">Elevation graph will appear here</div>
+                    <hr>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-secondary" disabled><i class="bi bi-save"></i> Save Route</button>
+                        <button class="btn btn-info" disabled><i class="bi bi-download"></i> Export GPX</button>
+                        <button class="btn btn-danger" disabled><i class="bi bi-trash"></i> Clear Route</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Route Planner (Drawing Route) -->
+    <div class="state-container">
+        <h2>State 6: Route Planner (Drawing Route)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Planning Route... - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .route-line-placeholder { position: absolute; top: 30%; left: 30%; width: 40%; height: 40%; border: 3px dashed #0d6efd; border-radius: 5px; pointer-events: none; }
+                 .route-point-placeholder { position: absolute; border-radius: 50%; background-color: #dc3545; width: 10px; height: 10px; pointer-events: none; }
+                 .point1 { top: 30%; left: 30%; }
+                 .point2 { top: 50%; left: 70%; }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                 <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                         <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">My Routes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+             <div class="main-content">
+                 <div class="map-container">
+                    <div class="map-placeholder">Interactive Map Area</div>
+                    <!-- Placeholder route line and points -->
+                    <div class="route-point-placeholder point1"></div>
+                    <div class="route-point-placeholder point2"></div>
+                    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;">
+                        <polyline points="calc(30% + 5px),calc(30% + 5px) calc(70% + 5px),calc(50% + 5px)" style="fill:none;stroke:#0d6efd;stroke-width:3" />
+                    </svg>
+                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;">
+                         <button class="btn btn-light btn-sm mb-1"><i class="bi bi-zoom-in"></i></button><br>
+                         <button class="btn btn-light btn-sm"><i class="bi bi-zoom-out"></i></button>
+                     </div>
+                 </div>
+                <div class="sidebar">
+                    <h5>Route Details</h5>
+                     <hr>
+                    <div class="mb-3">
+                        <label for="routeName" class="form-label">Route Name</label>
+                        <input type="text" class="form-control" id="routeName" value="My Awesome Hike">
+                     </div>
+                     <div class="mb-3">
+                        <label for="activityType" class="form-label">Activity Type</label>
+                        <select class="form-select" id="activityType">
+                            <option selected>Hiking</option>
+                            <option value="1">Cycling</option>
+                            <option value="2">Running</option>
+                        </select>
+                    </div>
+                     <hr>
+                    <h6>Instructions</h6>
+                     <p><small>Click to add more points. Double-click the last point or click "Finish Drawing" to complete.</small></p>
+                    <button class="btn btn-warning btn-sm mb-2"><i class="bi bi-stop-circle"></i> Finish Drawing</button>
+                     <hr>
+                    <h6>Statistics</h6>
+                     <p>Distance: <span class="fw-bold">5.2 km</span></p>
+                    <p>Estimated Time: <span class="fw-bold">1h 45m</span></p>
+                    <p>Total Ascent: <span class="fw-bold">210 m</span></p>
+                    <p>Total Descent: <span class="fw-bold">180 m</span></p>
+                     <hr>
+                     <h6>Elevation Profile</h6>
+                    <div class="elevation-placeholder">
+                        <!-- Placeholder bars for elevation -->
+                        <div style="display: flex; align-items: flex-end; height: 80%; width: 80%; background-color: #ddd;">
+                             <div style="width: 20%; height: 40%; background-color: #6c757d; margin: 0 1%;"></div>
+                             <div style="width: 20%; height: 60%; background-color: #6c757d; margin: 0 1%;"></div>
+                             <div style="width: 20%; height: 80%; background-color: #6c757d; margin: 0 1%;"></div>
+                             <div style="width: 20%; height: 70%; background-color: #6c757d; margin: 0 1%;"></div>
+                        </div>
+                    </div>
+                     <hr>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-secondary" disabled><i class="bi bi-save"></i> Save Route</button>
+                        <button class="btn btn-info" disabled><i class="bi bi-download"></i> Export GPX</button>
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i> Clear Route</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Route Planner (Route Drawn) -->
+    <div class="state-container">
+        <h2>State 7: Route Planner (Route Drawn / Finished)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Route Complete - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+             <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .route-line-placeholder { position: absolute; top: 30%; left: 30%; width: 40%; height: 40%; border: 3px solid #0d6efd; border-radius: 5px; pointer-events: none; }
+                 .route-point-placeholder { position: absolute; border-radius: 50%; background-color: #dc3545; width: 10px; height: 10px; pointer-events: none; }
+                 .point1 { top: 30%; left: 30%; }
+                 .point2 { top: 50%; left: 70%; }
+                 .point3 { top: 70%; left: 50%; }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">My Routes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                 <div class="map-container">
+                    <div class="map-placeholder">Interactive Map Area</div>
+                    <!-- Completed Route -->
+                    <div class="route-point-placeholder point1"></div>
+                    <div class="route-point-placeholder point2"></div>
+                    <div class="route-point-placeholder point3"></div>
+                     <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;">
+                        <polyline points="calc(30% + 5px),calc(30% + 5px) calc(70% + 5px),calc(50% + 5px) calc(50% + 5px),calc(70% + 5px)" style="fill:none;stroke:#0d6efd;stroke-width:3" />
+                    </svg>
+                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;">
+                         <button class="btn btn-light btn-sm mb-1"><i class="bi bi-zoom-in"></i></button><br>
+                         <button class="btn btn-light btn-sm"><i class="bi bi-zoom-out"></i></button>
+                     </div>
+                 </div>
+                <div class="sidebar">
+                    <h5>Route Details</h5>
+                     <hr>
+                    <div class="mb-3">
+                         <label for="routeName" class="form-label">Route Name</label>
+                        <input type="text" class="form-control" id="routeName" value="Scenic Mountain Loop">
+                     </div>
+                     <div class="mb-3">
+                        <label for="activityType" class="form-label">Activity Type</label>
+                        <select class="form-select" id="activityType">
+                            <option selected>Hiking</option>
+                            <option value="1">Cycling</option>
+                            <option value="2">Running</option>
+                        </select>
+                    </div>
+                     <hr>
+                    <h6>Statistics</h6>
+                    <p>Distance: <span class="fw-bold">8.5 km</span></p>
+                    <p>Estimated Time: <span class="fw-bold">2h 50m</span></p>
+                    <p>Total Ascent: <span class="fw-bold">350 m</span></p>
+                    <p>Total Descent: <span class="fw-bold">345 m</span></p>
+                     <hr>
+                     <h6>Elevation Profile</h6>
+                     <div class="elevation-placeholder">
+                         <!-- Placeholder bars for elevation -->
+                         <div style="display: flex; align-items: flex-end; height: 80%; width: 90%; background-color: #ddd; justify-content: space-around;">
+                             <div style="width: 15%; height: 30%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 55%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 90%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 80%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 40%; background-color: #6c757d;"></div>
+                        </div>
+                     </div>
+                     <hr>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="bi bi-check-circle-fill"></i> Route drawing complete!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveRouteModal"><i class="bi bi-save"></i> Save Route</button> <!-- Enabled -->
+                        <button class="btn btn-info"><i class="bi bi-download"></i> Export GPX</button> <!-- Enabled -->
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i> Clear Route</button> <!-- Enabled -->
+                    </div>
+                </div>
+            </div>
+
+             <!-- Save Route Modal Placeholder -->
+             <div class="modal fade" id="saveRouteModal" tabindex="-1" aria-labelledby="saveRouteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="saveRouteModalLabel">Save Route</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <!-- Modal content will be shown in the next state -->
+                     <p>Modal content appears here.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Route Planner (Saving Route - Modal) -->
+    <div class="state-container">
+        <h2>State 8: Route Planner (Saving Route - Modal)</h2>
+         <p class="text-muted">This state shows the main planner view with the "Save Route" modal dialogue open.</p>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Save Route - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .route-line-placeholder { position: absolute; top: 30%; left: 30%; width: 40%; height: 40%; border: 3px solid #0d6efd; border-radius: 5px; pointer-events: none; }
+                 .route-point-placeholder { position: absolute; border-radius: 50%; background-color: #dc3545; width: 10px; height: 10px; pointer-events: none; }
+                 .point1 { top: 30%; left: 30%; }
+                 .point2 { top: 50%; left: 70%; }
+                 .point3 { top: 70%; left: 50%; }
+                 /* Ensure modal is visible for static representation */
+                 .modal { display: block; opacity: 1; background-color: rgba(0,0,0,0.5); }
+            </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                 <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">My Routes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                <div class="map-container">
+                    <div class="map-placeholder">Interactive Map Area</div>
+                     <div class="route-point-placeholder point1"></div>
+                    <div class="route-point-placeholder point2"></div>
+                    <div class="route-point-placeholder point3"></div>
+                    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;">
+                        <polyline points="calc(30% + 5px),calc(30% + 5px) calc(70% + 5px),calc(50% + 5px) calc(50% + 5px),calc(70% + 5px)" style="fill:none;stroke:#0d6efd;stroke-width:3" />
+                    </svg>
+                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;">
+                         <button class="btn btn-light btn-sm mb-1"><i class="bi bi-zoom-in"></i></button><br>
+                         <button class="btn btn-light btn-sm"><i class="bi bi-zoom-out"></i></button>
+                     </div>
+                 </div>
+                 <div class="sidebar">
+                    <h5>Route Details</h5>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="routeNameSidebar" class="form-label">Route Name</label>
+                        <input type="text" class="form-control" id="routeNameSidebar" value="Scenic Mountain Loop">
+                    </div>
+                    <div class="mb-3">
+                        <label for="activityType" class="form-label">Activity Type</label>
+                        <select class="form-select" id="activityType">
+                            <option selected>Hiking</option>
+                            <option value="1">Cycling</option>
+                            <option value="2">Running</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <h6>Statistics</h6>
+                    <p>Distance: <span class="fw-bold">8.5 km</span></p>
+                    <p>Estimated Time: <span class="fw-bold">2h 50m</span></p>
+                    <p>Total Ascent: <span class="fw-bold">350 m</span></p>
+                    <p>Total Descent: <span class="fw-bold">345 m</span></p>
+                    <hr>
+                    <h6>Elevation Profile</h6>
+                    <div class="elevation-placeholder">
+                         <!-- Placeholder bars for elevation -->
+                         <div style="display: flex; align-items: flex-end; height: 80%; width: 90%; background-color: #ddd; justify-content: space-around;">
+                             <div style="width: 15%; height: 30%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 55%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 90%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 80%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 40%; background-color: #6c757d;"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveRouteModal"><i class="bi bi-save"></i> Save Route</button>
+                        <button class="btn btn-info"><i class="bi bi-download"></i> Export GPX</button>
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i> Clear Route</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Route Modal Content -->
+            <div class="modal fade show" id="saveRouteModal" tabindex="-1" aria-labelledby="saveRouteModalLabel" style="display: block;" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="saveRouteModalLabel">Save Route</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="modalRouteName" class="form-label">Route Name</label>
+                            <input type="text" class="form-control is-valid" id="modalRouteName" value="Scenic Mountain Loop" required> <!-- Example valid state -->
+                             <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalRouteDescription" class="form-label">Description (Optional)</label>
+                            <textarea class="form-control" id="modalRouteDescription" rows="3" placeholder="Add notes about the trail, conditions, etc."></textarea>
+                        </div>
+                         <!-- Example Validation Error -->
+                         <!--
+                         <div class="mb-3">
+                            <label for="modalRouteNameError" class="form-label">Route Name</label>
+                            <input type="text" class="form-control is-invalid" id="modalRouteNameError" value="" required>
+                            <div class="invalid-feedback">
+                                Route name cannot be empty.
+                            </div>
+                        </div>
+                        -->
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"><i class="bi bi-check-lg"></i> Save Route</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-backdrop fade show"></div> <!-- Added backdrop for visual effect -->
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 9: Route Planner (Saving Route - Loading) -->
+    <div class="state-container">
+        <h2>State 9: Route Planner (Saving Route - Loading)</h2>
+        <p class="text-muted">Shows the modal with a loading state after clicking "Save Route".</p>
+        <iframe srcdoc='
+         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Saving Route... - Route Planner</title>
+             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; filter: blur(2px); } /* Blur background */
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .modal { display: block; opacity: 1; background-color: rgba(0,0,0,0.5); }
+                 /* Center spinner in modal */
+                 .modal-body-loading { display: flex; justify-content: center; align-items: center; min-height: 150px; flex-direction: column; }
+            </style>
+        </head>
+        <body>
+            <!-- Navbar (same as before, omitted for brevity but should be present) -->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0"> (Content omitted for brevity) </nav>
+
+             <div class="main-content">
+                <!-- Map and Sidebar (same as before, content blurred) -->
+                 <div class="map-container"><div class="map-placeholder">Map Area</div></div>
+                 <div class="sidebar">Sidebar Content</div>
+            </div>
+
+            <!-- Save Route Modal - Loading State -->
+            <div class="modal fade show" id="saveRouteModalLoading" tabindex="-1" aria-labelledby="saveRouteModalLabel" style="display: block;" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="saveRouteModalLabel">Saving Route</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" disabled></button>
+                  </div>
+                  <div class="modal-body modal-body-loading">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                     <p class="mt-3">Saving your route, please wait...</p>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" disabled>Cancel</button>
+                    <button type="button" class="btn btn-primary" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Saving...
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-backdrop fade show"></div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 10: Route Planner (Saving Route - Success) -->
+    <div class="state-container">
+        <h2>State 10: Route Planner (Saving Route - Success)</h2>
+        <p class="text-muted">Shows the modal with a success message after saving.</p>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Route Saved - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; filter: blur(2px); } /* Keep background blurred */
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .modal { display: block; opacity: 1; background-color: rgba(0,0,0,0.5); }
+            </style>
+        </head>
+        <body>
+             <!-- Navbar (same as before, omitted for brevity) -->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0"> (Content omitted for brevity) </nav>
+
+             <div class="main-content">
+                <!-- Map and Sidebar (same as before, content blurred) -->
+                 <div class="map-container"><div class="map-placeholder">Map Area</div></div>
+                 <div class="sidebar">Sidebar Content</div>
+            </div>
+
+            <!-- Save Route Modal - Success State -->
+            <div class="modal fade show" id="saveRouteModalSuccess" tabindex="-1" aria-labelledby="saveRouteModalLabel" style="display: block;" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header border-0">
+                    <h5 class="modal-title" id="saveRouteModalLabel">Success!</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <i class="bi bi-check-circle-fill text-success display-3 mb-3"></i>
+                    <p>Your route "Scenic Mountain Loop" has been saved successfully!</p>
+                     <a href="#!" class="btn btn-outline-primary btn-sm">View in My Routes</a>
+                  </div>
+                  <div class="modal-footer border-0 justify-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-backdrop fade show"></div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 11: Route Planner (Saving Route - Error) -->
+    <div class="state-container">
+        <h2>State 11: Route Planner (Saving Route - Error)</h2>
+        <p class="text-muted">Shows the modal with an error message if saving fails.</p>
+        <iframe srcdoc='
+         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Save Error - Route Planner</title>
+             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; filter: blur(2px); } /* Keep background blurred */
+                 .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                 .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                 .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                 .modal { display: block; opacity: 1; background-color: rgba(0,0,0,0.5); }
+            </style>
+        </head>
+        <body>
+             <!-- Navbar (same as before, omitted for brevity) -->
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0"> (Content omitted for brevity) </nav>
+
+             <div class="main-content">
+                 <!-- Map and Sidebar (same as before, content blurred) -->
+                 <div class="map-container"><div class="map-placeholder">Map Area</div></div>
+                 <div class="sidebar">Sidebar Content</div>
+            </div>
+
+            <!-- Save Route Modal - Error State -->
+            <div class="modal fade show" id="saveRouteModalError" tabindex="-1" aria-labelledby="saveRouteModalLabel" style="display: block;" aria-modal="true" role="dialog">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="saveRouteModalLabel"><i class="bi bi-exclamation-triangle-fill"></i> Save Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>There was a problem saving your route. Please try again.</p>
+                     <!-- Optionally show more details -->
+                     <p><small class="text-muted">Error details: Network connection timed out.</small></p>
+                     <hr>
+                     <!-- Re-show form fields to allow correction or retry -->
+                     <form>
+                        <div class="mb-3">
+                            <label for="modalRouteName" class="form-label">Route Name</label>
+                             <input type="text" class="form-control" id="modalRouteName" value="Scenic Mountain Loop" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalRouteDescription" class="form-label">Description (Optional)</label>
+                            <textarea class="form-control" id="modalRouteDescription" rows="3">Previously entered description...</textarea>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"><i class="bi bi-arrow-clockwise"></i> Try Again</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-backdrop fade show"></div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 12: Route Planner (Exporting GPX - Feedback) -->
+    <div class="state-container">
+        <h2>State 12: Route Planner (Exporting GPX - Feedback)</h2>
+        <p class="text-muted">Shows feedback after clicking "Export GPX". Actual download is handled by the browser, so this is just visual confirmation/initiation.</p>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Exporting GPX - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                .route-line-placeholder { position: absolute; top: 30%; left: 30%; width: 40%; height: 40%; border: 3px solid #0d6efd; border-radius: 5px; pointer-events: none; }
+                .route-point-placeholder { position: absolute; border-radius: 50%; background-color: #dc3545; width: 10px; height: 10px; pointer-events: none; }
+                .point1 { top: 30%; left: 30%; }
+                .point2 { top: 50%; left: 70%; }
+                .point3 { top: 70%; left: 50%; }
+            </style>
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                <div class="container-fluid">
+                   <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav ms-auto"> /* Nav items */ </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                <div class="map-container">
+                    <div class="map-placeholder">Interactive Map Area</div>
+                    <!-- Completed Route -->
+                    <div class="route-point-placeholder point1"></div>
+                    <div class="route-point-placeholder point2"></div>
+                    <div class="route-point-placeholder point3"></div>
+                    <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;">
+                        <polyline points="calc(30% + 5px),calc(30% + 5px) calc(70% + 5px),calc(50% + 5px) calc(50% + 5px),calc(70% + 5px)" style="fill:none;stroke:#0d6efd;stroke-width:3" />
+                    </svg>
+                     <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;"> /* Zoom buttons */ </div>
+                </div>
+                <div class="sidebar">
+                     <h5>Route Details</h5> <hr>
+                    <div class="mb-3"> /* Route Name Input */ </div>
+                    <div class="mb-3"> /* Activity Select */ </div> <hr>
+                    <h6>Statistics</h6> /* Stats */ <hr>
+                    <h6>Elevation Profile</h6>
+                    <div class="elevation-placeholder"> /* Graph Placeholder */ </div> <hr>
+                     <!-- Feedback Alert -->
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <i class="bi bi-info-circle-fill"></i> Preparing GPX download... Your download should start automatically.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-primary"><i class="bi bi-save"></i> Save Route</button>
+                        <button class="btn btn-info" disabled> <!-- Button temporarily disabled or shows loading -->
+                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                             Exporting...
+                        </button>
+                        <button class="btn btn-danger"><i class="bi bi-trash"></i> Clear Route</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 13: My Routes Page (List View) -->
+    <div class="state-container">
+        <h2>State 13: My Routes Page (List View)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Routes - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">My Routes</a></li>
+                             <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>My Saved Routes</h1>
+                    <a href="#!" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Plan New Route</a>
+                </div>
+
+                 <div class="list-group">
+                    <!-- Route Item 1 -->
+                    <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Scenic Mountain Loop <span class="badge bg-success ms-2">Hiking</span></h5>
+                            <small>Saved: 2 days ago</small>
+                        </div>
+                        <p class="mb-1">A challenging but rewarding loop with great views. Bring water!</p>
+                        <small>Distance: 8.5 km | Ascent: 350 m</small>
+                         <div class="mt-2">
+                             <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> View</button>
+                             <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i> Edit</button>
+                             <button class="btn btn-sm btn-outline-info"><i class="bi bi-download"></i> GPX</button>
+                             <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                         </div>
+                    </a>
+                    <!-- Route Item 2 -->
+                     <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                        <div class="d-flex w-100 justify-content-between">
+                             <h5 class="mb-1">Coastal Cycling Path <span class="badge bg-info ms-2">Cycling</span></h5>
+                            <small>Saved: 1 week ago</small>
+                        </div>
+                        <p class="mb-1">Easy, flat ride along the coast. Good for beginners.</p>
+                        <small>Distance: 25.0 km | Ascent: 50 m</small>
+                         <div class="mt-2">
+                             <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> View</button>
+                             <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i> Edit</button>
+                             <button class="btn btn-sm btn-outline-info"><i class="bi bi-download"></i> GPX</button>
+                             <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                         </div>
+                    </a>
+                     <!-- Route Item 3 -->
+                     <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                         <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Forest Trail Run <span class="badge bg-warning text-dark ms-2">Running</span></h5>
+                            <small>Saved: 1 month ago</small>
+                        </div>
+                        <p class="mb-1">Quick run through the woods.</p>
+                        <small>Distance: 5.0 km | Ascent: 120 m</small>
+                         <div class="mt-2">
+                             <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i> View</button>
+                             <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i> Edit</button>
+                             <button class="btn btn-sm btn-outline-info"><i class="bi bi-download"></i> GPX</button>
+                             <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                         </div>
+                    </a>
+                </div>
+
+                <!-- Pagination Placeholder -->
+                <nav aria-label="Page navigation" class="mt-4">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 14: My Routes Page (Loading) -->
+    <div class="state-container">
+        <h2>State 14: My Routes Page (Loading)</h2>
+        <p class="text-muted">Shows placeholder content while routes are being loaded.</p>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Loading Routes... - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav ms-auto"> /* Nav items */ </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>My Saved Routes</h1>
+                     <a href="#!" class="btn btn-primary disabled placeholder-glow"><span class="placeholder col-8"></span></a>
+                </div>
+
+                <div class="list-group placeholder-glow">
+                    <!-- Placeholder Route Item 1 -->
+                     <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                         <div class="d-flex w-100 justify-content-between">
+                             <h5 class="mb-1"><span class="placeholder col-6"></span></h5>
+                            <small><span class="placeholder col-4"></span></small>
+                        </div>
+                        <p class="mb-1"><span class="placeholder col-8"></span></p>
+                        <small><span class="placeholder col-5"></span></small>
+                        <div class="mt-2">
+                            <span class="placeholder btn btn-sm btn-outline-primary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-secondary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-info col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-danger col-2"></span>
+                        </div>
+                    </div>
+                     <!-- Placeholder Route Item 2 -->
+                    <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                         <div class="d-flex w-100 justify-content-between">
+                             <h5 class="mb-1"><span class="placeholder col-7"></span></h5>
+                            <small><span class="placeholder col-3"></span></small>
+                        </div>
+                        <p class="mb-1"><span class="placeholder col-9"></span></p>
+                        <small><span class="placeholder col-6"></span></small>
+                         <div class="mt-2">
+                            <span class="placeholder btn btn-sm btn-outline-primary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-secondary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-info col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-danger col-2"></span>
+                        </div>
+                    </div>
+                     <!-- Placeholder Route Item 3 -->
+                     <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                         <div class="d-flex w-100 justify-content-between">
+                             <h5 class="mb-1"><span class="placeholder col-5"></span></h5>
+                            <small><span class="placeholder col-4"></span></small>
+                        </div>
+                        <p class="mb-1"><span class="placeholder col-7"></span></p>
+                        <small><span class="placeholder col-4"></span></small>
+                         <div class="mt-2">
+                            <span class="placeholder btn btn-sm btn-outline-primary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-secondary col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-info col-2 me-1"></span>
+                            <span class="placeholder btn btn-sm btn-outline-danger col-2"></span>
+                         </div>
+                    </div>
+                 </div>
+
+                 <!-- Optional: Centered Spinner -->
+                 <div class="text-center mt-5">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Loading your routes...</p>
+                </div>
+
+            </div>
+
+             <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+                <div class="text-center p-3 placeholder-glow" style="background-color: rgba(0, 0, 0, 0.05);">
+                     <span class="placeholder col-3"></span>
+                 </div>
+             </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 15: My Routes Page (Empty State) -->
+    <div class="state-container">
+        <h2>State 15: My Routes Page (Empty State)</h2>
+        <iframe srcdoc='
+         <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Routes - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">My Routes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1>My Saved Routes</h1>
+                    <a href="#!" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Plan New Route</a>
+                </div>
+
+                 <div class="text-center mt-5 py-5 border rounded bg-light">
+                     <i class="bi bi-map-fill display-1 text-muted"></i>
+                     <h3 class="mt-3">No routes saved yet!</h3>
+                     <p class="text-muted">Start planning your first adventure by clicking the button below.</p>
+                     <a href="#!" class="btn btn-lg btn-success mt-3"><i class="bi bi-pencil-square"></i> Plan Your First Route</a>
+                </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 16: View Route Details -->
+    <div class="state-container">
+        <h2>State 16: View Route Details</h2>
+        <p class="text-muted">Shows a read-only view of a specific saved route, likely accessed from "My Routes".</p>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>View Route: Scenic Loop - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            <style>
+                 body, html { height: 100%; margin: 0; padding: 0; display: flex; flex-direction: column; }
+                .main-content { flex-grow: 1; display: flex; overflow: hidden; }
+                .map-container { flex-grow: 1; position: relative; }
+                .sidebar { width: 350px; background-color: #f8f9fa; padding: 15px; overflow-y: auto; border-left: 1px solid #dee2e6; }
+                .map-placeholder { background-color: #e0e0e0; height: 100%; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1.2rem; }
+                .elevation-placeholder { background-color: #f0f0f0; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 1rem; margin-top: 15px; border: 1px dashed #ccc; }
+                .route-line-placeholder { position: absolute; top: 30%; left: 30%; width: 40%; height: 40%; border: 3px solid #0d6efd; border-radius: 5px; pointer-events: none; }
+                .route-point-placeholder { position: absolute; border-radius: 50%; background-color: #dc3545; width: 10px; height: 10px; pointer-events: none; }
+                 .point1 { top: 30%; left: 30%; }
+                 .point2 { top: 50%; left: 70%; }
+                 .point3 { top: 70%; left: 50%; }
+            </style>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-shrink-0">
+                 <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">My Routes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i> User Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#!">My Routes</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="main-content">
+                 <div class="map-container">
+                     <div class="map-placeholder">Map View of Saved Route</div>
+                      <!-- Static Route Display -->
+                    <div class="route-point-placeholder point1"></div>
+                    <div class="route-point-placeholder point2"></div>
+                    <div class="route-point-placeholder point3"></div>
+                     <svg style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events: none;">
+                        <polyline points="calc(30% + 5px),calc(30% + 5px) calc(70% + 5px),calc(50% + 5px) calc(50% + 5px),calc(70% + 5px)" style="fill:none;stroke:#0d6efd;stroke-width:3" />
+                    </svg>
+                    <div class="position-absolute top-0 start-0 p-2" style="z-index: 1000;">
+                         <button class="btn btn-light btn-sm mb-1"><i class="bi bi-zoom-in"></i></button><br>
+                         <button class="btn btn-light btn-sm"><i class="bi bi-zoom-out"></i></button>
+                     </div>
+                 </div>
+                 <div class="sidebar">
+                     <div class="d-flex justify-content-between align-items-center">
+                        <h5>Scenic Mountain Loop</h5>
+                        <a href="#!" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i> Edit</a>
+                     </div>
+                     <span class="badge bg-success mb-2">Hiking</span>
+                     <p><small class="text-muted">Saved: 2 days ago</small></p>
+                    <hr>
+                    <h6>Description</h6>
+                    <p class="small">A challenging but rewarding loop with great views. Bring water!</p>
+                    <hr>
+                    <h6>Statistics</h6>
+                    <p>Distance: <span class="fw-bold">8.5 km</span></p>
+                    <p>Estimated Time: <span class="fw-bold">2h 50m</span></p>
+                    <p>Total Ascent: <span class="fw-bold">350 m</span></p>
+                    <p>Total Descent: <span class="fw-bold">345 m</span></p>
+                     <hr>
+                     <h6>Elevation Profile</h6>
+                     <div class="elevation-placeholder">
+                         <!-- Static Elevation Graph Placeholder -->
+                         <div style="display: flex; align-items: flex-end; height: 80%; width: 90%; background-color: #ddd; justify-content: space-around;">
+                             <div style="width: 15%; height: 30%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 55%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 90%; background-color: #6c757d;"></div>
+                             <div style="width: 15%; height: 80%; background-color: #6c757d;"></div>
+                              <div style="width: 15%; height: 40%; background-color: #6c757d;"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-grid gap-2 mt-3">
+                        <button class="btn btn-info"><i class="bi bi-download"></i> Export GPX</button>
+                         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal"><i class="bi bi-trash"></i> Delete Route</button>
+                         <a href="#!" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to My Routes</a>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Delete Confirmation Modal Placeholder -->
+            <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="deleteModalLabel"><i class="bi bi-exclamation-triangle-fill"></i> Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to permanently delete the route "Scenic Mountain Loop"? This action cannot be undone.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger">Delete Route</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 17: Error Page (Generic/404) -->
+    <div class="state-container">
+        <h2>State 17: Error Page (Generic/404)</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <title>Page Not Found - Route Planner</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        </head>
+        <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#!"><i class="bi bi-signpost-split-fill"></i> RoutePlanner</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                     </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <!-- Standard Nav Items -->
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Plan Route</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">My Routes</a></li>
+                             <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                             <li class="nav-item"><a class="nav-link" href="#!">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+             <div class="container mt-5 text-center">
+                 <i class="bi bi-compass display-1 text-warning"></i>
+                <h1 class="display-4 mt-3">404 - Lost Your Way?</h1>
+                <p class="lead">Oops! The page you are looking for doesn&apos;t seem to exist.</p>
+                <p>Maybe you mistyped the address, or the page has moved.</p>
+                 <hr class="my-4">
+                <p>Let&apos;s get you back on track:</p>
+                <a href="#!" class="btn btn-primary btn-lg mx-2 my-2"><i class="bi bi-house-door"></i> Go to Homepage</a>
+                <a href="#!" class="btn btn-success btn-lg mx-2 my-2"><i class="bi bi-pencil-square"></i> Plan a New Route</a>
+                <a href="#!" class="btn btn-secondary btn-lg mx-2 my-2"><i class="bi bi-list-ul"></i> View My Routes</a>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 RoutePlanner
+              </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+</div> <!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

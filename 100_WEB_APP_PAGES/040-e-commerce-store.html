@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Store UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 20px; background-color: #f8f9fa; }
+        .state-container { margin-bottom: 40px; border: 1px solid #dee2e6; padding: 15px; background-color: #fff; border-radius: 5px; }
+        h2 { margin-bottom: 20px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; font-size: 1.5rem; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; }
+        /* Common styles for iframe content */
+        .iframe-body { padding-top: 70px; /* Account for fixed navbar */ }
+        .product-card img { height: 200px; object-fit: cover; }
+        .cart-item-img { width: 80px; height: 80px; object-fit: cover; }
+        .order-summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }
+        .validation-error { color: #dc3545; font-size: 0.875em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">E-commerce Store - UI Flow</h1>
+
+        <!-- State 1: Home Page -->
+        <div class="state-container">
+            <h2>State 1: Home Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Home Page</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; } .product-card img { height: 200px; object-fit: cover; }</style>
+                </head>
+                <body class='iframe-body'>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class='container mt-4'>
+                        <div class='p-5 mb-4 bg-light rounded-3'>
+                            <div class='container-fluid py-5'>
+                                <h1 class='display-5 fw-bold'>Welcome to E-Store</h1>
+                                <p class='col-md-8 fs-4'>Your one-stop shop for amazing products. Browse our latest arrivals and find exactly what you need.</p>
+                                <button class='btn btn-primary btn-lg' type='button'>Shop Now</button>
+                            </div>
+                        </div>
+                        <h2 class='mb-3'>Featured Products</h2>
+                        <div class='row row-cols-1 row-cols-md-3 g-4'>
+                            <div class='col'>
+                                <div class='card h-100 product-card'>
+                                    <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Product+1' class='card-img-top' alt='Product 1'>
+                                    <div class='card-body'>
+                                        <h5 class='card-title'>Product Name 1</h5>
+                                        <p class='card-text'>Short description of the product. Lorem ipsum dolor sit amet.</p>
+                                        <p class='fw-bold'>$19.99</p>
+                                    </div>
+                                    <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                </div>
+                            </div>
+                            <div class='col'>
+                                <div class='card h-100 product-card'>
+                                    <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Product+2' class='card-img-top' alt='Product 2'>
+                                    <div class='card-body'>
+                                        <h5 class='card-title'>Product Name 2</h5>
+                                        <p class='card-text'>Another great product. Consectetur adipiscing elit.</p>
+                                        <p class='fw-bold'>$24.99</p>
+                                    </div>
+                                    <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                </div>
+                            </div>
+                            <div class='col'>
+                                <div class='card h-100 product-card'>
+                                    <img src='https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Product+3' class='card-img-top' alt='Product 3'>
+                                    <div class='card-body'>
+                                        <h5 class='card-title'>Product Name 3</h5>
+                                        <p class='card-text'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        <p class='fw-bold'>$9.99</p>
+                                    </div>
+                                    <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 2: Product Listing Page -->
+        <div class="state-container">
+            <h2>State 2: Product Listing Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Products</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                     <style>.iframe-body { padding-top: 70px; } .product-card img { height: 200px; object-fit: cover; }</style>
+                </head>
+                <body class='iframe-body'>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class='container mt-4'>
+                        <nav aria-label='breadcrumb'>
+                          <ol class='breadcrumb'>
+                            <li class='breadcrumb-item'><a href='#'>Home</a></li>
+                            <li class='breadcrumb-item active' aria-current='page'>Products</li>
+                          </ol>
+                        </nav>
+
+                        <div class='row'>
+                            <div class='col-md-3'>
+                                <h5>Categories</h5>
+                                <ul class='list-group mb-3'>
+                                    <li class='list-group-item'><a href='#'>Category 1</a></li>
+                                    <li class='list-group-item active'><a href='#' class='text-white'>Category 2</a></li>
+                                    <li class='list-group-item'><a href='#'>Category 3</a></li>
+                                </ul>
+                                <h5>Filter by Price</h5>
+                                <input type='range' class='form-range' min='0' max='100' step='5' id='priceRange'>
+                                <div class='d-flex justify-content-between'>
+                                     <small>$0</small><small>$100+</small>
+                                </div>
+                            </div>
+                            <div class='col-md-9'>
+                                <div class='d-flex justify-content-between align-items-center mb-3'>
+                                   <h2>All Products</h2>
+                                   <div class='dropdown'>
+                                      <button class='btn btn-outline-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        Sort By
+                                      </button>
+                                      <ul class='dropdown-menu'>
+                                        <li><a class='dropdown-item' href='#'>Price: Low to High</a></li>
+                                        <li><a class='dropdown-item' href='#'>Price: High to Low</a></li>
+                                        <li><a class='dropdown-item' href='#'>Newest</a></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                                <div class='row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4'>
+                                     <div class='col'>
+                                        <div class='card h-100 product-card'>
+                                            <img src='https://via.placeholder.com/300x200/EEEEEE/000000?text=Product+A' class='card-img-top' alt='Product A'>
+                                            <div class='card-body'>
+                                                <h5 class='card-title'>Product Name A</h5>
+                                                <p class='card-text'>Description for A.</p>
+                                                <p class='fw-bold'>$29.99</p>
+                                            </div>
+                                            <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                        </div>
+                                    </div>
+                                     <div class='col'>
+                                        <div class='card h-100 product-card'>
+                                            <img src='https://via.placeholder.com/300x200/DDDDDD/000000?text=Product+B' class='card-img-top' alt='Product B'>
+                                            <div class='card-body'>
+                                                <h5 class='card-title'>Product Name B</h5>
+                                                <p class='card-text'>Description for B.</p>
+                                                <p class='fw-bold'>$35.50</p>
+                                            </div>
+                                            <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                        </div>
+                                    </div>
+                                     <div class='col'>
+                                        <div class='card h-100 product-card'>
+                                            <img src='https://via.placeholder.com/300x200/CCCCCC/000000?text=Product+C' class='card-img-top' alt='Product C'>
+                                            <div class='card-body'>
+                                                <h5 class='card-title'>Product Name C</h5>
+                                                <p class='card-text'>Description for C.</p>
+                                                <p class='fw-bold'>$12.00</p>
+                                            </div>
+                                            <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                        </div>
+                                    </div>
+                                     <div class='col'>
+                                        <div class='card h-100 product-card'>
+                                            <img src='https://via.placeholder.com/300x200/BBBBBB/000000?text=Product+D' class='card-img-top' alt='Product D'>
+                                            <div class='card-body'>
+                                                <h5 class='card-title'>Product Name D</h5>
+                                                <p class='card-text'>Description for D.</p>
+                                                <p class='fw-bold'>$49.95</p>
+                                            </div>
+                                            <div class='card-footer bg-transparent border-top-0'><a href='#' class='btn btn-outline-primary w-100'>View Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <nav aria-label='Page navigation example' class='mt-4'>
+                                  <ul class='pagination justify-content-center'>
+                                    <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-disabled='true'>Previous</a></li>
+                                    <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                                    <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                                    <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                                    <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                                  </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 3: Product Detail Page -->
+        <div class="state-container">
+            <h2>State 3: Product Detail Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Product Detail</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                     <style>.iframe-body { padding-top: 70px; } .product-image { max-width: 100%; height: auto; }</style>
+                </head>
+                <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                         <nav aria-label='breadcrumb'>
+                          <ol class='breadcrumb'>
+                            <li class='breadcrumb-item'><a href='#'>Home</a></li>
+                            <li class='breadcrumb-item'><a href='#'>Products</a></li>
+                             <li class='breadcrumb-item'><a href='#'>Category 2</a></li>
+                            <li class='breadcrumb-item active' aria-current='page'>Product Name B</li>
+                          </ol>
+                        </nav>
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <img src='https://via.placeholder.com/500x400/DDDDDD/000000?text=Product+B+Image' class='img-fluid product-image mb-3' alt='Product Image'>
+                                <!-- Add thumbnails if needed -->
+                            </div>
+                            <div class='col-md-6'>
+                                <h1>Product Name B</h1>
+                                <p class='text-muted'>SKU: PNB-00123</p>
+                                <h3 class='mb-3'>$35.50</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <hr>
+                                <div class='mb-3'>
+                                    <label for='quantity' class='form-label'>Quantity:</label>
+                                    <div class='input-group' style='max-width: 150px;'>
+                                        <button class='btn btn-outline-secondary' type='button'>-</button>
+                                        <input type='number' class='form-control text-center' id='quantity' value='1' min='1'>
+                                        <button class='btn btn-outline-secondary' type='button'>+</button>
+                                    </div>
+                                </div>
+                                <button type='button' class='btn btn-primary btn-lg'><i class='bi bi-cart-plus'></i> Add to Cart</button>
+                                <div class='alert alert-success mt-3' role='alert'>Product added to cart successfully!</div>
+                           </div>
+                        </div>
+                        <hr>
+                        <div class='mt-5'>
+                            <h4>Product Details</h4>
+                            <ul>
+                                <li>Feature 1: Detail about feature one.</li>
+                                <li>Feature 2: More information here.</li>
+                                <li>Material: High-quality material</li>
+                                <li>Dimensions: 10 x 5 x 2 cm</li>
+                            </ul>
+                        </div>
+                     </div>
+                     <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 4: Shopping Cart Page -->
+        <div class="state-container">
+            <h2>State 4: Shopping Cart Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Shopping Cart</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                     <style>.iframe-body { padding-top: 70px; } .cart-item-img { width: 80px; height: 80px; object-fit: cover; } .order-summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }</style>
+
+                </head>
+                 <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                        <h1>Shopping Cart</h1>
+                        <div class='row mt-4'>
+                            <div class='col-lg-8'>
+                                <div class='table-responsive'>
+                                    <table class='table align-middle'>
+                                        <thead>
+                                            <tr>
+                                                <th scope='col'>Product</th>
+                                                <th scope='col'>Price</th>
+                                                <th scope='col' class='text-center'>Quantity</th>
+                                                <th scope='col' class='text-end'>Total</th>
+                                                <th scope='col'></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class='d-flex align-items-center'>
+                                                        <img src='https://via.placeholder.com/80x80/CCCCCC/FFFFFF?text=Product+1' alt='Product 1' class='cart-item-img me-3'>
+                                                        <span>Product Name 1</span>
+                                                    </div>
+                                                </td>
+                                                <td>$19.99</td>
+                                                <td>
+                                                   <div class='input-group input-group-sm' style='max-width: 120px; margin: auto;'>
+                                                        <button class='btn btn-outline-secondary' type='button'>-</button>
+                                                        <input type='number' class='form-control text-center' value='1' min='1'>
+                                                        <button class='btn btn-outline-secondary' type='button'>+</button>
+                                                    </div>
+                                                </td>
+                                                <td class='text-end'>$19.99</td>
+                                                <td><button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class='d-flex align-items-center'>
+                                                        <img src='https://via.placeholder.com/80x80/DDDDDD/000000?text=Product+B' alt='Product B' class='cart-item-img me-3'>
+                                                        <span>Product Name B</span>
+                                                    </div>
+                                                </td>
+                                                <td>$35.50</td>
+                                                 <td>
+                                                    <div class='input-group input-group-sm' style='max-width: 120px; margin: auto;'>
+                                                        <button class='btn btn-outline-secondary' type='button'>-</button>
+                                                        <input type='number' class='form-control text-center' value='2' min='1'>
+                                                        <button class='btn btn-outline-secondary' type='button'>+</button>
+                                                    </div>
+                                                </td>
+                                                <td class='text-end'>$71.00</td>
+                                                <td><button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button></td>
+                                            </tr>
+                                             <tr>
+                                                <td>
+                                                    <div class='d-flex align-items-center'>
+                                                        <img src='https://via.placeholder.com/80x80/EEEEEE/000000?text=Product+A' alt='Product A' class='cart-item-img me-3'>
+                                                        <span>Product Name A</span>
+                                                    </div>
+                                                </td>
+                                                <td>$29.99</td>
+                                                 <td>
+                                                   <div class='input-group input-group-sm' style='max-width: 120px; margin: auto;'>
+                                                        <button class='btn btn-outline-secondary' type='button'>-</button>
+                                                        <input type='number' class='form-control text-center' value='1' min='1'>
+                                                        <button class='btn btn-outline-secondary' type='button'>+</button>
+                                                    </div>
+                                                </td>
+                                                <td class='text-end'>$29.99</td>
+                                                <td><button class='btn btn-sm btn-outline-danger'><i class='bi bi-trash'></i></button></td>
+                                            </tr>
+                                             <!-- Empty Cart State -->
+                                            <!--
+                                            <tr>
+                                                <td colspan='5' class='text-center py-4'>
+                                                    <p class='mb-2'>Your cart is empty.</p>
+                                                    <a href='#' class='btn btn-primary'>Continue Shopping</a>
+                                                </td>
+                                            </tr>
+                                            -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a href='#' class='btn btn-outline-secondary'><i class='bi bi-arrow-left'></i> Continue Shopping</a>
+                            </div>
+                            <div class='col-lg-4'>
+                                <div class='order-summary'>
+                                    <h5 class='mb-3'>Order Summary</h5>
+                                    <div class='d-flex justify-content-between mb-2'>
+                                        <span>Subtotal</span>
+                                        <span>$120.98</span>
+                                    </div>
+                                    <div class='d-flex justify-content-between mb-2'>
+                                        <span>Shipping</span>
+                                        <span>$5.00</span>
+                                    </div>
+                                    <hr>
+                                    <div class='d-flex justify-content-between fw-bold mb-3'>
+                                        <span>Total</span>
+                                        <span>$125.98</span>
+                                    </div>
+                                    <a href='#' class='btn btn-primary w-100'>Proceed to Checkout</a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                     <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                 </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 5: Checkout Page -->
+        <div class="state-container">
+            <h2>State 5: Checkout Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Checkout</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; } .order-summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }</style>
+                </head>
+                 <body class='iframe-body'>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class='container mt-4'>
+                        <h1>Checkout</h1>
+                        <div class='alert alert-warning' role='alert'>
+                          You must <a href='#' class='alert-link'>Login</a> or <a href='#' class='alert-link'>Register</a> to checkout. (Example conditional message)
+                        </div>
+                        <div class='row g-5 mt-2'>
+                            <div class='col-md-7 col-lg-8'>
+                                <h4 class='mb-3'>Shipping Address</h4>
+                                <form class='needs-validation' novalidate=''>
+                                    <div class='row g-3'>
+                                        <div class='col-sm-6'>
+                                            <label for='firstName' class='form-label'>First name</label>
+                                            <input type='text' class='form-control' id='firstName' placeholder='' value='' required=''>
+                                            <div class='invalid-feedback'>Valid first name is required.</div>
+                                        </div>
+                                        <div class='col-sm-6'>
+                                            <label for='lastName' class='form-label'>Last name</label>
+                                            <input type='text' class='form-control is-invalid' id='lastName' placeholder='' value='' required=''>
+                                            <div class='invalid-feedback'>Valid last name is required.</div>
+                                        </div>
+                                        <div class='col-12'>
+                                            <label for='email' class='form-label'>Email <span class='text-muted'>(Optional)</span></label>
+                                            <input type='email' class='form-control' id='email' placeholder='you@example.com'>
+                                            <div class='invalid-feedback'>Please enter a valid email address for shipping updates.</div>
+                                        </div>
+                                        <div class='col-12'>
+                                            <label for='address' class='form-label'>Address</label>
+                                            <input type='text' class='form-control' id='address' placeholder='1234 Main St' required=''>
+                                            <div class='invalid-feedback'>Please enter your shipping address.</div>
+                                        </div>
+                                        <div class='col-12'>
+                                            <label for='address2' class='form-label'>Address 2 <span class='text-muted'>(Optional)</span></label>
+                                            <input type='text' class='form-control' id='address2' placeholder='Apartment or suite'>
+                                        </div>
+                                        <div class='col-md-5'>
+                                            <label for='country' class='form-label'>Country</label>
+                                            <select class='form-select' id='country' required=''>
+                                                <option value=''>Choose...</option>
+                                                <option>United States</option>
+                                            </select>
+                                            <div class='invalid-feedback'>Please select a valid country.</div>
+                                        </div>
+                                        <div class='col-md-4'>
+                                            <label for='state' class='form-label'>State</label>
+                                            <select class='form-select' id='state' required=''>
+                                                <option value=''>Choose...</option>
+                                                <option>California</option>
+                                            </select>
+                                            <div class='invalid-feedback'>Please provide a valid state.</div>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <label for='zip' class='form-label'>Zip</label>
+                                            <input type='text' class='form-control' id='zip' placeholder='' required=''>
+                                            <div class='invalid-feedback'>Zip code required.</div>
+                                        </div>
+                                    </div>
+                                    <hr class='my-4'>
+                                    <div class='form-check'>
+                                        <input type='checkbox' class='form-check-input' id='same-address'>
+                                        <label class='form-check-label' for='same-address'>Shipping address is the same as my billing address</label>
+                                    </div>
+                                    <hr class='my-4'>
+                                    <h4 class='mb-3'>Payment</h4>
+                                    <div class='my-3'>
+                                        <div class='form-check'>
+                                            <input id='credit' name='paymentMethod' type='radio' class='form-check-input' checked='' required=''>
+                                            <label class='form-check-label' for='credit'>Credit card</label>
+                                        </div>
+                                        <div class='form-check'>
+                                            <input id='debit' name='paymentMethod' type='radio' class='form-check-input' required=''>
+                                            <label class='form-check-label' for='debit'>Debit card</label>
+                                        </div>
+                                        <div class='form-check'>
+                                            <input id='paypal' name='paymentMethod' type='radio' class='form-check-input' required=''>
+                                            <label class='form-check-label' for='paypal'>PayPal</label>
+                                        </div>
+                                    </div>
+                                    <div class='row gy-3'>
+                                        <div class='col-md-6'>
+                                            <label for='cc-name' class='form-label'>Name on card</label>
+                                            <input type='text' class='form-control is-invalid' id='cc-name' placeholder='' required=''>
+                                            <small class='text-muted'>Full name as displayed on card</small>
+                                            <div class='invalid-feedback'>Name on card is required</div>
+                                        </div>
+                                        <div class='col-md-6'>
+                                            <label for='cc-number' class='form-label'>Credit card number</label>
+                                            <input type='text' class='form-control' id='cc-number' placeholder='' required=''>
+                                            <div class='invalid-feedback'>Credit card number is required</div>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <label for='cc-expiration' class='form-label'>Expiration</label>
+                                            <input type='text' class='form-control' id='cc-expiration' placeholder='MM/YY' required=''>
+                                            <div class='invalid-feedback'>Expiration date required</div>
+                                        </div>
+                                        <div class='col-md-3'>
+                                            <label for='cc-cvv' class='form-label'>CVV</label>
+                                            <input type='text' class='form-control' id='cc-cvv' placeholder='123' required=''>
+                                            <div class='invalid-feedback'>Security code required</div>
+                                        </div>
+                                    </div>
+                                    <hr class='my-4'>
+                                    <button class='w-100 btn btn-primary btn-lg' type='submit'>Place Order</button>
+                                </form>
+                            </div>
+                             <div class='col-md-5 col-lg-4 order-md-last'>
+                                <div class='order-summary'>
+                                    <h4 class='d-flex justify-content-between align-items-center mb-3'>
+                                        <span class='text-primary'>Your cart</span>
+                                        <span class='badge bg-primary rounded-pill'>3</span>
+                                    </h4>
+                                    <ul class='list-group mb-3'>
+                                        <li class='list-group-item d-flex justify-content-between lh-sm'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name 1</h6>
+                                                <small class='text-muted'>Qty: 1</small>
+                                            </div>
+                                            <span class='text-muted'>$19.99</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between lh-sm'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name B</h6>
+                                                <small class='text-muted'>Qty: 2</small>
+                                            </div>
+                                            <span class='text-muted'>$71.00</span>
+                                        </li>
+                                         <li class='list-group-item d-flex justify-content-between lh-sm'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name A</h6>
+                                                <small class='text-muted'>Qty: 1</small>
+                                            </div>
+                                            <span class='text-muted'>$29.99</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between bg-light'>
+                                            <div class='text-success'>
+                                                <h6 class='my-0'>Promo code</h6>
+                                                <small>EXAMPLECODE</small>
+                                            </div>
+                                            <span class='text-success'>−$5.00</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between'>
+                                            <span>Subtotal</span>
+                                            <strong>$120.98</strong>
+                                        </li>
+                                         <li class='list-group-item d-flex justify-content-between'>
+                                            <span>Shipping</span>
+                                            <strong>$5.00</strong>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between'>
+                                            <span>Total (USD)</span>
+                                            <strong>$125.98</strong>
+                                        </li>
+                                    </ul>
+                                    <form class='card p-2'>
+                                        <div class='input-group'>
+                                            <input type='text' class='form-control' placeholder='Promo code'>
+                                            <button type='submit' class='btn btn-secondary'>Redeem</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 6: Order Confirmation Page -->
+        <div class="state-container">
+            <h2>State 6: Order Confirmation Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Order Confirmed</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                     <style>.iframe-body { padding-top: 70px; } .order-summary { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }</style>
+                </head>
+                 <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>0</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                        <div class='py-5 text-center'>
+                            <i class='bi bi-check-circle-fill text-success display-1'></i>
+                            <h2>Thank You For Your Order!</h2>
+                            <p class='lead'>Your order has been placed successfully. Your order number is <strong class='text-primary'>#ESTORE-123456789</strong>.</p>
+                            <p>You will receive an email confirmation shortly with your order details and tracking information.</p>
+                            <hr>
+                            <p class='mb-0'>
+                                <a href='#' class='btn btn-primary me-2'>View Order Details</a>
+                                <a href='#' class='btn btn-outline-secondary'>Continue Shopping</a>
+                            </p>
+                         </div>
+
+                          <div class='row justify-content-center'>
+                            <div class='col-md-8 col-lg-6'>
+                                <div class='order-summary mt-4'>
+                                    <h5 class='mb-3'>Order Summary (#ESTORE-123456789)</h5>
+                                    <ul class='list-group list-group-flush mb-3'>
+                                        <li class='list-group-item d-flex justify-content-between lh-sm bg-transparent px-0'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name 1 <small class='text-muted'>x 1</small></h6>
+                                            </div>
+                                            <span class='text-muted'>$19.99</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between lh-sm bg-transparent px-0'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name B <small class='text-muted'>x 2</small></h6>
+                                            </div>
+                                            <span class='text-muted'>$71.00</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between lh-sm bg-transparent px-0'>
+                                            <div>
+                                                <h6 class='my-0'>Product Name A <small class='text-muted'>x 1</small></h6>
+                                            </div>
+                                            <span class='text-muted'>$29.99</span>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between bg-transparent px-0'>
+                                            <span>Subtotal</span>
+                                            <strong>$120.98</strong>
+                                        </li>
+                                         <li class='list-group-item d-flex justify-content-between bg-transparent px-0'>
+                                            <span>Shipping</span>
+                                            <strong>$5.00</strong>
+                                        </li>
+                                        <li class='list-group-item d-flex justify-content-between bg-transparent px-0'>
+                                            <span>Total (USD)</span>
+                                            <strong>$125.98</strong>
+                                        </li>
+                                    </ul>
+                                    <h6 class='mb-2'>Shipping Address</h6>
+                                    <p class='mb-1'>John Doe</p>
+                                    <p class='mb-1'>1234 Main St, Apartment 101</p>
+                                    <p class='mb-0'>Anytown, CA 98765, United States</p>
+                                </div>
+                            </div>
+                         </div>
+                     </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                 </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 7: Login Page -->
+        <div class="state-container">
+            <h2>State 7: Login Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Login</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                     <style>.iframe-body { padding-top: 70px; display: flex; flex-direction: column; min-height: calc(100vh - 70px); } .login-container { flex-grow: 1; display: flex; align-items: center; justify-content: center; } .form-signin { max-width: 400px; padding: 1rem; /* Adjusted padding */}</style>
+                </head>
+                 <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart</a></li>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Login</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container login-container'>
+                         <main class='form-signin w-100 m-auto text-center'>
+                            <form>
+                             <i class='bi bi-person-circle mb-4' style='font-size: 4rem;'></i>
+                             <h1 class='h3 mb-3 fw-normal'>Please sign in</h1>
+
+                              <div class='alert alert-danger' role='alert'>
+                                Incorrect email or password. Please try again.
+                              </div>
+
+                              <div class='form-floating mb-2'>
+                                <input type='email' class='form-control is-invalid' id='floatingInput' placeholder='name@example.com' required>
+                                <label for='floatingInput'>Email address</label>
+                                <div class='invalid-feedback text-start'>
+                                  Please enter a valid email.
+                                </div>
+                              </div>
+                              <div class='form-floating mb-3'>
+                                <input type='password' class='form-control is-invalid' id='floatingPassword' placeholder='Password' required>
+                                <label for='floatingPassword'>Password</label>
+                                <div class='invalid-feedback text-start'>
+                                  Password is required.
+                                </div>
+                              </div>
+
+                              <div class='checkbox mb-3 text-start'>
+                                <label>
+                                  <input type='checkbox' value='remember-me'> Remember me
+                                </label>
+                              </div>
+                              <button class='w-100 btn btn-lg btn-primary' type='submit'>Sign in</button>
+                              <p class='mt-3'>
+                                <a href='#'>Forgot password?</a>
+                              </p>
+                               <p class='mt-2 mb-3 text-muted'>Don't have an account? <a href='#'>Register here</a></p>
+                            </form>
+                        </main>
+                    </div>
+                   <footer class='py-4 mt-auto bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                 </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 8: Registration Page -->
+        <div class="state-container">
+            <h2>State 8: Registration Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Register</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; display: flex; flex-direction: column; min-height: calc(100vh - 70px); } .register-container { flex-grow: 1; display: flex; align-items: center; justify-content: center; } .form-register { max-width: 450px; padding: 1rem; }</style>
+                </head>
+                 <body class='iframe-body'>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container register-container'>
+                       <main class='form-register w-100 m-auto'>
+                            <form class='needs-validation' novalidate=''>
+                                <h1 class='h3 mb-3 fw-normal text-center'>Create Account</h1>
+
+                                <div class='alert alert-danger' role='alert'>
+                                  Please fix the errors below.
+                                </div>
+
+                                <div class='form-floating mb-2'>
+                                    <input type='text' class='form-control' id='registerName' placeholder='Full Name' required=''>
+                                    <label for='registerName'>Full Name</label>
+                                     <div class='invalid-feedback'>Please enter your full name.</div>
+                                </div>
+                                <div class='form-floating mb-2'>
+                                    <input type='email' class='form-control is-invalid' id='registerEmail' placeholder='name@example.com' required=''>
+                                    <label for='registerEmail'>Email address</label>
+                                     <div class='invalid-feedback'>A valid email is required. Email already exists.</div>
+                                </div>
+                                <div class='form-floating mb-2'>
+                                    <input type='password' class='form-control is-invalid' id='registerPassword' placeholder='Password' required=''>
+                                    <label for='registerPassword'>Password</label>
+                                    <div class='invalid-feedback'>Password must be at least 8 characters long.</div>
+                                </div>
+                                 <div class='form-floating mb-3'>
+                                    <input type='password' class='form-control is-invalid' id='confirmPassword' placeholder='Confirm Password' required=''>
+                                    <label for='confirmPassword'>Confirm Password</label>
+                                    <div class='invalid-feedback'>Passwords do not match.</div>
+                                </div>
+                                <div class='form-check text-start my-3'>
+                                    <input class='form-check-input' type='checkbox' value='agree' id='termsCheck' required=''>
+                                    <label class='form-check-label' for='termsCheck'>
+                                       I agree to the <a href='#'>Terms and Conditions</a>
+                                    </label>
+                                    <div class='invalid-feedback'>You must agree before submitting.</div>
+                                </div>
+                                <button class='w-100 btn btn-lg btn-primary' type='submit'>Register</button>
+                                <p class='mt-3 text-center text-muted'>Already have an account? <a href='#'>Sign in</a></p>
+                            </form>
+                        </main>
+                    </div>
+                    <footer class='py-4 mt-auto bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 9: User Account Page -->
+        <div class="state-container">
+            <h2>State 9: User Account Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>My Account</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; } .order-history-item { border-bottom: 1px solid #eee; padding-bottom: 1rem; margin-bottom: 1rem; } .order-history-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }</style>
+                </head>
+                 <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                     <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>0</span></a></li>
+                                    <li class='nav-item dropdown'>
+                                        <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                           <i class='bi bi-person-circle'></i> My Account
+                                        </a>
+                                        <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                            <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                            <li><a class='dropdown-item' href='#'>Order History</a></li>
+                                            <li><hr class='dropdown-divider'></li>
+                                            <li><a class='dropdown-item' href='#'>Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                        <h1>My Account</h1>
+                        <div class='row mt-4'>
+                            <div class='col-md-4'>
+                               <div class='list-group'>
+                                  <a href='#' class='list-group-item list-group-item-action active' aria-current='true'>
+                                    <i class='bi bi-person-fill me-2'></i>Profile Information
+                                  </a>
+                                  <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-journal-text me-2'></i>Order History</a>
+                                  <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-geo-alt-fill me-2'></i>Addresses</a>
+                                  <a href='#' class='list-group-item list-group-item-action'><i class='bi bi-shield-lock-fill me-2'></i>Change Password</a>
+                                  <a href='#' class='list-group-item list-group-item-action text-danger'><i class='bi bi-box-arrow-right me-2'></i>Logout</a>
+                                </div>
+                            </div>
+                            <div class='col-md-8'>
+                                <div class='card mb-4'>
+                                    <div class='card-header'>Profile Information</div>
+                                    <div class='card-body'>
+                                         <form>
+                                            <div class='mb-3 row'>
+                                                <label for='profileName' class='col-sm-3 col-form-label'>Full Name</label>
+                                                <div class='col-sm-9'>
+                                                  <input type='text' class='form-control' id='profileName' value='John Doe'>
+                                                </div>
+                                            </div>
+                                             <div class='mb-3 row'>
+                                                <label for='profileEmail' class='col-sm-3 col-form-label'>Email</label>
+                                                <div class='col-sm-9'>
+                                                  <input type='email' readonly class='form-control-plaintext' id='profileEmail' value='john.doe@example.com'>
+                                                </div>
+                                            </div>
+                                            <div class='mb-3 row'>
+                                                <label for='profilePhone' class='col-sm-3 col-form-label'>Phone</label>
+                                                <div class='col-sm-9'>
+                                                  <input type='tel' class='form-control' id='profilePhone' value='123-456-7890'>
+                                                </div>
+                                            </div>
+                                            <button type='submit' class='btn btn-primary'>Update Profile</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class='card'>
+                                  <div class='card-header'>Recent Order History</div>
+                                  <div class='card-body'>
+                                    <div class='order-history-item'>
+                                        <div class='d-flex justify-content-between align-items-center mb-1'>
+                                            <h6 class='mb-0'>Order #ESTORE-123456789</h6>
+                                            <span class='badge bg-success'>Delivered</span>
+                                        </div>
+                                        <p class='mb-1 text-muted'>Placed on: October 26, 2023</p>
+                                        <p class='mb-1'>Total: $125.98</p>
+                                        <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                                    </div>
+                                     <div class='order-history-item'>
+                                        <div class='d-flex justify-content-between align-items-center mb-1'>
+                                            <h6 class='mb-0'>Order #ESTORE-987654321</h6>
+                                            <span class='badge bg-warning text-dark'>Processing</span>
+                                        </div>
+                                        <p class='mb-1 text-muted'>Placed on: October 28, 2023</p>
+                                        <p class='mb-1'>Total: $45.50</p>
+                                        <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                                    </div>
+                                     <div class='text-center mt-3'>
+                                        <a href='#'>View All Orders</a>
+                                     </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                 </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 10: About Page -->
+        <div class="state-container">
+            <h2>State 10: About Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>About Us</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; }</style>
+                </head>
+                <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                        <div class='p-5 mb-4 bg-light rounded-3'>
+                            <div class='container-fluid py-5'>
+                                <h1 class='display-5 fw-bold'>About E-Store</h1>
+                                <p class='col-md-8 fs-4'>Learn more about our mission, values, and the team behind E-Store.</p>
+                             </div>
+                        </div>
+
+                        <div class='row align-items-md-stretch'>
+                            <div class='col-md-6 mb-4'>
+                                <div class='h-100 p-5 text-bg-dark rounded-3'>
+                                <h2>Our Mission</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                            </div>
+                            <div class='col-md-6 mb-4'>
+                                <div class='h-100 p-5 bg-light border rounded-3'>
+                                <h2>Our Values</h2>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='text-center mt-4'>
+                          <img src='https://via.placeholder.com/800x300/CCCCCC/FFFFFF?text=Our+Team+Placeholder' class='img-fluid rounded' alt='Team Placeholder'>
+                          <h3 class='mt-4'>Meet the Team</h3>
+                          <p>Placeholder for team member introductions or photos.</p>
+                        </div>
+
+                    </div>
+                    <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 11: Contact Page -->
+        <div class="state-container">
+            <h2>State 11: Contact Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Contact Us</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                    <style>.iframe-body { padding-top: 70px; }</style>
+                </head>
+                <body class='iframe-body'>
+                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+                        <div class='container'>
+                            <a class='navbar-brand' href='#'>E-Store</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Products</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                    <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Contact</a></li>
+                                </ul>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-cart'></i> Cart <span class='badge bg-light text-dark ms-1'>3</span></a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'><i class='bi bi-person-circle'></i> Account</a></li>
+                                    <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                     <div class='container mt-4'>
+                        <h1>Contact Us</h1>
+                        <p class='lead'>Have questions? We'd love to hear from you. Fill out the form below or reach out via phone or email.</p>
+
+                        <div class='alert alert-success' role='alert'>
+                          Your message has been sent successfully! We will get back to you shortly.
+                        </div>
+
+                        <div class='row mt-4'>
+                            <div class='col-md-8'>
+                                <h4>Send us a Message</h4>
+                                 <form class='needs-validation' novalidate=''>
+                                    <div class='mb-3'>
+                                        <label for='contactName' class='form-label'>Your Name</label>
+                                        <input type='text' class='form-control is-invalid' id='contactName' required=''>
+                                         <div class='invalid-feedback'>Please enter your name.</div>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='contactEmail' class='form-label'>Your Email</label>
+                                        <input type='email' class='form-control' id='contactEmail' required=''>
+                                        <div class='invalid-feedback'>Please enter a valid email address.</div>
+                                    </div>
+                                     <div class='mb-3'>
+                                        <label for='contactSubject' class='form-label'>Subject</label>
+                                        <input type='text' class='form-control' id='contactSubject'>
+                                    </div>
+                                    <div class='mb-3'>
+                                        <label for='contactMessage' class='form-label'>Message</label>
+                                        <textarea class='form-control is-invalid' id='contactMessage' rows='5' required=''></textarea>
+                                        <div class='invalid-feedback'>Please enter your message.</div>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary'>Send Message</button>
+                                </form>
+                            </div>
+                            <div class='col-md-4'>
+                                <h4>Contact Information</h4>
+                                <ul class='list-unstyled'>
+                                    <li class='mb-2'>
+                                        <i class='bi bi-geo-alt-fill me-2'></i> 123 E-Store Street<br>
+                                        <span class='ms-4'>Commerce City, CC 54321</span>
+                                    </li>
+                                     <li class='mb-2'>
+                                        <i class='bi bi-telephone-fill me-2'></i> <a href='tel:+15551234567'>+1 (555) 123-4567</a>
+                                    </li>
+                                     <li class='mb-2'>
+                                        <i class='bi bi-envelope-fill me-2'></i> <a href='mailto:support@estore.com'>support@estore.com</a>
+                                    </li>
+                                     <li class='mb-2'>
+                                        <i class='bi bi-clock-fill me-2'></i> Monday - Friday: 9am - 5pm
+                                    </li>
+                                </ul>
+                                <h5 class='mt-4'>Follow Us</h5>
+                                <p>
+                                    <a href='#' class='fs-4 me-2'><i class='bi bi-facebook'></i></a>
+                                    <a href='#' class='fs-4 me-2'><i class='bi bi-twitter-x'></i></a>
+                                    <a href='#' class='fs-4'><i class='bi bi-instagram'></i></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                     <footer class='py-4 mt-5 bg-light text-center text-muted'>
+                        <div class='container'>
+                            <p class='mb-0'>&copy; 2023 E-Store. All Rights Reserved.</p>
+                        </div>
+                    </footer>
+                     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                 </body>
+                </html>
+            "></iframe>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

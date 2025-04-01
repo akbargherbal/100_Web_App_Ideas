@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found Platform - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; font-family: sans-serif; }
+        h1 { margin-bottom: 30px; color: #343a40; }
+        h2 { margin-top: 40px; margin-bottom: 15px; border-bottom: 2px solid #0d6efd; padding-bottom: 8px; color: #0d6efd; font-size: 1.75rem; }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Lost and Found Platform - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search items (e.g., keys, wallet)" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="p-5 mb-4 bg-light rounded-3">
+              <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to Lost & Found</h1>
+                <p class="col-md-8 fs-4">Your community platform for reporting and finding lost items. Help reunite owners with their belongings.</p>
+                <a href="#" class="btn btn-success btn-lg me-2" type="button">Report Found Item</a>
+                <a href="#" class="btn btn-warning btn-lg" type="button">Report Lost Item</a>
+              </div>
+            </div>
+
+            <h2 class="mb-3">Recently Reported Items</h2>
+            <div class="row">
+                <!-- Lost Item Card Example -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200.png?text=Lost+Keys" class="card-img-top" alt="Lost Keys">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="badge bg-danger">LOST</span> Keys</h5>
+                            <p class="card-text small text-muted">Lost near Central Park on Oct 25, 2023</p>
+                            <p class="card-text">Set of 3 keys on a blue keychain. Includes car key.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Found Item Card Example -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                         <img src="https://via.placeholder.com/300x200.png?text=Found+Wallet" class="card-img-top" alt="Found Wallet">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="badge bg-success">FOUND</span> Wallet</h5>
+                            <p class="card-text small text-muted">Found at Main Street Bus Stop on Oct 26, 2023</p>
+                            <p class="card-text">Brown leather wallet, contains ID for J. Doe.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Lost Item Card Example -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                         <img src="https://via.placeholder.com/300x200.png?text=Lost+Phone" class="card-img-top" alt="Lost Phone">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="badge bg-danger">LOST</span> Smartphone</h5>
+                            <p class="card-text small text-muted">Lost on Subway Line 2 on Oct 24, 2023</p>
+                            <p class="card-text">Black iPhone 13 with cracked screen protector.</p>
+                            <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-4">
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">About Our Platform</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="lead">Welcome to the Community Lost & Found Platform, dedicated to helping people reconnect with their lost belongings.</p>
+                    <p>Our mission is simple: to provide a centralized, easy-to-use online space where individuals can report items they have lost or found within the community. We believe in the power of community support and aim to facilitate the return of misplaced items to their rightful owners.</p>
+                    <h3>How It Works</h3>
+                    <ol>
+                        <li><strong>Report:</strong> If you lost or found an item, simply fill out a brief report form with details and optionally upload a photo.</li>
+                        <li><strong>Search:</strong> Browse recent listings or use the search bar to look for specific items based on keywords, location, or date.</li>
+                        <li><strong>Connect:</strong> If you find a potential match, use the provided (secure) contact information or messaging system to connect with the other party.</li>
+                        <li><strong>Reunite:</strong> Arrange a safe and convenient way to return the item.</li>
+                    </ol>
+                    <h3>Our Values</h3>
+                    <ul>
+                        <li>Community Focus</li>
+                        <li>Trust and Safety</li>
+                        <li>Ease of Use</li>
+                        <li>Efficiency</li>
+                    </ul>
+                    <p>We are constantly working to improve the platform and appreciate your feedback. Thank you for being a part of our community!</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body bg-light">
+                            <h5 class="card-title">Contact Us</h5>
+                            <p class="card-text">Have questions or feedback? Reach out to us.</p>
+                            <p><strong>Email:</strong> support@lostandfound.example.com</p>
+                            <p><strong>Phone:</strong> 1-800-LOST-FND</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 3: Report Lost Item Form -->
+    <h2>State 3: Report Lost Item Form</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report Lost Item - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Report a Lost Item</h1>
+            <p>Please provide as much detail as possible to help others identify your item.</p>
+            <form class="row g-3 needs-validation" novalidate>
+                 <div class="col-md-12">
+                    <label for="lostItemTitle" class="form-label">Item Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lostItemTitle" placeholder="e.g., Lost Black Wallet, Missing Keys" required>
+                     <div class="invalid-feedback">
+                        Please provide a title for the item.
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="lostItemDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="lostItemDescription" rows="3" placeholder="Describe the item, including brand, color, size, and any distinguishing features." required></textarea>
+                     <div class="invalid-feedback">
+                        Please provide a description.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="lostItemCategory" class="form-label">Category <span class="text-danger">*</span></label>
+                    <select class="form-select" id="lostItemCategory" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Electronics (Phone, Laptop, etc.)</option>
+                        <option>Keys</option>
+                        <option>Wallet/Purse</option>
+                        <option>Bags/Luggage</option>
+                        <option>Clothing/Accessories</option>
+                        <option>Jewelry</option>
+                        <option>Pets</option>
+                        <option>Documents/ID</option>
+                        <option>Other</option>
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a category.
+                    </div>
+                </div>
+
+                 <div class="col-md-6">
+                    <label for="lostItemDate" class="form-label">Date Lost <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="lostItemDate" required>
+                     <div class="invalid-feedback">
+                        Please provide the date the item was lost.
+                    </div>
+                </div>
+
+                 <div class="col-md-12">
+                    <label for="lostItemLocation" class="form-label">Location Lost <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lostItemLocation" placeholder="e.g., Central Park near playground, Bus Route 5, Main St Coffee Shop" required>
+                     <div class="invalid-feedback">
+                        Please provide the location where the item was lost.
+                    </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="lostItemImage" class="form-label">Upload Image (Optional)</label>
+                    <input class="form-control" type="file" id="lostItemImage">
+                    <div class="form-text">A photo can significantly increase the chances of finding your item.</div>
+                 </div>
+
+                 <hr class="my-4">
+                 <h5>Contact Information (How people can reach you)</h5>
+                 <p class="small text-muted">This information will be displayed with your listing. Consider using an email address you check regularly.</p>
+
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label">Your Name (Optional)</label>
+                    <input type="text" class="form-control" id="contactName" placeholder="Your name or leave blank">
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">Contact Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="you@example.com" required>
+                     <div class="invalid-feedback">
+                        Please provide a valid contact email.
+                    </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="contactPhone" class="form-label">Contact Phone (Optional)</label>
+                    <input type="tel" class="form-control" id="contactPhone" placeholder="Phone number (optional)">
+                 </div>
+
+                <div class="col-12 mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="agreeTerms" required>
+                        <label class="form-check-label" for="agreeTerms">
+                            I agree to the <a href="#">terms and conditions</a>. <span class="text-danger">*</span>
+                        </label>
+                         <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button class="btn btn-warning btn-lg" type="submit">Report Lost Item</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+         <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+            &apos;use strict&apos;
+            var forms = document.querySelectorAll(&apos;.needs-validation&apos;)
+            Array.prototype.slice.call(forms)
+              .forEach(function (form) {
+                form.addEventListener(&apos;submit&apos;, function (event) {
+                  if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+                  form.classList.add(&apos;was-validated&apos;)
+                }, false)
+              })
+          })()
+        </script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 4: Report Found Item Form -->
+    <h2>State 4: Report Found Item Form</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report Found Item - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Report a Found Item</h1>
+             <p>Thank you for helping reunite someone with their property! Please describe the item you found.</p>
+             <form class="row g-3 needs-validation" novalidate>
+                 <div class="col-md-12">
+                    <label for="foundItemTitle" class="form-label">Item Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="foundItemTitle" placeholder="e.g., Found Brown Wallet, Set of Keys Found" required>
+                    <div class="invalid-feedback">
+                        Please provide a title for the item.
+                    </div>
+                 </div>
+
+                <div class="col-md-12">
+                    <label for="foundItemDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="foundItemDescription" rows="3" placeholder="Describe the item found, including brand, color, size, or any visible identifying information (without revealing sensitive details like full names on IDs)." required></textarea>
+                     <div class="invalid-feedback">
+                        Please provide a description.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="foundItemCategory" class="form-label">Category <span class="text-danger">*</span></label>
+                    <select class="form-select" id="foundItemCategory" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Electronics (Phone, Laptop, etc.)</option>
+                        <option>Keys</option>
+                        <option>Wallet/Purse</option>
+                        <option>Bags/Luggage</option>
+                        <option>Clothing/Accessories</option>
+                        <option>Jewelry</option>
+                        <option>Pets</option>
+                        <option>Documents/ID</option>
+                        <option>Other</option>
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a category.
+                    </div>
+                </div>
+
+                 <div class="col-md-6">
+                    <label for="foundItemDate" class="form-label">Date Found <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="foundItemDate" required>
+                     <div class="invalid-feedback">
+                        Please provide the date the item was found.
+                    </div>
+                </div>
+
+                 <div class="col-md-12">
+                    <label for="foundItemLocation" class="form-label">Location Found <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="foundItemLocation" placeholder="e.g., On bench at City Park, Library entrance, Store parking lot" required>
+                     <div class="invalid-feedback">
+                        Please provide the location where the item was found.
+                    </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="foundItemImage" class="form-label">Upload Image (Optional but helpful)</label>
+                    <input class="form-control" type="file" id="foundItemImage">
+                    <div class="form-text">A photo helps the owner identify their item. Avoid showing sensitive information.</div>
+                 </div>
+
+                 <hr class="my-4">
+                 <h5>Your Contact Information (For the owner to reach you)</h5>
+                 <p class="small text-muted">This allows the owner to contact you. Your details will only be shared on this specific listing.</p>
+
+
+                  <div class="col-md-6">
+                    <label for="contactNameFinder" class="form-label">Your Name (Optional)</label>
+                    <input type="text" class="form-control" id="contactNameFinder" placeholder="Your name or leave blank">
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="contactEmailFinder" class="form-label">Contact Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="contactEmailFinder" placeholder="you@example.com" required>
+                     <div class="invalid-feedback">
+                        Please provide a valid contact email.
+                    </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="contactPhoneFinder" class="form-label">Contact Phone (Optional)</label>
+                    <input type="tel" class="form-control" id="contactPhoneFinder" placeholder="Phone number (optional)">
+                 </div>
+
+                <div class="col-12 mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="agreeTermsFinder" required>
+                        <label class="form-check-label" for="agreeTermsFinder">
+                            I agree to the <a href="#">terms and conditions</a>. <span class="text-danger">*</span>
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button class="btn btn-success btn-lg" type="submit">Report Found Item</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+         <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+            &apos;use strict&apos;
+            var forms = document.querySelectorAll(&apos;.needs-validation&apos;)
+            Array.prototype.slice.call(forms)
+              .forEach(function (form) {
+                form.addEventListener(&apos;submit&apos;, function (event) {
+                  if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+                  form.classList.add(&apos;was-validated&apos;)
+                }, false)
+              })
+          })()
+        </script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 5: Item Details Page (Lost Item Example) -->
+    <h2>State 5: Item Details Page (Lost Item Example)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Item Details - Lost Keys</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Keys</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Lost Keys</li>
+              </ol>
+            </nav>
+
+            <h1 class="mb-3"><span class="badge bg-danger me-2">LOST</span> Keys</h1>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <img src="https://via.placeholder.com/600x400.png?text=Lost+Keys+Placeholder" class="img-fluid rounded mb-3" alt="Lost Keys">
+                    <h3>Description</h3>
+                    <p>Set of 3 keys lost. One is a car key (Toyota), one is a house key (silver), and one smaller key (brass). They are attached to a small blue fabric keychain with a flower pattern. </p>
+                    <p>Possibly dropped while walking from the subway station towards Central Park West entrance.</p>
+
+                    <h4 class="mt-4">Item Details</h4>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><strong>Category:</strong> Keys</li>
+                      <li class="list-group-item"><strong>Date Lost:</strong> October 25, 2023</li>
+                      <li class="list-group-item"><strong>Location Lost:</strong> Near Central Park West entrance, around 72nd St, New York, NY</li>
+                       <li class="list-group-item"><strong>Reported By:</strong> Alex P.</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header fw-bold">
+                            Contact Information
+                        </div>
+                        <div class="card-body">
+                            <p>If you have found these keys, please contact the owner:</p>
+                            <p><strong>Name:</strong> Alex P. (Optional)</p>
+                            <p><strong>Email:</strong> alex.p.******@email.com (Masked for privacy)</p>
+                            <p><strong>Phone:</strong> XXX-XXX-1234 (Optional, Masked)</p>
+                            <button class="btn btn-success w-100 mt-2">I Found This Item!</button>
+                             <button class="btn btn-outline-secondary w-100 mt-2">Message Owner (Requires Login)</button>
+                             <p class="small text-muted mt-3">Please verify ownership carefully before returning the item.</p>
+                        </div>
+                    </div>
+                     <div class="card mt-3">
+                         <div class="card-header fw-bold">
+                            Location Map (Placeholder)
+                        </div>
+                        <div class="card-body">
+                            <img src="https://via.placeholder.com/400x300.png?text=Map+showing+general+area" class="img-fluid" alt="Map">
+                             <p class="small text-muted mt-2">Approximate area where the item was lost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 6: Item Details Page (Found Item Example) -->
+    <h2>State 6: Item Details Page (Found Item Example)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Item Details - Found Wallet</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Wallet/Purse</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Found Wallet</li>
+              </ol>
+            </nav>
+
+            <h1 class="mb-3"><span class="badge bg-success me-2">FOUND</span> Wallet</h1>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <img src="https://via.placeholder.com/600x400.png?text=Found+Wallet+Placeholder" class="img-fluid rounded mb-3" alt="Found Wallet">
+                    <h3>Description</h3>
+                    <p>Found a brown leather bifold wallet. It appears to be slightly worn. Contains some cash (amount not specified), several credit cards, and a driver&apos;s license.</p>
+                    <p>Found lying on the ground near the bus stop shelter on Main Street.</p>
+                    <p class="text-danger"><strong>Note:</strong> To claim this item, you will need to provide specific identifying information (e.g., name on the ID, type of cards inside) to the finder.</p>
+
+                    <h4 class="mt-4">Item Details</h4>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><strong>Category:</strong> Wallet/Purse</li>
+                      <li class="list-group-item"><strong>Date Found:</strong> October 26, 2023</li>
+                      <li class="list-group-item"><strong>Location Found:</strong> Main Street Bus Stop (near Elm Ave), Anytown, USA</li>
+                      <li class="list-group-item"><strong>Reported By:</strong> Sarah K.</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header fw-bold">
+                            Contact Finder
+                        </div>
+                        <div class="card-body">
+                            <p>If you believe this is your wallet, please contact the finder:</p>
+                            <p><strong>Name:</strong> Sarah K.</p>
+                            <p><strong>Email:</strong> sarah.k.******@email.com (Masked for privacy)</p>
+                            <button class="btn btn-warning w-100 mt-2">Claim This Item</button>
+                            <button class="btn btn-outline-secondary w-100 mt-2">Message Finder (Requires Login)</button>
+                            <p class="small text-muted mt-3">Please provide proof of ownership when contacting the finder.</p>
+                        </div>
+                    </div>
+                     <div class="card mt-3">
+                         <div class="card-header fw-bold">
+                             Location Map (Placeholder)
+                         </div>
+                        <div class="card-body">
+                            <img src="https://via.placeholder.com/400x300.png?text=Map+showing+bus+stop" class="img-fluid" alt="Map">
+                            <p class="small text-muted mt-2">Approximate area where the item was found.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 7: Search Results Page -->
+    <h2>State 7: Search Results Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Results - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search items..." value="wallet central park" aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Search Results for "wallet central park"</h1>
+            <p>Showing 3 results. <a href="#">Refine Search</a></p>
+
+            <div class="row mb-3">
+                 <div class="col-md-3">
+                     <label for="filterStatus" class="form-label">Status</label>
+                     <select id="filterStatus" class="form-select form-select-sm">
+                         <option selected>All (Lost & Found)</option>
+                         <option>Lost</option>
+                         <option>Found</option>
+                     </select>
+                 </div>
+                 <div class="col-md-3">
+                    <label for="filterCategory" class="form-label">Category</label>
+                    <select id="filterCategory" class="form-select form-select-sm">
+                        <option selected>Any Category</option>
+                        <option>Wallet/Purse</option>
+                        <option>Keys</option>
+                        {/* Add other categories */}
+                    </select>
+                 </div>
+                  <div class="col-md-3">
+                    <label for="filterDate" class="form-label">Date Range</label>
+                    <input type="date" class="form-control form-control-sm" id="filterDate">
+                 </div>
+                  <div class="col-md-3 align-self-end">
+                     <button class="btn btn-secondary btn-sm w-100">Apply Filters</button>
+                 </div>
+            </div>
+
+            <hr>
+
+            <div class="list-group">
+              <!-- Search Result Item 1 -->
+              <a href="#" class="list-group-item list-group-item-action mb-3 border rounded p-3">
+                <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                         <img src="https://via.placeholder.com/80x60.png?text=Item" alt="Item image" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                         <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1"><span class="badge bg-success me-1">FOUND</span> Brown Leather Wallet</h5>
+                           <small>3 days ago</small>
+                         </div>
+                         <p class="mb-1 text-truncate">Found near the Great Lawn in Central Park. Contains ID for M. Smith...</p>
+                         <small class="text-muted">Location: Central Park, NYC | Category: Wallet/Purse</small>
+                    </div>
+                </div>
+              </a>
+               <!-- Search Result Item 2 -->
+              <a href="#" class="list-group-item list-group-item-action mb-3 border rounded p-3">
+                 <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                         <img src="https://via.placeholder.com/80x60.png?text=Item" alt="Item image" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1"><span class="badge bg-danger me-1">LOST</span> Black Wallet with Studs</h5>
+                          <small>1 week ago</small>
+                        </div>
+                        <p class="mb-1 text-truncate">Lost my favorite black wallet, likely somewhere between Columbus Circle and the park entrance...</p>
+                        <small class="text-muted">Location: Near Columbus Circle / Central Park South | Category: Wallet/Purse</small>
+                    </div>
+                 </div>
+              </a>
+               <!-- Search Result Item 3 -->
+               <a href="#" class="list-group-item list-group-item-action mb-3 border rounded p-3">
+                   <div class="row g-2 align-items-center">
+                       <div class="col-auto">
+                           <img src="https://via.placeholder.com/80x60.png?text=Item" alt="Item image" class="img-thumbnail">
+                       </div>
+                       <div class="col">
+                           <div class="d-flex w-100 justify-content-between">
+                             <h5 class="mb-1"><span class="badge bg-danger me-1">LOST</span> Child&apos;s Blue Backpack (Not a wallet, but keyword hit park)</h5>
+                             <small>5 days ago</small>
+                           </div>
+                           <p class="mb-1 text-truncate">Small blue backpack with dinosaur print, lost near Heckscher Playground in Central Park. Contains snacks and a water bottle.</p>
+                           <small class="text-muted">Location: Central Park, Heckscher Playground | Category: Bags/Luggage</small>
+                       </div>
+                   </div>
+                 </a>
+            </div>
+
+             <nav aria-label="Search results navigation" class="d-flex justify-content-center mt-4">
+              <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 8: Login Page -->
+    <h2>State 8: Login Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            html, body { height: 100%; }
+            body { display: flex; flex-direction: column; }
+            .main-content { flex: 1; display: flex; align-items: center; justify-content: center; padding-top: 56px; } /* Adjust padding for navbar */
+            .form-signin { max-width: 400px; padding: 1rem; width: 100%;}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content py-5">
+            <div class="form-signin text-center">
+                <form>
+                     <a class="navbar-brand fw-bold fs-3 mb-4 d-block" href="#">Lost & Found</a>
+                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                    <div class="alert alert-danger d-none" role="alert">
+                         Invalid username or password.
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="checkbox mb-3 text-start">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <p class="mt-3">
+                        <a href="#">Forgot password?</a>
+                    </p>
+                     <p class="mt-3 text-muted">
+                        Don&apos;t have an account? <a href="#">Register here</a>
+                    </p>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2023 Lost & Found Platform</p>
+                </form>
+            </div>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 9: Registration Page -->
+    <h2>State 9: Registration Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+         <style>
+            html, body { height: 100%; }
+            body { display: flex; flex-direction: column; }
+            .main-content { flex: 1; display: flex; align-items: center; justify-content: center; padding-top: 56px; } /* Adjust padding for navbar */
+            .form-register { max-width: 450px; padding: 1rem; width: 100%;}
+        </style>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active btn btn-primary text-white ms-2" aria-current="page" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content py-5">
+             <div class="form-register">
+                <form class="needs-validation" novalidate>
+                     <div class="text-center mb-4">
+                     <a class="navbar-brand fw-bold fs-3 mb-3 d-block" href="#">Lost & Found</a>
+                        <h1 class="h3 mb-3 fw-normal">Create an Account</h1>
+                     </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                             <div class="invalid-feedback">
+                                Please enter a password.
+                            </div>
+                        </div>
+
+                         <div class="col-12">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                             <div class="invalid-feedback">
+                                Please confirm your password.
+                            </div>
+                             <!-- Add state for password mismatch error -->
+                             <div class="invalid-feedback d-none" id="passwordMismatchError">
+                                Passwords do not match.
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                     <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="agreeTermsReg" required>
+                        <label class="form-check-label" for="agreeTermsReg">I agree to the <a href="#">Terms and Conditions</a></label>
+                         <div class="invalid-feedback">
+                            You must agree to the terms.
+                        </div>
+                     </div>
+
+
+                    <button class="w-100 btn btn-primary btn-lg mt-4" type="submit">Register</button>
+
+                      <p class="mt-3 text-center text-muted">
+                        Already have an account? <a href="#">Sign in</a>
+                    </p>
+                </form>
+                <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 Lost & Found Platform</p>
+            </div>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+         <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+            &apos;use strict&apos;
+            var forms = document.querySelectorAll(&apos;.needs-validation&apos;)
+            Array.prototype.slice.call(forms)
+              .forEach(function (form) {
+                form.addEventListener(&apos;submit&apos;, function (event) {
+                  // Add password match validation here if needed (requires JS)
+                  if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+                  form.classList.add(&apos;was-validated&apos;)
+                }, false)
+              })
+          })()
+        </script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 10: My Posts/Dashboard -->
+    <h2>State 10: My Posts/Dashboard</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Posts - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Posts</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Welcome, Alex P.
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>My Reported Items</h1>
+                <div>
+                     <a href="#" class="btn btn-warning me-2">+ Report Lost Item</a>
+                     <a href="#" class="btn btn-success">+ Report Found Item</a>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs mb-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">My Lost Items (2)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My Found Items (1)</a>
+              </li>
+            </ul>
+
+            <div class="list-group">
+              <!-- Lost Item 1 -->
+              <div class="list-group-item list-group-item-action mb-3 border rounded p-3">
+                <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                         <img src="https://via.placeholder.com/80x60.png?text=Lost+Keys" alt="Lost Keys" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                         <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1"><span class="badge bg-danger me-1">LOST</span> Keys</h5>
+                           <small>Reported 3 days ago</small>
+                         </div>
+                         <p class="mb-1 text-truncate">Set of 3 keys on a blue keychain. Includes car key. Lost near Central Park.</p>
+                         <small class="text-muted">Status: Active</small>
+                    </div>
+                    <div class="col-auto">
+                        <a href="#" class="btn btn-sm btn-primary mb-1 d-block">View</a>
+                        <a href="#" class="btn btn-sm btn-secondary mb-1 d-block">Edit</a>
+                        <button type="button" class="btn btn-sm btn-success mb-1 d-block">Mark as Found</button>
+                        <button type="button" class="btn btn-sm btn-danger d-block">Delete</button>
+                    </div>
+                </div>
+              </div>
+               <!-- Lost Item 2 -->
+              <div class="list-group-item list-group-item-action mb-3 border rounded p-3">
+                <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                         <img src="https://via.placeholder.com/80x60.png?text=Lost+Bag" alt="Lost Bag" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                         <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1"><span class="badge bg-danger me-1">LOST</span> Red Backpack</h5>
+                          <small>Reported 2 weeks ago</small>
+                         </div>
+                         <p class="mb-1 text-truncate"> Jansport backpack, red color, left on the subway.</p>
+                          <small class="text-muted">Status: Found (Marked by user)</small>
+                    </div>
+                     <div class="col-auto">
+                        <a href="#" class="btn btn-sm btn-primary mb-1 d-block">View</a>
+                        <button type="button" class="btn btn-sm btn-danger d-block">Delete</button>
+                    </div>
+                </div>
+              </div>
+
+               <!-- Example for "My Found Items" tab (initially hidden/separate view) -->
+                <div class="list-group-item list-group-item-action mb-3 border rounded p-3 d-none">
+                <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                         <img src="https://via.placeholder.com/80x60.png?text=Found+Umbrella" alt="Found Umbrella" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                         <div class="d-flex w-100 justify-content-between">
+                           <h5 class="mb-1"><span class="badge bg-success me-1">FOUND</span> Black Umbrella</h5>
+                           <small>Reported 1 day ago</small>
+                         </div>
+                         <p class="mb-1 text-truncate">Standard black umbrella found at bus stop.</p>
+                         <small class="text-muted">Status: Active</small>
+                    </div>
+                    <div class="col-auto">
+                         <a href="#" class="btn btn-sm btn-primary mb-1 d-block">View</a>
+                        <a href="#" class="btn btn-sm btn-secondary mb-1 d-block">Edit</a>
+                        <button type="button" class="btn btn-sm btn-info mb-1 d-block">Mark as Returned</button>
+                        <button type="button" class="btn btn-sm btn-danger d-block">Delete</button>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 11: Report Item Confirmation Page -->
+    <h2>State 11: Report Item Confirmation Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report Submitted - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Posts</a> <!-- Assuming logged in -->
+                        </li>
+                    </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Welcome, Alex P.
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5 text-center">
+             <div class="alert alert-success" role="alert">
+               <h4 class="alert-heading">Success! Your Item Report Has Been Submitted.</h4>
+               <p>Thank you for reporting the item. Your listing for "<strong>Lost Keys</strong>" is now active.</p>
+               <hr>
+               <p class="mb-0">You can view and manage your report from the <a href="#" class="alert-link">My Posts</a> section. We hope your item is found soon!</p>
+            </div>
+
+             <div class="mt-4">
+                 <a href="#" class="btn btn-primary me-2">View My Reported Item</a>
+                 <a href="#" class="btn btn-secondary">Return to Home Page</a>
+             </div>
+
+             <div class="card mt-5 mx-auto" style="max-width: 500px;">
+                 <div class="card-header">
+                     Summary: Lost Keys
+                 </div>
+                 <div class="card-body text-start">
+                     <p><strong>Category:</strong> Keys</p>
+                     <p><strong>Date Lost:</strong> October 25, 2023</p>
+                      <p><strong>Location:</strong> Near Central Park West entrance</p>
+                      <p><strong>Description:</strong> Set of 3 keys on a blue keychain...</p>
+                 </div>
+             </div>
+
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top fixed-bottom">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 12: Report Lost Item Form - Validation Error State -->
+    <h2>State 12: Report Lost Item Form - Validation Error State</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Report Lost Item - Validation Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Report a Lost Item</h1>
+             <div class="alert alert-danger" role="alert">
+                 Please fix the errors below and try submitting again.
+            </div>
+            <form class="row g-3 was-validated" novalidate>  <!-- Added was-validated class -->
+                 <div class="col-md-12">
+                    <label for="lostItemTitle" class="form-label">Item Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control is-invalid" id="lostItemTitle" placeholder="e.g., Lost Black Wallet, Missing Keys" required> <!-- Added is-invalid -->
+                     <div class="invalid-feedback">
+                        Please provide a title for the item.
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <label for="lostItemDescription" class="form-label">Description <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="lostItemDescription" rows="3" placeholder="Describe the item..." required>Set of keys</textarea> <!-- Example valid input -->
+                     <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="lostItemCategory" class="form-label">Category <span class="text-danger">*</span></label>
+                    <select class="form-select is-invalid" id="lostItemCategory" required> <!-- Added is-invalid -->
+                        <option selected disabled value="">Choose...</option>
+                        <option>Electronics</option>
+                        <option>Keys</option>
+                        <option>Wallet/Purse</option>
+                        {/* Other options */}
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a category.
+                    </div>
+                </div>
+
+                 <div class="col-md-6">
+                    <label for="lostItemDate" class="form-label">Date Lost <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="lostItemDate" required> <!-- Assume valid date entered -->
+                     <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                 <div class="col-md-12">
+                    <label for="lostItemLocation" class="form-label">Location Lost <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control is-invalid" id="lostItemLocation" placeholder="e.g., Central Park" required> <!-- Added is-invalid -->
+                     <div class="invalid-feedback">
+                        Please provide the location where the item was lost.
+                    </div>
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="lostItemImage" class="form-label">Upload Image (Optional)</label>
+                    <input class="form-control" type="file" id="lostItemImage">
+                 </div>
+
+                 <hr class="my-4">
+                 <h5>Contact Information</h5>
+
+                 <div class="col-md-6">
+                    <label for="contactName" class="form-label">Your Name (Optional)</label>
+                    <input type="text" class="form-control" id="contactName">
+                 </div>
+
+                 <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">Contact Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control is-invalid" id="contactEmail" placeholder="you@example.com" required value="not-an-email"> <!-- Invalid email example -->
+                     <div class="invalid-feedback">
+                        Please provide a valid contact email.
+                    </div>
+                 </div>
+
+                <div class="col-12 mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="agreeTerms" required> <!-- Added is-invalid -->
+                        <label class="form-check-label" for="agreeTerms">
+                            I agree to the <a href="#">terms and conditions</a>. <span class="text-danger">*</span>
+                        </label>
+                         <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <button class="btn btn-warning btn-lg" type="submit">Report Lost Item</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="mt-5 py-4 bg-light border-top">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- No actual JS needed for static display, was-validated and is-invalid classes show the state -->
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 13: 404 Not Found Page -->
+    <h2>State 13: 404 Not Found Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Not Found - Lost and Found</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+         <style>
+            html, body { height: 100%; }
+            body { display: flex; flex-direction: column; }
+            .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 56px; } /* Adjust padding for navbar */
+         </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Lost & Found</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Lost Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report Found Item</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white ms-2" href="#">Register</a>
+                        </li>
+                     </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content py-5">
+            <div class="container">
+                <h1 class="display-1 fw-bold text-primary">404</h1>
+                <h2 class="mb-4">Page Not Found</h2>
+                <p class="lead text-muted mb-4">Oops! The page you are looking for doesn&apos;t exist or may have been moved.</p>
+                <a href="#" class="btn btn-primary btn-lg">Go to Homepage</a>
+                 <p class="mt-4">Or try searching for an item:</p>
+                 <form class="d-flex justify-content-center mt-2" style="max-width: 400px; margin: auto;">
+                    <input class="form-control me-2" type="search" placeholder="Search items..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="py-4 bg-light border-top mt-auto">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2023 Lost & Found Platform. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

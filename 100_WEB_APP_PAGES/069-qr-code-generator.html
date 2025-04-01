@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .iframe-container {
+             margin-bottom: 30px;
+             padding: 15px;
+             border: 1px solid #dee2e6;
+             border-radius: 5px;
+             background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">QR Code Generator - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial View) -->
+     <div class="iframe-container">
+        <h3>State 1: Home Page (Initial View)</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <h2>Create Your QR Code</h2>
+                    <p class="lead">Enter your data below to generate a QR code instantly.</p>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs mb-3" id="qrTypeTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-tab-pane" type="button" role="tab" aria-controls="url-tab-pane" aria-selected="true">URL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-tab-pane" type="button" role="tab" aria-controls="text-tab-pane" aria-selected="false">Text</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact (vCard)</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="qrTypeTabContent">
+                            <div class="tab-pane fade show active" id="url-tab-pane" role="tabpanel" aria-labelledby="url-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="urlInput" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control" id="urlInput" placeholder="e.g., https://www.example.com">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="text-tab-pane" role="tabpanel" aria-labelledby="text-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="textInput" class="form-label">Your Text</label>
+                                    <textarea class="form-control" id="textInput" rows="3" placeholder="Enter any text you want to encode"></textarea>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="John Doe">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactOrg" class="form-label">Organization</label>
+                                        <input type="text" class="form-control" id="contactOrg" placeholder="Company Inc.">
+                                     </div>
+                                 </div>
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactPhone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="contactPhone" placeholder="+1234567890">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com">
+                                     </div>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="contactAddress" class="form-label">Address</label>
+                                     <input type="text" class="form-control" id="contactAddress" placeholder="123 Main St, Anytown">
+                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mb-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Generate QR Code</button>
+                        </div>
+
+                        <div class="text-center text-muted">
+                            <p>Your QR Code will appear below.</p>
+                            <div style="height: 200px; width: 200px; background-color: #e9ecef; border: 1px dashed #ced4da; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <span class="text-secondary">Preview Area</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Home Page (Input Validation Error - Empty) -->
+    <div class="iframe-container">
+        <h3>State 2: Home Page (Input Validation Error - Empty)</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="text-center mb-4">
+                    <h2>Create Your QR Code</h2>
+                    <p class="lead">Enter your data below to generate a QR code instantly.</p>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs mb-3" id="qrTypeTab" role="tablist">
+                             <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-tab-pane" type="button" role="tab" aria-controls="url-tab-pane" aria-selected="true">URL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-tab-pane" type="button" role="tab" aria-controls="text-tab-pane" aria-selected="false">Text</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact (vCard)</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="qrTypeTabContent">
+                            <div class="tab-pane fade show active" id="url-tab-pane" role="tabpanel" aria-labelledby="url-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="urlInput" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control is-invalid" id="urlInput" placeholder="e.g., https://www.example.com" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a URL. Field cannot be empty.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="text-tab-pane" role="tabpanel" aria-labelledby="text-tab" tabindex="0">
+                                <!-- Text input would show error if active and empty -->
+                                 <div class="mb-3">
+                                    <label for="textInput" class="form-label">Your Text</label>
+                                    <textarea class="form-control" id="textInput" rows="3" placeholder="Enter any text you want to encode"></textarea>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                <!-- Contact inputs would show errors if relevant ones are empty -->
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="John Doe">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactOrg" class="form-label">Organization</label>
+                                        <input type="text" class="form-control" id="contactOrg" placeholder="Company Inc.">
+                                     </div>
+                                 </div>
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactPhone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="contactPhone" placeholder="+1234567890">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com">
+                                     </div>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="contactAddress" class="form-label">Address</label>
+                                     <input type="text" class="form-control" id="contactAddress" placeholder="123 Main St, Anytown">
+                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mb-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Generate QR Code</button>
+                        </div>
+
+                        <div class="text-center text-muted">
+                            <p>Your QR Code will appear below.</p>
+                             <div style="height: 200px; width: 200px; background-color: #e9ecef; border: 1px dashed #ced4da; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <span class="text-secondary">Preview Area</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Home Page (Input Validation Error - Invalid URL) -->
+    <div class="iframe-container">
+        <h3>State 3: Home Page (Input Validation Error - Invalid URL)</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Invalid URL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="text-center mb-4">
+                    <h2>Create Your QR Code</h2>
+                    <p class="lead">Enter your data below to generate a QR code instantly.</p>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                       <ul class="nav nav-tabs mb-3" id="qrTypeTab" role="tablist">
+                             <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-tab-pane" type="button" role="tab" aria-controls="url-tab-pane" aria-selected="true">URL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-tab-pane" type="button" role="tab" aria-controls="text-tab-pane" aria-selected="false">Text</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact (vCard)</button>
+                            </li>
+                        </ul>
+                         <div class="tab-content" id="qrTypeTabContent">
+                            <div class="tab-pane fade show active" id="url-tab-pane" role="tabpanel" aria-labelledby="url-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="urlInput" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control is-invalid" id="urlInput" placeholder="e.g., https://www.example.com" value="invalid-url-format" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid URL (e.g., starting with http:// or https://).
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="tab-pane fade" id="text-tab-pane" role="tabpanel" aria-labelledby="text-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="textInput" class="form-label">Your Text</label>
+                                    <textarea class="form-control" id="textInput" rows="3" placeholder="Enter any text you want to encode"></textarea>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="John Doe">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactOrg" class="form-label">Organization</label>
+                                        <input type="text" class="form-control" id="contactOrg" placeholder="Company Inc.">
+                                     </div>
+                                 </div>
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactPhone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="contactPhone" placeholder="+1234567890">
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com">
+                                     </div>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="contactAddress" class="form-label">Address</label>
+                                     <input type="text" class="form-control" id="contactAddress" placeholder="123 Main St, Anytown">
+                                 </div>
+                            </div>
+                        </div>
+
+                         <div class="d-grid gap-2 mb-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Generate QR Code</button>
+                        </div>
+
+                        <div class="text-center text-muted">
+                             <p>Your QR Code will appear below.</p>
+                             <div style="height: 200px; width: 200px; background-color: #e9ecef; border: 1px dashed #ced4da; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                <span class="text-secondary">Preview Area</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Home Page (Generating QR Code) -->
+    <div class="iframe-container">
+        <h3>State 4: Home Page (Generating QR Code)</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Generating</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="text-center mb-4">
+                    <h2>Create Your QR Code</h2>
+                    <p class="lead">Enter your data below to generate a QR code instantly.</p>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                         <ul class="nav nav-tabs mb-3" id="qrTypeTab" role="tablist">
+                             <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-tab-pane" type="button" role="tab" aria-controls="url-tab-pane" aria-selected="true" disabled>URL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-tab-pane" type="button" role="tab" aria-controls="text-tab-pane" aria-selected="false" disabled>Text</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false" disabled>Contact (vCard)</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="qrTypeTabContent">
+                            <div class="tab-pane fade show active" id="url-tab-pane" role="tabpanel" aria-labelledby="url-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="urlInput" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control" id="urlInput" placeholder="e.g., https://www.example.com" value="https://www.example.com" readonly>
+                                </div>
+                            </div>
+                            <!-- Other tabs would similarly have inputs as readonly/disabled -->
+                             <div class="tab-pane fade" id="text-tab-pane" role="tabpanel" aria-labelledby="text-tab" tabindex="0">
+                                <div class="mb-3">
+                                    <label for="textInput" class="form-label">Your Text</label>
+                                    <textarea class="form-control" id="textInput" rows="3" placeholder="Enter any text you want to encode" readonly></textarea>
+                                </div>
+                            </div>
+                             <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="John Doe" readonly>
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactOrg" class="form-label">Organization</label>
+                                        <input type="text" class="form-control" id="contactOrg" placeholder="Company Inc." readonly>
+                                     </div>
+                                 </div>
+                                 <div class="row g-2 mb-2">
+                                     <div class="col-md">
+                                        <label for="contactPhone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="contactPhone" placeholder="+1234567890" readonly>
+                                     </div>
+                                     <div class="col-md">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com" readonly>
+                                     </div>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label for="contactAddress" class="form-label">Address</label>
+                                     <input type="text" class="form-control" id="contactAddress" placeholder="123 Main St, Anytown" readonly>
+                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mb-4">
+                            <button type="button" class="btn btn-primary btn-lg" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Generating...
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-primary">Generating your QR code, please wait...</p>
+                            <div style="height: 200px; width: 200px; background-color: #e9ecef; border: 1px dashed #ced4da; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto;">
+                                <div class="spinner-border text-secondary mb-2" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <span class="text-secondary">Loading Preview</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Home Page (QR Code Displayed) -->
+    <div class="iframe-container">
+        <h3>State 5: Home Page (QR Code Displayed)</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Success</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="text-center mb-4">
+                    <h2>Create Your QR Code</h2>
+                     <p class="lead">Enter your data below or download your generated code.</p>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <!-- Input section could remain or be replaced/collapsible -->
+                        <p class="text-success text-center"><strong><i class="bi bi-check-circle-fill"></i> QR Code Generated Successfully!</strong></p>
+
+                         <!-- QR Code Display and Download -->
+                        <div class="text-center mb-4">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQMAAACXljzdAAAABlBMVEX///8AAABVwtN+AAABeklEQVR4nO3WQa6DMAwFUHqATs5hcpLeQfJybs6RPHEDnXJ48ER/KlnzSQH8QDbSDbbRaAB9AwD04kEuAEAvDuQCALpwcAcA0IsDuQBALw7kAgC6cHCHbXR2fQNe37Yx+tNkBH+cbtQBD6mP+g5Y/TDRgQNMAxYgM9QBOtswOOoAR4A76gBHhPtdHSAE+oHrgIRAewkHhEF/5OuAIfQDgYPwJ4iOgwyEWxD+SkcAMfQD4UGIi/56R4CC6AeCg8C/dHRgQvQD7kH4qxkHJiH6gX0g/A9x0AiQAXqgjwT/hXXAEKAP2oPwPjAOJAJ6gD/gPqkcEYQB+kF5JPyLxgEQgF4gD/g/tHSAEPqBTxA+C5UHIiD6gY/gP1U5EA9EA/9C+P+QMQgM9APpQfg/tBzIgOgH/gPpv7kH7EDoB/6D8D9QOiAP0gF4gPC/uRyQB+kFhANBfgc5IAzQDzSH8F+hHEgG9APZIHy/+0HMgH6Q4UA1AABDp/gG3kb6AhwAAAABJRU5ErkJggg==" alt="QR Code" class="img-fluid mb-3" style="max-width: 250px; border: 1px solid #dee2e6;">
+                            <p class="text-muted small">Data: https://www.example.com</p>
+                            <div>
+                                <a href="#" class="btn btn-success me-2"><i class="bi bi-download"></i> Download PNG</a>
+                                <a href="#" class="btn btn-outline-secondary"><i class="bi bi-download"></i> Download SVG</a>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                         <!-- Option to Start Over -->
+                        <div class="text-center">
+                             <a href="#!" class="btn btn-outline-primary mt-2"><i class="bi bi-arrow-clockwise"></i> Generate Another QR Code</a>
+                        </div>
+
+                        <!-- Input Form (could be collapsed or shown below) -->
+                        <details class="mt-4">
+                            <summary>Modify or Create New</summary>
+                            <ul class="nav nav-tabs mb-3 mt-3" id="qrTypeTab" role="tablist">
+                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="url-tab" data-bs-toggle="tab" data-bs-target="#url-tab-pane" type="button" role="tab" aria-controls="url-tab-pane" aria-selected="true">URL</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-tab-pane" type="button" role="tab" aria-controls="text-tab-pane" aria-selected="false">Text</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact (vCard)</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="qrTypeTabContent">
+                                <div class="tab-pane fade show active" id="url-tab-pane" role="tabpanel" aria-labelledby="url-tab" tabindex="0">
+                                    <div class="mb-3">
+                                        <label for="urlInput" class="form-label">Website URL</label>
+                                        <input type="url" class="form-control" id="urlInput" placeholder="e.g., https://www.example.com" value="https://www.example.com">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="text-tab-pane" role="tabpanel" aria-labelledby="text-tab" tabindex="0">
+                                    <div class="mb-3">
+                                        <label for="textInput" class="form-label">Your Text</label>
+                                        <textarea class="form-control" id="textInput" rows="3" placeholder="Enter any text you want to encode"></textarea>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                     <div class="row g-2 mb-2">
+                                         <div class="col-md">
+                                            <label for="contactName" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="contactName" placeholder="John Doe">
+                                         </div>
+                                         <div class="col-md">
+                                            <label for="contactOrg" class="form-label">Organization</label>
+                                            <input type="text" class="form-control" id="contactOrg" placeholder="Company Inc.">
+                                         </div>
+                                     </div>
+                                     <div class="row g-2 mb-2">
+                                         <div class="col-md">
+                                            <label for="contactPhone" class="form-label">Phone</label>
+                                            <input type="tel" class="form-control" id="contactPhone" placeholder="+1234567890">
+                                         </div>
+                                         <div class="col-md">
+                                            <label for="contactEmail" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com">
+                                         </div>
+                                     </div>
+                                     <div class="mb-3">
+                                         <label for="contactAddress" class="form-label">Address</label>
+                                         <input type="text" class="form-control" id="contactAddress" placeholder="123 Main St, Anytown">
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 mb-2">
+                                <button type="submit" class="btn btn-primary btn-lg">Generate QR Code</button>
+                            </div>
+                        </details>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: About Page -->
+    <div class="iframe-container">
+        <h3>State 6: About Page</h3>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About QR Code Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#!"> <i class="bi bi-qr-code-scan"></i> QR Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home / Generate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">About QR Gen</h2>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p class="lead">QR Gen is a simple and free tool to create QR codes online.</p>
+                        <p>Easily generate QR codes for various types of data, including:</p>
+                        <ul>
+                            <li>Website URLs</li>
+                            <li>Plain Text</li>
+                            <li>Contact Information (vCard)</li>
+                            <li>And more (placeholder for future features like Wi-Fi, SMS, etc.)</li>
+                        </ul>
+                        <p>Our goal is to provide a fast, reliable, and user-friendly QR code generation experience. Simply select the data type, enter your information, and generate your QR code instantly. You can then download the code in common formats like PNG or SVG.</p>
+                        <p>This tool is built using modern web technologies and aims to be accessible to everyone. No registration is required.</p>
+                         <hr>
+                         <p class="text-muted small">Version: 1.0.0 (Placeholder)</p>
+                         <p class="text-muted small">Contact: Use the main site contact form (Placeholder link)</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-4">
+                     <a href="#!" class="btn btn-primary"><i class="bi bi-house-door"></i> Back to Generator</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 QR Gen:
+            <a class="text-dark" href="#!">QR Code Generator</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

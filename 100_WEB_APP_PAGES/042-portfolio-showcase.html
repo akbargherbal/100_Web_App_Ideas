@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase - UI Flow</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f0f0f0; }
+        iframe {
+            width: 100%;
+            height: 650px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Portfolio Showcase - UI Flow</h1>
+
+<h2>State 1: Home Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 text-center bg-light'>
+        <div class='container'>
+            <img src='https://via.placeholder.com/150' class='rounded-circle mb-3' alt='Profile Picture'>
+            <h1 class='display-4'>Jane Doe</h1>
+            <p class='lead text-muted'>Web Developer | UI/UX Designer | Tech Enthusiast</p>
+            <a href='#' class='btn btn-primary btn-lg mt-3'>View My Work</a>
+            <a href='#' class='btn btn-outline-secondary btn-lg mt-3'>Contact Me</a>
+        </div>
+    </header>
+
+    <section id='featured-projects' class='py-5'>
+        <div class='container'>
+            <h2 class='text-center mb-4'>Featured Projects</h2>
+            <div class='row'>
+                <div class='col-md-4 mb-4'>
+                    <div class='card h-100'>
+                        <img src='https://via.placeholder.com/350x200/CCCCCC/808080?text=Project+One' class='card-img-top' alt='Project One'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Project One</h5>
+                            <p class='card-text'>A brief description of the first featured project. Highlighting key technologies or outcomes.</p>
+                            <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4 mb-4'>
+                    <div class='card h-100'>
+                        <img src='https://via.placeholder.com/350x200/CCCCCC/808080?text=Project+Two' class='card-img-top' alt='Project Two'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Project Two</h5>
+                            <p class='card-text'>Short overview of the second project, focusing on its unique aspects or challenges solved.</p>
+                            <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4 mb-4'>
+                    <div class='card h-100'>
+                        <img src='https://via.placeholder.com/350x200/CCCCCC/808080?text=Project+Three' class='card-img-top' alt='Project Three'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Project Three</h5>
+                            <p class='card-text'>An introduction to the third project, mentioning the impact or skills demonstrated.</p>
+                             <a href='#' class='btn btn-outline-primary'>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+            <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 2: About Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container text-center'>
+            <h1 class='display-5'>About Me</h1>
+            <p class='lead text-muted'>Learn more about my background, skills, and experience.</p>
+        </div>
+    </header>
+
+    <section id='about-content' class='py-5'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-md-4 text-center mb-4 mb-md-0'>
+                    <img src='https://via.placeholder.com/300' class='img-fluid rounded-circle' alt='Jane Doe'>
+                </div>
+                <div class='col-md-8'>
+                    <h2>Jane Doe</h2>
+                    <p class='lead'>Passionate Web Developer & UI/UX Designer</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+
+            <hr class='my-5'>
+
+            <div class='row'>
+                <div class='col-lg-6 mb-4'>
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                        <li>React, Vue.js, Angular</li>
+                        <li>Node.js, Express</li>
+                        <li>Python, Django</li>
+                        <li>SQL, MongoDB</li>
+                        <li>Bootstrap, Tailwind CSS</li>
+                        <li>UI/UX Design (Figma, Sketch)</li>
+                        <li>Git, Docker</li>
+                    </ul>
+                </div>
+                <div class='col-lg-6'>
+                    <h3>Experience</h3>
+                    <div class='mb-3'>
+                        <h5>Senior Web Developer at Tech Solutions Inc.</h5>
+                        <p class='text-muted'>2020 - Present</p>
+                        <p>Led development teams, designed scalable web applications, mentored junior developers.</p>
+                    </div>
+                    <div class='mb-3'>
+                        <h5>Web Developer at Creative Agency</h5>
+                        <p class='text-muted'>2018 - 2020</p>
+                        <p>Developed client websites, implemented custom features, collaborated with designers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+             <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 3: Projects Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Projects - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container text-center'>
+            <h1 class='display-5'>My Projects</h1>
+            <p class='lead text-muted'>A collection of my professional work and personal projects.</p>
+        </div>
+    </header>
+
+    <section id='projects-gallery' class='py-5'>
+        <div class='container'>
+            <div class='text-center mb-4'>
+                <div class='btn-group' role='group' aria-label='Filter projects'>
+                    <button type='button' class='btn btn-outline-primary active'>All</button>
+                    <button type='button' class='btn btn-outline-primary'>Web Development</button>
+                    <button type='button' class='btn btn-outline-primary'>UI/UX Design</button>
+                    <button type='button' class='btn btn-outline-primary'>Mobile Apps</button>
+                </div>
+            </div>
+
+            <div class='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4'>
+                <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/A9CCE3/34495E?text=E-commerce+Platform' class='card-img-top' alt='E-commerce Platform'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>E-commerce Platform</h5>
+                            <p class='card-text'>A full-stack e-commerce website built with React and Node.js.</p>
+                            <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                        <div class='card-footer text-muted'>Web Development</div>
+                    </div>
+                </div>
+                 <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/F5B7B1/78281F?text=Mobile+Banking+App' class='card-img-top' alt='Mobile Banking App'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Mobile Banking App UI</h5>
+                            <p class='card-text'>User interface design for a modern mobile banking application.</p>
+                            <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                         <div class='card-footer text-muted'>UI/UX Design</div>
+                    </div>
+                </div>
+                 <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/ABEBC6/145A32?text=Data+Visualization+Dashboard' class='card-img-top' alt='Data Visualization Dashboard'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Data Visualization Dashboard</h5>
+                            <p class='card-text'>Interactive dashboard displaying complex data using D3.js.</p>
+                             <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                         <div class='card-footer text-muted'>Web Development</div>
+                    </div>
+                </div>
+                 <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/D2B4DE/5B2C6F?text=Task+Management+App' class='card-img-top' alt='Task Management App'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Task Management App</h5>
+                            <p class='card-text'>A simple and intuitive task management application (React Native).</p>
+                             <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                         <div class='card-footer text-muted'>Mobile Apps</div>
+                    </div>
+                </div>
+                 <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/A3E4D7/117864?text=Portfolio+Website+V1' class='card-img-top' alt='Portfolio Website V1'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Portfolio Website V1</h5>
+                            <p class='card-text'>Previous version of my personal portfolio website.</p>
+                             <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                         <div class='card-footer text-muted'>Web Development</div>
+                    </div>
+                </div>
+                 <div class='col'>
+                    <div class='card h-100 shadow-sm'>
+                        <img src='https://via.placeholder.com/350x200/FAD7A0/7E5109?text=Travel+Blog+Design' class='card-img-top' alt='Travel Blog Design'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Travel Blog Design</h5>
+                            <p class='card-text'>Concept design for a visually appealing travel blog.</p>
+                             <a href='#' class='btn btn-sm btn-primary'>View Details</a>
+                        </div>
+                         <div class='card-footer text-muted'>UI/UX Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+             <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 4: Project Detail Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Project Detail - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container'>
+            <nav aria-label='breadcrumb'>
+              <ol class='breadcrumb'>
+                <li class='breadcrumb-item'><a href='#'>Projects</a></li>
+                <li class='breadcrumb-item active' aria-current='page'>E-commerce Platform</li>
+              </ol>
+            </nav>
+            <h1 class='display-5'>E-commerce Platform</h1>
+            <p class='lead text-muted'>A full-stack e-commerce website built with React and Node.js.</p>
+        </div>
+    </header>
+
+    <section id='project-details' class='py-5'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-8'>
+                    <img src='https://via.placeholder.com/700x400/A9CCE3/34495E?text=E-commerce+Main+View' class='img-fluid mb-4 rounded shadow' alt='Project Screenshot'>
+                    <h2>Project Overview</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                    <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
+
+                    <h3 class='mt-4'>Key Features</h3>
+                    <ul>
+                        <li>User Authentication (Login/Signup)</li>
+                        <li>Product Catalog & Search</li>
+                        <li>Shopping Cart Functionality</li>
+                        <li>Secure Checkout Process</li>
+                        <li>Admin Dashboard for Product Management</li>
+                    </ul>
+
+                     <img src='https://via.placeholder.com/700x300/A9CCE3/34495E?text=Product+Page+Detail' class='img-fluid my-4 rounded shadow' alt='Project Screenshot 2'>
+
+                    <h3>Technologies Used</h3>
+                    <span class='badge bg-primary me-1'>React</span>
+                    <span class='badge bg-success me-1'>Node.js</span>
+                    <span class='badge bg-info me-1'>Express</span>
+                    <span class='badge bg-warning text-dark me-1'>MongoDB</span>
+                    <span class='badge bg-secondary me-1'>Bootstrap</span>
+                    <span class='badge bg-danger me-1'>Stripe API</span>
+                </div>
+                <div class='col-md-4'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Project Info</h5>
+                            <ul class='list-unstyled'>
+                                <li><strong>Category:</strong> Web Development</li>
+                                <li><strong>Client:</strong> Personal Project</li>
+                                <li><strong>Date:</strong> July 2023</li>
+                                <li><strong>Status:</strong> Completed</li>
+                            </ul>
+                            <a href='#' class='btn btn-primary w-100 mb-2' target='_blank' rel='noopener noreferrer'>Live Demo</a>
+                            <a href='#' class='btn btn-outline-secondary w-100' target='_blank' rel='noopener noreferrer'>View Code (GitHub)</a>
+                        </div>
+                    </div>
+                     <div class='card mt-4'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>More Images</h5>
+                            <div class='row g-2'>
+                                <div class='col-6'><img src='https://via.placeholder.com/150x100/A9CCE3/34495E?text=Thumb+1' class='img-fluid rounded' alt='Thumbnail 1'></div>
+                                <div class='col-6'><img src='https://via.placeholder.com/150x100/A9CCE3/34495E?text=Thumb+2' class='img-fluid rounded' alt='Thumbnail 2'></div>
+                                <div class='col-6'><img src='https://via.placeholder.com/150x100/A9CCE3/34495E?text=Thumb+3' class='img-fluid rounded' alt='Thumbnail 3'></div>
+                                <div class='col-6'><img src='https://via.placeholder.com/150x100/A9CCE3/34495E?text=Thumb+4' class='img-fluid rounded' alt='Thumbnail 4'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+             <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 5: Contact Page</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container text-center'>
+            <h1 class='display-5'>Get In Touch</h1>
+            <p class='lead text-muted'>Feel free to reach out for collaborations or just a friendly hello!</p>
+        </div>
+    </header>
+
+    <section id='contact-form' class='py-5'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-8 mx-auto'>
+                    <h2 class='text-center mb-4'>Contact Form</h2>
+                    <form>
+                        <div class='row mb-3'>
+                           <div class='col-md-6'>
+                               <label for='firstName' class='form-label'>First Name</label>
+                               <input type='text' class='form-control' id='firstName' required>
+                           </div>
+                           <div class='col-md-6'>
+                               <label for='lastName' class='form-label'>Last Name</label>
+                               <input type='text' class='form-control' id='lastName' required>
+                           </div>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='email' class='form-label'>Email Address</label>
+                            <input type='email' class='form-control' id='email' placeholder='name@example.com' required>
+                        </div>
+                         <div class='mb-3'>
+                            <label for='subject' class='form-label'>Subject</label>
+                            <input type='text' class='form-control' id='subject'>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='message' class='form-label'>Message</label>
+                            <textarea class='form-control' id='message' rows='5' required></textarea>
+                        </div>
+                        <div class='d-grid'>
+                            <button type='submit' class='btn btn-primary btn-lg'>Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             <hr class='my-5'>
+             <div class='row text-center'>
+                <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-geo-alt-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Location</h5>
+                    <p class='text-muted'>123 Creative Street, Design City, DC 12345</p>
+                </div>
+                 <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-envelope-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Email</h5>
+                    <p class='text-muted'><a href='mailto:hello@janedoe.com' class='text-decoration-none text-muted'>hello@janedoe.com</a></p>
+                 </div>
+                 <div class='col-md-4'>
+                     <i class='bi bi-telephone-fill fs-2 text-primary'></i>
+                     <h5 class='mt-2'>Phone</h5>
+                     <p class='text-muted'><a href='tel:+1234567890' class='text-decoration-none text-muted'>+1 (234) 567-890</a></p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+            <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 6: Contact Page - Form Submitted (Success)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact - Success - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container text-center'>
+            <h1 class='display-5'>Get In Touch</h1>
+            <p class='lead text-muted'>Feel free to reach out for collaborations or just a friendly hello!</p>
+        </div>
+    </header>
+
+    <section id='contact-form' class='py-5'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-8 mx-auto'>
+                     <div class='alert alert-success d-flex align-items-center' role='alert'>
+                      <i class='bi bi-check-circle-fill flex-shrink-0 me-2 fs-4'></i>
+                      <div>
+                        Thank you for your message! I will get back to you shortly.
+                      </div>
+                    </div>
+                    <h2 class='text-center mb-4'>Contact Form</h2>
+                    <form>
+                         <div class='row mb-3'>
+                           <div class='col-md-6'>
+                               <label for='firstName' class='form-label'>First Name</label>
+                               <input type='text' class='form-control' id='firstName' disabled value='John'>
+                           </div>
+                           <div class='col-md-6'>
+                               <label for='lastName' class='form-label'>Last Name</label>
+                               <input type='text' class='form-control' id='lastName' disabled value='Smith'>
+                           </div>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='email' class='form-label'>Email Address</label>
+                            <input type='email' class='form-control' id='email' placeholder='name@example.com' disabled value='john.smith@email.com'>
+                        </div>
+                         <div class='mb-3'>
+                            <label for='subject' class='form-label'>Subject</label>
+                            <input type='text' class='form-control' id='subject' disabled value='Collaboration Inquiry'>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='message' class='form-label'>Message</label>
+                            <textarea class='form-control' id='message' rows='5' disabled>Hello Jane, I'd love to discuss a potential project...</textarea>
+                        </div>
+                        <div class='d-grid'>
+                            <button type='submit' class='btn btn-primary btn-lg' disabled>Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+              <hr class='my-5'>
+             <div class='row text-center'>
+                <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-geo-alt-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Location</h5>
+                    <p class='text-muted'>123 Creative Street, Design City, DC 12345</p>
+                </div>
+                 <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-envelope-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Email</h5>
+                    <p class='text-muted'><a href='mailto:hello@janedoe.com' class='text-decoration-none text-muted'>hello@janedoe.com</a></p>
+                 </div>
+                 <div class='col-md-4'>
+                     <i class='bi bi-telephone-fill fs-2 text-primary'></i>
+                     <h5 class='mt-2'>Phone</h5>
+                     <p class='text-muted'><a href='tel:+1234567890' class='text-decoration-none text-muted'>+1 (234) 567-890</a></p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+             <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+<h2>State 7: Contact Page - Form Error (Validation)</h2>
+<iframe srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact - Error - Portfolio Showcase</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class='container'>
+            <a class='navbar-brand' href='#'>Portfolio Showcase</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Home</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Projects</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class='py-5 bg-light'>
+        <div class='container text-center'>
+            <h1 class='display-5'>Get In Touch</h1>
+            <p class='lead text-muted'>Feel free to reach out for collaborations or just a friendly hello!</p>
+        </div>
+    </header>
+
+    <section id='contact-form' class='py-5'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-8 mx-auto'>
+                     <div class='alert alert-danger d-flex align-items-center' role='alert'>
+                       <i class='bi bi-exclamation-triangle-fill flex-shrink-0 me-2 fs-4'></i>
+                       <div>
+                        Please fix the errors below and try again.
+                      </div>
+                    </div>
+                    <h2 class='text-center mb-4'>Contact Form</h2>
+                    <form class='needs-validation' novalidate>
+                        <div class='row mb-3'>
+                           <div class='col-md-6'>
+                               <label for='firstName' class='form-label'>First Name</label>
+                               <input type='text' class='form-control' id='firstName' value='John' required>
+                               <div class='valid-feedback'>Looks good!</div>
+                           </div>
+                           <div class='col-md-6'>
+                               <label for='lastName' class='form-label'>Last Name</label>
+                               <input type='text' class='form-control is-invalid' id='lastName' required>
+                               <div class='invalid-feedback'>Please provide your last name.</div>
+                           </div>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='email' class='form-label'>Email Address</label>
+                            <input type='email' class='form-control is-invalid' id='email' placeholder='name@example.com' value='john.smith@' required>
+                            <div class='invalid-feedback'>Please enter a valid email address.</div>
+                        </div>
+                         <div class='mb-3'>
+                            <label for='subject' class='form-label'>Subject</label>
+                            <input type='text' class='form-control' id='subject' value='Collaboration Inquiry'>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='message' class='form-label'>Message</label>
+                            <textarea class='form-control is-invalid' id='message' rows='5' required></textarea>
+                             <div class='invalid-feedback'>Please enter your message.</div>
+                        </div>
+                        <div class='d-grid'>
+                            <button type='submit' class='btn btn-primary btn-lg'>Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             <hr class='my-5'>
+             <div class='row text-center'>
+                <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-geo-alt-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Location</h5>
+                    <p class='text-muted'>123 Creative Street, Design City, DC 12345</p>
+                </div>
+                 <div class='col-md-4 mb-3 mb-md-0'>
+                    <i class='bi bi-envelope-fill fs-2 text-primary'></i>
+                    <h5 class='mt-2'>Email</h5>
+                    <p class='text-muted'><a href='mailto:hello@janedoe.com' class='text-decoration-none text-muted'>hello@janedoe.com</a></p>
+                 </div>
+                 <div class='col-md-4'>
+                     <i class='bi bi-telephone-fill fs-2 text-primary'></i>
+                     <h5 class='mt-2'>Phone</h5>
+                     <p class='text-muted'><a href='tel:+1234567890' class='text-decoration-none text-muted'>+1 (234) 567-890</a></p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <footer class='py-4 bg-dark text-white text-center'>
+        <div class='container'>
+            <p class='mb-0'>&copy; 2023 Jane Doe. All rights reserved.</p>
+             <p class='mb-0'>
+                <a href='#' class='text-white me-2'><i class='bi bi-linkedin'></i></a>
+                <a href='#' class='text-white me-2'><i class='bi bi-github'></i></a>
+                <a href='#' class='text-white'><i class='bi bi-twitter'></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
+"></iframe>
+
+
+</body>
+</html>

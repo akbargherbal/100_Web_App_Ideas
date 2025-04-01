@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Status Tracker UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjusted height for better visibility */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flight Status Tracker - UI Flow</h1>
+
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Flight Status Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light text-center">
+                        <h3>Check Your Flight Status</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="flightNumber" class="form-label">Search by Flight Number</label>
+                                <input type="text" class="form-control" id="flightNumber" placeholder="e.g., AA123">
+                            </div>
+                            <div class="text-center my-3">OR</div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="origin" class="form-label">Search by Route</label>
+                                    <input type="text" class="form-control" id="origin" placeholder="Origin Airport (e.g., JFK)">
+                                </div>
+                                <div class="col-md-6 align-self-end">
+                                    <input type="text" class="form-control" id="destination" placeholder="Destination Airport (e.g., LAX)">
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="flightDate" class="form-label">Date of Flight</label>
+                                <input type="date" class="form-control" id="flightDate">
+                             </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg"> <i class="bi bi-search"></i> Search Flights</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <div class="state-container">
+        <h2>State 2: Search Form - Validation Error</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Validation Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                  <div>
+                    Please enter a valid Flight Number (e.g., UA456) or both Origin and Destination airports. Date is also required.
+                  </div>
+                </div>
+                <div class="card shadow-sm border-danger">
+                    <div class="card-header bg-light text-center">
+                        <h3>Check Your Flight Status</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="flightNumber" class="form-label">Search by Flight Number</label>
+                                <input type="text" class="form-control is-invalid" id="flightNumber" placeholder="e.g., AA123" value="INVALID-INPUT">
+                                <div class="invalid-feedback">
+                                  Invalid flight number format. Should be 2 letters followed by numbers (e.g., BA789).
+                                </div>
+                            </div>
+                            <div class="text-center my-3">OR</div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="origin" class="form-label">Search by Route</label>
+                                    <input type="text" class="form-control" id="origin" placeholder="Origin Airport (e.g., JFK)">
+                                </div>
+                                <div class="col-md-6 align-self-end">
+                                    <input type="text" class="form-control" id="destination" placeholder="Destination Airport (e.g., LAX)">
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="flightDate" class="form-label">Date of Flight</label>
+                                <input type="date" class="form-control is-invalid" id="flightDate">
+                                <div class="invalid-feedback">
+                                  Please select a date.
+                                </div>
+                             </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg"> <i class="bi bi-search"></i> Search Flights</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <div class="state-container">
+        <h2>State 3: Search Results - Flight Found (Detailed View)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Results - Flight Status Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="mb-4">
+            <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to Search</a>
+        </div>
+
+        <h3>Flight Status for UA456</h3>
+        <p class="text-muted">Date: 2023-12-15</p>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"> <i class="bi bi-check-circle-fill"></i> On Time</h5>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center text-md-start">
+                        <h5 class="mb-1">New York (JFK) <i class="bi bi-airplane"></i> San Francisco (SFO)</h5>
+                        <p class="text-muted mb-0">United Airlines UA456</p>
+                    </div>
+                    <div class="col-md-7">
+                         <div class="row text-center gy-3">
+                            <div class="col-6 col-md-3">
+                                <strong>Scheduled Dep:</strong><br>08:00 AM
+                            </div>
+                             <div class="col-6 col-md-3">
+                                <strong>Estimated Dep:</strong><br>08:00 AM
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <strong>Scheduled Arr:</strong><br>11:30 AM
+                            </div>
+                             <div class="col-6 col-md-3">
+                                <strong>Estimated Arr:</strong><br>11:30 AM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <strong>Departure Gate:</strong> C12
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Arrival Gate:</strong> 72A
+                    </div>
+                     <div class="col-md-4">
+                        <strong>Baggage Claim:</strong> Carousel 5
+                    </div>
+                </div>
+                 <div class="progress mt-3" role="progressbar" aria-label="Flight progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 75%">In Flight (75%)</div>
+                </div>
+            </div>
+        </div>
+
+         <div class="card shadow-sm mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0"> <i class="bi bi-clock-fill"></i> Delayed</h5>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center text-md-start">
+                        <h5 class="mb-1">Chicago (ORD) <i class="bi bi-airplane"></i> Dallas (DFW)</h5>
+                        <p class="text-muted mb-0">American Airlines AA123</p>
+                    </div>
+                    <div class="col-md-7">
+                         <div class="row text-center gy-3">
+                            <div class="col-6 col-md-3">
+                                <strong>Scheduled Dep:</strong><br>10:15 AM
+                            </div>
+                             <div class="col-6 col-md-3">
+                                <strong>Estimated Dep:</strong><br><span class="text-danger">11:00 AM</span>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <strong>Scheduled Arr:</strong><br>12:45 PM
+                            </div>
+                             <div class="col-6 col-md-3">
+                                <strong>Estimated Arr:</strong><br><span class="text-danger">01:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                 <div class="row mt-3">
+                    <div class="col-md-4">
+                        <strong>Departure Gate:</strong> K5 (Changed from K3)
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Arrival Gate:</strong> B10
+                    </div>
+                     <div class="col-md-4">
+                        <strong>Baggage Claim:</strong> Carousel 2
+                    </div>
+                </div>
+                 <div class="progress mt-3" role="progressbar" aria-label="Flight progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 10%">At Gate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"> <i class="bi bi-x-octagon-fill"></i> Cancelled</h5>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center text-md-start">
+                        <h5 class="mb-1">London (LHR) <i class="bi bi-airplane"></i> Paris (CDG)</h5>
+                        <p class="text-muted mb-0">British Airways BA308</p>
+                    </div>
+                    <div class="col-md-7">
+                       <p class="text-danger lead">This flight has been cancelled. Please contact British Airways for rebooking options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <div class="state-container">
+        <h2>State 4: Search Results - No Flight Found</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results - Flight Status Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="mb-4">
+            <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to Search</a>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="alert alert-warning" role="alert">
+                  <h4 class="alert-heading"><i class="bi bi-exclamation-circle"></i> No Flights Found</h4>
+                  <p>We could not find any flights matching your search criteria (Flight Number: XX999 / Date: 2023-12-16).</p>
+                  <hr>
+                  <p class="mb-0">Please double-check the flight number, route, and date, then try searching again.</p>
+                </div>
+                <a href="#" class="btn btn-primary mt-3"><i class="bi bi-search"></i> Try New Search</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <div class="state-container">
+        <h2>State 5: Search Results - Route Found (List View)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Results - Flight Status Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="mb-4">
+            <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to Search</a>
+        </div>
+
+        <h3>Flights from New York (JFK) to San Francisco (SFO)</h3>
+        <p class="text-muted">Date: 2023-12-15</p>
+
+        <div class="list-group shadow-sm">
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">UA456 - United Airlines</h5>
+              <small><span class="badge bg-success">On Time</span></small>
+            </div>
+            <p class="mb-1">Scheduled Dep: 08:00 AM | Scheduled Arr: 11:30 AM</p>
+            <small>Gate: C12 -> 72A</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">DL211 - Delta Air Lines</h5>
+               <small><span class="badge bg-warning text-dark">Delayed</span></small>
+            </div>
+            <p class="mb-1">Scheduled Dep: 09:30 AM | Estimated Dep: <span class="text-danger">10:15 AM</span></p>
+            <small>Gate: T4-B22 -> T1-51A</small>
+          </a>
+           <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">AA98 - American Airlines</h5>
+              <small><span class="badge bg-success">On Time</span></small>
+            </div>
+            <p class="mb-1">Scheduled Dep: 11:00 AM | Scheduled Arr: 02:45 PM</p>
+            <small>Gate: T8-10 -> T2-D3</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">AS305 - Alaska Airlines</h5>
+               <small><span class="badge bg-danger">Cancelled</span></small>
+            </div>
+            <p class="mb-1">Scheduled Dep: 01:00 PM</p>
+            <small>Contact airline for details.</small>
+          </a>
+        </div>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <div class="state-container">
+        <h2>State 6: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Flight Status Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <i class="bi bi-airplane-engines-fill"></i> Flight Status Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="card-title text-center mb-4">About Flight Status Tracker</h2>
+                        <p class="lead">Welcome to Flight Status Tracker, your simple tool for quickly checking flight schedules, delays, and gate information.</p>
+                        <p>Our mission is to provide travelers with easy access to real-time flight data, helping you stay informed and plan your journey effectively. Whether you are tracking a flight for yourself, picking someone up, or just curious, our tool aims to deliver the information you need.</p>
+                        <h4 class="mt-4">How it Works</h4>
+                        <p>Simply enter the flight number or the origin and destination airports along with the date of the flight. Our system queries reliable aviation data sources to bring you the latest updates available.</p>
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Search by Flight Number</li>
+                            <li>Search by Route (Origin & Destination)</li>
+                            <li>View Scheduled vs. Estimated Times</li>
+                            <li>Check Departure & Arrival Gates</li>
+                            <li>See Baggage Claim Information (when available)</li>
+                            <li>Get notified of Delays & Cancellations</li>
+                        </ul>
+                         <h4 class="mt-4">Data Disclaimer</h4>
+                        <p>Flight information is provided by third-party sources and is subject to change without notice. While we strive for accuracy, Flight Status Tracker cannot guarantee the absolute correctness of the data. Always confirm details directly with your airline.</p>
+                        <div class="text-center mt-4">
+                            <a href="#" class="btn btn-primary"><i class="bi bi-house-door-fill"></i> Go to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flight Status Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+</body>
+</html>

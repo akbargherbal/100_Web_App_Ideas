@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px; /* Adjusted height for better visibility */
+            border: 1px solid #ccc;
+            display: block; /* Ensure iframe takes full width */
+            margin: 0 auto; /* Center iframe if container allows */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-5">URL Shortener - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Initial)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">URL Shortener</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-center mb-4">Shorten Your Long URL</h1>
+                        <p class="text-center text-muted mb-4">Paste your long URL below to create a short, shareable link.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="longUrl" class="form-label visually-hidden">Long URL</label>
+                                <input type="url" class="form-control form-control-lg" id="longUrl" placeholder="Enter your long URL here (e.g., https://www.example.com/very/long/path)" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Shorten URL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3">
+        <small>&copy; 2023 URL Shortener. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Home Page (Success) -->
+    <div class="state-container">
+        <h2>State 2: Home Page (Success)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Success</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">URL Shortener</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <div class="alert alert-success d-flex align-items-center" role="alert">
+                     <i class="bi bi-check-circle-fill flex-shrink-0 me-2"></i>
+                     <div>
+                       Success! Your shortened URL is ready.
+                     </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-center mb-4">Your Shortened URL</h1>
+
+                        <div class="mb-3">
+                            <label for="originalUrl" class="form-label text-muted"><small>Original URL:</small></label>
+                            <p id="originalUrl" class="text-break" style="font-size: 0.9em;">https://www.example.com/very/long/path/that/needed/shortening/for/easier/sharing</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="shortUrl" class="form-label"><strong>Short URL:</strong></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" id="shortUrl" value="https://sh.rt/aB3xY9" readonly>
+                                <button class="btn btn-outline-secondary" type="button" id="copyButton">
+                                    <i class="bi bi-clipboard"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                             <a href="#" class="btn btn-primary">Shorten Another URL</a>
+                             <a href="https://sh.rt/aB3xY9" target="_blank" class="btn btn-outline-secondary">Visit Short URL <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3">
+        <small>&copy; 2023 URL Shortener. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Home Page (Error - Invalid URL) -->
+    <div class="state-container">
+        <h2>State 3: Home Page (Error - Invalid URL)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Error - Invalid URL</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">URL Shortener</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                    <div>
+                      Error: Please enter a valid URL including http:// or https://
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-center mb-4">Shorten Your Long URL</h1>
+                        <p class="text-center text-muted mb-4">Paste your long URL below to create a short, shareable link.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="longUrl" class="form-label visually-hidden">Long URL</label>
+                                <input type="url" class="form-control form-control-lg is-invalid" id="longUrl" placeholder="Enter your long URL here (e.g., https://www.example.com/very/long/path)" required value="invalid-url-format">
+                                <div class="invalid-feedback">
+                                    Please provide a valid URL starting with http:// or https://.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Shorten URL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3">
+        <small>&copy; 2023 URL Shortener. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Home Page (Error - General Error) -->
+    <div class="state-container">
+        <h2>State 4: Home Page (Error - General/Server Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Error - Server</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">URL Shortener</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <div class="alert alert-danger d-flex align-items-center" role="alert">
+                   <i class="bi bi-exclamation-octagon-fill flex-shrink-0 me-2"></i>
+                   <div>
+                     Oops! Something went wrong on our end. Please try again later.
+                   </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-center mb-4">Shorten Your Long URL</h1>
+                        <p class="text-center text-muted mb-4">Paste your long URL below to create a short, shareable link.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="longUrl" class="form-label visually-hidden">Long URL</label>
+                                <input type="url" class="form-control form-control-lg" id="longUrl" placeholder="Enter your long URL here (e.g., https://www.example.com/very/long/path)" required value="https://www.example.com/some/valid/url/that/failed">
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Shorten URL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3">
+        <small>&copy; 2023 URL Shortener. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: About Page -->
+    <div class="state-container">
+        <h2>State 5: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">URL Shortener</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title mb-4">About URL Shortener</h1>
+                        <p class="lead">Welcome to URL Shortener, your simple solution for creating concise and manageable web links.</p>
+                        <hr class="my-4">
+                        <p>In a world overflowing with information, sharing links can become cumbersome. Long, complex URLs are difficult to remember, type, and share, especially on platforms with character limits or in verbal communication. Our service tackles this problem head-on.</p>
+                        <p>We provide a fast, free, and easy-to-use tool to transform those lengthy web addresses into short, memorable aliases. Simply paste your long URL into our tool, click "Shorten", and instantly receive a compact link perfect for sharing on social media, in emails, messages, or anywhere else.</p>
+                        <h4 class="mt-4">How it Works</h4>
+                        <p>When you submit a long URL, our system generates a unique short code associated with it. This code forms the basis of your new short link (e.g., `https://sh.rt/xyz123`). When someone clicks this short link, our service quickly looks up the original long URL and redirects the user seamlessly to the intended destination.</p>
+                         <h4 class="mt-4">Our Mission</h4>
+                        <p>Our mission is to simplify link sharing for everyone. We believe in providing a reliable and efficient service that respects user privacy and enhances online communication.</p>
+
+                         <p class="mt-4 text-muted">Thank you for using URL Shortener!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3">
+        <small>&copy; 2023 URL Shortener. All rights reserved.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

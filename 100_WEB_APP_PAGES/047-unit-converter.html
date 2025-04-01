@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Unit Converter - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial Load / Default Conversion) -->
+    <h2>State 1: Home Page (Initial Load / Default Conversion)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Unit Converter - Home</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <style>body { background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Unit Converter</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h3>Convert Units</h3>
+                    </div>
+                    <div class='card-body'>
+                        <div class='mb-3'>
+                            <label for='categorySelect' class='form-label'>Category</label>
+                            <select class='form-select' id='categorySelect'>
+                                <option selected>Length</option>
+                                <option>Weight</option>
+                                <option>Volume</option>
+                                <option>Temperature</option>
+                            </select>
+                        </div>
+
+                        <div class='row g-3 align-items-center'>
+                            <div class='col'>
+                                <label for='inputValue' class='form-label'>Value</label>
+                                <input type='text' class='form-control' id='inputValue' placeholder='Enter value'>
+                            </div>
+                            <div class='col'>
+                                <label for='fromUnit' class='form-label'>From</label>
+                                <select class='form-select' id='fromUnit'>
+                                    <option selected>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                            <div class='col-auto pt-4'>
+                                <span class='fs-4'>=</span>
+                            </div>
+                            <div class='col'>
+                                <label for='toUnit' class='form-label'>To</label>
+                                <select class='form-select' id='toUnit'>
+                                    <option>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option selected>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='mt-4 p-3 bg-light rounded'>
+                            <h4>Result:</h4>
+                            <p class='lead' id='resultArea'>-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 2: Home Page (Input Entered & Conversion Displayed) -->
+    <h2>State 2: Home Page (Input Entered & Conversion Displayed)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Unit Converter - Home</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <style>body { background-color: #f8f9fa; }</style>
+       </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Unit Converter</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h3>Convert Units</h3>
+                    </div>
+                    <div class='card-body'>
+                        <div class='mb-3'>
+                            <label for='categorySelect' class='form-label'>Category</label>
+                            <select class='form-select' id='categorySelect'>
+                                <option selected>Length</option>
+                                <option>Weight</option>
+                                <option>Volume</option>
+                                <option>Temperature</option>
+                            </select>
+                        </div>
+
+                        <div class='row g-3 align-items-center'>
+                            <div class='col'>
+                                <label for='inputValue' class='form-label'>Value</label>
+                                <input type='text' class='form-control' id='inputValue' value='10'>
+                            </div>
+                            <div class='col'>
+                                <label for='fromUnit' class='form-label'>From</label>
+                                <select class='form-select' id='fromUnit'>
+                                    <option selected>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                             <div class='col-auto pt-4'>
+                                <span class='fs-4'>=</span>
+                            </div>
+                           <div class='col'>
+                                <label for='toUnit' class='form-label'>To</label>
+                                <select class='form-select' id='toUnit'>
+                                    <option>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option selected>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='mt-4 p-3 bg-success-subtle rounded border border-success'>
+                            <h4>Result:</h4>
+                            <p class='lead fw-bold text-success-emphasis' id='resultArea'>32.81 Feet (ft)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 3: Home Page (Input Error - Non-numeric) -->
+    <h2>State 3: Home Page (Input Error - Non-numeric)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Unit Converter - Home (Error)</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <style>body { background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Unit Converter</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h3>Convert Units</h3>
+                    </div>
+                    <div class='card-body'>
+                        <div class='mb-3'>
+                            <label for='categorySelect' class='form-label'>Category</label>
+                            <select class='form-select' id='categorySelect'>
+                                <option selected>Length</option>
+                                <option>Weight</option>
+                                <option>Volume</option>
+                                <option>Temperature</option>
+                            </select>
+                        </div>
+
+                        <div class='row g-3 align-items-center'>
+                            <div class='col'>
+                                <label for='inputValue' class='form-label'>Value</label>
+                                <input type='text' class='form-control is-invalid' id='inputValue' value='abc'>
+                                <div class='invalid-feedback'>
+                                    Please enter a valid number.
+                                </div>
+                            </div>
+                            <div class='col'>
+                                <label for='fromUnit' class='form-label'>From</label>
+                                <select class='form-select' id='fromUnit'>
+                                    <option selected>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                            <div class='col-auto pt-4'>
+                                <span class='fs-4'>=</span>
+                            </div>
+                            <div class='col'>
+                                <label for='toUnit' class='form-label'>To</label>
+                                <select class='form-select' id='toUnit'>
+                                    <option>Meters (m)</option>
+                                    <option>Kilometers (km)</option>
+                                    <option selected>Feet (ft)</option>
+                                    <option>Miles (mi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='mt-4 p-3 bg-light rounded'>
+                            <h4>Result:</h4>
+                            <p class='lead text-danger' id='resultArea'>Invalid input</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 4: Home Page (Different Conversion Type Selected) -->
+    <h2>State 4: Home Page (Different Conversion Type Selected)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Unit Converter - Home</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <style>body { background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Unit Converter</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h3>Convert Units</h3>
+                    </div>
+                    <div class='card-body'>
+                        <div class='mb-3'>
+                            <label for='categorySelect' class='form-label'>Category</label>
+                            <select class='form-select' id='categorySelect'>
+                                <option>Length</option>
+                                <option selected>Weight</option>
+                                <option>Volume</option>
+                                <option>Temperature</option>
+                            </select>
+                        </div>
+
+                        <div class='row g-3 align-items-center'>
+                            <div class='col'>
+                                <label for='inputValue' class='form-label'>Value</label>
+                                <input type='text' class='form-control' id='inputValue' placeholder='Enter value'>
+                            </div>
+                            <div class='col'>
+                                <label for='fromUnit' class='form-label'>From</label>
+                                <select class='form-select' id='fromUnit'>
+                                    <option selected>Kilograms (kg)</option>
+                                    <option>Grams (g)</option>
+                                    <option>Pounds (lb)</option>
+                                    <option>Ounces (oz)</option>
+                                </select>
+                            </div>
+                            <div class='col-auto pt-4'>
+                                <span class='fs-4'>=</span>
+                            </div>
+                            <div class='col'>
+                                <label for='toUnit' class='form-label'>To</label>
+                                <select class='form-select' id='toUnit'>
+                                    <option>Kilograms (kg)</option>
+                                    <option>Grams (g)</option>
+                                    <option selected>Pounds (lb)</option>
+                                    <option>Ounces (oz)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class='mt-4 p-3 bg-light rounded'>
+                            <h4>Result:</h4>
+                            <p class='lead' id='resultArea'>-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 5: About Page -->
+    <h2>State 5: About Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Unit Converter - About</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+             <style>body { background-color: #f8f9fa; }</style>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>Unit Converter</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav'>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='#'>Home</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link active' aria-current='page' href='#'>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='card'>
+                    <div class='card-header'>
+                        <h2>About Unit Converter</h2>
+                    </div>
+                    <div class='card-body'>
+                        <p class='lead'>This is a simple utility web application designed for quick and easy conversions between various units of measurement.</p>
+                        <p>Supported categories include:</p>
+                        <ul>
+                            <li>Length (e.g., meters, feet, miles)</li>
+                            <li>Weight (e.g., kilograms, pounds, ounces)</li>
+                            <li>Volume (e.g., liters, gallons, cups)</li>
+                            <li>Temperature (e.g., Celsius, Fahrenheit, Kelvin)</li>
+                        </ul>
+                        <p>This application is built using HTML and Bootstrap for demonstration purposes.</p>
+                        <hr>
+                        <p class='text-muted'>Version: 1.0.0 (Static Demo)</p>
+                    </div>
+                </div>
+            </div>
+
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+</body>
+</html>

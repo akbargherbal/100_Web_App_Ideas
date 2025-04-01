@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Feed Aggregator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height, can be adjusted */
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Social Media Feed Aggregator - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">All Your Social Feeds in One Place</h1>
+                    <p class="lead mt-3 mb-4">Stop switching between tabs. Connect your favorite social media accounts and view everything in a single, streamlined feed.</p>
+                    <a href="#" class="btn btn-primary btn-lg me-2">Get Started - Sign Up</a>
+                    <a href="#" class="btn btn-outline-secondary btn-lg">Learn More</a>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-5 text-center">
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-lightning-charge-fill" style="font-size: 3rem; color: var(--bs-primary);"></i>
+                    <h4 class="mt-3">Unified Feed</h4>
+                    <p>See posts from Twitter, Facebook, Instagram, and more, all together.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-sliders" style="font-size: 3rem; color: var(--bs-primary);"></i>
+                    <h4 class="mt-3">Easy Connection</h4>
+                    <p>Securely link your accounts in just a few clicks.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-clock-history" style="font-size: 3rem; color: var(--bs-primary);"></i>
+                    <h4 class="mt-3">Chronological Order</h4>
+                    <p>View posts as they happen, without complex algorithms.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center text-lg-start mt-5 pt-4 pb-4">
+            <div class="container">
+                <p class="text-center mb-0">&copy; 2023 AggregatorApp. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="mb-4">About AggregatorApp</h1>
+                    <p class="lead">AggregatorApp was created to simplify the way you consume social media. In an increasingly fragmented online world, we believe there should be an easier way to stay updated without the constant need to switch between different platforms.</p>
+                    <hr class="my-4">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to provide a seamless, unified, and customizable social media reading experience. We prioritize user control and a clutter-free interface, putting you back in charge of your feeds.</p>
+                    <h2>Supported Platforms</h2>
+                    <p>We currently support integration with platforms like:</p>
+                    <ul>
+                        <li>Twitter</li>
+                        <li>Facebook (Pages)</li>
+                        <li>Instagram (Business Accounts)</li>
+                        <li>LinkedIn</li>
+                        <li>Reddit</li>
+                        <li>(More coming soon!)</li>
+                    </ul>
+                     <h2>The Team</h2>
+                     <p>We are a small, passionate team of developers and designers dedicated to building useful tools for the modern web user. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center text-lg-start mt-5 pt-4 pb-4 fixed-bottom">
+            <div class="container">
+                <p class="text-center mb-0">&copy; 2023 AggregatorApp. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                 <ul class="navbar-nav ms-auto flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Login</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                                    </label>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                                </div>
+                                <p class="mt-3 text-center">Already have an account? <a href="#">Log In</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 4: Sign Up Page (Error State) -->
+    <h2>State 4: Sign Up Page (Error State)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Error - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                 <ul class="navbar-nav ms-auto flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Login</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                             <div class="alert alert-danger" role="alert">
+                                Please fix the errors below and try again.
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" required>
+                                    <div class="invalid-feedback">
+                                      Please provide a valid email address.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Create a password" required>
+                                     <div class="invalid-feedback">
+                                      Password must be at least 8 characters long.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm your password" required>
+                                    <div class="invalid-feedback">
+                                      Passwords do not match.
+                                    </div>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input is-invalid" type="checkbox" value="" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                                    </label>
+                                     <div class="invalid-feedback">
+                                      You must agree to the terms.
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                                </div>
+                                <p class="mt-3 text-center">Already have an account? <a href="#">Log In</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                 <ul class="navbar-nav ms-auto flex-row">
+                    <li class="nav-item">
+                         <a class="nav-link text-white" href="#">Sign Up</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center mb-4">Log In</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                                     <div class="text-end mt-1">
+                                        <a href="#" class="form-text">Forgot password?</a>
+                                    </div>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+                                </div>
+                                <p class="mt-3 text-center">Don`t have an account? <a href="#">Sign Up</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 6: Login Page (Error State) -->
+    <h2>State 6: Login Page (Error State)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Error - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <ul class="navbar-nav ms-auto flex-row">
+                    <li class="nav-item">
+                         <a class="nav-link text-white" href="#">Sign Up</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="card-title text-center mb-4">Log In</h2>
+                             <div class="alert alert-danger" role="alert">
+                                Invalid email or password. Please try again.
+                            </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control is-invalid" id="loginEmail" value="user@example.com" placeholder="name@example.com" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter your password" required>
+                                    <div class="text-end mt-1">
+                                        <a href="#" class="form-text">Forgot password?</a>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+                                </div>
+                                <p class="mt-3 text-center">Don`t have an account? <a href="#">Sign Up</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 7: Dashboard/Feed Page (Empty State) -->
+    <h2>State 7: Dashboard/Feed Page (Empty State)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="text-center p-5 bg-white rounded shadow-sm">
+                 <i class="bi bi-view-list" style="font-size: 4rem; color: #6c757d;"></i>
+                <h1 class="mt-3">Your Feed is Empty</h1>
+                <p class="lead text-muted">Connect your social media accounts to start seeing posts here.</p>
+                <a href="#" class="btn btn-primary mt-3"><i class="bi bi-plus-circle me-1"></i> Connect Accounts</a>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 8: Connect Accounts Page -->
+    <h2>State 8: Connect Accounts Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connect Accounts - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1 class="mb-4">Connect Social Media Accounts</h1>
+            <p class="lead mb-4">Click on a platform below to securely connect your account.</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-twitter-x" style="font-size: 3rem; color: #000;"></i>
+                            <h5 class="card-title mt-3">X (Twitter)</h5>
+                            <p class="card-text text-muted">View your timeline and mentions.</p>
+                            <a href="#" class="btn btn-dark w-100"><i class="bi bi-link-45deg me-1"></i> Connect X</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-facebook" style="font-size: 3rem; color: #1877F2;"></i>
+                            <h5 class="card-title mt-3">Facebook</h5>
+                            <p class="card-text text-muted">Connect pages you manage.</p>
+                            <a href="#" class="btn btn-primary w-100" style="background-color: #1877F2; border-color: #1877F2;"><i class="bi bi-link-45deg me-1"></i> Connect Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-instagram" style="font-size: 3rem; color: #E4405F;"></i>
+                            <h5 class="card-title mt-3">Instagram</h5>
+                            <p class="card-text text-muted">Requires a Business Account.</p>
+                            <a href="#" class="btn btn-danger w-100" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border: none;"><i class="bi bi-link-45deg me-1"></i> Connect Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                             <i class="bi bi-linkedin" style="font-size: 3rem; color: #0A66C2;"></i>
+                             <h5 class="card-title mt-3">LinkedIn</h5>
+                             <p class="card-text text-muted">View updates from your network.</p>
+                            <a href="#" class="btn btn-primary w-100" style="background-color: #0A66C2; border-color: #0A66C2;"><i class="bi bi-link-45deg me-1"></i> Connect LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-youtube" style="font-size: 3rem; color: #FF0000;"></i>
+                             <h5 class="card-title mt-3">YouTube</h5>
+                             <p class="card-text text-muted">See new videos from subscriptions.</p>
+                            <a href="#" class="btn btn-danger w-100"><i class="bi bi-link-45deg me-1"></i> Connect YouTube</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-reddit" style="font-size: 3rem; color: #FF4500;"></i>
+                             <h5 class="card-title mt-3">Reddit</h5>
+                             <p class="card-text text-muted">Follow your favorite subreddits.</p>
+                            <a href="#" class="btn btn-warning text-white w-100" style="background-color: #FF4500; border-color: #FF4500;"><i class="bi bi-link-45deg me-1"></i> Connect Reddit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h2 class="mb-3">Connected Accounts</h2>
+             <p class="text-muted">You haven't connected any accounts yet.</p>
+            <!-- Placeholder for list of connected accounts - see State 12 -->
+
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 9: Connect Accounts Page (Success Feedback) -->
+    <h2>State 9: Connect Accounts Page (Success Feedback)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Account Connected - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                <div>
+                    Successfully connected your X (Twitter) account! You can now manage it below or connect another account.
+                </div>
+            </div>
+
+            <h1 class="mb-4">Connect Social Media Accounts</h1>
+            <p class="lead mb-4">Click on a platform below to securely connect your account.</p>
+
+             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                 <div class="col">
+                     <div class="card h-100 opacity-50"> <!-- Example: Dimmed connected account -->
+                        <div class="card-body text-center">
+                            <i class="bi bi-twitter-x" style="font-size: 3rem; color: #000;"></i>
+                            <h5 class="card-title mt-3">X (Twitter)</h5>
+                            <p class="card-text text-muted">View your timeline and mentions.</p>
+                            <button class="btn btn-dark w-100" disabled><i class="bi bi-check-circle me-1"></i> Connected</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-facebook" style="font-size: 3rem; color: #1877F2;"></i>
+                            <h5 class="card-title mt-3">Facebook</h5>
+                            <p class="card-text text-muted">Connect pages you manage.</p>
+                            <a href="#" class="btn btn-primary w-100" style="background-color: #1877F2; border-color: #1877F2;"><i class="bi bi-link-45deg me-1"></i> Connect Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Other platforms... -->
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-instagram" style="font-size: 3rem; color: #E4405F;"></i>
+                            <h5 class="card-title mt-3">Instagram</h5>
+                            <p class="card-text text-muted">Requires a Business Account.</p>
+                            <a href="#" class="btn btn-danger w-100" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border: none;"><i class="bi bi-link-45deg me-1"></i> Connect Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h2 class="mb-3">Connected Accounts</h2>
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <div>
+                  <i class="bi bi-twitter-x me-2"></i>
+                  <strong>X (Twitter)</strong> (@username)
+                </div>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Disconnect</button>
+              </div>
+            </div>
+
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 10: Connect Accounts Page (Error Feedback) -->
+    <h2>State 10: Connect Accounts Page (Error Feedback)</h2>
+    <iframe srcdoc='
+     <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connection Error - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+             <div class="alert alert-danger d-flex align-items-center" role="alert">
+               <i class="bi bi-exclamation-triangle-fill me-2"></i>
+               <div>
+                    Could not connect your Facebook account. The authentication failed or was cancelled. Please try again.
+                </div>
+            </div>
+
+            <h1 class="mb-4">Connect Social Media Accounts</h1>
+            <p class="lead mb-4">Click on a platform below to securely connect your account.</p>
+
+             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-twitter-x" style="font-size: 3rem; color: #000;"></i>
+                            <h5 class="card-title mt-3">X (Twitter)</h5>
+                            <p class="card-text text-muted">View your timeline and mentions.</p>
+                             <a href="#" class="btn btn-dark w-100"><i class="bi bi-link-45deg me-1"></i> Connect X</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card h-100 border-danger"> <!-- Highlight failed connection attempt -->
+                        <div class="card-body text-center">
+                            <i class="bi bi-facebook" style="font-size: 3rem; color: #1877F2;"></i>
+                            <h5 class="card-title mt-3">Facebook</h5>
+                            <p class="card-text text-muted">Connect pages you manage.</p>
+                            <a href="#" class="btn btn-primary w-100" style="background-color: #1877F2; border-color: #1877F2;"><i class="bi bi-arrow-clockwise me-1"></i> Retry Connection</a>
+                        </div>
+                         <div class="card-footer bg-danger-subtle text-danger-emphasis border-danger text-center small">
+                             Connection Failed
+                         </div>
+                    </div>
+                </div>
+                <!-- Other platforms... -->
+                 <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="bi bi-instagram" style="font-size: 3rem; color: #E4405F;"></i>
+                            <h5 class="card-title mt-3">Instagram</h5>
+                            <p class="card-text text-muted">Requires a Business Account.</p>
+                            <a href="#" class="btn btn-danger w-100" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border: none;"><i class="bi bi-link-45deg me-1"></i> Connect Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h2 class="mb-3">Connected Accounts</h2>
+             <p class="text-muted">You haven't connected any accounts yet.</p>
+
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 11: Dashboard/Feed Page (Populated) -->
+    <h2>State 11: Dashboard/Feed Page (Populated)</h2>
+    <iframe style="height: 800px;" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Feed - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Optional Sidebar for Filters/Sources -->
+                <div class="col-md-3 d-none d-md-block">
+                    <h5>Sources</h5>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                           <i class="bi bi-view-list me-2"></i> All Feeds
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-twitter-x me-2"></i> X (Twitter)</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-facebook me-2"></i> Facebook Pages</a>
+                        <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-linkedin me-2"></i> LinkedIn</a>
+                        <a href="#" class="list-group-item list-group-item-action text-muted disabled"><i class="bi bi-instagram me-2"></i> Instagram (Not Connected)</a>
+                    </div>
+                     <h5 class="mt-4">Filters</h5>
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="filterKeyword">
+                        <label class="form-check-label" for="filterKeyword">
+                            Keyword Filter
+                         </label>
+                    </div>
+                    <input type="text" class="form-control form-control-sm mt-1 mb-2" placeholder="Enter keyword...">
+                     <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="filterMedia">
+                        <label class="form-check-label" for="filterMedia">
+                            Only show posts with media
+                         </label>
+                    </div>
+
+                </div>
+
+                <!-- Main Feed Area -->
+                <div class="col-md-9">
+                    <h1 class="mb-4 d-md-none">My Feed</h1> <!-- Show title on small screens -->
+
+                    <!-- Feed Item 1 (Twitter Example) -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-twitter-x me-2" style="color: #000; font-size: 1.2rem;"></i>
+                                <img src="https://via.placeholder.com/32" alt="User Avatar" class="rounded-circle me-2" width="32" height="32">
+                                <strong class="me-auto">Twitter User</strong>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                            <p class="card-text">This is a placeholder tweet text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. #placeholder #example</p>
+                             <a href="#" class="card-link">View on X</a>
+                             <a href="#" class="card-link"><i class="bi bi-heart"></i> Like</a>
+                             <a href="#" class="card-link"><i class="bi bi-repeat"></i> Repost</a>
+                        </div>
+                    </div>
+
+                     <!-- Feed Item 2 (Facebook Example with Image) -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-facebook me-2" style="color: #1877F2; font-size: 1.2rem;"></i>
+                                <img src="https://via.placeholder.com/32" alt="Page Avatar" class="rounded-circle me-2" width="32" height="32">
+                                <strong class="me-auto">Facebook Page Name</strong>
+                                <small class="text-muted">5 hours ago</small>
+                            </div>
+                            <p class="card-text">Check out this amazing photo from our latest event! Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                            <img src="https://via.placeholder.com/600x300" class="img-fluid rounded mt-2 mb-2" alt="Placeholder Image">
+                             <a href="#" class="card-link">View on Facebook</a>
+                             <a href="#" class="card-link"><i class="bi bi-hand-thumbs-up"></i> Like</a>
+                             <a href="#" class="card-link"><i class="bi bi-chat-dots"></i> Comment</a>
+                        </div>
+                    </div>
+
+                    <!-- Feed Item 3 (LinkedIn Example) -->
+                   <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-linkedin me-2" style="color: #0A66C2; font-size: 1.2rem;"></i>
+                                <img src="https://via.placeholder.com/32" alt="User Avatar" class="rounded-circle me-2" width="32" height="32">
+                                <strong class="me-auto">LinkedIn Connection</strong>
+                                <small class="text-muted">1 day ago</small>
+                            </div>
+                            <p class="card-text">Excited to share an article about industry trends. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+                             <a href="#" class="card-link">View on LinkedIn</a>
+                             <a href="#" class="card-link"><i class="bi bi-hand-thumbs-up"></i> Like</a>
+                             <a href="#" class="card-link"><i class="bi bi-chat-dots"></i> Comment</a>
+                        </div>
+                    </div>
+
+                     <!-- Placeholder for more feed items -->
+                     <div class="text-center mt-4">
+                         <button class="btn btn-outline-secondary">Load More Posts</button>
+                     </div>
+
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 12: Settings/Manage Accounts Page -->
+    <h2>State 12: Settings/Manage Accounts Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Settings - Social Feed Aggregator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">AggregatorApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Connect Accounts</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Settings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i> User Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item active" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <h1>Settings</h1>
+
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#account-settings" class="list-group-item list-group-item-action active" data-bs-toggle="pill">Account</a>
+                        <a href="#connected-accounts" class="list-group-item list-group-item-action" data-bs-toggle="pill">Connected Accounts</a>
+                        <a href="#feed-preferences" class="list-group-item list-group-item-action" data-bs-toggle="pill">Feed Preferences</a>
+                        <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="pill">Notifications</a>
+                         <a href="#billing" class="list-group-item list-group-item-action" data-bs-toggle="pill">Billing</a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <!-- Account Settings -->
+                        <div class="tab-pane fade show active" id="account-settings">
+                            <h2>Account Settings</h2>
+                             <form class="mt-3">
+                                <div class="mb-3 row">
+                                    <label for="settingName" class="col-sm-3 col-form-label">Full Name</label>
+                                     <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="settingName" value="User Name">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="settingEmail" class="col-sm-3 col-form-label">Email</label>
+                                     <div class="col-sm-9">
+                                        <input type="email" readonly class="form-control-plaintext" id="settingEmail" value="user@example.com">
+                                     </div>
+                                </div>
+                                <hr>
+                                <h5>Change Password</h5>
+                                 <div class="mb-3 row">
+                                    <label for="currentPassword" class="col-sm-3 col-form-label">Current Password</label>
+                                     <div class="col-sm-9">
+                                        <input type="password" class="form-control" id="currentPassword">
+                                    </div>
+                                </div>
+                                 <div class="mb-3 row">
+                                    <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
+                                     <div class="col-sm-9">
+                                        <input type="password" class="form-control" id="newPassword">
+                                    </div>
+                                </div>
+                                 <div class="mb-3 row">
+                                    <label for="confirmNewPassword" class="col-sm-3 col-form-label">Confirm New Password</label>
+                                     <div class="col-sm-9">
+                                        <input type="password" class="form-control" id="confirmNewPassword">
+                                    </div>
+                                </div>
+                                 <div class="mb-3 row">
+                                     <div class="col-sm-9 offset-sm-3">
+                                        <button type="submit" class="btn btn-primary">Update Account</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr>
+                             <h5 class="text-danger">Delete Account</h5>
+                             <p class="text-danger">Permanently delete your account and all associated data. This action cannot be undone.</p>
+                             <button class="btn btn-danger">Delete My Account</button>
+                        </div>
+
+                        <!-- Connected Accounts -->
+                         <div class="tab-pane fade" id="connected-accounts">
+                            <h2>Connected Accounts</h2>
+                            <p>Manage the social media accounts linked to AggregatorApp.</p>
+                            <a href="#" class="btn btn-success mb-3"><i class="bi bi-plus-circle me-1"></i> Connect Another Account</a>
+
+                            <div class="list-group">
+                              <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                  <i class="bi bi-twitter-x me-2"></i>
+                                  <strong>X (Twitter)</strong> (@twitter_user)
+                                  <small class="d-block text-muted">Connected on Oct 26, 2023</small>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Disconnect</button>
+                              </div>
+                               <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                  <i class="bi bi-facebook me-2" style="color: #1877F2;"></i>
+                                  <strong>Facebook Page</strong> (My Business Page)
+                                   <small class="d-block text-muted">Connected on Oct 25, 2023</small>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Disconnect</button>
+                              </div>
+                               <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                  <i class="bi bi-linkedin me-2" style="color: #0A66C2;"></i>
+                                  <strong>LinkedIn</strong> (User Name)
+                                   <small class="d-block text-muted">Connected on Oct 24, 2023</small>
+                                </div>
+                                <div>
+                                    <span class="badge bg-warning text-dark me-2">Needs Re-authentication</span>
+                                    <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-arrow-clockwise me-1"></i> Reconnect</button>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Disconnect</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                         <!-- Feed Preferences -->
+                         <div class="tab-pane fade" id="feed-preferences">
+                             <h2>Feed Preferences</h2>
+                            <form class="mt-3">
+                                <div class="mb-3">
+                                    <label for="defaultView" class="form-label">Default Feed View</label>
+                                    <select class="form-select" id="defaultView">
+                                        <option selected>All Feeds Combined</option>
+                                        <option value="1">X (Twitter)</option>
+                                        <option value="2">Facebook Pages</option>
+                                        <option value="3">LinkedIn</option>
+                                    </select>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="loadMedia" checked>
+                                  <label class="form-check-label" for="loadMedia">Automatically load images and videos</label>
+                                </div>
+                                 <div class="form-check form-switch mb-3">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="infiniteScroll">
+                                  <label class="form-check-label" for="infiniteScroll">Enable infinite scroll</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Preferences</button>
+                            </form>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="tab-pane fade" id="notifications">
+                            <h2>Notifications</h2>
+                            <p>Configure how you receive notifications from AggregatorApp.</p>
+                             <form class="mt-3">
+                                 <div class="form-check form-switch mb-2">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="emailSummary" checked>
+                                  <label class="form-check-label" for="emailSummary">Receive daily email summary</label>
+                                </div>
+                                 <div class="form-check form-switch mb-2">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="mentionNotify">
+                                  <label class="form-check-label" for="mentionNotify">Notify me about mentions (Requires supported platforms)</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="productUpdates" checked>
+                                  <label class="form-check-label" for="productUpdates">Receive product updates and offers via email</label>
+                                </div>
+                                 <button type="submit" class="btn btn-primary">Save Notification Settings</button>
+                             </form>
+                        </div>
+
+                        <!-- Billing -->
+                         <div class="tab-pane fade" id="billing">
+                             <h2>Billing</h2>
+                             <div class="card">
+                                 <div class="card-body">
+                                     <h5 class="card-title">Current Plan: Free Tier</h5>
+                                     <p class="card-text">Includes up to 3 connected accounts and basic features.</p>
+                                     <a href="#" class="btn btn-outline-primary">Upgrade Plan</a>
+                                 </div>
+                             </div>
+                             <h5 class="mt-4">Payment History</h5>
+                             <p class="text-muted">No payment history found.</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+
+</body>
+</html>

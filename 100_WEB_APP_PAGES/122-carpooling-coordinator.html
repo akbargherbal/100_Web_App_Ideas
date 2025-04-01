@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling Coordinator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 700px; /* Adjusted height */
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Carpooling Coordinator - UI Flow</h1>
+
+<!-- State 1: Home Page -->
+<div class="state-container">
+    <h2>State 1: Home Page (Landing Page)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 1: Home Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3 text-center">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Share Your Commute, Save Money &amp; Planet</h1>
+                <p class="fs-4">Connect with fellow commuters heading your way. Find or offer rides easily with Carpooling Coordinator.</p>
+                <a class="btn btn-primary btn-lg mx-2" href="#" role="button">Find a Ride</a>
+                <a class="btn btn-success btn-lg mx-2" href="#" role="button">Offer a Ride</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>How it Works</h2>
+                    <p>1. Sign up or log in.<br>2. Search for rides along your route or offer your empty seats.<br>3. Connect with drivers/passengers and coordinate.<br>4. Enjoy a shared, cost-effective, and eco-friendly commute!</p>
+                    <a class="btn btn-outline-light" href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                    <h2>Why Choose Us?</h2>
+                    <p>Verified users, secure platform, easy scheduling, cost savings, reduced traffic, and a smaller carbon footprint. Join our community today!</p>
+                     <a class="btn btn-outline-secondary" href="#">About Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 2: About Page -->
+<div class="state-container">
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 2: About Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About Carpooling Coordinator</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Our Mission</h2>
+                <p>Our mission is to make commuting simpler, more affordable, and environmentally friendly by connecting people traveling in the same direction. We aim to build a trusted community of commuters who can rely on each other for safe and convenient shared rides.</p>
+
+                <h2>How It Started</h2>
+                <p>Carpooling Coordinator was founded by a group of daily commuters frustrated with traffic congestion, rising fuel costs, and the environmental impact of single-occupancy vehicles. We believed there had to be a better way and set out to create a platform that facilitates easy and reliable carpooling.</p>
+
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Community:</strong> Fostering connections between commuters.</li>
+                    <li><strong>Sustainability:</strong> Promoting eco-friendly transportation choices.</li>
+                    <li><strong>Affordability:</strong> Helping users save money on travel costs.</li>
+                    <li><strong>Safety:</strong> Prioritizing the security and trust of our users.</li>
+                    <li><strong>Convenience:</strong> Making carpooling easy to arrange and manage.</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                 <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Us</h5>
+                        <p class="card-text">Have questions or feedback? We&apos;d love to hear from you.</p>
+                        <a href="#" class="btn btn-primary">Get In Touch</a>
+                    </div>
+                </div>
+                 <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Join the Team</h5>
+                        <p class="card-text">Interested in helping us grow? Check out our career opportunities.</p>
+                        <a href="#" class="btn btn-secondary">Careers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 3: Sign Up Page -->
+<div class="state-container">
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 3: Sign Up Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="signupPhone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small>Already have an account? <a href="#">Log In</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 4: Login Page -->
+<div class="state-container">
+    <h2>State 4: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 4: Login Page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                     <div class="card-header text-center">
+                        <h3>Welcome Back!</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <a href="#" class="float-end">Forgot Password?</a>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card-footer text-center">
+                        <small>Don&apos;t have an account? <a href="#">Sign Up</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 5: Dashboard (Logged In Home) -->
+<div class="state-container">
+    <h2>State 5: Dashboard (Logged In Home)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 5: Dashboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Dashboard</h1>
+        <p class="lead">Welcome back, John! Here&apos;s a quick overview.</p>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        Quick Actions
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="#" class="btn btn-primary btn-lg me-2">Find a Ride</a>
+                        <a href="#" class="btn btn-info btn-lg text-white">Offer a Ride</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                     <div class="card-header">
+                         Upcoming Booked Ride
+                     </div>
+                     <div class="card-body">
+                        <p class="card-text">
+                            <strong>Ride:</strong> Downtown Hub to Suburbia Central <br>
+                            <strong>Driver:</strong> Jane Smith <br>
+                            <strong>Date:</strong> 2023-12-15 <br>
+                            <strong>Time:</strong> 08:00 AM
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        Your Offered Rides
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Suburbia Central to Downtown Hub (Dec 16, 5:00 PM)</span>
+                            <span>
+                                <span class="badge bg-primary rounded-pill me-2">2/3 Seats Booked</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Manage</a>
+                            </span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>Suburbia Central to Downtown Hub (Dec 17, 5:00 PM)</span>
+                             <span>
+                                <span class="badge bg-secondary rounded-pill me-2">0/3 Seats Booked</span>
+                                <a href="#" class="btn btn-sm btn-outline-secondary">Manage</a>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="card-footer">
+                         <a href="#">View All Offered Rides</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 6: Find a Ride Page -->
+<div class="state-container">
+    <h2>State 6: Find a Ride Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 6: Find a Ride</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h2>Find Your Next Ride</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="origin" class="form-label">Leaving from</label>
+                                <input type="text" class="form-control" id="origin" placeholder="Enter origin address or landmark" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="destination" class="form-label">Going to</label>
+                                <input type="text" class="form-control" id="destination" placeholder="Enter destination address or landmark" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="rideDate" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="rideDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="rideTime" class="form-label">Departure Time (approx.)</label>
+                                    <input type="time" class="form-control" id="rideTime" required>
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="seatsNeeded" class="form-label">Seats Needed</label>
+                                <select class="form-select" id="seatsNeeded">
+                                    <option selected value="1">1 Seat</option>
+                                    <option value="2">2 Seats</option>
+                                    <option value="3">3 Seats</option>
+                                    <option value="4">4 Seats</option>
+                                </select>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Search Rides</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 7: Ride Search Results Page -->
+<div class="state-container">
+    <h2>State 7: Ride Search Results Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 7: Ride Search Results</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Available Rides</h2>
+        <p class="text-muted">Showing rides from <strong>Downtown Hub</strong> to <strong>Suburbia Central</strong> on <strong>2023-12-15</strong> around <strong>08:00 AM</strong></p>
+        <hr>
+
+        <!-- Ride Card 1 -->
+        <div class="card mb-3 shadow-sm">
+            <div class="row g-0">
+                <div class="col-md-2 text-center p-3">
+                    <img src="https://via.placeholder.com/80" class="img-fluid rounded-circle" alt="Driver Pic">
+                    <p class="mt-2 mb-0">Jane S.</p>
+                    <small class="text-muted">4.8 Stars</small>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Downtown Hub <small class="text-muted">to</small> Suburbia Central</h5>
+                        <p class="card-text mb-1">
+                            <small class="text-muted">Departure: </small> <strong>Dec 15, 08:00 AM</strong>
+                        </p>
+                         <p class="card-text">
+                            <small class="text-muted">Estimated Arrival: </small> <strong>Dec 15, 08:45 AM</strong>
+                        </p>
+                        <span class="badge bg-info text-dark me-1">Music OK</span>
+                        <span class="badge bg-light text-dark border me-1">No Smoking</span>
+                    </div>
+                </div>
+                 <div class="col-md-3 d-flex flex-column justify-content-center align-items-center p-3 bg-light">
+                     <h4 class="text-success">$5.00</h4>
+                     <p class="mb-2"><small>per seat</small></p>
+                     <span class="badge bg-warning text-dark mb-2">2 Seats Left</span>
+                     <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ride Card 2 -->
+        <div class="card mb-3 shadow-sm">
+             <div class="row g-0">
+                <div class="col-md-2 text-center p-3">
+                    <img src="https://via.placeholder.com/80" class="img-fluid rounded-circle" alt="Driver Pic">
+                    <p class="mt-2 mb-0">Mike R.</p>
+                     <small class="text-muted">4.5 Stars</small>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Near Downtown Hub <small class="text-muted">to</small> North Suburbia</h5>
+                         <p class="card-text mb-1">
+                            <small class="text-muted">Departure: </small> <strong>Dec 15, 08:15 AM</strong>
+                        </p>
+                         <p class="card-text">
+                            <small class="text-muted">Estimated Arrival: </small> <strong>Dec 15, 09:00 AM</strong>
+                        </p>
+                        <span class="badge bg-light text-dark border me-1">Pets Allowed</span>
+                        <span class="badge bg-secondary text-white me-1">Quiet Ride</span>
+                    </div>
+                </div>
+                 <div class="col-md-3 d-flex flex-column justify-content-center align-items-center p-3 bg-light">
+                     <h4 class="text-success">$6.50</h4>
+                     <p class="mb-2"><small>per seat</small></p>
+                     <span class="badge bg-warning text-dark mb-2">1 Seat Left</span>
+                     <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+
+         <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-secondary">Modify Search</a>
+        </div>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 8: Ride Details Page -->
+<div class="state-container">
+    <h2>State 8: Ride Details Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 8: Ride Details</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                         <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Ride Details</h2>
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Find a Ride</a></li>
+            <li class="breadcrumb-item"><a href="#">Search Results</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ride Details</li>
+          </ol>
+        </nav>
+        <hr>
+
+        <div class="row">
+            <!-- Left Column: Map and Route -->
+            <div class="col-lg-7">
+                 <div class="card mb-4 shadow-sm">
+                     <div class="card-header">
+                        Route Overview
+                     </div>
+                    <div class="card-body">
+                         <!-- Placeholder for map -->
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 250px;">
+                            [Map Placeholder]
+                        </div>
+                        <h5 class="mt-3">Downtown Hub <small class="text-muted">to</small> Suburbia Central</h5>
+                        <p><strong>Departure:</strong> Dec 15, 08:00 AM from Main St & Central Ave</p>
+                        <p><strong>Arrival (Est.):</strong> Dec 15, 08:45 AM near Elm St Park</p>
+                        <p><strong>Potential Stops:</strong> Midway Point Plaza (if requested)</p>
+                    </div>
+                </div>
+                 <div class="card mb-4 shadow-sm">
+                     <div class="card-header">
+                        Ride Details & Preferences
+                     </div>
+                    <div class="card-body">
+                        <p><strong>Car:</strong> Toyota Camry (Gray)</p>
+                        <p><strong>Luggage:</strong> Small bag / Backpack only</p>
+                        <p><strong>Preferences:</strong>
+                            <span class="badge bg-info text-dark me-1">Music OK</span>
+                            <span class="badge bg-light text-dark border me-1">No Smoking</span>
+                            <span class="badge bg-light text-dark border me-1">No Pets</span>
+                        </p>
+                        <p><strong>Driver Note:</strong> "Leaving promptly at 8 AM. Please be ready a few minutes early near the coffee shop."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Driver Info, Booking -->
+            <div class="col-lg-5">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        Driver Information
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="https://via.placeholder.com/100" class="img-fluid rounded-circle mb-2" alt="Driver Pic">
+                        <h4>Jane S.</h4>
+                         <p class="text-warning">★★★★☆ (4.8 Stars)</p>
+                         <p class="text-muted">Member since Jan 2022 | 50+ Rides Given</p>
+                         <a href="#" class="btn btn-outline-secondary btn-sm">View Profile</a>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                     <div class="card-header">
+                        Booking Summary
+                    </div>
+                    <div class="card-body">
+                        <h3 class="text-success text-center mb-3">$5.00 <small class="text-muted fs-6"> / seat</small></h3>
+                        <div class="mb-3">
+                            <label for="seatsToBook" class="form-label">Number of Seats:</label>
+                            <select class="form-select" id="seatsToBook">
+                                <option value="1">1 Seat</option>
+                                <option value="2">2 Seats (Available)</option>
+                            </select>
+                             <small class="text-muted d-block mt-1">2 seats currently available.</small>
+                        </div>
+                         <div class="d-grid">
+                            <a href="#" class="btn btn-success btn-lg">Book Ride</a>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="#" class="btn btn-link btn-sm">Message Driver</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="card mb-4 shadow-sm">
+                     <div class="card-header">
+                        Passengers (1 booked)
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                             <img src="https://via.placeholder.com/40" class="img-fluid rounded-circle me-2" alt="Passenger Pic">
+                            <span>Mark P.</span>
+                        </li>
+                        <!-- Other passengers listed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 9: Book Ride Confirmation Page -->
+<div class="state-container">
+    <h2>State 9: Book Ride Confirmation Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 9: Booking Confirmation</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card text-center shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h2>Booking Confirmed!</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="fs-4">Your seat has been successfully booked.</p>
+                        <hr>
+                        <h5 class="card-title">Ride Summary</h5>
+                        <ul class="list-unstyled text-start mx-auto" style="max-width: 400px;">
+                            <li><strong>From:</strong> Downtown Hub (Main St & Central Ave)</li>
+                            <li><strong>To:</strong> Suburbia Central (near Elm St Park)</li>
+                            <li><strong>Date:</strong> December 15, 2023</li>
+                            <li><strong>Departure:</strong> 08:00 AM</li>
+                            <li><strong>Driver:</strong> Jane S.</li>
+                            <li><strong>Seats Booked:</strong> 1</li>
+                            <li><strong>Total Cost:</strong> $5.00</li>
+                        </ul>
+                        <hr>
+                        <p>You can view your booking details and message the driver from the 'My Rides' section.</p>
+                        <a href="#" class="btn btn-primary me-2">Go to My Rides</a>
+                        <a href="#" class="btn btn-secondary">Find Another Ride</a>
+                    </div>
+                     <div class="card-footer text-muted">
+                        A confirmation email has been sent to your address.
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 10: Offer a Ride Page (Step 1: Route) -->
+<div class="state-container">
+    <h2>State 10: Offer a Ride Page (Step 1: Route)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 10: Offer Ride - Route</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Jane S.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h2>Offer a Ride - Step 1: Route & Schedule</h2>
+                         <div class="progress mt-2" style="height: 5px;">
+                          <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                           <div class="row">
+                               <div class="col-md-6">
+                                   <h4>Route</h4>
+                                   <div class="mb-3">
+                                        <label for="offerOrigin" class="form-label">Leaving from</label>
+                                        <input type="text" class="form-control" id="offerOrigin" placeholder="Enter exact origin address" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="offerDestination" class="form-label">Going to</label>
+                                        <input type="text" class="form-control" id="offerDestination" placeholder="Enter exact destination address" required>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="offerStops" class="form-label">Intermediate Stops (Optional)</label>
+                                        <input type="text" class="form-control" id="offerStops" placeholder="e.g., Midway Point Plaza">
+                                         <small class="form-text text-muted">Enter potential pickup/dropoff points.</small>
+                                    </div>
+                                     <h4>Schedule</h4>
+                                      <div class="mb-3">
+                                        <label for="offerDate" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="offerDate" required>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="offerDepartureTime" class="form-label">Departure Time</label>
+                                            <input type="time" class="form-control" id="offerDepartureTime" required>
+                                        </div>
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="offerArrivalTime" class="form-label">Est. Arrival Time</label>
+                                            <input type="time" class="form-control" id="offerArrivalTime" required>
+                                        </div>
+                                    </div>
+                                     <div class="form-check mb-3">
+                                          <input class="form-check-input" type="checkbox" value="" id="recurringRide">
+                                          <label class="form-check-label" for="recurringRide">
+                                            This is a recurring ride (e.g., daily commute)
+                                          </label>
+                                     </div>
+                               </div>
+                               <div class="col-md-6">
+                                    <h4>Map Preview</h4>
+                                     <!-- Placeholder for map -->
+                                    <div class="bg-secondary text-white d-flex align-items-center justify-content-center mb-3" style="height: 300px;">
+                                        [Map Placeholder - Updates with addresses]
+                                    </div>
+                                     <p class="text-muted">Verify your route on the map. Drag markers to adjust if needed.</p>
+                               </div>
+                           </div>
+
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                <button type="submit" class="btn btn-primary">Next: Ride Details <i class="bi bi-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 11: Offer a Ride Page (Step 2: Details) -->
+<div class="state-container">
+    <h2>State 11: Offer a Ride Page (Step 2: Details)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 11: Offer Ride - Details</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Jane S.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+            <div class="col-lg-8">
+                 <div class="card shadow-sm">
+                     <div class="card-header">
+                        <h2>Offer a Ride - Step 2: Details & Price</h2>
+                         <div class="progress mt-2" style="height: 5px;">
+                          <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                     </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="seatsAvailable" class="form-label">Seats Available for Passengers</label>
+                                    <select class="form-select" id="seatsAvailable" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="1">1 Seat</option>
+                                        <option value="2">2 Seats</option>
+                                        <option value="3">3 Seats</option>
+                                        <option value="4">4 Seats</option>
+                                        <option value="5">5 Seats</option>
+                                    </select>
+                                </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="pricePerSeat" class="form-label">Price per Seat</label>
+                                    <div class="input-group">
+                                      <span class="input-group-text">$</span>
+                                      <input type="number" class="form-control" id="pricePerSeat" placeholder="e.g., 5.00" step="0.50" min="0" required>
+                                    </div>
+                                     <small class="form-text text-muted">Suggest contribution towards fuel/costs.</small>
+                                </div>
+                            </div>
+
+                             <div class="mb-3">
+                                <label class="form-label">Vehicle Details (Optional, helps passengers)</label>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control mb-2 mb-sm-0" placeholder="Make (e.g., Toyota)">
+                                    </div>
+                                    <div class="col-sm-4">
+                                         <input type="text" class="form-control mb-2 mb-sm-0" placeholder="Model (e.g., Camry)">
+                                    </div>
+                                     <div class="col-sm-4">
+                                         <input type="text" class="form-control" placeholder="Color (e.g., Gray)">
+                                    </div>
+                                </div>
+                             </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Luggage Allowance</label>
+                                <select class="form-select" id="luggage">
+                                    <option selected value="small">Small bag / Backpack only</option>
+                                    <option value="medium">Medium size suitcase allowed</option>
+                                    <option value="large">Large suitcase allowed</option>
+                                     <option value="none">No luggage space</option>
+                                </select>
+                            </div>
+
+                             <div class="mb-3">
+                                <label class="form-label">Ride Preferences (Check all that apply)</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="prefMusic">
+                                  <label class="form-check-label" for="prefMusic">Music OK</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="prefSmoking">
+                                  <label class="form-check-label" for="prefSmoking">Smoking Allowed</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="prefPets">
+                                  <label class="form-check-label" for="prefPets">Pets Allowed</label>
+                                </div>
+                                 <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="prefQuiet">
+                                  <label class="form-check-label" for="prefQuiet">Prefer Quiet Ride</label>
+                                </div>
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="driverNote" class="form-label">Note for Passengers (Optional)</label>
+                                <textarea class="form-control" id="driverNote" rows="3" placeholder="e.g., Specific pickup instructions, flexibility on time..."></textarea>
+                            </div>
+
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-between mt-4">
+                                <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left"></i> Back to Route</a>
+                                <button type="submit" class="btn btn-success">Publish Ride Offer <i class="bi bi-check-lg"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 12: Offer Ride Confirmation Page -->
+<div class="state-container">
+    <h2>State 12: Offer Ride Confirmation Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 12: Offer Confirmation</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Jane S.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+       <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card text-center shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h2>Ride Offer Published!</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="fs-4">Your ride offer is now visible to potential passengers.</p>
+                        <hr>
+                        <h5 class="card-title">Ride Summary</h5>
+                         <ul class="list-unstyled text-start mx-auto" style="max-width: 400px;">
+                            <li><strong>From:</strong> Suburbia Central</li>
+                            <li><strong>To:</strong> Downtown Hub</li>
+                            <li><strong>Date:</strong> December 16, 2023</li>
+                            <li><strong>Departure:</strong> 05:00 PM</li>
+                            <li><strong>Seats Offered:</strong> 3</li>
+                            <li><strong>Price per Seat:</strong> $5.00</li>
+                        </ul>
+                        <hr>
+                        <p>You will be notified when passengers book a seat. You can manage your offered rides in the 'My Rides' section.</p>
+                        <a href="#" class="btn btn-primary me-2">Go to My Rides</a>
+                        <a href="#" class="btn btn-secondary">Offer Another Ride</a>
+                    </div>
+                     <div class="card-footer text-muted">
+                        Good luck finding passengers!
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 13: My Rides Page -->
+<div class="state-container">
+    <h2>State 13: My Rides Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>State 13: My Rides</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>My Rides</h1>
+        <hr>
+
+         <ul class="nav nav-tabs mb-3" id="myRidesTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="booked-tab" data-bs-toggle="tab" data-bs-target="#booked-tab-pane" type="button" role="tab" aria-controls="booked-tab-pane" aria-selected="true">Rides I&apos;ve Booked</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="offered-tab" data-bs-toggle="tab" data-bs-target="#offered-tab-pane" type="button" role="tab" aria-controls="offered-tab-pane" aria-selected="false">Rides I&apos;m Offering</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="myRidesTabContent">
+          <!-- Booked Rides Pane -->
+          <div class="tab-pane fade show active" id="booked-tab-pane" role="tabpanel" aria-labelledby="booked-tab" tabindex="0">
+            <h3>Upcoming Booked Rides</h3>
+            <div class="list-group">
+                <!-- Booked Ride 1 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Downtown Hub to Suburbia Central</h5>
+                        <small>Dec 15, 2023</small>
+                    </div>
+                    <p class="mb-1">Driver: Jane S. | Departure: 08:00 AM</p>
+                    <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-primary me-1" disabled>View Details</button> <!-- Example of disabled action for past/active ride -->
+                        <button class="btn btn-sm btn-outline-danger">Cancel Booking</button>
+                    </div>
+                </div>
+                 <!-- Booked Ride 2 (Example) -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">City Airport to West End</h5>
+                        <small>Dec 20, 2023</small>
+                    </div>
+                    <p class="mb-1">Driver: Bob L. | Departure: 03:30 PM</p>
+                     <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-primary me-1">View Details</button>
+                        <button class="btn btn-sm btn-outline-danger">Cancel Booking</button>
+                    </div>
+                </div>
+                <!-- Add more booked rides or empty state -->
+                 <div class="alert alert-light mt-3" role="alert">
+                  No more upcoming booked rides. <a href="#" class="alert-link">Find a new ride?</a>
+                </div>
+            </div>
+             <h3 class="mt-4">Past Booked Rides</h3>
+             <!-- Add past rides list here if needed -->
+             <p class="text-muted">History of past rides...</p>
+          </div>
+
+          <!-- Offered Rides Pane -->
+          <div class="tab-pane fade" id="offered-tab-pane" role="tabpanel" aria-labelledby="offered-tab" tabindex="0">
+             <h3>Upcoming Offered Rides</h3>
+              <div class="list-group">
+                 <!-- Offered Ride 1 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Suburbia Central to Downtown Hub</h5>
+                         <span class="badge bg-primary rounded-pill">2/3 Seats Booked</span>
+                    </div>
+                    <p class="mb-1">Date: Dec 16, 2023 | Departure: 05:00 PM</p>
+                    <small>Passengers: Mark P., Sarah K.</small>
+                    <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-primary me-1">View/Manage Ride</button>
+                        <button class="btn btn-sm btn-outline-secondary me-1">Message Passengers</button>
+                        <button class="btn btn-sm btn-outline-danger">Cancel Ride</button>
+                    </div>
+                </div>
+                 <!-- Offered Ride 2 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-2 shadow-sm">
+                     <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Suburbia Central to Downtown Hub</h5>
+                         <span class="badge bg-secondary rounded-pill">0/3 Seats Booked</span>
+                    </div>
+                    <p class="mb-1">Date: Dec 17, 2023 | Departure: 05:00 PM</p>
+                     <small>No passengers booked yet.</small>
+                     <div class="mt-2">
+                        <button class="btn btn-sm btn-outline-primary me-1">View/Manage Ride</button>
+                         <button class="btn btn-sm btn-outline-danger">Cancel Ride</button>
+                    </div>
+                </div>
+                 <!-- Add more offered rides or empty state -->
+                 <div class="alert alert-light mt-3" role="alert">
+                  No more upcoming offered rides. <a href="#" class="alert-link">Offer a new ride?</a>
+                </div>
+              </div>
+               <h3 class="mt-4">Past Offered Rides</h3>
+               <!-- Add past rides list here if needed -->
+               <p class="text-muted">History of past offered rides...</p>
+          </div>
+        </div>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 14: User Profile Page -->
+<div class="state-container">
+    <h2>State 14: User Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 14: User Profile</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/150" class="img-thumbnail rounded-circle mb-3" alt="Profile Picture">
+                <h3>John Doe</h3>
+                <p class="text-muted">Member since March 2023</p>
+                 <p class="text-warning">★★★★☆ (4.7 Stars Average Rating)</p>
+                <a href="#" class="btn btn-primary btn-sm mb-3">Edit Profile</a>
+            </div>
+            <div class="col-md-8">
+                <h2>Profile Information</h2>
+                <hr>
+                 <dl class="row">
+                  <dt class="col-sm-3">Full Name:</dt>
+                  <dd class="col-sm-9">John Doe</dd>
+
+                  <dt class="col-sm-3">Email:</dt>
+                  <dd class="col-sm-9">john.doe@email.com <span class="badge bg-success">Verified</span></dd>
+
+                  <dt class="col-sm-3">Phone:</dt>
+                  <dd class="col-sm-9">XXX-XXX-1234 <span class="badge bg-success">Verified</span></dd>
+
+                  <dt class="col-sm-3">Bio:</dt>
+                  <dd class="col-sm-9">
+                    <p>Friendly commuter working downtown. Looking to share rides during weekdays. Non-smoker, enjoy listening to podcasts or music.</p>
+                  </dd>
+
+                  <dt class="col-sm-3">Primary Role:</dt>
+                  <dd class="col-sm-9">Passenger & Occasional Driver</dd>
+                </dl>
+
+                 <h4 class="mt-4">Vehicle Information (as Driver)</h4>
+                 <hr>
+                  <dl class="row">
+                     <dt class="col-sm-3">Car:</dt>
+                     <dd class="col-sm-9">Honda Civic (Blue)</dd>
+                      <dt class="col-sm-3">License Plate:</dt>
+                     <dd class="col-sm-9">ABC-123 (Hidden for privacy)</dd>
+                  </dl>
+                   <!-- Placeholder if no car info -->
+                  <!-- <p class="text-muted">No vehicle information added yet. <a href="#">Add Vehicle</a></p> -->
+
+                 <h4 class="mt-4">Reviews</h4>
+                 <hr>
+                 <div class="list-group">
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Review from Jane S. (Driver)</h5>
+                          <small class="text-muted">Dec 15, 2023</small>
+                        </div>
+                        <p class="mb-1">"John was a great passenger! Punctual and friendly."</p>
+                        <small class="text-warning">★★★★★</small>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Review from Mike R. (Passenger)</h5>
+                          <small class="text-muted">Nov 28, 2023</small>
+                        </div>
+                        <p class="mb-1">"Smooth ride, good conversation. Recommended driver."</p>
+                         <small class="text-warning">★★★★☆</small>
+                      </a>
+                    </div>
+                     <div class="text-center mt-3">
+                         <a href="#">See all reviews</a>
+                     </div>
+
+            </div>
+        </div>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 15: Edit Profile Page -->
+<div class="state-container">
+    <h2>State 15: Edit Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 15: Edit Profile</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" aria-current="page" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Edit Profile</h1>
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+          </ol>
+        </nav>
+        <hr>
+
+        <form class="row g-3">
+           <!-- Left Column: Basic Info -->
+           <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/150" class="img-thumbnail rounded-circle mb-3" alt="Profile Picture">
+                <div class="mb-3">
+                    <label for="profilePicUpload" class="form-label">Change Profile Picture</label>
+                    <input class="form-control form-control-sm" type="file" id="profilePicUpload">
+                </div>
+           </div>
+
+           <!-- Right Column: Details Form -->
+           <div class="col-md-8">
+                <h4>Basic Information</h4>
+                 <div class="mb-3">
+                    <label for="editName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="editName" value="John Doe" required>
+                </div>
+                 <div class="mb-3">
+                    <label for="editEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="editEmail" value="john.doe@email.com" disabled readonly>
+                    <small class="form-text text-muted">Email cannot be changed. Contact support if needed.</small>
+                </div>
+                  <div class="mb-3">
+                    <label for="editPhone" class="form-label">Phone Number</label>
+                     <div class="input-group">
+                        <input type="tel" class="form-control" id="editPhone" value="XXX-XXX-1234">
+                         <button class="btn btn-outline-secondary" type="button">Verify</button>
+                     </div>
+                     <small class="form-text text-muted">Re-verification needed if changed.</small>
+                </div>
+                 <div class="mb-3">
+                    <label for="editBio" class="form-label">Bio</label>
+                    <textarea class="form-control" id="editBio" rows="4">Friendly commuter working downtown. Looking to share rides during weekdays. Non-smoker, enjoy listening to podcasts or music.</textarea>
+                </div>
+
+                 <h4 class="mt-4">Vehicle Information (for Drivers)</h4>
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="editCarMake" class="form-label">Car Make</label>
+                        <input type="text" class="form-control" id="editCarMake" value="Honda">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="editCarModel" class="form-label">Car Model</label>
+                        <input type="text" class="form-control" id="editCarModel" value="Civic">
+                    </div>
+                     <div class="col-md-4 mb-3">
+                        <label for="editCarColor" class="form-label">Car Color</label>
+                        <input type="text" class="form-control" id="editCarColor" value="Blue">
+                    </div>
+                  </div>
+                   <div class="mb-3">
+                        <label for="editLicensePlate" class="form-label">License Plate</label>
+                        <input type="text" class="form-control" id="editLicensePlate" value="ABC-123">
+                        <small class="form-text text-muted">Will be partially hidden from public view.</small>
+                    </div>
+
+                 <hr class="my-4">
+                 <div class="d-flex justify-content-end">
+                     <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                     <button type="submit" class="btn btn-primary">Save Changes</button>
+                 </div>
+           </div>
+        </form>
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 16: Sign Up - Validation Error Example -->
+<div class="state-container">
+    <h2>State 16: Sign Up - Validation Error Example</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 16: Sign Up Validation</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                 <div class="alert alert-danger" role="alert">
+                  Please correct the errors below and try again.
+                </div>
+                <div class="card border-danger">
+                    <div class="card-header text-center">
+                        <h3>Create Your Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" required>
+                                 <div class="invalid-feedback">
+                                    Please enter your full name.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" value="invalid-email" required>
+                                 <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                 </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="signupPhone" required>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid phone number.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" required>
+                                 <div class="invalid-feedback">
+                                    Password is required.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" required>
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                 </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                                 <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                 </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small>Already have an account? <a href="#">Log In</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 17: Login - Validation Error Example -->
+<div class="state-container">
+    <h2>State 17: Login - Validation Error Example</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 17: Login Validation</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-outline-light" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                 <div class="alert alert-danger" role="alert">
+                  Incorrect email or password. Please try again.
+                </div>
+                <div class="card border-danger">
+                     <div class="card-header text-center">
+                        <h3>Welcome Back!</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" value="wrong@email.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" required>
+                                 <div class="invalid-feedback">
+                                    Please enter your password. <!-- Or keep general error above -->
+                                 </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <a href="#" class="float-end">Forgot Password?</a>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card-footer text-center">
+                        <small>Don&apos;t have an account? <a href="#">Sign Up</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+<!-- State 18: Find Ride - No Results Example -->
+<div class="state-container">
+    <h2>State 18: Find Ride - No Results Example</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>State 18: No Ride Results</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carpooling Coordinator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Find a Ride</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Offer a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Rides</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, John D.
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Available Rides</h2>
+        <p class="text-muted">Showing rides from <strong>Remote Town</strong> to <strong>Another Remote Town</strong> on <strong>2023-12-25</strong> around <strong>09:00 AM</strong></p>
+        <hr>
+
+        <div class="alert alert-warning text-center" role="alert">
+          <h4 class="alert-heading">No Rides Found</h4>
+          <p>Unfortunately, no rides match your search criteria at the moment.</p>
+          <hr>
+          <p class="mb-0">Try adjusting your search parameters (like date, time, or location), or check back later. You could also <a href="#" class="alert-link">set up a ride alert</a> to be notified when a matching ride is posted.</p>
+        </div>
+
+         <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Modify Search</a>
+             <a href="#" class="btn btn-outline-secondary ms-2">Offer This Ride Instead</a>
+        </div>
+
+    </div>
+
+     <footer class="py-3 my-4 border-top mt-5">
+        <p class="text-center text-muted">&copy; 2023 Carpooling Coordinator</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+</div>
+
+</body>
+</html>

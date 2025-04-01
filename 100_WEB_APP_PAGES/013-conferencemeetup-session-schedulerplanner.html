@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Session Scheduler UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .state-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #0d6efd;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        /* Basic styling for iframe content */
+        .iframe-content {
+            padding: 15px;
+        }
+        .navbar { margin-bottom: 0; } /* Prevent double margin */
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Conference Session Scheduler - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home Page</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">InnovateTech Conference 2024</h1>
+                    <p class="col-md-8 fs-4">Welcome to the premier technology conference of the year! Explore innovative sessions, connect with industry leaders, and plan your personalized schedule.</p>
+                    <a href="#" class="btn btn-primary btn-lg" type="button">View Sessions</a>
+                    <a href="#" class="btn btn-outline-secondary btn-lg" type="button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6 mb-3">
+                    <div class="h-100 p-5 text-bg-dark rounded-3">
+                        <h2>Keynote Speaker</h2>
+                        <p>Don&#39;t miss Dr. Evelyn Reed discussing the future of AI. Mark your calendars!</p>
+                        <button class="btn btn-outline-light" type="button">Session Details</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                        <h2>Plan Your Day</h2>
+                        <p>Browse the full list of talks, workshops, and networking events. Add sessions to your personal schedule to stay organized.</p>
+                        <a href="#" class="btn btn-outline-secondary" type="button">My Schedule</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About Page</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+         <div class="container">
+             <h1 class="mb-3">About InnovateTech Conference 2024</h1>
+             <p class="lead">InnovateTech is the leading conference focused on emerging technologies, digital transformation, and the future of innovation.</p>
+
+             <div class="row mt-4">
+                 <div class="col-md-8">
+                    <h2>Our Mission</h2>
+                    <p>To bring together the brightest minds in technology to share knowledge, spark inspiration, and foster collaboration. We aim to provide a platform for discovery and discussion on the trends shaping our world.</p>
+
+                    <h2>Event Details</h2>
+                    <ul class="list-unstyled">
+                        <li><strong>Dates:</strong> October 25-27, 2024</li>
+                        <li><strong>Venue:</strong> Grand Convention Center, Tech City</li>
+                        <li><strong>Theme:</strong> Shaping the Future, Today</li>
+                    </ul>
+
+                    <h2>Contact Us</h2>
+                    <p>Have questions? Reach out to our team:</p>
+                    <p>Email: <a href="#">info@innovatetechconf.com</a><br>
+                       Phone: 1-800-555-TECH</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                         <img src="https://via.placeholder.com/400x200.png?text=Venue+Map+Placeholder" class="card-img-top" alt="Map Placeholder">
+                         <div class="card-body">
+                            <h5 class="card-title">Venue Location</h5>
+                            <p class="card-text">Grand Convention Center<br>123 Innovation Drive<br>Tech City, TC 98765</p>
+                            <a href="#" class="btn btn-primary">Get Directions</a>
+                         </div>
+                    </div>
+                </div>
+             </div>
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 3: Session Listing (All Sessions) -->
+    <div class="state-container">
+        <h2>State 3: Session Listing (All Sessions)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Session Listing</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="mb-4">Conference Sessions</h1>
+
+            <!-- Filter/Search Bar -->
+            <div class="row mb-4 g-3 align-items-center">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Search sessions or speakers...">
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Filter by Track...</option>
+                        <option value="1">AI & Machine Learning</option>
+                        <option value="2">Web Development</option>
+                        <option value="3">Cloud Computing</option>
+                         <option value="4">Design & UX</option>
+                    </select>
+                </div>
+                 <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Filter by Day...</option>
+                        <option value="1">Day 1 (Oct 25)</option>
+                        <option value="2">Day 2 (Oct 26)</option>
+                        <option value="3">Day 3 (Oct 27)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Session List -->
+            <div class="list-group">
+                <!-- Session Item 1 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-3 p-3 border rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">The Future of Artificial Intelligence</h5>
+                        <small>Day 1: 9:00 AM - 10:00 AM</small>
+                    </div>
+                    <p class="mb-1">Explore upcoming trends and ethical considerations in AI development.</p>
+                    <small class="text-muted">Speaker: Dr. Evelyn Reed | Track: AI & Machine Learning | Room: Grand Ballroom</small>
+                     <div class="mt-2">
+                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                         <button type="button" class="btn btn-sm btn-success"><i class="bi bi-plus-circle"></i> Add to Schedule</button>
+                    </div>
+                </div>
+
+                <!-- Session Item 2 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-3 p-3 border rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Modern Frontend Frameworks Compared</h5>
+                        <small>Day 1: 10:30 AM - 11:30 AM</small>
+                    </div>
+                    <p class="mb-1">A deep dive into React, Vue, and Angular, discussing pros, cons, and use cases.</p>
+                    <small class="text-muted">Speaker: Alex Chen | Track: Web Development | Room: Hall A</small>
+                     <div class="mt-2">
+                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                         <button type="button" class="btn btn-sm btn-success"><i class="bi bi-plus-circle"></i> Add to Schedule</button>
+                    </div>
+                </div>
+
+                 <!-- Session Item 3 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-3 p-3 border rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Scaling Applications with Kubernetes</h5>
+                       <small>Day 2: 1:00 PM - 2:00 PM</small>
+                    </div>
+                    <p class="mb-1">Learn best practices for deploying and managing scalable applications using Kubernetes.</p>
+                    <small class="text-muted">Speaker: Maria Garcia | Track: Cloud Computing | Room: Hall B</small>
+                     <div class="mt-2">
+                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                         <button type="button" class="btn btn-sm btn-danger disabled"><i class="bi bi-x-circle"></i> In Schedule</button> <!-- Example: Already added -->
+                    </div>
+                </div>
+
+                <!-- Session Item 4 -->
+                <div class="list-group-item list-group-item-action flex-column align-items-start mb-3 p-3 border rounded">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">User-Centric Design Principles</h5>
+                       <small>Day 2: 2:30 PM - 3:30 PM</small>
+                    </div>
+                    <p class="mb-1">Practical tips for creating intuitive and engaging user experiences.</p>
+                    <small class="text-muted">Speaker: Sam Johnson | Track: Design & UX | Room: Hall C</small>
+                     <div class="mt-2">
+                         <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                         <button type="button" class="btn btn-sm btn-success"><i class="bi bi-plus-circle"></i> Add to Schedule</button>
+                    </div>
+                </div>
+
+            </div>
+
+             <!-- Pagination Placeholder -->
+             <nav aria-label="Page navigation example" class="mt-4">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 4: Session Listing (Filtered/Search Results - No Results) -->
+    <div class="state-container">
+        <h2>State 4: Session Listing (Filtered/Search Results - No Results)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Session Listing - No Results</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="mb-4">Conference Sessions</h1>
+
+            <!-- Filter/Search Bar -->
+             <div class="row mb-4 g-3 align-items-center">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Search sessions or speakers..." value="Obscure Topic XYZ">
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>Filter by Track...</option>
+                        <option value="1">AI & Machine Learning</option>
+                        <option value="2" selected>Web Development</option>
+                        <option value="3">Cloud Computing</option>
+                         <option value="4">Design & UX</option>
+                    </select>
+                </div>
+                 <div class="col-md-3">
+                    <select class="form-select">
+                        <option>Filter by Day...</option>
+                        <option value="1">Day 1 (Oct 25)</option>
+                        <option value="2">Day 2 (Oct 26)</option>
+                        <option value="3">Day 3 (Oct 27)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="alert alert-warning text-center" role="alert">
+              <h4 class="alert-heading">No Sessions Found</h4>
+              <p>Your search for "Obscure Topic XYZ" in the "Web Development" track did not match any sessions.</p>
+              <hr>
+              <p class="mb-0">Try adjusting your search terms or filters, or <a href="#" class="alert-link">view all sessions</a>.</p>
+            </div>
+
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 5: Session Detail Page -->
+    <div class="state-container">
+        <h2>State 5: Session Detail Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Session Detail</title>
+    <style>.iframe-content { padding: 15px; } .speaker-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-3">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Sessions</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The Future of Artificial Intelligence</li>
+              </ol>
+            </nav>
+
+            <h1 class="mb-3">The Future of Artificial Intelligence</h1>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="lead">Explore upcoming trends and ethical considerations in AI development. This session covers advancements in deep learning, natural language processing, and the societal impact of increasingly intelligent systems.</p>
+                    <p>Join Dr. Reed for an insightful discussion on where AI is heading in the next decade, potential challenges, and opportunities for innovation. Suitable for both technical and non-technical audiences interested in the evolution of AI.</p>
+
+                    <h4 class="mt-4">Details</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="bi bi-calendar-event me-2"></i>Day 1: October 25, 2024</li>
+                        <li class="list-group-item"><i class="bi bi-clock me-2"></i>9:00 AM - 10:00 AM</li>
+                        <li class="list-group-item"><i class="bi bi-geo-alt me-2"></i>Grand Ballroom</li>
+                        <li class="list-group-item"><i class="bi bi-tag me-2"></i>Track: AI & Machine Learning</li>
+                    </ul>
+
+                     <div class="mt-4">
+                        <button type="button" class="btn btn-success btn-lg me-2"><i class="bi bi-plus-circle"></i> Add to My Schedule</button>
+                        <a href="#" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-left"></i> Back to Sessions</a>
+                    </div>
+                     <div class="mt-3">
+                        <span class="badge bg-warning text-dark"><i class="bi bi-exclamation-triangle-fill me-1"></i> Time conflict with "Intro to Quantum Computing" in your schedule.</span>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4">
+                    <h4>Speaker</h4>
+                    <div class="card">
+                        <div class="card-body d-flex align-items-center">
+                            <img src="https://via.placeholder.com/80.png?text=Speaker" class="speaker-img" alt="Speaker Photo">
+                             <div>
+                                <h5 class="card-title mb-0">Dr. Evelyn Reed</h5>
+                                <p class="card-text text-muted">Chief Scientist, Future AI Labs</p>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0">
+                            <p class="card-text small">Dr. Reed is a renowned expert in artificial intelligence with over 20 years of experience in research and development. Her work focuses on ethical AI and machine learning applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+     <!-- State 6: My Schedule (Empty) -->
+    <div class="state-container">
+        <h2>State 6: My Schedule (Empty)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>My Schedule - Empty</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i> user@example.com
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 class="mb-4">My Schedule</h1>
+
+            <div class="alert alert-info text-center" role="alert">
+              <h4 class="alert-heading">Your schedule is empty!</h4>
+              <p>You haven't added any sessions to your schedule yet.</p>
+              <hr>
+              <p class="mb-0">Browse the available sessions and click "Add to Schedule" to start planning your conference experience.</p>
+              <a href="#" class="btn btn-primary mt-3">Browse Sessions</a>
+            </div>
+
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 7: My Schedule (With Sessions) -->
+    <div class="state-container">
+        <h2>State 7: My Schedule (With Sessions)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>My Schedule - Populated</title>
+    <style>.iframe-content { padding: 15px; } .timeline-item { border-left: 3px solid #0d6efd; padding-left: 15px; margin-left: 15px; margin-bottom: 20px; position: relative; } .timeline-time { position: absolute; left: -75px; top: 0; font-weight: bold; color: #6c757d; width: 60px; text-align: right;} .timeline-day { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #0d6efd; border-bottom: 2px solid #dee2e6; padding-bottom: 0.5rem; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+             <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Schedule</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                       <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i> user@example.com
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                 <h1>My Schedule</h1>
+                 <button class="btn btn-outline-secondary"><i class="bi bi-printer me-1"></i> Print Schedule</button>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="timeline-day">Day 1: October 25</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">9:00 AM</div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">The Future of Artificial Intelligence</h5>
+                                <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Remove</button>
+                            </div>
+                            <p class="card-text mb-1">Speaker: Dr. Evelyn Reed</p>
+                             <p class="card-text"><small class="text-muted"><i class="bi bi-geo-alt me-1"></i>Grand Ballroom | <i class="bi bi-tag me-1"></i>AI & Machine Learning</small></p>
+                            <a href="#" class="card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-time">10:30 AM</div>
+                     <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">Modern Frontend Frameworks Compared</h5>
+                                <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Remove</button>
+                            </div>
+                            <p class="card-text mb-1">Speaker: Alex Chen</p>
+                            <p class="card-text"><small class="text-muted"><i class="bi bi-geo-alt me-1"></i>Hall A | <i class="bi bi-tag me-1"></i>Web Development</small></p>
+                            <a href="#" class="card-link">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Add more items for Day 1 -->
+            </div>
+
+            <!-- Day 2 -->
+            <div class="timeline-day mt-5">Day 2: October 26</div>
+            <div class="timeline">
+                 <div class="timeline-item">
+                     <div class="timeline-time">1:00 PM</div>
+                     <div class="card">
+                         <div class="card-body">
+                             <div class="d-flex justify-content-between">
+                                 <h5 class="card-title">Scaling Applications with Kubernetes</h5>
+                                 <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Remove</button>
+                             </div>
+                             <p class="card-text mb-1">Speaker: Maria Garcia</p>
+                             <p class="card-text"><small class="text-muted"><i class="bi bi-geo-alt me-1"></i>Hall B | <i class="bi bi-tag me-1"></i>Cloud Computing</small></p>
+                             <a href="#" class="card-link">View Details</a>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- Add more items for Day 2 -->
+             </div>
+
+             <!-- Day 3 -->
+             <div class="timeline-day mt-5">Day 3: October 27</div>
+             <div class="timeline">
+                 <div class="alert alert-secondary">No sessions scheduled for Day 3 yet.</div>
+             </div>
+
+            <footer class="pt-3 mt-4 text-body-secondary border-top">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+     <!-- State 8: Login Page -->
+    <div class="state-container">
+        <h2>State 8: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Login</title>
+    <style>.iframe-content { display: flex; align-items: center; justify-content: center; min-height: 550px; background-color: #f8f9fa; padding: 15px;} .form-signin { max-width: 330px; padding: 1rem; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+       <main class="form-signin w-100 m-auto bg-white p-4 rounded shadow-sm">
+          <form>
+            <div class="text-center mb-4">
+                <i class="bi bi-calendar-event" style="font-size: 3rem; color: #0d6efd;"></i>
+                <h1 class="h3 mb-3 fw-normal">ConfSched Login</h1>
+                <p>Access your saved schedule.</p>
+            </div>
+
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="form-check text-start my-3">
+              <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Remember me
+              </label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+             <p class="mt-3 mb-1 text-center">
+                <a href="#" class="text-decoration-none">Forgot password?</a>
+             </p>
+             <p class="text-center">
+                 Don&#39;t have an account? <a href="#" class="text-decoration-none">Sign up</a>
+             </p>
+            <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2024</p>
+          </form>
+        </main>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 9: Login Page (Error) -->
+    <div class="state-container">
+        <h2>State 9: Login Page (Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Login Error</title>
+     <style>.iframe-content { display: flex; align-items: center; justify-content: center; min-height: 550px; background-color: #f8f9fa; padding: 15px;} .form-signin { max-width: 330px; padding: 1rem; }</style>
+</head>
+<body>
+     <div class="iframe-content">
+       <main class="form-signin w-100 m-auto bg-white p-4 rounded shadow-sm">
+          <form>
+            <div class="text-center mb-4">
+                <i class="bi bi-calendar-event" style="font-size: 3rem; color: #0d6efd;"></i>
+                <h1 class="h3 mb-3 fw-normal">ConfSched Login</h1>
+                <p>Access your saved schedule.</p>
+            </div>
+
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+              <div>
+                Invalid email or password. Please try again.
+              </div>
+            </div>
+
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" value="wrong@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+               <div class="invalid-feedback">
+                    Password is required. <!-- Example inline validation -->
+               </div>
+            </div>
+
+            <div class="form-check text-start my-3">
+              <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Remember me
+              </label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+             <p class="mt-3 mb-1 text-center">
+                <a href="#" class="text-decoration-none">Forgot password?</a>
+             </p>
+             <p class="text-center">
+                 Don&#39;t have an account? <a href="#" class="text-decoration-none">Sign up</a>
+             </p>
+            <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2024</p>
+          </form>
+        </main>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+     <!-- State 10: Signup Page -->
+    <div class="state-container">
+        <h2>State 10: Signup Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Sign Up</title>
+    <style>.iframe-content { display: flex; align-items: center; justify-content: center; min-height: 550px; background-color: #f8f9fa; padding: 15px;} .form-signup { max-width: 400px; padding: 1rem; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+       <main class="form-signup w-100 m-auto bg-white p-4 rounded shadow-sm">
+          <form>
+             <div class="text-center mb-4">
+                 <i class="bi bi-calendar-event" style="font-size: 3rem; color: #0d6efd;"></i>
+                <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+                <p>Sign up to save your conference schedule.</p>
+            </div>
+
+             <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+              <label for="floatingName">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+              <label for="floatingEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+            </div>
+             <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
+              <label for="floatingConfirmPassword">Confirm Password</label>
+            </div>
+
+             <div class="form-check text-start my-3">
+              <input class="form-check-input" type="checkbox" value="agree-terms" id="flexCheckTerms">
+              <label class="form-check-label" for="flexCheckTerms">
+                I agree to the <a href="#">Terms of Service</a>
+              </label>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit">Sign Up</button>
+
+            <p class="mt-3 text-center">
+                 Already have an account? <a href="#" class="text-decoration-none">Log in</a>
+            </p>
+            <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2024</p>
+          </form>
+        </main>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 11: Signup Page (Error) -->
+    <div class="state-container">
+        <h2>State 11: Signup Page (Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Sign Up Error</title>
+     <style>.iframe-content { display: flex; align-items: center; justify-content: center; min-height: 550px; background-color: #f8f9fa; padding: 15px;} .form-signup { max-width: 400px; padding: 1rem; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <main class="form-signup w-100 m-auto bg-white p-4 rounded shadow-sm">
+          <form>
+             <div class="text-center mb-4">
+                 <i class="bi bi-calendar-event" style="font-size: 3rem; color: #0d6efd;"></i>
+                <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+                 <p>Sign up to save your conference schedule.</p>
+            </div>
+
+            <div class="alert alert-danger" role="alert">
+              Please fix the errors below and try again.
+            </div>
+
+
+             <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+              <label for="floatingName">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control is-invalid" id="floatingEmail" placeholder="name@example.com" value="invalid-email">
+              <label for="floatingEmail">Email address</label>
+               <div class="invalid-feedback">
+                    Please enter a valid email address.
+               </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <div class="invalid-feedback">
+                    Password must be at least 8 characters long.
+               </div>
+            </div>
+             <div class="form-floating mb-3">
+              <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password">
+              <label for="floatingConfirmPassword">Confirm Password</label>
+               <div class="invalid-feedback">
+                    Passwords do not match.
+               </div>
+            </div>
+
+             <div class="form-check text-start my-3">
+              <input class="form-check-input is-invalid" type="checkbox" value="agree-terms" id="flexCheckTerms">
+              <label class="form-check-label" for="flexCheckTerms">
+                I agree to the <a href="#">Terms of Service</a>
+              </label>
+               <div class="invalid-feedback">
+                    You must agree to the terms.
+               </div>
+            </div>
+
+            <button class="btn btn-primary w-100 py-2" type="submit">Sign Up</button>
+
+            <p class="mt-3 text-center">
+                 Already have an account? <a href="#" class="text-decoration-none">Log in</a>
+            </p>
+            <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2024</p>
+          </form>
+        </main>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <!-- State 12: Generic Error Page (e.g., 404 Not Found) -->
+    <div class="state-container">
+        <h2>State 12: Generic Error Page (404 Not Found)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Page Not Found</title>
+    <style>.iframe-content { padding: 15px; }</style>
+</head>
+<body>
+    <div class="iframe-content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ConfSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Schedule</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-center mt-5">
+            <i class="bi bi-emoji-frown display-1 text-warning"></i>
+            <h1 class="display-4 mt-3">404 - Page Not Found</h1>
+            <p class="lead">Oops! The page you are looking for does not exist.</p>
+            <p>It might have been moved or deleted.</p>
+            <a href="#" class="btn btn-primary mt-3">Go to Home Page</a>
+        </div>
+
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 15px;">
+             <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
+                &copy; 2024 InnovateTech Conference
+            </footer>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'></iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

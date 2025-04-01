@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        iframe {
+            width: 100%;
+            height: 70vh; /* Default height */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        /* Adjust height for specific states if needed */
+        .iframe-generator { height: 80vh; }
+        .iframe-explore { height: 75vh; }
+        .iframe-about { height: 60vh; }
+        .iframe-contact { height: 70vh; }
+
+        /* Style overrides within iframes */
+        .iframe-content .palette-container {
+            display: flex;
+            height: calc(70vh - 150px); /* Adjust based on navbar/footer height */
+            min-height: 300px;
+        }
+         .iframe-content .color-swatch {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: flex-grow 0.3s ease;
+        }
+        .iframe-content .color-swatch:hover {
+             flex-grow: 1.2;
+        }
+        .iframe-content .color-info {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+        .iframe-content .color-swatch:hover .color-info {
+             opacity: 1;
+        }
+         .iframe-content .lock-icon {
+             position: absolute;
+             top: 15px;
+             right: 15px;
+             cursor: pointer;
+             font-size: 1.5em;
+             opacity: 0.7;
+             transition: opacity 0.3s ease;
+         }
+         .iframe-content .lock-icon:hover {
+             opacity: 1;
+         }
+         .iframe-content .lock-icon.locked {
+             color: yellow; /* Or a more visible color */
+             opacity: 1;
+         }
+        .iframe-content .action-bar {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+        }
+        .iframe-content .palette-card {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .iframe-content .palette-card .card-body {
+            padding: 0;
+            display: flex;
+            height: 50px;
+        }
+        .iframe-content .palette-card .swatch-preview {
+            flex-grow: 1;
+        }
+        .iframe-content .palette-card .card-footer {
+             font-size: 0.8em;
+             padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Color Palette Generator - UI Flow</h1>
+
+    <!-- State 1: Home Page (Generator View) -->
+    <h2>State 1: Home Page (Generator View)</h2>
+    <iframe class="iframe-generator" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style>
+        /* Include shared styles directly for srcdoc isolation */
+        body { background-color: #fff; } /* Avoid inheriting body style from parent */
+        .palette-container { display: flex; height: calc(100vh - 180px); min-height: 350px; } /* Adjusted height */
+        .color-swatch { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 15px; position: relative; color: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); transition: flex-grow 0.3s ease; }
+        .color-swatch:hover { flex-grow: 1.2; }
+        .color-info { background-color: rgba(0, 0, 0, 0.4); padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-bottom: 5px; opacity: 0; transition: opacity 0.3s ease; text-align: center; }
+        .color-swatch:hover .color-info { opacity: 1; }
+        .lock-icon { position: absolute; top: 15px; right: 15px; cursor: pointer; font-size: 1.5em; opacity: 0.7; transition: opacity 0.3s ease; }
+        .lock-icon:hover { opacity: 1; }
+        .lock-icon.locked { color: #ffc107; opacity: 1; } /* Use Bootstrap warning color */
+        .action-bar { background-color: #f8f9fa; padding: 15px 0; border-top: 1px solid #dee2e6; text-align: center; position: sticky; bottom: 0; }
+        .navbar { position: sticky; top: 0; z-index: 1030; }
+    </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='palette-container'>
+        <div class='color-swatch' style='background-color: #2c3e50;'>
+             <div class='color-info'>
+                <span>#2C3E50</span><br>
+                <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+             </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #e74c3c;'>
+             <div class='color-info'>
+                <span>#E74C3C</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #ecf0f1;'>
+             <div class='color-info' style='color: #333; text-shadow: none; background-color: rgba(255,255,255,0.6);'>
+                <span>#ECF0F1</span><br>
+                 <button class='btn btn-sm btn-outline-dark py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon' style='color: #333;'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #3498db;'>
+             <div class='color-info'>
+                <span>#3498DB</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #2ecc71;'>
+             <div class='color-info'>
+                <span>#2ECC71</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+    </div>
+
+    <div class='action-bar'>
+        <div class='container'>
+            <button type='button' class='btn btn-primary btn-lg mx-2'><i class='bi bi-shuffle me-2'></i>Generate Palette</button>
+            <button type='button' class='btn btn-secondary mx-2'><i class='bi bi-gear me-2'></i>Options</button>
+            <button type='button' class='btn btn-success mx-2'><i class='bi bi-save me-2'></i>Save</button>
+            <button type='button' class='btn btn-info mx-2'><i class='bi bi-box-arrow-up-right me-2'></i>Export</button>
+            <p class='mt-2 text-muted'><small>Press the spacebar to generate new palettes!</small></p>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 2: Home Page (Palette Locked State) -->
+    <h2>State 2: Home Page (Palette Locked State)</h2>
+    <iframe class="iframe-generator" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - Locked Colors - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style>
+        body { background-color: #fff; }
+        .palette-container { display: flex; height: calc(100vh - 180px); min-height: 350px; }
+        .color-swatch { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 15px; position: relative; color: rgba(255, 255, 255, 0.8); text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); transition: flex-grow 0.3s ease; }
+        .color-swatch:hover { flex-grow: 1.2; }
+        .color-info { background-color: rgba(0, 0, 0, 0.4); padding: 5px 10px; border-radius: 4px; font-size: 0.9em; margin-bottom: 5px; opacity: 0; transition: opacity 0.3s ease; text-align: center; }
+        .color-swatch:hover .color-info { opacity: 1; }
+        .lock-icon { position: absolute; top: 15px; right: 15px; cursor: pointer; font-size: 1.5em; opacity: 0.7; transition: opacity 0.3s ease; }
+        .lock-icon:hover { opacity: 1; }
+        .lock-icon.locked { color: #ffc107; opacity: 1; }
+        .action-bar { background-color: #f8f9fa; padding: 15px 0; border-top: 1px solid #dee2e6; text-align: center; position: sticky; bottom: 0; }
+        .navbar { position: sticky; top: 0; z-index: 1030; }
+    </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Generate</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='palette-container'>
+        <div class='color-swatch' style='background-color: #2c3e50;'>
+             <div class='color-info'>
+                <span>#2C3E50</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-lock-fill lock-icon locked'></i> <!-- Locked -->
+        </div>
+        <div class='color-swatch' style='background-color: #d35400;'> <!-- New Color -->
+             <div class='color-info'>
+                <span>#D35400</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #ecf0f1;'>
+             <div class='color-info' style='color: #333; text-shadow: none; background-color: rgba(255,255,255,0.6);'>
+                <span>#ECF0F1</span><br>
+                 <button class='btn btn-sm btn-outline-dark py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-lock-fill lock-icon locked' style='color: #333;'></i> <!-- Locked -->
+        </div>
+        <div class='color-swatch' style='background-color: #8e44ad;'> <!-- New Color -->
+             <div class='color-info'>
+                <span>#8E44AD</span><br>
+                 <button class='btn btn-sm btn-outline-light py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon'></i>
+        </div>
+        <div class='color-swatch' style='background-color: #f1c40f;'> <!-- New Color -->
+             <div class='color-info' style='color: #333; text-shadow: none; background-color: rgba(255,255,255,0.6);'>
+                <span>#F1C40F</span><br>
+                 <button class='btn btn-sm btn-outline-dark py-0 px-1 mt-1'><i class='bi bi-clipboard'></i></button>
+            </div>
+             <i class='bi bi-unlock-fill lock-icon' style='color: #333;'></i>
+        </div>
+    </div>
+
+    <div class='action-bar'>
+        <div class='container'>
+            <button type='button' class='btn btn-primary btn-lg mx-2'><i class='bi bi-shuffle me-2'></i>Generate Palette</button>
+            <button type='button' class='btn btn-secondary mx-2'><i class='bi bi-gear me-2'></i>Options</button>
+            <button type='button' class='btn btn-success mx-2'><i class='bi bi-save me-2'></i>Save</button>
+            <button type='button' class='btn btn-info mx-2'><i class='bi bi-box-arrow-up-right me-2'></i>Export</button>
+            <p class='mt-2 text-muted'><small>Press the spacebar to generate new palettes! (Colors with <i class='bi bi-lock-fill'></i> will remain)</small></p>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 3: Explore Palettes Page -->
+    <h2>State 3: Explore Palettes Page</h2>
+    <iframe class="iframe-explore" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Explore Palettes - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+    <style>
+        body { background-color: #fff; }
+        .palette-card { margin-bottom: 20px; cursor: pointer; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .palette-card:hover { transform: translateY(-5px); box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+        .palette-card .card-body { padding: 0; display: flex; height: 100px; border-radius: 0.375rem 0.375rem 0 0; overflow: hidden;} /* Adjusted height */
+        .palette-card .swatch-preview { flex-grow: 1; }
+        .palette-card .card-footer { background-color: #f8f9fa; font-size: 0.9em; padding: 10px 15px; border-top: none; display: flex; justify-content: space-between; align-items: center; border-radius: 0 0 0.375rem 0.375rem;}
+        .search-bar { margin-bottom: 30px; }
+    </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <h2 class='mb-4'>Explore Popular Palettes</h2>
+
+        <!-- Search/Filter Bar Placeholder -->
+        <div class='row search-bar'>
+            <div class='col-md-8'>
+                <input type='text' class='form-control' placeholder='Search palettes (e.g., blue, vintage, #ff0000)...'>
+            </div>
+            <div class='col-md-4'>
+                <select class='form-select'>
+                    <option selected>Sort by Popularity</option>
+                    <option value='1'>Sort by Newest</option>
+                    <option value='2'>Sort by Color</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Palette Grid -->
+        <div class='row'>
+            <!-- Palette Card 1 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #f8b195;'></div>
+                        <div class='swatch-preview' style='background-color: #f67280;'></div>
+                        <div class='swatch-preview' style='background-color: #c06c84;'></div>
+                        <div class='swatch-preview' style='background-color: #6c5b7b;'></div>
+                        <div class='swatch-preview' style='background-color: #355c7d;'></div>
+                    </div>
+                    <div class='card-footer text-muted'>
+                        <span>Sunset Vibes</span>
+                        <span><i class='bi bi-heart-fill text-danger'></i> 1.2k</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Palette Card 2 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #99b898;'></div>
+                        <div class='swatch-preview' style='background-color: #fecea8;'></div>
+                        <div class='swatch-preview' style='background-color: #ff847c;'></div>
+                        <div class='swatch-preview' style='background-color: #e84a5f;'></div>
+                        <div class='swatch-preview' style='background-color: #2a363b;'></div>
+                    </div>
+                    <div class='card-footer text-muted'>
+                        <span>Pastel Retro</span>
+                         <span><i class='bi bi-heart-fill text-danger'></i> 980</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Palette Card 3 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #a8e6cf;'></div>
+                        <div class='swatch-preview' style='background-color: #dcedc1;'></div>
+                        <div class='swatch-preview' style='background-color: #ffd3b6;'></div>
+                        <div class='swatch-preview' style='background-color: #ffaaa5;'></div>
+                        <div class='swatch-preview' style='background-color: #ff8b94;'></div>
+                    </div>
+                    <div class='card-footer text-muted'>
+                        <span>Soft & Sweet</span>
+                         <span><i class='bi bi-heart-fill text-danger'></i> 850</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Palette Card 4 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #45ada8;'></div>
+                        <div class='swatch-preview' style='background-color: #547980;'></div>
+                        <div class='swatch-preview' style='background-color: #594f4f;'></div>
+                        <div class='swatch-preview' style='background-color: #f9d423;'></div>
+                        <div class='swatch-preview' style='background-color: #e74c3c;'></div>
+                    </div>
+                    <div class='card-footer text-muted'>
+                        <span>Oceanic Contrast</span>
+                         <span><i class='bi bi-heart-fill text-danger'></i> 760</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Palette Card 5 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #003b46;'></div>
+                        <div class='swatch-preview' style='background-color: #07575b;'></div>
+                        <div class='swatch-preview' style='background-color: #66a5ad;'></div>
+                        <div class='swatch-preview' style='background-color: #c4dfe6;'></div>
+                        <div class='swatch-preview' style='background-color: #ffffff;'></div>
+                    </div>
+                    <div class='card-footer text-muted'>
+                        <span>Cool Tones</span>
+                         <span><i class='bi bi-heart-fill text-danger'></i> 715</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Palette Card 6 -->
+            <div class='col-md-4 col-sm-6'>
+                <div class='card palette-card'>
+                     <div class='card-body'>
+                        <div class='swatch-preview' style='background-color: #1a1a1a;'></div>
+                        <div class='swatch-preview' style='background-color: #3a3a3a;'></div>
+                        <div class='swatch-preview' style='background-color: #f7f7f7;'></div>
+                        <div class='swatch-preview' style='background-color: #e0e0e0;'></div>
+                        <div class='swatch-preview' style='background-color: #d81e5b;'></div>
+                     </div>
+                    <div class='card-footer text-muted'>
+                        <span>Modern Accent</span>
+                         <span><i class='bi bi-heart-fill text-danger'></i> 680</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Placeholder -->
+        <nav aria-label='Palette navigation' class='mt-4 d-flex justify-content-center'>
+            <ul class='pagination'>
+                <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-disabled='true'>Previous</a></li>
+                <li class='page-item active' aria-current='page'><a class='page-link' href='#'>1</a></li>
+                <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer class='text-center text-muted py-3 mt-4 bg-light'>
+        <small>&copy; 2024 PaletteGen</small>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 4: About Page -->
+    <h2>State 4: About Page</h2>
+    <iframe class="iframe-about" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>About - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+     <style> body { background-color: #fff; } </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-8'>
+                <h2 class='mb-4'>About PaletteGen</h2>
+                <p class='lead'>PaletteGen is your go-to design tool for effortlessly creating and exploring beautiful color combinations for all your projects.</p>
+                <p>Whether you're a designer, developer, artist, or just someone looking for the perfect colors, PaletteGen provides a simple and intuitive interface to spark your creativity.</p>
+
+                <h4 class='mt-5'>How It Works</h4>
+                <p>Using sophisticated algorithms (or sometimes just pure randomness!), PaletteGen generates harmonious color palettes instantly. Here's how to use it:</p>
+                <ul>
+                    <li><strong>Generate:</strong> Simply hit the 'Generate Palette' button or press the spacebar on the main page to get a fresh set of colors.</li>
+                    <li><strong>Lock Colors:</strong> Found a color you love? Click the lock icon (<i class='bi bi-unlock-fill'></i>) on a color swatch. Locked colors (<i class='bi bi-lock-fill' style='color: #ffc107;'></i>) will remain while the others are regenerated.</li>
+                    <li><strong>Explore:</strong> Browse through a curated collection of popular and trending palettes submitted by the community in the 'Explore' section.</li>
+                    <li><strong>Copy Codes:</strong> Hover over any color swatch to see its HEX code. Click the copy icon (<i class='bi bi-clipboard'></i>) to copy it to your clipboard.</li>
+                    <li><strong>Save & Export (Placeholder):</strong> Future features will allow you to save your favorite palettes and export them in various formats.</li>
+                </ul>
+
+                <h4 class='mt-5'>Our Mission</h4>
+                <p>We aim to make color selection easy, fast, and fun. We believe that great design starts with great colors, and we want to empower everyone to create visually stunning projects.</p>
+
+                 <p class='text-center mt-5'>
+                    <a href='#' class='btn btn-primary'>Start Generating</a>
+                    <a href='#' class='btn btn-outline-secondary ms-2'>Explore Palettes</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class='text-center text-muted py-3 mt-4 bg-light'>
+        <small>&copy; 2024 PaletteGen</small>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+     <!-- State 5: Contact Page -->
+    <h2>State 5: Contact Page</h2>
+    <iframe class="iframe-contact" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact Us - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style> body { background-color: #fff; } </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-7'>
+                <h2 class='mb-4 text-center'>Contact Us</h2>
+                <p class='text-center text-muted mb-5'>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+
+                <form>
+                    <div class='mb-3'>
+                        <label for='contactName' class='form-label'>Your Name</label>
+                        <input type='text' class='form-control' id='contactName' placeholder='Enter your name' required>
+                         <!-- Validation example -->
+                         <!-- <div class='invalid-feedback'>Please enter your name.</div> -->
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactEmail' class='form-label'>Email Address</label>
+                        <input type='email' class='form-control' id='contactEmail' placeholder='name@example.com' required>
+                        <!-- Validation example -->
+                        <!-- <div class='is-invalid'> -->
+                        <!-- <input type='email' class='form-control is-invalid' id='contactEmail' placeholder='name@example.com' required> -->
+                         <!-- <div class='invalid-feedback'>Please enter a valid email address.</div> -->
+                        <!-- </div> -->
+                    </div>
+                     <div class='mb-3'>
+                        <label for='contactSubject' class='form-label'>Subject</label>
+                        <input type='text' class='form-control' id='contactSubject' placeholder='Subject of your message'>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactMessage' class='form-label'>Message</label>
+                        <textarea class='form-control' id='contactMessage' rows='5' placeholder='Write your message here...' required></textarea>
+                         <!-- Validation example -->
+                         <!-- <div class='invalid-feedback'>Please enter your message.</div> -->
+                    </div>
+                    <div class='d-grid gap-2'>
+                        <button type='submit' class='btn btn-primary btn-lg'><i class='bi bi-send-fill me-2'></i>Send Message</button>
+                    </div>
+                </form>
+
+                 <!-- Success Message Placeholder -->
+                 <!--
+                 <div class='alert alert-success alert-dismissible fade show mt-4' role='alert'>
+                   <strong>Message Sent!</strong> We'll get back to you as soon as possible.
+                   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                 </div>
+                 -->
+
+                 <!-- Error Message Placeholder -->
+                  <!--
+                 <div class='alert alert-danger alert-dismissible fade show mt-4' role='alert'>
+                   <strong>Error!</strong> Something went wrong. Please try again later.
+                   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                 </div>
+                 -->
+
+            </div>
+        </div>
+    </div>
+
+    <footer class='text-center text-muted py-3 mt-5 bg-light'>
+        <small>&copy; 2024 PaletteGen</small>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+    <!-- State 6: Contact Page - Validation Error Example -->
+    <h2>State 6: Contact Page - Validation Error Example</h2>
+    <iframe class="iframe-contact" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact Us - Error - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style> body { background-color: #fff; } </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-7'>
+                <h2 class='mb-4 text-center'>Contact Us</h2>
+                <p class='text-center text-muted mb-5'>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+
+                <!-- General Error Message for Form -->
+                <div class='alert alert-danger' role='alert'>
+                  <i class='bi bi-exclamation-triangle-fill me-2'></i>Please fix the errors below before submitting.
+                </div>
+
+                <form class='needs-validation' novalidate> <!-- Add classes for Bootstrap validation styling -->
+                    <div class='mb-3'>
+                        <label for='contactName' class='form-label'>Your Name</label>
+                        <input type='text' class='form-control is-invalid' id='contactName' placeholder='Enter your name' required>
+                         <div class='invalid-feedback'>Please enter your name.</div>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactEmail' class='form-label'>Email Address</label>
+                         <input type='email' class='form-control is-invalid' id='contactEmail' placeholder='name@example.com' required value='invalid-email'> <!-- Invalid input -->
+                         <div class='invalid-feedback'>Please enter a valid email address.</div>
+                    </div>
+                     <div class='mb-3'>
+                        <label for='contactSubject' class='form-label'>Subject</label>
+                        <input type='text' class='form-control' id='contactSubject' placeholder='Subject of your message' value='Feedback'> <!-- Valid input example -->
+                    </div>
+                    <div class='mb-3'>
+                        <label for='contactMessage' class='form-label'>Message</label>
+                        <textarea class='form-control is-invalid' id='contactMessage' rows='5' placeholder='Write your message here...' required></textarea>
+                         <div class='invalid-feedback'>Please enter your message.</div>
+                    </div>
+                    <div class='d-grid gap-2'>
+                        <button type='submit' class='btn btn-primary btn-lg'><i class='bi bi-send-fill me-2'></i>Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class='text-center text-muted py-3 mt-5 bg-light'>
+        <small>&copy; 2024 PaletteGen</small>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+     <!-- State 7: Contact Page - Success Message Example -->
+    <h2>State 7: Contact Page - Success Message Example</h2>
+    <iframe class="iframe-contact" srcdoc="
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Contact Us - Success - Color Palette Generator</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css'>
+     <style> body { background-color: #fff; } </style>
+</head>
+<body class='iframe-content'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top'>
+        <div class='container-fluid'>
+            <a class='navbar-brand' href='#'>PaletteGen</a>
+            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarNav'>
+                 <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Generate</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>Explore</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#'>About</a>
+                    </li>
+                     <li class='nav-item'>
+                        <a class='nav-link active' aria-current='page' href='#'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class='container mt-4'>
+        <div class='row justify-content-center'>
+            <div class='col-lg-7'>
+                <h2 class='mb-4 text-center'>Contact Us</h2>
+
+                 <!-- Success Message Placeholder -->
+                 <div class='alert alert-success' role='alert'>
+                   <h4 class='alert-heading'><i class='bi bi-check-circle-fill me-2'></i>Message Sent Successfully!</h4>
+                   <p>Thank you for reaching out. We have received your message and will get back to you as soon as possible if a response is required.</p>
+                   <hr>
+                   <p class='mb-0'>You can continue exploring palettes or generate new ones.</p>
+                   <div class='mt-3'>
+                       <a href='#' class='btn btn-success'><i class='bi bi-palette me-1'></i>Back to Generator</a>
+                       <a href='#' class='btn btn-outline-success ms-2'><i class='bi bi-grid-3x3-gap me-1'></i>Explore Palettes</a>
+                   </div>
+                 </div>
+
+                <!-- Hide form potentially after success, or show it disabled -->
+                <form class='mt-5 opacity-50'> <!-- Example: Dim the form -->
+                    <fieldset disabled>
+                        <div class='mb-3'>
+                            <label for='contactName' class='form-label'>Your Name</label>
+                            <input type='text' class='form-control' id='contactName' placeholder='Enter your name' value='John Doe'>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='contactEmail' class='form-label'>Email Address</label>
+                            <input type='email' class='form-control' id='contactEmail' placeholder='name@example.com' value='john.doe@example.com'>
+                        </div>
+                         <div class='mb-3'>
+                            <label for='contactSubject' class='form-label'>Subject</label>
+                            <input type='text' class='form-control' id='contactSubject' placeholder='Subject of your message' value='Feedback'>
+                        </div>
+                        <div class='mb-3'>
+                            <label for='contactMessage' class='form-label'>Message</label>
+                            <textarea class='form-control' id='contactMessage' rows='5' placeholder='Write your message here...'>This is my feedback message.</textarea>
+                        </div>
+                        <div class='d-grid gap-2'>
+                            <button type='submit' class='btn btn-primary btn-lg'><i class='bi bi-send-fill me-2'></i>Send Message</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class='text-center text-muted py-3 mt-5 bg-light'>
+        <small>&copy; 2024 PaletteGen</small>
+    </footer>
+
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+</body>
+</html>
+    "></iframe>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist Manager UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Wishlist Manager - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to Wishlist Manager</h1>
+                <p class="col-md-8 fs-4">Easily create, manage, and share wishlists for birthdays, holidays, weddings, or any occasion. Never get the wrong gift again!</p>
+                <a class="btn btn-primary btn-lg me-2" href="#" role="button">Get Started (Sign Up)</a>
+                <a class="btn btn-secondary btn-lg" href="#" role="button">Login</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>Create Effortlessly</h2>
+                    <p>Add items from any online store with ease. Just paste the link, and we'll try to fetch the details for you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Share Securely</h2>
+                    <p>Share your lists with friends and family using a unique link. Control who sees your wishes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About Wishlist Manager</h1>
+        <p class="lead">Making gifting simple and thoughtful.</p>
+        <hr>
+        <p>Wishlist Manager was created to solve the common problem of guessing what gifts your loved ones truly desire. Whether it's for a birthday, wedding, Christmas, or just because, our platform provides a central place to organize and share wishlists.</p>
+        <p>Our goal is to help you:</p>
+        <ul>
+            <li>Create detailed wishlists for any event or purpose.</li>
+            <li>Easily add items from any online store or manually add custom wishes.</li>
+            <li>Share your lists securely with friends and family via a unique link.</li>
+            <li>Avoid duplicate gifts, as items can be marked as purchased (privately).</li>
+            <li>Discover gift ideas from others.</li>
+        </ul>
+        <p>We believe in making the gift-giving process more enjoyable and less stressful for everyone involved. Sign up today and start building your perfect wishlist!</p>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center fixed-bottom bg-light">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="card-title text-center mb-4">Create Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                            <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: Sign Up Page (Validation Error) -->
+    <h2>State 4: Sign Up Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Error - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                         <div class="alert alert-danger" role="alert">
+                            Please correct the errors below.
+                        </div>
+                        <h2 class="card-title text-center mb-4">Create Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" required value="invalid-email">
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Password" required value="short">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm Password" required value="mismatch">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                            </div>
+                            <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                              </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            <p class="mt-3 text-center">Don't have an account? <a href="#">Sign up here</a></p>
+                             <p class="mt-1 text-center"><a href="#">Forgot password?</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 6: Login Page (Error) -->
+    <h2>State 6: Login Page (Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Error - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="alert alert-danger" role="alert">
+                            Invalid email or password. Please try again.
+                        </div>
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" required value="user@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                              </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            </div>
+                            <p class="mt-3 text-center">Dont have an account? <a href="#">Sign up here</a></p>
+                             <p class="mt-1 text-center"><a href="#">Forgot password?</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 7: Home Page (Logged In / Dashboard) -->
+    <h2>State 7: Home Page (Logged In / Dashboard)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+             <h1>My Wishlists</h1>
+             <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill me-2"></i>Create New Wishlist</a>
+        </div>
+
+        <div class="row">
+            <!-- Wishlist Card Example 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">My Birthday Wishlist</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Occasion: Birthday</h6>
+                        <p class="card-text">Things I would love for my upcoming birthday.</p>
+                        <span class="badge bg-primary me-2">5 Items</span>
+                        <span class="badge bg-secondary">Shared</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0 text-end">
+                         <a href="#" class="btn btn-outline-primary btn-sm me-1">View</a>
+                         <a href="#" class="btn btn-outline-secondary btn-sm me-1">Edit</a>
+                          <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
+                     </div>
+                </div>
+            </div>
+
+             <!-- Wishlist Card Example 2 -->
+             <div class="col-md-4 mb-4">
+                 <div class="card h-100">
+                     <div class="card-body">
+                         <h5 class="card-title">Christmas 2024</h5>
+                         <h6 class="card-subtitle mb-2 text-muted">Occasion: Holiday</h6>
+                         <p class="card-text">Gift ideas for the family for Christmas.</p>
+                          <span class="badge bg-primary me-2">12 Items</span>
+                         <span class="badge bg-light text-dark border">Private</span>
+                     </div>
+                      <div class="card-footer bg-transparent border-top-0 text-end">
+                         <a href="#" class="btn btn-outline-primary btn-sm me-1">View</a>
+                         <a href="#" class="btn btn-outline-secondary btn-sm me-1">Edit</a>
+                          <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
+                     </div>
+                 </div>
+             </div>
+
+              <!-- Wishlist Card Example 3 (Empty) -->
+             <div class="col-md-4 mb-4">
+                 <div class="card h-100">
+                     <div class="card-body text-center">
+                         <h5 class="card-title">New Baby Gear</h5>
+                         <h6 class="card-subtitle mb-2 text-muted">Occasion: Baby Shower</h6>
+                         <p class="card-text text-muted fst-italic">No items added yet.</p>
+                         <span class="badge bg-primary me-2">0 Items</span>
+                         <span class="badge bg-light text-dark border">Private</span>
+                     </div>
+                       <div class="card-footer bg-transparent border-top-0 text-end">
+                         <a href="#" class="btn btn-outline-primary btn-sm me-1">View</a>
+                         <a href="#" class="btn btn-outline-secondary btn-sm me-1">Edit</a>
+                          <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
+                     </div>
+                 </div>
+             </div>
+        </div>
+
+         <!-- Placeholder for no wishlists -->
+         <!--
+         <div class="text-center mt-5">
+            <p class="lead">You haven't created any wishlists yet.</p>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-2"></i>Create Your First Wishlist</a>
+         </div>
+         -->
+
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 8: Create New Wishlist Page -->
+    <h2>State 8: Create New Wishlist Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Wishlist - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Create Wishlist</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Create a New Wishlist</h2>
+                     </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="wishlistName" class="form-label">Wishlist Name *</label>
+                                <input type="text" class="form-control" id="wishlistName" placeholder="e.g., My Birthday Wishlist, Wedding Registry" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wishlistOccasion" class="form-label">Occasion (Optional)</label>
+                                <input type="text" class="form-control" id="wishlistOccasion" placeholder="e.g., Birthday, Christmas, Anniversary">
+                            </div>
+                             <div class="mb-3">
+                                <label for="wishlistDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="wishlistDescription" rows="3" placeholder="Add a short description for your wishlist..."></textarea>
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Privacy</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="privateRadio" value="private" checked>
+                                  <label class="form-check-label" for="privateRadio">
+                                    Private (Only you can see it)
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="sharedRadio" value="shared">
+                                  <label class="form-check-label" for="sharedRadio">
+                                    Shared (Anyone with the link can see it)
+                                  </label>
+                                </div>
+                              </div>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Save Wishlist</button>
+                            </div>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 9: Create New Wishlist Page (Validation Error) -->
+    <h2>State 9: Create New Wishlist Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Wishlist - Error - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Create Wishlist</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Create a New Wishlist</h2>
+                     </div>
+                    <div class="card-body p-4">
+                         <div class="alert alert-danger" role="alert">
+                            Please fill in the required fields.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="wishlistName" class="form-label">Wishlist Name *</label>
+                                <input type="text" class="form-control is-invalid" id="wishlistName" placeholder="e.g., My Birthday Wishlist, Wedding Registry" required>
+                                 <div class="invalid-feedback">
+                                    Wishlist name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wishlistOccasion" class="form-label">Occasion (Optional)</label>
+                                <input type="text" class="form-control" id="wishlistOccasion" placeholder="e.g., Birthday, Christmas, Anniversary">
+                            </div>
+                             <div class="mb-3">
+                                <label for="wishlistDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="wishlistDescription" rows="3" placeholder="Add a short description for your wishlist..."></textarea>
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Privacy</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="privateRadio" value="private" checked>
+                                  <label class="form-check-label" for="privateRadio">
+                                    Private (Only you can see it)
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="sharedRadio" value="shared">
+                                  <label class="form-check-label" for="sharedRadio">
+                                    Shared (Anyone with the link can see it)
+                                  </label>
+                                </div>
+                              </div>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Save Wishlist</button>
+                            </div>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 10: View Wishlist Page -->
+    <h2>State 10: View Wishlist Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Birthday Wishlist - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="p-4 mb-4 bg-light rounded-3">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <h1 class="display-6 fw-bold">My Birthday Wishlist</h1>
+                    <p class="fs-5 text-muted">Occasion: Birthday</p>
+                    <p>Things I would love for my upcoming birthday.</p>
+                     <span class="badge bg-secondary fs-6">Shared</span>
+                </div>
+                 <div>
+                     <a href="#" class="btn btn-outline-primary btn-sm me-1"><i class="bi bi-pencil-square me-1"></i>Edit Details</a>
+                     <a href="#" class="btn btn-outline-success btn-sm me-1"><i class="bi bi-share-fill me-1"></i>Share</a>
+                     <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash me-1"></i>Delete List</a>
+                 </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+             <h2>Items (5)</h2>
+             <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg me-2"></i>Add New Item</a>
+        </div>
+
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Item Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/CCCCCC/808080?text=Product+Image" class="card-img-top" alt="Product Image Placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Wireless Noise-Cancelling Headphones</h5>
+                        <p class="card-text">Brand: Sony WH-1000XM5 or similar.</p>
+                        <p class="card-text"><small class="text-muted">Approx. Price: $350</small></p>
+                         <a href="https://example.com/headphones" target="_blank" class="btn btn-sm btn-outline-info mb-2 w-100"><i class="bi bi-link-45deg"></i> View Product</a>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-1"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Item Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/E0E0E0/707070?text=Gift+Card" class="card-img-top" alt="Gift Card Placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Bookstore Gift Card</h5>
+                        <p class="card-text">Any amount would be great!</p>
+                         <p class="card-text"><small class="text-muted">Approx. Price: $25 - $100</small></p>
+                         <button class="btn btn-sm btn-secondary mb-2 w-100" disabled><i class="bi bi-link-45deg"></i> No Link</button>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-1"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Item Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/DDEEFF/607080?text=Board+Game" class="card-img-top" alt="Board Game Placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Settlers of Catan Board Game</h5>
+                        <p class="card-text">The base game.</p>
+                        <p class="card-text"><small class="text-muted">Approx. Price: $45</small></p>
+                        <a href="https://example.com/catan" target="_blank" class="btn btn-sm btn-outline-info mb-2 w-100"><i class="bi bi-link-45deg"></i> View Product</a>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-1"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Item Card 4 -->
+             <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/FFEECC/A09080?text=Coffee+Mug" class="card-img-top" alt="Coffee Mug Placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Funny Coffee Mug</h5>
+                        <p class="card-text">Something witty about programming or cats.</p>
+                         <p class="card-text"><small class="text-muted">Approx. Price: $15</small></p>
+                         <a href="https://example.com/mug" target="_blank" class="btn btn-sm btn-outline-info mb-2 w-100"><i class="bi bi-link-45deg"></i> View Product</a>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-1"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Item Card 5 -->
+             <div class="col">
+                <div class="card h-100">
+                     <img src="https://via.placeholder.com/300x200/DDDDDD/999999?text=Donation" class="card-img-top" alt="Donation Placeholder">
+                    <div class="card-body">
+                        <h5 class="card-title">Donation to Charity</h5>
+                        <p class="card-text">To the local animal shelter.</p>
+                        <p class="card-text"><small class="text-muted">Approx. Price: Any</small></p>
+                         <button class="btn btn-sm btn-secondary mb-2 w-100" disabled><i class="bi bi-link-45deg"></i> No Link</button>
+                    </div>
+                     <div class="card-footer bg-transparent border-top-0 text-end">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-1"><i class="bi bi-pencil"></i> Edit</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Remove</a>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+          <!-- Placeholder for empty wishlist -->
+         <!--
+         <div class="text-center mt-5 py-5 border rounded bg-light">
+            <p class="lead">This wishlist is empty.</p>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-lg me-2"></i>Add the First Item</a>
+         </div>
+         -->
+    </div>
+
+     <footer class="py-3 my-4 border-top text-center mt-5">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 11: Add Item to Wishlist Page -->
+    <h2>State 11: Add Item to Wishlist Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+         <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Wishlists</a></li>
+                        <li class="breadcrumb-item"><a href="#">My Birthday Wishlist</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Item</li>
+                    </ol>
+                </nav>
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Add New Item to "My Birthday Wishlist"</h2>
+                     </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="itemUrl" class="form-label">Item URL (Optional)</label>
+                                <div class="input-group">
+                                    <input type="url" class="form-control" id="itemUrl" placeholder="https://www.example.com/product-page">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-fetch">Fetch Details</button>
+                                </div>
+                                <div class="form-text">Paste the URL of the item, and we'll try to fetch the details automatically.</div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="mb-3">
+                                <label for="itemName" class="form-label">Item Name *</label>
+                                <input type="text" class="form-control" id="itemName" placeholder="e.g., Electric Kettle" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="itemDescription" class="form-label">Description / Notes (Optional)</label>
+                                <textarea class="form-control" id="itemDescription" rows="3" placeholder="e.g., Specific color: Red, Brand preference"></textarea>
+                            </div>
+                             <div class="row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="itemPrice" class="form-label">Price (Optional)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" class="form-control" id="itemPrice" placeholder="e.g., 49.99">
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="itemQuantity" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" id="itemQuantity" value="1" min="1">
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="itemImageUrl" class="form-label">Image URL (Optional)</label>
+                                <input type="url" class="form-control" id="itemImageUrl" placeholder="https://www.example.com/image.jpg">
+                             </div>
+                             <div class="mb-3">
+                                <label for="itemPriority" class="form-label">Priority (Optional)</label>
+                                <select class="form-select" id="itemPriority">
+                                  <option selected>Normal</option>
+                                  <option value="1">Low</option>
+                                  <option value="2">Medium</option>
+                                  <option value="3">High</option>
+                                </select>
+                              </div>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Add Item to Wishlist</button>
+                            </div>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 12: Add Item to Wishlist Page (Validation Error) -->
+    <h2>State 12: Add Item to Wishlist Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Error - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+         <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Wishlists</a></li>
+                        <li class="breadcrumb-item"><a href="#">My Birthday Wishlist</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Item</li>
+                    </ol>
+                 </nav>
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Add New Item to "My Birthday Wishlist"</h2>
+                     </div>
+                    <div class="card-body p-4">
+                        <div class="alert alert-danger" role="alert">
+                            Please correct the errors below.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="itemUrl" class="form-label">Item URL (Optional)</label>
+                                <div class="input-group">
+                                    <input type="url" class="form-control is-invalid" id="itemUrl" placeholder="https://www.example.com/product-page" value="invalid-url">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-fetch">Fetch Details</button>
+                                </div>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid URL (e.g., http://example.com).
+                                </div>
+                                <div class="form-text">Paste the URL of the item, and we'll try to fetch the details automatically.</div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="mb-3">
+                                <label for="itemName" class="form-label">Item Name *</label>
+                                <input type="text" class="form-control is-invalid" id="itemName" placeholder="e.g., Electric Kettle" required>
+                                 <div class="invalid-feedback">
+                                    Item name is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="itemDescription" class="form-label">Description / Notes (Optional)</label>
+                                <textarea class="form-control" id="itemDescription" rows="3" placeholder="e.g., Specific color: Red, Brand preference"></textarea>
+                            </div>
+                             <div class="row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="itemPrice" class="form-label">Price (Optional)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" class="form-control" id="itemPrice" placeholder="e.g., 49.99">
+                                    </div>
+                                </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="itemQuantity" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control" id="itemQuantity" value="1" min="1">
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="itemImageUrl" class="form-label">Image URL (Optional)</label>
+                                <input type="url" class="form-control" id="itemImageUrl" placeholder="https://www.example.com/image.jpg">
+                             </div>
+                              <div class="mb-3">
+                                <label for="itemPriority" class="form-label">Priority (Optional)</label>
+                                <select class="form-select" id="itemPriority">
+                                  <option selected>Normal</option>
+                                  <option value="1">Low</option>
+                                  <option value="2">Medium</option>
+                                  <option value="3">High</option>
+                                </select>
+                              </div>
+
+                            <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Add Item to Wishlist</button>
+                            </div>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 13: Edit Wishlist Page -->
+    <h2>State 13: Edit Wishlist Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Wishlist - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Wishlists</a></li>
+                        <li class="breadcrumb-item"><a href="#">My Birthday Wishlist</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Details</li>
+                    </ol>
+                </nav>
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Edit Wishlist Details</h2>
+                     </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="wishlistName" class="form-label">Wishlist Name *</label>
+                                <input type="text" class="form-control" id="wishlistName" value="My Birthday Wishlist" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="wishlistOccasion" class="form-label">Occasion (Optional)</label>
+                                <input type="text" class="form-control" id="wishlistOccasion" value="Birthday">
+                            </div>
+                             <div class="mb-3">
+                                <label for="wishlistDescription" class="form-label">Description (Optional)</label>
+                                <textarea class="form-control" id="wishlistDescription" rows="3">Things I would love for my upcoming birthday.</textarea>
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Privacy</label>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="privateRadio" value="private">
+                                  <label class="form-check-label" for="privateRadio">
+                                    Private (Only you can see it)
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="privacyOptions" id="sharedRadio" value="shared" checked>
+                                  <label class="form-check-label" for="sharedRadio">
+                                    Shared (Anyone with the link can see it)
+                                  </label>
+                                </div>
+                              </div>
+
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash me-1"></i>Delete Wishlist</button>
+                                <div>
+                                    <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </div>
+                        </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 14: Share Wishlist Page -->
+    <h2>State 14: Share Wishlist Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Wishlist - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Wishlists</a></li>
+                        <li class="breadcrumb-item"><a href="#">My Birthday Wishlist</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Share</li>
+                    </ol>
+                </nav>
+                 <div class="card">
+                     <div class="card-header">
+                        <h2>Share "My Birthday Wishlist"</h2>
+                     </div>
+                    <div class="card-body p-4">
+                        <p>Anyone with this link will be able to view your wishlist. They won't be able to make changes.</p>
+
+                        <div class="mb-3">
+                            <label for="shareLink" class="form-label">Your unique shareable link:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="shareLink" value="https://wishlistmgr.com/share/aB3cD9eF8gH2iJ1kL" readonly>
+                                <button class="btn btn-outline-secondary" type="button" id="copyButton"><i class="bi bi-clipboard"></i> Copy</button>
+                            </div>
+                            <div class="form-text text-success" id="copyFeedback" style="display: none;">Link copied to clipboard!</div>
+                        </div>
+
+                        <hr>
+
+                        <p class="mb-2">Share via:</p>
+                        <a href="#" class="btn btn-primary me-2"><i class="bi bi-envelope-fill me-1"></i> Email</a>
+                        <a href="#" class="btn btn-info text-white me-2"><i class="bi bi-twitter me-1"></i> Twitter</a>
+                        <a href="#" class="btn btn-success me-2"><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+                        <a href="#" class="btn btn-secondary"><i class="bi bi-link-45deg me-1"></i> More Options</a>
+
+                        <hr>
+
+                         <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="allowMarkingPurchased" checked>
+                            <label class="form-check-label" for="allowMarkingPurchased">Allow viewers to mark items as purchased (hidden from you)</label>
+                        </div>
+
+                         <div class="d-flex justify-content-end mt-4">
+                            <a href="#" class="btn btn-secondary me-2">Back to Wishlist</a>
+                            <a href="#" class="btn btn-outline-primary"><i class="bi bi-gear me-1"></i> Manage Privacy Settings</a>
+                        </div>
+
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 15: Account Settings Page -->
+    <h2>State 15: Account Settings Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" aria-current="page" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Account Settings</h1>
+        <hr>
+
+         <div class="row">
+             <div class="col-md-8 offset-md-2">
+
+                 <!-- Change Email Section -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-envelope me-2"></i>Change Email</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentEmail" class="form-label">Current Email</label>
+                                <input type="email" class="form-control" id="currentEmail" value="user@example.com" readonly disabled>
+                            </div>
+                             <div class="mb-3">
+                                <label for="newEmail" class="form-label">New Email</label>
+                                <input type="email" class="form-control" id="newEmail" placeholder="Enter new email address">
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewEmail" class="form-label">Confirm New Email</label>
+                                <input type="email" class="form-control" id="confirmNewEmail" placeholder="Confirm new email address">
+                            </div>
+                             <button type="submit" class="btn btn-primary">Update Email</button>
+                        </form>
+                    </div>
+                 </div>
+
+                 <!-- Change Password Section -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-key me-2"></i>Change Password</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword">
+                            </div>
+                             <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword">
+                                <div class="form-text">Must be at least 8 characters long.</div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword">
+                            </div>
+                             <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                 </div>
+
+                 <!-- Delete Account Section -->
+                 <div class="card border-danger mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h5><i class="bi bi-exclamation-triangle me-2"></i>Danger Zone</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Deleting your account is permanent and cannot be undone. All your wishlists and associated data will be removed.</p>
+                        <button type="button" class="btn btn-danger">Delete My Account</button>
+                         <!-- Confirmation would typically be a modal in a real app -->
+                         <div class="mt-3 p-3 border border-danger rounded" style="display: none;">
+                             <p class="text-danger fw-bold">Are you absolutely sure?</p>
+                             <p>Type your email address (user@example.com) to confirm:</p>
+                             <input type="text" class="form-control mb-2">
+                             <button class="btn btn-danger">I understand, delete my account</button>
+                             <button class="btn btn-secondary ms-2">Cancel</button>
+                         </div>
+                    </div>
+                 </div>
+
+             </div>
+         </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 16: Account Settings Page (Password Change Success) -->
+    <h2>State 16: Account Settings Page (Password Change Success)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Success - Wishlist Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wishlist Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">My Wishlists</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wishlist</a>
+                    </li>
+                 </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" aria-current="page" href="#">Account Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Account Settings</h1>
+        <hr>
+
+         <div class="row">
+             <div class="col-md-8 offset-md-2">
+
+                  <!-- Success Message -->
+                 <div class="alert alert-success alert-dismissible fade show" role="alert">
+                   <i class="bi bi-check-circle-fill me-2"></i> Your password has been successfully updated.
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                 </div>
+
+                 <!-- Change Email Section -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-envelope me-2"></i>Change Email</h5>
+                    </div>
+                     <div class="card-body">
+                         <!-- Form content same as State 15 -->
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentEmail" class="form-label">Current Email</label>
+                                <input type="email" class="form-control" id="currentEmail" value="user@example.com" readonly disabled>
+                            </div>
+                             <div class="mb-3">
+                                <label for="newEmail" class="form-label">New Email</label>
+                                <input type="email" class="form-control" id="newEmail" placeholder="Enter new email address">
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewEmail" class="form-label">Confirm New Email</label>
+                                <input type="email" class="form-control" id="confirmNewEmail" placeholder="Confirm new email address">
+                            </div>
+                             <button type="submit" class="btn btn-primary">Update Email</button>
+                        </form>
+                    </div>
+                 </div>
+
+                 <!-- Change Password Section -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5><i class="bi bi-key me-2"></i>Change Password</h5>
+                    </div>
+                    <div class="card-body">
+                         <!-- Form content same as State 15, but likely cleared after success -->
+                         <form>
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword">
+                            </div>
+                             <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword">
+                                <div class="form-text">Must be at least 8 characters long.</div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword">
+                            </div>
+                             <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                 </div>
+
+                 <!-- Delete Account Section -->
+                 <div class="card border-danger mb-4">
+                    <div class="card-header bg-danger text-white">
+                         <h5><i class="bi bi-exclamation-triangle me-2"></i>Danger Zone</h5>
+                    </div>
+                      <div class="card-body">
+                         <!-- Form content same as State 15 -->
+                        <p>Deleting your account is permanent and cannot be undone. All your wishlists and associated data will be removed.</p>
+                        <button type="button" class="btn btn-danger">Delete My Account</button>
+                    </div>
+                 </div>
+
+             </div>
+         </div>
+
+    </div>
+
+    <footer class="py-3 my-4 border-top text-center mt-auto">
+        <span class="text-muted">© 2023 Wishlist Manager</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+    '></iframe>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

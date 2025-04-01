@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            margin-top: 40px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #ced4da;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">To-Do List App - UI Flow</h1>
+
+        <!-- State 1: Home Page (Task List View - Empty State) -->
+        <div class="state-container">
+            <h2>State 1: Home Page (Task List - Empty)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Empty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>My Tasks</h2>
+            <button class="btn btn-success"><i class="bi bi-plus-lg"></i> Add New Task</button>
+        </div>
+        <div class="alert alert-info text-center" role="alert">
+          You have no tasks yet. Click "Add New Task" to get started!
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 2: Home Page (Task List View - Populated State) -->
+        <div class="state-container">
+            <h2>State 2: Home Page (Task List - Populated)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Populated</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .task-completed {
+            text-decoration: line-through;
+            color: #6c757d; /* secondary color */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>My Tasks</h2>
+            <button class="btn btn-success"><i class="bi bi-plus-lg"></i> Add New Task</button>
+        </div>
+
+        <ul class="list-group">
+          <!-- Incomplete Task -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <input class="form-check-input me-2" type="checkbox" value="" id="task1">
+              <label class="form-check-label" for="task1">
+                Finish project proposal
+              </label>
+              <small class="d-block text-muted ms-4">Due: Tomorrow</small>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+          </li>
+          <!-- Incomplete Task -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+             <div>
+              <input class="form-check-input me-2" type="checkbox" value="" id="task2">
+              <label class="form-check-label" for="task2">
+                Buy groceries
+              </label>
+               <small class="d-block text-muted ms-4">Milk, Eggs, Bread</small>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+          </li>
+          <!-- Completed Task -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+             <div>
+                <input class="form-check-input me-2" type="checkbox" value="" id="task3" checked>
+                <label class="form-check-label task-completed" for="task3">
+                    Call the bank
+                </label>
+                <small class="d-block text-muted ms-4 task-completed">Completed yesterday</small>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-secondary me-1" disabled><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+          </li>
+           <!-- Incomplete Task High Priority -->
+          <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning">
+            <div>
+              <input class="form-check-input me-2" type="checkbox" value="" id="task4">
+              <label class="form-check-label fw-bold" for="task4">
+                Prepare presentation slides <span class="badge bg-danger ms-1">High Priority</span>
+              </label>
+              <small class="d-block text-muted ms-4">Review notes first</small>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></button>
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+          </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 3: Add Task State -->
+        <div class="state-container">
+            <h2>State 3: Add Task Form</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Add New Task</h2>
+        <form>
+          <div class="mb-3">
+            <label for="taskName" class="form-label">Task Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="taskName" placeholder="e.g., Walk the dog" required>
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Description (Optional)</label>
+            <textarea class="form-control" id="taskDescription" rows="3" placeholder="Add more details here..."></textarea>
+          </div>
+           <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="taskPriority" class="form-label">Priority</label>
+                    <select class="form-select" id="taskPriority">
+                      <option selected>Normal</option>
+                      <option value="1">Low</option>
+                      <option value="2">High</option>
+                      <option value="3">Urgent</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="taskDueDate" class="form-label">Due Date (Optional)</label>
+                    <input type="date" class="form-control" id="taskDueDate">
+                </div>
+           </div>
+          <button type="submit" class="btn btn-primary">Save Task</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 4: Add Task State (Validation Error) -->
+        <div class="state-container">
+            <h2>State 4: Add Task Form (Validation Error)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task - Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Add New Task</h2>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <div>
+            Please fix the errors below before saving.
+          </div>
+        </div>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="taskName" class="form-label">Task Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control is-invalid" id="taskName" placeholder="e.g., Walk the dog" required value=""> <!-- Empty value to trigger error -->
+            <div class="invalid-feedback">
+              Task name cannot be empty.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Description (Optional)</label>
+            <textarea class="form-control" id="taskDescription" rows="3" placeholder="Add more details here..."></textarea>
+          </div>
+          <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="taskPriority" class="form-label">Priority</label>
+                    <select class="form-select" id="taskPriority">
+                      <option selected>Normal</option>
+                      <option value="1">Low</option>
+                      <option value="2">High</option>
+                      <option value="3">Urgent</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="taskDueDate" class="form-label">Due Date (Optional)</label>
+                    <input type="date" class="form-control" id="taskDueDate">
+                </div>
+           </div>
+          <button type="submit" class="btn btn-primary">Save Task</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 5: Edit Task State -->
+        <div class="state-container">
+            <h2>State 5: Edit Task Form</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Edit Task</h2>
+        <form>
+          <div class="mb-3">
+            <label for="taskName" class="form-label">Task Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="taskName" value="Finish project proposal" required>
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Description (Optional)</label>
+            <textarea class="form-control" id="taskDescription" rows="3">Finalize budget section and add conclusion.</textarea>
+          </div>
+           <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="taskPriority" class="form-label">Priority</label>
+                    <select class="form-select" id="taskPriority">
+                      <option>Normal</option>
+                      <option value="1">Low</option>
+                      <option value="2" selected>High</option>
+                      <option value="3">Urgent</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="taskDueDate" class="form-label">Due Date (Optional)</label>
+                    <input type="date" class="form-control" id="taskDueDate" value="2024-03-15"> <!-- Placeholder date -->
+                </div>
+           </div>
+          <button type="submit" class="btn btn-primary">Update Task</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 6: Edit Task State (Validation Error) -->
+         <div class="state-container">
+            <h2>State 6: Edit Task Form (Validation Error)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task - Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Edit Task</h2>
+         <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          <div>
+            Please fix the errors below before saving.
+          </div>
+        </div>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="taskName" class="form-label">Task Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control is-invalid" id="taskName" value="" required> <!-- Empty value to trigger error -->
+             <div class="invalid-feedback">
+              Task name cannot be empty.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Description (Optional)</label>
+            <textarea class="form-control" id="taskDescription" rows="3">Finalize budget section and add conclusion.</textarea>
+          </div>
+           <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <label for="taskPriority" class="form-label">Priority</label>
+                    <select class="form-select" id="taskPriority">
+                      <option>Normal</option>
+                      <option value="1">Low</option>
+                      <option value="2" selected>High</option>
+                      <option value="3">Urgent</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="taskDueDate" class="form-label">Due Date (Optional)</label>
+                    <input type="date" class="form-control" id="taskDueDate" value="2024-03-15"> <!-- Placeholder date -->
+                </div>
+           </div>
+          <button type="submit" class="btn btn-primary">Update Task</button>
+          <button type="button" class="btn btn-secondary">Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 7: About Page -->
+        <div class="state-container">
+            <h2>State 7: About Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">To-Do List App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>About To-Do List App</h2>
+        <p class="lead">Your simple solution for managing daily tasks.</p>
+        <hr>
+        <p>This application helps you stay organized by providing a clean and efficient interface to list, track, and manage your priorities. Whether it's for work, home, or personal goals, the To-Do List App ensures you never miss an important task.</p>
+        <p>Features:</p>
+        <ul>
+            <li>Add new tasks quickly and easily.</li>
+            <li>Edit existing task details.</li>
+            <li>Mark tasks as complete.</li>
+            <li>Set priorities and due dates (optional).</li>
+            <li>Delete tasks you no longer need.</li>
+            <li>Clean, responsive design powered by Bootstrap.</li>
+        </ul>
+        <p>Built with simplicity in mind. Happy tasking!</p>
+        <footer class="text-center text-muted mt-5">
+             &copy; 2024 To-Do List App. All rights reserved.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>

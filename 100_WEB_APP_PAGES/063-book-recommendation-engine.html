@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation Engine - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h1, h2 { margin-bottom: 20px; text-align: center; }
+        h2 { margin-top: 40px; color: #6c757d; }
+        iframe {
+            width: 100%;
+            height: 70vh; /* Default height */
+            min-height: 500px; /* Minimum height */
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            display: block;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* Adjust height for specific frames if needed */
+        #frame-signup, #frame-login, #frame-add-book, #frame-preferences, #frame-forgot-password, #frame-reset-password {
+             height: 75vh; /* Slightly taller for forms */
+        }
+        #frame-recommendations, #frame-history, #frame-book-details {
+            height: 80vh; /* Taller for content display */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4">Book Recommendation Engine - UI Flow</h1>
+
+    <!-- State 1: Home Page (Landing) -->
+    <h2>State 1: Home Page (Landing)</h2>
+    <iframe id="frame-home" title="State 1: Home Page (Landing)" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary ms-2" href="#">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold">Find Your Next Favorite Book</h1>
+            <p class="lead col-lg-6 mx-auto mb-4">Get personalized book recommendations based on your unique reading tastes and history.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Get Started</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+            </div>
+        </div>
+
+         <div class="container px-4 py-5">
+            <h2 class="pb-2 border-bottom">How It Works</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">1. Tell Us What You Like</h3>
+                  <p>Add books you have read and loved (or hated!). Rate them and set your genre preferences.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">2. Discover Recommendations</h3>
+                  <p>Our engine analyzes your data to suggest books you are likely to enjoy.</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fs-2 text-body-emphasis">3. Keep Reading</h3>
+                  <p>Update your reading history to get even better, continuously refined recommendations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 2: Sign Up Page -->
+    <h2>State 2: Sign Up Page</h2>
+    <iframe id="frame-signup" title="State 2: Sign Up Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-signup { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-signup w-100 m-auto text-center">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+                 <a href="#">BookRec</a>
+
+                 <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="floatingName" placeholder="John Doe" required>
+                    <label for="floatingName">Full Name</label>
+                 </div>
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+                 <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
+                    <label for="floatingConfirmPassword">Confirm Password</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                <p class="mt-3 mb-1">
+                    Already have an account? <a href="#">Login</a>
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 3: Sign Up Page (Validation Error) -->
+    <h2>State 3: Sign Up Page (Validation Error)</h2>
+    <iframe id="frame-signup-error" title="State 3: Sign Up Page (Validation Error)" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-signup { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-signup w-100 m-auto text-center">
+            <form>
+                 <div class="alert alert-danger" role="alert">
+                    Please correct the errors below.
+                 </div>
+                <h1 class="h3 mb-3 fw-normal">Create Account</h1>
+                 <a href="#">BookRec</a>
+
+                 <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="floatingName" placeholder="John Doe" required>
+                    <label for="floatingName">Full Name</label>
+                 </div>
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" required value="invalid-email">
+                    <label for="floatingInput">Email address</label>
+                    <div class="invalid-feedback text-start">
+                      Please enter a valid email address.
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required value="">
+                    <label for="floatingPassword">Password</label>
+                     <div class="invalid-feedback text-start">
+                      Password is required.
+                    </div>
+                </div>
+                 <div class="form-floating mb-3">
+                    <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" required value="different">
+                    <label for="floatingConfirmPassword">Confirm Password</label>
+                     <div class="invalid-feedback text-start">
+                      Passwords do not match.
+                    </div>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                <p class="mt-3 mb-1">
+                    Already have an account? <a href="#">Login</a>
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+
+    <!-- State 4: Login Page -->
+    <h2>State 4: Login Page</h2>
+    <iframe id="frame-login" title="State 4: Login Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-signin { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-signin w-100 m-auto text-center">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+                <a href="#">BookRec</a>
+
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3 text-start">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                 <p class="mt-3 mb-1">
+                    <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-1 mb-1">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 5: Login Page (Error) -->
+    <h2>State 5: Login Page (Error)</h2>
+    <iframe id="frame-login-error" title="State 5: Login Page (Error)" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-signin { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-signin w-100 m-auto text-center">
+            <form>
+                 <div class="alert alert-danger" role="alert">
+                    Invalid email or password. Please try again.
+                 </div>
+                <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+                 <a href="#">BookRec</a>
+
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" required value="user@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required value="wrongpass">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="checkbox mb-3 text-start">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                 <p class="mt-3 mb-1">
+                    <a href="#">Forgot password?</a>
+                </p>
+                 <p class="mt-1 mb-1">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+     <!-- State 6: Dashboard (Logged In User Home) -->
+    <h2>State 6: Dashboard (Logged In User Home)</h2>
+    <iframe id="frame-dashboard" title="State 6: Dashboard" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                    <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1 class="mb-4">Dashboard</h1>
+
+            <div class="alert alert-info" role="alert">
+              Welcome back! Add more books to your history or update your preferences for better recommendations.
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Recommendations</h5>
+                            <p class="card-text">Based on your recent activity, you might like:</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">"Placeholder Book Title 1" by Author A</li>
+                                <li class="list-group-item">"Placeholder Book Title 2" by Author B</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">View All Recommendations</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Your Reading Stats</h5>
+                             <p class="card-text">You have rated <strong>15 Books</strong>.</p>
+                             <p class="card-text">Your favorite genre seems to be <strong>Science Fiction</strong>.</p>
+                            <a href="#" class="btn btn-secondary me-2">View My History</a>
+                            <a href="#" class="btn btn-secondary">Update Preferences</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-12">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Finished a New Book?</h5>
+                            <p class="card-text">Add it to your reading history to improve future recommendations.</p>
+                            <a href="#" class="btn btn-success">Add Book to History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light fixed-bottom">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+      <!-- State 7: My Reading History Page -->
+    <h2>State 7: My Reading History Page</h2>
+    <iframe id="frame-history" title="State 7: My Reading History Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Reading History</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                 <h1>My Reading History</h1>
+                 <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-2"></i>Add New Book</a>
+            </div>
+
+            <div class="input-group mb-4">
+              <input type="text" class="form-control" placeholder="Search your history (Title, Author)..." aria-label="Search history">
+              <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">"The Great Placeholder Novel"</h5>
+                  <small>Added 3 days ago</small>
+                </div>
+                <p class="mb-1">By Jane Author</p>
+                <small>Your Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i> (4/5)</small>
+                 <div class="mt-2">
+                    <button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</button>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Delete</button>
+                </div>
+              </div>
+               <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">"Another Book I Read"</h5>
+                  <small class="text-muted">Added 1 week ago</small>
+                </div>
+                <p class="mb-1">By John Writer</p>
+                <small>Your Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i> (3/5)</small>
+                 <div class="mt-2">
+                    <button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</button>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Delete</button>
+                </div>
+              </div>
+               <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">"Sci-Fi Adventure Example"</h5>
+                  <small class="text-muted">Added 2 weeks ago</small>
+                </div>
+                <p class="mb-1">By Sci Fi Author</p>
+                <small>Your Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i> (5/5)</small>
+                 <div class="mt-2">
+                    <button class="btn btn-sm btn-outline-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</button>
+                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash me-1"></i> Delete</button>
+                </div>
+              </div>
+
+            </div>
+             <nav aria-label="Page navigation example" class="mt-4">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 8: Add Book to History Page -->
+    <h2>State 8: Add Book to History Page</h2>
+    <iframe id="frame-add-book" title="State 8: Add Book to History Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Book to History</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+         <style> .rating-stars .bi { cursor: pointer; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1>Add Book to Your History</h1>
+            <p class="lead mb-4">Search for a book or enter details manually.</p>
+
+            <div class="card mb-4">
+                <div class="card-header">Search for Book</div>
+                <div class="card-body">
+                     <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Title, Author, or ISBN" aria-label="Book search">
+                        <button class="btn btn-outline-primary" type="button">Search</button>
+                    </div>
+                    <!-- Placeholder for search results -->
+                     <div class="list-group" style="max-height: 200px; overflow-y: auto;">
+                        <a href="#" class="list-group-item list-group-item-action">"Found Book 1" by Author X <small class="text-muted">(ISBN: 1234567890)</small></a>
+                        <a href="#" class="list-group-item list-group-item-action">"Found Book 2" by Author Y <small class="text-muted">(ISBN: 0987654321)</small></a>
+                        <span class="list-group-item text-muted">No more results. Enter manually?</span>
+                    </div>
+                </div>
+             </div>
+
+
+            <div class="card">
+                 <div class="card-header">Enter Manually / Rate Book</div>
+                  <div class="card-body">
+                     <form>
+                        <div class="mb-3">
+                            <label for="bookTitle" class="form-label">Book Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="bookTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookAuthor" class="form-label">Author <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="bookAuthor" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookISBN" class="form-label">ISBN (Optional)</label>
+                            <input type="text" class="form-control" id="bookISBN">
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookRating" class="form-label">Your Rating (1-5 Stars) <span class="text-danger">*</span></label>
+                            <div class="rating-stars fs-4 text-warning" id="bookRating">
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <input type="hidden" name="rating" value="0" required> <!-- Hidden input to store rating value -->
+                             </div>
+                             <div class="form-text">Click stars to rate.</div>
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookReview" class="form-label">Review / Notes (Optional)</label>
+                            <textarea class="form-control" id="bookReview" rows="3"></textarea>
+                        </div>
+                         <div class="d-flex justify-content-end">
+                             <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+     <!-- State 9: Add Book to History Page (Validation Error) -->
+    <h2>State 9: Add Book to History Page (Validation Error)</h2>
+    <iframe id="frame-add-book-error" title="State 9: Add Book to History Page (Validation Error)" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Book Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+         <style> .rating-stars .bi { cursor: pointer; } </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1>Add Book to Your History</h1>
+            <p class="lead mb-4">Search for a book or enter details manually.</p>
+             <div class="alert alert-danger" role="alert">
+                Please fix the errors below. Title, Author, and Rating are required.
+             </div>
+
+            <div class="card mb-4">
+                <div class="card-header">Search for Book</div>
+                 <div class="card-body">
+                     <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Title, Author, or ISBN" aria-label="Book search">
+                        <button class="btn btn-outline-primary" type="button">Search</button>
+                    </div>
+                 </div>
+             </div>
+
+
+            <div class="card border-danger">
+                 <div class="card-header bg-danger text-white">Enter Manually / Rate Book</div>
+                  <div class="card-body">
+                     <form>
+                        <div class="mb-3">
+                            <label for="bookTitle" class="form-label">Book Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control is-invalid" id="bookTitle" required>
+                            <div class="invalid-feedback">Book title cannot be empty.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookAuthor" class="form-label">Author <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control is-invalid" id="bookAuthor" required>
+                             <div class="invalid-feedback">Author cannot be empty.</div>
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookISBN" class="form-label">ISBN (Optional)</label>
+                            <input type="text" class="form-control" id="bookISBN">
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookRating" class="form-label">Your Rating (1-5 Stars) <span class="text-danger">*</span></label>
+                            <div class="rating-stars fs-4 text-warning is-invalid" id="bookRating">
+                                <!-- Add is-invalid class to the container if rating is 0 -->
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <input type="hidden" name="rating" value="0" required>
+                             </div>
+                             <div class="invalid-feedback d-block">Please select a rating.</div>
+                        </div>
+                         <div class="mb-3">
+                            <label for="bookReview" class="form-label">Review / Notes (Optional)</label>
+                            <textarea class="form-control" id="bookReview" rows="3"></textarea>
+                        </div>
+                         <div class="d-flex justify-content-end">
+                             <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </div>
+                    </form>
+                 </div>
+            </div>
+
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 10: My Preferences Page -->
+    <h2>State 10: My Preferences Page</h2>
+    <iframe id="frame-preferences" title="State 10: My Preferences Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Preferences</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1>My Preferences</h1>
+            <p class="lead mb-4">Help us understand your taste better by setting your preferences.</p>
+
+            <form>
+                 <div class="card mb-4">
+                     <div class="card-header">Favorite Genres</div>
+                     <div class="card-body">
+                         <p>Select genres you enjoy reading:</p>
+                         <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck1" checked>
+                                  <label class="form-check-label" for="genreCheck1">Science Fiction</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck2">
+                                  <label class="form-check-label" for="genreCheck2">Fantasy</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck3" checked>
+                                  <label class="form-check-label" for="genreCheck3">Mystery</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck4">
+                                  <label class="form-check-label" for="genreCheck4">Thriller</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck5">
+                                  <label class="form-check-label" for="genreCheck5">Romance</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck6">
+                                  <label class="form-check-label" for="genreCheck6">Historical Fiction</label>
+                                </div>
+                             </div>
+                              <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck7">
+                                  <label class="form-check-label" for="genreCheck7">Non-Fiction</label>
+                                </div>
+                             </div>
+                               <div class="col-md-4 col-sm-6 mb-2">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="genreCheck8" checked>
+                                  <label class="form-check-label" for="genreCheck8">Biography</label>
+                                </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="card mb-4">
+                     <div class="card-header">Favorite Authors</div>
+                     <div class="card-body">
+                         <label for="favAuthors" class="form-label">List some of your favorite authors (comma-separated):</label>
+                         <textarea class="form-control" id="favAuthors" rows="3">Jane Author, Isaac Asimov, Agatha Christie</textarea>
+                         <div class="form-text">Adding authors helps us find similar writing styles you might like.</div>
+                     </div>
+                 </div>
+
+                 <div class="card mb-4">
+                     <div class="card-header">Other Preferences</div>
+                     <div class="card-body">
+                        <div class="mb-3">
+                             <label class="form-label">How much do you value critically acclaimed books?</label>
+                             <select class="form-select" aria-label="Critical acclaim preference">
+                              <option selected>Moderately Important</option>
+                              <option value="1">Not Important</option>
+                              <option value="2">Slightly Important</option>
+                              <option value="3">Very Important</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                             <label class="form-label">Do you prefer standalone novels or series?</label>
+                             <select class="form-select" aria-label="Series preference">
+                              <option>No Preference</option>
+                              <option value="1">Prefer Standalone</option>
+                              <option value="2" selected>Prefer Series</option>
+                            </select>
+                        </div>
+                     </div>
+                 </div>
+
+                 <div class="alert alert-success d-none" role="alert" id="successMessage">
+                    Preferences saved successfully!
+                 </div>
+
+                  <div class="d-flex justify-content-end">
+                    <button type="reset" class="btn btn-secondary me-2">Reset Changes</button>
+                    <button type="submit" class="btn btn-primary">Save Preferences</button>
+                </div>
+            </form>
+
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 11: Recommendations Page -->
+    <h2>State 11: Recommendations Page</h2>
+    <iframe id="frame-recommendations" title="State 11: Recommendations Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Recommendations</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <h1>Your Book Recommendations</h1>
+            <p class="lead mb-4">Here are some books we think you might enjoy based on your history and preferences.</p>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="sortFilter" class="form-label">Sort By:</label>
+                    <select class="form-select" id="sortFilter">
+                      <option selected>Relevance</option>
+                      <option value="1">Popularity</option>
+                       <option value="2">Publication Date (Newest)</option>
+                      <option value="3">Average Rating</option>
+                    </select>
+                </div>
+                 <div class="col-md-4">
+                    <label for="genreFilter" class="form-label">Filter by Genre:</label>
+                     <select class="form-select" id="genreFilter">
+                      <option selected>All Genres</option>
+                      <option value="1">Science Fiction</option>
+                       <option value="2">Mystery</option>
+                      <option value="3">Fantasy</option>
+                       <option value="3">Biography</option>
+                    </select>
+                </div>
+                <div class="col-md-4 align-self-end">
+                     <button class="btn btn-primary w-100">Apply Filters</button>
+                </div>
+            </div>
+
+             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book Cover" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Book Cover</text></svg>
+                    <div class="card-body">
+                      <h5 class="card-title">Recommended Book 1</h5>
+                      <p class="card-text">By A Similar Author</p>
+                      <p class="card-text"><small class="text-muted">Genre: Science Fiction</small></p>
+                      <p class="card-text">Short description of the book, explaining why it might be a good fit...</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                     <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                      <small class="text-muted">Avg. Rating: 4.2/5</small>
+                    </div>
+                  </div>
+                </div>
+                 <div class="col">
+                  <div class="card h-100">
+                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book Cover" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Book Cover</text></svg>
+                    <div class="card-body">
+                      <h5 class="card-title">Placeholder Recommendation 2</h5>
+                      <p class="card-text">By Another Writer</p>
+                       <p class="card-text"><small class="text-muted">Genre: Mystery</small></p>
+                      <p class="card-text">This book is recommended because you enjoyed "The Great Placeholder Novel".</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-between align-items-center">
+                     <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                      <small class="text-muted">Avg. Rating: 4.5/5</small>
+                    </div>
+                  </div>
+                </div>
+                 <div class="col">
+                  <div class="card h-100">
+                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book Cover" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Book Cover</text></svg>
+                    <div class="card-body">
+                      <h5 class="card-title">Third Book Suggestion</h5>
+                      <p class="card-text">By Preferred Author</p>
+                       <p class="card-text"><small class="text-muted">Genre: Biography</small></p>
+                      <p class="card-text">Since you like biographies and Preferred Author, this might interest you.</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-between align-items-center">
+                     <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                      <small class="text-muted">Avg. Rating: 4.0/5</small>
+                    </div>
+                  </div>
+                </div>
+                 <!-- Add more placeholder cards -->
+                 <div class="col">
+                  <div class="card h-100">
+                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book Cover" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Book Cover</text></svg>
+                    <div class="card-body">
+                      <h5 class="card-title">Fantasy Pick For You</h5>
+                      <p class="card-text">By Fantasy Author</p>
+                       <p class="card-text"><small class="text-muted">Genre: Fantasy</small></p>
+                      <p class="card-text">A popular fantasy novel matching your series preference.</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-between align-items-center">
+                     <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                      <small class="text-muted">Avg. Rating: 4.8/5</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <nav aria-label="Page navigation example" class="mt-5">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+             </nav>
+
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+     <!-- State 12: Book Details Page -->
+    <h2>State 12: Book Details Page</h2>
+    <iframe id="frame-book-details" title="State 12: Book Details Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAuth" aria-controls="navbarNavAuth" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAuth">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Recommendations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My History</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">My Preferences</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text me-3">Welcome, User!</span>
+                     <a href="#" class="btn btn-outline-light">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Recommendations</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Recommended Book 1</li>
+              </ol>
+            </nav>
+
+            <div class="row g-5">
+                <div class="col-md-4 text-center">
+                     <svg class="bd-placeholder-img img-fluid rounded" width="300" height="450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Book Cover Large" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Book Cover</text></svg>
+                     <div class="mt-3 d-grid gap-2">
+                         <button class="btn btn-success"><i class="bi bi-check-circle me-2"></i>Mark as Read / Rate</button>
+                         <button class="btn btn-outline-secondary"><i class="bi bi-bookmark me-2"></i>Add to Wishlist (Not Implemented)</button>
+                     </div>
+                 </div>
+                 <div class="col-md-8">
+                    <h1>Recommended Book 1</h1>
+                    <h4 class="text-muted mb-3">By A Similar Author</h4>
+
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1">Science Fiction</span>
+                        <span class="badge bg-secondary">Adventure</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Average Rating:</strong> 4.2 <i class="bi bi-star-fill text-warning"></i> (Based on 1,234 ratings)
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Synopsis</h5>
+                        <p>This is a detailed placeholder synopsis for "Recommended Book 1". It describes the plot, themes, and characters in more depth than the card view. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+
+                    <div class="mb-4">
+                        <h5>Why we recommend this for you:</h5>
+                         <ul class="list-unstyled">
+                             <li><i class="bi bi-check-lg text-success me-2"></i>Similar to "The Great Placeholder Novel" which you rated highly.</li>
+                            <li><i class="bi bi-check-lg text-success me-2"></i>Matches your preferred genre: Science Fiction.</li>
+                            <li><i class="bi bi-check-lg text-success me-2"></i>Features themes of exploration common in books you enjoy.</li>
+                         </ul>
+                     </div>
+
+                     <div class="accordion" id="bookDetailsAccordion">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Publication Details
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#bookDetailsAccordion">
+                          <div class="accordion-body">
+                            <strong>Publisher:</strong> Placeholder Press<br>
+                            <strong>Publication Date:</strong> January 1, 2022<br>
+                            <strong>Pages:</strong> 350<br>
+                            <strong>ISBN-13:</strong> 978-1234567890
+                           </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Community Reviews (Placeholder)
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#bookDetailsAccordion">
+                          <div class="accordion-body">
+                            <p>"A thrilling read! Couldn't put it down." - Reviewer 1</p>
+                            <p>"Interesting concept, but the pacing felt slow." - Reviewer 2</p>
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                 </div>
+            </div>
+
+
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+
+    <!-- State 13: About Page -->
+    <h2>State 13: About Page</h2>
+    <iframe id="frame-about" title="State 13: About Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About BookRec</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Navigation (can be adapted based on logged-in status) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+             <div class="container">
+                <a class="navbar-brand" href="#">BookRec</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAbout" aria-controls="navbarNavAbout" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAbout">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                           <!-- Show different nav items if logged in vs logged out -->
+                        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li> <!-- Or Home if logged out -->
+                        <li class="nav-item"><a class="nav-link" href="#">Recommendations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My History</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Preferences</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                    </ul>
+                     <!-- Show Login/Logout based on status -->
+                     <span class="navbar-text me-3">Welcome, User!</span> <!-- Or nothing if logged out -->
+                     <a href="#" class="btn btn-outline-light">Logout</a> <!-- Or Login/Signup if logged out -->
+                </div>
+            </div>
+        </nav>
+
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="mb-4 text-center">About BookRec</h1>
+
+                    <p class="lead">BookRec is your personal guide in the vast world of literature. Our mission is to connect readers with books they will truly love, moving beyond bestseller lists to find hidden gems and perfect matches based on individual tastes.</p>
+
+                    <h3 class="mt-5">How It Works</h3>
+                    <p>We use a sophisticated algorithm that analyzes your reading history, ratings, and stated preferences (like favorite genres and authors). By comparing your profile to millions of data points and the reading patterns of similar users, we generate personalized recommendations designed just for you. The more you interact with BookRec – rating books and updating your preferences – the smarter our recommendations become.</p>
+
+                     <h3 class="mt-5">Our Team</h3>
+                    <p>We are a small, passionate team of book lovers, data scientists, and software engineers dedicated to improving the book discovery experience. We believe reading enriches lives, and finding the right book at the right time should be easy and enjoyable.</p>
+
+                    <h3 class="mt-5">Get In Touch</h3>
+                    <p>Have questions, feedback, or suggestions? We would love to hear from you! Please visit our (non-existent) Contact page or reach out via social media.</p>
+                     <div class="text-center mt-4">
+                        <a href="#" class="btn btn-primary">Contact Us (Placeholder)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="py-3 my-4 border-top bg-light">
+             <div class="container">
+                <p class="text-center text-muted">&copy; 2023 BookRec, Inc</p>
+             </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+      <!-- State 14: Forgot Password Page -->
+    <h2>State 14: Forgot Password Page</h2>
+    <iframe id="frame-forgot-password" title="State 14: Forgot Password Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forgot Password</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-reset { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-reset w-100 m-auto text-center">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Forgot Your Password?</h1>
+                 <a href="#">BookRec</a>
+                <p class="mb-3">Enter your email address below, and we will send you a link to reset your password.</p>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                    <label for="floatingInput">Email address</label>
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Send Reset Link</button>
+                 <p class="mt-3 mb-1">
+                    Remembered your password? <a href="#">Login</a>
+                </p>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+    <!-- State 15: Forgot Password Confirmation Page -->
+    <h2>State 15: Forgot Password Confirmation Page</h2>
+    <iframe id="frame-forgot-confirm" title="State 15: Forgot Password Confirmation Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reset Link Sent</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .confirm-box { max-width: 500px; padding: 2rem; background-color: #fff; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) } </style>
+    </head>
+    <body>
+        <main class="confirm-box w-100 m-auto text-center">
+            <h1 class="h3 mb-3 fw-normal">Check Your Email</h1>
+            <p class="mb-4">If an account exists for <strong>user@example.com</strong>, you will receive an email with instructions on how to reset your password shortly.</p>
+            <p>Please check your inbox (and spam folder).</p>
+             <a href="#" class="btn btn-secondary mt-3">Return to Login</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+     <!-- State 16: Reset Password Page -->
+    <h2>State 16: Reset Password Page (Accessed via Link)</h2>
+    <iframe id="frame-reset-password" title="State 16: Reset Password Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reset Password</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style> body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; } .form-reset { max-width: 400px; padding: 1rem; } </style>
+    </head>
+    <body>
+        <main class="form-reset w-100 m-auto text-center">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Set New Password</h1>
+                 <a href="#">BookRec</a>
+                 <p class="mb-3">Enter and confirm your new password below.</p>
+
+                <div class="form-floating mb-2">
+                    <input type="password" class="form-control" id="newPassword" placeholder="New Password" required>
+                    <label for="newPassword">New Password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Confirm New Password" required>
+                    <label for="confirmNewPassword">Confirm New Password</label>
+                    <!-- Example validation state -->
+                     <!-- <div class="invalid-feedback d-block text-start">Passwords do not match.</div> -->
+                </div>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Reset Password</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2023 BookRec</p>
+            </form>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </body>
+    </html>'>
+    </iframe>
+
+
+</body>
+</html>

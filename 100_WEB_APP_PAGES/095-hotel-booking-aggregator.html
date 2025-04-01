@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Aggregator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 700px; /* Adjusted height for better visibility */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+         /* Basic styling for placeholder elements within iframes */
+        .placeholder-img {
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            height: 150px; /* Default placeholder height */
+            text-align: center;
+        }
+         .hotel-card-img {
+            height: 200px;
+            object-fit: cover;
+         }
+        .gallery-img {
+             height: 100px;
+             object-fit: cover;
+             cursor: pointer;
+         }
+         .main-gallery-img {
+             height: 400px;
+             object-fit: cover;
+         }
+         .provider-logo {
+             height: 30px;
+             width: auto;
+             vertical-align: middle;
+             margin-right: 10px;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Hotel Booking Aggregator - UI Flow</h1>
+
+        <!-- State 1: Home Page -->
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 56px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://via.placeholder.com/1500x500/888/fff?text=Hotel+View") center center; background-size: cover; color: white; padding: 100px 0; text-align: center; }
+        .search-form { background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 8px; margin-top: 20px; }
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Find Your Perfect Stay</h1>
+            <p class="lead">Compare prices from major booking sites in one search.</p>
+            <!-- Search Form -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <form class="search-form text-dark">
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label for="destination" class="form-label">Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="e.g., Paris, New York City">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="checkin" class="form-label">Check-in</label>
+                                <input type="date" class="form-control" id="checkin">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="checkout" class="form-label">Check-out</label>
+                                <input type="date" class="form-control" id="checkout">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="guests" class="form-label">Guests</label>
+                                <select id="guests" class="form-select">
+                                    <option selected>2 guests</option>
+                                    <option>1 guest</option>
+                                    <option>3 guests</option>
+                                    <option>4 guests</option>
+                                    <option>More...</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary w-100">Search Hotels</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Placeholder Content Sections -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Popular Destinations</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                     <div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <p class="card-text">Explore the city of lights and love.</p>
+                        <a href="#" class="btn btn-outline-primary">Find Hotels</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                     <div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tokyo</h5>
+                        <p class="card-text">Experience the vibrant culture of Japan.</p>
+                        <a href="#" class="btn btn-outline-primary">Find Hotels</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                 <div class="card">
+                     <div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Rome</h5>
+                        <p class="card-text">Discover ancient history and delicious food.</p>
+                        <a href="#" class="btn btn-outline-primary">Find Hotels</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+        <!-- State 2: Search Results Page -->
+        <h2>State 2: Search Results Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { padding-top: 70px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        .filter-sidebar { background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .hotel-card { background-color: #fff; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; }
+        .hotel-card-img { width: 250px; height: 200px; object-fit: cover; border-radius: 5px 0 0 5px; }
+        .hotel-card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .hotel-card .price-section { text-align: right; }
+        .star-rating .bi-star-fill { color: #ffc107; }
+        .star-rating .bi-star { color: #e9ecef; }
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+         .placeholder-img { background-color: #e9ecef; display: flex; align-items: center; justify-content: center; color: #6c757d; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <!-- Mini Search Form -->
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0">
+                    <input class="form-control me-2 form-control-sm" type="search" placeholder="Paris" aria-label="Destination">
+                    <input class="form-control me-2 form-control-sm" type="date" value="2024-08-15">
+                    <input class="form-control me-2 form-control-sm" type="date" value="2024-08-20">
+                    <select class="form-select form-select-sm me-2" style="width: 120px;">
+                        <option selected>2 guests</option>
+                        <option>1 guest</option>
+                    </select>
+                    <button class="btn btn-outline-light btn-sm" type="submit">Modify</button>
+                 </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3">
+                <div class="filter-sidebar">
+                    <h5>Filter Results</h5>
+                    <hr>
+                    <!-- Price Range -->
+                    <div>
+                        <h6>Price Range (per night)</h6>
+                        <label for="priceRange" class="form-label">Max Price: $<span id="priceValue">500</span></label>
+                        <input type="range" class="form-range" min="50" max="1000" step="10" id="priceRange" value="500" oninput="document.getElementById(\'priceValue\').textContent = this.value">
+                    </div>
+                    <hr>
+                    <!-- Star Rating -->
+                    <div>
+                        <h6>Star Rating</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="5star">
+                            <label class="form-check-label" for="5star">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> (5)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="4star" checked>
+                            <label class="form-check-label" for="4star">
+                               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> (4+)
+                            </label>
+                        </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="3star">
+                            <label class="form-check-label" for="3star">
+                               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i> (3+)
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                     <!-- Amenities -->
+                    <div>
+                        <h6>Amenities</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="wifi" checked>
+                            <label class="form-check-label" for="wifi">Free WiFi</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="pool">
+                            <label class="form-check-label" for="pool">Swimming Pool</label>
+                        </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="parking">
+                            <label class="form-check-label" for="parking">Parking</label>
+                        </div>
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="pets">
+                            <label class="form-check-label" for="pets">Pet Friendly</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-3">Apply Filters</button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="col-lg-9">
+                <h4>Showing Hotels in Paris (15 Aug - 20 Aug, 2 Guests)</h4>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Showing 1-10 of 45 results</span>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle btn-sm" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort by: Recommended
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                            <li><a class="dropdown-item" href="#">Recommended</a></li>
+                            <li><a class="dropdown-item" href="#">Price (Low to High)</a></li>
+                            <li><a class="dropdown-item" href="#">Price (High to Low)</a></li>
+                            <li><a class="dropdown-item" href="#">Rating (High to Low)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 1 -->
+                <div class="hotel-card">
+                     <div class="placeholder-img hotel-card-img">Hotel Image</div>
+                    <div class="hotel-card-body">
+                        <div>
+                            <h5 class="card-title">Grand City Hotel</h5>
+                            <div class="star-rating mb-2">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                                <span class="text-muted ms-1">(4.2 Rating)</span>
+                            </div>
+                            <p class="card-text text-muted small">Near Eiffel Tower - Free WiFi, Breakfast included</p>
+                        </div>
+                         <div class="price-section mt-3">
+                             <small>Prices from:</small>
+                             <div>
+                                 <span class="fw-bold fs-5 text-danger">$180</span><span class="text-muted">/night</span>
+                             </div>
+                             <span class="badge bg-light text-dark border me-1">Booking.com: $185</span>
+                             <span class="badge bg-light text-dark border me-1">Expedia: $180</span>
+                             <span class="badge bg-light text-dark border">Hotels.com: $190</span>
+                             <a href="#" class="btn btn-primary btn-sm mt-2">View Details</a>
+                         </div>
+                    </div>
+                </div>
+
+                 <!-- Hotel Card 2 -->
+                <div class="hotel-card">
+                    <div class="placeholder-img hotel-card-img">Hotel Image</div>
+                    <div class="hotel-card-body">
+                        <div>
+                            <h5 class="card-title">Riverside Boutique Inn</h5>
+                             <div class="star-rating mb-2">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-1">(4.8 Rating)</span>
+                            </div>
+                            <p class="card-text text-muted small">Charming inn by the river - Pool, Parking</p>
+                        </div>
+                        <div class="price-section mt-3">
+                             <small>Prices from:</small>
+                             <div>
+                                 <span class="fw-bold fs-5 text-danger">$250</span><span class="text-muted">/night</span>
+                             </div>
+                             <span class="badge bg-light text-dark border me-1">Agoda: $250</span>
+                             <span class="badge bg-light text-dark border">Booking.com: $260</span>
+                             <a href="#" class="btn btn-primary btn-sm mt-2">View Details</a>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Hotel Card 3 -->
+                <div class="hotel-card">
+                    <div class="placeholder-img hotel-card-img">Hotel Image</div>
+                     <div class="hotel-card-body">
+                         <div>
+                            <h5 class="card-title">Budget Stay Central</h5>
+                            <div class="star-rating mb-2">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                                <span class="text-muted ms-1">(2.9 Rating)</span>
+                            </div>
+                            <p class="card-text text-muted small">Affordable option, close to transport - Basic WiFi</p>
+                        </div>
+                         <div class="price-section mt-3">
+                             <small>Prices from:</small>
+                             <div>
+                                 <span class="fw-bold fs-5 text-danger">$85</span><span class="text-muted">/night</span>
+                             </div>
+                             <span class="badge bg-light text-dark border me-1">Hostelworld: $85</span>
+                             <span class="badge bg-light text-dark border">Booking.com: $90</span>
+                              <a href="#" class="btn btn-primary btn-sm mt-2">View Details</a>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation example" class="mt-4 d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+         <!-- State 3: Hotel Details Page -->
+        <h2>State 3: Hotel Details Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body { padding-top: 70px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        .hotel-header { background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .main-gallery-img { width: 100%; height: 400px; object-fit: cover; border-radius: 5px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; color: #6c757d; }
+        .thumb-gallery img { width: 100%; height: 80px; object-fit: cover; cursor: pointer; margin-top: 10px; border-radius: 3px; background-color: #e9ecef; }
+        .details-section { background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 20px; }
+        .price-comparison-table img.provider-logo { height: 25px; width: auto; vertical-align: middle; margin-right: 8px; }
+        .price-comparison-table td, .price-comparison-table th { vertical-align: middle; }
+        .map-placeholder { height: 300px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; color: #6c757d; border-radius: 5px; }
+        .star-rating .bi-star-fill { color: #ffc107; }
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+         .placeholder-img { background-color: #e9ecef; display: flex; align-items: center; justify-content: center; color: #6c757d; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Hotel Header -->
+        <div class="hotel-header">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <h1 class="h3">Grand City Hotel</h1>
+                    <p class="text-muted"><i class="bi bi-geo-alt-fill"></i> 123 Main Street, Paris, France</p>
+                     <div class="star-rating mb-2">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        <span class="ms-2">4.2 Stars</span>
+                     </div>
+                 </div>
+                 <div class="text-end">
+                     <small>Prices from</small>
+                     <div class="fw-bold fs-4 text-danger">$180 <span class="text-muted fs-6">/ night</span></div>
+                     <a href="#price-comparison" class="btn btn-sm btn-outline-primary mt-1">See Deals</a>
+                 </div>
+            </div>
+        </div>
+
+         <!-- Image Gallery -->
+         <div class="row">
+             <div class="col-md-8">
+                <div class="main-gallery-img mb-2">Main Hotel Image (Clickable Thumbnails Below)</div>
+             </div>
+             <div class="col-md-4">
+                <div class="row g-2 thumb-gallery">
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 1</div></div>
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 2</div></div>
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 3</div></div>
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 4</div></div>
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 5</div></div>
+                    <div class="col-4"><div class="placeholder-img" style="height: 80px;">Thumb 6</div></div>
+                </div>
+             </div>
+         </div>
+
+
+        <!-- Details Tabs -->
+        <div class="details-section mt-3">
+             <ul class="nav nav-tabs" id="hotelTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Overview</button>
+                </li>
+                 <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="prices-tab" data-bs-toggle="tab" data-bs-target="#prices" type="button" role="tab" aria-controls="prices" aria-selected="false">Prices & Deals</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="amenities-tab" data-bs-toggle="tab" data-bs-target="#amenities" type="button" role="tab" aria-controls="amenities" aria-selected="false">Amenities</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+                </li>
+                 <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab" aria-controls="location" aria-selected="false">Location</button>
+                </li>
+            </ul>
+            <div class="tab-content pt-3" id="hotelTabContent">
+                <!-- Overview Tab -->
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <h5>About Grand City Hotel</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                     <h6>Key Features:</h6>
+                    <ul>
+                        <li>Central Location near Eiffel Tower</li>
+                        <li>Free High-Speed WiFi</li>
+                        <li>Complimentary Breakfast Buffet</li>
+                        <li>Fitness Center</li>
+                    </ul>
+                </div>
+                 <!-- Prices Tab -->
+                <div class="tab-pane fade" id="prices" role="tabpanel" aria-labelledby="prices-tab">
+                     <h5 id="price-comparison">Compare Prices (15 Aug - 20 Aug, 2 Guests)</h5>
+                     <div class="table-responsive price-comparison-table mt-3">
+                         <table class="table table-hover table-bordered">
+                             <thead class="table-light">
+                                 <tr>
+                                     <th>Booking Site</th>
+                                     <th>Room Type</th>
+                                     <th>Includes</th>
+                                     <th>Total Price (5 nights)</th>
+                                     <th></th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td><img src="https://via.placeholder.com/80x25/ddd/000?text=Booking.com" alt="Booking.com Logo" class="provider-logo">Booking.com</td>
+                                     <td>Standard Double Room</td>
+                                     <td>Free cancellation, Breakfast</td>
+                                     <td class="fw-bold">$925</td>
+                                     <td><a href="#" class="btn btn-success btn-sm">Go to Site <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                 </tr>
+                                <tr>
+                                     <td><img src="https://via.placeholder.com/80x25/eee/000?text=Expedia" alt="Expedia Logo" class="provider-logo">Expedia</td>
+                                     <td>Standard Double Room</td>
+                                     <td>Non-refundable</td>
+                                      <td class="fw-bold text-danger">$900</td>
+                                     <td><a href="#" class="btn btn-success btn-sm">Go to Site <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                 </tr>
+                                 <tr>
+                                     <td><img src="https://via.placeholder.com/80x25/ccc/000?text=Hotels.com" alt="Hotels.com Logo" class="provider-logo">Hotels.com</td>
+                                     <td>Deluxe Double Room</td>
+                                     <td>Free cancellation, City view</td>
+                                     <td class="fw-bold">$1050</td>
+                                     <td><a href="#" class="btn btn-success btn-sm">Go to Site <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                 </tr>
+                                  <tr>
+                                     <td><img src="https://via.placeholder.com/80x25/bbb/000?text=Agoda" alt="Agoda Logo" class="provider-logo">Agoda</td>
+                                     <td>Standard Double Room</td>
+                                      <td>Pay at hotel, Breakfast</td>
+                                     <td class="fw-bold">$940</td>
+                                     <td><a href="#" class="btn btn-success btn-sm">Go to Site <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                         <small class="text-muted">*Prices are estimates for the selected dates and guests, taxes and fees may apply. Prices shown are total for the stay.</small>
+                     </div>
+                </div>
+                <!-- Amenities Tab -->
+                <div class="tab-pane fade" id="amenities" role="tabpanel" aria-labelledby="amenities-tab">
+                    <h5>Hotel Amenities</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><i class="bi bi-wifi text-primary"></i> Free WiFi</li>
+                                <li><i class="bi bi-cup-straw text-primary"></i> Restaurant & Bar</li>
+                                <li><i class="bi bi-p-square text-primary"></i> Parking Available (surcharge)</li>
+                                <li><i class="bi bi-person-arms-up text-primary"></i> Fitness Center</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                             <ul>
+                                <li><i class="bi bi-elevator text-primary"></i> Elevator</li>
+                                <li><i class="bi bi-wind text-primary"></i> Air Conditioning</li>
+                                <li><i class="bi bi-person-workspace text-primary"></i> Business Center</li>
+                                <li><i class="bi bi-translate text-primary"></i> Multilingual Staff</li>
+                            </ul>
+                        </div>
+                    </div>
+                      <h6 class="mt-3">Room Amenities</h6>
+                       <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><i class="bi bi-tv"></i> Flat-screen TV</li>
+                                <li><i class="bi bi-telephone"></i> Telephone</li>
+                                <li><i class="bi bi-safe"></i> In-room Safe</li>
+                             </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                 <li><i class="bi bi-snow"></i> Mini-fridge</li>
+                                 <li><i class="bi bi-droplet"></i> Private Bathroom</li>
+                                 <li><i class="bi bi-cup-hot"></i> Coffee/Tea Maker</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reviews Tab -->
+                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <h5>Guest Reviews (Overall: 4.2 / 5)</h5>
+                     <div class="border-bottom pb-3 mb-3">
+                         <h6>John D. - <span class="text-muted">Reviewed 2 days ago</span> <span class="star-rating ms-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></span></h6>
+                         <p>"Great location, very close to major attractions. Room was clean and comfortable. Breakfast was decent. Staff were helpful."</p>
+                     </div>
+                    <div class="border-bottom pb-3 mb-3">
+                         <h6>Maria S. - <span class="text-muted">Reviewed 1 week ago</span> <span class="star-rating ms-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span></h6>
+                         <p>"Absolutely loved our stay! The view from our room was amazing. Excellent service and amenities. Worth the price."</p>
+                    </div>
+                     <div class="pb-3 mb-3">
+                         <h6>Anonymous - <span class="text-muted">Reviewed 3 weeks ago</span> <span class="star-rating ms-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span></h6>
+                         <p>"It was okay. Room felt a bit small and dated. WiFi was slow at times. Location is convenient though."</p>
+                     </div>
+                     <button class="btn btn-outline-secondary">See All Reviews</button>
+                </div>
+                 <!-- Location Tab -->
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <h5>Location</h5>
+                     <p>Grand City Hotel, 123 Main Street, 75007 Paris, France</p>
+                    <div class="map-placeholder mb-3">Interactive Map Placeholder</div>
+                     <h6>Nearby Attractions:</h6>
+                    <ul>
+                        <li>Eiffel Tower (10 min walk)</li>
+                        <li>Champs de Mars (5 min walk)</li>
+                        <li>Seine River Cruises (15 min walk)</li>
+                        <li>Metro Station: École Militaire (5 min walk)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+        <!-- State 4: About Page -->
+        <h2>State 4: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 56px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+        .page-header { background-color: #e9ecef; padding: 40px 0; margin-bottom: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>About Hotel Booking Aggregator</h1>
+            <p class="lead">Simplifying your hotel search experience.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h2>Our Mission</h2>
+                <p>At Hotel Booking Aggregator, our mission is to save you time and money by bringing together hotel deals from top booking sites into one simple, easy-to-use platform. We believe finding the perfect hotel shouldn't be a chore.</p>
+
+                 <h2 class="mt-4">How It Works</h2>
+                 <p>We partner with leading online travel agencies and hotel providers. When you search on our site, we query our partners in real-time to find the latest prices and availability for your chosen destination and dates. We then present this information clearly, allowing you to compare options side-by-side and make an informed decision.</p>
+                <ol>
+                    <li><strong>Search:</strong> Enter your destination, travel dates, and number of guests.</li>
+                    <li><strong>Compare:</strong> Browse through the search results, filter by your preferences (price, rating, amenities), and see price comparisons from different sites for each hotel.</li>
+                    <li><strong>Book:</strong> Click on your preferred deal to be redirected to the partner booking site to complete your reservation securely.</li>
+                </ol>
+                 <p><strong>Please note:</strong> Hotel Booking Aggregator is a search and comparison engine. We do not handle bookings or payments directly. Your reservation is made with the booking site you choose.</p>
+
+                 <h2 class="mt-4">Why Choose Us?</h2>
+                 <ul>
+                    <li><strong>Comprehensive Search:</strong> Access deals from multiple major booking platforms.</li>
+                    <li><strong>Save Time:</strong> No need to check dozens of websites individually.</li>
+                    <li><strong>Save Money:</strong> Easily find the best available price for your desired hotel.</li>
+                    <li><strong>Transparent:</strong> We clearly show prices from different providers.</li>
+                    <li><strong>Free to Use:</strong> Our service is completely free for travelers.</li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+        <!-- State 5: Contact Page -->
+        <h2>State 5: Contact Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { padding-top: 56px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+        .page-header { background-color: #e9ecef; padding: 40px 0; margin-bottom: 30px; text-align: center; }
+        .contact-form { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .contact-info { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); height: 100%; } /* Ensure same height */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p class="lead">We are here to help. Get in touch with us!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <p class="text-muted small">For booking inquiries, please contact the booking provider directly. For questions about our website, use the form below.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                             <div class="invalid-feedback">
+                                Please provide a valid email address.
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                        </div>
+                         <button type="submit" class="btn btn-primary">Send Message</button>
+                         <!-- Placeholder for success/error message -->
+                         <div class="mt-3 d-none alert alert-success">Message sent successfully!</div>
+                         <div class="mt-3 d-none alert alert-danger">Failed to send message. Please try again.</div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                 <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us through the following channels:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                             <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                             <strong>Address:</strong><br>
+                             123 Aggregator Lane<br>
+                             Tech City, TC 54321<br>
+                             United States
+                        </li>
+                         <li class="mb-3">
+                            <i class="bi bi-envelope-fill text-primary me-2"></i>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:support@hotelaggregator.example.com">support@hotelaggregator.example.com</a>
+                        </li>
+                          <li class="mb-3">
+                            <i class="bi bi-telephone-fill text-primary me-2"></i>
+                            <strong>Phone:</strong><br>
+                             +1 (555) 123-4567 (Mon-Fri, 9am-5pm EST)
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-muted small">Please note: We cannot assist with specific booking modifications or cancellations. Contact the hotel or booking provider directly for such requests.</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+        <!-- State 6: Search Results - No Results -->
+        <h2>State 6: Search Results - No Results</h2>
+         <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { padding-top: 70px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        .filter-sidebar { background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .no-results-card { background-color: #fff; padding: 40px; text-align: center; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <!-- Mini Search Form -->
+                 <form class="d-flex ms-auto me-3 my-2 my-lg-0">
+                    <input class="form-control me-2 form-control-sm" type="search" placeholder="Mars Colony Alpha" aria-label="Destination" value="Mars Colony Alpha">
+                    <input class="form-control me-2 form-control-sm" type="date" value="2099-12-01">
+                    <input class="form-control me-2 form-control-sm" type="date" value="2099-12-05">
+                    <select class="form-select form-select-sm me-2" style="width: 120px;">
+                        <option selected>2 guests</option>
+                    </select>
+                    <button class="btn btn-outline-light btn-sm" type="submit">Modify</button>
+                 </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar (Optional: Could be hidden or shown) -->
+            <div class="col-lg-3">
+                <div class="filter-sidebar">
+                    <h5>Filter Results</h5>
+                    <hr>
+                    <p class="text-muted small">Adjust filters to broaden your search.</p>
+                     <!-- Filters (disabled or simplified) -->
+                     <div>
+                        <h6>Price Range (per night)</h6>
+                        <input type="range" class="form-range" disabled>
+                    </div>
+                    <hr>
+                    <div>
+                        <h6>Star Rating</h6>
+                         <div class="form-check disabled">
+                            <input class="form-check-input" type="checkbox" disabled>
+                            <label class="form-check-label text-muted">5 Stars</label>
+                        </div>
+                         <div class="form-check disabled">
+                            <input class="form-check-input" type="checkbox" disabled>
+                            <label class="form-check-label text-muted">4+ Stars</label>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="col-lg-9">
+                 <h4>Search Results for "Mars Colony Alpha" (01 Dec 2099 - 05 Dec 2099, 2 Guests)</h4>
+                 <div class="no-results-card mt-3">
+                     <i class="bi bi-search-heart fs-1 text-warning"></i>
+                     <h2 class="mt-3">No Hotels Found</h2>
+                     <p class="lead text-muted">We couldn't find any hotels matching your current search criteria.</p>
+                     <p>Try adjusting your dates, destination, or filters to find available properties.</p>
+                     <a href="#" class="btn btn-primary mt-3">Modify Search</a>
+                     <a href="#" class="btn btn-outline-secondary mt-3 ms-2">Back to Home</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+        <!-- State 7: Home Page - Validation Error -->
+        <h2>State 7: Home Page - Validation Error</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home (Validation Error) - Hotel Booking Aggregator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 56px; background-color: #f8f9fa; } /* Adjust for fixed navbar */
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://via.placeholder.com/1500x500/888/fff?text=Hotel+View") center center; background-size: cover; color: white; padding: 100px 0; text-align: center; }
+        .search-form { background-color: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 8px; margin-top: 20px; }
+        footer { background-color: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+        /* Custom validation styles */
+        .was-validated .form-control:invalid, .form-control.is-invalid { border-color: #dc3545; }
+        .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus { box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25); }
+        .invalid-feedback { display: block; /* Make feedback visible */ color: #dc3545; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hotel Aggregator</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Find Your Perfect Stay</h1>
+            <p class="lead">Compare prices from major booking sites in one search.</p>
+            <!-- Search Form with Validation Errors -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Added "was-validated" class to simulate validation state -->
+                    <form class="search-form text-dark was-validated">
+                        <div class="alert alert-danger small" role="alert">
+                          Please fix the errors below before searching.
+                        </div>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label for="destination" class="form-label">Destination</label>
+                                <!-- Invalid State: Empty Destination -->
+                                <input type="text" class="form-control is-invalid" id="destination" placeholder="e.g., Paris, New York City" required>
+                                <div class="invalid-feedback text-start">
+                                    Please enter a destination.
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="checkin" class="form-label">Check-in</label>
+                                <!-- Invalid State: Missing Date -->
+                                <input type="date" class="form-control is-invalid" id="checkin" required>
+                                 <div class="invalid-feedback text-start">
+                                    Check-in date is required.
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="checkout" class="form-label">Check-out</label>
+                                <!-- Invalid State: Checkout before Checkin (assuming JS would add this specific message) -->
+                                <input type="date" class="form-control is-invalid" id="checkout" required>
+                                 <div class="invalid-feedback text-start">
+                                    Check-out date must be after check-in date.
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="guests" class="form-label">Guests</label>
+                                <select id="guests" class="form-select" required>
+                                    <option selected>2 guests</option>
+                                    <option>1 guest</option>
+                                    <option>3 guests</option>
+                                    <option>4 guests</option>
+                                    <option>More...</option>
+                                </select>
+                                <!-- No specific validation shown here, but could be added -->
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary w-100">Search Hotels</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <!-- Placeholder Content Sections (Same as Home Page) -->
+    <section class="container mt-5">
+        <h2 class="text-center mb-4">Popular Destinations</h2>
+        <!-- Placeholder cards -->
+        <div class="row">
+             <div class="col-md-4 mb-3"><div class="card"><div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div><div class="card-body"><h5 class="card-title">Paris</h5><p class="card-text">Explore the city of lights.</p><a href="#" class="btn btn-outline-primary">Find Hotels</a></div></div></div>
+             <div class="col-md-4 mb-3"><div class="card"><div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div><div class="card-body"><h5 class="card-title">Tokyo</h5><p class="card-text">Experience vibrant culture.</p><a href="#" class="btn btn-outline-primary">Find Hotels</a></div></div></div>
+             <div class="col-md-4 mb-3"><div class="card"><div class="placeholder-img card-img-top" style="height: 200px;">Destination Image</div><div class="card-body"><h5 class="card-title">Rome</h5><p class="card-text">Discover ancient history.</p><a href="#" class="btn btn-outline-primary">Find Hotels</a></div></div></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2023 Hotel Booking Aggregator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+'></iframe>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

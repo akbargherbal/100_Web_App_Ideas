@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Registry (Universal) - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+        }
+        /* Common styles for iframe content */
+        .iframe-content {
+            padding: 20px;
+        }
+        .iframe-nav {
+             margin-bottom: 20px;
+        }
+         /* Simulate modal appearance within iframe */
+        .modal-backdrop-static {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+        }
+        .modal-dialog-static {
+            position: relative;
+            margin: 1.75rem auto;
+            z-index: 1050;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: .3rem;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
+            max-width: 500px; /* Default modal width */
+        }
+        .modal-content-static {
+            padding: 1rem;
+        }
+        .modal-header-static {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 1rem;
+        }
+         .modal-title-static {
+            margin-bottom: 0;
+            line-height: 1.5;
+            font-size: 1.25rem;
+        }
+         .modal-body-static {
+            position: relative;
+            flex: 1 1 auto;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+         }
+         .modal-footer-static {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: .75rem;
+            border-top: 1px solid #dee2e6;
+         }
+         .modal-footer-static > * {
+            margin: .25rem;
+         }
+         .btn-close-static {
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            border: 0;
+            border-radius: .25rem;
+            opacity: .5;
+            width: 1em;
+            height: 1em;
+            padding:0;
+         }
+    </style>
+</head>
+<body>
+
+    <h1>Gift Registry (Universal) - UI Flow</h1>
+
+    <!-- State 1: Home Page (Public, Logged Out) -->
+    <h2>State 1: Home Page (Public, Logged Out)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style> body { padding-top: 56px; /* Adjust based on navbar height */ } </style>
+        <title>Home</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="p-5 mb-4 bg-light rounded-3 text-center">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Your Registry, Your Way</h1>
+                    <p class="fs-4">Add gifts from any store on the web. Simple, flexible, and free.</p>
+                    <a href="#" class="btn btn-primary btn-lg" type="button">Get Started - Sign Up</a>
+                    <a href="#" class="btn btn-outline-secondary btn-lg ms-2" type="button">Learn More</a>
+                </div>
+            </div>
+
+            <div class="row align-items-md-stretch">
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 text-white bg-dark rounded-3">
+                        <h2>Add Anything</h2>
+                        <p>Found the perfect gift online? Just paste the link, and we ll add it to your registry. Works with virtually any online store.</p>
+                        <button class="btn btn-outline-light" type="button">How it Works</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>Share Easily</h2>
+                        <p>Get a unique link to share your registry with friends and family via email, social media, or invitations.</p>
+                        <button class="btn btn-outline-secondary" type="button">Example Registry</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="pt-3 mt-4 text-muted border-top">
+                &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 2: About Page (Public) -->
+    <h2>State 2: About Page (Public)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style> body { padding-top: 56px; } </style>
+        <title>About</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 class="mt-4 mb-3">About Universal Gift Registry</h1>
+                    <hr>
+                    <p class="lead">Tired of being locked into one store for your gift registry? So were we!</p>
+                    <p>Universal Gift Registry was created to give you the freedom to add items from literally anywhere on the internet. Whether it s a major retailer, a small boutique shop, or even a cash fund request, you can manage it all in one place.</p>
+                    <h3>Our Mission</h3>
+                    <p>To provide the most flexible and user-friendly gift registry experience, allowing users to curate their perfect wish list without limitations.</p>
+                    <h3>How It Works</h3>
+                    <ol>
+                        <li>Sign up for a free account.</li>
+                        <li>Create a new registry for your event (wedding, baby shower, birthday, etc.).</li>
+                        <li>Find items you love on any website.</li>
+                        <li>Copy the web address (URL) of the item page.</li>
+                        <li>Paste the URL into our "Add Item" tool. We ll try to grab the details automatically!</li>
+                        <li>Share your unique registry link with your guests.</li>
+                    </ol>
+                    <p>It s that simple! Guests can view your list and mark items as purchased, preventing duplicates.</p>
+
+                     <a href="#" class="btn btn-primary mt-3">Create Your Registry Now</a>
+                </div>
+            </div>
+
+            <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 3: Sign Up Page -->
+    <h2>State 3: Sign Up Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Sign Up</title>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2 active" aria-current="page" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="e.g., Jane Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="********" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="********" required>
+                            </div>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
+                              <label class="form-check-label" for="termsCheck">
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                              </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <p class="text-center mt-3 mb-0">Already have an account? <a href="#">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 4: Sign Up Page (Validation Errors) -->
+    <h2>State 4: Sign Up Page (Validation Errors)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Sign Up - Error</title>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2 active" aria-current="page" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Create Your Account</h2>
+                         <div class="alert alert-danger" role="alert">
+                          Please correct the errors below and try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="e.g., Jane Doe" value="Jane Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" value="jane.doe@mail" required>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                 </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="********" value="short" required>
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                 </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="********" value="notsame" required>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                 </div>
+                            </div>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input is-invalid" type="checkbox" value="" id="termsCheck" required>
+                              <label class="form-check-label" for="termsCheck">
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                              </label>
+                               <div class="invalid-feedback">
+                                    You must agree to the terms.
+                               </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <p class="text-center mt-3 mb-0">Already have an account? <a href="#">Log In</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 5: Login Page -->
+    <h2>State 5: Login Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Login</title>
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="********" required>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="small">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <p class="text-center mt-3 mb-0">Don t have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 6: Login Page (Authentication Error) -->
+    <h2>State 6: Login Page (Authentication Error)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Login - Error</title>
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                         <div class="alert alert-danger" role="alert">
+                           Invalid email or password. Please try again.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" value="user@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="********" required>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <a href="#" class="small">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                        <p class="text-center mt-3 mb-0">Don t have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 7: Forgot Password Page -->
+    <h2>State 7: Forgot Password Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Forgot Password</title>
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="card-title text-center mb-4">Reset Password</h2>
+                        <p class="text-muted text-center mb-4">Enter your email address and we ll send you a link to reset your password.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="resetEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="resetEmail" placeholder="name@example.com" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
+                        </form>
+                        <p class="text-center mt-3 mb-0"><a href="#">Back to Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 8: Forgot Password Confirmation Page -->
+    <h2>State 8: Forgot Password Confirmation Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Password Reset Sent</title>
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPublic">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarPublic">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container iframe-content d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4 p-md-5 text-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-check-circle-fill text-success mb-3" viewBox="0 0 16 16">
+                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                         </svg>
+                        <h2 class="card-title mb-3">Check Your Email</h2>
+                        <p class="text-muted">If an account exists for <strong>user@example.com</strong>, you will receive an email with instructions on how to reset your password shortly.</p>
+                         <p class="text-muted ">Didn t receive the email? Check your spam folder or <a href="#">try again</a>.</p>
+                        <a href="#" class="btn btn-secondary mt-3">Back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 9: Dashboard / My Registries (Logged In, Empty State) -->
+    <h2>State 9: Dashboard / My Registries (Logged In, Empty State)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style> body { padding-top: 56px; } </style>
+        <title>My Registries - Empty</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">My Registries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>My Registries</h1>
+                <a href="#" class="btn btn-primary">Create New Registry</a>
+            </div>
+
+            <div class="text-center p-5 border rounded bg-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-gift text-muted mb-3" viewBox="0 0 16 16">
+                  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v1.086a1.5 1.5 0 0 1-.417 1.043L11.16 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1.84a1.5 1.5 0 0 1-1.044-2.417L5.417 3.586A1.5 1.5 0 0 1 6 3.583V2.5zm6.917 7.417A1.5 1.5 0 0 1 11.84 9H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H1v-3a1 1 0 0 1 1-1h3.16a1.5 1.5 0 0 1 1.044-.583zm-1.84 0a.5.5 0 0 0-.5.5V13h-6V9.5a.5.5 0 0 0-.5-.5h-1A.5.5 0 0 0 0 9.5v3a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V13H9.5v-3a.5.5 0 0 0-.417-.5z"/>
+                </svg>
+                <h2>No Registries Yet!</h2>
+                <p class="lead text-muted">You haven t created any gift registries.</p>
+                <a href="#" class="btn btn-lg btn-success mt-3">Create Your First Registry</a>
+            </div>
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 10: Dashboard / My Registries (Logged In, With Registries) -->
+    <h2>State 10: Dashboard / My Registries (Logged In, With Registries)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style> body { padding-top: 56px; } .registry-card { transition: box-shadow .2s ease-in-out; } .registry-card:hover { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); } </style>
+        <title>My Registries</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">My Registries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>My Registries</h1>
+                <a href="#" class="btn btn-primary">Create New Registry</a>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Registry Card 1 -->
+                <div class="col">
+                    <div class="card h-100 registry-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Baby Shower for Alex</h5>
+                            <p class="card-text text-muted">Event Date: October 25, 2024</p>
+                            <p class="card-text flex-grow-1">Our little one is on the way! Find gift ideas here.</p>
+                             <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Public</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Registry</a>
+                            </div>
+                        </div>
+                         <div class="card-footer bg-transparent border-top-0 pt-0 text-end">
+                            <a href="#" class="text-secondary me-2" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="text-secondary me-2" title="Share"><i class="bi bi-share-fill"></i></a>
+                            <a href="#" class="text-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Registry Card 2 -->
+                <div class="col">
+                    <div class="card h-100 registry-card">
+                         <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Wedding Registry - Jane & John</h5>
+                            <p class="card-text text-muted">Event Date: December 15, 2024</p>
+                             <p class="card-text flex-grow-1">Celebrating our big day! Gifts are appreciated but not expected.</p>
+                             <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">Private</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Registry</a>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0 pt-0 text-end">
+                            <a href="#" class="text-secondary me-2" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="text-secondary me-2" title="Share"><i class="bi bi-share-fill"></i></a>
+                            <a href="#" class="text-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Registry Card 3 -->
+                <div class="col">
+                    <div class="card h-100 registry-card">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">My Birthday Wishlist</h5>
+                            <p class="card-text text-muted">Event Date: January 10, 2025</p>
+                            <p class="card-text flex-grow-1">Just a few things I ve been eyeing...</p>
+                             <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Public</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Registry</a>
+                            </div>
+                        </div>
+                         <div class="card-footer bg-transparent border-top-0 pt-0 text-end">
+                            <a href="#" class="text-secondary me-2" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                            <a href="#" class="text-secondary me-2" title="Share"><i class="bi bi-share-fill"></i></a>
+                            <a href="#" class="text-danger" title="Delete"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /row -->
+
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 11: Create New Registry Page -->
+    <h2>State 11: Create New Registry Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style> body { padding-top: 56px; } </style>
+        <title>Create Registry</title>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="mb-4">Create a New Registry</h1>
+                     <div class="card shadow-sm">
+                         <div class="card-body p-4">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="registryName" class="form-label">Registry Title <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="registryName" placeholder="e.g., Baby Shower for Alex, Our Wedding Registry" required>
+                                    <div class="form-text">This title will be visible to your guests.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label">Event Date (Optional)</label>
+                                    <input type="date" class="form-control" id="eventDate">
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="registryDescription" class="form-label">Welcome Message / Description (Optional)</label>
+                                    <textarea class="form-control" id="registryDescription" rows="3" placeholder="Add a short message for your guests..."></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registryVisibility" class="form-label">Visibility <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="registryVisibility" required>
+                                        <option value="public" selected>Public (Anyone with the link can view)</option>
+                                        <option value="private">Private (Only you can view - useful for personal wishlists initially)</option>
+                                    </select>
+                                     <div class="form-text">You can change this later.</div>
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="shippingAddress" class="form-label">Shipping Address (Optional)</label>
+                                    <textarea class="form-control" id="shippingAddress" rows="2" placeholder="Enter address where gifts should be sent"></textarea>
+                                      <div class="form-text">This address will be shared with guests who mark an item as purchased if they choose to view it.</div>
+                                </div>
+
+                                 <hr class="my-4">
+
+                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                     <a href="#" class="btn btn-outline-secondary">Cancel</a>
+                                     <button type="submit" class="btn btn-primary">Create Registry</button>
+                                 </div>
+                            </form>
+                         </div>
+                     </div>
+                </div>
+            </div>
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 12: Create New Registry Page (Validation Errors) -->
+    <h2>State 12: Create New Registry Page (Validation Errors)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style> body { padding-top: 56px; } </style>
+        <title>Create Registry - Error</title>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="mb-4">Create a New Registry</h1>
+                     <div class="alert alert-danger" role="alert">
+                          Please fix the required fields below.
+                     </div>
+                     <div class="card shadow-sm">
+                         <div class="card-body p-4">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="registryName" class="form-label">Registry Title <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control is-invalid" id="registryName" placeholder="e.g., Baby Shower for Alex, Our Wedding Registry" required>
+                                    <div class="invalid-feedback">
+                                        Registry title is required.
+                                    </div>
+                                    <div class="form-text">This title will be visible to your guests.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label">Event Date (Optional)</label>
+                                    <input type="date" class="form-control" id="eventDate">
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="registryDescription" class="form-label">Welcome Message / Description (Optional)</label>
+                                    <textarea class="form-control" id="registryDescription" rows="3" placeholder="Add a short message for your guests..."></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registryVisibility" class="form-label">Visibility <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="registryVisibility" required>
+                                        <option value="public" selected>Public (Anyone with the link can view)</option>
+                                        <option value="private">Private (Only you can view)</option>
+                                    </select>
+                                     <div class="form-text">You can change this later.</div>
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="shippingAddress" class="form-label">Shipping Address (Optional)</label>
+                                    <textarea class="form-control" id="shippingAddress" rows="2" placeholder="Enter address where gifts should be sent"></textarea>
+                                      <div class="form-text">This address will be shared with guests who mark an item as purchased if they choose to view it.</div>
+                                </div>
+
+                                 <hr class="my-4">
+
+                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                     <a href="#" class="btn btn-outline-secondary">Cancel</a>
+                                     <button type="submit" class="btn btn-primary">Create Registry</button>
+                                 </div>
+                            </form>
+                         </div>
+                     </div>
+                </div>
+            </div>
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 13: View Registry (Owner View - No Items) -->
+    <h2>State 13: View Registry (Owner View - No Items)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style> body { padding-top: 56px; } </style>
+        <title>View Registry - Empty</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                         <!-- Breadcrumb-like navigation for registry context -->
+                          <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="bg-light p-4 rounded mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h1 class="display-6">Baby Shower for Alex</h1>
+                        <p class="lead text-muted mb-1">Event Date: October 25, 2024</p>
+                        <p>Our little one is on the way! Find gift ideas here.</p>
+                    </div>
+                     <div class="text-end">
+                        <span class="badge bg-success mb-2">Public Registry</span><br>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i> Edit Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-share"></i> Share</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Gift Items</h2>
+                <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+            </div>
+
+             <div class="text-center p-5 border rounded bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-cart-plus text-muted mb-3" viewBox="0 0 16 16">
+                  <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 4 0h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 13.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+                <h2>Your registry is empty!</h2>
+                <p class="lead text-muted">Start adding gifts by clicking the button above.</p>
+                <a href="#" class="btn btn-lg btn-success mt-3"><i class="bi bi-plus-circle-fill"></i> Add Your First Item</a>
+            </div>
+
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 14: View Registry (Owner View - With Items) -->
+    <h2>State 14: View Registry (Owner View - With Items)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+            .item-actions { white-space: nowrap; }
+            .item-purchased { opacity: 0.6; background-color: #e9ecef; }
+            .item-purchased .btn-outline-success { display: none; } /* Hide purchase button if already purchased */
+        </style>
+        <title>View Registry - With Items</title>
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="bg-light p-4 rounded mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h1 class="display-6">Baby Shower for Alex</h1>
+                        <p class="lead text-muted mb-1">Event Date: October 25, 2024</p>
+                        <p>Our little one is on the way! Find gift ideas here.</p>
+                    </div>
+                     <div class="text-end">
+                        <span class="badge bg-success mb-2">Public Registry</span><br>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i> Edit Details</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-share"></i> Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Gift Items (3)</h2>
+                <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+            </div>
+
+            <!-- Item List -->
+            <div class="list-group">
+
+                <!-- Item 1 -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Plush Baby Stroller Toy</h5>
+                                    <small class="text-muted">Added: Sep 15, 2024</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5">$24.99</span>
+                            </div>
+                            <p class="mb-1 mt-2">Cute and soft spiral toy for the stroller handle. From Etsy.</p>
+                            <small class="text-muted">Desired Quantity: 1</small>
+                        </div>
+                        <div class="ms-3 text-end item-actions">
+                            <a href="#" class="btn btn-sm btn-outline-success mb-1 w-100 disabled">Mark Purchased <small>(By You)</small></a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mb-1 w-100"><i class="bi bi-pencil-fill"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100"><i class="bi bi-trash-fill"></i> Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 2 - Purchased by guest -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm item-purchased">
+                     <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                             <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Organic Cotton Onesies (Pack of 5)</h5>
+                                     <small class="text-muted">Added: Sep 10, 2024</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5">$35.00</span>
+                            </div>
+
+                             <p class="mb-1 mt-2">Soft and breathable onesies, size 0-3 months. From Target.com.</p>
+                             <small class="text-muted">Desired Quantity: 1</small>
+                             <div class="mt-2">
+                                <span class="badge bg-secondary"><i class="bi bi-check-circle-fill"></i> Purchased by Guest (M. Smith) on Sep 20</span>
+                            </div>
+                        </div>
+                         <div class="ms-3 text-end item-actions">
+                             <a href="#" class="btn btn-sm btn-outline-secondary mb-1 w-100"><i class="bi bi-arrow-counterclockwise"></i> Unmark</a>
+                             <a href="#" class="btn btn-sm btn-outline-primary mb-1 w-100"><i class="bi bi-pencil-fill"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100"><i class="bi bi-trash-fill"></i> Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 3 -->
+                 <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">High Contrast Baby Book</h5>
+                                    <small class="text-muted">Added: Sep 18, 2024</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5">$12.50</span>
+                            </div>
+                            <p class="mb-1 mt-2">Black and white board book for infant visual development. From Amazon.</p>
+                            <small class="text-muted">Desired Quantity: 1</small>
+                        </div>
+                        <div class="ms-3 text-end item-actions">
+                            <a href="#" class="btn btn-sm btn-outline-success mb-1 w-100">Mark Purchased <small>(By You)</small></a>
+                            <a href="#" class="btn btn-sm btn-outline-primary mb-1 w-100"><i class="bi bi-pencil-fill"></i> Edit</a>
+                            <a href="#" class="btn btn-sm btn-outline-danger w-100"><i class="bi bi-trash-fill"></i> Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /list-group -->
+
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 15: View Registry (Owner View - Add Item Modal Shown) -->
+    <h2>State 15: View Registry (Owner View - Add Item Modal Shown)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+            .item-actions { white-space: nowrap; }
+            .item-purchased { opacity: 0.6; background-color: #e9ecef; }
+            /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 600px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+            .modal-footer-static > * { margin: .25rem; }
+            .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>View Registry - Add Item</title>
+    </head>
+    <body>
+         <!-- Navbar -->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+            <div class="bg-light p-4 rounded mb-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h1 class="display-6">Baby Shower for Alex</h1>
+                        <p class="lead text-muted mb-1">Event Date: October 25, 2024</p>
+                        <p>Our little one is on the way! Find gift ideas here.</p>
+                    </div>
+                     <div class="text-end">
+                        <span class="badge bg-success mb-2">Public Registry</span><br>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i> Edit Details</a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-share"></i> Share</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Gift Items (3)</h2>
+                <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+            </div>
+
+            <!-- Item List (truncated for brevity) -->
+            <div class="list-group">
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                     <!-- Item 1 content -->
+                     <p>...</p>
+                 </div>
+                 <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm item-purchased">
+                     <!-- Item 2 content -->
+                     <p>...</p>
+                 </div>
+                 <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                     <!-- Item 3 content -->
+                     <p>...</p>
+                 </div>
+             </div>
+        </div><!-- /container -->
+
+        <!-- Static Modal Simulation -->
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static">
+            <div class="modal-content-static">
+                <div class="modal-header-static">
+                    <h5 class="modal-title-static" id="addItemModalLabel">Add Item to Registry</h5>
+                    <button type="button" class="btn-close-static" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-static">
+                    <form>
+                        <div class="mb-3">
+                            <label for="itemUrl" class="form-label">Item URL <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control" id="itemUrl" placeholder="https://www.example.com/product-page" required>
+                            <div class="form-text">Paste the full web address of the product page. We ll try to fetch the details automatically.</div>
+                        </div>
+                        <div class="text-center mb-3">
+                             <button type="button" class="btn btn-secondary">Fetch Details</button>
+                        </div>
+
+                        <hr>
+                        <p class="text-muted text-center small">Or, enter details manually:</p>
+
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Item Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="itemName" required>
+                        </div>
+                         <div class="row g-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="itemPrice" class="form-label">Price (Optional)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" step="0.01" class="form-control" id="itemPrice" placeholder="0.00">
+                                </div>
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="itemQuantity" class="form-label">Quantity Desired <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="itemQuantity" value="1" min="1" required>
+                            </div>
+                         </div>
+                         <div class="mb-3">
+                             <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                             <textarea class="form-control" id="itemNotes" rows="2" placeholder="e.g., Color preference: Blue, Size: Large"></textarea>
+                         </div>
+                         <div class="mb-3">
+                             <label for="itemImage" class="form-label">Image URL (Optional)</label>
+                            <input type="url" class="form-control" id="itemImage" placeholder="https://www.example.com/image.jpg">
+                         </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer-static">
+                    <button type="button" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-primary">Add Item</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Modal Simulation -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+            &copy; 2024 Universal Gift Registry
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+     <!-- State 16: View Registry (Owner View - Add Item Modal Error State) -->
+    <h2>State 16: View Registry (Owner View - Add Item Modal Error State)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+       <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+            .item-actions { white-space: nowrap; }
+            .item-purchased { opacity: 0.6; background-color: #e9ecef; }
+            /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 600px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+            .modal-footer-static > * { margin: .25rem; }
+            .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>View Registry - Add Item Error</title>
+    </head>
+    <body>
+         <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+            <div class="bg-light p-4 rounded mb-4">
+                 <!-- Header content --> <p>...</p>
+             </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2>Gift Items (3)</h2>
+                <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+            </div>
+             <!-- Item List (truncated) -->
+             <div class="list-group"> <p>...</p> </div>
+        </div><!-- /container -->
+
+        <!-- Static Modal Simulation with Errors -->
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static">
+            <div class="modal-content-static">
+                <div class="modal-header-static">
+                    <h5 class="modal-title-static" id="addItemModalLabel">Add Item to Registry</h5>
+                    <button type="button" class="btn-close-static" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-static">
+                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                       Could not automatically fetch details from the URL provided. Please enter manually or try a different URL.
+                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                     <form>
+                        <div class="mb-3">
+                            <label for="itemUrl" class="form-label">Item URL <span class="text-danger">*</span></label>
+                            <input type="url" class="form-control is-invalid" id="itemUrl" placeholder="https://www.example.com/product-page" value="invalid-or-unfetchable-url.com" required>
+                             <div class="invalid-feedback">
+                                Please enter a valid URL (e.g., https://...). Fetch failed for this URL.
+                             </div>
+                            <div class="form-text">Paste the full web address of the product page.</div>
+                        </div>
+                         <div class="text-center mb-3">
+                             <button type="button" class="btn btn-secondary">Fetch Details</button>
+                         </div>
+
+                        <hr>
+                        <p class="text-muted text-center small">Enter details manually:</p>
+
+                        <div class="mb-3">
+                            <label for="itemName" class="form-label">Item Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control is-invalid" id="itemName" required>
+                             <div class="invalid-feedback">
+                                Item Name is required.
+                             </div>
+                        </div>
+                         <div class="row g-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="itemPrice" class="form-label">Price (Optional)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" step="0.01" class="form-control" id="itemPrice" placeholder="0.00">
+                                </div>
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="itemQuantity" class="form-label">Quantity Desired <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="itemQuantity" value="1" min="1" required>
+                            </div>
+                         </div>
+                         <div class="mb-3">
+                             <label for="itemNotes" class="form-label">Notes (Optional)</label>
+                             <textarea class="form-control" id="itemNotes" rows="2" placeholder="e.g., Color preference: Blue, Size: Large"></textarea>
+                         </div>
+                          <div class="mb-3">
+                             <label for="itemImage" class="form-label">Image URL (Optional)</label>
+                             <input type="url" class="form-control" id="itemImage" placeholder="https://www.example.com/image.jpg">
+                         </div>
+                    </form>
+                </div>
+                <div class="modal-footer-static">
+                    <button type="button" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-primary">Add Item</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Modal Simulation -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+             &copy; 2024 Universal Gift Registry
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 17: View Registry (Owner View - Edit Item Modal Shown) -->
+    <h2>State 17: View Registry (Owner View - Edit Item Modal Shown)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+       <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+            .item-actions { white-space: nowrap; }
+            .item-purchased { opacity: 0.6; background-color: #e9ecef; }
+            /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 600px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+            .modal-footer-static > * { margin: .25rem; }
+            .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>View Registry - Edit Item</title>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+             <div class="bg-light p-4 rounded mb-4">
+                 <!-- Header content --> <p>...</p>
+             </div>
+             <div class="d-flex justify-content-between align-items-center mb-3">
+                 <h2>Gift Items (3)</h2>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+             </div>
+             <!-- Item List (truncated) -->
+              <div class="list-group"> <p>...</p> </div>
+        </div><!-- /container -->
+
+        <!-- Static Modal Simulation - Edit Item -->
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static">
+            <div class="modal-content-static">
+                <div class="modal-header-static">
+                    <h5 class="modal-title-static" id="editItemModalLabel">Edit Item</h5>
+                    <button type="button" class="btn-close-static" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-static">
+                    <form>
+                        <!-- Pre-filled form fields for the item being edited -->
+                        <div class="mb-3">
+                            <label for="editItemName" class="form-label">Item Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="editItemName" value="Plush Baby Stroller Toy" required>
+                        </div>
+                         <div class="row g-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="editItemPrice" class="form-label">Price (Optional)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" step="0.01" class="form-control" id="editItemPrice" placeholder="0.00" value="24.99">
+                                </div>
+                            </div>
+                             <div class="col-md-6 mb-3">
+                                <label for="editItemQuantity" class="form-label">Quantity Desired <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="editItemQuantity" value="1" min="1" required>
+                            </div>
+                         </div>
+                         <div class="mb-3">
+                             <label for="editItemNotes" class="form-label">Notes (Optional)</label>
+                             <textarea class="form-control" id="editItemNotes" rows="2" placeholder="e.g., Color preference: Blue, Size: Large">Cute and soft spiral toy for the stroller handle. From Etsy.</textarea>
+                         </div>
+                         <div class="mb-3">
+                            <label for="editItemUrl" class="form-label">Item URL (Optional)</label>
+                            <input type="url" class="form-control" id="editItemUrl" placeholder="https://www.example.com/product-page" value="https://www.etsy.com/example-stroller-toy">
+                         </div>
+                         <div class="mb-3">
+                             <label for="editItemImage" class="form-label">Image URL (Optional)</label>
+                            <input type="url" class="form-control" id="editItemImage" placeholder="https://www.example.com/image.jpg" value="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image">
+                         </div>
+                         <div class="mb-3 form-check">
+                             <input type="checkbox" class="form-check-input" id="markPurchasedSelf">
+                             <label class="form-check-label" for="markPurchasedSelf">Mark this item as purchased (by me)</label>
+                         </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer-static">
+                     <button type="button" class="btn btn-outline-danger me-auto">Delete Item</button>
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Modal Simulation -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+            &copy; 2024 Universal Gift Registry
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 18: Edit Registry Details Page -->
+    <h2>State 18: Edit Registry Details Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+         <style> body { padding-top: 56px; } </style>
+        <title>Edit Registry Details</title>
+    </head>
+    <body>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                         <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                         <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Edit Details</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="mb-4">Edit Registry Details</h1>
+                     <div class="card shadow-sm">
+                         <div class="card-body p-4">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="registryName" class="form-label">Registry Title <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="registryName" value="Baby Shower for Alex" placeholder="e.g., Baby Shower for Alex, Our Wedding Registry" required>
+                                    <div class="form-text">This title will be visible to your guests.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label">Event Date (Optional)</label>
+                                    <input type="date" class="form-control" id="eventDate" value="2024-10-25">
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="registryDescription" class="form-label">Welcome Message / Description (Optional)</label>
+                                    <textarea class="form-control" id="registryDescription" rows="3" placeholder="Add a short message for your guests...">Our little one is on the way! Find gift ideas here.</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registryVisibility" class="form-label">Visibility <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="registryVisibility" required>
+                                        <option value="public" selected>Public (Anyone with the link can view)</option>
+                                        <option value="private">Private (Only you can view)</option>
+                                    </select>
+                                     <div class="form-text">You can change this later.</div>
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="shippingAddress" class="form-label">Shipping Address (Optional)</label>
+                                    <textarea class="form-control" id="shippingAddress" rows="2" placeholder="Enter address where gifts should be sent">123 Main St, Anytown, USA 12345</textarea>
+                                      <div class="form-text">This address will be shared with guests who mark an item as purchased if they choose to view it.</div>
+                                </div>
+
+                                 <hr class="my-4">
+
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete Registry</button>
+                                     <div>
+                                        <a href="#" class="btn btn-outline-secondary me-2">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                 </div>
+                            </form>
+                         </div>
+                     </div>
+                </div>
+            </div>
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 19: Edit Registry Details Page (Validation Errors) -->
+    <h2>State 19: Edit Registry Details Page (Validation Errors)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+         <style> body { padding-top: 56px; } </style>
+        <title>Edit Registry Details - Error</title>
+    </head>
+    <body>
+           <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                         <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                         <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Edit Details</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <h1 class="mb-4">Edit Registry Details</h1>
+                     <div class="alert alert-danger" role="alert">
+                         Please fix the required fields below.
+                     </div>
+                     <div class="card shadow-sm">
+                         <div class="card-body p-4">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="registryName" class="form-label">Registry Title <span class="text-danger">*</span></label>
+                                    <!-- Error state shown -->
+                                    <input type="text" class="form-control is-invalid" id="registryName" value="" placeholder="e.g., Baby Shower for Alex, Our Wedding Registry" required>
+                                     <div class="invalid-feedback">
+                                        Registry title cannot be empty.
+                                    </div>
+                                    <div class="form-text">This title will be visible to your guests.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="eventDate" class="form-label">Event Date (Optional)</label>
+                                    <input type="date" class="form-control" id="eventDate" value="2024-10-25">
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="registryDescription" class="form-label">Welcome Message / Description (Optional)</label>
+                                    <textarea class="form-control" id="registryDescription" rows="3" placeholder="Add a short message for your guests...">Our little one is on the way! Find gift ideas here.</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="registryVisibility" class="form-label">Visibility <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="registryVisibility" required>
+                                        <option value="public" selected>Public (Anyone with the link can view)</option>
+                                        <option value="private">Private (Only you can view)</option>
+                                    </select>
+                                     <div class="form-text">You can change this later.</div>
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label for="shippingAddress" class="form-label">Shipping Address (Optional)</label>
+                                    <textarea class="form-control" id="shippingAddress" rows="2" placeholder="Enter address where gifts should be sent">123 Main St, Anytown, USA 12345</textarea>
+                                      <div class="form-text">This address will be shared with guests who mark an item as purchased if they choose to view it.</div>
+                                </div>
+
+                                 <hr class="my-4">
+
+                                 <div class="d-flex justify-content-between align-items-center">
+                                     <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i> Delete Registry</button>
+                                     <div>
+                                        <a href="#" class="btn btn-outline-secondary me-2">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                 </div>
+                            </form>
+                         </div>
+                     </div>
+                </div>
+            </div>
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 &copy; 2024 Universal Gift Registry
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 20: View Registry (Owner View - Share Modal Shown) -->
+    <h2>State 20: View Registry (Owner View - Share Modal Shown)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+       <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+            .item-actions { white-space: nowrap; }
+            /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 500px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+            .modal-footer-static > * { margin: .25rem; }
+            .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>View Registry - Share</title>
+    </head>
+    <body>
+         <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top iframe-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLoggedIn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarLoggedIn">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">My Registries</a></li>
+                        <li class="nav-item"><span class="navbar-text text-white-50 mx-2">&gt;</span></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Baby Shower for Alex</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jane Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+             <div class="bg-light p-4 rounded mb-4">
+                 <!-- Header content --> <p>...</p>
+             </div>
+             <div class="d-flex justify-content-between align-items-center mb-3">
+                 <h2>Gift Items (3)</h2>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Add Item by URL</a>
+             </div>
+             <!-- Item List (truncated) -->
+              <div class="list-group"> <p>...</p> </div>
+        </div><!-- /container -->
+
+        <!-- Static Modal Simulation - Share -->
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static">
+            <div class="modal-content-static">
+                <div class="modal-header-static">
+                    <h5 class="modal-title-static" id="shareModalLabel">Share Your Registry</h5>
+                    <button type="button" class="btn-close-static" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-static">
+                    <p>Share this link with your friends and family:</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" value="https://uniregistry.com/view/r/aB3cD9xY" readonly id="shareLinkInput">
+                        <button class="btn btn-outline-secondary" type="button" id="copyLinkBtn"><i class="bi bi-clipboard"></i> Copy</button>
+                    </div>
+                    <div id="copyFeedback" class="text-success small" style="display: none;">Link copied to clipboard!</div>
+
+                    <p class="mt-4">Or share directly via:</p>
+                     <div class="d-flex justify-content-center gap-3">
+                         <a href="#" class="btn btn-outline-primary btn-lg"><i class="bi bi-envelope-fill"></i> <span class="visually-hidden">Email</span></a>
+                         <a href="#" class="btn btn-outline-primary btn-lg"><i class="bi bi-facebook"></i> <span class="visually-hidden">Facebook</span></a>
+                         <a href="#" class="btn btn-outline-primary btn-lg"><i class="bi bi-twitter"></i> <span class="visually-hidden">Twitter</span></a>
+                         <a href="#" class="btn btn-outline-primary btn-lg"><i class="bi bi-whatsapp"></i> <span class="visually-hidden">Whatsapp</span></a>
+                     </div>
+
+                     <hr class="my-4">
+                      <div class="form-check form-switch">
+                         <input class="form-check-input" type="checkbox" role="switch" id="registryVisibilitySwitch" checked>
+                         <label class="form-check-label" for="registryVisibilitySwitch">Registry is currently Public <span class="text-muted">(Anyone with link can view)</span></label>
+                     </div>
+                      <a href="#" class="small d-block mt-1">Change visibility settings</a>
+
+                </div>
+                <div class="modal-footer-static">
+                    <button type="button" class="btn btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Modal Simulation -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+             &copy; 2024 Universal Gift Registry
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 21: Guest View Registry (Public Link) -->
+    <h2>State 21: Guest View Registry (Public Link)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+             .item-purchased { opacity: 0.7; background-color: #f8f9fa; }
+             .item-purchased .btn-outline-success { display: none; } /* Hide purchase button */
+             .item-purchased .btn-link { display: none; } /* Hide store link */
+             .purchased-badge { margin-left: auto; }
+        </style>
+        <title>Guest View - Baby Shower for Alex</title>
+    </head>
+    <body>
+         <!-- Simplified public nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top iframe-nav border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <span class="navbar-text ms-auto">
+                    Viewing a shared registry. <a href="#">Create your own?</a>
+                 </span>
+            </div>
+        </nav>
+
+        <div class="container iframe-content">
+            <!-- Registry Header -->
+            <div class="bg-white p-4 rounded mb-4 border shadow-sm">
+                <div class="text-center">
+                    <h1 class="display-6">Baby Shower for Alex</h1>
+                    <p class="lead text-muted mb-1">Event Date: October 25, 2024</p>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gift-fill text-primary my-2" viewBox="0 0 16 16">
+                       <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v1.086a1.5 1.5 0 0 1-.417 1.043L11.16 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3.84l-1.44-1.44A1.5 1.5 0 0 1 3 3.586V2.5zm3 11.5a1.5 1.5 0 0 1-3 0V9.5a1.5 1.5 0 0 1 3 0v4.5zm6.001-4.5a1.5 1.5 0 0 1 3 0v4.5a1.5 1.5 0 0 1-3 0V9.5z"/>
+                     </svg>
+                    <p class="mt-2 fst-italic">"Our little one is on the way! Find gift ideas here." - Jane Doe</p>
+                </div>
+            </div>
+
+            <!-- Item Filters/Sorting (Optional) -->
+             <div class="d-flex justify-content-end mb-3">
+                 <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort by: Date Added
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Date Added</a></li>
+                        <li><a class="dropdown-item" href="#">Price (Low to High)</a></li>
+                        <li><a class="dropdown-item" href="#">Price (High to Low)</a></li>
+                        <li><a class="dropdown-item" href="#">Availability</a></li>
+                    </ul>
+                </div>
+             </div>
+
+            <!-- Item List -->
+            <div class="list-group">
+
+                <!-- Item 1 -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Plush Baby Stroller Toy</h5>
+                                    <small class="text-muted">Desired: 1</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5">$24.99</span>
+                            </div>
+                            <p class="mb-1 mt-2">Cute and soft spiral toy for the stroller handle. From Etsy.</p>
+                             <a href="https://www.etsy.com/example-stroller-toy" target="_blank" class="btn btn-link p-0 btn-sm">View on Etsy <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                         <div class="ms-3 text-end d-flex flex-column justify-content-center">
+                            <a href="#" class="btn btn-sm btn-outline-success">Mark as Purchased</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 2 - Purchased -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm item-purchased">
+                     <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                             <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Organic Cotton Onesies (Pack of 5)</h5>
+                                    <small class="text-muted">Desired: 1</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5 text-decoration-line-through">$35.00</span>
+                             </div>
+                             <p class="mb-1 mt-2">Soft and breathable onesies, size 0-3 months. From Target.com.</p>
+                             <a href="https://target.com/example-onesies" target="_blank" class="btn btn-link p-0 btn-sm">View on Target.com <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                         <div class="ms-3 text-end d-flex flex-column justify-content-center purchased-badge">
+                            <span class="badge bg-secondary"><i class="bi bi-check-circle-fill"></i> Already Purchased</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 3 -->
+                 <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">High Contrast Baby Book</h5>
+                                    <small class="text-muted">Desired: 1</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5">$12.50</span>
+                            </div>
+                            <p class="mb-1 mt-2">Black and white board book for infant visual development. From Amazon.</p>
+                             <a href="https://amazon.com/example-book" target="_blank" class="btn btn-link p-0 btn-sm">View on Amazon <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                         <div class="ms-3 text-end d-flex flex-column justify-content-center">
+                            <a href="#" class="btn btn-sm btn-outline-success">Mark as Purchased</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /list-group -->
+
+             <footer class="pt-3 mt-4 text-muted border-top">
+                 Powered by Universal Gift Registry &copy; 2024
+            </footer>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 22: Guest View Registry (Mark as Purchased Modal Shown) -->
+    <h2>State 22: Guest View Registry (Mark as Purchased Modal Shown)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+       <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+             /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 500px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+            .modal-footer-static > * { margin: .25rem; }
+            .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>Guest View - Mark Purchased</title>
+    </head>
+    <body>
+        <!-- Simplified public nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top iframe-nav border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <span class="navbar-text ms-auto">
+                    Viewing a shared registry. <a href="#">Create your own?</a>
+                 </span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+             <div class="bg-white p-4 rounded mb-4 border shadow-sm">
+                 <!-- Header content --> <p>...</p>
+             </div>
+             <!-- Item List (truncated) -->
+              <div class="list-group">
+                <!-- Item 1 (The one being marked) -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                            <h5 class="mb-1">Plush Baby Stroller Toy</h5>...
+                         </div>
+                         <div class="ms-3 text-end d-flex flex-column justify-content-center">
+                            <a href="#" class="btn btn-sm btn-outline-success">Mark as Purchased</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Other items... -->
+                <p>...</p>
+              </div>
+        </div><!-- /container -->
+
+        <!-- Static Modal Simulation - Mark as Purchased -->
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static">
+            <div class="modal-content-static">
+                <div class="modal-header-static">
+                    <h5 class="modal-title-static" id="markPurchasedModalLabel">Mark Item as Purchased</h5>
+                    <button type="button" class="btn-close-static" aria-label="Close"></button>
+                </div>
+                <div class="modal-body-static">
+                    <p>You are about to mark the following item as purchased to prevent duplicates:</p>
+                     <div class="card mb-3">
+                         <div class="card-body d-flex align-items-center">
+                             <img src="https://via.placeholder.com/50x50/dee2e6/6c757d.png?text=Img" alt="Item" class="me-3">
+                             <div>
+                                <h6 class="card-title mb-0">Plush Baby Stroller Toy</h6>
+                                <small class="text-muted">$24.99</small>
+                             </div>
+                         </div>
+                     </div>
+                     <p>Please provide your name so the registry owner knows who purchased this item (optional).</p>
+                     <form>
+                        <div class="mb-3">
+                            <label for="purchaserName" class="form-label">Your Name (Optional)</label>
+                            <input type="text" class="form-control" id="purchaserName" placeholder="e.g., Mary Smith">
+                        </div>
+                         <div class="mb-3">
+                             <label for="purchaseDate" class="form-label">Purchase Date (Optional)</label>
+                            <input type="date" class="form-control" id="purchaseDate">
+                        </div>
+                        <div class="alert alert-info small">
+                            <i class="bi bi-info-circle-fill"></i> This action only updates the registry list. You still need to purchase the item from the original retailer (<a href="https://www.etsy.com/example-stroller-toy" target="_blank">Etsy <i class="bi bi-box-arrow-up-right"></i></a>).
+                         </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="confirmPurchaseCheck" required>
+                              <label class="form-check-label" for="confirmPurchaseCheck">
+                                I confirm I have purchased or intend to purchase this item.
+                              </label>
+                            </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer-static">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="button" class="btn btn-success">Confirm Purchase on Registry</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Static Modal Simulation -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+             Powered by Universal Gift Registry &copy; 2024
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+    <!-- State 23: Guest View Registry (Mark as Purchased Confirmation Screen/Modal) -->
+    <h2>State 23: Guest View Registry (Mark as Purchased Confirmation Screen/Modal)</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+       <style>
+            body { padding-top: 56px; }
+            .item-card img { max-height: 100px; width: auto; max-width: 100%; object-fit: contain; margin-right: 15px;}
+            .item-card .card-body { padding: 1rem; }
+             .item-purchased { opacity: 0.7; background-color: #f8f9fa; }
+             .item-purchased .btn-outline-success { display: none; }
+             .item-purchased .btn-link { display: none; }
+             .purchased-badge { margin-left: auto; }
+              /* Static modal styles */
+            .modal-backdrop-static { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1040; display: block; }
+            .modal-dialog-static { position: relative; margin: 1.75rem auto; z-index: 1050; background-color: #fff; border: 1px solid rgba(0,0,0,.2); border-radius: .3rem; box-shadow: 0 .5rem 1rem rgba(0,0,0,.5); max-width: 500px; top: 50px; /* Adjust position */ }
+            .modal-content-static { padding: 1rem; }
+            .modal-header-static { display: flex; justify-content: space-between; align-items: center; padding-bottom: .5rem; border-bottom: 1px solid #dee2e6; margin-bottom: 1rem; }
+            .modal-title-static { margin-bottom: 0; line-height: 1.5; font-size: 1.25rem; }
+            .modal-body-static { position: relative; flex: 1 1 auto; padding-top: 1rem; padding-bottom: 1rem; text-align: center; }
+            .modal-footer-static { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding-top: .75rem; border-top: 1px solid #dee2e6; }
+             .btn-close-static { background: transparent url("data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23000"%3e%3cpath d="M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"/%3e%3c/svg%3e") center/1em auto no-repeat; border: 0; border-radius: .25rem; opacity: .5; width: 1em; height: 1em; padding:0; }
+        </style>
+        <title>Guest View - Purchase Confirmed</title>
+    </head>
+    <body>
+        <!-- Simplified public nav -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top iframe-nav border-bottom">
+            <div class="container">
+                <a class="navbar-brand" href="#">Universal Gift Registry</a>
+                 <span class="navbar-text ms-auto">
+                    Viewing a shared registry. <a href="#">Create your own?</a>
+                 </span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area - Showing updated list -->
+        <div class="container iframe-content">
+             <!-- Registry Header -->
+            <div class="bg-white p-4 rounded mb-4 border shadow-sm">
+                <!-- Header content --> <p>...</p>
+            </div>
+            <div class="alert alert-success" role="alert">
+                <i class="bi bi-check-circle-fill"></i> Success! You marked "Plush Baby Stroller Toy" as purchased. Thank you!
+            </div>
+            <!-- Item List -->
+            <div class="list-group">
+
+                <!-- Item 1 - Now marked as purchased -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm item-purchased">
+                    <div class="d-flex w-100">
+                        <img src="https://via.placeholder.com/100x100/dee2e6/6c757d.png?text=Item+Image" alt="Item Image Placeholder">
+                        <div class="flex-grow-1">
+                             <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h5 class="mb-1">Plush Baby Stroller Toy</h5>
+                                     <small class="text-muted">Desired: 1</small>
+                                </div>
+                                <span class="text-primary fw-bold fs-5 text-decoration-line-through">$24.99</span>
+                             </div>
+                             <p class="mb-1 mt-2">Cute and soft spiral toy for the stroller handle. From Etsy.</p>
+                             <a href="https://www.etsy.com/example-stroller-toy" target="_blank" class="btn btn-link p-0 btn-sm">View on Etsy <i class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                         <div class="ms-3 text-end d-flex flex-column justify-content-center purchased-badge">
+                            <span class="badge bg-secondary"><i class="bi bi-check-circle-fill"></i> Purchased by Mary Smith</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item 2 - Purchased -->
+                <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm item-purchased">
+                     <!-- Item 2 content --> <p>...</p>
+                </div>
+
+                 <!-- Item 3 -->
+                 <div class="list-group-item list-group-item-action item-card mb-3 shadow-sm">
+                    <!-- Item 3 content --> <p>...</p>
+                 </div>
+
+            </div> <!-- /list-group -->
+        </div> <!-- /container -->
+
+
+        <!-- Optional: Confirmation shown as a brief modal overlay instead of alert on page -->
+        <!--
+        <div class="modal-backdrop-static"></div>
+        <div class="modal-dialog-static modal-dialog-centered">
+            <div class="modal-content-static">
+                 <div class="modal-header-static border-0">
+                    <h5 class="modal-title-static w-100 text-center" id="confirmModalLabel">Purchase Marked!</h5>
+                     <button type="button" class="btn-close-static" aria-label="Close"></button>
+                 </div>
+                <div class="modal-body-static">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-check-circle-fill text-success mb-3" viewBox="0 0 16 16">
+                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                     </svg>
+                     <p>Thank you, Mary Smith! The item "Plush Baby Stroller Toy" has been marked as purchased on the registry.</p>
+                </div>
+                 <div class="modal-footer-static border-0">
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+        -->
+
+         <footer class="pt-3 mt-4 text-muted border-top container">
+             Powered by Universal Gift Registry &copy; 2024
+         </footer>
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'></iframe>
+
+
+</body>
+</html>

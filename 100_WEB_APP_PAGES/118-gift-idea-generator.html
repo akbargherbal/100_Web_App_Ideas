@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Idea Generator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+            color: #495057;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height, adjust as needed */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .iframe-container {
+            margin-bottom: 40px;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">Gift Idea Generator - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="iframe-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Home</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <div class="px-4 py-5 my-5 text-center">
+                <h1 class="display-5 fw-bold">Find the Perfect Gift, Effortlessly</h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4">Tell us about the recipient, and our AI-powered generator will suggest thoughtful and personalized gift ideas in seconds. Stop stressing, start gifting!</p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Get Started</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-auto">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Input Form -->
+    <div class="iframe-container">
+        <h2>State 2: Input Form</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Input Details</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <h2 class="mb-4 text-center">Tell Us About the Recipient</h2>
+              <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="age" class="form-label">Age Range</label>
+                    <select class="form-select" id="age" required>
+                      <option selected disabled value="">Choose...</option>
+                      <option>Under 10</option>
+                      <option>10-17</option>
+                      <option>18-25</option>
+                      <option>26-35</option>
+                      <option>36-50</option>
+                      <option>51-65</option>
+                      <option>65+</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select an age range.
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender">
+                      <option selected disabled value="">Choose...</option>
+                      <option>Female</option>
+                      <option>Male</option>
+                      <option>Other / Prefer not to say</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="occasion" class="form-label">Occasion</label>
+                    <input type="text" class="form-control" id="occasion" placeholder="e.g., Birthday, Anniversary, Christmas" required>
+                     <div class="invalid-feedback">
+                      Please provide the occasion.
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="interests" class="form-label">Interests (select up to 3)</label>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest1" value="tech">
+                        <label class="form-check-label" for="interest1">Tech/Gadgets</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest2" value="books">
+                        <label class="form-check-label" for="interest2">Books/Reading</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest3" value="travel">
+                        <label class="form-check-label" for="interest3">Travel</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest4" value="cooking">
+                        <label class="form-check-label" for="interest4">Cooking/Food</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest5" value="sports">
+                        <label class="form-check-label" for="interest5">Sports/Fitness</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest6" value="gaming">
+                        <label class="form-check-label" for="interest6">Gaming</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest7" value="fashion">
+                        <label class="form-check-label" for="interest7">Fashion/Beauty</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest8" value="art">
+                        <label class="form-check-label" for="interest8">Art/Crafts</label>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="col-md-6">
+                    <label for="budget" class="form-label">Budget</label>
+                    <select class="form-select" id="budget" required>
+                      <option selected disabled value="">Choose...</option>
+                      <option>$ (Under $25)</option>
+                      <option>$$ ($25 - $50)</option>
+                      <option>$$$ ($50 - $100)</option>
+                      <option>$$$$ ($100+)</option>
+                      <option>Any</option>
+                    </select>
+                     <div class="invalid-feedback">
+                      Please select a budget range.
+                    </div>
+                  </div>
+
+                   <div class="col-12 mt-4 text-center">
+                     <button class="btn btn-primary btn-lg" type="submit">Generate Gift Ideas</button>
+                   </div>
+                </div>
+              </form>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Input Form - Validation Error -->
+    <div class="iframe-container">
+        <h2>State 3: Input Form - Validation Error</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Input Details - Error</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <div class="alert alert-danger" role="alert">
+                Please fix the errors below before submitting.
+              </div>
+              <h2 class="mb-4 text-center">Tell Us About the Recipient</h2>
+              <form class="was-validated" novalidate> <!-- Use was-validated to show errors -->
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="age" class="form-label">Age Range</label>
+                    <select class="form-select is-invalid" id="age" required> <!-- is-invalid class added -->
+                      <option selected disabled value="">Choose...</option>
+                      <option>Under 10</option>
+                      <option>10-17</option>
+                      <option>18-25</option>
+                      <option>26-35</option>
+                      <option>36-50</option>
+                      <option>51-65</option>
+                      <option>65+</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select an age range.
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender">
+                      <option selected disabled value="">Choose...</option>
+                      <option>Female</option>
+                      <option>Male</option>
+                      <option>Other / Prefer not to say</option>
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="occasion" class="form-label">Occasion</label>
+                    <input type="text" class="form-control is-invalid" id="occasion" placeholder="e.g., Birthday, Anniversary, Christmas" required> <!-- is-invalid class added -->
+                     <div class="invalid-feedback">
+                      Please provide the occasion.
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="interests" class="form-label">Interests (select up to 3)</label>
+                    <div>
+                      <!-- Checkboxes remain the same visually unless specific validation needed -->
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest1" value="tech">
+                        <label class="form-check-label" for="interest1">Tech/Gadgets</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest2" value="books">
+                        <label class="form-check-label" for="interest2">Books/Reading</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest3" value="travel" checked>
+                        <label class="form-check-label" for="interest3">Travel</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest4" value="cooking">
+                        <label class="form-check-label" for="interest4">Cooking/Food</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest5" value="sports">
+                        <label class="form-check-label" for="interest5">Sports/Fitness</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest6" value="gaming">
+                        <label class="form-check-label" for="interest6">Gaming</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest7" value="fashion">
+                        <label class="form-check-label" for="interest7">Fashion/Beauty</label>
+                      </div>
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="interest8" value="art">
+                        <label class="form-check-label" for="interest8">Art/Crafts</label>
+                      </div>
+                    </div>
+                  </div>
+
+                   <div class="col-md-6">
+                    <label for="budget" class="form-label">Budget</label>
+                    <select class="form-select is-invalid" id="budget" required> <!-- is-invalid class added -->
+                      <option selected disabled value="">Choose...</option>
+                      <option>$ (Under $25)</option>
+                      <option>$$ ($25 - $50)</option>
+                      <option>$$$ ($50 - $100)</option>
+                      <option>$$$$ ($100+)</option>
+                       <option>Any</option>
+                    </select>
+                     <div class="invalid-feedback">
+                      Please select a budget range.
+                    </div>
+                  </div>
+
+                   <div class="col-12 mt-4 text-center">
+                     <button class="btn btn-primary btn-lg" type="submit">Generate Gift Ideas</button>
+                   </div>
+                </div>
+              </form>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Loading State -->
+    <div class="iframe-container">
+        <h2>State 4: Loading State</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Loading</title>
+            <style>
+              html, body { height: 100%; }
+              body { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+              .spinner-border { width: 3rem; height: 3rem; }
+            </style>
+        </head>
+        <body>
+            <div class="d-flex flex-column align-items-center">
+              <div class="spinner-border text-primary mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h4>Generating amazing gift ideas...</h4>
+              <p class="text-muted">Just a moment!</p>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        ' style="height: 400px;"></iframe>
+    </div>
+
+    <!-- State 5: Results Page -->
+    <div class="iframe-container">
+        <h2>State 5: Results Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Gift Ideas</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                 <h2>Here are some gift ideas!</h2>
+                 <button class="btn btn-secondary">Refine Search</button>
+              </div>
+
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Gift Idea Card 1 -->
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Gift+Image+1" class="card-img-top" alt="Gift Idea 1">
+                    <div class="card-body">
+                      <h5 class="card-title">Smart Reusable Notebook</h5>
+                      <p class="card-text">A notebook for the tech-savvy writer. Upload notes to the cloud and reuse pages endlessly. Perfect for students or professionals.</p>
+                      <p class="card-text"><small class="text-muted">Budget: $$ ($25 - $50)</small></p>
+                    </div>
+                    <div class="card-footer">
+                       <a href="#" class="btn btn-sm btn-outline-primary">View Product (Example)</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Gift Idea Card 2 -->
+                 <div class="col">
+                  <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Gift+Image+2" class="card-img-top" alt="Gift Idea 2">
+                    <div class="card-body">
+                      <h5 class="card-title">Subscription Box for Book Lovers</h5>
+                      <p class="card-text">A curated monthly box featuring a new book release and themed goodies. Great for avid readers.</p>
+                      <p class="card-text"><small class="text-muted">Budget: $$ ($25 - $50)</small></p>
+                     </div>
+                     <div class="card-footer">
+                       <a href="#" class="btn btn-sm btn-outline-primary">View Product (Example)</a>
+                    </div>
+                  </div>
+                </div>
+                 <!-- Gift Idea Card 3 -->
+                 <div class="col">
+                  <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/dee2e6/6c757d.png?text=Gift+Image+3" class="card-img-top" alt="Gift Idea 3">
+                    <div class="card-body">
+                      <h5 class="card-title">Portable Espresso Maker</h5>
+                      <p class="card-text">For the coffee aficionado on the go. Make quality espresso anywhere, perfect for travelers or campers.</p>
+                       <p class="card-text"><small class="text-muted">Budget: $$$ ($50 - $100)</small></p>
+                    </div>
+                     <div class="card-footer">
+                       <a href="#" class="btn btn-sm btn-outline-primary">View Product (Example)</a>
+                    </div>
+                  </div>
+                </div>
+                  <!-- Add more cards as needed -->
+
+              </div>
+
+               <div class="text-center mt-5">
+                 <button class="btn btn-primary btn-lg">Start New Search</button>
+               </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: No Results Found -->
+    <div class="iframe-container">
+        <h2>State 6: No Results Found</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>No Results</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5 text-center">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">No Gifts Found!</h4>
+                    <p>Sorry, we couldn't find any gift ideas matching your specific criteria.</p>
+                    <hr>
+                    <p class="mb-0">Try adjusting the age, interests, or budget and search again.</p>
+                </div>
+                 <a href="#" class="btn btn-primary mt-3">Try Again</a>
+                 <a href="#" class="btn btn-secondary mt-3">Go Home</a>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start fixed-bottom">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        ' style="height: 450px;"></iframe>
+    </div>
+
+    <!-- State 7: About Page -->
+    <div class="iframe-container">
+        <h2>State 7: About Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>About GiftGenius</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <h2 class="mb-4">About GiftGenius</h2>
+              <p>GiftGenius was created to take the stress out of gift-giving. Finding the perfect present can be challenging, especially when you want it to be personal and thoughtful. Our mission is to help you discover unique and suitable gift ideas for anyone, for any occasion.</p>
+              <p>Using a simple interface, you provide basic details about the recipient like their age range, interests, the occasion, and your budget. Our smart suggestion engine then analyzes this information to present you with a curated list of gift ideas.</p>
+              <p>We aim to provide inspiration and make the process enjoyable, saving you time and helping you find that perfect gift that shows you care.</p>
+              <h4 class="mt-4">How it Works</h4>
+              <ol>
+                <li>Enter details about the person you are shopping for.</li>
+                <li>Specify the occasion and your budget.</li>
+                <li>Browse the personalized gift suggestions.</li>
+                <li>(Optional) Refine your search if needed.</li>
+              </ol>
+              <p>Happy Gifting!</p>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+     <!-- State 8: Contact Page -->
+    <div class="iframe-container">
+        <h2>State 8: Contact Page</h2>
+        <iframe srcdoc='
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <title>Contact Us</title>
+        </head>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">GiftGenius</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Generate Ideas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <div class="container mt-5">
+              <h2 class="mb-4 text-center">Contact Us</h2>
+              <p class="text-center mb-5">Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+
+              <div class="row justify-content-center">
+                  <div class="col-md-8 col-lg-6">
+                      <form>
+                          <div class="mb-3">
+                              <label for="contactName" class="form-label">Your Name</label>
+                              <input type="text" class="form-control" id="contactName" required>
+                          </div>
+                          <div class="mb-3">
+                              <label for="contactEmail" class="form-label">Your Email</label>
+                              <input type="email" class="form-control" id="contactEmail" required>
+                          </div>
+                           <div class="mb-3">
+                              <label for="contactSubject" class="form-label">Subject</label>
+                              <input type="text" class="form-control" id="contactSubject">
+                          </div>
+                          <div class="mb-3">
+                              <label for="contactMessage" class="form-label">Message</label>
+                              <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                          </div>
+                          <div class="d-grid">
+                             <button type="submit" class="btn btn-primary">Send Message</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+            </div>
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 GiftGenius
+              </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        '></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

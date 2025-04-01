@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Pairing Tool - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ced4da;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .state-container {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Font Pairing Tool - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .hero-section { background-color: #e9ecef; padding: 4rem 0; }
+        .font-card { margin-bottom: 1.5rem; }
+        .font-card-header { font-size: 1.5rem; font-weight: bold; }
+        .font-card-body { font-size: 1rem; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: 3rem; }
+        .preview-heading-1 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .preview-body-1 { font-family: "Lato", sans-serif; font-size: 1rem; line-height: 1.6;}
+        .preview-heading-2 { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .preview-body-2 { font-family: "Merriweather", serif; font-size: 1rem; line-height: 1.6;}
+         .preview-heading-3 { font-family: "Roboto", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .preview-body-3 { font-family: "Open Sans", sans-serif; font-size: 1rem; line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4">Find Perfect Font Combinations</h1>
+            <p class="lead">Discover aesthetically pleasing font pairings for your next design project.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Start Pairing Now</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Featured Pairings</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card font-card">
+                    <div class="card-body">
+                         <div class="preview-heading-1">Playfair Display</div>
+                         <div class="preview-body-1">Paired with Lato</div>
+                        <p class="card-text mt-2">Elegant serif meets clean sans-serif. Great for sophisticated designs.</p>
+                         <a href="#" class="btn btn-outline-secondary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card font-card">
+                    <div class="card-body">
+                         <div class="preview-heading-2">Montserrat</div>
+                         <div class="preview-body-2">Paired with Merriweather</div>
+                        <p class="card-text mt-2">Modern sans-serif headline with a readable serif body. Versatile combination.</p>
+                         <a href="#" class="btn btn-outline-secondary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card font-card">
+                    <div class="card-body">
+                         <div class="preview-heading-3">Roboto</div>
+                         <div class="preview-body-3">Paired with Open Sans</div>
+                        <p class="card-text mt-2">Two highly legible sans-serifs. Ideal for UI design and clarity.</p>
+                         <a href="#" class="btn btn-outline-secondary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="text-center mt-4">
+            <a href="#" class="btn btn-secondary">Browse More Pairings</a>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Pairing Tool - Initial State -->
+    <div class="state-container">
+        <h2>State 2: Pairing Tool - Initial State</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Pairing - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .preview-area { border: 1px dashed #ccc; padding: 2rem; margin-top: 2rem; background-color: #fff; min-height: 200px;}
+        .preview-heading { font-size: 2.5rem; margin-bottom: 1rem; font-family: "Times New Roman", serif; }
+        .preview-body { font-size: 1rem; line-height: 1.6; font-family: Arial, sans-serif;}
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Font Pairing Generator</h1>
+        <p class="lead">Select a primary font to find compatible pairings.</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="primaryFontSelect" class="form-label">Choose Primary Font (e.g., for Headings)</label>
+                        <select class="form-select" id="primaryFontSelect">
+                            <option selected disabled value="">-- Select a Font --</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Lato">Lato</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Playfair Display">Playfair Display</option>
+                            <option value="Merriweather">Merriweather</option>
+                            <!-- Add more font options here -->
+                        </select>
+                    </div>
+                     <button type="submit" class="btn btn-primary">Find Pairings</button>
+                </form>
+            </div>
+             <div class="col-md-6">
+                <h3 class="h5">Live Preview</h3>
+                <div class="preview-area">
+                    <div class="preview-heading">Aa - Heading Example</div>
+                    <div class="preview-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div id="pairing-results" class="mt-4">
+             <h2 class="text-center text-muted">Select a primary font to see pairing suggestions.</h2>
+             <!-- Pairing results will be loaded here -->
+        </div>
+
+    </div>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 3: Pairing Tool - Font Selected, Pairings Shown -->
+    <div class="state-container">
+        <h2>State 3: Pairing Tool - Font Selected, Pairings Shown</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pairing Results - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .preview-area { border: 1px dashed #ccc; padding: 2rem; margin-top: 2rem; background-color: #fff; min-height: 200px;}
+        .preview-heading { font-size: 2.5rem; margin-bottom: 1rem; font-family: "Playfair Display", serif; } /* Dynamic based on selection */
+        .preview-body { font-size: 1rem; line-height: 1.6; font-family: Arial, sans-serif; } /* Dynamic based on selection */
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: 3rem; }
+        .pairing-card { margin-bottom: 1.5rem; }
+        .pairing-card-heading { font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 0.5rem;} /* Primary */
+        .pairing-card-body { font-family: "Lato", sans-serif; font-size: 1rem; line-height: 1.6;} /* Secondary */
+         .pairing-card-heading-2 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 0.5rem;} /* Primary */
+        .pairing-card-body-2 { font-family: "Roboto", sans-serif; font-size: 1rem; line-height: 1.6;} /* Secondary */
+         .pairing-card-heading-3 { font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 0.5rem;} /* Primary */
+        .pairing-card-body-3 { font-family: "Open Sans", sans-serif; font-size: 1rem; line-height: 1.6;} /* Secondary */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Font Pairing Generator</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="primaryFontSelect" class="form-label">Choose Primary Font (e.g., for Headings)</label>
+                        <select class="form-select" id="primaryFontSelect">
+                            <option value="">-- Select a Font --</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Lato">Lato</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Playfair Display" selected>Playfair Display</option>
+                            <option value="Merriweather">Merriweather</option>
+                            <!-- Add more font options here -->
+                        </select>
+                    </div>
+                     <button type="submit" class="btn btn-primary">Find Pairings</button>
+                     <button type="button" class="btn btn-outline-secondary ms-2">Reset</button>
+                </form>
+            </div>
+             <div class="col-md-6">
+                <h3 class="h5">Live Preview (Using Selected Pairing)</h3>
+                <div class="preview-area">
+                    <div class="preview-heading" style="font-family: 'Playfair Display', serif;">Aa - Heading Example</div>
+                    <div class="preview-body" style="font-family: 'Lato', sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div id="pairing-results" class="mt-4">
+             <h2>Suggested Pairings for <span style="font-family: 'Playfair Display', serif;">Playfair Display</span></h2>
+             <div class="row">
+                <!-- Pairing Card 1 -->
+                <div class="col-md-4">
+                    <div class="card pairing-card">
+                        <div class="card-body">
+                            <div class="pairing-card-heading">Playfair Display</div>
+                            <div class="pairing-card-body">Paired with Lato</div>
+                            <p class="card-text mt-2 small text-muted">Contrast: High | Style: Elegant / Modern</p>
+                            <button class="btn btn-sm btn-outline-primary">Use This Pairing</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Pairing Card 2 -->
+                 <div class="col-md-4">
+                    <div class="card pairing-card">
+                        <div class="card-body">
+                            <div class="pairing-card-heading-2">Playfair Display</div>
+                            <div class="pairing-card-body-2">Paired with Roboto</div>
+                             <p class="card-text mt-2 small text-muted">Contrast: High | Style: Classic / Functional</p>
+                             <button class="btn btn-sm btn-outline-primary">Use This Pairing</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Pairing Card 3 -->
+                 <div class="col-md-4">
+                    <div class="card pairing-card">
+                         <div class="card-body">
+                            <div class="pairing-card-heading-3">Playfair Display</div>
+                            <div class="pairing-card-body-3">Paired with Open Sans</div>
+                             <p class="card-text mt-2 small text-muted">Contrast: High | Style: Sophisticated / Clean</p>
+                            <button class="btn btn-sm btn-outline-primary">Use This Pairing</button>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Pairing Tool - Input Validation Error -->
+    <div class="state-container">
+        <h2>State 4: Pairing Tool - Input Validation Error</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Error - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .preview-area { border: 1px dashed #ccc; padding: 2rem; margin-top: 2rem; background-color: #fff; min-height: 200px;}
+        .preview-heading { font-size: 2.5rem; margin-bottom: 1rem; font-family: "Times New Roman", serif; }
+        .preview-body { font-size: 1rem; line-height: 1.6; font-family: Arial, sans-serif;}
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Font Pairing Generator</h1>
+        <p class="lead">Select a primary font to find compatible pairings.</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="primaryFontSelect" class="form-label">Choose Primary Font (e.g., for Headings)</label>
+                        <select class="form-select is-invalid" id="primaryFontSelect" required>
+                             <option selected disabled value="">-- Select a Font --</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Lato">Lato</option>
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Playfair Display">Playfair Display</option>
+                            <option value="Merriweather">Merriweather</option>
+                        </select>
+                         <div class="invalid-feedback">
+                            Please select a primary font before finding pairings.
+                        </div>
+                    </div>
+                     <button type="submit" class="btn btn-primary">Find Pairings</button>
+                </form>
+            </div>
+             <div class="col-md-6">
+                 <h3 class="h5">Live Preview</h3>
+                <div class="preview-area">
+                    <div class="preview-heading">Aa - Heading Example</div>
+                    <div class="preview-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div id="pairing-results" class="mt-4">
+             <div class="alert alert-warning text-center" role="alert">
+                Please select a primary font above to see suggested pairings.
+             </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Browse Pairings Page -->
+    <div class="state-container">
+        <h2>State 5: Browse Pairings Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Pairings - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;700&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .pairing-card { margin-bottom: 1.5rem; }
+        .pairing-card-header { font-size: 1.5rem; font-weight: bold; }
+        .pairing-card-body { font-size: 1rem; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: 3rem; }
+        .filter-section { background-color: #f8f9fa; padding: 1rem; border-radius: 0.25rem; margin-bottom: 2rem; }
+         /* Specific Pairings for Browse */
+        .heading-pf-lato { font-family: "Playfair Display", serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .body-pf-lato { font-family: "Lato", sans-serif; font-size: 1rem; line-height: 1.6;}
+        .heading-mont-merri { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .body-mont-merri { font-family: "Merriweather", serif; font-size: 1rem; line-height: 1.6;}
+        .heading-robo-open { font-family: "Roboto", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .body-robo-open { font-family: "Open Sans", sans-serif; font-size: 1rem; line-height: 1.6;}
+         .heading-raleway-lato { font-family: "Raleway", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .body-raleway-lato { font-family: "Lato", sans-serif; font-size: 1rem; line-height: 1.6;}
+        .heading-poppins-open { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 0.5rem;}
+        .body-poppins-open { font-family: "Open Sans", sans-serif; font-size: 1rem; line-height: 1.6;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Browse Font Pairings</h1>
+        <p class="lead text-center mb-5">Explore curated font combinations for inspiration.</p>
+
+        <!-- Filter Section -->
+         <div class="filter-section">
+             <form class="row g-3 align-items-center">
+                 <div class="col-md-4">
+                     <label for="filterStyle" class="form-label">Filter by Style:</label>
+                     <select id="filterStyle" class="form-select form-select-sm">
+                         <option selected>All Styles</option>
+                         <option>Serif + Sans-Serif</option>
+                         <option>Sans-Serif + Sans-Serif</option>
+                         <option>Serif + Serif</option>
+                         <option>Display + Sans-Serif</option>
+                         <option>Modern</option>
+                         <option>Classic</option>
+                     </select>
+                 </div>
+                 <div class="col-md-4">
+                     <label for="filterFont" class="form-label">Contains Font:</label>
+                     <input type="text" class="form-control form-control-sm" id="filterFont" placeholder="e.g., Lato">
+                 </div>
+                 <div class="col-md-4 pt-4">
+                     <button type="submit" class="btn btn-secondary btn-sm w-100">Apply Filters</button>
+                 </div>
+             </form>
+         </div>
+
+        <!-- Pairings Grid -->
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                        <div class="heading-pf-lato">Playfair Display</div>
+                        <div class="body-pf-lato">Paired with Lato</div>
+                        <p class="card-text mt-2 small text-muted">Elegant serif & clean sans-serif.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                        <div class="heading-mont-merri">Montserrat</div>
+                        <div class="body-mont-merri">Paired with Merriweather</div>
+                        <p class="card-text mt-2 small text-muted">Modern sans-serif & readable serif.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                         <div class="heading-robo-open">Roboto</div>
+                        <div class="body-robo-open">Paired with Open Sans</div>
+                        <p class="card-text mt-2 small text-muted">Two highly legible sans-serifs.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                        <div class="heading-raleway-lato">Raleway</div>
+                        <div class="body-raleway-lato">Paired with Lato</div>
+                        <p class="card-text mt-2 small text-muted">Stylish sans-serif headline & versatile body.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                        <div class="heading-poppins-open">Poppins</div>
+                        <div class="body-poppins-open">Paired with Open Sans</div>
+                        <p class="card-text mt-2 small text-muted">Geometric sans-serif & neutral body text.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Add more pairing cards here -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card pairing-card">
+                    <div class="card-body">
+                        <div class="pairing-card-header" style="font-family: Merriweather;">Merriweather</div>
+                        <div class="pairing-card-body" style="font-family: Lato;">Paired with Lato</div>
+                        <p class="card-text mt-2 small text-muted">Classic serif headline & clean sans body.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">Use This Pairing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Placeholder -->
+        <nav aria-label="Page navigation" class="mt-4 d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: About Page -->
+    <div class="state-container">
+        <h2>State 6: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mb-4">About the Font Pairing Tool</h1>
+                <p class="lead">Welcome to the Font Pairing Tool, your go-to resource for discovering harmonious font combinations for web and print design projects.</p>
+
+                <hr class="my-4">
+
+                <h2 class="h4">Our Mission</h2>
+                <p>Typography is a crucial element of design, significantly impacting readability, user experience, and overall aesthetic appeal. Finding the right fonts that work well together can be challenging. Our mission is to simplify this process by providing curated suggestions and a platform for experimentation.</p>
+
+                <h2 class="h4 mt-4">How It Works</h2>
+                <p>Our tool analyzes font characteristics like x-height, contrast, and style classification to suggest complementary pairings. You can start by selecting a heading font and instantly see recommendations for body text, or browse through our gallery of pre-made successful combinations.</p>
+                <ul>
+                    <li>Select a primary font using our intuitive interface.</li>
+                    <li>Explore suggested secondary fonts based on compatibility algorithms.</li>
+                    <li>Preview the pairing with sample text.</li>
+                    <li>Browse our curated list of popular and effective font pairings.</li>
+                </ul>
+
+                 <h2 class="h4 mt-4">Font Licensing</h2>
+                 <p>Please note: This tool primarily uses fonts available under open-source licenses (like Google Fonts). Always check the specific license of any font before using it in your projects, especially for commercial purposes. We provide links to font sources where possible, but verifying the license terms is your responsibility.</p>
+
+                 <div class="text-center mt-5">
+                    <a href="#" class="btn btn-primary">Start Pairing Now</a>
+                    <a href="#" class="btn btn-outline-secondary ms-2">Browse Pairings</a>
+                 </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Contact Page -->
+    <div class="state-container">
+        <h2>State 7: Contact Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+         <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mb-4 text-center">Contact Us</h1>
+                <p class="lead text-center mb-5">Have questions, feedback, or suggestions? We&apos;d love to hear from you!</p>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="contactName" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="contactName" placeholder="John Doe" required>
+                         <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+                         <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="contactSubject" placeholder="e.g., Feature Request, Bug Report">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="contactMessage" rows="5" placeholder="Your message here..." required></textarea>
+                         <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </div>
+                </form>
+
+                <!-- Optional: Alternative Contact Info -->
+                 <div class="mt-5 text-center text-muted">
+                    <p>You can also reach us via email at: <a href="mailto:support@fontpairtool.example.com">support@fontpairtool.example.com</a></p>
+                 </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 8: Contact Page - Success Message -->
+    <div class="state-container">
+        <h2>State 8: Contact Page - Success Message</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent - Font Pairing Tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 2rem 0; background-color: #f8f9fa; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Font Pairing Tool</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Start Pairing</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Pairings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+         <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="mb-4 text-center">Contact Us</h1>
+
+                 <div class="alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Message Sent Successfully!</h4>
+                    <p>Thank you for contacting us. We have received your message and will get back to you as soon as possible.</p>
+                    <hr>
+                    <p class="mb-0">You can now return to the <a href="#" class="alert-link">Home Page</a> or <a href="#" class="alert-link">continue browsing</a>.</p>
+                </div>
+
+                 <!-- Optionally hide or disable the form -->
+                 <form class="opacity-50 pe-none">
+                    <fieldset disabled>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com">
+                        </div>
+                         <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted">
+        <div class="container">
+            &copy; 2023 Font Pairing Tool. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Personal Challenge Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            display: block;
+        }
+         /* Basic styling to prevent nested scrollbars within iframes where possible */
+        iframe html, iframe body {
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="mb-4 text-center">Gamified Personal Challenge Tracker - UI Flow</h1>
+
+        <!-- State 1: Home Page (Logged Out) -->
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold"><i class="bi bi-flag-fill text-primary"></i> Conquer Your Goals!</h1>
+            <p class="col-md-8 fs-4 mx-auto">Set personal challenges, track your progress, and earn points & badges. Turn self-improvement into a game.</p>
+            <a class="btn btn-primary btn-lg me-2" href="#" role="button"><i class="bi bi-person-plus-fill"></i> Sign Up Now</a>
+            <a class="btn btn-secondary btn-lg" href="#" role="button"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+          </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2><i class="bi bi-person-check-fill"></i> Track Anything</h2>
+                <p>From 30-day fitness challenges to reading goals or learning a new skill. Define your challenge, your way.</p>
+                <button class="btn btn-outline-light" type="button">Learn More</button>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                <h2><i class="bi bi-award-fill"></i> Gamified Motivation</h2>
+                <p>Earn points for consistency and unlock badges for milestones. Stay motivated and celebrate your achievements.</p>
+                <button class="btn btn-outline-secondary" type="button">See Features</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 2: About Page -->
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About Challenge Tracker</h1>
+        <hr>
+        <p class="lead">Challenge Tracker is designed to help you achieve your personal goals by making the process engaging and rewarding.</p>
+        <p>We believe that turning self-improvement into a game can significantly boost motivation and consistency. Whether you want to get fit, read more books, learn a new language, or break a bad habit, Challenge Tracker provides the tools you need to succeed.</p>
+
+        <h3 class="mt-4">Our Mission</h3>
+        <p>To empower individuals to reach their full potential by providing a fun, simple, and effective platform for personal challenge management.</p>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul>
+            <li>Set custom challenges with specific goals and durations.</li>
+            <li>Track daily progress easily.</li>
+            <li>Earn points for completing tasks and maintaining streaks.</li>
+            <li>Unlock achievement badges for reaching milestones.</li>
+            <li>Visualize your progress over time.</li>
+        </ul>
+
+         <div class="mt-5 p-4 bg-light border rounded">
+            <h4>Ready to start?</h4>
+            <p>Join our community and begin your journey towards achieving your goals today!</p>
+            <a href="#" class="btn btn-success"><i class="bi bi-person-plus-fill"></i> Sign Up Free</a>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 3: Sign Up Page -->
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Create Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Choose a username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email" required>
+                                <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Create a password" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-person-plus-fill"></i> Sign Up</button>
+                        </form>
+                        <div class="mt-3 text-center">
+                            <p>Already have an account? <a href="#">Login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 4: Sign Up Page (with Validation Errors) -->
+        <h2>State 4: Sign Up Page (with Validation Errors)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header bg-primary text-white">
+                         <h4 class="mb-0">Create Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                           <i class="bi bi-exclamation-triangle-fill"></i> Please fix the errors below and try again.
+                         </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupName" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Choose a username" value="User12" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter your email" value="invalid-email" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Create a password" value="short" required>
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupConfirmPassword" placeholder="Confirm your password" value="different" required>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="form-check mb-3 is-invalid">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a></label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-person-plus-fill"></i> Sign Up</button>
+                        </form>
+                         <div class="mt-3 text-center">
+                            <p>Already have an account? <a href="#">Login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 5: Login Page -->
+        <h2>State 5: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2 active" aria-current="page" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                     <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Login to Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control" id="loginEmail" placeholder="Enter email or username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <a href="#" class="float-end">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+                        </form>
+                         <div class="mt-3 text-center">
+                            <p>Don't have an account? <a href="#">Sign up here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 6: Login Page (with Error) -->
+        <h2>State 6: Login Page (with Error)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-2 active" aria-current="page" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card border-danger">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Login to Your Account</h4>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                           <i class="bi bi-exclamation-circle-fill"></i> Invalid email/username or password. Please try again.
+                         </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control is-invalid" id="loginEmail" placeholder="Enter email or username" value="wronguser" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter password" value="wrongpass" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                <a href="#" class="float-end">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+                        </form>
+                        <div class="mt-3 text-center">
+                            <p>Don't have an account? <a href="#">Sign up here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 7: Dashboard / Home Page (Logged In) -->
+        <h2>State 7: Dashboard / Home Page (Logged In)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Challenges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Create Challenge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Badges</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User123
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+             <div class="col-md-8">
+                <h2 class="mb-3">Welcome back, User123!</h2>
+
+                <!-- Active Challenges Overview -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="bi bi-flag-fill"></i> Active Challenges</h4>
+                        <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-circle-fill"></i> New Challenge</a>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">30-Day Fitness Challenge</h5>
+                                <small>15 / 30 Days</small>
+                            </div>
+                            <div class="progress mt-1" style="height: 10px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="text-muted">Next check-in: Today</small>
+                        </a>
+                         <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Read 5 Books This Quarter</h5>
+                                <small>2 / 5 Books</small>
+                            </div>
+                            <div class="progress mt-1" style="height: 10px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <small class="text-muted">Ends: Dec 31</small>
+                        </a>
+                         <a href="#" class="list-group-item list-group-item-action text-center text-primary">
+                            View All Challenges <i class="bi bi-arrow-right-short"></i>
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Recent Activity -->
+                 <div class="card">
+                      <div class="card-header">
+                        <h4 class="mb-0"><i class="bi bi-clock-history"></i> Recent Activity</h4>
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Logged progress for "30-Day Fitness Challenge" (+10 points) <span class="text-muted float-end">1 hour ago</span></li>
+                        <li class="list-group-item">Completed "Daily Meditation" task (+5 points) <span class="text-muted float-end">Yesterday</span></li>
+                        <li class="list-group-item">Earned "Consistent Coder" Badge! <i class="bi bi-award-fill text-warning"></i><span class="text-muted float-end">2 days ago</span></li>
+                    </ul>
+                 </div>
+
+            </div>
+
+            <div class="col-md-4">
+                 <!-- Quick Stats -->
+                 <div class="card mb-4">
+                     <div class="card-body text-center">
+                         <h5 class="card-title">Total Points</h5>
+                         <p class="display-4 fw-bold text-primary">1250</p>
+                         <hr>
+                         <h5 class="card-title mt-3">Badges Earned</h5>
+                         <p class="display-4 fw-bold text-warning">5 <i class="bi bi-award"></i></p>
+                         <a href="#" class="btn btn-sm btn-outline-warning mt-2">View Badges</a>
+                     </div>
+                 </div>
+
+                 <!-- Quick Actions -->
+                 <div class="card mb-4">
+                     <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-lightning-fill"></i> Quick Log</h5>
+                     </div>
+                     <div class="card-body">
+                         <p>Log progress for:</p>
+                         <div class="d-grid gap-2">
+                             <button class="btn btn-success btn-sm" type="button">30-Day Fitness (Day 15)</button>
+                             <button class="btn btn-info btn-sm" type="button">Read 5 Books (Log Entry)</button>
+                             <button class="btn btn-secondary btn-sm" type="button">Daily Meditation (Today)</button>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 8: My Challenges Page -->
+        <h2>State 8: My Challenges Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Challenges - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Challenges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Create Challenge</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Badges</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User123
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Challenges</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Create New Challenge</a>
+        </div>
+
+         <!-- Filters -->
+         <ul class="nav nav-pills mb-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Completed</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">All</a>
+          </li>
+        </ul>
+
+        <!-- Challenge List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Active Challenge Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">30-Day Fitness Challenge</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Ongoing</h6>
+                        <p class="card-text">Complete daily workout routines for 30 days.</p>
+                         <div class="progress mb-2" style="height: 15px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Day 15/30</div>
+                        </div>
+                         <span class="badge bg-primary">Fitness</span>
+                         <span class="badge bg-secondary">Daily</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                         <a href="#" class="btn btn-sm btn-outline-success me-1"><i class="bi bi-check2-circle"></i> Log Today</a>
+                         <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye-fill"></i> View Details</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Active Challenge Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Read 5 Books This Quarter</h5>
+                         <h6 class="card-subtitle mb-2 text-muted">Ongoing</h6>
+                        <p class="card-text">Finish reading 5 non-fiction books before Dec 31st.</p>
+                        <div class="progress mb-2" style="height: 15px;">
+                             <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">2/5 Books</div>
+                        </div>
+                         <span class="badge bg-warning text-dark">Reading</span>
+                         <span class="badge bg-secondary">Quarterly</span>
+                      </div>
+                     <div class="card-footer bg-transparent border-top-0">
+                         <a href="#" class="btn btn-sm btn-outline-success me-1"><i class="bi bi-check2-circle"></i> Log Progress</a>
+                         <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye-fill"></i> View Details</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Completed Challenge Card -->
+             <div class="col">
+                <div class="card h-100 border-success">
+                    <div class="card-body">
+                         <span class="badge bg-success float-end"><i class="bi bi-check-circle-fill"></i> Completed</span>
+                        <h5 class="card-title">Learn Basic Spanish</h5>
+                         <h6 class="card-subtitle mb-2 text-muted">Finished: Oct 15</h6>
+                        <p class="card-text">Completed 30 Duolingo lessons.</p>
+                        <div class="progress mb-2" style="height: 15px;">
+                             <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                         <span class="badge bg-info text-dark">Learning</span>
+                         <span class="badge bg-secondary">Daily</span>
+                      </div>
+                     <div class="card-footer bg-transparent border-top-0">
+                         <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye-fill"></i> View Details</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Add More Challenge Cards as needed -->
+
+        </div>
+         <!-- Pagination Placeholder -->
+         <nav aria-label="Page navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 9: Create Challenge Page (Step 1: Define) -->
+        <h2>State 9: Create Challenge Page (Step 1: Define)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Challenge - Step 1 - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Challenges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Create Challenge</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Badges</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User123
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New Challenge</h1>
+        <hr>
+
+        <!-- Progress Steps -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active fw-bold" aria-current="page">Step 1: Define Challenge</li>
+            <li class="breadcrumb-item">Step 2: Gamify</li>
+            <li class="breadcrumb-item">Step 3: Confirm</li>
+          </ol>
+        </nav>
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Define Your Challenge</h4>
+            </div>
+            <div class="card-body">
+                 <form>
+                    <div class="mb-3">
+                        <label for="challengeName" class="form-label">Challenge Name</label>
+                        <input type="text" class="form-control" id="challengeName" placeholder="e.g., 30-Day Morning Run" required>
+                        <div class="form-text">Make it specific and motivating!</div>
+                    </div>
+                     <div class="mb-3">
+                        <label for="challengeDescription" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="challengeDescription" rows="3" placeholder="Describe the goal, rules, or motivation behind this challenge."></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="challengeCategory" class="form-label">Category</label>
+                            <select class="form-select" id="challengeCategory">
+                                <option selected>Choose a category...</option>
+                                <option value="1">Fitness</option>
+                                <option value="2">Health & Wellness</option>
+                                <option value="3">Learning</option>
+                                <option value="4">Productivity</option>
+                                <option value="5">Hobbies</option>
+                                <option value="6">Other</option>
+                              </select>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label for="challengeType" class="form-label">Challenge Type</label>
+                            <select class="form-select" id="challengeType" required>
+                                <option selected disabled value="">Select type...</option>
+                                <option value="daily">Daily Check-in</option>
+                                <option value="total">Total Goal (e.g., read X books)</option>
+                                <option value="habit">Habit Formation (Streak-based)</option>
+                             </select>
+                        </div>
+                    </div>
+                     <div class="row">
+                         <div class="col-md-6 mb-3">
+                            <label for="startDate" class="form-label">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" required>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                             <label for="endDate" class="form-label">End Date (or Duration)</label>
+                             <input type="date" class="form-control" id="endDate">
+                             <div class="form-text">Leave blank for ongoing challenges or specify duration below.</div>
+                             <input type="number" class="form-control mt-1" id="durationDays" placeholder="Or enter duration in days (e.g., 30)">
+                        </div>
+                    </div>
+
+                     <div class="d-flex justify-content-end mt-3">
+                          <a href="#" class="btn btn-secondary me-2"><i class="bi bi-x-lg"></i> Cancel</a>
+                          <a href="#" class="btn btn-primary">Next: Gamify <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 10: Create Challenge Page (Step 2: Gamify) -->
+        <h2>State 10: Create Challenge Page (Step 2: Gamify)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Challenge - Step 2 - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Create Challenge</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-4">
+        <h1>Create New Challenge</h1>
+        <hr>
+
+        <!-- Progress Steps -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Step 1: Define Challenge</a></li>
+            <li class="breadcrumb-item active fw-bold" aria-current="page">Step 2: Gamify</li>
+            <li class="breadcrumb-item">Step 3: Confirm</li>
+          </ol>
+        </nav>
+
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="bi bi-joystick"></i> Gamify Your Challenge</h4>
+                 <small class="text-muted">Challenge: 30-Day Morning Run</small>
+            </div>
+            <div class="card-body">
+                 <form>
+                    <div class="mb-3">
+                        <label for="pointsPerCheckin" class="form-label">Points per Check-in / Task</label>
+                        <input type="number" class="form-control" id="pointsPerCheckin" value="10" min="0">
+                        <div class="form-text">Points awarded for each successful daily log or progress update.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="streakBonus" class="form-label">Streak Bonus (Optional)</label>
+                         <div class="input-group">
+                             <span class="input-group-text">Every</span>
+                            <input type="number" class="form-control" id="streakDays" placeholder="e.g., 7">
+                            <span class="input-group-text">days, award</span>
+                             <input type="number" class="form-control" id="streakPoints" placeholder="e.g., 50">
+                             <span class="input-group-text">bonus points</span>
+                        </div>
+                        <div class="form-text">Reward consistency with bonus points for consecutive check-ins.</div>
+                    </div>
+
+                    <div class="mb-3">
+                         <label class="form-label">Milestone Badges (Optional)</label>
+                        <div class="border p-3 rounded">
+                             <p>Award badges when specific milestones are reached.</p>
+                             <div class="row g-3 align-items-center mb-2">
+                                <div class="col-auto">
+                                    <label for="milestone1Value" class="col-form-label">At Day/Unit:</label>
+                                </div>
+                                <div class="col-auto">
+                                     <input type="number" id="milestone1Value" class="form-control form-control-sm" placeholder="e.g., 10">
+                                </div>
+                                <div class="col-auto">
+                                    <label for="milestone1Badge" class="col-form-label">Award Badge:</label>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select form-select-sm" id="milestone1Badge">
+                                        <option selected>Choose badge...</option>
+                                        <option value="bronze-star"><i class="bi bi-star-fill"></i> Bronze Star</option>
+                                        <option value="silver-medal"><i class="bi bi-medal-fill"></i> Silver Medal</option>
+                                        <option value="halfway-hero">Halfway Hero</option>
+                                        <option value="custom">Create Custom Badge...</option>
+                                     </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                </div>
+                             </div>
+                              <div class="row g-3 align-items-center mb-2">
+                                <div class="col-auto"> <label for="milestone2Value" class="col-form-label">At Day/Unit:</label> </div>
+                                <div class="col-auto"> <input type="number" id="milestone2Value" class="form-control form-control-sm" placeholder="e.g., 30"> </div>
+                                <div class="col-auto"> <label for="milestone2Badge" class="col-form-label">Award Badge:</label> </div>
+                                <div class="col">
+                                    <select class="form-select form-select-sm" id="milestone2Badge">
+                                        <option selected>Choose badge...</option>
+                                        <option value="gold-trophy"><i class="bi bi-trophy-fill"></i> Gold Trophy</option>
+                                         <option value="challenge-complete">Challenge Complete!</option>
+                                         <option value="custom">Create Custom Badge...</option>
+                                     </select>
+                                 </div>
+                                 <div class="col-auto"> <button type="button" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button> </div>
+                             </div>
+                             <button type="button" class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-plus-lg"></i> Add Milestone</button>
+                         </div>
+                    </div>
+
+                     <div class="d-flex justify-content-between mt-4">
+                          <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back: Define</a>
+                          <a href="#" class="btn btn-primary">Next: Confirm <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 11: Create Challenge Page (with Validation Errors) -->
+        <h2>State 11: Create Challenge Page (with Validation Errors)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Challenge - Errors - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Create New Challenge</h1>
+        <hr>
+
+        <!-- Progress Steps -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active fw-bold" aria-current="page">Step 1: Define Challenge</li>
+            <li class="breadcrumb-item">Step 2: Gamify</li>
+            <li class="breadcrumb-item">Step 3: Confirm</li>
+          </ol>
+        </nav>
+
+         <div class="alert alert-danger" role="alert">
+           <i class="bi bi-exclamation-triangle-fill"></i> Please correct the errors highlighted below.
+         </div>
+
+        <div class="card border-danger">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="bi bi-pencil-square"></i> Define Your Challenge</h4>
+            </div>
+            <div class="card-body">
+                 <form>
+                    <div class="mb-3">
+                        <label for="challengeName" class="form-label">Challenge Name</label>
+                        <input type="text" class="form-control is-invalid" id="challengeName" placeholder="e.g., 30-Day Morning Run" required>
+                        <div class="invalid-feedback">
+                            Challenge name is required.
+                         </div>
+                    </div>
+                     <div class="mb-3">
+                        <label for="challengeDescription" class="form-label">Description (Optional)</label>
+                        <textarea class="form-control" id="challengeDescription" rows="3" placeholder="Describe the goal, rules, or motivation behind this challenge."></textarea>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6 mb-3">
+                           <label for="challengeCategory" class="form-label">Category</label>
+                           <select class="form-select" id="challengeCategory"> <option selected>Choose a category...</option> <option value="1">Fitness</option> <option value="2">Health & Wellness</option> <!-- ... other options --> </select>
+                         </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="challengeType" class="form-label">Challenge Type</label>
+                            <select class="form-select is-invalid" id="challengeType" required>
+                                <option selected disabled value="">Select type...</option>
+                                <option value="daily">Daily Check-in</option>
+                                <option value="total">Total Goal</option>
+                                <option value="habit">Habit Formation</option>
+                             </select>
+                             <div class="invalid-feedback">
+                                Please select a challenge type.
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-md-6 mb-3">
+                            <label for="startDate" class="form-label">Start Date</label>
+                            <input type="date" class="form-control is-invalid" id="startDate" required>
+                             <div class="invalid-feedback">
+                                Start date is required.
+                             </div>
+                        </div>
+                          <div class="col-md-6 mb-3">
+                             <label for="endDate" class="form-label">End Date (or Duration)</label>
+                             <input type="date" class="form-control" id="endDate">
+                             <div class="form-text">Leave blank for ongoing challenges or specify duration below.</div>
+                             <input type="number" class="form-control mt-1" id="durationDays" placeholder="Or enter duration in days (e.g., 30)">
+                        </div>
+                    </div>
+
+                     <div class="d-flex justify-content-end mt-3">
+                          <a href="#" class="btn btn-secondary me-2"><i class="bi bi-x-lg"></i> Cancel</a>
+                          <button type="submit" class="btn btn-primary">Next: Gamify <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 12: View Challenge Details Page -->
+        <h2>State 12: View Challenge Details Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Details - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Challenges</a></li>
+            <li class="breadcrumb-item active" aria-current="page">30-Day Fitness Challenge</li>
+          </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Challenge Header -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h1><i class="bi bi-flag-fill text-success"></i> 30-Day Fitness Challenge</h1>
+                     <div>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil-fill"></i> Edit</button>
+                        <button class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i> Delete</button>
+                    </div>
+                 </div>
+                <p class="lead">Complete daily workout routines for 30 days. Stay consistent!</p>
+                <span class="badge bg-primary me-1">Fitness</span>
+                <span class="badge bg-secondary me-1">Daily</span>
+                <span class="badge bg-light text-dark border">Started: Nov 1, 2023</span>
+                <span class="badge bg-light text-dark border">Ends: Nov 30, 2023</span>
+
+                 <!-- Progress Overview -->
+                 <div class="card my-4">
+                     <div class="card-body">
+                         <h5 class="card-title">Progress: Day 15 of 30</h5>
+                         <div class="progress mb-2" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                         </div>
+                         <div class="d-flex justify-content-between">
+                             <small>Current Streak: <strong class="text-success">5 Days</strong> <i class="bi bi-fire text-danger"></i></small>
+                             <small>Points Earned: <strong class="text-primary">150 pts</strong></small>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- Log Progress Section -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-check2-square"></i> Log Today`s Progress (Day 15)</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Did you complete your workout today?</p>
+                         <form>
+                            <div class="mb-3">
+                                <label for="logNotes" class="form-label">Notes (Optional)</label>
+                                <textarea class="form-control" id="logNotes" rows="2" placeholder="e.g., Felt strong, focused on cardio."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Yes, Log Progress (+10 pts)</button>
+                            <button type="button" class="btn btn-outline-secondary ms-2"><i class="bi bi-calendar-x"></i> Mark as Missed</button>
+                         </form>
+                    </div>
+                 </div>
+
+                 <!-- History/Calendar View (Placeholder) -->
+                 <div class="card">
+                     <div class="card-header">
+                         <h5 class="mb-0"><i class="bi bi-calendar-check"></i> Progress History</h5>
+                     </div>
+                     <div class="card-body">
+                        <p class="text-muted">(Placeholder: A calendar view or list showing logged days, streaks, points earned per day)</p>
+                        <table class="table table-sm table-bordered text-center">
+                            <thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+                            <tbody>
+                                <tr><td></td><td></td><td><span class="badge bg-success rounded-pill">1 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">2 <i class="bi bi-check"></i></span></td><td><span class="badge bg-danger rounded-pill">3 <i class="bi bi-x"></i></span></td><td><span class="badge bg-success rounded-pill">4 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">5 <i class="bi bi-check"></i></span></td></tr>
+                                <tr><td><span class="badge bg-success rounded-pill">6 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">7 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">8 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">9 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">10 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">11 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">12 <i class="bi bi-check"></i></span></td></tr>
+                                 <tr><td><span class="badge bg-success rounded-pill">13 <i class="bi bi-check"></i></span></td><td><span class="badge bg-success rounded-pill">14 <i class="bi bi-check"></i></span></td><td><span class="badge bg-warning rounded-pill">15</span></td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                <!-- More rows -->
+                             </tbody>
+                        </table>
+                     </div>
+                 </div>
+            </div>
+
+             <div class="col-md-4">
+                 <!-- Related Badges -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-award-fill"></i> Potential Badges</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div><i class="bi bi-star text-secondary"></i> Starter Steps</div>
+                           <span class="badge bg-success">Earned</span>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div><i class="bi bi-fire text-danger"></i> 7-Day Streak</div>
+                            <span class="badge bg-success">Earned</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div><i class="bi bi-lightning-charge text-warning"></i> Halfway Hero</div>
+                           <small class="text-muted">Day 15/15</small>
+                        </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           <div><i class="bi bi-trophy text-warning"></i> Challenge Complete</div>
+                            <small class="text-muted">Day 15/30</small>
+                        </li>
+                    </ul>
+                    <div class="card-footer text-center">
+                        <a href="#">View All Badges</a>
+                    </div>
+                </div>
+                 <!-- Statistics -->
+                 <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-graph-up"></i> Stats</h5>
+                    </div>
+                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Completion Rate: <strong class="float-end">93%</strong></li>
+                        <li class="list-group-item">Days Logged: <strong class="float-end">14 / 15</strong></li>
+                        <li class="list-group-item">Days Missed: <strong class="float-end">1</strong></li>
+                        <li class="list-group-item">Longest Streak: <strong class="float-end">10 Days</strong></li>
+                        <li class="list-group-item">Total Points: <strong class="float-end">150 pts</strong></li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 13: Log Progress Page/Modal (Example) -->
+        <h2>State 13: Log Progress Page/Modal (Example)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Progress - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Simulate modal appearance */
+        body { background-color: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .modal-dialog { max-width: 500px; margin: auto; }
+    </style>
+</head>
+<body>
+    <!-- This simulates a modal dialog -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="logProgressModalLabel"><i class="bi bi-check2-square"></i> Log Progress: 30-Day Fitness (Day 15)</h5>
+            <a href="#" class="btn-close btn-close-white" aria-label="Close"></a> <!-- Simulates close button -->
+          </div>
+          <div class="modal-body">
+            <p>Confirm you completed the task for <strong>November 15, 2023</strong>.</p>
+             <form>
+                <div class="mb-3">
+                    <label class="form-label">Did you complete the task?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="logStatus" id="logYes" value="yes" checked>
+                      <label class="form-check-label" for="logYes">
+                        Yes, completed! (+10 points)
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="logStatus" id="logNo" value="no">
+                      <label class="form-check-label" for="logNo">
+                        No, missed today.
+                      </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="logNotesModal" class="form-label">Add Notes (Optional)</label>
+                    <textarea class="form-control" id="logNotesModal" rows="3" placeholder="Any details about today's activity?"></textarea>
+                </div>
+             </form>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a> <!-- Simulates cancel -->
+            <a href="#" class="btn btn-success"><i class="bi bi-check-lg"></i> Confirm Log</a>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 14: Log Progress (Success Feedback) -->
+        <h2>State 14: Log Progress (Success Feedback)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Details - Success - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb"> <li class="breadcrumb-item"><a href="#">My Challenges</a></li> <li class="breadcrumb-item active" aria-current="page">30-Day Fitness Challenge</li> </ol>
+        </nav>
+
+        <!-- Success Alert -->
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong><i class="bi bi-check-circle-fill"></i> Success!</strong> Progress for Day 15 logged. +10 Points Earned!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+         <!-- Potential Badge Alert -->
+         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong><i class="bi bi-award-fill"></i> Badge Unlocked!</strong> You've earned the "Halfway Hero" badge!
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Challenge Header -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                   <h1><i class="bi bi-flag-fill text-success"></i> 30-Day Fitness Challenge</h1>
+                 </div>
+                <p class="lead">Complete daily workout routines for 30 days. Stay consistent!</p>
+                <!-- Badges, Dates etc. -->
+
+                 <!-- Progress Overview (Updated) -->
+                 <div class="card my-4">
+                     <div class="card-body">
+                         <h5 class="card-title">Progress: Day 16 of 30</h5>
+                         <div class="progress mb-2" style="height: 20px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 53.3%" aria-valuenow="53.3" aria-valuemin="0" aria-valuemax="100">53%</div>
+                         </div>
+                         <div class="d-flex justify-content-between">
+                             <small>Current Streak: <strong class="text-success">6 Days</strong> <i class="bi bi-fire text-danger"></i></small>
+                             <small>Points Earned: <strong class="text-primary">160 pts</strong></small>
+                         </div>
+                     </div>
+                 </div>
+
+                <!-- Log Progress Section (Now for next day) -->
+                 <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-check2-square"></i> Log Tomorrow`s Progress (Day 16)</h5>
+                    </div>
+                     <div class="card-body text-muted">
+                        <p>Check back tomorrow to log your progress for Day 16!</p>
+                    </div>
+                 </div>
+
+                  <!-- History/Calendar View (Updated) -->
+                 <div class="card">
+                     <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-calendar-check"></i> Progress History</h5>
+                     </div>
+                     <div class="card-body">
+                        <p class="text-muted">(Placeholder: Calendar view updated)</p>
+                         <table class="table table-sm table-bordered text-center">
+                            <!-- Table rows showing Day 15 as completed -->
+                             <tbody>
+                                <!-- Previous rows ... -->
+                                <tr><td>13 <i class="bi bi-check text-success"></i></td><td>14 <i class="bi bi-check text-success"></i></td><td><span class="badge bg-success rounded-pill">15 <i class="bi bi-check"></i></span></td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                                <!-- More rows -->
+                             </tbody>
+                        </table>
+                     </div>
+                 </div>
+            </div>
+            <div class="col-md-4">
+                 <!-- Related Badges (Updated) -->
+                 <div class="card mb-4">
+                    <div class="card-header"><h5 class="mb-0"><i class="bi bi-award-fill"></i> Potential Badges</h5></div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"> <div><i class="bi bi-star text-secondary"></i> Starter Steps</div> <span class="badge bg-success">Earned</span> </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"> <div><i class="bi bi-fire text-danger"></i> 7-Day Streak</div> <span class="badge bg-success">Earned</span> </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"> <div><i class="bi bi-lightning-charge text-warning"></i> Halfway Hero</div> <span class="badge bg-success">Earned</span> </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center"> <div><i class="bi bi-trophy text-warning"></i> Challenge Complete</div> <small class="text-muted">Day 16/30</small> </li>
+                    </ul>
+                    <div class="card-footer text-center"><a href="#">View All Badges</a></div>
+                 </div>
+                  <!-- Statistics (Updated) -->
+                 <div class="card">
+                   <div class="card-header"><h5 class="mb-0"><i class="bi bi-graph-up"></i> Stats</h5></div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Completion Rate: <strong class="float-end">94%</strong></li>
+                        <li class="list-group-item">Days Logged: <strong class="float-end">15 / 16</strong></li>
+                        <li class="list-group-item">Days Missed: <strong class="float-end">1</strong></li>
+                        <li class="list-group-item">Longest Streak: <strong class="float-end">10 Days</strong></li>
+                        <li class="list-group-item">Total Points: <strong class="float-end">160 pts</strong></li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 15: Badges/Achievements Page -->
+        <h2>State 15: Badges/Achievements Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Badges - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .badge-card { text-align: center; }
+        .badge-icon { font-size: 3rem; }
+        .badge-locked .badge-icon { color: #adb5bd; }
+        .badge-locked .card-body { opacity: 0.6; }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1><i class="bi bi-award"></i> My Badges</h1>
+        <p class="lead">Check out the badges you have earned and discover new ones to unlock!</p>
+        <hr>
+
+        <!-- Badge Filters (Optional) -->
+        <div class="mb-3">
+            <span class="me-2">Filter:</span>
+            <button class="btn btn-sm btn-primary">All</button>
+            <button class="btn btn-sm btn-outline-secondary">Earned</button>
+            <button class="btn btn-sm btn-outline-secondary">Locked</button>
+            <button class="btn btn-sm btn-outline-secondary">Fitness</button>
+            <button class="btn btn-sm btn-outline-secondary">Learning</button>
+        </div>
+
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Earned Badge 1 -->
+            <div class="col">
+                <div class="card h-100 badge-card border-success">
+                    <div class="card-body">
+                        <div class="badge-icon text-success"><i class="bi bi-check-circle-fill"></i></div>
+                        <h5 class="card-title mt-2">First Step</h5>
+                        <p class="card-text small text-muted">Completed your first challenge task.</p>
+                        <span class="badge bg-success">Earned: Nov 1</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Earned Badge 2 -->
+            <div class="col">
+                <div class="card h-100 badge-card border-warning">
+                    <div class="card-body">
+                        <div class="badge-icon text-danger"><i class="bi bi-fire"></i></div>
+                        <h5 class="card-title mt-2">7-Day Streak</h5>
+                        <p class="card-text small text-muted">Logged progress 7 days in a row.</p>
+                        <span class="badge bg-success">Earned: Nov 7</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Earned Badge 3 -->
+            <div class="col">
+                <div class="card h-100 badge-card border-warning">
+                    <div class="card-body">
+                        <div class="badge-icon text-warning"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h5 class="card-title mt-2">Halfway Hero</h5>
+                        <p class="card-text small text-muted">Reached the halfway point of the 30-Day Fitness Challenge.</p>
+                         <span class="badge bg-success">Earned: Nov 15</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Locked Badge 1 -->
+             <div class="col">
+                <div class="card h-100 badge-card badge-locked">
+                    <div class="card-body">
+                        <div class="badge-icon"><i class="bi bi-trophy-fill"></i></div>
+                        <h5 class="card-title mt-2">Challenge Complete</h5>
+                        <p class="card-text small text-muted">Finish the 30-Day Fitness Challenge.</p>
+                        <span class="badge bg-secondary"><i class="bi bi-lock-fill"></i> Locked</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Locked Badge 2 -->
+             <div class="col">
+                <div class="card h-100 badge-card badge-locked">
+                    <div class="card-body">
+                        <div class="badge-icon"><i class="bi bi-book-half"></i></div>
+                        <h5 class="card-title mt-2">Bookworm</h5>
+                        <p class="card-text small text-muted">Complete the "Read 5 Books" challenge.</p>
+                        <span class="badge bg-secondary"><i class="bi bi-lock-fill"></i> Locked</span>
+                    </div>
+                </div>
+            </div>
+              <!-- Locked Badge 3 -->
+             <div class="col">
+                <div class="card h-100 badge-card badge-locked">
+                    <div class="card-body">
+                        <div class="badge-icon"><i class="bi bi-calendar3-week"></i></div>
+                        <h5 class="card-title mt-2">Perfect Month</h5>
+                        <p class="card-text small text-muted">Log progress every single day for a month.</p>
+                         <span class="badge bg-secondary"><i class="bi bi-lock-fill"></i> Locked</span>
+                    </div>
+                </div>
+            </div>
+             <!-- Add more badge cards -->
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 16: Profile/Settings Page -->
+        <h2>State 16: Profile/Settings Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item active" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item active" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1><i class="bi bi-person-badge-fill"></i> Profile & Settings</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                 <!-- Settings Navigation -->
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    <i class="bi bi-person-lines-fill"></i> Profile Information
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock-fill"></i> Account Security</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill"></i> Notifications</a>
+                  <a href="#" class="list-group-item list-group-item-action text-danger"><i class="bi bi-trash-fill"></i> Delete Account</a>
+                </div>
+            </div>
+             <div class="col-md-9">
+                 <!-- Profile Information Section -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Profile Information</h4>
+                         <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-fill"></i> Edit Profile</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Username:</label>
+                           <div class="col-sm-9">
+                               <p class="form-control-plaintext">User123</p>
+                           </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Email:</label>
+                           <div class="col-sm-9">
+                               <p class="form-control-plaintext">user123@example.com</p>
+                           </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Member Since:</label>
+                           <div class="col-sm-9">
+                               <p class="form-control-plaintext">October 25, 2023</p>
+                           </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Timezone:</label>
+                           <div class="col-sm-9">
+                               <p class="form-control-plaintext">America/New_York (Not Set)</p>
+                           </div>
+                         </div>
+                          <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Profile Picture:</label>
+                           <div class="col-sm-9">
+                               <img src="https://via.placeholder.com/80" class="img-thumbnail" alt="Profile Picture Placeholder">
+                                <a href="#" class="btn btn-sm btn-link ms-2">Change</a>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+    </div>
+
+      <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 17: Profile/Settings Page (Edit Mode) -->
+        <h2>State 17: Profile/Settings Page (Edit Mode)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item active" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item active" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+       <h1><i class="bi bi-person-badge-fill"></i> Profile & Settings</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                 <!-- Settings Navigation -->
+                 <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                    <i class="bi bi-person-lines-fill"></i> Profile Information
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock-fill"></i> Account Security</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill"></i> Notifications</a>
+                  <a href="#" class="list-group-item list-group-item-action text-danger"><i class="bi bi-trash-fill"></i> Delete Account</a>
+                </div>
+            </div>
+             <div class="col-md-9">
+                 <!-- Edit Profile Form -->
+                <div class="card">
+                    <div class="card-header">
+                         <h4 class="mb-0">Edit Profile Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-3 align-items-center">
+                               <label for="editUsername" class="col-sm-3 col-form-label fw-bold">Username:</label>
+                               <div class="col-sm-9">
+                                   <input type="text" class="form-control" id="editUsername" value="User123" required>
+                               </div>
+                             </div>
+                             <div class="row mb-3 align-items-center">
+                               <label for="editEmail" class="col-sm-3 col-form-label fw-bold">Email:</label>
+                               <div class="col-sm-9">
+                                   <input type="email" class="form-control" id="editEmail" value="user123@example.com" required>
+                                   <div class="form-text">Changing email requires verification.</div>
+                               </div>
+                             </div>
+                             <div class="row mb-3 align-items-center">
+                               <label class="col-sm-3 col-form-label fw-bold">Member Since:</label>
+                               <div class="col-sm-9">
+                                   <p class="form-control-plaintext">October 25, 2023</p>
+                               </div>
+                             </div>
+                              <div class="row mb-3 align-items-center">
+                               <label for="editTimezone" class="col-sm-3 col-form-label fw-bold">Timezone:</label>
+                               <div class="col-sm-9">
+                                   <select class="form-select" id="editTimezone">
+                                     <option selected>Select Timezone...</option>
+                                     <option value="America/New_York">America/New_York</option>
+                                     <option value="Europe/London">Europe/London</option>
+                                     <option value="Asia/Tokyo">Asia/Tokyo</option>
+                                     <!-- Add more timezones -->
+                                   </select>
+                               </div>
+                             </div>
+                              <div class="row mb-3 align-items-center">
+                               <label for="editProfilePic" class="col-sm-3 col-form-label fw-bold">Profile Picture:</label>
+                               <div class="col-sm-9 d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/80" class="img-thumbnail me-3" alt="Profile Picture Placeholder" style="width: 80px; height: 80px;">
+                                   <input class="form-control form-control-sm" id="editProfilePic" type="file">
+                                </div>
+                             </div>
+                             <hr>
+                             <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary me-2"><i class="bi bi-x-lg"></i> Cancel</a>
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-save-fill"></i> Save Changes</button>
+                             </div>
+                        </form>
+                     </div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+      <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 18: Profile/Settings Page (Password Change) -->
+        <h2>State 18: Profile/Settings Page (Password Change)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Security - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+             <!-- Nav items (same as previous logged-in states) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item active" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+     <div class="container mt-4">
+        <h1><i class="bi bi-person-badge-fill"></i> Profile & Settings</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3">
+                 <!-- Settings Navigation -->
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action"> <i class="bi bi-person-lines-fill"></i> Profile Information </a>
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true"><i class="bi bi-shield-lock-fill"></i> Account Security</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill"></i> Notifications</a>
+                  <a href="#" class="list-group-item list-group-item-action text-danger"><i class="bi bi-trash-fill"></i> Delete Account</a>
+                </div>
+            </div>
+             <div class="col-md-9">
+                 <!-- Change Password Form -->
+                <div class="card">
+                    <div class="card-header">
+                         <h4 class="mb-0">Change Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" required>
+                             </div>
+                             <div class="mb-3">
+                                <label for="newPassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                                <div class="form-text">Must be at least 8 characters long.</div>
+                             </div>
+                             <div class="mb-3">
+                                <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                             </div>
+                             <hr>
+                             <button type="submit" class="btn btn-primary"><i class="bi bi-key-fill"></i> Update Password</button>
+                         </form>
+                     </div>
+                </div>
+
+                 <!-- 2FA Section (Placeholder) -->
+                 <div class="card mt-4">
+                    <div class="card-header">
+                         <h4 class="mb-0">Two-Factor Authentication (2FA)</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Add an extra layer of security to your account.</p>
+                        <p><strong>Status:</strong> <span class="badge bg-danger">Disabled</span></p>
+                        <button class="btn btn-outline-success"><i class="bi bi-shield-check"></i> Enable 2FA</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+     <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+        <!-- State 19: Profile/Settings Page (Save Confirmation) -->
+        <h2>State 19: Profile/Settings Page (Save Confirmation)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings - Saved - Challenge Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-trophy-fill"></i> Challenge Tracker</a>
+            <!-- Nav items (same as previous logged-in states) -->
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link" href="#">Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" href="#">My Challenges</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Create Challenge</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Badges</a> </li> </ul>
+                <ul class="navbar-nav ms-auto"> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person-circle"></i> User123 </a> <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> <li><a class="dropdown-item active" href="#"><i class="bi bi-person-fill"></i> Profile</a></li> <li><a class="dropdown-item active" href="#"><i class="bi bi-gear-fill"></i> Settings</a></li> <li><hr class="dropdown-divider"></li> <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> </ul> </li> </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <h1><i class="bi bi-person-badge-fill"></i> Profile & Settings</h1>
+        <hr>
+
+        <!-- Success Alert -->
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong><i class="bi bi-check-circle-fill"></i> Success!</strong> Your profile information has been updated.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                 <!-- Settings Navigation -->
+                 <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true"> <i class="bi bi-person-lines-fill"></i> Profile Information </a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-shield-lock-fill"></i> Account Security</a>
+                  <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-bell-fill"></i> Notifications</a>
+                   <a href="#" class="list-group-item list-group-item-action text-danger"><i class="bi bi-trash-fill"></i> Delete Account</a>
+                </div>
+            </div>
+             <div class="col-md-9">
+                 <!-- Profile Information Section (Updated View) -->
+                <div class="card">
+                     <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">Profile Information</h4>
+                         <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-fill"></i> Edit Profile</a>
+                    </div>
+                    <div class="card-body">
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Username:</label>
+                           <div class="col-sm-9"> <p class="form-control-plaintext">User123</p> </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Email:</label>
+                           <div class="col-sm-9"> <p class="form-control-plaintext">user123@example.com</p> </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Member Since:</label>
+                           <div class="col-sm-9"> <p class="form-control-plaintext">October 25, 2023</p> </div>
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Timezone:</label>
+                           <div class="col-sm-9"> <p class="form-control-plaintext">America/New_York</p> </div> <!-- Updated value -->
+                         </div>
+                         <div class="row mb-3">
+                           <label class="col-sm-3 col-form-label fw-bold">Profile Picture:</label>
+                            <div class="col-sm-9">
+                               <img src="https://via.placeholder.com/80?text=New" class="img-thumbnail" alt="Updated Profile Picture Placeholder"> <!-- Simulate updated picture -->
+                               <a href="#" class="btn btn-sm btn-link ms-2">Change</a>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Challenge Tracker
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

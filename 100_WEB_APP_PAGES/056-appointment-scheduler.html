@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduler - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height */
+            border: 1px solid #dee2e6;
+            background-color: #fff;
+            margin-bottom: 20px;
+            display: block;
+        }
+        /* Adjust iframe height for specific states if needed */
+        .iframe-short { height: 450px; }
+        .iframe-medium { height: 700px; }
+        .iframe-long { height: 850px; }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Appointment Scheduler - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-light btn-sm me-2" href="#">Login</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-light btn-sm text-primary" href="#">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-light p-5 rounded-lg m-3 text-center">
+            <h1 class="display-4">Effortless Appointment Scheduling</h1>
+            <p class="lead">Book your appointments online quickly and easily. Manage your schedule anytime, anywhere.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Book an Appointment Now &raquo;</a>
+        </header>
+
+        <div class="container mt-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="bi bi-calendar-check display-4 text-primary"></i>
+                    <h3 class="mt-3">Easy Booking</h3>
+                    <p>Find available slots and book in just a few clicks.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-clock-history display-4 text-primary"></i>
+                    <h3 class="mt-3">Manage Schedule</h3>
+                    <p>View, reschedule, or cancel your appointments online.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-bell display-4 text-primary"></i>
+                    <h3 class="mt-3">Reminders</h3>
+                    <p>Get timely reminders for your upcoming appointments.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-light btn-sm me-2" href="#">Login</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-light btn-sm text-primary" href="#">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <h1 class="mb-4">About AppointSched</h1>
+            <p class="lead">We aim to simplify the process of scheduling appointments for both businesses and customers.</p>
+            <hr>
+            <h3>Our Mission</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+            <h3>Our Vision</h3>
+            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+            <h3>Meet the Team</h3>
+            <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+             <!-- Placeholder for team members -->
+             <div class="row mt-4">
+                <div class="col-md-4 text-center mb-3">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Team Member 1">
+                    <h5>Jane Doe</h5>
+                    <p class="text-muted">Founder & CEO</p>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Team Member 2">
+                    <h5>John Smith</h5>
+                    <p class="text-muted">Lead Developer</p>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-2" alt="Team Member 3">
+                    <h5>Alice Brown</h5>
+                    <p class="text-muted">UX Designer</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 3: Login Page -->
+    <h2>State 3: Login Page</h2>
+    <iframe class="iframe-short" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-primary text-white">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                <a href="#" class="text-decoration-none">Forgot Password?</a>
+                            </div>
+                        </div>
+                         <div class="card-footer text-center">
+                            <small>Don`t have an account? <a href="#">Register here</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 4: Login Page (Error State) -->
+    <h2>State 4: Login Page (Error State)</h2>
+    <iframe class="iframe-short" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-primary text-white">
+                            <h4>Login</h4>
+                        </div>
+                        <div class="card-body">
+                             <div class="alert alert-danger" role="alert">
+                                Invalid email or password. Please try again.
+                             </div>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control is-invalid" id="loginEmail" placeholder="name@example.com" value="user@wrong.com">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password">
+                                     <div class="invalid-feedback">
+                                        Password cannot be empty.
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                             <div class="text-center mt-3">
+                                <a href="#" class="text-decoration-none">Forgot Password?</a>
+                            </div>
+                        </div>
+                         <div class="card-footer text-center">
+                            <small>Don`t have an account? <a href="#">Register here</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 5: Registration Page -->
+    <h2>State 5: Registration Page</h2>
+    <iframe class="iframe-medium" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card">
+                        <div class="card-header text-center bg-primary text-white">
+                            <h4>Create Account</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                 <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="registerName" placeholder="John Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="registerPhone" class="form-label">Phone Number (Optional)</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="123-456-7890">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Choose a strong password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password">
+                                </div>
+                                 <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="termsCheck">
+                                    <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
+                            </form>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small>Already have an account? <a href="#">Login here</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 6: Registration Page (Error State) -->
+    <h2>State 6: Registration Page (Error State)</h2>
+    <iframe class="iframe-medium" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card">
+                        <div class="card-header text-center bg-primary text-white">
+                            <h4>Create Account</h4>
+                        </div>
+                        <div class="card-body">
+                             <div class="alert alert-warning" role="alert">
+                                Please fix the errors below before proceeding.
+                            </div>
+                            <form>
+                                 <div class="mb-3">
+                                    <label for="registerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control is-invalid" id="registerName" placeholder="John Doe">
+                                     <div class="invalid-feedback">
+                                        Full name is required.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control is-invalid" id="registerEmail" placeholder="name@example.com" value="invalid-email">
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="registerPhone" class="form-label">Phone Number (Optional)</label>
+                                    <input type="tel" class="form-control" id="registerPhone" placeholder="123-456-7890">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control is-invalid" id="registerPassword" placeholder="Choose a strong password">
+                                    <div class="invalid-feedback">
+                                        Password must be at least 8 characters long.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Re-enter your password">
+                                     <div class="invalid-feedback">
+                                        Passwords do not match.
+                                    </div>
+                                </div>
+                                 <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input is-invalid" id="termsCheck">
+                                    <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+                                     <div class="invalid-feedback">
+                                        You must agree to the terms.
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
+                            </form>
+                        </div>
+                         <div class="card-footer text-center">
+                            <small>Already have an account? <a href="#">Login here</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 7: Dashboard/Calendar View (Logged In) -->
+    <h2>State 7: Dashboard/Calendar View (Logged In)</h2>
+    <iframe class="iframe-long" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+            .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+            .calendar-day { border: 1px solid #eee; padding: 10px; min-height: 100px; text-align: center; background-color: #fff; position: relative; }
+            .calendar-day span { font-weight: bold; display: block; margin-bottom: 5px; }
+            .calendar-header { font-weight: bold; text-align: center; padding: 10px; background-color: #f8f9fa; border: 1px solid #eee;}
+            .day-number { position: absolute; top: 5px; right: 5px; font-size: 0.8em; color: #aaa; }
+             .today { background-color: #e9f5ff; border-color: #b8dfff;}
+             .has-appointment { background-color: #fff3cd; cursor: pointer;}
+             .appointment-dot { height: 8px; width: 8px; background-color: #0d6efd; border-radius: 50%; display: inline-block; margin-left: 5px;}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Book New</a></li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                 <h1>Welcome, John!</h1>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle"></i> Book New Appointment</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                   <h5><i class="bi bi-calendar3"></i> November 2023</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chevron-left"></i> Prev</button>
+                        <button class="btn btn-sm btn-outline-secondary">Next <i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="calendar">
+                        <div class="calendar-header">Sun</div>
+                        <div class="calendar-header">Mon</div>
+                        <div class="calendar-header">Tue</div>
+                        <div class="calendar-header">Wed</div>
+                        <div class="calendar-header">Thu</div>
+                        <div class="calendar-header">Fri</div>
+                        <div class="calendar-header">Sat</div>
+
+                        <!-- Placeholder Days -->
+                        <div class="calendar-day text-muted"><span class="day-number">29</span></div>
+                        <div class="calendar-day text-muted"><span class="day-number">30</span></div>
+                        <div class="calendar-day text-muted"><span class="day-number">31</span></div>
+                        <div class="calendar-day"><span class="day-number">1</span></div>
+                        <div class="calendar-day"><span class="day-number">2</span></div>
+                        <div class="calendar-day"><span class="day-number">3</span></div>
+                        <div class="calendar-day"><span class="day-number">4</span></div>
+                        <div class="calendar-day"><span class="day-number">5</span></div>
+                        <div class="calendar-day"><span class="day-number">6</span></div>
+                        <div class="calendar-day"><span class="day-number">7</span></div>
+                        <div class="calendar-day has-appointment"><span class="day-number">8</span> 10:00 AM Dr. Smith <span class="appointment-dot"></span></div>
+                        <div class="calendar-day"><span class="day-number">9</span></div>
+                        <div class="calendar-day"><span class="day-number">10</span></div>
+                        <div class="calendar-day"><span class="day-number">11</span></div>
+                        <div class="calendar-day"><span class="day-number">12</span></div>
+                        <div class="calendar-day today"><span class="day-number">13</span></div>
+                        <div class="calendar-day"><span class="day-number">14</span></div>
+                         <div class="calendar-day has-appointment"><span class="day-number">15</span> 2:30 PM Meeting <span class="appointment-dot"></span></div>
+                        <div class="calendar-day"><span class="day-number">16</span></div>
+                        <div class="calendar-day"><span class="day-number">17</span></div>
+                        <div class="calendar-day"><span class="day-number">18</span></div>
+                        <div class="calendar-day"><span class="day-number">19</span></div>
+                        <div class="calendar-day"><span class="day-number">20</span></div>
+                        <div class="calendar-day"><span class="day-number">21</span></div>
+                        <div class="calendar-day"><span class="day-number">22</span></div>
+                        <div class="calendar-day"><span class="day-number">23</span></div>
+                        <div class="calendar-day"><span class="day-number">24</span></div>
+                        <div class="calendar-day"><span class="day-number">25</span></div>
+                        <div class="calendar-day"><span class="day-number">26</span></div>
+                        <div class="calendar-day"><span class="day-number">27</span></div>
+                        <div class="calendar-day"><span class="day-number">28</span></div>
+                        <div class="calendar-day"><span class="day-number">29</span></div>
+                        <div class="calendar-day"><span class="day-number">30</span></div>
+                         <div class="calendar-day text-muted"><span class="day-number">1</span></div>
+                         <div class="calendar-day text-muted"><span class="day-number">2</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4>Upcoming Appointments</h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Dr. Smith - Check-up</strong><br>
+                            <small class="text-muted">Wed, Nov 8, 2023 - 10:00 AM</small>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </li>
+                     <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Team Meeting - Project Alpha</strong><br>
+                            <small class="text-muted">Wed, Nov 15, 2023 - 2:30 PM</small>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </li>
+                     <li class="list-group-item text-center text-muted">
+                        No more upcoming appointments this month.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 8: Service Selection/Date Selection -->
+    <h2>State 8: Service Selection / Date Selection</h2>
+    <iframe class="iframe-long" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment - Select Service & Date</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+         <style>
+            .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+            .calendar-day { border: 1px solid #eee; padding: 10px; min-height: 80px; text-align: center; background-color: #fff; position: relative; cursor: pointer;}
+             .calendar-day:hover { background-color: #f0f0f0; }
+            .calendar-day span { font-weight: bold; display: block; margin-bottom: 5px; }
+            .calendar-header { font-weight: bold; text-align: center; padding: 10px; background-color: #f8f9fa; border: 1px solid #eee;}
+            .day-number { position: absolute; top: 5px; right: 5px; font-size: 0.8em; color: #aaa; }
+             .disabled-day { background-color: #f8f9fa; color: #ccc; cursor: not-allowed; }
+             .selected-day { background-color: #0d6efd; color: white; border-color: #0a58ca;}
+             .selected-day:hover { background-color: #0b5ed7; }
+             .selected-day .day-number { color: white; }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <h1>Book New Appointment</h1>
+            <p>Select a service and choose an available date.</p>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Step 1: Select Service
+                        </div>
+                        <div class="card-body">
+                             <div class="mb-3">
+                                <label for="serviceSelect" class="form-label">Choose Service:</label>
+                                <select class="form-select" id="serviceSelect">
+                                    <option selected>-- Select a Service --</option>
+                                    <option value="1">General Check-up (30 min)</option>
+                                    <option value="2">Consultation (1 hour)</option>
+                                    <option value="3">Follow-up Visit (15 min)</option>
+                                    <option value="4">Special Procedure (Custom)</option>
+                                </select>
+                            </div>
+                             <div class="mb-3">
+                                <label for="providerSelect" class="form-label">Choose Provider (Optional):</label>
+                                <select class="form-select" id="providerSelect">
+                                    <option selected>-- Any Available --</option>
+                                    <option value="1">Dr. Smith</option>
+                                    <option value="2">Nurse Johnson</option>
+                                    <option value="3">Therapist Lee</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 mb-4">
+                     <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                           <h5>Step 2: Select Date <span class="badge bg-secondary ms-2">November 2023</span></h5>
+                            <div>
+                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chevron-left"></i></button>
+                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="calendar">
+                                <div class="calendar-header">Sun</div>
+                                <div class="calendar-header">Mon</div>
+                                <div class="calendar-header">Tue</div>
+                                <div class="calendar-header">Wed</div>
+                                <div class="calendar-header">Thu</div>
+                                <div class="calendar-header">Fri</div>
+                                <div class="calendar-header">Sat</div>
+
+                                <!-- Placeholder Days -->
+                                <div class="calendar-day disabled-day"><span class="day-number">29</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">30</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">31</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">1</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">2</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">3</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">4</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">5</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">6</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">7</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">8</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">9</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">10</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">11</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">12</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">13</span></div> <!-- Today, but no slots -->
+                                <div class="calendar-day"><span class="day-number">14</span></div>
+                                <div class="calendar-day"><span class="day-number">15</span></div>
+                                <div class="calendar-day selected-day"><span class="day-number">16</span> Selected</div>
+                                <div class="calendar-day"><span class="day-number">17</span></div>
+                                <div class="calendar-day"><span class="day-number">18</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">19</span></div>
+                                <div class="calendar-day"><span class="day-number">20</span></div>
+                                <div class="calendar-day"><span class="day-number">21</span></div>
+                                <div class="calendar-day"><span class="day-number">22</span></div>
+                                <div class="calendar-day"><span class="day-number">23</span></div>
+                                <div class="calendar-day"><span class="day-number">24</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">25</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">26</span></div>
+                                <div class="calendar-day"><span class="day-number">27</span></div>
+                                <div class="calendar-day"><span class="day-number">28</span></div>
+                                <div class="calendar-day"><span class="day-number">29</span></div>
+                                <div class="calendar-day"><span class="day-number">30</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">1</span></div>
+                                <div class="calendar-day disabled-day"><span class="day-number">2</span></div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary" disabled>Select Time Slots for Nov 16 <i class="bi bi-arrow-right"></i></button>
+                                 <small class="d-block mt-2 text-muted">Please select a service first.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 9: Time Slot Selection -->
+    <h2>State 9: Time Slot Selection</h2>
+    <iframe class="iframe-medium" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment - Select Time</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+            .time-slot { margin-bottom: 10px; }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                     <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Select Service & Date</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Select Time Slot</li>
+                        </ol>
+                    </nav>
+
+                    <div class="card">
+                        <div class="card-header">
+                             Step 3: Select Available Time Slot for <strong>Thursday, November 16, 2023</strong>
+                        </div>
+                        <div class="card-body">
+                            <p>Service: <strong>General Check-up (30 min)</strong> with <strong>Dr. Smith</strong></p>
+                            <hr>
+                            <h6 class="text-center mb-3">Available Times</h6>
+                            <div class="row text-center">
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">09:00 AM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">09:30 AM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-secondary w-100 disabled">10:00 AM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-primary w-100">10:30 AM</button></div> <!-- Selected -->
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">11:00 AM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-secondary w-100 disabled">11:30 AM</button></div>
+                                <div class="col-12 my-2 text-center text-muted">--- Lunch Break ---</div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">01:00 PM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">01:30 PM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">02:00 PM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-secondary w-100 disabled">02:30 PM</button></div>
+                                <div class="col-4 time-slot"><button class="btn btn-outline-primary w-100">03:00 PM</button></div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                             <button class="btn btn-secondary me-2"><i class="bi bi-arrow-left"></i> Back to Calendar</button>
+                             <button class="btn btn-success">Proceed to Details <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 10: Booking Form -->
+    <h2>State 10: Booking Form</h2>
+    <iframe class="iframe-long" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment - Details</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Select Service & Date</a></li>
+                            <li class="breadcrumb-item"><a href="#">Select Time Slot</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Enter Details</li>
+                        </ol>
+                    </nav>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Step 4: Confirm Details and Book
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-info" role="alert">
+                                <h5 class="alert-heading"><i class="bi bi-calendar-check"></i> Appointment Summary</h5>
+                                <p><strong>Service:</strong> General Check-up (30 min)</p>
+                                <p><strong>Provider:</strong> Dr. Smith</p>
+                                <p><strong>Date:</strong> Thursday, November 16, 2023</p>
+                                <p><strong>Time:</strong> 10:30 AM</p>
+                            </div>
+                            <hr>
+                             <h5 class="mb-3">Your Information</h5>
+                            <form>
+                                 <div class="mb-3">
+                                    <label for="bookingName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="bookingName" value="John Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bookingEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="bookingEmail" value="john.doe@example.com">
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="bookingPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="bookingPhone" value="123-456-7890">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bookingNotes" class="form-label">Appointment Notes (Optional)</label>
+                                    <textarea class="form-control" id="bookingNotes" rows="3" placeholder="Reason for visit, any specific concerns..."></textarea>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="reminderCheck" checked>
+                                    <label class="form-check-label" for="reminderCheck">Send me email/SMS reminders</label>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-secondary me-md-2"><i class="bi bi-arrow-left"></i> Back to Time Slots</button>
+                                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i> Confirm Booking</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 11: Booking Form (Error State) -->
+    <h2>State 11: Booking Form (Error State)</h2>
+    <iframe class="iframe-long" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment - Details Error</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-7">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Select Service & Date</a></li>
+                            <li class="breadcrumb-item"><a href="#">Select Time Slot</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Enter Details</li>
+                        </ol>
+                    </nav>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Step 4: Confirm Details and Book
+                        </div>
+                        <div class="card-body">
+                           <div class="alert alert-danger" role="alert">
+                                Please correct the errors in the form below.
+                           </div>
+                            <div class="alert alert-info" role="alert">
+                                <h5 class="alert-heading"><i class="bi bi-calendar-check"></i> Appointment Summary</h5>
+                                <p><strong>Service:</strong> General Check-up (30 min)</p>
+                                <p><strong>Provider:</strong> Dr. Smith</p>
+                                <p><strong>Date:</strong> Thursday, November 16, 2023</p>
+                                <p><strong>Time:</strong> 10:30 AM</p>
+                            </div>
+                            <hr>
+                             <h5 class="mb-3">Your Information</h5>
+                            <form>
+                                 <div class="mb-3">
+                                    <label for="bookingName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control is-invalid" id="bookingName" value="">
+                                     <div class="invalid-feedback">
+                                        Please enter your full name.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bookingEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="bookingEmail" value="john.doe@example.com">
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="bookingPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control is-invalid" id="bookingPhone" value="123-abc-456">
+                                     <div class="invalid-feedback">
+                                        Please enter a valid phone number (e.g., 123-456-7890).
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bookingNotes" class="form-label">Appointment Notes (Optional)</label>
+                                    <textarea class="form-control" id="bookingNotes" rows="3" placeholder="Reason for visit, any specific concerns..."></textarea>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="reminderCheck" checked>
+                                    <label class="form-check-label" for="reminderCheck">Send me email/SMS reminders</label>
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" class="btn btn-secondary me-md-2"><i class="bi bi-arrow-left"></i> Back to Time Slots</button>
+                                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i> Confirm Booking</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 12: Booking Confirmation -->
+    <h2>State 12: Booking Confirmation</h2>
+    <iframe class="iframe-short" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking Confirmed</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card text-center border-success">
+                        <div class="card-header bg-success text-white">
+                           <i class="bi bi-check-circle-fill fs-4"></i> Appointment Confirmed!
+                         </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Your booking is complete.</h5>
+                             <p class="card-text">A confirmation email has been sent to <strong>john.doe@example.com</strong>.</p>
+                             <hr>
+                            <p><strong>Details:</strong></p>
+                            <ul class="list-unstyled">
+                                 <li><strong>Service:</strong> General Check-up</li>
+                                 <li><strong>Provider:</strong> Dr. Smith</li>
+                                 <li><strong>Date:</strong> Thursday, November 16, 2023</li>
+                                 <li><strong>Time:</strong> 10:30 AM</li>
+                            </ul>
+                             <a href="#" class="btn btn-primary mt-3 me-2"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
+                             <a href="#" class="btn btn-outline-secondary mt-3"><i class="bi bi-list-ul"></i> View My Appointments</a>
+                        </div>
+                         <div class="card-footer text-muted">
+                            Thank you for using AppointSched!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 13: My Appointments (Logged In) -->
+    <h2>State 13: My Appointments (Logged In)</h2>
+    <iframe class="iframe-medium" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Appointments</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Book New</a></li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>My Appointments</h1>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle"></i> Book New Appointment</a>
+             </div>
+
+            <ul class="nav nav-tabs mb-3" id="appointmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button" role="tab" aria-controls="upcoming" aria-selected="true">Upcoming</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past" type="button" role="tab" aria-controls="past" aria-selected="false">Past</button>
+                </li>
+                 <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cancelled-tab" data-bs-toggle="tab" data-bs-target="#cancelled" type="button" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="appointmentTabsContent">
+                <div class="tab-pane fade show active" id="upcoming" role="tabpanel" aria-labelledby="upcoming-tab">
+                     <div class="list-group">
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">General Check-up with Dr. Smith</h5>
+                                <small>In 3 days</small>
+                            </div>
+                            <p class="mb-1"><i class="bi bi-calendar-event"></i> Thursday, November 16, 2023 at 10:30 AM</p>
+                             <small class="text-muted"><i class="bi bi-clock"></i> Duration: 30 minutes</small>
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-square"></i> Reschedule</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-x-circle"></i> Cancel</button>
+                            </div>
+                        </div>
+                         <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Consultation with Therapist Lee</h5>
+                                <small>In 2 weeks</small>
+                            </div>
+                            <p class="mb-1"><i class="bi bi-calendar-event"></i> Monday, November 27, 2023 at 02:00 PM</p>
+                             <small class="text-muted"><i class="bi bi-clock"></i> Duration: 1 hour</small>
+                             <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil-square"></i> Reschedule</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-x-circle"></i> Cancel</button>
+                            </div>
+                        </div>
+                         <div class="list-group-item text-center p-4">
+                            <p class="text-muted mb-0">No more upcoming appointments.</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+                     <div class="list-group">
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Follow-up Visit with Nurse Johnson</h5>
+                                <small class="text-muted">Completed</small>
+                            </div>
+                            <p class="mb-1"><i class="bi bi-calendar-event"></i> Wednesday, Nov 8, 2023 - 10:00 AM</p>
+                             <small class="text-muted"><i class="bi bi-clock"></i> Duration: 15 minutes</small>
+                             <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-receipt"></i> View Details</button>
+                            </div>
+                        </div>
+                         <div class="list-group-item list-group-item-action">
+                           <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Initial Consultation with Dr. Smith</h5>
+                                <small class="text-muted">Completed</small>
+                            </div>
+                            <p class="mb-1"><i class="bi bi-calendar-event"></i> Tuesday, Oct 10, 2023 - 03:30 PM</p>
+                             <small class="text-muted"><i class="bi bi-clock"></i> Duration: 1 hour</small>
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-receipt"></i> View Details</button>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                <div class="tab-pane fade" id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
+                     <div class="list-group">
+                         <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 text-decoration-line-through">Team Meeting - Project Alpha</h5>
+                                <small class="text-danger">Cancelled</small>
+                            </div>
+                            <p class="mb-1"><i class="bi bi-calendar-x"></i> Originally: Wed, Nov 15, 2023 - 2:30 PM</p>
+                             <small class="text-muted">Cancelled on Nov 12, 2023</small>
+                        </div>
+                         <div class="list-group-item text-center p-4">
+                            <p class="text-muted mb-0">No cancelled appointments found.</p>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+    <!-- State 14: Profile Page (Logged In) -->
+    <h2>State 14: Profile Page (Logged In)</h2>
+    <iframe class="iframe-short" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Profile</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item active" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                           <h4>My Profile</h4>
+                           <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i> Edit Profile</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-sm-4"><strong>Full Name:</strong></div>
+                                <div class="col-sm-8">John Doe</div>
+                            </div>
+                             <div class="row mb-3">
+                                <div class="col-sm-4"><strong>Email Address:</strong></div>
+                                <div class="col-sm-8">john.doe@example.com <span class="badge bg-success ms-1">Verified</span></div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-4"><strong>Phone Number:</strong></div>
+                                <div class="col-sm-8">123-456-7890 <a href="#" class="ms-1"><small>(Verify)</small></a></div>
+                            </div>
+                             <div class="row mb-3">
+                                <div class="col-sm-4"><strong>Member Since:</strong></div>
+                                <div class="col-sm-8">October 1, 2023</div>
+                            </div>
+                             <div class="row">
+                                <div class="col-sm-4"><strong>Password:</strong></div>
+                                <div class="col-sm-8">******** <a href="#" class="ms-1"><small>(Change Password)</small></a></div>
+                            </div>
+                             <hr>
+                            <h5>Preferences</h5>
+                             <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="emailReminders" checked disabled>
+                                <label class="form-check-label" for="emailReminders">Email Reminders</label>
+                            </div>
+                             <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="smsReminders" disabled>
+                                <label class="form-check-label" for="smsReminders">SMS Reminders (Phone not verified)</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+     <!-- State 15: Profile Page (Edit Mode) -->
+    <h2>State 15: Profile Page (Edit Mode)</h2>
+    <iframe class="iframe-medium" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Profile</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">AppointSched</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">My Appointments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Book New</a></li>
+                    </ul>
+                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> John Doe
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item active" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card">
+                         <div class="card-header d-flex justify-content-between align-items-center">
+                           <h4>Edit Profile</h4>
+                            <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-x-lg"></i> Cancel</a>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="profileName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="profileName" value="John Doe">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profileEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="profileEmail" value="john.doe@example.com" aria-describedby="emailHelp">
+                                     <div id="emailHelp" class="form-text">Changing your email might require re-verification.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profilePhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="profilePhone" value="123-456-7890">
+                                </div>
+                                <hr>
+                                <h5>Change Password (Optional)</h5>
+                                 <div class="mb-3">
+                                    <label for="currentPassword" class="form-label">Current Password</label>
+                                    <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password to change">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label">New Password</label>
+                                    <input type="password" class="form-control" id="newPassword" placeholder="Leave blank to keep current password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                                    <input type="password" class="form-control" id="confirmNewPassword" placeholder="Re-enter new password">
+                                </div>
+                                <hr>
+                                 <h5>Preferences</h5>
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="editEmailReminders" checked>
+                                    <label class="form-check-label" for="editEmailReminders">Email Reminders</label>
+                                </div>
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="editSmsReminders" disabled> <!-- Still disabled if phone not verified -->
+                                    <label class="form-check-label" for="editSmsReminders">SMS Reminders (Verify phone first)</label>
+                                </div>
+
+                                 <button type="submit" class="btn btn-primary mt-3 w-100"><i class="bi bi-save"></i> Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <footer class="bg-light text-center text-lg-start mt-5">
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2023 AppointSched
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    '></iframe>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

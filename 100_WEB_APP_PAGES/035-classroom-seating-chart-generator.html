@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Seating Chart Generator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 20px; background-color: #f8f9fa; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px; }
+        iframe { width: 100%; height: 600px; border: 1px solid #ccc; margin-bottom: 20px; background-color: #fff; }
+        .state-container { margin-bottom: 40px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Classroom Seating Chart Generator - UI Flow</h1>
+
+    <!-- Navigation Bar Structure (Conceptual - Repeated in relevant iframes) -->
+    <!--
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SeatGen</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Charts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+             <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+             <li class="nav-item">
+              <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    -->
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <style>body { padding-top: 70px; }</style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <div class="p-5 mb-4 bg-light rounded-3">
+                      <div class="container-fluid py-5 text-center">
+                        <h1 class="display-5 fw-bold">Classroom Seating Chart Generator</h1>
+                        <p class="fs-4">Easily create, manage, and visualize your classroom seating arrangements. Save time and organize your classroom effectively.</p>
+                        <button class="btn btn-primary btn-lg" type="button">Get Started Now</button>
+                      </div>
+                    </div>
+                    <div class="row align-items-md-stretch">
+                      <div class="col-md-6 mb-3">
+                        <div class="h-100 p-5 text-bg-dark rounded-3">
+                          <h2>Visualize Layouts</h2>
+                          <p>Drag and drop desks, arrange students, and print your charts. Supports various classroom configurations.</p>
+                          <button class="btn btn-outline-light" type="button">Learn More</button>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <div class="h-100 p-5 bg-body-secondary border rounded-3">
+                          <h2>Manage Students</h2>
+                          <p>Easily import student lists, track seating history (placeholder feature), and assign specific seats or constraints.</p>
+                          <button class="btn btn-outline-secondary" type="button">Explore Features</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; }</style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <h1>About SeatGen</h1>
+                    <p class="lead">Simplifying classroom management for educators.</p>
+                    <hr>
+                    <p>SeatGen was created to address the common challenge teachers face in organizing classroom seating. Our mission is to provide a simple, intuitive, and visually appealing tool that helps educators create effective learning environments.</p>
+                    <p>Key features include:</p>
+                    <ul>
+                        <li>Visual drag-and-drop interface for desk layout.</li>
+                        <li>Easy student list management.</li>
+                        <li>Automatic seating arrangement suggestions (placeholder).</li>
+                        <li>Printable chart formats.</li>
+                        <li>Secure storage of your classroom data (placeholder).</li>
+                    </ul>
+                    <p>We believe that a well-organized classroom starts with a well-planned seating chart. SeatGen aims to make this process quick and painless, freeing up valuable time for teachers to focus on teaching.</p>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Login Page -->
+        <div class="state-container">
+        <h2>State 3: Login Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 70px); }</style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="btn btn-primary btn-sm" href="#">Sign Up</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container">
+                   <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="card-title text-center mb-4">Login to SeatGen</h3>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="loginEmail" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="loginPassword" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                                        </div>
+                                        <div class="d-grid">
+                                           <button type="submit" class="btn btn-primary">Login</button>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <small>Dont have an account? <a href="#">Sign Up</a></small> | <a href="#"><small>Forgot Password?</small></a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 4: Sign Up Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 70px); }</style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Login</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="btn btn-primary btn-sm active" aria-current="page" href="#">Sign Up</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                 <div class="container">
+                   <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-5">
+                            <div class="card shadow-sm">
+                                <div class="card-body p-4">
+                                    <h3 class="card-title text-center mb-4">Create Your SeatGen Account</h3>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="signupName" class="form-label">Full Name</label>
+                                            <input type="text" class="form-control" id="signupName" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="signupEmail" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="signupPassword" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="signupPassword" placeholder="Create a Password" required>
+                                        </div>
+                                         <div class="mb-3">
+                                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                                        </div>
+                                        <div class="d-grid">
+                                           <button type="submit" class="btn btn-primary">Sign Up</button>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <small>Already have an account? <a href="#">Login</a></small>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Dashboard / My Charts Page -->
+    <div class="state-container">
+        <h2>State 5: Dashboard / My Charts Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; }</style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                         <h1>My Seating Charts</h1>
+                         <button class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Create New Chart</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Existing Charts</h5>
+                             <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Chart Name</th>
+                                            <th>Class/Subject</th>
+                                            <th>Date Created</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Period 1 - Homeroom</td>
+                                            <td>Grade 5 Homeroom</td>
+                                            <td>2024-01-15</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-secondary me-1" title="View/Edit"><i class="bi bi-pencil-square"></i></button>
+                                                <button class="btn btn-sm btn-outline-info me-1" title="Print"><i class="bi bi-printer"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Science Lab Setup</td>
+                                            <td>Grade 8 Science</td>
+                                            <td>2024-01-10</td>
+                                             <td>
+                                                <button class="btn btn-sm btn-outline-secondary me-1" title="View/Edit"><i class="bi bi-pencil-square"></i></button>
+                                                <button class="btn btn-sm btn-outline-info me-1" title="Print"><i class="bi bi-printer"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>Math Class - Rows</td>
+                                            <td>Grade 6 Math</td>
+                                            <td>2023-12-20</td>
+                                             <td>
+                                                <button class="btn btn-sm btn-outline-secondary me-1" title="View/Edit"><i class="bi bi-pencil-square"></i></button>
+                                                <button class="btn btn-sm btn-outline-info me-1" title="Print"><i class="bi bi-printer"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger" title="Delete"><i class="bi bi-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                      </tbody>
+                                 </table>
+                             </div>
+                             <p class="text-muted text-center mt-3">No more charts found.</p>
+                         </div>
+                     </div>
+
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Create New Chart - Step 1: Basic Info -->
+    <div class="state-container">
+        <h2>State 6: Create New Chart - Step 1: Basic Info</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; }</style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Charts</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create New Chart</li>
+                      </ol>
+                    </nav>
+                    <h2>Create New Chart (Step 1 of 3)</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            Basic Information
+                        </div>
+                        <div class="card-body">
+                             <form>
+                                <div class="mb-3">
+                                    <label for="chartName" class="form-label">Chart Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="chartName" placeholder="e.g., Period 3 - English G9" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="className" class="form-label">Class / Subject</label>
+                                    <input type="text" class="form-control" id="className" placeholder="e.g., English Grade 9">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="chartDescription" class="form-label">Description (Optional)</label>
+                                    <textarea class="form-control" id="chartDescription" rows="3" placeholder="Any notes about this chart..."></textarea>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Next: Add Students <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Create New Chart - Step 2: Add Students -->
+    <div class="state-container">
+        <h2>State 7: Create New Chart - Step 2: Add Students</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; }</style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                     <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Charts</a></li>
+                        <li class="breadcrumb-item"><a href="#">Create New Chart</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Students</li>
+                      </ol>
+                    </nav>
+                    <h2>Create New Chart (Step 2 of 3)</h2>
+                     <div class="card">
+                        <div class="card-header">
+                           Add Student List
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="studentList" class="form-label">Enter Student Names <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="studentList" rows="10" placeholder="Enter one student name per line. Example:&#10;Alice Smith&#10;Bob Johnson&#10;Charlie Brown" required></textarea>
+                                    <div class="form-text">You can copy and paste your list here.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="studentFileUpload" class="form-label">Or Upload a File (Optional)</label>
+                                    <input class="form-control" type="file" id="studentFileUpload" accept=".csv, .txt">
+                                    <div class="form-text">Supports .txt or .csv files with one name per line.</div>
+                                </div>
+                                 <div class="alert alert-info d-flex align-items-center" role="alert">
+                                     <i class="bi bi-info-circle-fill flex-shrink-0 me-2"></i>
+                                    <div>
+                                        Student count: <span class="fw-bold">0</span> (Based on entries above)
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back: Basic Info</button>
+                                    <button type="submit" class="btn btn-primary">Next: Define Layout <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+     <!-- State 8: Create New Chart - Step 3: Define Layout & Arrange -->
+    <div class="state-container">
+        <h2>State 8: Create New Chart - Step 3: Define Layout & Arrange</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>
+                    body { padding-top: 70px; }
+                    .desk {
+                        border: 1px solid #6c757d;
+                        padding: 10px 5px;
+                        margin: 5px;
+                        min-height: 60px;
+                        min-width: 80px;
+                        text-align: center;
+                        font-size: 0.8em;
+                        background-color: #e9ecef;
+                        border-radius: 4px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: grab;
+                     }
+                    .desk.assigned { background-color: #cfe2ff; border-color: #9ec5fe; }
+                    .desk-placeholder { border: 2px dashed #ced4da; background-color: #f8f9fa; }
+                    .classroom-layout { border: 1px solid #dee2e6; padding: 20px; background-color: #fff; overflow-x: auto; }
+                    .toolbar { margin-bottom: 15px; }
+                 </style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                     <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Charts</a></li>
+                        <li class="breadcrumb-item"><a href="#">Create New Chart</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Layout & Arrange</li>
+                      </ol>
+                    </nav>
+                    <h2>Create New Chart (Step 3 of 3) - Period 3 English G9</h2>
+                    <div class="alert alert-secondary">Chart Name: Period 3 - English G9 | Students: 25 | Desks: 25</div>
+
+                    <div class="card">
+                        <div class="card-header">
+                           Define Classroom Layout and Arrange Students
+                        </div>
+                        <div class="card-body">
+                             <div class="toolbar d-flex justify-content-between flex-wrap gap-2">
+                                <div>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-plus-square"></i> Add Desk</button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-grid-3x3-gap"></i> Grid Template</button>
+                                    <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Clear Layout</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-success"><i class="bi bi-magic"></i> Auto-Arrange</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-shuffle"></i> Shuffle Students</button>
+                                </div>
+                             </div>
+
+                            <div class="classroom-layout mb-3">
+                                <p class="text-muted text-center fst-italic">Front of Classroom</p>
+                                <div class="d-flex flex-wrap justify-content-center">
+                                    <!-- Row 1 -->
+                                    <div class="desk assigned"><span>Alice S.</span></div>
+                                    <div class="desk assigned"><span>Bob J.</span></div>
+                                    <div class="desk assigned"><span>Charlie B.</span></div>
+                                    <div class="desk assigned"><span>David K.</span></div>
+                                    <div class="desk assigned"><span>Eve L.</span></div>
+                                    <!-- Row 2 -->
+                                    <div class="desk assigned"><span>Frank M.</span></div>
+                                    <div class="desk assigned"><span>Grace N.</span></div>
+                                    <div class="desk desk-placeholder"><span>(Empty)</span></div>
+                                    <div class="desk assigned"><span>Heidi O.</span></div>
+                                    <div class="desk assigned"><span>Ivan P.</span></div>
+                                    <!-- Row 3 -->
+                                    <div class="desk assigned"><span>Judy Q.</span></div>
+                                    <div class="desk assigned"><span>Kevin R.</span></div>
+                                    <div class="desk assigned"><span>Laura S.</span></div>
+                                    <div class="desk assigned"><span>Mike T.</span></div>
+                                    <div class="desk assigned"><span>Nancy U.</span></div>
+                                    <!-- Row 4 -->
+                                    <div class="desk assigned"><span>Oscar V.</span></div>
+                                    <div class="desk assigned"><span>Pam W.</span></div>
+                                    <div class="desk assigned"><span>Quentin X.</span></div>
+                                    <div class="desk assigned"><span>Rita Y.</span></div>
+                                    <div class="desk assigned"><span>Steve Z.</span></div>
+                                     <!-- Row 5 -->
+                                    <div class="desk assigned"><span>Tina A.</span></div>
+                                    <div class="desk assigned"><span>Uma B.</span></div>
+                                    <div class="desk assigned"><span>Victor C.</span></div>
+                                    <div class="desk assigned"><span>Wendy D.</span></div>
+                                    <div class="desk assigned"><span>Xavier E.</span></div>
+                                </div>
+                                 <p class="text-muted text-center fst-italic mt-3">Drag students from the list below or click Auto-Arrange.</p>
+                             </div>
+
+                             <div class="row">
+                                <div class="col-md-4">
+                                     <h6>Unassigned Students (0)</h6>
+                                     <ul class="list-group" style="max-height: 150px; overflow-y: auto;">
+                                        <!-- <li class="list-group-item">Student Name <button class="btn btn-xs btn-outline-secondary float-end">Assign</button></li> -->
+                                        <li class="list-group-item text-muted">All students assigned.</li>
+                                     </ul>
+                                </div>
+                                <div class="col-md-8">
+                                     <h6>Constraints (Placeholder)</h6>
+                                       <div class="form-check">
+                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                         <label class="form-check-label" for="flexCheckDefault">
+                                           Keep Alice S. and Bob J. apart.
+                                         </label>
+                                       </div>
+                                       <div class="form-check">
+                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                         <label class="form-check-label" for="flexCheckChecked">
+                                          Place Charlie B. near the front.
+                                         </label>
+                                       </div>
+                                       <button class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-plus-circle"></i> Add Constraint</button>
+                                </div>
+                             </div>
+
+
+                              <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back: Add Students</button>
+                                    <div>
+                                        <button type="button" class="btn btn-info me-2"><i class="bi bi-printer"></i> Print Chart</button>
+                                        <button type="submit" class="btn btn-success"><i class="bi bi-check-circle"></i> Save Chart</button>
+                                    </div>
+                                </div>
+                         </div>
+                     </div>
+                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: View/Edit Existing Chart Page -->
+    <div class="state-container">
+        <h2>State 9: View/Edit Existing Chart Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>
+                    body { padding-top: 70px; }
+                     .desk {
+                        border: 1px solid #6c757d;
+                        padding: 10px 5px;
+                        margin: 5px;
+                        min-height: 60px;
+                        min-width: 80px;
+                        text-align: center;
+                        font-size: 0.8em;
+                        background-color: #e9ecef;
+                        border-radius: 4px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: grab;
+                     }
+                    .desk.assigned { background-color: #cfe2ff; border-color: #9ec5fe; }
+                    .desk-placeholder { border: 2px dashed #ced4da; background-color: #f8f9fa; }
+                    .classroom-layout { border: 1px solid #dee2e6; padding: 20px; background-color: #fff; overflow-x: auto; }
+                    .toolbar { margin-bottom: 15px; }
+                </style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+               <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                      <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Charts</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">View/Edit: Period 1 - Homeroom</li>
+                      </ol>
+                    </nav>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2>View/Edit Chart: Period 1 - Homeroom</h2>
+                        <div>
+                            <button class="btn btn-sm btn-outline-danger" title="Delete Chart"><i class="bi bi-trash"></i> Delete</button>
+                            <button class="btn btn-sm btn-info ms-1" title="Print Chart"><i class="bi bi-printer"></i> Print</button>
+                             <button class="btn btn-sm btn-success ms-1" title="Save Changes"><i class="bi bi-check-circle"></i> Save Changes</button>
+                        </div>
+                    </div>
+                    <div class="alert alert-secondary">Class: Grade 5 Homeroom | Students: 20 | Desks: 20 | Last Saved: 2024-01-15</div>
+
+                    <div class="card">
+                        <div class="card-header">
+                           Classroom Layout & Arrangement
+                        </div>
+                        <div class="card-body">
+                             <div class="toolbar d-flex justify-content-between flex-wrap gap-2">
+                                <div>
+                                    <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit Layout</button>
+                                    <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-people"></i> Edit Students</button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-success"><i class="bi bi-magic"></i> Auto-Arrange</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-shuffle"></i> Shuffle Students</button>
+                                </div>
+                             </div>
+
+                            <div class="classroom-layout mb-3">
+                                <p class="text-muted text-center fst-italic">Front of Classroom</p>
+                                 <div class="d-flex flex-wrap justify-content-center">
+                                    <!-- Row 1 -->
+                                    <div class="desk assigned"><span>Amy Adams</span></div>
+                                    <div class="desk assigned"><span>Ben Brown</span></div>
+                                    <div class="desk assigned"><span>Chloe Clark</span></div>
+                                    <div class="desk assigned"><span>Dan Davis</span></div>
+                                    <!-- Row 2 -->
+                                    <div class="desk assigned"><span>Ella Evans</span></div>
+                                    <div class="desk assigned"><span>Finn Fox</span></div>
+                                    <div class="desk assigned"><span>Gia Green</span></div>
+                                    <div class="desk assigned"><span>Hank Hill</span></div>
+                                     <!-- Row 3 -->
+                                    <div class="desk assigned"><span>Ivy Irwin</span></div>
+                                    <div class="desk assigned"><span>Jack Jones</span></div>
+                                    <div class="desk assigned"><span>Kim King</span></div>
+                                    <div class="desk assigned"><span>Leo Lewis</span></div>
+                                     <!-- Row 4 -->
+                                    <div class="desk assigned"><span>Mia Moore</span></div>
+                                    <div class="desk assigned"><span>Noah Nash</span></div>
+                                    <div class="desk assigned"><span>Olivia Olsen</span></div>
+                                    <div class="desk assigned"><span>Paul Piper</span></div>
+                                    <!-- Row 5 -->
+                                    <div class="desk assigned"><span>Quinn Quaid</span></div>
+                                    <div class="desk assigned"><span>Rose Reed</span></div>
+                                    <div class="desk assigned"><span>Sam Scott</span></div>
+                                    <div class="desk assigned"><span>Tara Tyler</span></div>
+                                </div>
+                                <p class="text-muted text-center fst-italic mt-3">Click on a student or desk to make changes, or use toolbar options.</p>
+                             </div>
+
+                              <div class="d-flex justify-content-start mt-4">
+                                    <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to My Charts</a>
+                               </div>
+                         </div>
+                     </div>
+                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+
+    <!-- State 10: Input Validation / Error State Example -->
+    <div class="state-container">
+        <h2>State 10: Input Validation / Error State Example (on Create Chart Step 1)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <style>body { padding-top: 70px; }</style>
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SeatGen</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="#">My Charts</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">About</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav ms-auto">
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> My Account
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container mt-5">
+                    <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">My Charts</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Create New Chart</li>
+                      </ol>
+                    </nav>
+                    <h2>Create New Chart (Step 1 of 3) - Validation Errors</h2>
+                     <div class="alert alert-danger d-flex align-items-center" role="alert">
+                       <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+                       <div>
+                         Please fix the errors below before proceeding.
+                       </div>
+                     </div>
+                    <div class="card border-danger">
+                        <div class="card-header bg-danger text-white">
+                            Basic Information - Errors Found
+                        </div>
+                        <div class="card-body">
+                             <form class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="chartName" class="form-label">Chart Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control is-invalid" id="chartName" placeholder="e.g., Period 3 - English G9" required>
+                                     <div class="invalid-feedback">
+                                        Please provide a name for your seating chart.
+                                     </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="className" class="form-label">Class / Subject</label>
+                                    <input type="text" class="form-control" id="className" placeholder="e.g., English Grade 9" value="Example Class Name With No Error">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="chartDescription" class="form-label">Description (Optional)</label>
+                                    <textarea class="form-control" id="chartDescription" rows="3" placeholder="Any notes about this chart..."></textarea>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                                    <button type="submit" class="btn btn-primary">Next: Add Students <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

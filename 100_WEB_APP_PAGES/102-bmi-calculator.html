@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">BMI Calculator - UI Flow</h1>
+
+    <!-- State 1: Home Page (Initial View) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Initial View)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>State 1: Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BMI Calc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Calculate Your Body Mass Index (BMI)</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Enter your height and weight below to calculate your BMI.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="height" class="form-label">Height (cm)</label>
+                                <input type="number" class="form-control" id="height" placeholder="e.g., 175" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="weight" class="form-label">Weight (kg)</label>
+                                <input type="number" class="form-control" id="weight" placeholder="e.g., 70" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Calculate BMI</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2023 BMI Calculator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: Home Page - Input Error State -->
+    <div class="state-container">
+        <h2>State 2: Home Page (Input Error State)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>State 2: Home - Error</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BMI Calc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm border-danger">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Calculate Your Body Mass Index (BMI)</h4>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                           Please enter valid positive numbers for height and weight.
+                         </div>
+                        <p class="card-text">Enter your height and weight below to calculate your BMI.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label for="height" class="form-label">Height (cm)</label>
+                                <input type="number" class="form-control is-invalid" id="height" placeholder="e.g., 175" required value=""> <!-- Invalid state example -->
+                                <div class="invalid-feedback">
+                                    Please provide a valid height in cm.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="weight" class="form-label">Weight (kg)</label>
+                                <input type="number" class="form-control is-invalid" id="weight" placeholder="e.g., 70" required value="-5"> <!-- Invalid state example -->
+                                <div class="invalid-feedback">
+                                    Please provide a valid weight in kg.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Calculate BMI</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2023 BMI Calculator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Result Page -->
+    <div class="state-container">
+        <h2>State 3: Result Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>State 3: Result</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BMI Calc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm text-center">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Your BMI Result</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="display-3 fw-bold">22.9</h1>
+                        <p class="lead mb-4">kg/m²</p>
+
+                        <div class="alert alert-success" role="alert">
+                          <h5 class="alert-heading">Normal Weight</h5>
+                          <p>Your BMI is within the healthy weight range.</p>
+                        </div>
+
+                        <!-- Example Alternative States -->
+                        <!--
+                        <div class="alert alert-warning" role="alert">
+                          <h5 class="alert-heading">Overweight</h5>
+                          <p>Your BMI suggests you are overweight.</p>
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                          <h5 class="alert-heading">Underweight</h5>
+                          <p>Your BMI suggests you are underweight.</p>
+                        </div>
+                         -->
+
+                        <a href="#" class="btn btn-primary mt-3 w-100">Calculate Again</a>
+                         <a href="#" class="btn btn-outline-secondary mt-2 w-100">Learn More About BMI</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Based on a height of 175 cm and weight of 70 kg.
+                    </div>
+                </div>
+                 <p class="mt-3 text-center text-muted small">Disclaimer: BMI is a general indicator and may not be accurate for all body types. Consult a healthcare professional for personalized advice.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2023 BMI Calculator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: About Page -->
+    <div class="state-container">
+        <h2>State 4: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>State 4: About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BMI Calc</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h2 class="mb-4">About Body Mass Index (BMI)</h2>
+
+                <p class="lead">Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
+
+                <h4 class="mt-4">How is BMI Calculated?</h4>
+                <p>BMI is calculated by dividing a person&apos;s weight in kilograms by the square of their height in meters (kg/m²).</p>
+                <code>BMI = weight (kg) / [height (m)]²</code>
+
+                <h4 class="mt-4">BMI Categories</h4>
+                <p>BMI values are typically grouped into the following categories:</p>
+                <ul class="list-group mb-4">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Underweight
+                    <span class="badge bg-warning rounded-pill">&lt; 18.5</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Normal weight
+                    <span class="badge bg-success rounded-pill">18.5 – 24.9</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Overweight
+                    <span class="badge bg-warning rounded-pill">25 – 29.9</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Obesity
+                    <span class="badge bg-danger rounded-pill">30 or greater</span>
+                  </li>
+                </ul>
+
+                <h4 class="mt-4">Limitations of BMI</h4>
+                <p>While BMI is a useful indicator of weight status for a population, it has limitations when assessing individuals. It does not distinguish between fat and muscle mass (muscle weighs more than fat) and may not be accurate for:</p>
+                <ul>
+                    <li>Athletes and bodybuilders</li>
+                    <li>Pregnant women</li>
+                    <li>Elderly people</li>
+                    <li>Certain ethnic groups</li>
+                </ul>
+
+                <div class="alert alert-info mt-4" role="alert">
+                  <strong>Disclaimer:</strong> This BMI calculator is intended for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+                </div>
+
+                 <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+                    <a href="#" class="btn btn-primary">Calculate Your BMI Now</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2023 BMI Calculator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

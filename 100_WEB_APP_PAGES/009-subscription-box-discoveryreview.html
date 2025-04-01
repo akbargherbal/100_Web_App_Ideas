@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Box Discovery/Review UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Subscription Box Discovery/Review - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page</h2>
+    <iframe title="Home Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Home - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search boxes..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="fw-light">Discover Your Next Favorite Subscription Box</h1>
+            <p class="lead">Explore curated boxes, read honest reviews, and find the perfect subscription for you.</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Browse All Boxes</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="mb-4">
+            <h2 class="mb-3">Featured Boxes</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Featured Box Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">[Box Image Placeholder]</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Awesome Snack Box</h5>
+                            <p class="card-text">Delicious snacks delivered monthly. Perfect for foodies!</p>
+                            <p class="card-text"><small class="text-muted">Category: Food</small></p>
+                            <span class="badge bg-warning text-dark">4.5 ★</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured Box Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                         <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">[Box Image Placeholder]</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Geek Gear Crate</h5>
+                            <p class="card-text">Exclusive collectibles and apparel for geeks and gamers.</p>
+                            <p class="card-text"><small class="text-muted">Category: Geek & Gaming</small></p>
+                            <span class="badge bg-warning text-dark">4.8 ★</span>
+                        </div>
+                         <div class="card-footer">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured Box Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                         <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">[Box Image Placeholder]</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Beauty Bliss Box</h5>
+                            <p class="card-text">Curated selection of high-end beauty products.</p>
+                            <p class="card-text"><small class="text-muted">Category: Beauty</small></p>
+                             <span class="badge bg-warning text-dark">4.2 ★</span>
+                        </div>
+                         <div class="card-footer">
+                             <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-4">
+             <h2 class="mb-3">Browse by Category</h2>
+             <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">Food & Drink</a>
+                <a href="#" class="list-group-item list-group-item-action">Beauty & Grooming</a>
+                <a href="#" class="list-group-item list-group-item-action">Geek & Gaming</a>
+                <a href="#" class="list-group-item list-group-item-action">Books & Reading</a>
+                <a href="#" class="list-group-item list-group-item-action">Lifestyle & Home</a>
+                <a href="#" class="list-group-item list-group-item-action">Kids & Family</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe title="About Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>About - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                </ul>
+                 <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search boxes..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">About SubBox Discover</h1>
+                <p class="col-md-8 fs-4">Your ultimate destination for finding and reviewing the best subscription boxes available.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Our Mission</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. We aim to provide a comprehensive platform where users can easily discover new boxes, read unbiased reviews from fellow subscribers, and share their own experiences.</p>
+
+                <h2>How It Works</h2>
+                <p>Browse our extensive catalog of subscription boxes categorized for easy navigation. Read detailed descriptions, check pricing, and most importantly, read reviews from real users. Found a box you love (or hate)? Sign up and share your thoughts to help others!</p>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Us</h5>
+                        <p class="card-text">Have questions or suggestions? We'd love to hear from you.</p>
+                        <a href="#" class="btn btn-outline-primary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 3: Browse/Search Results Page -->
+    <h2>State 3: Browse/Search Results Page</h2>
+    <iframe title="Browse/Search Results Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Browse Boxes - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search boxes..." value="snacks" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1>Browse Subscription Boxes</h1>
+        <p>Showing results for "snacks" or selected category/filters.</p>
+
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-md-3">
+                <h4>Filters</h4>
+                <div class="mb-3">
+                    <label for="categoryFilter" class="form-label">Category</label>
+                    <select class="form-select" id="categoryFilter">
+                        <option selected>All Categories</option>
+                        <option value="1">Food & Drink</option>
+                        <option value="2">Beauty & Grooming</option>
+                        <option value="3">Geek & Gaming</option>
+                         <option value="4">Books & Reading</option>
+                         <option value="5">Lifestyle & Home</option>
+                         <option value="6">Kids & Family</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="priceRange" class="form-label">Price Range</label>
+                    <input type="range" class="form-range" min="0" max="100" step="5" id="priceRange">
+                    <div class="d-flex justify-content-between">
+                        <span>$0</span>
+                        <span>$100+</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Minimum Rating</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ratingFilter" id="rating4" value="4">
+                            <label class="form-check-label" for="rating4">4+ ★</label>
+                        </div>
+                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ratingFilter" id="rating3" value="3">
+                            <label class="form-check-label" for="rating3">3+ ★</label>
+                        </div>
+                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="ratingFilter" id="ratingAny" value="0" checked>
+                            <label class="form-check-label" for="ratingAny">Any</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100">Apply Filters</button>
+            </div>
+
+            <!-- Results List -->
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span>Showing 1-3 of 15 results</span>
+                    <div class="col-md-4">
+                         <select class="form-select form-select-sm" aria-label="Sort by">
+                            <option selected>Sort by: Relevance</option>
+                            <option value="1">Sort by: Rating (High to Low)</option>
+                            <option value="2">Sort by: Price (Low to High)</option>
+                            <option value="3">Sort by: Price (High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Result Item 1 -->
+                 <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-3 bg-secondary text-white d-flex align-items-center justify-content-center">[Box Image]</div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">Awesome Snack Box <span class="badge bg-warning text-dark float-end">4.5 ★</span></h5>
+                                <p class="card-text">Delicious snacks delivered monthly. Perfect for foodies! Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p class="card-text"><small class="text-muted">Category: Food | Price: $25/month</small></p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Result Item 2 -->
+                 <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-3 bg-secondary text-white d-flex align-items-center justify-content-center">[Box Image]</div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                 <h5 class="card-title">Healthy Bites Box <span class="badge bg-warning text-dark float-end">4.1 ★</span></h5>
+                                <p class="card-text">Curated selection of healthy and organic snacks. Guilt-free enjoyment delivered to your door.</p>
+                                <p class="card-text"><small class="text-muted">Category: Food | Price: $35/month</small></p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Result Item 3 -->
+                 <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-3 bg-secondary text-white d-flex align-items-center justify-content-center">[Box Image]</div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <h5 class="card-title">International Treats <span class="badge bg-secondary text-white float-end">3.8 ★</span></h5>
+                                <p class="card-text">Explore snacks from around the world. A different country featured each month.</p>
+                                <p class="card-text"><small class="text-muted">Category: Food | Price: $30/month</small></p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 4: Box Detail Page -->
+    <h2>State 4: Box Detail Page</h2>
+    <iframe title="Box Detail Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Awesome Snack Box - SubBox Discover</title>
+    <style>.rating-stars span { color: #ffc107; }</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <form class="d-flex me-3">
+                    <input class="form-control me-2" type="search" placeholder="Search boxes..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                 <div class="bg-secondary text-white d-flex align-items-center justify-content-center mb-3" style="height: 400px; font-size: 1.5rem;">[Large Box Image Placeholder]</div>
+                 <!-- Thumbnails? -->
+            </div>
+            <div class="col-md-6">
+                <h1>Awesome Snack Box</h1>
+                <p class="lead">Delicious snacks delivered monthly. Perfect for foodies!</p>
+                 <div class="mb-3">
+                    <span class="h4 rating-stars">★★★★☆</span> <span class="ms-2">(4.5 from 120 reviews)</span>
+                 </div>
+                <p><strong>Category:</strong> <a href="#">Food & Drink</a></p>
+                <p><strong>Price:</strong> $25.00 / month</p>
+                 <p><strong>Shipping:</strong> Ships to USA</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                 <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Feature 1: Variety of snacks</li>
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Feature 2: Full-sized products</li>
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Feature 3: Discover new brands</li>
+                 </ul>
+                <a href="#" class="btn btn-success btn-lg me-2" target="_blank">Visit Box Website</a>
+                <a href="#reviews" class="btn btn-outline-primary btn-lg">Read Reviews</a>
+                 <a href="#" class="btn btn-warning btn-lg mt-2 w-100">Write a Review</a>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <section id="reviews">
+            <h2>Reviews (120)</h2>
+            <div class="mb-3">
+                <a href="#" class="btn btn-warning">Write Your Review</a>
+            </div>
+
+             <!-- Review 1 -->
+            <div class="card mb-3">
+                 <div class="card-header d-flex justify-content-between">
+                     <span><strong>Jane D.</strong> - <small class="text-muted">Reviewed 2 weeks ago</small></span>
+                     <span class="rating-stars">★★★★★</span>
+                 </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Absolutely Love It!</h6>
+                    <p class="card-text">This box is amazing! Always packed with delicious and interesting snacks I would have never tried otherwise. Great value for the price.</p>
+                </div>
+            </div>
+
+             <!-- Review 2 -->
+             <div class="card mb-3">
+                 <div class="card-header d-flex justify-content-between">
+                     <span><strong>Mark S.</strong> - <small class="text-muted">Reviewed 1 month ago</small></span>
+                     <span class="rating-stars">★★★★☆</span>
+                 </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Pretty Good Selection</h6>
+                    <p class="card-text">Mostly happy with the boxes. Had one month where the items were not really to my taste, but overall it has been a positive experience. Good variety.</p>
+                </div>
+            </div>
+
+             <!-- Review 3 -->
+             <div class="card mb-3">
+                 <div class="card-header d-flex justify-content-between">
+                     <span><strong>Anonymous User</strong> - <small class="text-muted">Reviewed 3 months ago</small></span>
+                     <span class="rating-stars">★★★☆☆</span>
+                 </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">Okay, but repetitive</h6>
+                    <p class="card-text">The first few boxes were exciting, but recently I feel like I am getting similar types of snacks. Wish there was more unique variety.</p>
+                </div>
+            </div>
+
+            <!-- Pagination for Reviews -->
+            <nav aria-label="Review navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                     <li class="page-item"><a class="page-link" href="#">12</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 5: Write Review Page (Requires Login/Signup first - showing form) -->
+    <h2>State 5: Write Review Page</h2>
+    <iframe title="Write Review Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Write Review - Awesome Snack Box - SubBox Discover</title>
+     <style>.rating-select span { font-size: 2rem; cursor: pointer; color: #ccc; } .rating-select span:hover, .rating-select span.selected { color: #ffc107; }</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">My Profile</a></li>
+                          <li><a class="dropdown-item" href="#">My Reviews</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Write a Review for Awesome Snack Box</h1>
+                <!-- Optional: Show box summary/image here -->
+                 <div class="alert alert-info" role="alert">
+                  You must be logged in to submit a review. (Showing form as if logged in)
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="reviewRating" class="form-label">Your Rating</label>
+                        <div id="reviewRating" class="rating-select">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <small class="form-text text-muted">Click to select rating.</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="reviewTitle" class="form-label">Review Title</label>
+                        <input type="text" class="form-control" id="reviewTitle" placeholder="e.g., Best Snack Box Ever!" required>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="reviewText" class="form-label">Your Review</label>
+                        <textarea class="form-control" id="reviewText" rows="5" placeholder="Share your experience with this box..." required></textarea>
+                    </div>
+
+                     <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="reviewAnonymous">
+                        <label class="form-check-label" for="reviewAnonymous">
+                            Submit Anonymously
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Review</button>
+                    <a href="#" class="btn btn-secondary btn-lg ms-2">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 6: Login Page -->
+    <h2>State 6: Login Page</h2>
+    <iframe title="Login Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+       <div class="row justify-content-center">
+           <div class="col-md-6 col-lg-4">
+               <div class="card">
+                   <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </form>
+                   </div>
+                    <div class="card-footer text-center">
+                       Don't have an account? <a href="#">Sign Up</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+     <!-- State 7: Sign Up Page -->
+    <h2>State 7: Sign Up Page</h2>
+    <iframe title="Sign Up Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+       <div class="row justify-content-center">
+           <div class="col-md-6 col-lg-5">
+               <div class="card">
+                   <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Create Account</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="signupUsername" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" required>
+                                <div id="emailHelp" class="form-text">We will never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                             <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                   </div>
+                    <div class="card-footer text-center">
+                       Already have an account? <a href="#">Login</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 8: Login Page - Error State -->
+    <h2>State 8: Login Page - Error State</h2>
+    <iframe title="Login Page - Error State" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login - Error - SubBox Discover</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+       <div class="row justify-content-center">
+           <div class="col-md-6 col-lg-4">
+               <div class="card">
+                   <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Login</h2>
+
+                         <div class="alert alert-danger" role="alert">
+                          Invalid email or password. Please try again.
+                        </div>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" value="user@example.com" aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" value="wrongpass" required>
+                                <div class="invalid-feedback">
+                                  Incorrect password.
+                                </div>
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <div class="text-center mt-3">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </form>
+                   </div>
+                    <div class="card-footer text-center">
+                       Don t have an account? <a href="#">Sign Up</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </main>
+
+   <footer class="py-4 mt-5 bg-light border-top fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 9: Sign Up Page - Error State -->
+    <h2>State 9: Sign Up Page - Error State</h2>
+    <iframe title="Sign Up Page - Error State" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Sign Up - Error - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+       <div class="row justify-content-center">
+           <div class="col-md-6 col-lg-5">
+               <div class="card">
+                   <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Create Account</h2>
+
+                        <div class="alert alert-danger" role="alert">
+                          Please fix the errors below and try again.
+                        </div>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="signupUsername" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="signupUsername" value="TestUser123" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" value="invalid-email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" value="short" required>
+                                 <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" value="mismatch" required>
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                             <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input is-invalid" id="termsCheck">
+                                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                                 <div class="invalid-feedback">
+                                    You must agree to the terms to sign up.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                   </div>
+                    <div class="card-footer text-center">
+                       Already have an account? <a href="#">Login</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </main>
+
+     <footer class="py-4 mt-5 bg-light border-top fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+     <!-- State 10: Write Review Page - Error State -->
+    <h2>State 10: Write Review Page - Error State</h2>
+    <iframe title="Write Review Page - Error State" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Write Review - Error - SubBox Discover</title>
+     <style>.rating-select span { font-size: 2rem; cursor: pointer; color: #ccc; } .rating-select span:hover, .rating-select span.selected { color: #ffc107; }</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">My Profile</a></li>
+                          <li><a class="dropdown-item" href="#">My Reviews</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">Write a Review for Awesome Snack Box</h1>
+
+                 <div class="alert alert-danger" role="alert">
+                  Please fix the errors below and try again.
+                </div>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="reviewRating" class="form-label">Your Rating</label>
+                         <div id="reviewRating" class="rating-select border border-danger rounded p-1"> <!-- Added error indication -->
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                         <div class="text-danger small mt-1">
+                            A rating is required.
+                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="reviewTitle" class="form-label">Review Title</label>
+                        <input type="text" class="form-control is-invalid" id="reviewTitle" placeholder="e.g., Best Snack Box Ever!" required>
+                         <div class="invalid-feedback">
+                            Please provide a title for your review.
+                        </div>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="reviewText" class="form-label">Your Review</label>
+                        <textarea class="form-control is-invalid" id="reviewText" rows="5" placeholder="Share your experience with this box..." required></textarea>
+                         <div class="invalid-feedback">
+                            Please share some details in your review.
+                        </div>
+                    </div>
+
+                     <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="reviewAnonymous">
+                        <label class="form-check-label" for="reviewAnonymous">
+                            Submit Anonymously
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Review</button>
+                    <a href="#" class="btn btn-secondary btn-lg ms-2">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </main>
+
+   <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+    <!-- State 11: User Profile/Dashboard Page -->
+    <h2>State 11: User Profile/Dashboard Page</h2>
+    <iframe title="User Profile/Dashboard Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>My Profile - SubBox Discover</title>
+     <style>.rating-stars span { color: #ffc107; }</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Welcome, TestUser123!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item active" href="#">My Profile</a></li>
+                          <li><a class="dropdown-item" href="#">My Reviews</a></li>
+                           <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1>My Profile</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                         <i class="bi bi-person-circle display-1 text-secondary"></i>
+                         <h5 class="card-title mt-3">TestUser123</h5>
+                         <p class="card-text text-muted">Joined: October 2023</p>
+                         <p class="card-text">Reviews Written: 2</p>
+                         <button class="btn btn-sm btn-outline-secondary">Edit Profile</button>
+                    </div>
+                </div>
+                 <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">My Reviews</a>
+                    <a href="#" class="list-group-item list-group-item-action">Account Settings</a>
+                    <a href="#" class="list-group-item list-group-item-action">Saved Boxes</a>
+                    <a href="#" class="list-group-item list-group-item-action text-danger">Logout</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2>My Reviews</h2>
+                 <!-- Review 1 -->
+                 <div class="card mb-3">
+                     <div class="card-header d-flex justify-content-between">
+                         <span>Review for: <strong>Awesome Snack Box</strong> <small class="text-muted">- 2 weeks ago</small></span>
+                         <span class="rating-stars">★★★★★</span>
+                     </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Absolutely Love It!</h6>
+                        <p class="card-text">This box is amazing! Always packed with delicious and interesting snacks I would have never tried otherwise. Great value for the price.</p>
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-1">Edit</a>
+                         <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                 <div class="card mb-3">
+                     <div class="card-header d-flex justify-content-between">
+                         <span>Review for: <strong>Geek Gear Crate</strong> <small class="text-muted">- 1 month ago</small></span>
+                         <span class="rating-stars">★★★★☆</span>
+                     </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Great items, sometimes slow shipping</h6>
+                         <p class="card-text">Loved the exclusive Funko Pop in the last box. Shipping took a bit longer than expected though.</p>
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-1">Edit</a>
+                         <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+
+    <!-- State 12: 404 Not Found Page -->
+    <h2>State 12: 404 Not Found Page</h2>
+    <iframe title="404 Not Found Page" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Page Not Found - SubBox Discover</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SubBox Discover</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Browse Boxes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 text-center">
+        <div class="py-5">
+             <h1 class="display-1">404</h1>
+            <h2 class="mb-4">Oops! Page Not Found.</h2>
+            <p class="lead mb-4">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="#" class="btn btn-primary btn-lg me-2">Go to Homepage</a>
+            <a href="#" class="btn btn-outline-secondary btn-lg">Browse Boxes</a>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5 bg-light border-top fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">&copy; 2023 SubBox Discover. All rights reserved.</p>
+             <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>'>
+    </iframe>
+
+
+</body>
+</html>

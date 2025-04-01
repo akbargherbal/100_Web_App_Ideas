@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Timer - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .state-container h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height */
+            border: 1px solid #ccc;
+            display: block;
+            margin: 0 auto;
+        }
+        /* Adjust height for specific iframes if needed */
+        #iframe-timer-running, #iframe-guided-player {
+            height: 450px;
+        }
+        #iframe-login, #iframe-signup {
+             height: 500px;
+        }
+        #iframe-timer-finished {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-5">Meditation Timer - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='text-center mb-5 p-5 bg-light rounded'>
+                        <h1>Find Your Inner Peace</h1>
+                        <p class='lead'>Start your mindfulness journey today. Use our simple timer or explore guided sessions.</p>
+                        <a href='#' class='btn btn-primary btn-lg me-2'><i class='bi bi-clock'></i> Start Custom Timer</a>
+                        <a href='#' class='btn btn-secondary btn-lg'><i class='bi bi-headphones'></i> Browse Guided Sessions</a>
+                    </div>
+
+                    <div class='row text-center mb-4'>
+                         <div class='col-md-4'>
+                            <div class='card shadow-sm'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-stopwatch text-success'></i> Quick Start: 5 Min</h5>
+                                    <p class='card-text'>Begin a quick 5-minute unguided meditation.</p>
+                                    <a href='#' class='btn btn-success'>Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4'>
+                            <div class='card shadow-sm'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-stopwatch text-info'></i> Quick Start: 10 Min</h5>
+                                    <p class='card-text'>Begin a standard 10-minute unguided meditation.</p>
+                                    <a href='#' class='btn btn-info'>Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4'>
+                            <div class='card shadow-sm'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-graph-up text-warning'></i> Track Your Progress</h5>
+                                    <p class='card-text'>Log your sessions and see your meditation history.</p>
+                                    <a href='#' class='btn btn-warning'>View History</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class='mt-5 mb-3'>Featured Guided Sessions</h3>
+                     <div class='row'>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card'>
+                                <img src='https://via.placeholder.com/300x200/dee2e6/6c757d?text=Mindful+Breathing' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Mindful Breathing</h5>
+                                    <p class='card-text'>Focus on your breath to calm your mind. (10 min)</p>
+                                    <a href='#' class='btn btn-outline-primary'>Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card'>
+                                <img src='https://via.placeholder.com/300x200/dee2e6/6c757d?text=Body+Scan' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Body Scan for Relaxation</h5>
+                                    <p class='card-text'>Release tension throughout your body. (15 min)</p>
+                                    <a href='#' class='btn btn-outline-primary'>Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4 mb-3'>
+                            <div class='card'>
+                                <img src='https://via.placeholder.com/300x200/dee2e6/6c757d?text=Stress+Relief' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Quick Stress Relief</h5>
+                                    <p class='card-text'>Find calm during a busy day. (5 min)</p>
+                                    <a href='#' class='btn btn-outline-primary'>Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: Custom Timer Setup -->
+    <div class="state-container">
+        <h2>State 2: Custom Timer Setup</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+               <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-8 col-lg-6'>
+                            <div class='card shadow'>
+                                <div class='card-header bg-primary text-white text-center'>
+                                    <h4><i class='bi bi-gear'></i> Customize Your Meditation Timer</h4>
+                                </div>
+                                <div class='card-body p-4'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='duration' class='form-label'><i class='bi bi-clock'></i> Duration (minutes)</label>
+                                            <input type='number' class='form-control' id='duration' value='10' min='1' required>
+                                            <div class='form-text'>Set the total time for your meditation session.</div>
+                                        </div>
+
+                                        <div class='mb-3'>
+                                            <label for='intervalBell' class='form-label'><i class='bi bi-bell'></i> Interval Bell</label>
+                                            <select class='form-select' id='intervalBell'>
+                                                <option value='none' selected>None</option>
+                                                <option value='5'>Every 5 minutes</option>
+                                                <option value='10'>Every 10 minutes</option>
+                                                <option value='custom'>Custom (Not implemented)</option>
+                                            </select>
+                                             <div class='form-text'>Optional bell sound during the session.</div>
+                                        </div>
+
+                                        <div class='mb-3'>
+                                            <label for='intervalSound' class='form-label'><i class='bi bi-music-note-beamed'></i> Bell Sound</label>
+                                            <select class='form-select' id='intervalSound' disabled> <!-- Disabled until interval is selected -->
+                                                <option value='gong1' selected>Tibetan Gong</option>
+                                                <option value='gong2'>Zen Bell</option>
+                                                <option value='chime'>Gentle Chime</option>
+                                            </select>
+                                        </div>
+
+                                        <div class='mb-4'>
+                                            <label for='backgroundSound' class='form-label'><i class='bi bi-soundwave'></i> Background Sound</label>
+                                            <select class='form-select' id='backgroundSound'>
+                                                <option value='none' selected>None</option>
+                                                <option value='rain'>Gentle Rain</option>
+                                                <option value='forest'>Forest Ambience</option>
+                                                <option value='waves'>Ocean Waves</option>
+                                                <option value='stream'>Flowing Stream</option>
+                                            </select>
+                                            <div class='form-text'>Optional ambient sound to play during meditation.</div>
+                                        </div>
+
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-success btn-lg'><i class='bi bi-play-circle'></i> Start Meditation</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Timer Running -->
+    <div class="state-container">
+        <h2>State 3: Timer Running</h2>
+        <iframe id="iframe-timer-running" srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <style>
+                    body { display: flex; flex-direction: column; min-height: 100vh; background-color: #e0f2f7; } /* Light calming background */
+                    .timer-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+                    .timer-display { font-size: 6rem; font-weight: bold; color: #00796b; /* Teal shade */ margin-bottom: 20px; }
+                    .progress { height: 10px; width: 80%; max-width: 400px; margin-bottom: 30px; }
+                    .controls button { font-size: 1.5rem; margin: 0 15px; }
+                    .sound-indicator { margin-top: 20px; font-style: italic; color: #555; }
+                </style>
+            </head>
+            <body>
+                <div class='timer-container text-center'>
+                    <div class='timer-display'>08:34</div>
+                    <div class='progress'>
+                      <div class='progress-bar bg-success' role='progressbar' style='width: 14%;' aria-valuenow='14' aria-valuemin='0' aria-valuemax='100'></div>
+                    </div>
+                    <div class='controls mb-4'>
+                        <button class='btn btn-warning btn-lg rounded-circle p-3'><i class='bi bi-pause-fill'></i></button>
+                        <button class='btn btn-danger btn-lg rounded-circle p-3'><i class='bi bi-stop-fill'></i></button>
+                    </div>
+                     <div class='sound-indicator'>
+                        <i class='bi bi-soundwave'></i> Background: Gentle Rain Playing
+                    </div>
+                </div>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 4: Timer Finished -->
+    <div class="state-container">
+        <h2>State 4: Timer Finished</h2>
+        <iframe id="iframe-timer-finished" srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>
+                    body { display: flex; flex-direction: column; min-height: 100vh; background-color: #f0fff0; } /* Light green success background */
+                    .content-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+                 </style>
+            </head>
+            <body>
+                <div class='content-container p-5'>
+                    <i class='bi bi-check-circle-fill text-success display-1 mb-3'></i>
+                    <h1 class='display-4'>Session Complete!</h1>
+                    <p class='lead mb-4'>You meditated for <strong>10 minutes</strong>.</p>
+                    <div class='d-grid gap-2 d-sm-flex justify-content-sm-center'>
+                        <button type='button' class='btn btn-primary btn-lg px-4 gap-3'><i class='bi bi-journal-check'></i> Log Session</button>
+                        <button type='button' class='btn btn-outline-secondary btn-lg px-4'><i class='bi bi-arrow-clockwise'></i> Start New Session</button>
+                    </div>
+                     <a href='#' class='mt-4 d-block'>Return to Home</a>
+                </div>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Guided Sessions List -->
+    <div class="state-container">
+        <h2>State 5: Guided Sessions List</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <h2 class='mb-4'><i class='bi bi-headphones'></i> Guided Meditation Sessions</h2>
+
+                    <div class='row mb-4'>
+                        <div class='col-md-6'>
+                             <div class='input-group'>
+                                <input type='text' class='form-control' placeholder='Search sessions...'>
+                                <button class='btn btn-outline-secondary' type='button'><i class='bi bi-search'></i></button>
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                             <select class='form-select'>
+                                <option selected>Filter by Category...</option>
+                                <option value='all'>All Categories</option>
+                                <option value='stress'>Stress & Anxiety</option>
+                                <option value='sleep'>Sleep</option>
+                                <option value='focus'>Focus</option>
+                                <option value='beginner'>Beginners</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-6 col-lg-4 mb-4'>
+                            <div class='card h-100 shadow-sm'>
+                                 <img src='https://via.placeholder.com/300x200/a2d2ff/003049?text=Mindful+Breathing' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>Mindful Breathing</h5>
+                                    <p class='card-text'><small class='text-muted'>Category: Beginners | Duration: 10 min</small></p>
+                                    <p class='card-text flex-grow-1'>Learn the basics of focusing on your breath to anchor yourself in the present moment.</p>
+                                    <a href='#' class='btn btn-primary mt-auto'><i class='bi bi-play-circle'></i> Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-6 col-lg-4 mb-4'>
+                            <div class='card h-100 shadow-sm'>
+                                <img src='https://via.placeholder.com/300x200/bde0fe/003049?text=Body+Scan' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>Body Scan for Relaxation</h5>
+                                     <p class='card-text'><small class='text-muted'>Category: Stress & Anxiety | Duration: 15 min</small></p>
+                                    <p class='card-text flex-grow-1'>Gently scan your body head to toe, noticing sensations and releasing physical tension.</p>
+                                    <a href='#' class='btn btn-primary mt-auto'><i class='bi bi-play-circle'></i> Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-6 col-lg-4 mb-4'>
+                            <div class='card h-100 shadow-sm'>
+                                <img src='https://via.placeholder.com/300x200/ffafcc/590d22?text=Deep+Sleep' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>Guided Journey to Deep Sleep</h5>
+                                     <p class='card-text'><small class='text-muted'>Category: Sleep | Duration: 20 min</small></p>
+                                    <p class='card-text flex-grow-1'>Prepare your mind and body for restful sleep with this calming guided meditation.</p>
+                                    <a href='#' class='btn btn-primary mt-auto'><i class='bi bi-play-circle'></i> Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-6 col-lg-4 mb-4'>
+                            <div class='card h-100 shadow-sm'>
+                                <img src='https://via.placeholder.com/300x200/cdb4db/3c096c?text=Focus+Boost' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>Sharpen Your Focus</h5>
+                                     <p class='card-text'><small class='text-muted'>Category: Focus | Duration: 12 min</small></p>
+                                    <p class='card-text flex-grow-1'>Enhance your concentration and mental clarity with this focused attention practice.</p>
+                                    <a href='#' class='btn btn-primary mt-auto'><i class='bi bi-play-circle'></i> Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-6 col-lg-4 mb-4'>
+                             <div class='card h-100 shadow-sm'>
+                                <img src='https://via.placeholder.com/300x200/fbc4ab/9d6a50?text=Morning+Start' class='card-img-top' alt='Guided Session'>
+                                <div class='card-body d-flex flex-column'>
+                                    <h5 class='card-title'>Mindful Morning Start</h5>
+                                     <p class='card-text'><small class='text-muted'>Category: Beginners | Duration: 8 min</small></p>
+                                    <p class='card-text flex-grow-1'>Begin your day with intention and presence with this short morning meditation.</p>
+                                    <a href='#' class='btn btn-primary mt-auto'><i class='bi bi-play-circle'></i> Listen Now</a>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Add more session cards as needed -->
+                    </div>
+                     <nav aria-label='Session navigation'>
+                      <ul class='pagination justify-content-center mt-4'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: Guided Session Player -->
+    <div class="state-container">
+        <h2>State 6: Guided Session Player</h2>
+        <iframe id="iframe-guided-player" srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <style>
+                     body { display: flex; flex-direction: column; min-height: 100vh; background-color: #f8f9fa; }
+                     .player-container { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+                     .player-card { background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 500px; width: 100%; }
+                     .session-title { margin-bottom: 15px; color: #333; }
+                     .session-description { color: #666; margin-bottom: 25px; }
+                     .audio-controls button { font-size: 1.8rem; margin: 0 10px; border-radius: 50%; width: 60px; height: 60px; }
+                     .progress-bar-container { width: 100%; margin-top: 20px; margin-bottom: 20px; }
+                     .time-display { display: flex; justify-content: space-between; font-size: 0.9em; color: #777; margin-top: 5px; }
+                     .stop-button { margin-top: 20px; }
+                </style>
+            </head>
+            <body>
+                 <div class='player-container'>
+                    <div class='player-card'>
+                        <h3 class='session-title'><i class='bi bi-headphones'></i> Mindful Breathing</h3>
+                        <p class='session-description'>Focus on your breath to calm your mind. (10 min)</p>
+
+                        <div class='audio-controls d-flex justify-content-center align-items-center mb-3'>
+                            <button class='btn btn-light text-secondary'><i class='bi bi-skip-backward-fill'></i></button>
+                            <button class='btn btn-primary mx-3'><i class='bi bi-pause-fill'></i></button> <!-- Could be bi-play-fill -->
+                            <button class='btn btn-light text-secondary'><i class='bi bi-skip-forward-fill'></i></button>
+                        </div>
+
+                         <div class='progress-bar-container'>
+                            <input type='range' class='form-range' id='sessionProgress' value='30' min='0' max='100'>
+                             <div class='time-display'>
+                                <span>03:00</span>
+                                <span>10:00</span>
+                            </div>
+                        </div>
+
+                        <button class='btn btn-danger stop-button'><i class='bi bi-stop-circle'></i> Stop Session</button>
+                    </div>
+                      <a href='#' class='mt-4 d-block text-secondary'>Back to Guided Sessions</a>
+                 </div>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: Progress History (Requires Login) -->
+    <div class="state-container">
+        <h2>State 7: Progress History</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Logout (User)</a></li> <!-- Changed from Login -->
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <h2 class='mb-4'><i class='bi bi-calendar-check'></i> Your Meditation History</h2>
+
+                    <!-- Placeholder for logged-in user -->
+                    <div class='alert alert-info d-flex align-items-center' role='alert'>
+                        <i class='bi bi-person-circle me-2 fs-4'></i>
+                        <div>
+                         Logged in as: <strong>user@example.com</strong>
+                        </div>
+                    </div>
+
+                    <div class='row mb-4 text-center'>
+                        <div class='col-md-4'>
+                            <div class='card bg-light'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Time Meditated</h5>
+                                    <p class='card-text fs-4'><strong>12 hours 45 mins</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4'>
+                            <div class='card bg-light'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Total Sessions</h5>
+                                    <p class='card-text fs-4'><strong>75 Sessions</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-4'>
+                             <div class='card bg-light'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>Current Streak</h5>
+                                    <p class='card-text fs-4'><strong><i class='bi bi-fire text-danger'></i> 12 Days</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class='mt-5 mb-3'>Recent Sessions</h4>
+                    <div class='table-responsive'>
+                        <table class='table table-striped table-hover'>
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Date</th>
+                                    <th scope='col'>Type</th>
+                                    <th scope='col'>Details</th>
+                                    <th scope='col'>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-10-26</td>
+                                    <td><span class='badge bg-success'>Timer</span></td>
+                                    <td>Unguided Session</td>
+                                    <td>15 min</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-10-25</td>
+                                     <td><span class='badge bg-info'>Guided</span></td>
+                                    <td>Mindful Breathing</td>
+                                    <td>10 min</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-10-24</td>
+                                     <td><span class='badge bg-success'>Timer</span></td>
+                                    <td>Unguided Session w/ Rain Sound</td>
+                                    <td>20 min</td>
+                                </tr>
+                                 <tr>
+                                    <td>2023-10-23</td>
+                                     <td><span class='badge bg-info'>Guided</span></td>
+                                    <td>Body Scan for Relaxation</td>
+                                    <td>15 min</td>
+                                </tr>
+                                <tr>
+                                    <td>2023-10-22</td>
+                                    <td><span class='badge bg-success'>Timer</span></td>
+                                    <td>Unguided Session</td>
+                                    <td>10 min</td>
+                                </tr>
+                                <!-- More history items -->
+                            </tbody>
+                        </table>
+                    </div>
+                     <nav aria-label='History navigation'>
+                      <ul class='pagination justify-content-center mt-4'>
+                        <li class='page-item disabled'><a class='page-link' href='#'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                      </ul>
+                    </nav>
+                </div>
+
+                 <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: About Page -->
+    <div class="state-container">
+        <h2>State 8: About Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-lg-8'>
+                            <div class='card shadow-sm'>
+                                <div class='card-body p-5'>
+                                    <h2 class='card-title text-center mb-4'><i class='bi bi-info-circle'></i> About Meditation Timer</h2>
+                                    <p class='lead'>Meditation Timer is designed to be a simple, beautiful, and effective tool to support your mindfulness practice.</p>
+                                    <p>Whether you're a seasoned meditator or just beginning your journey, our app provides the essentials to help you cultivate presence, peace, and awareness in your daily life. Use our customizable timer for silent meditation or explore our growing library of guided sessions tailored for various needs like stress reduction, improved sleep, and enhanced focus.</p>
+
+                                    <h4 class='mt-5'>Our Mission</h4>
+                                    <p>Our mission is to make mindfulness accessible to everyone. We believe that taking even a few minutes each day to pause and connect with yourself can have a profound impact on well-being. We strive to provide a clean, distraction-free environment for your practice.</p>
+
+                                    <h4 class='mt-4'>Key Features</h4>
+                                    <ul>
+                                        <li>Simple and customizable meditation timer</li>
+                                        <li>Optional interval bells and background sounds</li>
+                                        <li>A library of guided meditation sessions</li>
+                                        <li>Progress tracking to monitor your practice (requires account)</li>
+                                        <li>Clean and intuitive user interface</li>
+                                    </ul>
+
+                                     <h4 class='mt-4'>Contact Us</h4>
+                                     <p>Have questions or feedback? We'd love to hear from you! Reach out to us at <a href='mailto:support@meditationtimer.example.com'>support@meditationtimer.example.com</a>.</p>
+
+                                    <div class='text-center mt-5'>
+                                        <p><em>Thank you for choosing Meditation Timer. Happy meditating!</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 9: Login Page -->
+    <div class="state-container">
+        <h2>State 9: Login Page</h2>
+        <iframe id="iframe-login" srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                <style>
+                    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+                    .login-card { max-width: 400px; width: 100%; }
+                </style>
+            </head>
+            <body>
+                 <div class='card login-card shadow'>
+                     <div class='card-header bg-primary text-white text-center'>
+                        <h4><i class='bi bi-box-arrow-in-right'></i> Login to Your Account</h4>
+                     </div>
+                     <div class='card-body p-4'>
+                         <form>
+                             <div class='mb-3'>
+                                <label for='loginEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='loginEmail' placeholder='Enter email' required>
+                             </div>
+                             <div class='mb-3'>
+                                <label for='loginPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='loginPassword' placeholder='Password' required>
+                             </div>
+                              <div class='mb-3 form-check'>
+                                <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                <label class='form-check-label' for='rememberMe'>Remember me</label>
+                            </div>
+                             <div class='d-grid mb-3'>
+                                <button type='submit' class='btn btn-primary btn-lg'>Login</button>
+                             </div>
+                             <div class='text-center'>
+                                <a href='#'>Forgot Password?</a>
+                             </div>
+                         </form>
+                         <hr>
+                         <p class='text-center mb-0'>Don't have an account? <a href='#'>Sign Up</a></p>
+                         <p class='text-center mt-3'><a href='#'>Back to Home</a></p>
+                     </div>
+                 </div>
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 10: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 10: Sign Up Page</h2>
+        <iframe id="iframe-signup" srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>
+                    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; padding: 20px 0; }
+                    .signup-card { max-width: 450px; width: 100%; }
+                </style>
+            </head>
+            <body>
+                 <div class='card signup-card shadow'>
+                     <div class='card-header bg-success text-white text-center'>
+                        <h4><i class='bi bi-person-plus-fill'></i> Create Your Account</h4>
+                     </div>
+                     <div class='card-body p-4'>
+                         <form>
+                             <div class='mb-3'>
+                                <label for='signupName' class='form-label'>Full Name</label>
+                                <input type='text' class='form-control' id='signupName' placeholder='Enter your name'>
+                             </div>
+                             <div class='mb-3'>
+                                <label for='signupEmail' class='form-label'>Email address</label>
+                                <input type='email' class='form-control' id='signupEmail' placeholder='Enter email' required>
+                             </div>
+                             <div class='mb-3'>
+                                <label for='signupPassword' class='form-label'>Password</label>
+                                <input type='password' class='form-control' id='signupPassword' placeholder='Create password' required>
+                                <div class='form-text'>Password must be at least 8 characters long.</div>
+                             </div>
+                             <div class='mb-3'>
+                                <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                <input type='password' class='form-control' id='confirmPassword' placeholder='Confirm password' required>
+                             </div>
+                             <div class='mb-3 form-check'>
+                                <input type='checkbox' class='form-check-input' id='termsCheck' required>
+                                <label class='form-check-label' for='termsCheck'>I agree to the <a href='#'>Terms of Service</a></label>
+                             </div>
+                             <div class='d-grid mb-3'>
+                                <button type='submit' class='btn btn-success btn-lg'>Sign Up</button>
+                             </div>
+                         </form>
+                         <hr>
+                         <p class='text-center mb-0'>Already have an account? <a href='#'>Login</a></p>
+                         <p class='text-center mt-3'><a href='#'>Back to Home</a></p>
+                     </div>
+                 </div>
+                 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 11: Timer Setup - Error State -->
+    <div class="state-container">
+        <h2>State 11: Timer Setup - Error State</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                 <style>body { padding-top: 56px; }</style>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-primary fixed-top'>
+                    <div class='container'>
+                        <a class='navbar-brand' href='#'>Meditation Timer</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                                <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Timer</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Guided Sessions</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>History</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                                <li class='nav-item'><a class='nav-link' href='#'>Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                 <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-8 col-lg-6'>
+                            <div class='card shadow'>
+                                <div class='card-header bg-primary text-white text-center'>
+                                    <h4><i class='bi bi-gear'></i> Customize Your Meditation Timer</h4>
+                                </div>
+                                <div class='card-body p-4'>
+                                    <!-- Error Alert Example -->
+                                     <div class='alert alert-danger d-flex align-items-center' role='alert'>
+                                         <i class='bi bi-exclamation-triangle-fill me-2'></i>
+                                        <div>
+                                            Please fix the errors below before starting.
+                                        </div>
+                                    </div>
+
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='duration' class='form-label'><i class='bi bi-clock'></i> Duration (minutes)</label>
+                                            <!-- Invalid state applied -->
+                                            <input type='number' class='form-control is-invalid' id='duration' value='0' min='1' required>
+                                            <!-- Error message -->
+                                            <div class='invalid-feedback'>
+                                                Duration must be greater than 0 minutes.
+                                            </div>
+                                        </div>
+
+                                        <div class='mb-3'>
+                                            <label for='intervalBell' class='form-label'><i class='bi bi-bell'></i> Interval Bell</label>
+                                            <select class='form-select' id='intervalBell'>
+                                                <option value='none' selected>None</option>
+                                                <option value='5'>Every 5 minutes</option>
+                                                <option value='10'>Every 10 minutes</option>
+                                            </select>
+                                             <div class='form-text'>Optional bell sound during the session.</div>
+                                        </div>
+
+                                        <div class='mb-3'>
+                                            <label for='intervalSound' class='form-label'><i class='bi bi-music-note-beamed'></i> Bell Sound</label>
+                                            <select class='form-select' id='intervalSound' disabled>
+                                                <option value='gong1' selected>Tibetan Gong</option>
+                                                <option value='gong2'>Zen Bell</option>
+                                                <option value='chime'>Gentle Chime</option>
+                                            </select>
+                                        </div>
+
+                                        <div class='mb-4'>
+                                            <label for='backgroundSound' class='form-label'><i class='bi bi-soundwave'></i> Background Sound</label>
+                                            <select class='form-select' id='backgroundSound'>
+                                                <option value='none' selected>None</option>
+                                                <option value='rain'>Gentle Rain</option>
+                                                <option value='forest'>Forest Ambience</option>
+                                                <option value='waves'>Ocean Waves</option>
+                                            </select>
+                                            <div class='form-text'>Optional ambient sound to play during meditation.</div>
+                                        </div>
+
+
+                                        <div class='d-grid'>
+                                            <button type='submit' class='btn btn-success btn-lg'><i class='bi bi-play-circle'></i> Start Meditation</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                  <div class='text-center p-3' style='background-color: rgba(0, 0, 0, 0.05);'>
+                    © 2023 Meditation Timer
+                  </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

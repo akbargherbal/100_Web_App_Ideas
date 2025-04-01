@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility Checker (Basic) - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Web Accessibility Checker (Basic) - UI Flow</h1>
+
+        <!-- State 1: Home Page (Initial) -->
+        <div class="state-container">
+            <h2>State 1: Home Page (Initial)</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Home - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5'>
+                        <div class='p-5 mb-4 bg-light rounded-3'>
+                            <div class='container-fluid py-5'>
+                                <h1 class='display-5 fw-bold'>Check Web Accessibility</h1>
+                                <p class='col-md-8 fs-4'>Enter a URL to perform a basic check for common accessibility issues like color contrast and missing image alt text.</p>
+                                <form class='mt-4'>
+                                    <div class='mb-3'>
+                                        <label for='urlInput' class='form-label'>Website URL</label>
+                                        <input type='url' class='form-control form-control-lg' id='urlInput' placeholder='https://example.com' required>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary btn-lg'>Check Accessibility</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 2: Home Page (Input Validation Error) -->
+        <div class="state-container">
+            <h2>State 2: Home Page (Input Validation Error)</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Home - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5'>
+                        <div class='p-5 mb-4 bg-light rounded-3'>
+                            <div class='container-fluid py-5'>
+                                <h1 class='display-5 fw-bold'>Check Web Accessibility</h1>
+                                <p class='col-md-8 fs-4'>Enter a URL to perform a basic check for common accessibility issues like color contrast and missing image alt text.</p>
+                                <form class='mt-4 needs-validation was-validated'>
+                                    <div class='mb-3'>
+                                        <label for='urlInput' class='form-label'>Website URL</label>
+                                        <input type='url' class='form-control form-control-lg is-invalid' id='urlInput' placeholder='https://example.com' required value='not-a-valid-url'>
+                                        <div class='invalid-feedback'>
+                                          Please enter a valid URL (e.g., https://example.com).
+                                        </div>
+                                    </div>
+                                    <button type='submit' class='btn btn-primary btn-lg'>Check Accessibility</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 3: Home Page (Loading State) -->
+        <div class="state-container">
+            <h2>State 3: Home Page (Loading State)</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Checking... - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5 text-center'>
+                        <div class='p-5 mb-4 bg-light rounded-3'>
+                            <div class='container-fluid py-5'>
+                                <h1 class='display-5 fw-bold'>Checking Accessibility...</h1>
+                                <p class='fs-4'>Please wait while we analyze the page:</p>
+                                <p class='fs-5 text-muted'><code>https://example.com</code></p>
+                                <div class='spinner-border text-primary mt-4' role='status' style='width: 3rem; height: 3rem;'>
+                                    <span class='visually-hidden'>Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 4: Results Page (Success) -->
+        <div class="state-container">
+            <h2>State 4: Results Page (Success)</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Results - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5'>
+                        <h2>Accessibility Results for: <code>https://example.com</code></h2>
+                        <p class='lead'>Found 2 potential issue types.</p>
+
+                        <div class='accordion' id='resultsAccordion'>
+                            <div class='accordion-item'>
+                                <h2 class='accordion-header' id='headingContrast'>
+                                <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseContrast' aria-expanded='true' aria-controls='collapseContrast'>
+                                   <i class='bi bi-palette fs-4 me-2 text-danger'></i> Contrast Issues (3 found)
+                                </button>
+                                </h2>
+                                <div id='collapseContrast' class='accordion-collapse collapse show' aria-labelledby='headingContrast' data-bs-parent='#resultsAccordion'>
+                                <div class='accordion-body'>
+                                    <p>Elements with insufficient color contrast:</p>
+                                    <ul class='list-group'>
+                                        <li class='list-group-item'>Element <code>&lt;p class='text-muted'&gt;</code> with text 'Low contrast text...' has contrast ratio 3.5:1 (Needs 4.5:1)</li>
+                                        <li class='list-group-item'>Element <code>&lt;a href='...' style='color: grey'&gt;</code> with text 'Grey link' has contrast ratio 2.8:1 (Needs 4.5:1)</li>
+                                        <li class='list-group-item'>Element <code>&lt;button class='btn btn-light'&gt;</code> with text 'Light Button' has contrast ratio 4.1:1 (Needs 4.5:1)</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                            <div class='accordion-item'>
+                                <h2 class='accordion-header' id='headingAltText'>
+                                <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseAltText' aria-expanded='false' aria-controls='collapseAltText'>
+                                   <i class='bi bi-image-alt fs-4 me-2 text-warning'></i> Missing Alt Text (1 found)
+                                </button>
+                                </h2>
+                                <div id='collapseAltText' class='accordion-collapse collapse' aria-labelledby='headingAltText' data-bs-parent='#resultsAccordion'>
+                                <div class='accordion-body'>
+                                    <p>Images missing the <code>alt</code> attribute:</p>
+                                    <ul class='list-group'>
+                                        <li class='list-group-item'>Image <code>&lt;img src='/images/logo.png'&gt;</code></li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                             <div class='accordion-item'>
+                                <h2 class='accordion-header' id='headingPassed'>
+                                <button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapsePassed' aria-expanded='false' aria-controls='collapsePassed'>
+                                   <i class='bi bi-check-circle fs-4 me-2 text-success'></i> Passed Checks (Example)
+                                </button>
+                                </h2>
+                                <div id='collapsePassed' class='accordion-collapse collapse' aria-labelledby='headingPassed' data-bs-parent='#resultsAccordion'>
+                                <div class='accordion-body'>
+                                    <p>No issues found for the following basic checks:</p>
+                                    <ul class='list-group'>
+                                        <li class='list-group-item'>Basic Form Label Check</li>
+                                        <li class='list-group-item'>Basic Heading Structure Check</li>
+                                    </ul>
+                                    <small class='d-block mt-2 text-muted'>Note: This tool performs only basic checks. Comprehensive accessibility requires manual testing and other tools.</small>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='mt-4'>
+                            <a href='#' class='btn btn-secondary'><i class='bi bi-arrow-left'></i> Check Another URL</a>
+                        </div>
+
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+         <!-- State 5: Results Page (Error - Invalid URL/Fetch Error) -->
+        <div class="state-container">
+            <h2>State 5: Results Page (Error - Invalid URL/Fetch Error)</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Error - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5'>
+                        <h2>Error Checking URL</h2>
+                        <div class='alert alert-danger d-flex align-items-center' role='alert'>
+                           <i class='bi bi-exclamation-triangle-fill flex-shrink-0 me-2'></i>
+                           <div>
+                                Could not fetch or analyze the URL: <code>https://invalid-or-down-site.xyz</code>.
+                                <br>Please check if the URL is correct, publicly accessible, and try again. Network issues can also cause this error.
+                           </div>
+                        </div>
+
+                        <div class='mt-4'>
+                            <a href='#' class='btn btn-primary'><i class='bi bi-arrow-left'></i> Try Again</a>
+                        </div>
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+        <!-- State 6: About Page -->
+        <div class="state-container">
+            <h2>State 6: About Page</h2>
+            <iframe srcdoc="
+                <!DOCTYPE html>
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>About - Web Accessibility Checker</title>
+                    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                </head>
+                <body>
+                    <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <div class='container-fluid'>
+                            <a class='navbar-brand' href='#'>Web Accessibility Checker</a>
+                            <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span class='navbar-toggler-icon'></span>
+                            </button>
+                            <div class='collapse navbar-collapse' id='navbarNav'>
+                                <ul class='navbar-nav'>
+                                    <li class='nav-item'>
+                                        <a class='nav-link' href='#'>Home</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a class='nav-link active' aria-current='page' href='#'>About</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class='container mt-5'>
+                        <div class='row justify-content-center'>
+                            <div class='col-md-8'>
+                                <h2 class='mb-4'>About the Web Accessibility Checker (Basic)</h2>
+                                <p class='lead'>This tool provides a simple, automated way to check for some of the most common web accessibility issues on a given web page.</p>
+
+                                <h4>What It Checks</h4>
+                                <p>Currently, this basic checker focuses on:</p>
+                                <ul>
+                                    <li><strong>Color Contrast:</strong> It analyzes the contrast ratio between text and its background color to ensure it meets WCAG AA guidelines (4.5:1 for normal text, 3:1 for large text).</li>
+                                    <li><strong>Image Alt Text:</strong> It checks if <code>&lt;img&gt;</code> elements have an <code>alt</code> attribute, which is crucial for screen readers.</li>
+                                </ul>
+
+                                <h4>Limitations</h4>
+                                <p>This tool is designed for quick checks and raising awareness. It is <strong>not</strong> a comprehensive accessibility audit tool.</p>
+                                <ul>
+                                    <li>It only scans the HTML structure and basic CSS properties. It doesn't execute JavaScript, so content loaded dynamically might not be checked.</li>
+                                    <li>It cannot assess the quality or appropriateness of alt text, only its presence.</li>
+                                    <li>It doesn't check for keyboard navigation, ARIA attributes, focus management, semantic HTML structure, and many other critical accessibility aspects.</li>
+                                </ul>
+                                <p>For a complete accessibility evaluation, manual testing and the use of more advanced tools are necessary.</p>
+
+                                <h4>Purpose</h4>
+                                <p>The goal is to offer a starting point for developers and designers to identify and fix basic accessibility barriers quickly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class='text-center mt-5 py-3 bg-light'>
+                       <p class='mb-0'>&copy; 2023 Web Accessibility Checker (Basic)</p>
+                    </footer>
+
+                    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+                </body>
+                </html>
+            "></iframe>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

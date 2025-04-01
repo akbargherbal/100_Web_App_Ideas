@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Finder - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #ffffff;
+        }
+        .state-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #495057;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="mb-4 text-center">Pet Adoption Finder - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <div class="state-container">
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="fw-light">Find Your New Best Friend</h1>
+            <p class="lead">Browse thousands of adoptable pets from shelters and rescues.</p>
+            <form class="row g-3 justify-content-center mt-4">
+                <div class="col-auto">
+                    <label for="petType" class="visually-hidden">Pet Type</label>
+                    <select class="form-select" id="petType">
+                        <option selected>Any Pet Type</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label for="zipCode" class="visually-hidden">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-light">Search Pets</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Pets</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/CCCCCC/808080?text=Buddy" class="card-img-top" alt="Buddy">
+                    <div class="card-body">
+                        <h5 class="card-title">Buddy</h5>
+                        <p class="card-text">Friendly Golden Retriever looking for a loving home. Good with kids.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/CCCCCC/808080?text=Luna" class="card-img-top" alt="Luna">
+                    <div class="card-body">
+                        <h5 class="card-title">Luna</h5>
+                        <p class="card-text">A playful Calico cat, loves naps in sunny spots. Needs a quiet home.</p>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200/CCCCCC/808080?text=Rocky" class="card-img-top" alt="Rocky">
+                     <div class="card-body">
+                        <h5 class="card-title">Rocky</h5>
+                        <p class="card-text">Energetic Beagle mix, loves walks and playing fetch. Needs training.</p>
+                    </div>
+                     <div class="card-footer">
+                        <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="text-center mb-5">
+            <h2>Why Adopt?</h2>
+            <p class="lead">Adopting a pet saves a life and enriches yours. Find out more about the benefits.</p>
+            <a href="#" class="btn btn-outline-primary">Learn About Adoption</a>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="state-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="mb-4 text-center">About Pet Adoption Finder</h1>
+                <img src="https://via.placeholder.com/700x300/DDDDDD/666666?text=Our+Mission" class="img-fluid rounded mb-4" alt="Group of happy adopted pets">
+                <p class="lead">Our mission is to connect loving homes with animals in need. We believe every pet deserves a second chance and a family to call their own.</p>
+                <p>Pet Adoption Finder was founded in [Year] by a group of passionate animal lovers who saw a need for a centralized, easy-to-use platform to showcase adoptable pets from various shelters and rescue organizations. We work tirelessly to ensure that potential adopters can easily find pets that match their lifestyle and preferences.</p>
+
+                <h3 class="mt-5">How It Works</h3>
+                <p>We partner with hundreds of animal shelters and rescue groups across the country. These organizations list their available pets on our platform. You can search by location, type of animal, breed, age, size, and gender to find your perfect match. Once you find a pet you're interested in, you can connect directly with the shelter or rescue to learn more and start the adoption process.</p>
+
+                <h3 class="mt-5">Our Values</h3>
+                <ul>
+                    <li><strong>Compassion:</strong> We care deeply about the welfare of every animal.</li>
+                    <li><strong>Connection:</strong> We strive to create meaningful connections between pets and people.</li>
+                    <li><strong>Collaboration:</strong> We work closely with shelters and rescues to maximize adoptions.</li>
+                    <li><strong>Integrity:</strong> We operate with transparency and respect for our users and partners.</li>
+                </ul>
+
+                <div class="text-center mt-5 mb-4">
+                     <a href="#" class="btn btn-primary btn-lg">Find a Pet Today!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Search Results Page -->
+    <div class="state-container">
+        <h2>State 3: Search Results Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3">
+                <h4>Filter Results</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="searchLocation" class="form-label">Location (Zip Code)</label>
+                        <input type="text" class="form-control" id="searchLocation" placeholder="Enter Zip Code" value="90210">
+                    </div>
+                    <div class="mb-3">
+                        <label for="searchPetType" class="form-label">Pet Type</label>
+                        <select class="form-select" id="searchPetType">
+                            <option value="any">Any</option>
+                            <option value="dog" selected>Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="searchBreed" class="form-label">Breed</label>
+                        <input type="text" class="form-control" id="searchBreed" placeholder="Any Breed">
+                    </div>
+                     <div class="mb-3">
+                         <label class="form-label">Age</label>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="ageBaby">
+                             <label class="form-check-label" for="ageBaby">Baby</label>
+                         </div>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="ageYoung">
+                             <label class="form-check-label" for="ageYoung">Young</label>
+                         </div>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="ageAdult" checked>
+                             <label class="form-check-label" for="ageAdult">Adult</label>
+                         </div>
+                          <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="ageSenior">
+                             <label class="form-check-label" for="ageSenior">Senior</label>
+                         </div>
+                    </div>
+                    <div class="mb-3">
+                         <label class="form-label">Size</label>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="sizeSmall">
+                             <label class="form-check-label" for="sizeSmall">Small</label>
+                         </div>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="sizeMedium" checked>
+                             <label class="form-check-label" for="sizeMedium">Medium</label>
+                         </div>
+                         <div class="form-check">
+                             <input class="form-check-input" type="checkbox" value="" id="sizeLarge">
+                             <label class="form-check-label" for="sizeLarge">Large</label>
+                         </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Update Results</button>
+                </form>
+            </div>
+
+            <!-- Search Results -->
+            <div class="col-lg-9">
+                <h2>Dogs for Adoption near 90210</h2>
+                <p class="text-muted">Showing 1-3 of 25 results</p>
+
+                <div class="card mb-3">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="https://via.placeholder.com/250x200/CCCCCC/808080?text=Max" class="img-fluid rounded-start" alt="Max">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Max <span class="badge bg-info text-dark">Adult</span> <span class="badge bg-secondary">Male</span></h5>
+                        <p class="card-text">Labrador Mix | Medium | Beverly Hills Shelter</p>
+                        <p class="card-text"><small class="text-muted">Max is a sweet boy who loves cuddles and long walks. He is house-trained and knows basic commands.</small></p>
+                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="card mb-3">
+                   <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="https://via.placeholder.com/250x200/CCCCCC/808080?text=Daisy" class="img-fluid rounded-start" alt="Daisy">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Daisy <span class="badge bg-info text-dark">Adult</span> <span class="badge bg-secondary">Female</span></h5>
+                        <p class="card-text">Poodle Mix | Small | Westside Rescue</p>
+                        <p class="card-text"><small class="text-muted">Daisy is a gentle soul looking for a calm home. She can be shy at first but warms up quickly.</small></p>
+                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="card mb-3">
+                   <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="https://via.placeholder.com/250x200/CCCCCC/808080?text=Cooper" class="img-fluid rounded-start" alt="Cooper">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                         <h5 class="card-title">Cooper <span class="badge bg-warning text-dark">Young</span> <span class="badge bg-secondary">Male</span></h5>
+                         <p class="card-text">Shepherd Mix | Large | LA Animal Services</p>
+                         <p class="card-text"><small class="text-muted">Cooper is full of energy and needs an active owner. He loves to play and is eager to please.</small></p>
+                         <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center mt-4">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Pet Detail Page -->
+    <div class="state-container">
+        <h2>State 4: Pet Detail Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details - Max - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } .pet-gallery img { margin-bottom: 10px; cursor: pointer; border: 2px solid transparent; } .pet-gallery img:hover, .pet-gallery img.active { border-color: #0d6efd; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Find a Pet</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Max</li>
+          </ol>
+        </nav>
+
+        <div class="row">
+            <div class="col-lg-7">
+                <img src="https://via.placeholder.com/600x450/CCCCCC/808080?text=Max+-+Main+Photo" class="img-fluid rounded mb-3" alt="Max - Main Photo">
+                 <div class="row pet-gallery">
+                     <div class="col-3"><img src="https://via.placeholder.com/150x100/CCCCCC/808080?text=Max+1" class="img-fluid rounded active" alt="Max Thumbnail 1"></div>
+                     <div class="col-3"><img src="https://via.placeholder.com/150x100/DDDDDD/808080?text=Max+2" class="img-fluid rounded" alt="Max Thumbnail 2"></div>
+                     <div class="col-3"><img src="https://via.placeholder.com/150x100/EEEEEE/808080?text=Max+3" class="img-fluid rounded" alt="Max Thumbnail 3"></div>
+                     <div class="col-3"><img src="https://via.placeholder.com/150x100/CCCCCC/808080?text=Max+4" class="img-fluid rounded" alt="Max Thumbnail 4"></div>
+                 </div>
+            </div>
+            <div class="col-lg-5">
+                <h1>Max</h1>
+                <p class="lead">Labrador Retriever Mix</p>
+                <ul class="list-unstyled lh-lg">
+                    <li><strong>Age:</strong> Adult (Approx. 3 years)</li>
+                    <li><strong>Gender:</strong> Male</li>
+                    <li><strong>Size:</strong> Medium</li>
+                    <li><strong>Location:</strong> Beverly Hills Shelter, CA</li>
+                    <li><strong>Adoption Fee:</strong> $150</li>
+                    <li><strong>Status:</strong> Available for Adoption</li>
+                </ul>
+                 <p><strong>About Max:</strong> Max is a wonderful, friendly boy looking for his forever home. He loves people, gets along well with other dogs (cat status unknown), and enjoys playing fetch and going for walks in the park. He is already house-trained and knows basic commands like sit and stay. Max would be a great addition to an active family or individual.</p>
+
+                 <h5>Health & Temperament</h5>
+                 <ul class="list-unstyled">
+                    <li><span class="badge bg-success">Neutered</span></li>
+                    <li><span class="badge bg-success">Vaccinated</span></li>
+                    <li><span class="badge bg-success">Microchipped</span></li>
+                    <li><span class="badge bg-info text-dark">Good with Dogs</span></li>
+                    <li><span class="badge bg-warning text-dark">Good with Kids (Older recommended)</span></li>
+                 </ul>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button class="btn btn-primary btn-lg" type="button">Start Adoption Inquiry</button>
+                    <button class="btn btn-outline-secondary" type="button">Save to Favorites ♡</button>
+                </div>
+
+                <div class="card mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title">Shelter Information</h5>
+                    <p class="card-text mb-1"><strong>Beverly Hills Shelter</strong></p>
+                    <p class="card-text mb-1"><small>123 Adoption Lane, Beverly Hills, CA 90210</small></p>
+                    <p class="card-text mb-1"><small>Phone: (555) 123-4567</small></p>
+                    <a href="#" class="card-link">Visit Shelter Website</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 5: Adoption Inquiry Form -->
+    <div class="state-container">
+        <h2>State 5: Adoption Inquiry Form (with Validation Example)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Inquiry - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                 <h1 class="mb-4 text-center">Adoption Inquiry for Max</h1>
+                 <p class="text-center text-muted">Please fill out this form to express your interest in adopting Max. The shelter (Beverly Hills Shelter) will contact you to discuss the next steps.</p>
+
+                <div class="alert alert-info d-flex align-items-center" role="alert">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-info-circle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Info:">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                  </svg>
+                  <div>
+                    Submitting this form does not guarantee adoption. The shelter has its own screening process.
+                  </div>
+                </div>
+
+
+                <form class="needs-validation" novalidate>
+                    <h4 class="mb-3">Your Information</h4>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control is-invalid" id="email" placeholder="you@example.com" required>
+                             <div class="invalid-feedback">
+                                Please enter a valid email address for updates.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                             <label for="phone" class="form-label">Phone</label>
+                             <input type="tel" class="form-control" id="phone" placeholder="(555) 555-5555" required>
+                             <div class="invalid-feedback">
+                                 Please enter a valid phone number.
+                             </div>
+                         </div>
+
+                         <div class="col-12">
+                             <label for="address" class="form-label">Address</label>
+                             <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                             <div class="invalid-feedback">
+                                 Please enter your shipping address.
+                             </div>
+                         </div>
+
+                         <div class="col-md-5">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" required>
+                            <div class="invalid-feedback">
+                                City required.
+                            </div>
+                        </div>
+
+                         <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state" required>
+                               <option value="">Choose...</option>
+                               <option>California</option>
+                               <option>Nevada</option>
+                               <option>...</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                             </div>
+                         </div>
+
+                         <div class="col-md-3">
+                             <label for="zip" class="form-label">Zip</label>
+                             <input type="text" class="form-control" id="zip" placeholder="" required>
+                             <div class="invalid-feedback">
+                                 Zip code required.
+                             </div>
+                         </div>
+                     </div>
+
+                     <hr class="my-4">
+
+                    <h4 class="mb-3">Your Message (Optional)</h4>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Tell the shelter a bit about yourself and why you are interested in Max.</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="E.g., Describe your home environment, experience with pets, etc."></textarea>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                        <label class="form-check-label" for="agreeTerms">I understand this is an inquiry and not a final adoption application.</label>
+                         <div class="invalid-feedback">
+                            You must agree before submitting.
+                         </div>
+                    </div>
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+     <!-- State 6: Adoption Inquiry Confirmation -->
+    <div class="state-container">
+        <h2>State 6: Adoption Inquiry Confirmation</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Sent! - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="alert alert-success" role="alert">
+                  <h4 class="alert-heading">Thank You! Your Inquiry Has Been Sent.</h4>
+                  <p>Your adoption inquiry for <strong>Max</strong> has been successfully submitted to the <strong>Beverly Hills Shelter</strong>.</p>
+                  <hr>
+                  <p class="mb-0">The shelter will review your information and contact you soon regarding the next steps in the adoption process. Please allow 2-3 business days for a response. You can also contact them directly at (555) 123-4567.</p>
+                </div>
+
+                 <img src="https://via.placeholder.com/150x150/28A745/FFFFFF?text=Success!" class="rounded-circle my-4" alt="Success Checkmark">
+
+                <p class="lead">Thank you for considering adoption!</p>
+
+                 <div class="mt-4">
+                     <a href="#" class="btn btn-primary">Back to Pet Search</a>
+                     <a href="#" class="btn btn-outline-secondary">Return to Home Page</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3 fixed-bottom">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Login Page -->
+    <div class="state-container">
+        <h2>State 7: Login Page</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5; }
+        .form-signin { max-width: 330px; padding: 1rem; }
+        .form-signin .form-floating:focus-within { z-index: 2; }
+        .form-signin input[type="email"] { margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+        .form-signin input[type="password"] { margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0; }
+        .navbar-brand { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="form-signin w-100 m-auto text-center">
+      <form>
+        <img class="mb-4" src="https://via.placeholder.com/72x57/0D6EFD/FFFFFF?text=PAF" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="form-check text-start my-3">
+          <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Remember me
+          </label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+        <p class="mt-3 mb-1">
+            <a href="#">Forgot password?</a>
+        </p>
+         <p class="mt-1 mb-3 text-body-secondary">Don't have an account? <a href="#">Sign Up</a></p>
+
+         <!-- Example Error Message -->
+         <div class="alert alert-danger mt-3" role="alert" style="display: none;">
+             Invalid email or password. Please try again.
+         </div>
+       </form>
+     </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 8: Sign Up Page (with Validation Example)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5; }
+        .form-signup { max-width: 400px; padding: 1rem; }
+        .navbar-brand { font-weight: bold; }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2 active" aria-current="page" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="form-signup w-100 m-auto">
+      <form class="needs-validation" novalidate>
+        <div class="text-center mb-4">
+            <img class="mb-4" src="https://via.placeholder.com/72x57/0D6EFD/FFFFFF?text=PAF" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Create an Account</h1>
+            <p>Sign up to save favorite pets and manage inquiries.</p>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="signupName" placeholder="John Doe" required>
+          <label for="signupName">Full Name</label>
+           <div class="invalid-feedback">
+                Please enter your name.
+           </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="name@example.com" required>
+          <label for="signupEmail">Email address</label>
+           <div class="invalid-feedback">
+                Please enter a valid email. An account with this email may already exist.
+           </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+          <label for="signupPassword">Password</label>
+           <div class="invalid-feedback">
+                Password is required.
+           </div>
+        </div>
+         <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+          <label for="confirmPassword">Confirm Password</label>
+           <div class="invalid-feedback">
+                Passwords must match.
+           </div>
+        </div>
+
+        <div class="form-check text-start my-3">
+          <input class="form-check-input" type="checkbox" value="agree-terms" id="agreeTermsSignup" required>
+          <label class="form-check-label" for="agreeTermsSignup">
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          </label>
+           <div class="invalid-feedback">
+                You must agree to the terms.
+           </div>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign Up</button>
+        <p class="mt-3 mb-1 text-center">
+            Already have an account? <a href="#">Sign in</a>
+        </p>
+      </form>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: Contact Page -->
+    <div class="state-container">
+        <h2>State 9: Contact Page (with Validation Example)</h2>
+        <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pet Adoption Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style> .navbar-brand { font-weight: bold; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pet Adoption Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="mb-4 text-center">Contact Us</h1>
+                <p class="lead text-center mb-5">Have questions or feedback? We would love to hear from you. Please note: For questions about specific pets, please contact the shelter directly using the information on the pet detail page.</p>
+
+                 <form class="needs-validation" novalidate>
+                     <div class="row g-3">
+                         <div class="col-md-6">
+                             <label for="contactName" class="form-label">Your Name</label>
+                             <input type="text" class="form-control" id="contactName" required>
+                              <div class="invalid-feedback">
+                                 Please enter your name.
+                             </div>
+                         </div>
+                         <div class="col-md-6">
+                             <label for="contactEmail" class="form-label">Your Email</label>
+                             <input type="email" class="form-control is-invalid" id="contactEmail" required>
+                              <div class="invalid-feedback">
+                                 Please enter a valid email address.
+                             </div>
+                         </div>
+                         <div class="col-12">
+                             <label for="contactSubject" class="form-label">Subject</label>
+                             <input type="text" class="form-control" id="contactSubject" required>
+                              <div class="invalid-feedback">
+                                 Please enter a subject.
+                             </div>
+                         </div>
+                         <div class="col-12">
+                             <label for="contactMessage" class="form-label">Message</label>
+                             <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                              <div class="invalid-feedback">
+                                 Please enter your message.
+                             </div>
+                         </div>
+                         <div class="col-12 text-center">
+                             <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                         </div>
+                     </div>
+                 </form>
+
+                 <hr class="my-5">
+
+                 <div class="text-center">
+                     <h4>Other Ways to Reach Us</h4>
+                     <p class="mb-1"><strong>Email:</strong> info@petadoptionfinder.com</p>
+                     <p><strong>Address:</strong> 456 Pet Lover Ave, Suite 100, Anytown, USA 12345</p>
+                     <p class="text-muted">(Please note we do not house animals at this location)</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 Pet Adoption Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+        '></iframe>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter Generator UI Flow</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f0f0f0; }
+        h1 { text-align: center; margin-bottom: 30px; color: #333; }
+        h2 { margin-top: 40px; margin-bottom: 10px; border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #555; }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* Adjust specific iframe heights if needed */
+        #iframe-state-7 { height: 300px; } /* Loading state */
+        #iframe-state-9 { height: 400px; } /* Download state */
+    </style>
+</head>
+<body>
+
+<h1>Cover Letter Generator - UI Flow</h1>
+
+<!-- State 1: Home Page -->
+<h2>State 1: Home Page</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <h1 class="display-4 mb-3">Craft Your Perfect Cover Letter</h1>
+                <p class="lead mb-4">Generate professional, customized cover letters in minutes. Impress recruiters and land your dream job faster.</p>
+                <a href="#" class="btn btn-primary btn-lg">Start Generating Now</a>
+            </div>
+        </div>
+
+        <div class="row mt-5 pt-4 text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Easy to Use</h5>
+                        <p class="card-text">Follow simple steps to input your details and job requirements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Customized Content</h5>
+                        <p class="card-text">Get letters tailored to the specific job you are applying for.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Professional Tones</h5>
+                        <p class="card-text">Choose the right tone to match the company culture and role.</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 2: About Page -->
+<h2>State 2: About Page</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="mb-4">About Cover Letter Generator</h1>
+                <p class="lead">Our mission is to simplify the job application process by helping you create compelling cover letters quickly and effectively.</p>
+                <p>Writing a cover letter can be daunting. You need to showcase your skills, match the job requirements, and maintain a professional tone, all while making it unique. That's where Cover Letter Generator comes in.</p>
+                <p>We use smart prompts and structured inputs to guide you through the process, ensuring all essential information is included. Our tool helps tailor your message for each specific application, increasing your chances of getting noticed.</p>
+                <h3 class="mt-4">How It Works</h3>
+                <ol>
+                    <li>Enter your personal contact information.</li>
+                    <li>Provide details about the job and company you're applying to.</li>
+                    <li>Highlight your relevant skills and experience.</li>
+                    <li>Choose a desired tone (e.g., formal, creative).</li>
+                    <li>Review, edit, and download your customized cover letter.</li>
+                </ol>
+                <p>We are constantly working to improve the tool and add new features. Thank you for using Cover Letter Generator!</p>
+             </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 3: Input Personal Info -->
+<h2>State 3: Input Personal Info</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1: Personal Info - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Step 1/5</div>
+        </div>
+
+        <h2 class="mb-3">Step 1: Your Personal Information</h2>
+        <p>Please provide your contact details.</p>
+
+        <form>
+            <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="e.g., Jane Doe" required>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="e.g., jane.doe@email.com" required>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="e.g., (123) 456-7890">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="address" class="form-label">Address (Optional)</label>
+                    <input type="text" class="form-control" id="address" placeholder="e.g., 123 Main St, Anytown, USA">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="linkedin" class="form-label">LinkedIn Profile URL (Optional)</label>
+                    <input type="url" class="form-control" id="linkedin" placeholder="e.g., https://linkedin.com/in/janedoe">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="portfolio" class="form-label">Portfolio/Website URL (Optional)</label>
+                    <input type="url" class="form-control" id="portfolio" placeholder="e.g., https://janedoe.com">
+                 </div>
+            </div>
+
+             <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-primary">Next: Job Details &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 4: Input Job Details -->
+<h2>State 4: Input Job Details</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 2: Job Details - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Step 2/5</div>
+        </div>
+
+        <h2 class="mb-3">Step 2: Job Details</h2>
+        <p>Tell us about the job you are applying for.</p>
+
+        <form>
+            <div class="mb-3">
+                <label for="jobTitle" class="form-label">Job Title</label>
+                <input type="text" class="form-control" id="jobTitle" placeholder="e.g., Marketing Manager" required>
+            </div>
+             <div class="mb-3">
+                <label for="companyName" class="form-label">Company Name</label>
+                <input type="text" class="form-control" id="companyName" placeholder="e.g., Acme Corporation" required>
+            </div>
+            <div class="mb-3">
+                <label for="hiringManager" class="form-label">Hiring Manager Name (Optional)</label>
+                <input type="text" class="form-control" id="hiringManager" placeholder="e.g., Mr. John Smith">
+                <div class="form-text">If known, addressing the letter directly is more effective.</div>
+            </div>
+            <div class="mb-3">
+                <label for="jobDescription" class="form-label">Key Requirements / Job Description Snippet</label>
+                <textarea class="form-control" id="jobDescription" rows="5" placeholder="Paste key responsibilities, required skills, or relevant parts of the job description here..." required></textarea>
+                <div class="form-text">Helps tailor the letter to the specific role.</div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-secondary">&laquo; Back: Personal Info</button>
+                <button type="submit" class="btn btn-primary">Next: Experience/Skills &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 5: Input Experience/Skills -->
+<h2>State 5: Input Experience/Skills</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 3: Experience/Skills - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Step 3/5</div>
+        </div>
+
+        <h2 class="mb-3">Step 3: Your Experience & Skills</h2>
+        <p>Highlight your relevant background that matches the job.</p>
+
+        <form>
+             <div class="mb-3">
+                <label for="keySkills" class="form-label">Key Skills</label>
+                <textarea class="form-control" id="keySkills" rows="3" placeholder="List your most relevant skills for this job (e.g., Project Management, SEO, Python, Customer Service)..." required></textarea>
+                <div class="form-text">Focus on skills mentioned in the job description.</div>
+             </div>
+
+             <div class="mb-3">
+                <label for="relevantExperience" class="form-label">Relevant Experience Highlights</label>
+                <textarea class="form-control" id="relevantExperience" rows="5" placeholder="Briefly describe 1-2 key experiences or achievements that align with the role's requirements. (e.g., 'Managed a team of 5 and increased sales by 15% in Q3', 'Led the redesign of the company website resulting in a 30% increase in user engagement')..." required></textarea>
+             </div>
+
+              <div class="mb-3">
+                <label for="motivation" class="form-label">Why are you interested in this role/company?</label>
+                <textarea class="form-control" id="motivation" rows="3" placeholder="Briefly explain your motivation (e.g., 'Passionate about renewable energy and admire Company Xs commitment to sustainability', 'Excited by the opportunity to apply my marketing skills in the fast-growing tech industry')..." required></textarea>
+             </div>
+
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-secondary">&laquo; Back: Job Details</button>
+                <button type="submit" class="btn btn-primary">Next: Select Tone &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 6: Select Tone/Style -->
+<h2>State 6: Select Tone/Style</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 4: Tone/Style - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Step 4/5</div>
+        </div>
+
+        <h2 class="mb-3">Step 4: Select Tone & Style</h2>
+        <p>Choose the overall tone for your cover letter.</p>
+
+        <form>
+            <div class="mb-4">
+                <label class="form-label">Choose a Tone:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="toneOptions" id="toneFormal" value="formal" checked>
+                    <label class="form-check-label" for="toneFormal">
+                        <strong>Formal & Professional:</strong> Standard, respectful tone suitable for most corporate roles.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="toneOptions" id="toneEnthusiastic" value="enthusiastic">
+                    <label class="form-check-label" for="toneEnthusiastic">
+                        <strong>Enthusiastic & Passionate:</strong> Shows strong interest and excitement, good for mission-driven companies or roles you love.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="toneOptions" id="toneCreative" value="creative">
+                    <label class="form-check-label" for="toneCreative">
+                        <strong>Creative & Modern:</strong> More conversational, suitable for startups, creative industries, or less formal company cultures.
+                    </label>
+                </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="toneOptions" id="toneConcise" value="concise">
+                    <label class="form-check-label" for="toneConcise">
+                        <strong>Concise & Direct:</strong> Gets straight to the point, highlighting key qualifications efficiently.
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-5">
+                <button type="button" class="btn btn-secondary">&laquo; Back: Experience/Skills</button>
+                <button type="submit" class="btn btn-primary">Generate Cover Letter &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 7: Generating... (Loading State) -->
+<h2>State 7: Generating... (Loading State)</h2>
+<iframe id="iframe-state-7" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating... - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5 text-center">
+         <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Generating...</div>
+        </div>
+
+        <h2 class="mb-4">Generating Your Cover Letter</h2>
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Please wait a moment while we craft your personalized letter...</p>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 8: Review & Edit -->
+<h2>State 8: Review & Edit</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 5: Review & Edit - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Step 5/5: Complete!</div>
+        </div>
+
+        <h2 class="mb-3">Step 5: Review and Edit Your Cover Letter</h2>
+        <p>Your generated cover letter is below. Please review it carefully and make any necessary edits to ensure it perfectly reflects your voice and qualifications.</p>
+
+        <form>
+             <div class="mb-3">
+                <label for="coverLetterContent" class="form-label">Generated Cover Letter:</label>
+                <textarea class="form-control" id="coverLetterContent" rows="15">
+Jane Doe
+(123) 456-7890 | jane.doe@email.com | linkedin.com/in/janedoe
+
+[Date]
+
+Mr. John Smith (If provided, otherwise remove line or use generic title)
+Hiring Manager
+Acme Corporation
+[Company Address if known]
+
+Dear Mr. Smith, (Or Hiring Manager,)
+
+I am writing to express my strong interest in the Marketing Manager position at Acme Corporation, as advertised on [Platform where job was seen - Placeholder]. With my experience in [Key Skill 1] and [Key Skill 2], coupled with my proven ability to [Relevant Achievement Example], I am confident I possess the skills and qualifications necessary to excel in this role and contribute significantly to your team.
+
+In my previous role at [Previous Company - Placeholder], I was responsible for [Brief description related to Relevant Experience Highlight]. One of my key accomplishments was [Specific achievement from Relevant Experience Highlight], which demonstrates my ability to drive results and meet challenging objectives. I am particularly drawn to this opportunity at Acme Corporation because of [Reason from Motivation Input].
+
+My skills in [Key Skill 3] and experience with [Tool/Software - Placeholder if relevant] align well with the requirements outlined in the job description. I am eager to leverage my background to help Acme Corporation achieve its marketing goals.
+
+Thank you for considering my application. I have attached my resume for your review and welcome the opportunity to discuss my qualifications further.
+
+Sincerely,
+Jane Doe
+                </textarea>
+                <div class="form-text">Make any edits directly in the text area above.</div>
+            </div>
+
+
+            <div class="d-flex justify-content-between mt-4 mb-5">
+                 <button type="button" class="btn btn-secondary">&laquo; Back: Select Tone</button>
+                 <div>
+                    <button type="button" class="btn btn-warning me-2">Regenerate with Changes</button>
+                    <button type="submit" class="btn btn-success">Finalize & Download &raquo;</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center text-muted py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 9: Download/Export -->
+<h2>State 9: Download/Export</h2>
+<iframe id="iframe-state-9" srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Cover Letter Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Success!</h4>
+          <p>Your cover letter has been finalized.</p>
+          <hr>
+          <p class="mb-0">Choose your preferred format to download.</p>
+        </div>
+
+        <h2 class="mb-4">Download Your Cover Letter</h2>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary btn-lg" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text-fill me-2" viewBox="0 0 16 16">
+                  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1z"/>
+                </svg>
+                Download as .TXT
+            </button>
+            <button class="btn btn-danger btn-lg" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill me-2" viewBox="0 0 16 16">
+                  <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606q-.64.537-1.18.756-1.18.46-2.443.46H1.5v-1.12q.79 0 1.43-.224.639-.224 1.09-.688.45-.464.688-1.09.238-.627.238-1.43H3.05v-1.12H4.43q0-.86.164-1.53.164-.67.498-1.196.333-.527.82-1.011a4 4 0 0 1 1.482-.849q.64-.264 1.43-.264.79 0 1.43.264.64.264 1.18.756.54.492.876 1.196.336.704.336 1.53H10.9v1.12h-1.44q0 .86-.164 1.53-.164.67-.498 1.196-.333.527-.82 1.011a4 4 0 0 1-1.482.849q-.64.264-1.43.264-.79 0-1.43-.264Zm-1.03-2.827q.258-.41.399-.905.14-.495.14-.905h-1.8q0 .41.14.905.14.495.4.905Zm2.677.238q.41-.41.6-.949.19-.539.19-1.09h-1.9q0 .551.19 1.09.19.539.6.949Z"/>
+                  <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1"/>
+                </svg>
+                Download as .PDF
+             </button>
+             <button class="btn btn-secondary btn-lg" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-fill me-2" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm2 0a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zm-1 7a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm2 0a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm2 0a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm2 0a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM1.5 3A1.5 1.5 0 0 0 0 4.5v9A1.5 1.5 0 0 0 1.5 15h13A1.5 1.5 0 0 0 16 13.5v-9A1.5 1.5 0 0 0 14.5 3z"/>
+                </svg>
+                Copy to Clipboard
+            </button>
+        </div>
+
+        <a href="#" class="btn btn-link mt-4">Start a New Cover Letter</a>
+    </div>
+
+    <footer class="text-center text-muted mt-5 py-3 bg-light fixed-bottom">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 10: Input Validation Error Example (on State 3) -->
+<h2>State 10: Input Validation Error Example (Personal Info)</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Step 1: Personal Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Step 1/5</div>
+        </div>
+
+        <div class="alert alert-danger" role="alert">
+          Please fix the errors below before proceeding.
+        </div>
+
+        <h2 class="mb-3">Step 1: Your Personal Information</h2>
+        <p>Please provide your contact details.</p>
+
+        <form>
+             <div class="row g-3">
+                 <div class="col-md-6 mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control is-invalid" id="fullName" placeholder="e.g., Jane Doe" required>
+                    <div class="invalid-feedback">
+                      Full name is required.
+                    </div>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control is-invalid" id="email" placeholder="e.g., jane.doe@email.com" required>
+                     <div class="invalid-feedback">
+                      A valid email address is required.
+                    </div>
+                 </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="e.g., (123) 456-7890">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="address" class="form-label">Address (Optional)</label>
+                    <input type="text" class="form-control" id="address" placeholder="e.g., 123 Main St, Anytown, USA">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="linkedin" class="form-label">LinkedIn Profile URL (Optional)</label>
+                    <input type="url" class="form-control" id="linkedin" placeholder="e.g., https://linkedin.com/in/janedoe">
+                 </div>
+                 <div class="col-md-6 mb-3">
+                    <label for="portfolio" class="form-label">Portfolio/Website URL (Optional)</label>
+                    <input type="url" class="form-control" id="portfolio" placeholder="e.g., https://janedoe.com">
+                 </div>
+             </div>
+
+
+             <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-primary">Next: Job Details &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+<!-- State 11: Input Validation Error Example (on State 4) -->
+<h2>State 11: Input Validation Error Example (Job Details)</h2>
+<iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Step 2: Job Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cover Letter Gen</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Generate New</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="progress mb-4" style="height: 20px;">
+          <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Step 2/5</div>
+        </div>
+
+         <div class="alert alert-danger" role="alert">
+          Please fix the errors below before proceeding.
+        </div>
+
+        <h2 class="mb-3">Step 2: Job Details</h2>
+        <p>Tell us about the job you are applying for.</p>
+
+        <form>
+            <div class="mb-3">
+                <label for="jobTitle" class="form-label">Job Title</label>
+                <input type="text" class="form-control is-invalid" id="jobTitle" placeholder="e.g., Marketing Manager" required value="Marketing Manager">
+                 <div class="invalid-feedback">
+                    Job title looks okay. (Example: Showing one valid, one invalid)
+                 </div>
+            </div>
+             <div class="mb-3">
+                <label for="companyName" class="form-label">Company Name</label>
+                <input type="text" class="form-control is-invalid" id="companyName" placeholder="e.g., Acme Corporation" required>
+                <div class="invalid-feedback">
+                    Company name is required.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="hiringManager" class="form-label">Hiring Manager Name (Optional)</label>
+                <input type="text" class="form-control" id="hiringManager" placeholder="e.g., Mr. John Smith">
+                <div class="form-text">If known, addressing the letter directly is more effective.</div>
+            </div>
+            <div class="mb-3">
+                <label for="jobDescription" class="form-label">Key Requirements / Job Description Snippet</label>
+                <textarea class="form-control is-invalid" id="jobDescription" rows="5" placeholder="Paste key responsibilities, required skills, or relevant parts of the job description here..." required></textarea>
+                 <div class="invalid-feedback">
+                    Please provide some details about the job requirements or description.
+                 </div>
+                <div class="form-text">Helps tailor the letter to the specific role.</div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-secondary">&laquo; Back: Personal Info</button>
+                <button type="submit" class="btn btn-primary">Next: Experience/Skills &raquo;</button>
+            </div>
+        </form>
+    </div>
+
+     <footer class="text-center text-muted mt-5 py-3 bg-light">
+        <p>&copy; 2023 Cover Letter Generator. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+
+</body>
+</html>

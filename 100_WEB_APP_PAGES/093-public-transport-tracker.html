@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Transport Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { padding: 20px; background-color: #f8f9fa; }
+        .state-container { margin-bottom: 40px; border: 1px solid #dee2e6; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; margin-bottom: 30px; color: #343a40; }
+        h2 { border-bottom: 2px solid #0d6efd; padding-bottom: 10px; margin-bottom: 20px; color: #0d6efd; font-size: 1.5rem; }
+        iframe { width: 100%; height: 650px; border: 1px solid #ced4da; border-radius: 4px; }
+        /* Common styles for iframe content */
+        .iframe-body { padding: 1rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; line-height: 1.5; }
+        .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+        .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<h1>Public Transport Tracker - UI Flow</h1>
+
+<!-- State 1: Home Page -->
+<div class="state-container">
+    <h2>State 1: Home Page</h2>
+    <iframe id="state1" title="State 1: Home Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; }</style>
+      <title>Home</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="text-center mb-4">
+              <h1>Find Your Route</h1>
+              <p class="lead">Enter a route number, stop name, or address to get started.</p>
+            </div>
+
+            <form>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-lg" placeholder="E.g., Route 5, Main St Station, 123 City Ave" aria-label="Search query" aria-describedby="button-search">
+                <button class="btn btn-primary btn-lg" type="button" id="button-search"><i class="bi bi-search"></i> Search</button>
+              </div>
+            </form>
+
+            <!-- Example with validation error -->
+            <form class="mt-4">
+              <label for="search-invalid" class="form-label">Search (Example with error)</label>
+              <div class="input-group mb-3">
+                 <input type="text" id="search-invalid" class="form-control is-invalid" value="Invalid Input$%^" placeholder="E.g., Route 5" aria-label="Search query invalid" aria-describedby="button-search-invalid">
+                 <button class="btn btn-primary" type="button" id="button-search-invalid"><i class="bi bi-search"></i> Search</button>
+                 <div class="invalid-feedback">
+                   Please enter a valid route, stop, or address (alphanumeric characters and spaces only).
+                 </div>
+              </div>
+            </form>
+
+            <hr class="my-4">
+
+            <div class="row text-center">
+                <h3 class="mb-3">Quick Access</h3>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-outline-secondary w-100"><i class="bi bi-geo-alt"></i> Nearby Stops</button>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-outline-secondary w-100"><i class="bi bi-star"></i> Favourite Routes</button>
+                </div>
+                 <div class="col-md-4 mb-3">
+                    <button class="btn btn-outline-secondary w-100"><i class="bi bi-map"></i> View System Map</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 2: Search Results Page -->
+<div class="state-container">
+    <h2>State 2: Search Results Page</h2>
+    <iframe id="state2" title="State 2: Search Results Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; }</style>
+      <title>Search Results</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1>Search Results for "Route 10"</h1>
+        <p class="text-muted">Found 3 matching results.</p>
+
+        <div class="list-group">
+          <!-- Result 1: Route -->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 10 - Downtown Express</h5>
+              <small><span class="badge bg-success">On Time</span></small>
+            </div>
+            <p class="mb-1">Travels between City Center Transit Hub and Northwood Mall.</p>
+            <small>Next bus in 5 mins at Stop A.</small>
+          </a>
+
+          <!-- Result 2: Route -->
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 10A - University Loop</h5>
+               <small><span class="badge bg-warning text-dark">Delayed</span></small>
+            </div>
+            <p class="mb-1">Circular route serving University Campus and adjacent areas.</p>
+            <small>Next bus in 12 mins (approx. 3 min delay) at Stop B.</small>
+          </a>
+
+          <!-- Result 3: Stop -->
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mb-2">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1"><i class="bi bi-geo-alt-fill"></i> Stop 10 - Oak Street & 10th Ave</h5>
+            </div>
+            <p class="mb-1">Served by routes: 5, 10, 22.</p>
+            <small>Next arrival: Route 5 in 2 mins.</small>
+          </a>
+        </div>
+
+        <div class="mt-4">
+            <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 3: Route Details Page -->
+<div class="state-container">
+    <h2>State 3: Route Details Page</h2>
+    <iframe id="state3" title="State 3: Route Details Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; } .map-placeholder { background-color: #e9ecef; height: 300px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-style: italic; border-radius: .25rem; margin-bottom: 1.5rem; }</style>
+      <title>Route 10 Details</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h1><i class="bi bi-signpost-split"></i> Route 10 - Downtown Express</h1>
+             <button class="btn btn-outline-warning"><i class="bi bi-star"></i> Add to Favorites</button>
+        </div>
+        <p class="lead">Real-time tracking and schedule information.</p>
+
+        <div class="map-placeholder">
+            [ Interactive Map Placeholder - Shows route path and live vehicle location ]
+            <br> <i class="bi bi-geo-alt-fill text-danger fs-3"></i> (Bus #102 here)
+        </div>
+
+        <ul class="nav nav-tabs mb-3" id="routeTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="schedule-tab" data-bs-toggle="tab" data-bs-target="#schedule" type="button" role="tab" aria-controls="schedule" aria-selected="true">Schedule</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="stops-tab" data-bs-toggle="tab" data-bs-target="#stops" type="button" role="tab" aria-controls="stops" aria-selected="false">Stops</button>
+          </li>
+           <li class="nav-item" role="presentation">
+            <button class="nav-link" id="alerts-tab" data-bs-toggle="tab" data-bs-target="#alerts" type="button" role="tab" aria-controls="alerts" aria-selected="false">Alerts <span class="badge bg-danger">1</span></button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="routeTabContent">
+          <div class="tab-pane fade show active" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+            <h5>Today Schedule (Northbound)</h5>
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr><th>Stop Name</th><th>Scheduled Time</th><th>Estimated Time</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>City Center Transit Hub</td><td>10:00 AM</td><td><span class="text-success">10:01 AM (On Time)</span></td></tr>
+                <tr><td>Main St & 2nd Ave</td><td>10:05 AM</td><td><span class="text-success">10:06 AM (On Time)</span></td></tr>
+                <tr><td>Oak Street & 10th Ave</td><td>10:12 AM</td><td><span class="text-warning">10:14 AM (Delayed)</span></td></tr>
+                <tr><td>Northwood Mall</td><td>10:25 AM</td><td><span class="text-warning">10:28 AM (Delayed)</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="stops" role="tabpanel" aria-labelledby="stops-tab">
+             <h5>Route Stops (Northbound)</h5>
+             <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">1. City Center Transit Hub</a>
+                <a href="#" class="list-group-item list-group-item-action">2. Main St & 2nd Ave</a>
+                <a href="#" class="list-group-item list-group-item-action">3. Elm St & 5th Ave</a>
+                <a href="#" class="list-group-item list-group-item-action">4. Oak Street & 10th Ave</a>
+                <a href="#" class="list-group-item list-group-item-action">5. Cedar Ln & Park Dr</a>
+                <a href="#" class="list-group-item list-group-item-action">6. Northwood Mall</a>
+             </div>
+          </div>
+           <div class="tab-pane fade" id="alerts" role="tabpanel" aria-labelledby="alerts-tab">
+             <h5>Active Alerts</h5>
+             <div class="alert alert-warning" role="alert">
+               <i class="bi bi-exclamation-triangle-fill"></i> <strong>Minor Delay:</strong> Expect delays of 5-10 minutes due to construction near Oak Street. (Updated 5 mins ago)
+             </div>
+          </div>
+        </div>
+
+         <div class="mt-4">
+            <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Search Results</a>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 4: Stop Details Page -->
+<div class="state-container">
+    <h2>State 4: Stop Details Page</h2>
+    <iframe id="state4" title="State 4: Stop Details Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; } .map-placeholder-small { background-color: #e9ecef; height: 150px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-style: italic; border-radius: .25rem; margin-bottom: 1.5rem; }</style>
+      <title>Stop 10 Details</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+             <h1><i class="bi bi-geo-alt-fill"></i> Stop: Oak Street & 10th Ave (#10)</h1>
+             <button class="btn btn-outline-warning"><i class="bi bi-star"></i> Add to Favorites</button>
+        </div>
+        <p class="lead">Real-time departures and arrivals.</p>
+
+         <div class="map-placeholder-small">
+            [ Small Map showing Stop Location ] <i class="bi bi-geo-alt-fill text-primary fs-4"></i>
+        </div>
+
+
+        <h3 class="mt-4 mb-3">Upcoming Departures</h3>
+        <div class="list-group">
+          <!-- Departure 1 -->
+          <div class="list-group-item list-group-item-action">
+             <div class="d-flex w-100 justify-content-between">
+               <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 5 - Westside Connector</h5>
+               <span class="badge bg-success fs-6">Due</span>
+             </div>
+             <p class="mb-1">Towards West End Transit Hub</p>
+             <small>Scheduled: 10:10 AM / Real-time: <strong>10:10 AM</strong></small>
+          </div>
+          <!-- Departure 2 -->
+          <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+               <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 10 - Downtown Express</h5>
+               <span class="badge bg-warning text-dark fs-6">5 min</span>
+            </div>
+            <p class="mb-1">Towards Northwood Mall</p>
+            <small>Scheduled: 10:12 AM / Real-time: <strong>10:14 AM</strong> (Delayed)</small>
+          </div>
+           <!-- Departure 3 -->
+          <div class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+               <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 22 - Crosstown</h5>
+               <span class="badge bg-info fs-6">12 min</span>
+            </div>
+            <p class="mb-1">Towards East Gate Plaza</p>
+             <small>Scheduled: 10:20 AM / Real-time: <strong>10:22 AM</strong> (On Time)</small>
+          </div>
+           <!-- Departure 4 -->
+           <div class="list-group-item list-group-item-action">
+             <div class="d-flex w-100 justify-content-between">
+               <h5 class="mb-1"><i class="bi bi-signpost-split"></i> Route 5 - Westside Connector</h5>
+               <span class="badge bg-secondary fs-6">25 min</span>
+             </div>
+             <p class="mb-1">Towards West End Transit Hub</p>
+              <small>Scheduled: 10:35 AM / Real-time: <strong>10:35 AM</strong> (Scheduled)</small>
+          </div>
+        </div>
+
+         <div class="mt-4">
+            <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Search Results</a>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 5: Search Error State -->
+<div class="state-container">
+    <h2>State 5: Search Error State</h2>
+    <iframe id="state5" title="State 5: Search Error State" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; }</style>
+      <title>Search Error</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+             <i class="bi bi-emoji-frown display-1 text-warning mb-3"></i>
+             <h1>No Results Found</h1>
+             <p class="lead">We couldn&apos;t find any routes or stops matching your search for "<strong>Route 999</strong>".</p>
+             <div class="alert alert-warning" role="alert">
+               Please check your spelling or try a different search term. You can search by route number, stop name, or address.
+             </div>
+
+             <form class="mt-4">
+               <div class="input-group mb-3">
+                 <input type="text" class="form-control form-control-lg" placeholder="Try searching again..." aria-label="Search query" aria-describedby="button-search-again">
+                 <button class="btn btn-primary btn-lg" type="button" id="button-search-again"><i class="bi bi-search"></i> Search</button>
+               </div>
+             </form>
+
+             <div class="mt-4">
+                <a href="#" class="btn btn-secondary"><i class="bi bi-house"></i> Go Back Home</a>
+             </div>
+
+          </div>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 6: About Page -->
+<div class="state-container">
+    <h2>State 6: About Page</h2>
+    <iframe id="state6" title="State 6: About Page" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; }</style>
+      <title>About</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1>About Public Transport Tracker</h1>
+        <p class="lead">Your companion for navigating the city&apos;s public transport system.</p>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h3>Our Mission</h3>
+                <p>To provide accurate, real-time public transport information to make your commute easier and more predictable. We aim to consolidate schedule data and live tracking into one simple interface.</p>
+
+                <h3>Features</h3>
+                <ul>
+                    <li>Real-time vehicle location tracking (where available)</li>
+                    <li>Up-to-date schedules and route maps</li>
+                    <li>Stop-specific departure and arrival times</li>
+                    <li>Search by route, stop name, or address</li>
+                    <li>Service alerts and delay notifications</li>
+                    <li>Favorite routes and stops for quick access</li>
+                </ul>
+
+                <h3>Data Sources</h3>
+                <p>Our information is sourced directly from official transit authority APIs and GTFS (General Transit Feed Specification) data feeds. Real-time data accuracy depends on the quality provided by the transit agencies.</p>
+
+                <h3>Contact Us</h3>
+                <p>Have feedback or questions? Reach out to us at <a href="mailto:support@publictransporttracker.example.com">support@publictransporttracker.example.com</a>.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="bi bi-info-circle display-1 text-primary mt-4"></i>
+            </div>
+        </div>
+         <div class="mt-4">
+            <a href="#" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Back to Home</a>
+        </div>
+      </div>
+
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved. | Version 1.0.0
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+<!-- State 7: Route Details Page - Loading State -->
+<div class="state-container">
+    <h2>State 7: Route Details Page - Loading State</h2>
+    <iframe id="state7" title="State 7: Route Details Page - Loading State" srcdoc='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <style>.iframe-body { padding: 1rem; } .iframe-navbar { margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); } .iframe-footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center; color: #6c757d; font-size: 0.9em; } .map-placeholder { background-color: #e9ecef; height: 300px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-style: italic; border-radius: .25rem; margin-bottom: 1.5rem; }</style>
+      <title>Route 10 Details - Loading</title>
+    </head>
+    <body class="iframe-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary iframe-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="bi bi-bus-front"></i> Public Transport Tracker</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="placeholder-glow"><span class="placeholder col-6"></span></h1>
+        <p class="lead placeholder-glow"><span class="placeholder col-8"></span></p>
+
+        <div class="map-placeholder d-flex align-items-center justify-content-center placeholder-glow">
+             <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading map...</span>
+            </div>
+            <span class="ms-2">Loading map data...</span>
+        </div>
+
+        <ul class="nav nav-tabs mb-3" id="routeTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active disabled placeholder-glow" id="schedule-tab" type="button"><span class="placeholder col-4"></span></button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link disabled placeholder-glow" id="stops-tab" type="button"><span class="placeholder col-3"></span></button>
+          </li>
+           <li class="nav-item" role="presentation">
+            <button class="nav-link disabled placeholder-glow" id="alerts-tab" type="button"><span class="placeholder col-3"></span></button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="routeTabContent">
+          <div class="tab-pane fade show active" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+            <div class="d-flex justify-content-center align-items-center p-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading schedule...</span>
+                </div>
+                 <span class="ms-2 fs-5 text-muted">Loading schedule & real-time data...</span>
+            </div>
+             <!-- Placeholder Table -->
+             <div class="placeholder-glow mt-3">
+                 <span class="placeholder col-12 mb-2" style="height: 30px;"></span>
+                 <span class="placeholder col-12 mb-2" style="height: 30px;"></span>
+                 <span class="placeholder col-12 mb-2" style="height: 30px;"></span>
+                 <span class="placeholder col-12" style="height: 30px;"></span>
+            </div>
+          </div>
+        </div>
+
+         <div class="mt-4 placeholder-glow">
+            <a href="#" tabindex="-1" class="btn btn-secondary disabled placeholder col-3"><i class="bi bi-arrow-left"></i> </a>
+        </div>
+      </div>
+
+      <footer class="iframe-footer">
+        &copy; 2023 Public Transport Tracker. All rights reserved.
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>'>
+    </iframe>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

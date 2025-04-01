@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery App - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { background-color: #f8f9fa; padding: 20px; }
+        h2 { margin-top: 30px; margin-bottom: 15px; border-bottom: 1px solid #dee2e6; padding-bottom: 5px; }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-4">Photo Gallery App - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out/Guest View) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Home - Guest</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                             <li class='nav-item'><a class='btn btn-outline-primary me-2' href='#'>Login</a></li>
+                             <li class='nav-item'><a class='btn btn-primary' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='p-5 mb-4 bg-light rounded-3'>
+                    <div class='container-fluid py-5'>
+                        <h1 class='display-5 fw-bold'>Welcome to PhotoGallery</h1>
+                        <p class='col-md-8 fs-4'>Discover and share amazing photos from around the world. Sign up to upload your own!</p>
+                        <a href='#' class='btn btn-primary btn-lg' type='button'>Explore Galleries</a>
+                        <a href='#' class='btn btn-success btn-lg ms-2' type='button'>Register Now</a>
+                    </div>
+                </div>
+
+                <h3 class='mb-3'>Featured Galleries</h3>
+                <div class='row'>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Nature+Gallery' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Nature Wonders</h5>
+                                <p class='card-text'>Breathtaking landscapes and wildlife.</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Cityscapes' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Urban Exploration</h5>
+                                <p class='card-text'>Stunning views of city life and architecture.</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Abstract+Art' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Abstract Visions</h5>
+                                <p class='card-text'>Creative and thought-provoking imagery.</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 2: Home Page (Logged In View) -->
+    <h2>State 2: Home Page (Logged In)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Home - Logged In</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavLoggedIn' aria-controls='navbarNavLoggedIn' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavLoggedIn'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                             <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <h2>Your Dashboard</h2>
+                    <a href='#' class='btn btn-success'>+ Create New Gallery</a>
+                </div>
+
+                <div class='alert alert-info' role='alert'>
+                  Welcome back! Start by creating a new gallery or exploring public ones.
+                </div>
+
+                 <h3 class='mb-3'>Your Recent Activity</h3>
+                 <p>No recent activity yet. <a href='#'>Upload some photos!</a></p>
+
+                 <h3 class='mt-4 mb-3'>Quick Links</h3>
+                 <div class='list-group'>
+                   <a href='#' class='list-group-item list-group-item-action'>View My Galleries</a>
+                   <a href='#' class='list-group-item list-group-item-action'>Upload Photos</a>
+                   <a href='#' class='list-group-item list-group-item-action'>Explore Public Galleries</a>
+                   <a href='#' class='list-group-item list-group-item-action'>Edit Profile</a>
+                 </div>
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 3: About Page -->
+    <h2>State 3: About Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>About Us</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAbout' aria-controls='navbarNavAbout' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavAbout'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                             <li class='nav-item'><a class='btn btn-outline-primary me-2' href='#'>Login</a></li>
+                             <li class='nav-item'><a class='btn btn-primary' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <h1>About Photo Gallery App</h1>
+                <p class='lead'>Your personal corner on the web to showcase your photography.</p>
+                <hr>
+                <p>Photo Gallery App provides a simple, elegant platform for photographers of all levels to upload, organize, and share their images. Whether you're a professional showcasing your portfolio or an enthusiast sharing moments with friends and family, our app makes it easy.</p>
+                <p>Our features include:</p>
+                <ul>
+                    <li>Easy photo uploads</li>
+                    <li>Gallery creation and management</li>
+                    <li>Public and private gallery options (coming soon!)</li>
+                    <li>Clean and responsive design</li>
+                    <li>User-friendly interface</li>
+                </ul>
+                <p>We are constantly working to improve the platform and add new features. Stay tuned!</p>
+             </div>
+
+             <footer class='py-3 my-4 border-top bg-light fixed-bottom'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 4: Login Page -->
+    <h2>State 4: Login Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Login</title>
+            <style>
+                html, body { height: 100%; }
+                body { display: flex; align-items: center; justify-content: center; }
+                .form-signin { width: 100%; max-width: 330px; padding: 15px; margin: auto; }
+            </style>
+        </head>
+        <body class='text-center'>
+             <main class='form-signin'>
+                 <form>
+                     <img class='mb-4' src='https://via.placeholder.com/72x57.png?text=Logo' alt='Logo' width='72' height='57'>
+                     <h1 class='h3 mb-3 fw-normal'>Please sign in</h1>
+
+                     <div class='form-floating mb-3'>
+                         <input type='email' class='form-control' id='floatingInput' placeholder='name@example.com'>
+                         <label for='floatingInput'>Email address</label>
+                     </div>
+                     <div class='form-floating mb-3'>
+                         <input type='password' class='form-control' id='floatingPassword' placeholder='Password'>
+                         <label for='floatingPassword'>Password</label>
+                     </div>
+
+                     <div class='checkbox mb-3'>
+                         <label>
+                             <input type='checkbox' value='remember-me'> Remember me
+                         </label>
+                     </div>
+                     <button class='w-100 btn btn-lg btn-primary mb-2' type='submit'>Sign in</button>
+                     <a href='#'>Forgot password?</a>
+                     <p class='mt-3 mb-1'>Don't have an account? <a href='#'>Register here</a></p>
+                     <p class='mt-3 mb-3 text-muted'>© 2023 Photo Gallery App</p>
+                 </form>
+             </main>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 5: Login Page (Error State) -->
+    <h2>State 5: Login Page (Error State)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Login - Error</title>
+            <style>
+                html, body { height: 100%; }
+                body { display: flex; align-items: center; justify-content: center; }
+                .form-signin { width: 100%; max-width: 330px; padding: 15px; margin: auto; }
+            </style>
+        </head>
+        <body class='text-center'>
+             <main class='form-signin'>
+                 <form>
+                     <img class='mb-4' src='https://via.placeholder.com/72x57.png?text=Logo' alt='Logo' width='72' height='57'>
+                     <h1 class='h3 mb-3 fw-normal'>Please sign in</h1>
+
+                     <div class='alert alert-danger' role='alert'>
+                       Invalid email or password. Please try again.
+                     </div>
+
+                     <div class='form-floating mb-3'>
+                         <input type='email' class='form-control is-invalid' id='floatingInput' placeholder='name@example.com' value='user@example.com'>
+                         <label for='floatingInput'>Email address</label>
+                         <div class='invalid-feedback'>
+                            Please provide a valid email.
+                         </div>
+                     </div>
+                     <div class='form-floating mb-3'>
+                         <input type='password' class='form-control is-invalid' id='floatingPassword' placeholder='Password'>
+                         <label for='floatingPassword'>Password</label>
+                         <div class='invalid-feedback'>
+                            Password cannot be empty.
+                         </div>
+                     </div>
+
+                     <div class='checkbox mb-3'>
+                         <label>
+                             <input type='checkbox' value='remember-me'> Remember me
+                         </label>
+                     </div>
+                     <button class='w-100 btn btn-lg btn-primary mb-2' type='submit'>Sign in</button>
+                     <a href='#'>Forgot password?</a>
+                      <p class='mt-3 mb-1'>Don't have an account? <a href='#'>Register here</a></p>
+                     <p class='mt-3 mb-3 text-muted'>© 2023 Photo Gallery App</p>
+                 </form>
+             </main>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 6: Registration Page -->
+    <h2>State 6: Registration Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Register</title>
+             <style>
+                html, body { height: 100%; }
+                body { display: flex; align-items: center; justify-content: center; }
+                .form-register { width: 100%; max-width: 400px; padding: 15px; margin: auto; }
+            </style>
+        </head>
+        <body class='text-center'>
+             <main class='form-register'>
+                <form>
+                    <img class='mb-4' src='https://via.placeholder.com/72x57.png?text=Logo' alt='Logo' width='72' height='57'>
+                    <h1 class='h3 mb-3 fw-normal'>Create an Account</h1>
+
+                    <div class='form-floating mb-3'>
+                        <input type='text' class='form-control' id='floatingName' placeholder='Your Name'>
+                        <label for='floatingName'>Full Name</label>
+                    </div>
+                    <div class='form-floating mb-3'>
+                        <input type='email' class='form-control' id='floatingEmail' placeholder='name@example.com'>
+                        <label for='floatingEmail'>Email address</label>
+                    </div>
+                    <div class='form-floating mb-3'>
+                        <input type='password' class='form-control' id='floatingPasswordReg' placeholder='Password'>
+                        <label for='floatingPasswordReg'>Password</label>
+                    </div>
+                     <div class='form-floating mb-3'>
+                        <input type='password' class='form-control' id='floatingConfirmPassword' placeholder='Confirm Password'>
+                        <label for='floatingConfirmPassword'>Confirm Password</label>
+                    </div>
+
+                     <div class='form-check text-start mb-3'>
+                        <input class='form-check-input' type='checkbox' value='agree-terms' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                            I agree to the <a href='#'>Terms of Service</a>
+                        </label>
+                    </div>
+
+                    <button class='w-100 btn btn-lg btn-primary mb-2' type='submit'>Register</button>
+                    <p class='mt-3 mb-1'>Already have an account? <a href='#'>Log in here</a></p>
+                    <p class='mt-3 mb-3 text-muted'>© 2023 Photo Gallery App</p>
+                </form>
+             </main>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 7: Registration Page (Error State) -->
+    <h2>State 7: Registration Page (Error State)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Register - Error</title>
+             <style>
+                html, body { height: 100%; }
+                body { display: flex; align-items: center; justify-content: center; }
+                .form-register { width: 100%; max-width: 400px; padding: 15px; margin: auto; }
+            </style>
+        </head>
+        <body class='text-center'>
+             <main class='form-register'>
+                <form>
+                    <img class='mb-4' src='https://via.placeholder.com/72x57.png?text=Logo' alt='Logo' width='72' height='57'>
+                    <h1 class='h3 mb-3 fw-normal'>Create an Account</h1>
+
+                     <div class='alert alert-danger' role='alert'>
+                       Please correct the errors below.
+                     </div>
+
+                    <div class='form-floating mb-3'>
+                        <input type='text' class='form-control is-invalid' id='floatingName' placeholder='Your Name' value=''>
+                        <label for='floatingName'>Full Name</label>
+                         <div class='invalid-feedback'>
+                            Full name is required.
+                         </div>
+                    </div>
+                    <div class='form-floating mb-3'>
+                        <input type='email' class='form-control is-invalid' id='floatingEmail' placeholder='name@example.com' value='user@invalid'>
+                        <label for='floatingEmail'>Email address</label>
+                         <div class='invalid-feedback'>
+                            Please enter a valid email address.
+                         </div>
+                    </div>
+                    <div class='form-floating mb-3'>
+                        <input type='password' class='form-control is-invalid' id='floatingPasswordReg' placeholder='Password' value='pass'>
+                        <label for='floatingPasswordReg'>Password</label>
+                        <div class='invalid-feedback'>
+                            Password must be at least 8 characters long.
+                         </div>
+                    </div>
+                     <div class='form-floating mb-3'>
+                        <input type='password' class='form-control is-invalid' id='floatingConfirmPassword' placeholder='Confirm Password' value='word'>
+                        <label for='floatingConfirmPassword'>Confirm Password</label>
+                        <div class='invalid-feedback'>
+                            Passwords do not match.
+                         </div>
+                    </div>
+
+                     <div class='form-check text-start mb-3'>
+                        <input class='form-check-input is-invalid' type='checkbox' value='agree-terms' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                            I agree to the <a href='#'>Terms of Service</a>
+                        </label>
+                         <div class='invalid-feedback'>
+                            You must agree to the terms.
+                         </div>
+                    </div>
+
+                    <button class='w-100 btn btn-lg btn-primary mb-2' type='submit'>Register</button>
+                     <p class='mt-3 mb-1'>Already have an account? <a href='#'>Log in here</a></p>
+                     <p class='mt-3 mb-3 text-muted'>© 2023 Photo Gallery App</p>
+                </form>
+             </main>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 8: Forgot Password Page -->
+    <h2>State 8: Forgot Password Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Forgot Password</title>
+            <style>
+                html, body { height: 100%; }
+                body { display: flex; align-items: center; justify-content: center; }
+                .form-forgot { width: 100%; max-width: 330px; padding: 15px; margin: auto; }
+            </style>
+        </head>
+        <body class='text-center'>
+             <main class='form-forgot'>
+                 <form>
+                     <img class='mb-4' src='https://via.placeholder.com/72x57.png?text=Logo' alt='Logo' width='72' height='57'>
+                     <h1 class='h3 mb-3 fw-normal'>Reset Password</h1>
+                     <p class='mb-3'>Enter your email address and we will send you a link to reset your password.</p>
+
+                     <div class='form-floating mb-3'>
+                         <input type='email' class='form-control' id='floatingEmailForgot' placeholder='name@example.com'>
+                         <label for='floatingEmailForgot'>Email address</label>
+                     </div>
+
+                     <button class='w-100 btn btn-lg btn-primary mb-2' type='submit'>Send Reset Link</button>
+                     <a href='#'>Back to Login</a>
+                     <p class='mt-5 mb-3 text-muted'>© 2023 Photo Gallery App</p>
+                 </form>
+             </main>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 9: View Public Galleries Page -->
+    <h2>State 9: View Public Galleries Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Public Galleries</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavPublicGalleries' aria-controls='navbarNavPublicGalleries' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavPublicGalleries'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                             <li class='nav-item'><a class='btn btn-outline-primary me-2' href='#'>Login</a></li>
+                             <li class='nav-item'><a class='btn btn-primary' href='#'>Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <h1>Public Galleries</h1>
+                <p>Explore galleries shared by our community.</p>
+
+                 <div class='row'>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Gallery+1' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Mountain Views</h5>
+                                <p class='card-text'>By User A</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Gallery+2' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Coastal Scenes</h5>
+                                <p class='card-text'>By User B</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Gallery+3' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Forest Walks</h5>
+                                <p class='card-text'>By User C</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <img src='https://via.placeholder.com/400x250.png?text=Gallery+4' class='card-img-top' alt='Gallery Thumbnail'>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Urban Life</h5>
+                                <p class='card-text'>By User D</p>
+                                <a href='#' class='btn btn-sm btn-outline-secondary'>View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- More gallery cards -->
+                </div>
+
+                 <!-- Pagination -->
+                 <nav aria-label='Page navigation'>
+                    <ul class='pagination justify-content-center'>
+                        <li class='page-item disabled'><a class='page-link' href='#' tabindex='-1' aria-disabled='true'>Previous</a></li>
+                        <li class='page-item active'><a class='page-link' href='#'>1</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>2</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+                        <li class='page-item'><a class='page-link' href='#'>Next</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 10: View Single Gallery Page -->
+    <h2>State 10: View Single Gallery Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Gallery: Mountain Views</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavSingleGallery' aria-controls='navbarNavSingleGallery' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavSingleGallery'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownGallery' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownGallery'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Mountain Views</li>
+                  </ol>
+                </nav>
+
+                <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <div>
+                        <h1>Mountain Views</h1>
+                        <p class='text-muted'>A collection of peaks and valleys.</p>
+                    </div>
+                    <div>
+                        <a href='#' class='btn btn-primary'>Upload Photos</a>
+                        <a href='#' class='btn btn-outline-secondary ms-2'>Edit Gallery</a>
+                        <button type='button' class='btn btn-outline-danger ms-2'>Delete Gallery</button>
+                    </div>
+                </div>
+
+                <div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3'>
+                    <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+1' class='img-thumbnail' alt='Photo 1'></a>
+                    </div>
+                     <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+2' class='img-thumbnail' alt='Photo 2'></a>
+                    </div>
+                     <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+3' class='img-thumbnail' alt='Photo 3'></a>
+                    </div>
+                     <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+4' class='img-thumbnail' alt='Photo 4'></a>
+                    </div>
+                     <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+5' class='img-thumbnail' alt='Photo 5'></a>
+                    </div>
+                     <div class='col'>
+                        <a href='#'><img src='https://via.placeholder.com/300x200.png?text=Photo+6' class='img-thumbnail' alt='Photo 6'></a>
+                    </div>
+                    <!-- More photos -->
+                </div>
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 11: View Single Photo Page -->
+    <h2>State 11: View Single Photo Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Photo: Majestic Peak</title>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavSinglePhoto' aria-controls='navbarNavSinglePhoto' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavSinglePhoto'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownPhoto' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownPhoto'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Mountain Views</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Majestic Peak</li>
+                  </ol>
+                </nav>
+
+                <div class='row'>
+                    <div class='col-md-8 text-center'>
+                         <img src='https://via.placeholder.com/1200x800.png?text=Large+Photo+View' class='img-fluid mb-3' alt='Majestic Peak'>
+                    </div>
+                    <div class='col-md-4'>
+                        <h3>Majestic Peak</h3>
+                        <p><em>Uploaded on: Oct 26, 2023</em></p>
+                        <p>A stunning view from the summit during sunrise. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <hr>
+                        <h4>Details</h4>
+                        <ul class='list-unstyled'>
+                            <li><strong>Camera:</strong> Canon EOS R5</li>
+                            <li><strong>Lens:</strong> RF 24-70mm F2.8 L IS USM</li>
+                            <li><strong>Focal Length:</strong> 35mm</li>
+                            <li><strong>Aperture:</strong> f/8</li>
+                            <li><strong>Shutter Speed:</strong> 1/125s</li>
+                            <li><strong>ISO:</strong> 100</li>
+                        </ul>
+                        <div class='mt-3'>
+                            <a href='#' class='btn btn-sm btn-outline-secondary'>Edit Details</a>
+                            <button type='button' class='btn btn-sm btn-outline-danger ms-2'>Delete Photo</button>
+                        </div>
+                        <hr>
+                         <h4>Comments (Placeholder)</h4>
+                         <p>No comments yet.</p>
+                         <textarea class='form-control mb-2' rows='2' placeholder='Add a comment...'></textarea>
+                         <button class='btn btn-sm btn-primary'>Post Comment</button>
+                    </div>
+                </div>
+
+                 <div class='mt-4'>
+                    <a href='#' class='btn btn-secondary'>&laquo; Previous</a>
+                    <a href='#' class='btn btn-secondary float-end'>Next &raquo;</a>
+                 </div>
+
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 12: My Galleries Page (Logged In) -->
+    <h2>State 12: My Galleries Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>My Galleries</title>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavMyGalleries' aria-controls='navbarNavMyGalleries' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavMyGalleries'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link active' aria-current='page' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMyGalleries' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownMyGalleries'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                 <div class='d-flex justify-content-between align-items-center mb-3'>
+                    <h1>My Galleries</h1>
+                    <a href='#' class='btn btn-success'>+ Create New Gallery</a>
+                </div>
+
+                <div class='row'>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                            <a href='#'><img src='https://via.placeholder.com/400x250.png?text=Mountain+Views' class='card-img-top' alt='Gallery Thumbnail'></a>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Mountain Views</h5>
+                                <p class='card-text'>A collection of peaks and valleys. (12 Photos)</p>
+                                 <a href='#' class='btn btn-sm btn-primary'>View</a>
+                                 <a href='#' class='btn btn-sm btn-outline-secondary ms-1'>Edit</a>
+                                 <button type='button' class='btn btn-sm btn-outline-danger ms-1'>Delete</button>
+                            </div>
+                             <div class='card-footer text-muted'>
+                                Last updated: 3 days ago
+                             </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                             <a href='#'><img src='https://via.placeholder.com/400x250.png?text=City+Nights' class='card-img-top' alt='Gallery Thumbnail'></a>
+                            <div class='card-body'>
+                                <h5 class='card-title'>City Nights</h5>
+                                <p class='card-text'>Capturing the urban lights. (5 Photos)</p>
+                                 <a href='#' class='btn btn-sm btn-primary'>View</a>
+                                 <a href='#' class='btn btn-sm btn-outline-secondary ms-1'>Edit</a>
+                                 <button type='button' class='btn btn-sm btn-outline-danger ms-1'>Delete</button>
+                            </div>
+                             <div class='card-footer text-muted'>
+                                Last updated: 1 week ago
+                             </div>
+                        </div>
+                    </div>
+                     <div class='col-md-4 mb-3'>
+                        <div class='card'>
+                             <a href='#'><img src='https://via.placeholder.com/400x250.png?text=Empty+Gallery' class='card-img-top bg-secondary' alt='Gallery Thumbnail'></a>
+                            <div class='card-body'>
+                                <h5 class='card-title'>Family Vacation 2023</h5>
+                                <p class='card-text'>Memories from our trip. (0 Photos)</p>
+                                 <a href='#' class='btn btn-sm btn-primary disabled' aria-disabled='true'>View</a>
+                                 <a href='#' class='btn btn-sm btn-outline-secondary ms-1'>Edit</a>
+                                 <button type='button' class='btn btn-sm btn-outline-danger ms-1'>Delete</button>
+                            </div>
+                             <div class='card-footer text-muted'>
+                                Created: 1 day ago
+                             </div>
+                        </div>
+                    </div>
+                     <!-- Placeholder for empty state -->
+                     <!-- <div class='col-12'><div class='alert alert-light text-center' role='alert'>You haven't created any galleries yet. <a href='#'>Create one now!</a></div></div> -->
+                </div>
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 13: Create New Gallery Page -->
+    <h2>State 13: Create New Gallery Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Create New Gallery</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavCreateGallery' aria-controls='navbarNavCreateGallery' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavCreateGallery'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownCreateGallery' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownCreateGallery'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                 <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Create New Gallery</li>
+                  </ol>
+                </nav>
+
+                <h1>Create New Gallery</h1>
+                <hr>
+
+                <form class='col-md-8'>
+                     <div class='mb-3'>
+                        <label for='galleryName' class='form-label'>Gallery Name</label>
+                        <input type='text' class='form-control' id='galleryName' placeholder='e.g., Summer Vacation 2024' required>
+                        <div class='invalid-feedback'>Please provide a gallery name.</div>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='galleryDescription' class='form-label'>Description (Optional)</label>
+                        <textarea class='form-control' id='galleryDescription' rows='3' placeholder='A short description of the gallery contents'></textarea>
+                    </div>
+                     <div class='mb-3'>
+                        <label class='form-label'>Visibility</label>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='visibilityOptions' id='visibilityPublic' value='public' checked>
+                            <label class='form-check-label' for='visibilityPublic'>
+                                Public (Visible to everyone)
+                            </label>
+                        </div>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='visibilityOptions' id='visibilityPrivate' value='private'>
+                            <label class='form-check-label' for='visibilityPrivate'>
+                                Private (Visible only to you)
+                            </label>
+                        </div>
+                    </div>
+                    <button type='submit' class='btn btn-primary'>Create Gallery & Upload Photos</button>
+                    <a href='#' class='btn btn-secondary ms-2'>Cancel</a>
+                </form>
+
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+     <!-- State 14: Upload Photos Page -->
+    <h2>State 14: Upload Photos Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Upload Photos</title>
+             <style>
+                .drop-zone {
+                    border: 2px dashed #ccc;
+                    padding: 50px;
+                    text-align: center;
+                    cursor: pointer;
+                    background-color: #f8f9fa;
+                    margin-bottom: 1rem;
+                }
+                 .drop-zone:hover {
+                    background-color: #e9ecef;
+                 }
+            </style>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavUpload' aria-controls='navbarNavUpload' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavUpload'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUpload' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUpload'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                 <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Mountain Views</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Upload Photos</li>
+                  </ol>
+                </nav>
+
+                <h1>Upload Photos to 'Mountain Views'</h1>
+                <hr>
+
+                <div class='row'>
+                    <div class='col-md-8'>
+                        <div class='drop-zone' id='dropZone'>
+                           <p>Drag & drop image files here</p>
+                           <p>or</p>
+                           <label for='fileInput' class='btn btn-primary'>Select Files</label>
+                           <input type='file' id='fileInput' multiple class='d-none'>
+                        </div>
+
+                        <div class='mb-3'>
+                            <h5>Selected Files:</h5>
+                             <ul class='list-group' id='fileList'>
+                                <!-- Example file item -->
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    photo_peak.jpg (1.2 MB)
+                                    <span class='badge bg-secondary rounded-pill'>Pending</span>
+                                </li>
+                                <li class='list-group-item d-flex justify-content-between align-items-center'>
+                                    sunrise_view.png (850 KB)
+                                     <span class='badge bg-secondary rounded-pill'>Pending</span>
+                                </li>
+                                 <li class='list-group-item d-flex justify-content-between align-items-center text-danger'>
+                                    document.pdf (Invalid Type)
+                                     <span class='badge bg-danger rounded-pill'>Error</span>
+                                </li>
+                                <!-- File list populated dynamically -->
+                            </ul>
+                        </div>
+                         <button type='button' class='btn btn-success'>Start Upload</button>
+                         <a href='#' class='btn btn-secondary ms-2'>Cancel</a>
+                     </div>
+                     <div class='col-md-4'>
+                         <div class='card bg-light'>
+                             <div class='card-body'>
+                                 <h5 class='card-title'>Upload Tips</h5>
+                                 <ul>
+                                     <li>Max file size: 20MB</li>
+                                     <li>Allowed formats: JPG, PNG, GIF</li>
+                                     <li>Select multiple files at once.</li>
+                                     <li>You can add titles/captions after upload.</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 15: Upload Photos Page (Progress/Success State) -->
+    <h2>State 15: Upload Photos Page (Progress/Success State)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Upload Progress</title>
+        </head>
+        <body>
+             <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavUploadProg' aria-controls='navbarNavUploadProg' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavUploadProg'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                        <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownUploadProg' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownUploadProg'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                 <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Mountain Views</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Upload Progress</li>
+                  </ol>
+                </nav>
+
+                <h1>Upload Progress</h1>
+                <hr>
+
+                 <div class='alert alert-success' role='alert'>
+                   Upload complete! 2 photos successfully added to 'Mountain Views'. 1 file failed (invalid type).
+                 </div>
+
+                 <h5>Upload Status:</h5>
+                 <ul class='list-group mb-3'>
+                     <li class='list-group-item d-flex justify-content-between align-items-center'>
+                         <div>
+                             photo_peak.jpg (1.2 MB)
+                             <div class='progress mt-1' style='height: 5px;'>
+                               <div class='progress-bar bg-success' role='progressbar' style='width: 100%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div>
+                             </div>
+                         </div>
+                         <span class='badge bg-success rounded-pill'>Complete</span>
+                     </li>
+                      <li class='list-group-item d-flex justify-content-between align-items-center'>
+                         <div>
+                             sunrise_view.png (850 KB)
+                              <div class='progress mt-1' style='height: 5px;'>
+                               <div class='progress-bar bg-success' role='progressbar' style='width: 100%;' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div>
+                             </div>
+                         </div>
+                         <span class='badge bg-success rounded-pill'>Complete</span>
+                     </li>
+                      <li class='list-group-item d-flex justify-content-between align-items-center text-danger'>
+                          document.pdf (Invalid Type)
+                         <span class='badge bg-danger rounded-pill'>Failed</span>
+                     </li>
+                 </ul>
+
+                  <a href='#' class='btn btn-primary'>View Gallery</a>
+                  <a href='#' class='btn btn-secondary ms-2'>Upload More</a>
+
+            </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 16: Edit Gallery Page -->
+    <h2>State 16: Edit Gallery Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Edit Gallery: Mountain Views</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavEditGallery' aria-controls='navbarNavEditGallery' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavEditGallery'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownEditGallery' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownEditGallery'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Mountain Views</a></li>
+                    <li class='breadcrumb-item active' aria-current='page'>Edit Gallery</li>
+                  </ol>
+                </nav>
+
+                <h1>Edit Gallery: Mountain Views</h1>
+                <hr>
+
+                <form class='col-md-8'>
+                     <div class='mb-3'>
+                        <label for='galleryNameEdit' class='form-label'>Gallery Name</label>
+                        <input type='text' class='form-control' id='galleryNameEdit' value='Mountain Views' required>
+                         <div class='invalid-feedback'>Please provide a gallery name.</div>
+                    </div>
+                    <div class='mb-3'>
+                        <label for='galleryDescriptionEdit' class='form-label'>Description</label>
+                        <textarea class='form-control' id='galleryDescriptionEdit' rows='3'>A collection of peaks and valleys.</textarea>
+                    </div>
+                     <div class='mb-3'>
+                        <label class='form-label'>Visibility</label>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='visibilityOptionsEdit' id='visibilityPublicEdit' value='public' checked>
+                            <label class='form-check-label' for='visibilityPublicEdit'>
+                                Public
+                            </label>
+                        </div>
+                        <div class='form-check'>
+                            <input class='form-check-input' type='radio' name='visibilityOptionsEdit' id='visibilityPrivateEdit' value='private'>
+                            <label class='form-check-label' for='visibilityPrivateEdit'>
+                                Private
+                            </label>
+                        </div>
+                    </div>
+                     <hr>
+                     <div class='mb-3'>
+                        <h5>Danger Zone</h5>
+                         <p>Deleting a gallery is permanent and cannot be undone. All photos within the gallery will also be deleted.</p>
+                        <button type='button' class='btn btn-danger'>Delete This Gallery</button>
+                    </div>
+                     <hr>
+                    <button type='submit' class='btn btn-primary'>Save Changes</button>
+                    <a href='#' class='btn btn-secondary ms-2'>Cancel</a>
+                </form>
+             </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 17: Edit Photo Page -->
+    <h2>State 17: Edit Photo Page</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Edit Photo: Majestic Peak</title>
+        </head>
+        <body>
+            <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+                 <div class='container-fluid'>
+                    <a class='navbar-brand' href='#'>PhotoGallery</a>
+                     <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavEditPhoto' aria-controls='navbarNavEditPhoto' aria-expanded='false' aria-label='Toggle navigation'>
+                        <span class='navbar-toggler-icon'></span>
+                    </button>
+                    <div class='collapse navbar-collapse' id='navbarNavEditPhoto'>
+                        <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                            <li class='nav-item'><a class='nav-link' href='#'>Home</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>My Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>Public Galleries</a></li>
+                            <li class='nav-item'><a class='nav-link' href='#'>About</a></li>
+                        </ul>
+                         <ul class='navbar-nav'>
+                              <li class='nav-item dropdown'>
+                               <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownEditPhoto' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                 Welcome, User!
+                               </a>
+                               <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdownEditPhoto'>
+                                 <li><a class='dropdown-item' href='#'>Profile</a></li>
+                                 <li><hr class='dropdown-divider'></li>
+                                 <li><a class='dropdown-item' href='#'>Logout</a></li>
+                               </ul>
+                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class='container mt-4'>
+                <nav aria-label='breadcrumb'>
+                  <ol class='breadcrumb'>
+                    <li class='breadcrumb-item'><a href='#'>My Galleries</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Mountain Views</a></li>
+                    <li class='breadcrumb-item'><a href='#'>Majestic Peak</a></li>
+                     <li class='breadcrumb-item active' aria-current='page'>Edit Photo</li>
+                  </ol>
+                </nav>
+
+                <h1>Edit Photo Details</h1>
+                 <hr>
+
+                 <div class='row'>
+                    <div class='col-md-4'>
+                         <img src='https://via.placeholder.com/400x267.png?text=Photo+Thumbnail' class='img-fluid img-thumbnail mb-3' alt='Photo Thumbnail'>
+                         <button type='button' class='btn btn-sm btn-danger w-100'>Delete This Photo</button>
+                    </div>
+                     <div class='col-md-8'>
+                         <form>
+                             <div class='mb-3'>
+                                <label for='photoTitle' class='form-label'>Title</label>
+                                <input type='text' class='form-control' id='photoTitle' value='Majestic Peak'>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='photoCaption' class='form-label'>Caption/Description</label>
+                                <textarea class='form-control' id='photoCaption' rows='4'>A stunning view from the summit during sunrise. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+                            </div>
+                             <div class='mb-3'>
+                                <label for='photoTags' class='form-label'>Tags (comma-separated)</label>
+                                <input type='text' class='form-control' id='photoTags' value='mountain, sunrise, peak, landscape, nature'>
+                            </div>
+                            <div class='mb-3'>
+                                <label for='photoLocation' class='form-label'>Location (Optional)</label>
+                                <input type='text' class='form-control' id='photoLocation' placeholder='e.g., Swiss Alps'>
+                            </div>
+                            <button type='submit' class='btn btn-primary'>Save Changes</button>
+                            <a href='#' class='btn btn-secondary ms-2'>Cancel</a>
+                         </form>
+                    </div>
+                 </div>
+
+
+             </div>
+
+            <footer class='py-3 my-4 border-top bg-light'>
+                 <p class='text-center text-muted'>© 2023 Photo Gallery App</p>
+            </footer>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+    <!-- State 18: Confirmation Modal (Generic) -->
+    <h2>State 18: Confirmation Modal (Generic)</h2>
+    <iframe srcdoc="
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+            <title>Confirmation Modal</title>
+            <style>
+                 body { background-color: rgba(0,0,0,0.5); } /* Simulate modal overlay */
+            </style>
+        </head>
+        <body>
+            <!-- Button to trigger modal (won't work in srcdoc, but needed for context) -->
+             <!-- <button type='button' class='btn btn-danger m-5' data-bs-toggle='modal' data-bs-target='#confirmModal'>
+              Show Delete Confirmation
+            </button> -->
+
+            <!-- Modal -->
+            <div class='modal d-block' tabindex='-1' id='confirmModal' style='position: relative; z-index: 1050;'> <!-- Display modal statically -->
+              <div class='modal-dialog modal-dialog-centered'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h5 class='modal-title'>Confirm Deletion</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                  </div>
+                  <div class='modal-body'>
+                    <p>Are you sure you want to delete '[Item Name]'? This action cannot be undone.</p>
+                    <p class='text-danger'><small><strong>Warning:</strong> Deleting a gallery will also delete all photos within it.</small></p>
+                  </div>
+                  <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancel</button>
+                    <button type='button' class='btn btn-danger'>Delete Permanently</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+        </body>
+        </html>
+    "></iframe>
+
+
+</body>
+</html>

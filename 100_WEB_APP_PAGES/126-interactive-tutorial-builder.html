@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tutorial Builder - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            color: #343a40;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff; /* Ensure iframe background is white */
+        }
+        .iframe-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+         /* Common styles for iframe content */
+        .iframe-body { padding-top: 70px; /* Account for fixed navbar */ }
+        .iframe-step-card { margin-bottom: 1rem; }
+        .iframe-step-actions { margin-top: 0.5rem; }
+        .iframe-editor-sidebar { height: calc(100vh - 100px); overflow-y: auto; border-right: 1px solid #dee2e6; }
+        .iframe-editor-content { height: calc(100vh - 100px); overflow-y: auto; }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Tutorial Builder - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="iframe-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Home - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="btn btn-outline-light me-2" href="#">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-warning" href="#">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-5">
+                    <div class="p-5 mb-4 bg-light rounded-3">
+                        <div class="container-fluid py-5">
+                            <h1 class="display-5 fw-bold">Create Engaging Tutorials Easily</h1>
+                            <p class="col-md-8 fs-4">Build interactive step-by-step guides and learning materials with our intuitive builder. No coding required!</p>
+                            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started for Free</a>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-md-stretch">
+                        <div class="col-md-6">
+                            <div class="h-100 p-5 text-bg-dark rounded-3">
+                                <h2>Drag & Drop Interface</h2>
+                                <p>Organize your content effortlessly. Add text, images, videos, and interactive elements with a simple drag-and-drop editor.</p>
+                                <button class="btn btn-outline-light" type="button">Learn More</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="h-100 p-5 bg-body-secondary border rounded-3">
+                                <h2>Track Learner Progress</h2>
+                                <p>Monitor how users interact with your tutorials and gain insights into their learning journey (Feature coming soon!).</p>
+                                <button class="btn btn-outline-secondary" type="button">Explore Features</button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 2: About Page -->
+    <div class="iframe-container">
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>About - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="btn btn-outline-light me-2" href="#">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="btn btn-warning" href="#">Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-5">
+                    <h1>About Interactive Tutorial Builder</h1>
+                    <p class="lead">Our mission is to empower creators to share knowledge effectively through engaging and interactive tutorials.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-8">
+                            <h2>Our Story</h2>
+                            <p>Founded in [Year], Interactive Tutorial Builder started with a simple idea: making tutorial creation accessible to everyone. We noticed that existing tools were often complex or lacked the interactivity needed for truly effective learning experiences. We set out to build a platform that is both powerful and easy to use.</p>
+                            <h2>Our Vision</h2>
+                            <p>We envision a world where anyone can create and share high-quality learning materials. Whether you re onboarding new employees, teaching a skill, or demonstrating a product, our tool aims to be the best way to build your guides.</p>
+                             <h2>Meet the (Placeholder) Team</h2>
+                             <div class="row">
+                                <div class="col-md-4 text-center mb-3">
+                                    <i class="bi bi-person-circle fs-1"></i>
+                                    <h5>Jane Doe</h5>
+                                    <p class="text-muted">Founder & CEO</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                     <i class="bi bi-person-circle fs-1"></i>
+                                     <h5>John Smith</h5>
+                                    <p class="text-muted">Lead Developer</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-3">
+                                     <i class="bi bi-person-circle fs-1"></i>
+                                     <h5>Alex Lee</h5>
+                                    <p class="text-muted">UX Designer</p>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Contact Us</h5>
+                                    <p class="card-text">Have questions? We d love to hear from you.</p>
+                                    <a href="#" class="btn btn-primary">Get in Touch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page -->
+    <div class="iframe-container">
+        <h2>State 3: Sign Up Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Sign Up - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+                    .form-signup { max-width: 400px; width: 100%; padding: 1rem; }
+                 </style>
+            </head>
+            <body>
+                <main class="form-signup text-center">
+                    <form>
+                        <i class="bi bi-journal-code fs-1 mb-4 text-primary"></i>
+                        <h1 class="h3 mb-3 fw-normal">Create Your Account</h1>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required>
+                            <label for="floatingName">Your Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                         <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required>
+                            <label for="floatingConfirmPassword">Confirm Password</label>
+                        </div>
+
+                        <div class="checkbox mb-3 text-start">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Agree to Terms & Conditions
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                        <p class="mt-3 mb-1">
+                            <a href="#">Already have an account? Log In</a>
+                        </p>
+                        <p class="mt-3 mb-3 text-muted">&copy; 2024 TutorialBuilder</p>
+                    </form>
+                </main>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 4: Sign Up Page (Validation Error) -->
+    <div class="iframe-container">
+        <h2>State 4: Sign Up Page (Validation Error)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Sign Up Error - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                <style>
+                    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: #f8f9fa; }
+                    .form-signup { max-width: 400px; width: 100%; padding: 1rem; }
+                 </style>
+            </head>
+            <body>
+                 <main class="form-signup text-center">
+                    <form>
+                         <i class="bi bi-journal-code fs-1 mb-4 text-primary"></i>
+                        <h1 class="h3 mb-3 fw-normal">Create Your Account</h1>
+
+                        <div class="alert alert-danger" role="alert">
+                           Please fix the errors below.
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required value="Test User">
+                            <label for="floatingName">Your Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" required value="invalid-email">
+                            <label for="floatingInput">Email address</label>
+                            <div class="invalid-feedback text-start">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required value="pass">
+                            <label for="floatingPassword">Password</label>
+                             <div class="invalid-feedback text-start">
+                                Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                         <div class="form-floating mb-3">
+                            <input type="password" class="form-control is-invalid" id="floatingConfirmPassword" placeholder="Confirm Password" required value="password">
+                            <label for="floatingConfirmPassword">Confirm Password</label>
+                             <div class="invalid-feedback text-start">
+                                Passwords do not match.
+                            </div>
+                        </div>
+
+                        <div class="checkbox mb-3 text-start">
+                            <label>
+                                <input type="checkbox" value="remember-me" class="is-invalid"> Agree to Terms & Conditions
+                            </label>
+                             <div class="invalid-feedback d-block"> <!-- d-block needed for checkbox -->
+                                You must agree to the terms.
+                            </div>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+                         <p class="mt-3 mb-1">
+                            <a href="#">Already have an account? Log In</a>
+                        </p>
+                        <p class="mt-3 mb-3 text-muted">&copy; 2024 TutorialBuilder</p>
+                    </form>
+                </main>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+     <!-- State 5: Log In Page -->
+    <div class="iframe-container">
+        <h2>State 5: Log In Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Log In - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    html, body { height: 100%; }
+                    body { display: flex; align-items: center; padding-top: 40px; padding-bottom: 40px; background-color: #f8f9fa; }
+                    .form-signin { max-width: 330px; padding: 1rem; margin: auto; }
+                    .form-signin .form-floating:focus-within { z-index: 2; }
+                    .form-signin input[type="email"] { margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+                    .form-signin input[type="password"] { margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0; }
+                 </style>
+            </head>
+            <body class="text-center">
+                <main class="form-signin">
+                    <form>
+                         <i class="bi bi-journal-code fs-1 mb-4 text-primary"></i>
+                        <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                            <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <div class="checkbox mb-3 text-start">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+                        <p class="mt-3 mb-1">
+                            <a href="#">Forgot password?</a>
+                        </p>
+                        <p class="mt-1 mb-1">
+                            <a href="#">Don't have an account? Sign Up</a>
+                        </p>
+                        <p class="mt-5 mb-3 text-muted">&copy; 2024 TutorialBuilder</p>
+                    </form>
+                </main>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 6: Log In Page (Validation Error) -->
+    <div class="iframe-container">
+        <h2>State 6: Log In Page (Validation Error)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Log In Error - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    html, body { height: 100%; }
+                    body { display: flex; align-items: center; padding-top: 40px; padding-bottom: 40px; background-color: #f8f9fa; }
+                    .form-signin { max-width: 330px; padding: 1rem; margin: auto; }
+                    .form-signin .form-floating:focus-within { z-index: 2; }
+                    .form-signin input[type="email"] { margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+                    .form-signin input[type="password"] { margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0; }
+                 </style>
+            </head>
+            <body class="text-center">
+                 <main class="form-signin">
+                    <form>
+                         <i class="bi bi-journal-code fs-1 mb-4 text-primary"></i>
+                        <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+
+                         <div class="alert alert-danger" role="alert">
+                           Invalid email or password.
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="email" class="form-control is-invalid" id="floatingInput" placeholder="name@example.com" required value="user@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control is-invalid" id="floatingPassword" placeholder="Password" required value="wrongpass">
+                            <label for="floatingPassword">Password</label>
+                            <div class="invalid-feedback text-start"> <!-- General message shown in alert above -->
+                                <!-- Can add specific field message if needed -->
+                            </div>
+                        </div>
+
+                        <div class="checkbox mb-3 text-start">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+                        <p class="mt-3 mb-1">
+                            <a href="#">Forgot password?</a>
+                        </p>
+                         <p class="mt-1 mb-1">
+                            <a href="#">Don't have an account? Sign Up</a>
+                        </p>
+                        <p class="mt-5 mb-3 text-muted">&copy; 2024 TutorialBuilder</p>
+                    </form>
+                </main>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 7: Dashboard/My Tutorials (Logged In) -->
+    <div class="iframe-container">
+        <h2>State 7: Dashboard/My Tutorials (Logged In)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>My Tutorials - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">My Tutorials</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Create New</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-person-circle"></i> User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h1>My Tutorials</h1>
+                        <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Create New Tutorial</a>
+                    </div>
+
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Onboarding Guide for New Hires</h5>
+                                <small class="text-muted">Last updated: 3 days ago</small>
+                            </div>
+                            <p class="mb-1">A step-by-step guide covering company policies, tools, and initial tasks.</p>
+                            <small class="text-muted">Category: HR / Onboarding</small>
+                             <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil-square"></i> Edit</button>
+                                <button class="btn btn-sm btn-outline-info me-1"><i class="bi bi-eye"></i> Preview</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Using the New CRM System</h5>
+                                <small class="text-muted">Last updated: 1 week ago</small>
+                            </div>
+                            <p class="mb-1">Interactive tutorial on navigating and utilizing the features of our CRM.</p>
+                            <small class="text-muted">Category: Sales / Tools</small>
+                             <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil-square"></i> Edit</button>
+                                <button class="btn btn-sm btn-outline-info me-1"><i class="bi bi-eye"></i> Preview</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                            </div>
+                        </a>
+                         <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Basic Photo Editing Techniques</h5>
+                                <small class="text-muted">Last updated: 1 month ago</small>
+                            </div>
+                            <p class="mb-1">A short guide covering cropping, brightness adjustments, and applying filters.</p>
+                            <small class="text-muted">Category: Design / Skills</small>
+                             <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil-square"></i> Edit</button>
+                                <button class="btn btn-sm btn-outline-info me-1"><i class="bi bi-eye"></i> Preview</button>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i> Delete</button>
+                            </div>
+                        </a>
+                    </div>
+                     <!-- Placeholder for empty state -->
+                     <!--
+                     <div class="text-center mt-5">
+                         <i class="bi bi-journal-x fs-1 text-muted"></i>
+                         <p class="lead text-muted mt-3">No tutorials created yet.</p>
+                         <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Create Your First Tutorial</a>
+                     </div>
+                     -->
+
+                     <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 8: Create New Tutorial (Initial Step) -->
+    <div class="iframe-container">
+        <h2>State 8: Create New Tutorial (Initial Step)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Create New Tutorial - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">My Tutorials</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Create New</a>
+                                </li>
+                            </ul>
+                             <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-person-circle"></i> User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Create New Tutorial</h1>
+                    <p>Start by giving your tutorial a title and a brief description.</p>
+
+                    <form class="mt-4">
+                        <div class="mb-3">
+                            <label for="tutorialTitle" class="form-label">Tutorial Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="tutorialTitle" placeholder="e.g., How to Use Our New Software" required>
+                            <div class="invalid-feedback">
+                                Please provide a title for your tutorial.
+                            </div>
+                        </div>
+                         <div class="mb-3">
+                            <label for="tutorialDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="tutorialDescription" rows="3" placeholder="Briefly describe what this tutorial covers"></textarea>
+                        </div>
+                         <div class="mb-3">
+                            <label for="tutorialCategory" class="form-label">Category</label>
+                             <select class="form-select" id="tutorialCategory">
+                                <option selected>Select a category (optional)</option>
+                                <option value="1">Onboarding</option>
+                                <option value="2">Software Guide</option>
+                                <option value="3">Training</option>
+                                <option value="4">Product Demo</option>
+                                <option value="5">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Start Building <i class="bi bi-arrow-right"></i></button>
+                        <a href="#" class="btn btn-secondary ms-2">Cancel</a>
+                    </form>
+                     <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 9: Tutorial Editor -->
+    <div class="iframe-container">
+        <h2>State 9: Tutorial Editor</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Edit Tutorial - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    body { padding-top: 56px; overflow: hidden; /* Prevent body scroll */ }
+                    .editor-container { display: flex; height: calc(100vh - 56px); }
+                    .sidebar { width: 300px; border-right: 1px solid #dee2e6; overflow-y: auto; padding: 1rem; background-color: #f8f9fa; }
+                    .step-list .list-group-item { cursor: pointer; }
+                    .step-list .list-group-item.active { background-color: #0d6efd; border-color: #0d6efd; }
+                     .step-list .list-group-item .step-actions { visibility: hidden; }
+                     .step-list .list-group-item:hover .step-actions { visibility: visible; }
+                    .main-content { flex-grow: 1; padding: 1.5rem; overflow-y: auto; }
+                    .content-block { border: 1px dashed #ccc; padding: 1rem; margin-bottom: 1rem; position: relative; background-color: #fff; }
+                     .content-block-actions { position: absolute; top: 5px; right: 5px; background: rgba(255,255,255,0.8); padding: 2px 5px; border-radius: 3px; display: none; }
+                     .content-block:hover .content-block-actions { display: block; }
+                 </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <div class="mx-auto text-white">Editing: <strong>Onboarding Guide for New Hires</strong></div>
+                        <div class="d-flex">
+                             <button class="btn btn-outline-info me-2" type="button"><i class="bi bi-eye"></i> Preview</button>
+                             <button class="btn btn-success" type="button"><i class="bi bi-check-circle"></i> Save Tutorial</button>
+                             <a href="#" class="btn btn-secondary ms-2">Back to List</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="editor-container">
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <h5>Steps</h5>
+                        <div class="list-group step-list mb-3">
+                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 1: Welcome</h6>
+                                    <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 2: Company Tools</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 3: First Tasks</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                        </div>
+                        <button class="btn btn-outline-primary w-100"><i class="bi bi-plus-lg"></i> Add Step</button>
+                        <hr>
+                        <div class="mb-3">
+                           <label for="tutorialTitleSettings" class="form-label">Tutorial Title</label>
+                           <input type="text" class="form-control form-control-sm" id="tutorialTitleSettings" value="Onboarding Guide for New Hires">
+                       </div>
+                       <div>
+                           <label for="tutorialCategorySettings" class="form-label">Category</label>
+                            <select class="form-select form-select-sm" id="tutorialCategorySettings">
+                               <option>Select a category</option>
+                               <option value="1" selected>Onboarding</option>
+                               <option value="2">Software Guide</option>
+                           </select>
+                       </div>
+
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="main-content">
+                        <h4>Editing: Step 1 - Welcome</h4>
+                        <hr>
+
+                        <!-- Content Blocks for Step 1 -->
+                        <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                           <label class="form-label fw-bold">Heading</label>
+                           <input type="text" class="form-control" value="Welcome to the Team!">
+                        </div>
+
+                        <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                            <label class="form-label fw-bold">Text Block</label>
+                            <textarea class="form-control" rows="4">We re excited to have you join us! This interactive guide will walk you through the essentials you need to get started.</textarea>
+                        </div>
+
+                         <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                            <label class="form-label fw-bold">Image</label>
+                            <div class="text-center p-3 border bg-light">
+                                <i class="bi bi-image fs-1 text-muted"></i>
+                                <p>Placeholder for Company Logo</p>
+                                <button class="btn btn-sm btn-outline-primary">Upload/Change Image</button>
+                            </div>
+                        </div>
+
+                        <!-- Add Content Block Buttons -->
+                        <div class="mt-4 text-center">
+                            <p class="text-muted">Add Content to this Step:</p>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-fonts"></i> Text</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-card-heading"></i> Heading</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-image"></i> Image</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-youtube"></i> Video</button>
+                            <button class="btn btn-outline-secondary"><i class="bi bi-code-slash"></i> Code</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+     <!-- State 10: Tutorial Editor (Adding a Step/Content) -->
+    <div class="iframe-container">
+        <h2>State 10: Tutorial Editor (Adding a Step/Content)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Edit Tutorial - Adding Content - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    body { padding-top: 56px; overflow: hidden; /* Prevent body scroll */ }
+                    .editor-container { display: flex; height: calc(100vh - 56px); }
+                    .sidebar { width: 300px; border-right: 1px solid #dee2e6; overflow-y: auto; padding: 1rem; background-color: #f8f9fa; }
+                    .step-list .list-group-item { cursor: pointer; }
+                    .step-list .list-group-item.active { background-color: #0d6efd; border-color: #0d6efd; }
+                    .step-list .list-group-item .step-actions { visibility: hidden; }
+                     .step-list .list-group-item:hover .step-actions { visibility: visible; }
+                    .main-content { flex-grow: 1; padding: 1.5rem; overflow-y: auto; }
+                    .content-block { border: 1px dashed #ccc; padding: 1rem; margin-bottom: 1rem; position: relative; background-color: #fff; }
+                     .content-block-actions { position: absolute; top: 5px; right: 5px; background: rgba(255,255,255,0.8); padding: 2px 5px; border-radius: 3px; display: none; }
+                     .content-block:hover .content-block-actions { display: block; }
+                     .new-content-block { border: 2px dashed #0d6efd; background-color: #e7f1ff; padding: 1.5rem; } /* Highlight new block */
+                </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                     <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <div class="mx-auto text-white">Editing: <strong>Onboarding Guide for New Hires</strong></div>
+                        <div class="d-flex">
+                             <button class="btn btn-outline-info me-2" type="button"><i class="bi bi-eye"></i> Preview</button>
+                             <button class="btn btn-success" type="button"><i class="bi bi-check-circle"></i> Save Tutorial</button>
+                             <a href="#" class="btn btn-secondary ms-2">Back to List</a>
+                        </div>
+                    </div>
+                </nav>
+
+                 <div class="editor-container">
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <h5>Steps</h5>
+                         <div class="list-group step-list mb-3">
+                            <a href="#" class="list-group-item list-group-item-action" >
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 1: Welcome</h6>
+                                    <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 2: Company Tools</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 3: First Tasks</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                             <!-- Adding New Step Placeholder -->
+                             <div class="list-group-item list-group-item-light p-2">
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter title for New Step">
+                                <button class="btn btn-sm btn-success mt-1 w-100">Add Step</button>
+                             </div>
+                        </div>
+                         <button class="btn btn-outline-primary w-100"><i class="bi bi-plus-lg"></i> Add Step</button>
+                         <hr>
+                          <div class="mb-3">
+                           <label for="tutorialTitleSettings" class="form-label">Tutorial Title</label>
+                           <input type="text" class="form-control form-control-sm" id="tutorialTitleSettings" value="Onboarding Guide for New Hires">
+                       </div>
+                       <div>
+                           <label for="tutorialCategorySettings" class="form-label">Category</label>
+                            <select class="form-select form-select-sm" id="tutorialCategorySettings">
+                               <option>Select a category</option>
+                               <option value="1" selected>Onboarding</option>
+                               <option value="2">Software Guide</option>
+                           </select>
+                       </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                     <div class="main-content">
+                        <h4>Editing: Step 2 - Company Tools</h4>
+                        <hr>
+
+                       <!-- Existing Content Block -->
+                        <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                           <label class="form-label fw-bold">Heading</label>
+                           <input type="text" class="form-control" value="Essential Tools We Use">
+                        </div>
+
+                        <!-- New Content Block being added (e.g., Text Block) -->
+                        <div class="content-block new-content-block">
+                             <label class="form-label fw-bold">New Text Block</label>
+                            <textarea class="form-control" rows="4" placeholder="Enter your text content here..."></textarea>
+                            <div class="mt-2 text-end">
+                                <button class="btn btn-sm btn-primary">Save Block</button>
+                                <button class="btn btn-sm btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+
+                       <!-- Add Content Block Buttons -->
+                         <div class="mt-4 text-center">
+                            <p class="text-muted">Add Content to this Step:</p>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-fonts"></i> Text</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-card-heading"></i> Heading</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-image"></i> Image</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-youtube"></i> Video</button>
+                            <button class="btn btn-outline-secondary"><i class="bi bi-code-slash"></i> Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 11: Tutorial Editor (Saving/Saved State) -->
+    <div class="iframe-container">
+        <h2>State 11: Tutorial Editor (Saving/Saved State)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Edit Tutorial - Saved - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                     body { padding-top: 56px; overflow: hidden; /* Prevent body scroll */ }
+                    .editor-container { display: flex; height: calc(100vh - 56px); }
+                    .sidebar { width: 300px; border-right: 1px solid #dee2e6; overflow-y: auto; padding: 1rem; background-color: #f8f9fa; }
+                    .step-list .list-group-item { cursor: pointer; }
+                    .step-list .list-group-item.active { background-color: #0d6efd; border-color: #0d6efd; }
+                    .step-list .list-group-item .step-actions { visibility: hidden; }
+                     .step-list .list-group-item:hover .step-actions { visibility: visible; }
+                    .main-content { flex-grow: 1; padding: 1.5rem; overflow-y: auto; position: relative; /* For alert positioning */ }
+                    .content-block { border: 1px dashed #ccc; padding: 1rem; margin-bottom: 1rem; position: relative; background-color: #fff; }
+                     .content-block-actions { position: absolute; top: 5px; right: 5px; background: rgba(255,255,255,0.8); padding: 2px 5px; border-radius: 3px; display: none; }
+                     .content-block:hover .content-block-actions { display: block; }
+                    .save-alert { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 1050; width: auto; }
+                 </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                         <div class="mx-auto text-white">Editing: <strong>Onboarding Guide for New Hires</strong></div>
+                        <div class="d-flex">
+                             <button class="btn btn-outline-info me-2" type="button"><i class="bi bi-eye"></i> Preview</button>
+                             <!-- Saving State -->
+                             <!-- <button class="btn btn-success" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Saving...
+                             </button> -->
+                             <!-- Saved State -->
+                             <button class="btn btn-success" type="button"><i class="bi bi-check-circle"></i> Save Tutorial</button>
+                             <a href="#" class="btn btn-secondary ms-2">Back to List</a>
+                        </div>
+                    </div>
+                </nav>
+
+                 <div class="editor-container">
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                         <h5>Steps</h5>
+                        <div class="list-group step-list mb-3">
+                            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 1: Welcome</h6>
+                                    <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 2: Company Tools</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">Step 3: First Tasks</h6>
+                                     <small><i class="bi bi-grip-vertical"></i></small>
+                                </div>
+                                 <div class="step-actions float-end">
+                                     <i class="bi bi-pencil-square me-1 text-primary"></i>
+                                     <i class="bi bi-trash text-danger"></i>
+                                 </div>
+                            </a>
+                        </div>
+                        <button class="btn btn-outline-primary w-100"><i class="bi bi-plus-lg"></i> Add Step</button>
+                         <hr>
+                         <div class="mb-3">
+                           <label for="tutorialTitleSettings" class="form-label">Tutorial Title</label>
+                           <input type="text" class="form-control form-control-sm" id="tutorialTitleSettings" value="Onboarding Guide for New Hires">
+                       </div>
+                       <div>
+                           <label for="tutorialCategorySettings" class="form-label">Category</label>
+                            <select class="form-select form-select-sm" id="tutorialCategorySettings">
+                               <option>Select a category</option>
+                               <option value="1" selected>Onboarding</option>
+                               <option value="2">Software Guide</option>
+                           </select>
+                       </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="main-content">
+                        <!-- Success Alert -->
+                        <div class="alert alert-success alert-dismissible fade show save-alert" role="alert">
+                           <i class="bi bi-check-circle-fill"></i> Tutorial saved successfully!
+                           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <h4>Editing: Step 1 - Welcome</h4>
+                        <hr>
+
+                        <!-- Content Blocks for Step 1 (Same as before) -->
+                        <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                           <label class="form-label fw-bold">Heading</label>
+                           <input type="text" class="form-control" value="Welcome to the Team!">
+                        </div>
+                        <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                            <label class="form-label fw-bold">Text Block</label>
+                            <textarea class="form-control" rows="4">We re excited to have you join us! This interactive guide will walk you through the essentials you need to get started.</textarea>
+                        </div>
+                         <div class="content-block">
+                             <div class="content-block-actions">
+                                 <button class="btn btn-sm btn-outline-secondary p-0 px-1 me-1"><i class="bi bi-pencil"></i></button>
+                                 <button class="btn btn-sm btn-outline-danger p-0 px-1"><i class="bi bi-trash"></i></button>
+                            </div>
+                             <label class="form-label fw-bold">Image</label>
+                            <div class="text-center p-3 border bg-light">
+                                <i class="bi bi-image fs-1 text-muted"></i>
+                                <p>Placeholder for Company Logo</p>
+                                <button class="btn btn-sm btn-outline-primary">Upload/Change Image</button>
+                            </div>
+                        </div>
+
+                         <!-- Add Content Block Buttons -->
+                        <div class="mt-4 text-center">
+                            <p class="text-muted">Add Content to this Step:</p>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-fonts"></i> Text</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-card-heading"></i> Heading</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-image"></i> Image</button>
+                            <button class="btn btn-outline-secondary me-1"><i class="bi bi-youtube"></i> Video</button>
+                            <button class="btn btn-outline-secondary"><i class="bi bi-code-slash"></i> Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 12: Tutorial Preview -->
+    <div class="iframe-container">
+        <h2>State 12: Tutorial Preview</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Preview: Onboarding Guide - Interactive Tutorial Builder</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style>
+                    body { background-color: #e9ecef; }
+                    .preview-container { max-width: 800px; margin: 30px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+                    .preview-header { background-color: #343a40; color: white; padding: 1rem; border-top-left-radius: 8px; border-top-right-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+                    .preview-content { padding: 2rem; }
+                    .preview-footer { padding: 1rem 2rem; border-top: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center; }
+                    .step-indicator { font-size: 0.9rem; color: #6c757d; }
+                    .preview-nav-button { min-width: 100px; }
+                 </style>
+            </head>
+            <body>
+                <div class="preview-container">
+                    <div class="preview-header">
+                        <h5 class="mb-0">Onboarding Guide for New Hires</h5>
+                         <a href="#" class="btn btn-sm btn-outline-light"><i class="bi bi-pencil-square"></i> Back to Editor</a>
+                    </div>
+                    <div class="preview-content">
+                        <!-- Current Step Content -->
+                        <h2>Step 1: Welcome to the Team!</h2>
+                        <p>We re excited to have you join us! This interactive guide will walk you through the essentials you need to get started.</p>
+                         <div class="text-center my-4">
+                             <img src="https://via.placeholder.com/400x200.png?text=Company+Logo+Placeholder" class="img-fluid rounded" alt="Company Logo Placeholder">
+                         </div>
+                         <p>Click "Next" to proceed to the next step.</p>
+                    </div>
+                     <div class="preview-footer">
+                        <span class="step-indicator">Step 1 of 3</span>
+                        <div>
+                           <button class="btn btn-secondary preview-nav-button" disabled><i class="bi bi-arrow-left"></i> Previous</button>
+                           <button class="btn btn-primary preview-nav-button ms-2">Next <i class="bi bi-arrow-right"></i></button>
+                           <!-- Final Step Button Example -->
+                           <!-- <button class="btn btn-success preview-nav-button ms-2">Complete Tutorial <i class="bi bi-check-lg"></i></button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+    <!-- State 13: Account Settings Page -->
+    <div class="iframe-container">
+        <h2>State 13: Account Settings Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Account Settings - Interactive Tutorial Builder</title>
+                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">My Tutorials</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Create New</a>
+                                </li>
+                            </ul>
+                             <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-person-circle"></i> User Name
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item active" href="#">Account Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+                    <h1>Account Settings</h1>
+
+                    <div class="row mt-4">
+                        <div class="col-md-8">
+                            <div class="card mb-4">
+                                <div class="card-header">Profile Information</div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3 row">
+                                            <label for="profileName" class="col-sm-3 col-form-label">Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="profileName" value="User Name">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" readonly class="form-control-plaintext" id="profileEmail" value="user@example.com">
+                                                 <small class="text-muted">Email cannot be changed.</small>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                             <div class="card mb-4">
+                                <div class="card-header">Change Password</div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3 row">
+                                            <label for="currentPassword" class="col-sm-3 col-form-label">Current Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="currentPassword" required>
+                                            </div>
+                                        </div>
+                                         <div class="mb-3 row">
+                                            <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="newPassword" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="confirmNewPassword" class="col-sm-3 col-form-label">Confirm New Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Change Password</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                             <div class="card mb-4 border-danger">
+                                <div class="card-header text-bg-danger">Delete Account</div>
+                                <div class="card-body">
+                                   <p>Deleting your account is permanent and cannot be undone. All your tutorials and data will be lost.</p>
+                                    <button type="button" class="btn btn-danger">Delete My Account</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- Placeholder for maybe subscription info or profile picture -->
+                             <div class="card">
+                                 <div class="card-body text-center">
+                                      <i class="bi bi-person-circle display-1 text-muted"></i>
+                                      <h5 class="mt-2">User Name</h5>
+                                      <p class="text-muted">Member Since: Jan 2024</p>
+                                      <button class="btn btn-sm btn-outline-secondary">Change Avatar (TODO)</button>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                     <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+     <!-- State 14: Account Settings Page (Success Message) -->
+    <div class="iframe-container">
+        <h2>State 14: Account Settings Page (Success Message)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Account Settings Updated - Interactive Tutorial Builder</title>
+                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+                 <style> body { padding-top: 56px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                     <div class="container-fluid">
+                        <a class="navbar-brand" href="#">TutorialBuilder</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavLoggedIn" aria-controls="navbarNavLoggedIn" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavLoggedIn">
+                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">My Tutorials</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Create New</a>
+                                </li>
+                            </ul>
+                             <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-person-circle"></i> Updated Name <!-- Example: Name updated -->
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item active" href="#">Account Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="container mt-4">
+
+                    <!-- Success Alert -->
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-circle-fill"></i> Your profile information has been updated successfully.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <!-- Password Change Success Alert Example -->
+                    <!--
+                     <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-circle-fill"></i> Your password has been changed successfully.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    -->
+
+
+                    <h1>Account Settings</h1>
+
+                     <div class="row mt-4">
+                        <div class="col-md-8">
+                            <div class="card mb-4">
+                                <div class="card-header">Profile Information</div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3 row">
+                                            <label for="profileName" class="col-sm-3 col-form-label">Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="profileName" value="Updated Name"> <!-- Updated value -->
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="profileEmail" class="col-sm-3 col-form-label">Email Address</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" readonly class="form-control-plaintext" id="profileEmail" value="user@example.com">
+                                                 <small class="text-muted">Email cannot be changed.</small>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                             <div class="card mb-4">
+                                <div class="card-header">Change Password</div>
+                                <div class="card-body">
+                                    <form>
+                                         <div class="mb-3 row">
+                                            <label for="currentPassword" class="col-sm-3 col-form-label">Current Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="currentPassword" required>
+                                            </div>
+                                        </div>
+                                         <div class="mb-3 row">
+                                            <label for="newPassword" class="col-sm-3 col-form-label">New Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="newPassword" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="confirmNewPassword" class="col-sm-3 col-form-label">Confirm New Password</label>
+                                            <div class="col-sm-9">
+                                                <input type="password" class="form-control" id="confirmNewPassword" required>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Change Password</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                             <div class="card mb-4 border-danger">
+                                 <div class="card-header text-bg-danger">Delete Account</div>
+                                <div class="card-body">
+                                   <p>Deleting your account is permanent and cannot be undone. All your tutorials and data will be lost.</p>
+                                    <button type="button" class="btn btn-danger">Delete My Account</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="col-md-4">
+                             <div class="card">
+                                 <div class="card-body text-center">
+                                      <i class="bi bi-person-circle display-1 text-muted"></i>
+                                      <h5 class="mt-2">Updated Name</h5> <!-- Updated Name -->
+                                      <p class="text-muted">Member Since: Jan 2024</p>
+                                      <button class="btn btn-sm btn-outline-secondary">Change Avatar (TODO)</button>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                      <footer class="pt-3 mt-4 text-muted border-top">
+                        &copy; 2024 Interactive Tutorial Builder
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+        '></iframe>
+    </div>
+
+</body>
+</html>

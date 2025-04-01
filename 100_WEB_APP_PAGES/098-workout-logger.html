@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Logger UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-center mb-5">Workout Logger - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <h2>State 1: Home Page (Logged Out)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Welcome to Workout Logger</h1>
+                <p class="col-md-8 fs-4 mx-auto">Your personal fitness companion. Track your exercises, sets, reps, and monitor your progress over time easily and effectively.</p>
+                <a href="#" class="btn btn-primary btn-lg me-2">Sign Up Now</a>
+                <a href="#" class="btn btn-secondary btn-lg">Learn More</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Log Workouts</h5>
+                        <p class="card-text">Easily record every exercise, set, and rep during your training sessions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Track Progress</h5>
+                        <p class="card-text">Visualize your improvements with detailed history and progress charts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Exercise Database</h5>
+                        <p class="card-text">Access a wide range of exercises or add your own custom ones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: Sign Up Page -->
+    <h2>State 2: Sign Up Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2 active" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Choose a username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Sign Up Page (Validation Error) -->
+    <h2>State 3: Sign Up Page (Validation Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up Error - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2 active" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Create Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                          Please fix the errors below.
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control is-invalid" id="username" value="user">
+                                <div class="invalid-feedback">
+                                    Username is too short (minimum 3 characters).
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" value="test@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="password">
+                                 <div class="invalid-feedback">
+                                    Password cannot be empty.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword">
+                                 <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                        </form>
+                        <p class="mt-3 text-center">Already have an account? <a href="#">Login here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: Login Page -->
+    <h2>State 4: Login Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login to Workout Logger</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control" id="loginEmail" placeholder="Enter your email or username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
+                            </div>
+                             <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Login</button>
+                        </form>
+                        <p class="mt-3 text-center">Forgot password? <a href="#">Reset here</a>.</p>
+                        <p class="mt-2 text-center">Don&apos;t have an account? <a href="#">Sign up</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Login Page (Error) -->
+    <h2>State 5: Login Page (Error)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login Error - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-2" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Login to Workout Logger</h3>
+                    </div>
+                    <div class="card-body">
+                         <div class="alert alert-danger" role="alert">
+                           Invalid username or password. Please try again.
+                        </div>
+                        <form>
+                             <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email or Username</label>
+                                <input type="text" class="form-control is-invalid" id="loginEmail" value="wronguser" placeholder="Enter your email or username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Enter your password">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Login</button>
+                        </form>
+                        <p class="mt-3 text-center">Forgot password? <a href="#">Reset here</a>.</p>
+                        <p class="mt-2 text-center">Don&apos;t have an account? <a href="#">Sign up</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 6: Home Page (Logged In) / Dashboard -->
+    <h2>State 6: Home Page (Logged In) / Dashboard</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <a href="#" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                    </svg>
+                    Start New Workout
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Recent Workouts</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Leg Day</h5>
+                            <small>Yesterday</small>
+                        </div>
+                        <p class="mb-1">Squats, Lunges, Leg Press...</p>
+                        <small>5 Exercises, 45 Mins</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Upper Body Blast</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Bench Press, Rows, Pull-ups...</p>
+                        <small>6 Exercises, 60 Mins</small>
+                    </a>
+                     <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Cardio Session</h5>
+                            <small>5 days ago</small>
+                        </div>
+                        <p class="mb-1">Running, Cycling</p>
+                        <small>2 Activities, 30 Mins</small>
+                    </a>
+                </div>
+                 <a href="#" class="btn btn-outline-secondary mt-3">View Full History</a>
+            </div>
+            <div class="col-md-4">
+                <h3>Quick Stats</h3>
+                 <div class="card">
+                     <div class="card-body">
+                        <h5 class="card-title">Workouts This Week</h5>
+                        <p class="card-text fs-3">3</p>
+                    </div>
+                 </div>
+                  <div class="card mt-3">
+                     <div class="card-body">
+                        <h5 class="card-title">Total Workouts</h5>
+                        <p class="card-text fs-3">58</p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 7: Start/Log New Workout Page -->
+    <h2>State 7: Start/Log New Workout Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Log Workout - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Log New Workout</h1>
+        </div>
+
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="workoutName" class="form-label">Workout Name (Optional)</label>
+                    <input type="text" class="form-control" id="workoutName" placeholder="e.g., Morning Run, Chest Day">
+                </div>
+                <div class="col-md-6">
+                     <label for="workoutDate" class="form-label">Date</label>
+                     <input type="date" class="form-control" id="workoutDate" value="2023-10-27">
+                </div>
+            </div>
+
+            <hr>
+
+            <h4>Exercises</h4>
+             <div id="exerciseList">
+                <!-- Exercise entries will be added here -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Bench Press</h5>
+                            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                        </div>
+                        <div class="row g-2 align-items-center mb-2">
+                            <div class="col-1 text-center"><span class="fw-bold">Set</span></div>
+                            <div class="col-4"><label class="form-label mb-0">Weight (kg)</label></div>
+                            <div class="col-4"><label class="form-label mb-0">Reps</label></div>
+                            <div class="col-3"></div>
+                        </div>
+                        <!-- Set 1 -->
+                        <div class="row g-2 align-items-center mb-2">
+                            <div class="col-1 text-center pt-2">1</div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="60"></div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="10"></div>
+                            <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100">Delete Set</button></div>
+                        </div>
+                        <!-- Set 2 -->
+                         <div class="row g-2 align-items-center mb-2">
+                            <div class="col-1 text-center pt-2">2</div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="65"></div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="8"></div>
+                            <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100">Delete Set</button></div>
+                        </div>
+                         <button type="button" class="btn btn-sm btn-secondary mt-2">Add Set</button>
+                    </div>
+                </div>
+
+                 <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Squats</h5>
+                             <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                        </div>
+                         <div class="row g-2 align-items-center mb-2">
+                            <div class="col-1 text-center"><span class="fw-bold">Set</span></div>
+                            <div class="col-4"><label class="form-label mb-0">Weight (kg)</label></div>
+                            <div class="col-4"><label class="form-label mb-0">Reps</label></div>
+                            <div class="col-3"></div>
+                        </div>
+                         <!-- Set 1 -->
+                        <div class="row g-2 align-items-center mb-2">
+                            <div class="col-1 text-center pt-2">1</div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="80"></div>
+                            <div class="col-4"><input type="number" class="form-control form-control-sm" value="12"></div>
+                            <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100">Delete Set</button></div>
+                        </div>
+                          <button type="button" class="btn btn-sm btn-secondary mt-2">Add Set</button>
+                    </div>
+                </div>
+             </div>
+
+            <button type="button" class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#addExerciseModal">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>
+                Add Exercise
+            </button>
+
+            <hr class="my-4">
+
+             <div class="mb-3">
+                <label for="workoutNotes" class="form-label">Notes (Optional)</label>
+                <textarea class="form-control" id="workoutNotes" rows="3" placeholder="Any notes about this workout? e.g., Felt strong today, focus on form"></textarea>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                 <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                 <button type="submit" class="btn btn-success">Save Workout</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Placeholder for Add Exercise Modal Triggered by Button Above (Static Representation) -->
+    <div class="modal fade d-none" id="addExerciseModal" tabindex="-1" aria-labelledby="addExerciseModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addExerciseModalLabel">Add Exercise</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Content shown in State 8 -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Add to Workout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 8: Add Exercise Modal (within Log Workout) -->
+    <h2>State 8: Add Exercise Modal (Static View)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Add Exercise Modal - Workout Logger</title>
+</head>
+<body class="bg-light p-4"> <!-- Simulate modal background -->
+
+    <div class="modal-dialog modal-dialog-centered"> <!-- Simulate modal dialog -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addExerciseModalLabel">Add Exercise</h5>
+            <button type="button" class="btn-close" disabled aria-label="Close"></button> <!-- Disabled close button for static view -->
+          </div>
+          <div class="modal-body">
+            <form>
+                 <div class="mb-3">
+                    <label for="exerciseSearch" class="form-label">Search Exercise</label>
+                    <input type="text" class="form-control" id="exerciseSearch" placeholder="e.g., Deadlift, Bicep Curl">
+                    <!-- Placeholder for search results -->
+                    <ul class="list-group mt-2">
+                        <li class="list-group-item list-group-item-action">Deadlift</li>
+                        <li class="list-group-item list-group-item-action">Romanian Deadlift</li>
+                        <li class="list-group-item list-group-item-action">Sumo Deadlift</li>
+                    </ul>
+                 </div>
+
+                <h5 class="mt-4">Selected: Deadlift</h5>
+
+                 <div class="row g-2 align-items-center mb-2">
+                    <div class="col-1 text-center"><span class="fw-bold">Set</span></div>
+                    <div class="col-4"><label class="form-label mb-0">Weight (kg)</label></div>
+                    <div class="col-4"><label class="form-label mb-0">Reps</label></div>
+                    <div class="col-3"></div>
+                </div>
+                 <!-- Set 1 -->
+                <div class="row g-2 align-items-center mb-2">
+                    <div class="col-1 text-center pt-2">1</div>
+                    <div class="col-4"><input type="number" class="form-control form-control-sm" placeholder="Weight"></div>
+                    <div class="col-4"><input type="number" class="form-control form-control-sm" placeholder="Reps"></div>
+                    <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100" disabled>Delete</button></div>
+                </div>
+                <!-- Add Set Button -->
+                <button type="button" class="btn btn-sm btn-secondary mt-2">Add Set</button>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" disabled>Cancel</button>
+            <button type="button" class="btn btn-primary">Add to Workout</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 9: Add Exercise Modal (Validation Error) -->
+    <h2>State 9: Add Exercise Modal (Validation Error)</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Add Exercise Modal Error - Workout Logger</title>
+</head>
+<body class="bg-light p-4"> <!-- Simulate modal background -->
+
+    <div class="modal-dialog modal-dialog-centered"> <!-- Simulate modal dialog -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addExerciseModalLabel">Add Exercise</h5>
+            <button type="button" class="btn-close" disabled aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+             <div class="alert alert-danger" role="alert">
+               Please correct the errors in the sets.
+             </div>
+            <form>
+                 <div class="mb-3">
+                    <label for="exerciseSearch" class="form-label">Search Exercise</label>
+                    <input type="text" class="form-control" id="exerciseSearch" value="Deadlift" readonly> <!-- Assume selected -->
+                 </div>
+
+                <h5 class="mt-4">Selected: Deadlift</h5>
+
+                 <div class="row g-2 align-items-center mb-2">
+                    <div class="col-1 text-center"><span class="fw-bold">Set</span></div>
+                    <div class="col-4"><label class="form-label mb-0">Weight (kg)</label></div>
+                    <div class="col-4"><label class="form-label mb-0">Reps</label></div>
+                    <div class="col-3"></div>
+                </div>
+                 <!-- Set 1 -->
+                <div class="row g-2 align-items-center mb-2">
+                    <div class="col-1 text-center pt-2">1</div>
+                    <div class="col-4"><input type="number" class="form-control form-control-sm" value="100"></div>
+                    <div class="col-4">
+                        <input type="text" class="form-control form-control-sm is-invalid" value="abc"> <!-- Invalid input -->
+                         <div class="invalid-feedback" style="font-size: 0.8em;">
+                            Must be a number.
+                        </div>
+                    </div>
+                    <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100" disabled>Delete</button></div>
+                </div>
+                 <!-- Set 2 -->
+                 <div class="row g-2 align-items-center mb-2">
+                    <div class="col-1 text-center pt-2">2</div>
+                    <div class="col-4">
+                        <input type="number" class="form-control form-control-sm is-invalid"> <!-- Empty but required -->
+                        <div class="invalid-feedback" style="font-size: 0.8em;">
+                            Required.
+                        </div>
+                    </div>
+                    <div class="col-4"><input type="number" class="form-control form-control-sm" value="5"></div>
+                    <div class="col-3"><button type="button" class="btn btn-sm btn-outline-secondary w-100" disabled>Delete</button></div>
+                </div>
+                <!-- Add Set Button -->
+                <button type="button" class="btn btn-sm btn-secondary mt-2">Add Set</button>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" disabled>Cancel</button>
+            <button type="button" class="btn btn-primary">Add to Workout</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 10: Workout Logged Confirmation -->
+    <h2>State 10: Workout Logged Confirmation (Feedback)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Confirmation - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+         <div class="alert alert-success text-center" role="alert">
+          <h4 class="alert-heading">Workout Saved Successfully!</h4>
+          <p>Your workout "Leg Day" on October 27, 2023 has been logged.</p>
+          <hr>
+          <p class="mb-0">Keep up the great work!</p>
+        </div>
+
+         <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary me-2">View Workout Details</a>
+            <a href="#" class="btn btn-secondary me-2">Go to Dashboard</a>
+            <a href="#" class="btn btn-outline-success">Log Another Workout</a>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white text-center p-3 mt-5 fixed-bottom">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 11: Workout History Page -->
+    <h2>State 11: Workout History Page</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Workout History - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Workout History</h1>
+             <div class="btn-toolbar mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-sm me-2" placeholder="Filter by name/date...">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Filter</button>
+            </div>
+        </div>
+
+        <div class="list-group">
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Leg Day</h5>
+                    <small>2023-10-27</small>
+                </div>
+                <p class="mb-1">Squats, Lunges, Leg Press, Calf Raises, Hamstring Curls</p>
+                <small>Notes: Felt strong, increased weight on squats.</small>
+            </a>
+           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                     <h5 class="mb-1">Upper Body Blast</h5>
+                    <small>2023-10-25</small>
+                </div>
+                <p class="mb-1">Bench Press, Rows, Pull-ups, Shoulder Press, Bicep Curls, Tricep Pushdowns</p>
+                 <small>Notes: Good pump.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Cardio Session</h5>
+                    <small>2023-10-23</small>
+                </div>
+                <p class="mb-1">Running (5km), Cycling (10km)</p>
+                <small>Notes: Focused on endurance.</small>
+             </a>
+             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Full Body Workout</h5>
+                    <small>2023-10-20</small>
+                </div>
+                <p class="mb-1">Deadlifts, Overhead Press, Pull-ups, Dips</p>
+                <small>Notes: Quick session.</small>
+             </a>
+        </div>
+
+        <!-- Pagination Placeholder -->
+        <nav aria-label="Workout history navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 12: View Specific Workout Detail -->
+    <h2>State 12: View Specific Workout Detail</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Workout Details - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">History</a> <!-- Keep History Active -->
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">History</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Workout Details</li>
+          </ol>
+        </nav>
+
+         <div class="card">
+             <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h3 class="mb-0">Leg Day</h3>
+                    <small class="text-muted">October 27, 2023</small>
+                </div>
+                 <div>
+                     <button class="btn btn-sm btn-outline-secondary me-1">Edit</button>
+                     <button class="btn btn-sm btn-outline-danger">Delete</button>
+                 </div>
+             </div>
+             <div class="card-body">
+                <div class="mb-4">
+                    <h5>Squats</h5>
+                    <table class="table table-sm table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-center">Set</th>
+                                <th scope="col">Weight (kg)</th>
+                                <th scope="col">Reps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="text-center">1</td><td>80</td><td>12</td></tr>
+                            <tr><td class="text-center">2</td><td>85</td><td>10</td></tr>
+                            <tr><td class="text-center">3</td><td>90</td><td>8</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                 <div class="mb-4">
+                    <h5>Lunges</h5>
+                    <table class="table table-sm table-striped table-bordered">
+                        <thead>
+                             <tr>
+                                <th scope="col" class="text-center">Set</th>
+                                <th scope="col">Weight (kg)</th>
+                                <th scope="col">Reps (per leg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr><td class="text-center">1</td><td>15</td><td>10</td></tr>
+                             <tr><td class="text-center">2</td><td>15</td><td>10</td></tr>
+                        </tbody>
+                     </table>
+                </div>
+
+                 <div class="mb-4">
+                    <h5>Leg Press</h5>
+                     <table class="table table-sm table-striped table-bordered">
+                        <thead>
+                             <tr>
+                                <th scope="col" class="text-center">Set</th>
+                                <th scope="col">Weight (kg)</th>
+                                <th scope="col">Reps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="text-center">1</td><td>150</td><td>15</td></tr>
+                             <tr><td class="text-center">2</td><td>160</td><td>12</td></tr>
+                        </tbody>
+                     </table>
+                </div>
+
+                 <div class="mt-4">
+                    <h5>Notes</h5>
+                    <p class="text-muted fst-italic">Felt strong, increased weight on squats.</p>
+                 </div>
+
+             </div>
+              <div class="card-footer text-end">
+                 <a href="#" class="btn btn-secondary">Back to History</a>
+             </div>
+         </div>
+
+    </div>
+
+     <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 13: Exercise List/Database Page -->
+    <h2>State 13: Exercise List/Database Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Exercises - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Exercise Database</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                 <button type="button" class="btn btn-sm btn-success">Add Custom Exercise</button>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Search exercises...">
+            </div>
+            <div class="col-md-4">
+                 <select class="form-select">
+                    <option selected>Filter by Muscle Group...</option>
+                    <option value="1">Chest</option>
+                    <option value="2">Back</option>
+                    <option value="3">Legs</option>
+                    <option value="4">Shoulders</option>
+                    <option value="5">Arms</option>
+                    <option value="6">Core</option>
+                    <option value="7">Cardio</option>
+                </select>
+            </div>
+             <div class="col-md-2">
+                 <button class="btn btn-outline-secondary w-100">Apply Filters</button>
+             </div>
+        </div>
+
+         <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Primary Muscle Group</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bench Press</td>
+                    <td>Chest</td>
+                    <td>Strength</td>
+                    <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                <tr>
+                    <td>Squat</td>
+                    <td>Legs</td>
+                    <td>Strength</td>
+                     <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                <tr>
+                    <td>Deadlift</td>
+                    <td>Back / Legs</td>
+                    <td>Strength</td>
+                     <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                <tr>
+                    <td>Overhead Press</td>
+                    <td>Shoulders</td>
+                    <td>Strength</td>
+                     <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                <tr>
+                    <td>Pull Up</td>
+                    <td>Back</td>
+                    <td>Strength (Bodyweight)</td>
+                     <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                <tr>
+                    <td>Running</td>
+                    <td>Cardio</td>
+                    <td>Cardiovascular</td>
+                    <td><a href="#" class="btn btn-sm btn-outline-info">View</a></td>
+                </tr>
+                  <tr>
+                    <td>My Custom Leg Extension</td>
+                    <td>Legs</td>
+                    <td>Strength (Custom)</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-outline-info">View</a>
+                        <a href="#" class="btn btn-sm btn-outline-warning ms-1">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+         <!-- Pagination Placeholder -->
+        <nav aria-label="Exercise list navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">...</a></li>
+            <li class="page-item"><a class="page-link" href="#">15</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+    </div>
+
+     <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 14: User Profile Page -->
+    <h2>State 14: User Profile Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Profile - Workout Logger</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Profile</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-person-circle text-secondary mb-3" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>
+                <h4>User Name</h4>
+                <p class="text-muted">Joined: January 15, 2023</p>
+                <button class="btn btn-sm btn-outline-primary">Change Picture</button>
+            </div>
+            <div class="col-md-8">
+                <form>
+                    <div class="mb-3">
+                        <label for="profileUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="profileUsername" value="User Name" readonly>
+                    </div>
+                     <div class="mb-3">
+                        <label for="profileEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="profileEmail" value="user@example.com">
+                     </div>
+                      <div class="mb-3">
+                        <label for="profilePassword" class="form-label">Change Password</label>
+                        <input type="password" class="form-control" id="profilePassword" placeholder="Enter new password">
+                    </div>
+                     <div class="mb-3">
+                        <label for="profileConfirmPassword" class="form-label">Confirm New Password</label>
+                        <input type="password" class="form-control" id="profileConfirmPassword" placeholder="Confirm new password">
+                    </div>
+                    <hr>
+                     <div class="mb-3">
+                        <label for="profileUnits" class="form-label">Preferred Units</label>
+                         <select class="form-select" id="profileUnits">
+                            <option value="kg">Kilograms (kg)</option>
+                            <option selected value="lbs">Pounds (lbs)</option>
+                         </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                     <a href="#" class="btn btn-danger ms-2">Delete Account</a>
+                </form>
+            </div>
+        </div>
+
+         <hr class="my-4">
+
+         <h3>Workout Statistics</h3>
+         <div class="row text-center">
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Workouts</h5>
+                        <p class="card-text fs-2">58</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Sets</h5>
+                        <p class="card-text fs-2">720</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Reps</h5>
+                        <p class="card-text fs-2">6500+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                 <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Weight Lifted</h5>
+                         <p class="card-text fs-2">15,000+ lbs</p> <!-- Or kg -->
+                    </div>
+                </div>
+            </div>
+         </div>
+
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 15: About Page -->
+    <h2>State 15: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About - Workout Logger</title>
+</head>
+<body>
+    <!-- Navigation: Adapt based on logged-in status -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Workout Logger</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Show Dashboard/Log Workout etc. if logged in -->
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a> <!-- Example assuming logged in -->
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Log Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                 </ul>
+                  <ul class="navbar-nav ms-auto">
+                    <!-- Show Profile/Logout or Login/Signup -->
+                     <li class="nav-item dropdown"> <!-- Example assuming logged in -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Welcome, User!
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                   <!-- <li class="nav-item"><a class="nav-link" href="#">Login</a></li> -->
+                   <!-- <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#">Sign Up</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <h1 class="card-title text-center mb-4">About Workout Logger</h1>
+                        <p class="lead">Workout Logger is your simple, yet powerful companion for tracking fitness progress.</p>
+                        <p>Designed for everyone from beginners to seasoned athletes, our goal is to provide an intuitive platform to log your exercises, sets, reps, and weight lifted. By keeping a detailed record of your training, you can easily monitor your improvements, stay motivated, and achieve your fitness goals more effectively.</p>
+
+                        <h4 class="mt-5">Key Features:</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> Easy workout logging interface.</li>
+                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> Comprehensive workout history.</li>
+                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> Progress tracking and visualization (coming soon!).</li>
+                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> Customizable exercise database.</li>
+                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success me-2" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg> Secure user accounts and data privacy.</li>
+                        </ul>
+
+                        <p class="mt-4">We are constantly working to improve Workout Logger and add new features. If you have any feedback or suggestions, please feel free to contact us (contact info placeholder).</p>
+
+                           <p class="text-center mt-5">
+                            <strong>Thank you for using Workout Logger!</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p class="mb-0">&copy; 2023 Workout Logger. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+</body>
+</html>

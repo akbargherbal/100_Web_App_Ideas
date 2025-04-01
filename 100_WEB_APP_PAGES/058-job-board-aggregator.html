@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board Aggregator - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ced4da;
+            background-color: #fff;
+            margin-bottom: 30px;
+            display: block;
+        }
+        .iframe-container {
+             margin-bottom: 2rem;
+             padding: 1rem;
+             border: 1px solid #ddd;
+             border-radius: .25rem;
+             background-color:#e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Job Board Aggregator - UI Flow</h1>
+
+        <!-- State 1: Home Page -->
+        <div class="iframe-container">
+            <h2>State 1: Home Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Home Page</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Find Your Next Job</h1>
+                <p class="lead mb-4">Search thousands of job listings aggregated from top employment websites.</p>
+                <form class="d-flex justify-content-center" role="search">
+                     <div class="row g-2 w-75">
+                        <div class="col-md">
+                           <input class="form-control form-control-lg" type="search" placeholder="Keywords (e.g., Software Engineer)" aria-label="Keywords">
+                        </div>
+                         <div class="col-md">
+                           <input class="form-control form-control-lg" type="search" placeholder="Location (e.g., New York)" aria-label="Location">
+                        </div>
+                        <div class="col-md-auto">
+                           <button class="btn btn-primary btn-lg" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+            <!-- Popular Categories (Placeholder) -->
+            <div class="col-lg-12 mb-4">
+                <h2 class="h4">Popular Categories</h2>
+                 <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-secondary p-2">Technology</span>
+                    <span class="badge bg-secondary p-2">Marketing</span>
+                    <span class="badge bg-secondary p-2">Sales</span>
+                    <span class="badge bg-secondary p-2">Healthcare</span>
+                    <span class="badge bg-secondary p-2">Finance</span>
+                    <span class="badge bg-secondary p-2">Remote</span>
+                 </div>
+            </div>
+             <!-- Recent Listings (Placeholder) -->
+            <div class="col-lg-12">
+                <h2 class="h4">Recent Listings</h2>
+                <div class="list-group">
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Senior Frontend Developer</h5>
+                      <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1">Tech Corp - San Francisco, CA</p>
+                    <small>Source: ExampleJobs.com</small>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Marketing Manager</h5>
+                      <small>5 days ago</small>
+                    </div>
+                    <p class="mb-1">Creative Inc - Remote</p>
+                     <small>Source: AnotherBoard.org</small>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Registered Nurse</h5>
+                       <small>1 week ago</small>
+                    </div>
+                    <p class="mb-1">HealthFirst Hospital - Chicago, IL</p>
+                    <small>Source: HealthJobs.net</small>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+        <!-- State 2: Search Results Page -->
+        <div class="iframe-container">
+            <h2>State 2: Search Results Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Search Results</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+           <form class="d-flex flex-grow-1 px-lg-5 my-2 my-lg-0" role="search">
+             <input class="form-control me-2" type="search" placeholder="Keywords" aria-label="Keywords" value="Software Engineer">
+             <input class="form-control me-2" type="search" placeholder="Location" aria-label="Location" value="New York">
+             <button class="btn btn-outline-success" type="submit">Search</button>
+           </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Results Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3">
+                <h4>Filters</h4>
+                <hr>
+                <div class="mb-3">
+                    <label for="jobType" class="form-label">Job Type</label>
+                    <select class="form-select" id="jobType">
+                        <option selected>Any</option>
+                        <option value="1">Full-time</option>
+                        <option value="2">Part-time</option>
+                        <option value="3">Contract</option>
+                        <option value="4">Remote</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="datePosted" class="form-label">Date Posted</label>
+                    <select class="form-select" id="datePosted">
+                        <option selected>Anytime</option>
+                        <option value="1">Past 24 hours</option>
+                        <option value="2">Past week</option>
+                        <option value="3">Past month</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="salaryRange" class="form-label">Salary Range</label>
+                    <select class="form-select" id="salaryRange">
+                        <option selected>Any</option>
+                        <option value="1">$50,000+</option>
+                        <option value="2">$75,000+</option>
+                        <option value="3">$100,000+</option>
+                        <option value="4">$150,000+</option>
+                    </select>
+                </div>
+                 <button class="btn btn-outline-secondary w-100">Apply Filters</button>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="col-lg-9">
+                <h3 class="mb-3">Search Results for "Software Engineer" in "New York"</h3>
+                <p class="text-muted">Showing 1-10 of 125 results</p>
+
+                <!-- Job Card 1 -->
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Senior Software Engineer</h5>
+                        <span class="text-muted">Source: ExampleJobs.com</span>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">MegaCorp Inc. - New York, NY</h6>
+                    <p class="card-text">Seeking an experienced software engineer to join our dynamic team. Strong skills in Java and Cloud platforms required...</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Posted: 2 days ago</small>
+                        <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                 <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Backend Software Engineer</h5>
+                        <span class="text-muted">Source: TopDevJobs.io</span>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">Startup Innovations - Brooklyn, NY (Hybrid)</h6>
+                    <p class="card-text">Exciting opportunity for a backend engineer proficient in Python/Django. Help build the next generation of our platform...</p>
+                     <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Posted: 5 days ago</small>
+                        <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                 <!-- Job Card 3 -->
+                 <div class="card mb-3">
+                  <div class="card-body">
+                     <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Junior Software Developer</h5>
+                        <span class="text-muted">Source: CareerHub.co</span>
+                    </div>
+                    <h6 class="card-subtitle mb-2 text-muted">Global Solutions Ltd. - New York, NY</h6>
+                    <p class="card-text">Entry-level position for a motivated software developer. Training provided. Bachelor degree in CS or related field preferred...</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">Posted: 1 week ago</small>
+                        <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">13</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+
+        <!-- State 3: Search Results Page (No Results Found) -->
+        <div class="iframe-container">
+            <h2>State 3: Search Results Page (No Results Found)</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>No Results</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+           <form class="d-flex flex-grow-1 px-lg-5 my-2 my-lg-0" role="search">
+             <input class="form-control me-2" type="search" placeholder="Keywords" aria-label="Keywords" value="Underwater Basket Weaver">
+             <input class="form-control me-2" type="search" placeholder="Location" aria-label="Location" value="Antarctica">
+             <button class="btn btn-outline-success" type="submit">Search</button>
+           </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- No Results Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Sidebar (Optional, could be hidden or shown) -->
+            <div class="col-lg-3">
+                <h4>Filters</h4>
+                <hr>
+                 <div class="mb-3">
+                    <label for="jobType" class="form-label">Job Type</label>
+                    <select class="form-select" id="jobType" disabled>
+                        <option selected>Any</option>
+                    </select>
+                </div>
+                 <div class="mb-3">
+                    <label for="datePosted" class="form-label">Date Posted</label>
+                    <select class="form-select" id="datePosted" disabled>
+                        <option selected>Anytime</option>
+                    </select>
+                </div>
+                 <button class="btn btn-outline-secondary w-100" disabled>Apply Filters</button>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="col-lg-9">
+                <h3 class="mb-3">Search Results for "Underwater Basket Weaver" in "Antarctica"</h3>
+                <div class="alert alert-warning" role="alert">
+                  <h4 class="alert-heading">No Jobs Found!</h4>
+                  <p>We couldn't find any job listings matching your search criteria.</p>
+                  <hr>
+                  <p class="mb-0">Suggestions:</p>
+                  <ul>
+                    <li>Check your spelling</li>
+                    <li>Try using different keywords</li>
+                    <li>Broaden your location search</li>
+                    <li>Adjust the filters</li>
+                  </ul>
+                </div>
+                 <a href="#" class="btn btn-primary">&larr; Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+
+        <!-- State 4: Job Detail Page -->
+        <div class="iframe-container">
+            <h2>State 4: Job Detail Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Job Detail</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Job Detail Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <!-- Job Header -->
+                <div class="mb-4 border-bottom pb-3">
+                     <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h1 class="fw-bolder">Senior Software Engineer</h1>
+                            <h4 class="text-muted">MegaCorp Inc.</h4>
+                            <p class="lead">New York, NY</p>
+                        </div>
+                          <a href="#" class="btn btn-success btn-lg mt-2">Apply Now</a>
+                     </div>
+                    <div class="mt-2">
+                         <span class="badge bg-primary me-2">Full-time</span>
+                         <span class="badge bg-info me-2">$120,000 - $150,000</span>
+                         <small class="text-muted">Posted: 2 days ago</small>
+                         <small class="text-muted ms-3">Source: <a href="#" target="_blank">ExampleJobs.com</a></small>
+                    </div>
+                </div>
+
+                <!-- Job Description -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3">Job Description</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero.</p>
+                    <p>Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum.</p>
+                    <h5 class="mt-4">Responsibilities:</h5>
+                    <ul>
+                        <li>Design, develop, and maintain software applications.</li>
+                        <li>Collaborate with cross-functional teams.</li>
+                        <li>Write clean, scalable, and efficient code.</li>
+                        <li>Troubleshoot and debug applications.</li>
+                        <li>Participate in code reviews.</li>
+                    </ul>
+                     <h5 class="mt-4">Qualifications:</h5>
+                    <ul>
+                        <li>Bachelor's degree in Computer Science or related field.</li>
+                        <li>5+ years of experience in software development.</li>
+                        <li>Proficiency in Java, Spring Boot, and RESTful APIs.</li>
+                        <li>Experience with cloud platforms (AWS, Azure, or GCP).</li>
+                        <li>Strong problem-solving skills.</li>
+                        <li>Excellent communication skills.</li>
+                    </ul>
+                </section>
+
+                 <div class="text-center">
+                     <a href="#" class="btn btn-secondary">&larr; Back to Search Results</a>
+                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+        <!-- State 5: About Page -->
+        <div class="iframe-container">
+            <h2>State 5: About Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>About Us</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+     <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">About Job Board Aggregator</h1>
+                <p class="lead mb-0">Your one-stop platform for finding job opportunities.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h2 class="h4">Our Mission</h2>
+                <p>Our mission is to simplify the job search process by collecting listings from numerous employment websites into a single, easy-to-use interface. We aim to connect job seekers with relevant opportunities efficiently.</p>
+
+                 <h2 class="h4 mt-4">How It Works</h2>
+                <p>We continuously scan and index job postings from various sources across the web. Our platform allows users to search using keywords, location, and other filters to find the most suitable jobs. We provide direct links to the original job postings for application.</p>
+
+                <h2 class="h4 mt-4">Why Use Us?</h2>
+                 <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Comprehensive Listings: Access thousands of jobs from multiple sources.</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Easy Search: User-friendly interface with powerful search filters.</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Time Saving: No need to browse multiple job boards individually.</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up-to-Date: We strive to keep our listings fresh and relevant.</li>
+                 </ul>
+
+                 <p class="mt-4">Thank you for using Job Board Aggregator for your job search!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</body>
+</html>
+'></iframe>
+        </div>
+
+
+         <!-- State 6: Contact Page -->
+        <div class="iframe-container">
+            <h2>State 6: Contact Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contact Us</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <!-- Page Header -->
+     <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Contact Us</h1>
+                <p class="lead mb-0">We'd love to hear from you!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Form and Info -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <p class="mb-4">Please fill out the form below to get in touch, or use the contact details provided.</p>
+
+                <!-- Contact Form -->
+                <form class="needs-validation" novalidate>
+                    <!-- Name Input -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+                        <label for="contactName">Your Name</label>
+                         <div class="invalid-feedback">
+                            Please enter your name.
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" required>
+                        <label for="contactEmail">Email address</label>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+
+                     <!-- Subject Input -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control is-invalid" id="contactSubject" placeholder="Subject" required>
+                        <label for="contactSubject">Subject</label>
+                         <div class="invalid-feedback">
+                            Please enter a subject for your message.
+                        </div>
+                    </div>
+
+                    <!-- Message Textarea -->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a message here" id="contactMessage" style="height: 150px" required></textarea>
+                        <label for="contactMessage">Message</label>
+                        <div class="invalid-feedback">
+                            Please enter your message.
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+                </form>
+
+                 <!-- Contact Info Section-->
+                 <div class="mt-5 pt-4 border-top">
+                    <h3 class="h5">Other ways to reach us:</h3>
+                     <p class="mb-1"><strong>Email:</strong> <a href="mailto:support@jobaggregator.com">support@jobaggregator.com</a></p>
+                     <p class="mb-1"><strong>Phone:</strong> +1 (123) 456-7890 (Placeholder)</p>
+                     <p class="mb-1"><strong>Address:</strong> 123 Job Seeker Ave, Opportunity City, JS 54321 (Placeholder)</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-5">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+    </script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+         <!-- State 7: 404 Not Found Page -->
+        <div class="iframe-container">
+            <h2>State 7: 404 Not Found Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Page Not Found</title>
+</head>
+<body>
+     <!-- Optional Navigation (for consistency) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Job Aggregator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 404 Content -->
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 70vh;">
+        <div class="text-center">
+            <h1 class="display-1 fw-bold">404</h1>
+            <p class="fs-3"> <span class="text-danger">Oops!</span> Page not found.</p>
+            <p class="lead">
+                The page you’re looking for doesn’t exist or has been moved.
+              </p>
+            <a href="#" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark mt-auto">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Job Aggregator 2023</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+'></iframe>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

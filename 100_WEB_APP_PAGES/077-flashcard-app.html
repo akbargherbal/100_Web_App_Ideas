@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body { padding-top: 20px; background-color: #f8f9fa; }
+        h1, h2 { text-align: center; margin-bottom: 20px; }
+        iframe { width: 100%; height: 750px; border: 1px solid #dee2e6; margin-bottom: 30px; background-color: #fff; }
+        .state-container { margin-bottom: 40px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcard App - UI Flow</h1>
+
+        <!-- State 1: Home Page -->
+        <div class="state-container">
+            <h2>State 1: Home Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Decks</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Welcome to Flashcard App</h1>
+            <p class="col-md-8 fs-4 mx-auto">Your go-to solution for creating and studying digital flashcards. Boost your learning efficiency today!</p>
+            <a href="#" class="btn btn-primary btn-lg" type="button">Get Started</a>
+             <a href="#" class="btn btn-secondary btn-lg" type="button">Learn More</a>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Create Easily</h5>
+                        <p class="card-text">Quickly create flashcard decks on any subject with our simple interface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Study Smart</h5>
+                        <p class="card-text">Review your cards effectively using our intuitive study mode.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                 <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Track Progress</h5>
+                        <p class="card-text">Monitor your learning progress and focus on areas needing improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 2: About Page -->
+        <div class="state-container">
+            <h2>State 2: About Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Decks</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>About Flashcard App</h1>
+        <p class="lead">Flashcard App is designed to be a simple and effective tool for students and lifelong learners.</p>
+        <p>Our mission is to make learning and memorization easier through the proven technique of spaced repetition and active recall, facilitated by digital flashcards.</p>
+
+        <div class="accordion mt-4" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Our Features
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li>Easy deck and card creation</li>
+                  <li>Simple and intuitive study interface</li>
+                  <li>Cross-platform accessibility (web-based)</li>
+                  <li>Support for text and potentially images on cards (visual only)</li>
+                  <li>Basic progress tracking during study sessions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Why Flashcards?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Flashcards engage active recall, which is one of the most effective ways to build strong memory traces. By repeatedly testing yourself, you strengthen neural pathways associated with the learned material. Spacing out reviews (spaced repetition) further enhances long-term retention.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Get in Touch
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                 For questions, feedback, or support, please contact us at <a href="mailto:info@flashcardapp.example.com">info@flashcardapp.example.com</a>. We are always looking to improve!
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 3: Login Page -->
+        <div class="state-container">
+            <h2>State 3: Login Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Login</h3>
+
+                        <!-- Placeholder for Error Message -->
+                        <!-- <div class="alert alert-danger" role="alert">
+                            Invalid email or password. Please try again.
+                        </div> -->
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                                <!-- Validation Feedback -->
+                                <!-- <div class="invalid-feedback">
+                                    Please provide a valid email.
+                                </div> -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                <!-- Validation Feedback -->
+                                <!-- <div class="invalid-feedback">
+                                    Password is required.
+                                </div> -->
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don't have an account? <a href="#">Sign Up</a></p>
+                             <p><a href="#">Forgot Password?</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+         <!-- State 3.1: Login Page - Error State -->
+        <div class="state-container">
+            <h2>State 3.1: Login Page - Error State</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Login</h3>
+
+                        <!-- Error Message -->
+                        <div class="alert alert-danger" role="alert">
+                            Invalid email or password. Please try again.
+                        </div>
+
+                        <form>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" value="user@example.com">
+                                <div class="invalid-feedback">
+                                    Please check your email.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="loginPassword" placeholder="Password" value="wrongpass">
+                                <div class="invalid-feedback">
+                                    Incorrect password.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don't have an account? <a href="#">Sign Up</a></p>
+                             <p><a href="#">Forgot Password?</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 4: Signup Page -->
+        <div class="state-container">
+            <h2>State 4: Signup Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Sign Up</h3>
+
+                         <!-- Placeholder for Error Message -->
+                        <!-- <div class="alert alert-danger" role="alert">
+                            Please correct the errors below.
+                        </div> -->
+
+                        <form>
+                             <div class="mb-3">
+                                <label for="signupName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Create Password">
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                                <!-- Validation Feedback (Example) -->
+                                <!-- <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div> -->
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                         <div class="text-center mt-3">
+                            <p>Already have an account? <a href="#">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 4.1: Signup Page - Error State -->
+        <div class="state-container">
+            <h2>State 4.1: Signup Page - Error State</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <style> body { display: flex; flex-direction: column; min-height: 100vh; } main { flex: 1; } </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Sign Up</h3>
+
+                         <!-- Error Message -->
+                        <div class="alert alert-danger" role="alert">
+                           Please correct the errors below. An account with this email might already exist.
+                        </div>
+
+                        <form>
+                             <div class="mb-3">
+                                <label for="signupName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="signupName" placeholder="Your Name" value="Test User">
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control is-invalid" id="signupEmail" placeholder="Enter email" value="test@example.com">
+                                 <div class="invalid-feedback">
+                                    An account with this email already exists or the format is invalid.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control is-invalid" id="signupPassword" placeholder="Create Password" value="password12">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                             <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control is-invalid" id="confirmPassword" placeholder="Confirm Password" value="password123">
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                         <div class="text-center mt-3">
+                            <p>Already have an account? <a href="#">Login</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 5: Dashboard / My Decks Page -->
+        <div class="state-container">
+            <h2>State 5: Dashboard / My Decks Page</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Decks - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>My Decks</h1>
+            <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill me-2"></i>Create New Deck</a>
+        </div>
+
+        <!-- Decks List -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Deck Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Spanish Vocabulary</h5>
+                        <p class="card-text flex-grow-1">Common Spanish words and phrases for beginners. Contains 50 cards.</p>
+                        <div class="mt-auto">
+                            <a href="#" class="btn btn-primary btn-sm me-2"><i class="bi bi-book-fill me-1"></i>Study</a>
+                            <a href="#" class="btn btn-secondary btn-sm me-2"><i class="bi bi-eye-fill me-1"></i>View</a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deck Card 2 -->
+             <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Capital Cities</h5>
+                        <p class="card-text flex-grow-1">Learn the capital cities of countries around the world. Contains 195 cards.</p>
+                         <div class="mt-auto">
+                            <a href="#" class="btn btn-primary btn-sm me-2"><i class="bi bi-book-fill me-1"></i>Study</a>
+                            <a href="#" class="btn btn-secondary btn-sm me-2"><i class="bi bi-eye-fill me-1"></i>View</a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Deck Card 3 -->
+             <div class="col">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">JavaScript Concepts</h5>
+                        <p class="card-text flex-grow-1">Key concepts and definitions for JavaScript programming. Contains 30 cards.</p>
+                         <div class="mt-auto">
+                           <a href="#" class="btn btn-primary btn-sm me-2"><i class="bi bi-book-fill me-1"></i>Study</a>
+                            <a href="#" class="btn btn-secondary btn-sm me-2"><i class="bi bi-eye-fill me-1"></i>View</a>
+                            <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (Optional) -->
+            <!--
+            <div class="col-12">
+                <div class="alert alert-info text-center" role="alert">
+                  You have no decks yet. <a href="#" class="alert-link">Create your first deck!</a>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 6: Create New Deck Page -->
+        <div class="state-container">
+            <h2>State 6: Create New Deck Page</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Deck - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Create New Deck</h1>
+
+        <!-- Validation Error Placeholder -->
+        <!-- <div class="alert alert-danger" role="alert">
+            Please fix the errors below. Deck name is required.
+        </div> -->
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="deckName" class="form-label">Deck Name</label>
+                <input type="text" class="form-control" id="deckName" placeholder="e.g., French Verbs" required>
+                 <!-- <div class="invalid-feedback">
+                    Please provide a name for the deck.
+                </div> -->
+            </div>
+             <div class="mb-3">
+                <label for="deckDescription" class="form-label">Description (Optional)</label>
+                <textarea class="form-control" id="deckDescription" rows="3" placeholder="e.g., Common regular and irregular verbs"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Create Deck</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 6.1: Create New Deck Page - Validation Error -->
+        <div class="state-container">
+            <h2>State 6.1: Create New Deck Page - Validation Error</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Deck - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Create New Deck</h1>
+
+        <!-- Validation Error Message -->
+        <div class="alert alert-danger" role="alert">
+            Please fix the errors below. Deck name is required.
+        </div>
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="deckName" class="form-label">Deck Name</label>
+                <input type="text" class="form-control is-invalid" id="deckName" placeholder="e.g., French Verbs" required>
+                 <div class="invalid-feedback">
+                    Please provide a name for the deck.
+                </div>
+            </div>
+             <div class="mb-3">
+                <label for="deckDescription" class="form-label">Description (Optional)</label>
+                <textarea class="form-control" id="deckDescription" rows="3" placeholder="e.g., Common regular and irregular verbs"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Create Deck</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+
+        <!-- State 7: View Deck Page -->
+        <div class="state-container">
+            <h2>State 7: View Deck Page</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Deck - Spanish Vocabulary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Decks</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Spanish Vocabulary</li>
+          </ol>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h2>Spanish Vocabulary</h2>
+                <p class="text-muted">Common Spanish words and phrases for beginners. (50 cards)</p>
+            </div>
+            <div>
+                <a href="#" class="btn btn-warning me-2"><i class="bi bi-pencil-fill me-1"></i>Edit Deck</a>
+                <a href="#" class="btn btn-danger"><i class="bi bi-trash-fill me-1"></i>Delete Deck</a>
+            </div>
+        </div>
+
+
+         <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>Cards in this Deck</h3>
+             <div>
+                 <a href="#" class="btn btn-primary me-2"><i class="bi bi-book-fill me-1"></i>Start Study Session</a>
+                 <a href="#" class="btn btn-success"><i class="bi bi-plus-circle-fill me-1"></i>Add New Card</a>
+            </div>
+         </div>
+
+        <!-- Card List -->
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <strong>Front:</strong> Hola <br>
+                <strong>Back:</strong> Hello
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="bi bi-pencil"></i> Edit</a>
+                <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <strong>Front:</strong> Adiós <br>
+                <strong>Back:</strong> Goodbye
+            </div>
+            <div>
+                 <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="bi bi-pencil"></i> Edit</a>
+                <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between align-items-center">
+             <div>
+                <strong>Front:</strong> Gracias <br>
+                <strong>Back:</strong> Thank you
+            </div>
+            <div>
+                 <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="bi bi-pencil"></i> Edit</a>
+                <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
+            </div>
+          </li>
+           <li class="list-group-item d-flex justify-content-between align-items-center">
+             <div>
+                <strong>Front:</strong> Por favor <br>
+                <strong>Back:</strong> Please
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i class="bi bi-pencil"></i> Edit</a>
+                <a href="#" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Delete</a>
+            </div>
+          </li>
+           <!-- More cards... -->
+        </ul>
+
+        <!-- Pagination (Optional) -->
+         <nav aria-label="Card Pagination" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 8: Add Card Page -->
+        <div class="state-container">
+            <h2>State 8: Add Card Page</h2>
+              <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Decks</a></li>
+            <li class="breadcrumb-item"><a href="#">Spanish Vocabulary</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Card</li>
+          </ol>
+        </nav>
+
+        <h1>Add New Card to "Spanish Vocabulary"</h1>
+
+        <!-- Validation Error Placeholder -->
+        <!-- <div class="alert alert-danger" role="alert">
+            Please fill out both the front and back of the card.
+        </div> -->
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="cardFront" class="form-label">Card Front (Question/Term)</label>
+                <textarea class="form-control" id="cardFront" rows="4" placeholder="e.g., ¿Cómo estás?" required></textarea>
+                 <!-- <div class="invalid-feedback">
+                    Card front cannot be empty.
+                </div> -->
+            </div>
+
+             <div class="mb-3">
+                <label for="cardBack" class="form-label">Card Back (Answer/Definition)</label>
+                <textarea class="form-control" id="cardBack" rows="4" placeholder="e.g., How are you?" required></textarea>
+                 <!-- <div class="invalid-feedback">
+                     Card back cannot be empty.
+                </div> -->
+            </div>
+
+            <!-- Optional: Image Upload Placeholders -->
+             <div class="mb-3">
+                <label for="cardFrontImage" class="form-label">Front Image (Optional)</label>
+                <input class="form-control form-control-sm" id="cardFrontImage" type="file">
+             </div>
+             <div class="mb-3">
+                <label for="cardBackImage" class="form-label">Back Image (Optional)</label>
+                <input class="form-control form-control-sm" id="cardBackImage" type="file">
+             </div>
+
+
+            <button type="submit" class="btn btn-primary me-2">Add Card</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 8.1: Add Card Page - Validation Error -->
+        <div class="state-container">
+            <h2>State 8.1: Add Card Page - Validation Error</h2>
+              <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+         <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Decks</a></li>
+            <li class="breadcrumb-item"><a href="#">Spanish Vocabulary</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Card</li>
+          </ol>
+        </nav>
+
+        <h1>Add New Card to "Spanish Vocabulary"</h1>
+
+        <!-- Validation Error Message -->
+        <div class="alert alert-danger" role="alert">
+            Please fill out both the front and back of the card.
+        </div>
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="cardFront" class="form-label">Card Front (Question/Term)</label>
+                <textarea class="form-control is-invalid" id="cardFront" rows="4" placeholder="e.g., ¿Cómo estás?" required></textarea>
+                 <div class="invalid-feedback">
+                    Card front cannot be empty.
+                </div>
+            </div>
+
+             <div class="mb-3">
+                <label for="cardBack" class="form-label">Card Back (Answer/Definition)</label>
+                <textarea class="form-control is-invalid" id="cardBack" rows="4" placeholder="e.g., How are you?" required></textarea>
+                 <div class="invalid-feedback">
+                     Card back cannot be empty.
+                </div>
+            </div>
+
+            <!-- Optional: Image Upload Placeholders -->
+             <div class="mb-3">
+                <label for="cardFrontImage" class="form-label">Front Image (Optional)</label>
+                <input class="form-control form-control-sm" id="cardFrontImage" type="file">
+             </div>
+             <div class="mb-3">
+                <label for="cardBackImage" class="form-label">Back Image (Optional)</label>
+                <input class="form-control form-control-sm" id="cardBackImage" type="file">
+             </div>
+
+
+            <button type="submit" class="btn btn-primary me-2">Add Card</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 9: Edit Deck Page -->
+        <div class="state-container">
+            <h2>State 9: Edit Deck Page</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Deck - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Decks</a></li>
+            <li class="breadcrumb-item"><a href="#">Spanish Vocabulary</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Deck</li>
+          </ol>
+        </nav>
+
+        <h1>Edit Deck: Spanish Vocabulary</h1>
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="deckName" class="form-label">Deck Name</label>
+                <input type="text" class="form-control" id="deckName" value="Spanish Vocabulary" required>
+                 <!-- <div class="invalid-feedback">
+                    Please provide a name for the deck.
+                </div> -->
+            </div>
+             <div class="mb-3">
+                <label for="deckDescription" class="form-label">Description (Optional)</label>
+                <textarea class="form-control" id="deckDescription" rows="3">Common Spanish words and phrases for beginners.</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+
+        <!-- State 10: Edit Card Page -->
+        <div class="state-container">
+            <h2>State 10: Edit Card Page</h2>
+             <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Card - Flashcard App</title>
+    <link href="https
+://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">My Decks</a></li>
+            <li class="breadcrumb-item"><a href="#">Spanish Vocabulary</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Card</li>
+          </ol>
+        </nav>
+
+        <h1>Edit Card in "Spanish Vocabulary"</h1>
+
+        <form class="needs-validation" novalidate>
+             <div class="mb-3">
+                <label for="cardFront" class="form-label">Card Front (Question/Term)</label>
+                <textarea class="form-control" id="cardFront" rows="4" required>Hola</textarea>
+                 <!-- <div class="invalid-feedback">
+                    Card front cannot be empty.
+                </div> -->
+            </div>
+
+             <div class="mb-3">
+                <label for="cardBack" class="form-label">Card Back (Answer/Definition)</label>
+                <textarea class="form-control" id="cardBack" rows="4" required>Hello</textarea>
+                 <!-- <div class="invalid-feedback">
+                     Card back cannot be empty.
+                </div> -->
+            </div>
+
+            <!-- Optional: Image Upload Placeholders -->
+             <div class="mb-3">
+                <label for="cardFrontImage" class="form-label">Front Image (Optional)</label>
+                <!-- Placeholder for existing image view/remove -->
+                <input class="form-control form-control-sm" id="cardFrontImage" type="file">
+             </div>
+             <div class="mb-3">
+                <label for="cardBackImage" class="form-label">Back Image (Optional)</label>
+                 <!-- Placeholder for existing image view/remove -->
+                <input class="form-control form-control-sm" id="cardBackImage" type="file">
+             </div>
+
+            <button type="submit" class="btn btn-primary me-2">Save Changes</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+             <a href="#" class="btn btn-outline-danger float-end"><i class="bi bi-trash"></i> Delete Card</a>
+        </form>
+
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 11: Study Session Page - Front -->
+        <div class="state-container">
+            <h2>State 11: Study Session Page - Front</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Session - Front</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; background-color: #e9ecef;}
+        main { flex: 1; display: flex; justify-content: center; align-items: center; }
+        .flashcard { min-height: 300px; width: 100%; max-width: 600px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App - Study Mode</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a href="#" class="btn btn-danger"><i class="bi bi-stop-circle me-1"></i>End Session</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="text-center w-100">
+            <div class="progress mb-3" style="height: 10px;">
+              <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="text-muted mb-4">Card 1 of 10</p>
+
+            <div class="card flashcard shadow-sm bg-white">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <p class="card-text">¿Cómo estás?</p>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <a href="#" class="btn btn-primary btn-lg"><i class="bi bi-arrow-repeat me-1"></i>Flip Card</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+        <!-- State 12: Study Session Page - Back -->
+        <div class="state-container">
+            <h2>State 12: Study Session Page - Back</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Session - Back</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; background-color: #e9ecef;}
+        main { flex: 1; display: flex; justify-content: center; align-items: center; }
+        .flashcard { min-height: 300px; width: 100%; max-width: 600px; display: flex; justify-content: center; align-items: center; text-align: center; font-size: 2rem; background-color: #f8f9fa; border-color: #adb5bd; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App - Study Mode</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a href="#" class="btn btn-danger"><i class="bi bi-stop-circle me-1"></i>End Session</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container mt-4">
+        <div class="text-center w-100">
+            <div class="progress mb-3" style="height: 10px;">
+              <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="text-muted mb-4">Card 1 of 10</p>
+
+            <div class="card flashcard shadow-sm">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <p class="card-text">How are you?</p>
+                </div>
+            </div>
+
+            <div class="mt-4 d-grid gap-3 d-sm-flex justify-content-sm-center">
+                 <a href="#" class="btn btn-danger btn-lg"><i class="bi bi-x-circle me-1"></i>Incorrect</a>
+                 <a href="#" class="btn btn-success btn-lg"><i class="bi bi-check-circle me-1"></i>Correct</a>
+            </div>
+        </div>
+    </main>
+
+   <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+         <!-- State 13: Study Session Complete Page -->
+        <div class="state-container">
+            <h2>State 13: Study Session Complete Page</h2>
+            <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Complete - Flashcard App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+     <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; background-color: #e9ecef;}
+        main { flex: 1; display: flex; justify-content: center; align-items: center; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flashcard App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">My Decks</a>
+                    </li>
+                </ul>
+                 <ul class="navbar-nav ms-auto">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-circle"></i> User Name
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5">
+        <div class="card text-center shadow-sm" style="max-width: 500px; margin: auto;">
+            <div class="card-header">
+                Study Session Complete!
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Deck: Spanish Vocabulary</h5>
+                <p class="card-text">You reviewed all 10 cards in this session.</p>
+                <!-- Placeholder for results -->
+                <p class="card-text"><strong>Results:</strong> 8 Correct, 2 Incorrect (80%)</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+                    <a href="#" class="btn btn-primary"><i class="bi bi-arrow-clockwise me-1"></i>Study Again</a>
+                    <a href="#" class="btn btn-secondary"><i class="bi bi-collection-fill me-1"></i>Back to Deck</a>
+                    <a href="#" class="btn btn-info"><i class="bi bi-house-door-fill me-1"></i>Go to Dashboard</a>
+                </div>
+            </div>
+             <div class="card-footer text-muted">
+                Keep practicing!
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Flashcard App
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+            '></iframe>
+        </div>
+
+    </div> <!-- /container -->
+</body>
+</html>

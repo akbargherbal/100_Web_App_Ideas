@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Payoff Strategy Planner UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        /* Basic styles for content within iframes */
+        .iframe-content {
+            padding: 20px;
+        }
+        .iframe-content .navbar {
+             margin: -20px -20px 20px -20px;
+             border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="text-center mb-4">Debt Payoff Strategy Planner UI Flow</h1>
+
+        <!-- State 1: Home Page -->
+        <h2>State 1: Home Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Home Page Frame</title>
+                <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+                            <h1 class="display-4">Take Control of Your Debt</h1>
+                            <p class="lead">Use our visual planner to compare the Snowball and Avalanche debt reduction strategies and find the best path to becoming debt-free.</p>
+                            <hr class="my-4">
+                            <p>Understand how different payoff methods impact your total interest paid and payoff timeline. Enter your debts to get started.</p>
+                            <a class="btn btn-success btn-lg" href="#" role="button">Start Planning Now</a>
+                            <a class="btn btn-outline-secondary btn-lg ms-2" href="#" role="button">Learn More</a>
+                        </div>
+                    </div>
+                     <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Debt Snowball Method</h5>
+                                    <p class="card-text">Pay off debts in order from smallest balance to largest, regardless of interest rate. Provides quick wins and psychological momentum.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                             <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Debt Avalanche Method</h5>
+                                    <p class="card-text">Pay off debts in order from highest interest rate to lowest. Mathematically saves the most money on interest over time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 2: About Page -->
+        <h2>State 2: About Page</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>About Page Frame</title>
+                 <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+           </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                 <div class="iframe-content container">
+                    <h1>About Debt Payoff Strategies</h1>
+                    <p class="lead">Understanding the two most popular debt reduction methods can help you choose the right path for your financial situation and personality.</p>
+
+                    <div class="accordion" id="strategyAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Debt Snowball Method
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#strategyAccordion">
+                                <div class="accordion-body">
+                                    <strong>How it works:</strong> List your debts from the smallest balance to the largest, regardless of the interest rate. Make minimum payments on all debts except the smallest. Throw any extra money you have towards that smallest debt until it's paid off. Once it's gone, take the money you were paying on it (minimum payment + extra) and add it to the minimum payment of the *next* smallest debt. Repeat until all debts are gone.
+                                    <br><br>
+                                    <strong>Pros:</strong> Provides quick psychological wins as smaller debts are eliminated faster, boosting motivation. Simpler to follow for some.
+                                    <br>
+                                    <strong>Cons:</strong> You'll likely pay more interest overall compared to the Avalanche method because higher-interest debts might linger longer.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Debt Avalanche Method
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#strategyAccordion">
+                                <div class="accordion-body">
+                                    <strong>How it works:</strong> List your debts from the highest interest rate to the lowest, regardless of the balance. Make minimum payments on all debts except the one with the highest interest rate. Put any extra money towards that highest-interest debt until it's paid off. Once it's gone, take the total amount you were paying on it (minimum payment + extra) and add it to the minimum payment of the debt with the *next* highest interest rate. Repeat until all debts are clear.
+                                    <br><br>
+                                    <strong>Pros:</strong> Mathematically the most efficient method. You'll save the most money on interest payments over the life of your debt repayment.
+                                    <br>
+                                    <strong>Cons:</strong> It might take longer to pay off the first debt, especially if it has a large balance, which can sometimes feel discouraging. Requires discipline.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <h3 class="mt-4">About This Tool</h3>
+                     <p>This Debt Payoff Strategy Planner is designed to provide a clear, visual comparison between the Snowball and Avalanche methods based on your specific debts. It helps you make an informed decision by showing estimated payoff dates and total interest paid for both scenarios. This tool is for informational purposes only and does not constitute financial advice.</p>
+                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 3: Debt Entry Screen (Step 1) -->
+        <h2>State 3: Debt Entry Screen (Step 1)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+               <title>Debt Entry Frame</title>
+                 <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .debt-entry-row { margin-bottom: 15px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <h2>Step 1: Enter Your Debts</h2>
+                    <p>List all your current debts below. Be as accurate as possible for the best results.</p>
+                    <form>
+                        <div id="debt-list">
+                            <!-- Debt Entry Row Template -->
+                            <div class="row g-3 align-items-center debt-entry-row border p-3 rounded mb-3">
+                                <div class="col-md-3">
+                                    <label for="debtName1" class="form-label">Debt Name</label>
+                                    <input type="text" class="form-control" id="debtName1" placeholder="E.g., Credit Card Visa" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtBalance1" class="form-label">Current Balance</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtBalance1" placeholder="1500.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtRate1" class="form-label">Interest Rate</label>
+                                    <div class="input-group">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtRate1" placeholder="19.99" required>
+                                        <span class="input-group-text">%</span>
+                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                     <label for="debtMinPayment1" class="form-label">Minimum Payment</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtMinPayment1" placeholder="50.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" title="Remove Debt">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- End Debt Entry Row Template -->
+
+                             <div class="row g-3 align-items-center debt-entry-row border p-3 rounded mb-3">
+                                <div class="col-md-3">
+                                    <label for="debtName2" class="form-label">Debt Name</label>
+                                    <input type="text" class="form-control" id="debtName2" placeholder="E.g., Student Loan" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtBalance2" class="form-label">Current Balance</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtBalance2" placeholder="10000.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtRate2" class="form-label">Interest Rate</label>
+                                    <div class="input-group">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtRate2" placeholder="5.5" required>
+                                        <span class="input-group-text">%</span>
+                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                     <label for="debtMinPayment2" class="form-label">Minimum Payment</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtMinPayment2" placeholder="150.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" title="Remove Debt">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-outline-success mt-2 mb-4">
+                           <i class="bi bi-plus-circle"></i> Add Another Debt
+                        </button>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-end">
+                             <button type="submit" class="btn btn-primary">Continue to Step 2</button>
+                        </div>
+                    </form>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 4: Debt Entry Screen (Validation Error State) -->
+        <h2>State 4: Debt Entry Screen (Validation Error State)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+               <title>Debt Entry Error Frame</title>
+                 <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } .debt-entry-row { margin-bottom: 15px; } </style>
+            </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                             <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <h2>Step 1: Enter Your Debts</h2>
+                     <div class="alert alert-danger" role="alert">
+                         Please fix the errors below before continuing.
+                    </div>
+                     <p>List all your current debts below. Be as accurate as possible for the best results.</p>
+                    <form>
+                        <div id="debt-list">
+                            <!-- Debt Entry Row with Errors -->
+                            <div class="row g-3 align-items-center debt-entry-row border border-danger p-3 rounded mb-3">
+                                <div class="col-md-3">
+                                    <label for="debtName1" class="form-label">Debt Name</label>
+                                    <input type="text" class="form-control" id="debtName1" placeholder="E.g., Credit Card Visa" value="Credit Card Visa" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtBalance1" class="form-label">Current Balance</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control is-invalid" id="debtBalance1" placeholder="1500.00" value="abc" required>
+                                    </div>
+                                     <div class="invalid-feedback d-block">
+                                        Please enter a valid number.
+                                     </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtRate1" class="form-label">Interest Rate</label>
+                                    <div class="input-group">
+                                        <input type="number" step="0.01" min="0" class="form-control is-invalid" id="debtRate1" placeholder="19.99" required>
+                                        <span class="input-group-text">%</span>
+                                     </div>
+                                     <div class="invalid-feedback d-block">
+                                        This field is required.
+                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                     <label for="debtMinPayment1" class="form-label">Minimum Payment</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtMinPayment1" placeholder="50.00" value="50.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" title="Remove Debt">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                             <!-- End Debt Entry Row with Errors -->
+
+                             <!-- Valid Row for contrast -->
+                            <div class="row g-3 align-items-center debt-entry-row border p-3 rounded mb-3">
+                                <div class="col-md-3">
+                                    <label for="debtName2" class="form-label">Debt Name</label>
+                                    <input type="text" class="form-control" id="debtName2" placeholder="E.g., Student Loan" value="Student Loan" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtBalance2" class="form-label">Current Balance</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtBalance2" placeholder="10000.00" value="10000.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="debtRate2" class="form-label">Interest Rate</label>
+                                    <div class="input-group">
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtRate2" placeholder="5.5" value="5.5" required>
+                                        <span class="input-group-text">%</span>
+                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                     <label for="debtMinPayment2" class="form-label">Minimum Payment</label>
+                                     <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" step="0.01" min="0" class="form-control" id="debtMinPayment2" placeholder="150.00" value="150.00" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" title="Remove Debt">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- End Valid Row -->
+                        </div>
+
+                        <button type="button" class="btn btn-outline-success mt-2 mb-4">
+                           <i class="bi bi-plus-circle"></i> Add Another Debt
+                        </button>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-end">
+                             <button type="submit" class="btn btn-primary">Continue to Step 2</button>
+                        </div>
+                    </form>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+           </body>
+            </html>
+        '></iframe>
+
+        <!-- State 5: Extra Payment Screen (Step 2) -->
+        <h2>State 5: Extra Payment Screen (Step 2)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Extra Payment Frame</title>
+                <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+           </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <h2>Step 2: Add Extra Payments (Optional)</h2>
+                    <p>Paying more than the minimum can drastically speed up your debt payoff journey. Enter any extra amount you can consistently contribute each month towards your debts.</p>
+
+                    <form>
+                        <div class="row justify-content-center">
+                             <div class="col-md-6">
+                                <label for="extraPayment" class="form-label">Total Extra Monthly Payment</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" step="0.01" min="0" class="form-control" id="extraPayment" placeholder="0.00" value="100.00">
+                                </div>
+                                 <div id="extraPaymentHelp" class="form-text">
+                                     This amount will be added to your minimum payments and applied strategically based on the chosen method (Snowball or Avalanche). Leave as 0 if you cannot make extra payments.
+                                 </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between">
+                             <button type="button" class="btn btn-secondary">&laquo; Back to Step 1</button>
+                             <button type="submit" class="btn btn-primary">Calculate Payoff Strategies &raquo;</button>
+                        </div>
+                    </form>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 6: Strategy Comparison Screen (Results) -->
+        <h2>State 6: Strategy Comparison Screen (Results)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Comparison Results Frame</title>
+                <style>
+                     body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; }
+                     .summary-card { text-align: center; }
+                     .summary-value { font-size: 1.5rem; font-weight: bold; }
+                     .placeholder-chart { background-color: #e9ecef; border: 1px dashed #ced4da; height: 200px; display: flex; align-items: center; justify-content: center; color: #6c757d; font-style: italic; margin-top: 15px; }
+                </style>
+           </head>
+            <body>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <h2>Results: Snowball vs. Avalanche</h2>
+                    <p class="lead">Based on your debts and $100.00 extra monthly payment.</p>
+
+                    <div class="row g-4">
+                        <!-- Snowball Results -->
+                         <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-header bg-info text-white">
+                                    <h4 class="mb-0">Debt Snowball Method</h4>
+                                </div>
+                                <div class="card-body summary-card">
+                                     <div class="row">
+                                        <div class="col-6 border-end">
+                                            <p class="card-text text-muted mb-1">Payoff Date</p>
+                                            <p class="summary-value text-info">June 2027</p>
+                                             <p class="card-text"><small>(3 years, 8 months)</small></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-text text-muted mb-1">Total Interest Paid</p>
+                                            <p class="summary-value text-info">$2,850.75</p>
+                                        </div>
+                                    </div>
+                                    <div class="placeholder-chart">Placeholder: Payoff Timeline Chart</div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn btn-info text-white">View Snowball Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Avalanche Results -->
+                        <div class="col-md-6">
+                             <div class="card h-100">
+                                 <div class="card-header bg-warning text-dark">
+                                    <h4 class="mb-0">Debt Avalanche Method</h4>
+                                </div>
+                                <div class="card-body summary-card">
+                                     <div class="row">
+                                        <div class="col-6 border-end">
+                                            <p class="card-text text-muted mb-1">Payoff Date</p>
+                                            <p class="summary-value text-warning">April 2027</p>
+                                             <p class="card-text"><small>(3 years, 6 months)</small></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="card-text text-muted mb-1">Total Interest Paid</p>
+                                            <p class="summary-value text-warning">$2,510.50</p>
+                                         </div>
+                                    </div>
+                                      <div class="placeholder-chart">Placeholder: Payoff Timeline Chart</div>
+                                 </div>
+                                <div class="card-footer text-center">
+                                     <a href="#" class="btn btn-warning text-dark">View Avalanche Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="alert alert-success mt-4" role="alert">
+                        <strong>Avalanche Advantage:</strong> You could save $340.25 in interest and become debt-free 2 months sooner using the Avalanche method.
+                    </div>
+
+                    <hr class="my-4">
+
+                     <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary">&laquo; Back to Extra Payment</button>
+                        <a href="#" class="btn btn-success">Start Over / New Plan</a>
+                    </div>
+
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 7: Detailed Payoff Plan Screen (Snowball) -->
+        <h2>State 7: Detailed Payoff Plan Screen (Snowball)</h2>
+        <iframe srcdoc='
+             <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Snowball Details Frame</title>
+                 <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+           </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                    <h2>Detailed Payoff Plan: <span class="badge bg-info">Snowball Method</span></h2>
+                    <p>Month-by-month breakdown of your payment allocation.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Date</th>
+                                    <th>Debt Target</th>
+                                    <th>Total Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Remaining Balance (Target)</th>
+                                    <th>Total Remaining Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Nov 2023</td>
+                                    <td>Credit Card Visa</td>
+                                    <td>$250.00 <small>(Min: $50 + Extra: $100 + Student Loan Min: $100)</small></td>
+                                    <td>$225.08</td>
+                                    <td>$24.92</td>
+                                    <td>$1,274.92</td>
+                                    <td>$11,274.92</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Dec 2023</td>
+                                    <td>Credit Card Visa</td>
+                                    <td>$300.00 <small>(Base: $250 + Snowball: $50)</small> </td>
+                                    <td>$278.84</td>
+                                    <td>$21.16</td>
+                                     <td>$996.08</td>
+                                    <td>$10,996.08</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Jan 2024</td>
+                                    <td>Credit Card Visa</td>
+                                     <td>$300.00</td>
+                                     <td>$283.41</td>
+                                    <td>$16.59</td>
+                                    <td>$712.67</td>
+                                    <td>$10,712.67</td>
+                                </tr>
+                                 <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Jun 2024</td>
+                                     <td>Credit Card Visa <span class="badge bg-success">Paid Off!</span></td>
+                                    <td>$115.20</td>
+                                    <td>$114.80</td>
+                                     <td>$0.40</td>
+                                     <td>$0.00</td>
+                                    <td>$9,540.10</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                     <td>Jul 2024</td>
+                                    <td>Student Loan</td>
+                                     <td>$300.00 <small>(CC Min $50 + SL Min $150 + Extra $100)</small></td>
+                                     <td>$256.22</td>
+                                     <td>$43.78</td>
+                                     <td>$9,283.88</td>
+                                    <td>$9,283.88</td>
+                                </tr>
+                                <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                     <td>...</td>
+                                     <td>...</td>
+                                </tr>
+                                 <tr>
+                                    <td>44</td>
+                                    <td>Jun 2027</td>
+                                     <td>Student Loan <span class="badge bg-success">Paid Off!</span></td>
+                                    <td>$150.88</td>
+                                    <td>$150.19</td>
+                                     <td>$0.69</td>
+                                     <td>$0.00</td>
+                                    <td>$0.00</td>
+                                </tr>
+                            </tbody>
+                         </table>
+                    </div>
+
+                     <hr class="my-4">
+
+                     <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary">&laquo; Back to Comparison</button>
+                        <div>
+                            <button type="button" class="btn btn-outline-primary me-2">Print Plan</button>
+                            <a href="#" class="btn btn-success">Start Over / New Plan</a>
+                        </div>
+                    </div>
+                 </div>
+                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            </body>
+            </html>
+        '></iframe>
+
+        <!-- State 8: Detailed Payoff Plan Screen (Avalanche) -->
+        <h2>State 8: Detailed Payoff Plan Screen (Avalanche)</h2>
+        <iframe srcdoc='
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <title>Avalanche Details Frame</title>
+                 <style> body { padding: 0; margin: 0; } .iframe-content { padding: 20px; } .navbar { margin-bottom: 20px; } </style>
+           </head>
+            <body>
+                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Debt Planner</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                       <div class="collapse navbar-collapse" id="navbarNav">
+                           <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Start Planning</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="iframe-content container">
+                     <h2>Detailed Payoff Plan: <span class="badge bg-warning text-dark">Avalanche Method</span></h2>
+                    <p>Month-by-month breakdown of your payment allocation.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Date</th>
+                                     <th>Debt Target</th>
+                                    <th>Total Payment</th>
+                                    <th>Principal</th>
+                                    <th>Interest</th>
+                                    <th>Remaining Balance (Target)</th>
+                                    <th>Total Remaining Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <tr>
+                                    <td>1</td>
+                                    <td>Nov 2023</td>
+                                     <td>Credit Card Visa</td>
+                                    <td>$150.00 <small>(Min $50 + Extra $100)</small></td>
+                                    <td>$125.08</td>
+                                    <td>$24.92</td>
+                                    <td>$1,374.92</td>
+                                     <td>$11,374.92 <small>(Paying SL Min $150 separately)</small></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Dec 2023</td>
+                                     <td>Credit Card Visa</td>
+                                    <td>$150.00</td>
+                                    <td>$127.10</td>
+                                    <td>$22.90</td>
+                                    <td>$1,247.82</td>
+                                     <td>$11,247.82 <small>(Paying SL Min $150 separately)</small></td>
+                                </tr>
+                                <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                     <td>...</td>
+                                </tr>
+                                 <tr>
+                                    <td>11</td>
+                                    <td>Sep 2024</td>
+                                     <td>Credit Card Visa <span class="badge bg-success">Paid Off!</span></td>
+                                     <td>$65.10</td>
+                                    <td>$64.01</td>
+                                    <td>$1.09</td>
+                                    <td>$0.00</td>
+                                     <td>$8,850.55</td>
+                                </tr>
+                                 <tr>
+                                    <td>12</td>
+                                    <td>Oct 2024</td>
+                                    <td>Student Loan</td>
+                                    <td>$300.00 <small>(CC Min $50 + SL Min $150 + Extra $100)</small></td>
+                                    <td>$259.40</td>
+                                    <td>$40.60</td>
+                                    <td>$8,591.15</td>
+                                    <td>$8,591.15</td>
+                                </tr>
+                                 <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                     <td>...</td>
+                                     <td>...</td>
+                                </tr>
+                                <tr>
+                                    <td>42</td>
+                                    <td>Apr 2027</td>
+                                     <td>Student Loan <span class="badge bg-success">Paid Off!</span></td>
+                                    <td>$280.45</td>
+                                    <td>$279.17</td>
+                                     <td>$1.28</td>
+                                     <td>$0.00</td>
+                                    <td>$0.00</td>
+                                </tr>
+                            </tbody>
+                         </table>
+                    </div>
+
+                     <hr class="my-4">
+
+                     <div class="d-flex justify-content-between">
+                         <button type="button" class="btn btn-secondary">&laquo; Back to Comparison</button>
+                         <div>
+                            <button type="button" class="btn btn-outline-primary me-2">Print Plan</button>
+                            <a href="#" class="btn btn-success">Start Over / New Plan</a>
+                        </div>
+                    </div>
+                 </div>
+                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+             </body>
+            </html>
+        '></iframe>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

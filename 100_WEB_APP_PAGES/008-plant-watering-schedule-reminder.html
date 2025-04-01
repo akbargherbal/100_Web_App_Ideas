@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Watering Schedule Reminder - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .state-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 class="text-center mb-4">Plant Watering Schedule Reminder - UI Flow</h1>
+
+    <!-- State 1: Home Page (Logged Out) -->
+    <div class="state-container">
+        <h2>State 1: Home Page (Logged Out)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Home - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row align-items-center'>
+                        <div class='col-md-6'>
+                            <h1>Never Forget to Water Your Plants Again!</h1>
+                            <p class='lead'>Plant Pal sends you timely reminders to keep your green friends happy and hydrated. Simple, focused, and effective.</p>
+                            <a href='#' class='btn btn-success btn-lg me-2'><i class='bi bi-person-plus-fill'></i> Sign Up Now</a>
+                            <a href='#' class='btn btn-outline-secondary btn-lg'><i class='bi bi-box-arrow-in-right'></i> Login</a>
+                        </div>
+                        <div class='col-md-6 text-center'>
+                            <img src='https://via.placeholder.com/400x300.png?text=Happy+Plant' class='img-fluid rounded' alt='Happy Plant'>
+                        </div>
+                    </div>
+
+                    <hr class='my-5'>
+
+                    <div class='row text-center'>
+                        <div class='col-md-4'>
+                            <i class='bi bi-calendar-check fs-1 text-success'></i>
+                            <h3>Easy Scheduling</h3>
+                            <p>Quickly add your plants and set their watering frequency.</p>
+                        </div>
+                        <div class='col-md-4'>
+                            <i class='bi bi-bell-fill fs-1 text-success'></i>
+                            <h3>Timely Reminders</h3>
+                            <p>Receive notifications before your plants get thirsty.</p>
+                        </div>
+                        <div class='col-md-4'>
+                            <i class='bi bi-list-task fs-1 text-success'></i>
+                            <h3>Simple Tracking</h3>
+                            <p>See at a glance which plants need attention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 2: Sign Up Page -->
+    <div class="state-container">
+        <h2>State 2: Sign Up Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2 active' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-6'>
+                            <div class='card'>
+                                <div class='card-header bg-success text-white'>
+                                    <h3 class='mb-0'>Create Your Account</h3>
+                                </div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='signupName' class='form-label'>Full Name</label>
+                                            <input type='text' class='form-control' id='signupName' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='signupEmail' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control' id='signupEmail' aria-describedby='emailHelp' required>
+                                            <div id='emailHelp' class='form-text'>We'll never share your email with anyone else.</div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='signupPassword' class='form-label'>Password</label>
+                                            <input type='password' class='form-control' id='signupPassword' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                            <input type='password' class='form-control' id='confirmPassword' required>
+                                        </div>
+                                        <button type='submit' class='btn btn-success w-100'><i class='bi bi-person-plus-fill'></i> Sign Up</button>
+                                    </form>
+                                    <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5 fixed-bottom'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 3: Sign Up Page (with Validation Errors) -->
+    <div class="state-container">
+        <h2>State 3: Sign Up Page (with Validation Errors)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Sign Up - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2 active' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-6'>
+                            <div class='card border-danger'>
+                                <div class='card-header bg-danger text-white'>
+                                    <h3 class='mb-0'>Create Your Account</h3>
+                                </div>
+                                <div class='card-body'>
+                                     <div class='alert alert-danger' role='alert'>
+                                        Please fix the errors below.
+                                    </div>
+                                    <form class='was-validated'>
+                                        <div class='mb-3'>
+                                            <label for='signupName' class='form-label'>Full Name</label>
+                                            <input type='text' class='form-control is-valid' id='signupName' value='Jane Doe' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='signupEmail' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control is-invalid' id='signupEmail' aria-describedby='emailHelp' required>
+                                            <div class='invalid-feedback'>
+                                                Please enter a valid email address.
+                                            </div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='signupPassword' class='form-label'>Password</label>
+                                            <input type='password' class='form-control is-invalid' id='signupPassword' required>
+                                             <div class='invalid-feedback'>
+                                                Password must be at least 8 characters long.
+                                            </div>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='confirmPassword' class='form-label'>Confirm Password</label>
+                                            <input type='password' class='form-control is-invalid' id='confirmPassword' required>
+                                            <div class='invalid-feedback'>
+                                                Passwords do not match.
+                                            </div>
+                                        </div>
+                                        <button type='submit' class='btn btn-success w-100'><i class='bi bi-person-plus-fill'></i> Sign Up</button>
+                                    </form>
+                                    <p class='mt-3 text-center'>Already have an account? <a href='#'>Login here</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5 fixed-bottom'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 4: Login Page -->
+    <div class="state-container">
+        <h2>State 4: Login Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-5'>
+                            <div class='card'>
+                                <div class='card-header bg-success text-white'>
+                                    <h3 class='mb-0'>Login to Your Account</h3>
+                                </div>
+                                <div class='card-body'>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='loginEmail' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control' id='loginEmail' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='loginPassword' class='form-label'>Password</label>
+                                            <input type='password' class='form-control' id='loginPassword' required>
+                                        </div>
+                                        <div class='mb-3 form-check'>
+                                            <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                            <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                        </div>
+                                        <button type='submit' class='btn btn-success w-100'><i class='bi bi-box-arrow-in-right'></i> Login</button>
+                                    </form>
+                                    <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+                                    <p class='text-center'><a href='#'>Forgot password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5 fixed-bottom'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 5: Login Page (with Error) -->
+    <div class="state-container">
+        <h2>State 5: Login Page (with Error)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Login - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' href='#'>Login</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2' href='#'>Sign Up</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-md-5'>
+                            <div class='card border-danger'>
+                                <div class='card-header bg-danger text-white'>
+                                    <h3 class='mb-0'>Login Failed</h3>
+                                </div>
+                                <div class='card-body'>
+                                     <div class='alert alert-danger' role='alert'>
+                                        <i class='bi bi-exclamation-triangle-fill'></i> Invalid email or password. Please try again.
+                                    </div>
+                                    <form>
+                                        <div class='mb-3'>
+                                            <label for='loginEmail' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control is-invalid' id='loginEmail' value='user@example.com' required>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='loginPassword' class='form-label'>Password</label>
+                                            <input type='password' class='form-control is-invalid' id='loginPassword' required>
+                                        </div>
+                                        <div class='mb-3 form-check'>
+                                            <input type='checkbox' class='form-check-input' id='rememberMe'>
+                                            <label class='form-check-label' for='rememberMe'>Remember me</label>
+                                        </div>
+                                        <button type='submit' class='btn btn-success w-100'><i class='bi bi-box-arrow-in-right'></i> Login</button>
+                                    </form>
+                                     <p class='mt-3 text-center'>Don't have an account? <a href='#'>Sign up here</a></p>
+                                     <p class='text-center'><a href='#'>Forgot password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5 fixed-bottom'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 6: Home Page (Logged In - Dashboard) -->
+    <div class="state-container">
+        <h2>State 6: Home Page (Logged In - Dashboard)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Dashboard - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h2>Dashboard</h2>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle-fill'></i> Add New Plant</a>
+                    </div>
+
+                     <div class='alert alert-info' role='alert'>
+                         Welcome back, Jane! Here's a quick look at your plants.
+                     </div>
+
+                    <h4><i class='bi bi-droplet-half text-primary'></i> Needs Watering Soon</h4>
+                    <div class='row'>
+                        <div class='col-md-4 mb-3'>
+                            <div class='card border-warning'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-flower1'></i> Living Room Ficus</h5>
+                                    <p class='card-text'>Watering due: <span class='fw-bold text-warning'>Tomorrow</span></p>
+                                    <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                                    <button class='btn btn-sm btn-outline-success ms-1'><i class='bi bi-check-lg'></i> Watered</button>
+                                </div>
+                            </div>
+                        </div>
+                         <div class='col-md-4 mb-3'>
+                            <div class='card border-danger'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-tree'></i> Balcony Bonsai</h5>
+                                    <p class='card-text'>Watering due: <span class='fw-bold text-danger'>Today!</span></p>
+                                    <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                                    <button class='btn btn-sm btn-outline-success ms-1'><i class='bi bi-check-lg'></i> Watered</button>
+                                </div>
+                             </div>
+                        </div>
+                        <div class='col-md-4 mb-3'>
+                             <div class='card border-warning'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'><i class='bi bi-fan'></i> Office Palm</h5>
+                                    <p class='card-text'>Watering due: <span class='fw-bold text-warning'>In 2 days</span></p>
+                                     <a href='#' class='btn btn-sm btn-outline-primary'>View Details</a>
+                                     <button class='btn btn-sm btn-outline-success ms-1'><i class='bi bi-check-lg'></i> Watered</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h4><i class='bi bi-calendar3'></i> Upcoming Schedule (Placeholder)</h4>
+                      <div class='card'>
+                         <div class='card-body text-center text-muted'>
+                            [ Simple Calendar or List View Placeholder ] <br>
+                            Visualizing the next 7 days of watering tasks.
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 7: My Plants Page -->
+    <div class="state-container">
+        <h2>State 7: My Plants Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>My Plants - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h2>My Plants</h2>
+                         <a href='#' class='btn btn-success'><i class='bi bi-plus-circle-fill'></i> Add New Plant</a>
+                    </div>
+
+                    <div class='table-responsive'>
+                        <table class='table table-striped table-hover align-middle'>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Species (Optional)</th>
+                                    <th>Location</th>
+                                    <th>Frequency</th>
+                                    <th>Last Watered</th>
+                                    <th>Next Watering Due</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Living Room Ficus</td>
+                                    <td>Ficus benjamina</td>
+                                    <td>Living Room</td>
+                                    <td>Every 7 days</td>
+                                    <td>2023-10-20</td>
+                                    <td class='text-warning fw-bold'>Tomorrow (2023-10-27)</td>
+                                    <td>
+                                        <a href='#' class='btn btn-sm btn-primary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash-fill'></i></a>
+                                         <button class='btn btn-sm btn-outline-success ms-1' title='Mark as Watered'><i class='bi bi-check-lg'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Balcony Bonsai</td>
+                                    <td>Juniper</td>
+                                    <td>Balcony</td>
+                                    <td>Every 3 days</td>
+                                    <td>2023-10-23</td>
+                                    <td class='text-danger fw-bold'>Today! (2023-10-26)</td>
+                                    <td>
+                                         <a href='#' class='btn btn-sm btn-primary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash-fill'></i></a>
+                                         <button class='btn btn-sm btn-outline-success ms-1' title='Mark as Watered'><i class='bi bi-check-lg'></i></button>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Office Palm</td>
+                                    <td>Areca Palm</td>
+                                    <td>Office Desk</td>
+                                    <td>Every 10 days</td>
+                                    <td>2023-10-18</td>
+                                    <td class='text-warning fw-bold'>In 2 days (2023-10-28)</td>
+                                   <td>
+                                         <a href='#' class='btn btn-sm btn-primary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash-fill'></i></a>
+                                         <button class='btn btn-sm btn-outline-success ms-1' title='Mark as Watered'><i class='bi bi-check-lg'></i></button>
+                                    </td>
+                                </tr>
+                               <tr>
+                                    <td>Kitchen Herb Basil</td>
+                                    <td>Ocimum basilicum</td>
+                                    <td>Kitchen Windowsill</td>
+                                    <td>Every 2 days</td>
+                                    <td>2023-10-25</td>
+                                    <td class='text-info'>In 1 day (2023-10-27)</td>
+                                     <td>
+                                         <a href='#' class='btn btn-sm btn-primary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash-fill'></i></a>
+                                         <button class='btn btn-sm btn-outline-success ms-1' title='Mark as Watered'><i class='bi bi-check-lg'></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bedroom Succulent</td>
+                                    <td>Echeveria</td>
+                                    <td>Bedroom Shelf</td>
+                                    <td>Every 14 days</td>
+                                    <td>2023-10-24</td>
+                                    <td class='text-muted'>In 12 days (2023-11-07)</td>
+                                    <td>
+                                        <a href='#' class='btn btn-sm btn-primary me-1' title='Edit'><i class='bi bi-pencil-fill'></i></a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Delete'><i class='bi bi-trash-fill'></i></a>
+                                        <button class='btn btn-sm btn-outline-success ms-1' title='Mark as Watered'><i class='bi bi-check-lg'></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                     <div class='alert alert-secondary mt-3' role='alert'>
+                         <i class='bi bi-info-circle-fill'></i> Tip: Use the <i class='bi bi-check-lg'></i> button to quickly mark a plant as watered today.
+                     </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 8: Add Plant Page -->
+    <div class="state-container">
+        <h2>State 8: Add Plant Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Plant - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h2>Add a New Plant</h2>
+                    <p>Fill in the details below to start tracking your plant's watering schedule.</p>
+
+                    <div class='card'>
+                        <div class='card-body'>
+                             <form>
+                                <div class='row g-3'>
+                                    <div class='col-md-6'>
+                                        <label for='plantName' class='form-label'>Plant Name <span class='text-danger'>*</span></label>
+                                        <input type='text' class='form-control' id='plantName' placeholder='e.g., Living Room Ficus' required>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='plantSpecies' class='form-label'>Species (Optional)</label>
+                                        <input type='text' class='form-control' id='plantSpecies' placeholder='e.g., Ficus benjamina'>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantLocation' class='form-label'>Location</label>
+                                        <input type='text' class='form-control' id='plantLocation' placeholder='e.g., Sunny windowsill, Office desk'>
+                                    </div>
+                                     <div class='col-md-6'>
+                                        <label for='wateringFrequency' class='form-label'>Watering Frequency <span class='text-danger'>*</span></label>
+                                        <div class='input-group'>
+                                            <span class='input-group-text'>Every</span>
+                                            <input type='number' class='form-control' id='wateringFrequencyValue' min='1' value='7' required>
+                                            <select class='form-select' id='wateringFrequencyUnit' style='max-width: 100px;' required>
+                                                <option value='days' selected>Days</option>
+                                                <option value='weeks'>Weeks</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='lastWateredDate' class='form-label'>Last Watered Date <span class='text-danger'>*</span></label>
+                                        <input type='date' class='form-control' id='lastWateredDate' required>
+                                        <div class='form-text'>This helps calculate the next watering date.</div>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantNotes' class='form-label'>Notes (Optional)</label>
+                                        <textarea class='form-control' id='plantNotes' rows='3' placeholder='e.g., Prefers filtered water, check soil moisture before watering'></textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class='d-flex justify-content-end'>
+                                     <a href='#' class='btn btn-secondary me-2'>Cancel</a>
+                                     <button type='submit' class='btn btn-success'><i class='bi bi-plus-circle-fill'></i> Add Plant</button>
+                                </div>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 9: Add Plant Page (with Validation Errors) -->
+    <div class="state-container">
+        <h2>State 9: Add Plant Page (with Validation Errors)</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Add Plant - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                     <h2>Add a New Plant</h2>
+                     <p>Fill in the details below to start tracking your plant's watering schedule.</p>
+
+                      <div class='alert alert-danger' role='alert'>
+                         <i class='bi bi-exclamation-triangle-fill'></i> Please correct the errors highlighted below.
+                     </div>
+
+                    <div class='card border-danger'>
+                        <div class='card-body'>
+                              <form class='was-validated'>
+                                <div class='row g-3'>
+                                    <div class='col-md-6'>
+                                        <label for='plantName' class='form-label'>Plant Name <span class='text-danger'>*</span></label>
+                                        <input type='text' class='form-control is-invalid' id='plantName' placeholder='e.g., Living Room Ficus' required>
+                                         <div class='invalid-feedback'>
+                                            Plant name is required.
+                                        </div>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='plantSpecies' class='form-label'>Species (Optional)</label>
+                                        <input type='text' class='form-control is-valid' id='plantSpecies' value='Ficus benjamina' placeholder='e.g., Ficus benjamina'>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantLocation' class='form-label'>Location</label>
+                                        <input type='text' class='form-control is-valid' id='plantLocation' value='Living Room' placeholder='e.g., Sunny windowsill, Office desk'>
+                                    </div>
+                                     <div class='col-md-6'>
+                                        <label for='wateringFrequency' class='form-label'>Watering Frequency <span class='text-danger'>*</span></label>
+                                        <div class='input-group has-validation'>
+                                            <span class='input-group-text'>Every</span>
+                                            <input type='number' class='form-control is-invalid' id='wateringFrequencyValue' min='1' value='0' required>
+                                            <select class='form-select is-valid' id='wateringFrequencyUnit' style='max-width: 100px;' required>
+                                                <option value='days' selected>Days</option>
+                                                <option value='weeks'>Weeks</option>
+                                            </select>
+                                             <div class='invalid-feedback'>
+                                                Please enter a frequency greater than 0.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='lastWateredDate' class='form-label'>Last Watered Date <span class='text-danger'>*</span></label>
+                                        <input type='date' class='form-control is-invalid' id='lastWateredDate' required>
+                                         <div class='invalid-feedback'>
+                                            Last watered date is required.
+                                        </div>
+                                        <div class='form-text'>This helps calculate the next watering date.</div>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantNotes' class='form-label'>Notes (Optional)</label>
+                                        <textarea class='form-control' id='plantNotes' rows='3' placeholder='e.g., Prefers filtered water, check soil moisture before watering'></textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class='d-flex justify-content-end'>
+                                     <a href='#' class='btn btn-secondary me-2'>Cancel</a>
+                                     <button type='submit' class='btn btn-success'><i class='bi bi-plus-circle-fill'></i> Add Plant</button>
+                                </div>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 10: Edit Plant Page -->
+    <div class="state-container">
+        <h2>State 10: Edit Plant Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Edit Plant - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                             <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h2>Edit Plant: Living Room Ficus</h2>
+                     <p>Update the details for your plant.</p>
+
+                    <div class='card'>
+                        <div class='card-body'>
+                             <form>
+                                <div class='row g-3'>
+                                    <div class='col-md-6'>
+                                        <label for='plantName' class='form-label'>Plant Name <span class='text-danger'>*</span></label>
+                                        <input type='text' class='form-control' id='plantName' value='Living Room Ficus' required>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='plantSpecies' class='form-label'>Species (Optional)</label>
+                                        <input type='text' class='form-control' id='plantSpecies' value='Ficus benjamina'>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantLocation' class='form-label'>Location</label>
+                                        <input type='text' class='form-control' id='plantLocation' value='Living Room'>
+                                    </div>
+                                     <div class='col-md-6'>
+                                        <label for='wateringFrequency' class='form-label'>Watering Frequency <span class='text-danger'>*</span></label>
+                                        <div class='input-group'>
+                                            <span class='input-group-text'>Every</span>
+                                            <input type='number' class='form-control' id='wateringFrequencyValue' min='1' value='7' required>
+                                            <select class='form-select' id='wateringFrequencyUnit' style='max-width: 100px;' required>
+                                                <option value='days' selected>Days</option>
+                                                <option value='weeks'>Weeks</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <label for='lastWateredDate' class='form-label'>Last Watered Date <span class='text-danger'>*</span></label>
+                                        <input type='date' class='form-control' id='lastWateredDate' value='2023-10-20' required>
+                                       <div class='form-text'>Updating this will recalculate the next watering date.</div>
+                                    </div>
+                                     <div class='col-12'>
+                                        <label for='plantNotes' class='form-label'>Notes (Optional)</label>
+                                        <textarea class='form-control' id='plantNotes' rows='3' placeholder='e.g., Prefers filtered water, check soil moisture before watering'>Loves morning sun.</textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class='d-flex justify-content-between'>
+                                    <a href='#' class='btn btn-danger'><i class='bi bi-trash-fill'></i> Delete Plant</a>
+                                     <div>
+                                        <a href='#' class='btn btn-secondary me-2'>Cancel</a>
+                                        <button type='submit' class='btn btn-primary'><i class='bi bi-save-fill'></i> Save Changes</button>
+                                    </div>
+                                </div>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 11: Delete Plant Confirmation -->
+    <div class="state-container">
+        <h2>State 11: Delete Plant Confirmation</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Confirm Delete - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                         <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                        <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                              <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Simulate Modal Overlay -->
+                <div style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1040;'></div>
+
+                 <div class='modal d-block' tabindex='-1' style='z-index: 1050;'>
+                    <div class='modal-dialog modal-dialog-centered'>
+                        <div class='modal-content'>
+                            <div class='modal-header bg-danger text-white'>
+                                <h5 class='modal-title'><i class='bi bi-exclamation-triangle-fill'></i> Confirm Deletion</h5>
+                                <button type='button' class='btn-close btn-close-white' aria-label='Close' disabled></button> <!-- Disabled for static view -->
+                            </div>
+                            <div class='modal-body'>
+                                <p>Are you sure you want to permanently delete the plant "<strong>Living Room Ficus</strong>"?</p>
+                                <p class='text-muted'>This action cannot be undone.</p>
+                            </div>
+                            <div class='modal-footer'>
+                                <button type='button' class='btn btn-secondary'><i class='bi bi-x-circle'></i> Cancel</button>
+                                <button type='button' class='btn btn-danger'><i class='bi bi-trash-fill'></i> Yes, Delete Plant</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background content (e.g., My Plants page) dimmed -->
+                 <div class='container mt-4' style='opacity: 0.5;'>
+                    <div class='d-flex justify-content-between align-items-center mb-3'>
+                         <h2>My Plants</h2>
+                         <a href='#' class='btn btn-success disabled'><i class='bi bi-plus-circle-fill'></i> Add New Plant</a>
+                    </div>
+                     <div class='table-responsive'>
+                       <!-- Placeholder table content -->
+                       <table class='table table-striped table-hover align-middle'><thead><tr><th>Name</th><th>...</th></tr></thead><tbody><tr><td>Living Room Ficus</td><td>...</td></tr></tbody></table>
+                    </div>
+                </div>
+
+
+                <footer class='bg-light text-center text-lg-start mt-5 fixed-bottom' style='opacity: 0.5;'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+    <!-- State 12: About Page -->
+    <div class="state-container">
+        <h2>State 12: About Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>About - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='navbarNav'>
+                             <!-- Adjust Navbar based on logged-in or logged-out state -->
+                             <ul class='navbar-nav ms-auto'>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Home</a> <!-- Or Dashboard if logged in -->
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' aria-current='page' href='#'>About</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Login</a> <!-- Or My Plants/Settings if logged in -->
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='btn btn-outline-light ms-2' href='#'>Sign Up</a> <!-- Or Logout if logged in -->
+                                </li>
+                            </ul>
+                         </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-5'>
+                    <div class='row justify-content-center'>
+                        <div class='col-lg-8'>
+                            <div class='text-center mb-4'>
+                                <i class='bi bi-info-circle-fill display-1 text-success'></i>
+                                <h1 class='mt-3'>About Plant Pal</h1>
+                                <p class='lead'>Your friendly neighborhood plant watering reminder.</p>
+                            </div>
+
+                            <p>Plant Pal was created out of a simple need: helping plant lovers keep their green companions thriving without the stress of remembering complex watering schedules. We believe that caring for plants should be a joy, not a chore.</p>
+                            <p>Our focus is solely on providing timely and accurate watering reminders. Unlike complex gardening apps, Plant Pal offers a streamlined experience:</p>
+                             <ul>
+                                <li>Easily add your plants and their specific watering needs.</li>
+                                <li>Set the last watered date, and let Plant Pal calculate the next one.</li>
+                                <li>Receive simple notifications when it's time to water.</li>
+                                <li>View your upcoming watering schedule at a glance.</li>
+                            </ul>
+                             <p>We are constantly working to improve Plant Pal and make plant care even easier. Thank you for trusting us with your plant parenting journey!</p>
+
+                             <div class='text-center mt-5'>
+                                <p class='text-muted'>Got questions or feedback? Contact us at <a href='mailto:hello@plantpal.example.com'>hello@plantpal.example.com</a></p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+     <!-- State 13: Settings/Profile Page -->
+    <div class="state-container">
+        <h2>State 13: Settings/Profile Page</h2>
+        <iframe srcdoc="
+            <!DOCTYPE html>
+            <html lang='en'>
+            <head>
+                <meta charset='UTF-8'>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                <title>Settings - Plant Watering Reminder</title>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+                 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css'>
+            </head>
+            <body>
+                 <nav class='navbar navbar-expand-lg navbar-dark bg-success'>
+                    <div class='container-fluid'>
+                        <a class='navbar-brand' href='#'><i class='bi bi-droplet-fill'></i> Plant Pal</a>
+                        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                           <span class='navbar-toggler-icon'></span>
+                        </button>
+                         <div class='collapse navbar-collapse' id='navbarNav'>
+                             <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                               <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Dashboard</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='#'>My Plants</a>
+                                </li>
+                                 <li class='nav-item'>
+                                    <a class='nav-link' href='#'>Add Plant</a>
+                                </li>
+                            </ul>
+                              <ul class='navbar-nav ms-auto'>
+                                <li class='nav-item dropdown'>
+                                    <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
+                                        <i class='bi bi-person-circle'></i> Jane Doe
+                                    </a>
+                                    <ul class='dropdown-menu dropdown-menu-end' aria-labelledby='navbarDropdown'>
+                                        <li><a class='dropdown-item active' href='#'><i class='bi bi-gear'></i> Settings</a></li>
+                                        <li><hr class='dropdown-divider'></li>
+                                        <li><a class='dropdown-item' href='#'><i class='bi bi-box-arrow-right'></i> Logout</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class='container mt-4'>
+                    <h2>Account Settings</h2>
+                    <p>Manage your profile, password, and notification preferences.</p>
+
+                    <div class='row'>
+                        <div class='col-md-8'>
+                            <!-- Profile Information -->
+                            <div class='card mb-4'>
+                                <div class='card-header'>
+                                    <i class='bi bi-person-badge'></i> Profile Information
+                                </div>
+                                <div class='card-body'>
+                                     <form>
+                                        <div class='mb-3'>
+                                            <label for='profileName' class='form-label'>Full Name</label>
+                                            <input type='text' class='form-control' id='profileName' value='Jane Doe'>
+                                        </div>
+                                        <div class='mb-3'>
+                                            <label for='profileEmail' class='form-label'>Email address</label>
+                                            <input type='email' class='form-control' id='profileEmail' value='jane.doe@example.com' aria-describedby='emailHelp' readonly>
+                                             <div id='emailHelp' class='form-text'>Email address cannot be changed.</div>
+                                        </div>
+                                        <button type='submit' class='btn btn-primary'><i class='bi bi-save'></i> Update Profile</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Change Password -->
+                             <div class='card mb-4'>
+                                <div class='card-header'>
+                                   <i class='bi bi-key-fill'></i> Change Password
+                                </div>
+                                <div class='card-body'>
+                                     <form>
+                                         <div class='mb-3'>
+                                             <label for='currentPassword' class='form-label'>Current Password</label>
+                                            <input type='password' class='form-control' id='currentPassword' required>
+                                         </div>
+                                         <div class='mb-3'>
+                                             <label for='newPassword' class='form-label'>New Password</label>
+                                            <input type='password' class='form-control' id='newPassword' required>
+                                         </div>
+                                         <div class='mb-3'>
+                                             <label for='confirmNewPassword' class='form-label'>Confirm New Password</label>
+                                            <input type='password' class='form-control' id='confirmNewPassword' required>
+                                         </div>
+                                         <button type='submit' class='btn btn-primary'><i class='bi bi-shield-lock'></i> Change Password</button>
+                                     </form>
+                                </div>
+                            </div>
+
+                            <!-- Notification Settings -->
+                             <div class='card mb-4'>
+                                <div class='card-header'>
+                                   <i class='bi bi-bell'></i> Notification Preferences (Visual Only)
+                                </div>
+                                <div class='card-body'>
+                                     <form>
+                                          <div class='form-check form-switch mb-2'>
+                                             <input class='form-check-input' type='checkbox' role='switch' id='emailNotifications' checked>
+                                             <label class='form-check-label' for='emailNotifications'>Receive Email Reminders</label>
+                                         </div>
+                                          <div class='form-check form-switch mb-3'>
+                                             <input class='form-check-input' type='checkbox' role='switch' id='pushNotifications'>
+                                            <label class='form-check-label' for='pushNotifications'>Enable Push Notifications (App Required)</label>
+                                         </div>
+                                          <div class='mb-3'>
+                                             <label for='reminderTime' class='form-label'>Preferred Reminder Time</label>
+                                             <select class='form-select' id='reminderTime'>
+                                                 <option>Morning (8:00 AM)</option>
+                                                 <option selected>Afternoon (12:00 PM)</option>
+                                                 <option>Evening (6:00 PM)</option>
+                                            </select>
+                                         </div>
+                                         <button type='submit' class='btn btn-primary'><i class='bi bi-check-circle'></i> Save Preferences</button>
+                                     </form>
+                                </div>
+                             </div>
+
+                              <!-- Delete Account -->
+                             <div class='card border-danger mb-4'>
+                                 <div class='card-header bg-danger text-white'>
+                                    <i class='bi bi-exclamation-octagon-fill'></i> Danger Zone
+                                 </div>
+                                 <div class='card-body'>
+                                     <p>Deleting your account is permanent and will remove all your plant data.</p>
+                                     <button type='button' class='btn btn-danger'><i class='bi bi-trash3-fill'></i> Delete My Account</button>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                 </div>
+
+                <footer class='bg-light text-center text-lg-start mt-5'>
+                    <div class='text-center p-3'>
+                        © 2023 Plant Pal
+                    </div>
+                </footer>
+
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL' crossorigin='anonymous'></script>
+            </body>
+            </html>
+        "></iframe>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

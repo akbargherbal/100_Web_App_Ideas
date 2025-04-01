@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitting/Crochet Project Tracker - UI Flow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Knitting/Crochet Project Tracker - UI Flow</h1>
+
+    <!-- State 1: Home Page -->
+    <h2>State 1: Home Page (Dashboard)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Patterns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yarn Stash</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Dashboard</h1>
+
+        <div class="row g-4">
+            <!-- Current Projects -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Current Projects</div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Cozy Winter Scarf</h6>
+                                    <small class="text-muted">Pattern: Simple Garter Stitch Scarf</small>
+                                </div>
+                                <span class="badge bg-info rounded-pill">Row 55</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">Baby Blanket</h6>
+                                    <small class="text-muted">Pattern: Granny Square Blanket</small>
+                                </div>
+                                <span class="badge bg-warning rounded-pill">Planning</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action text-center text-primary">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yarn Stash Summary -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Yarn Stash Summary</div>
+                    <div class="card-body">
+                        <p class="card-text">You have <strong>25</strong> skeins of yarn in your stash.</p>
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Worsted Weight
+                                <span class="badge bg-secondary rounded-pill">10</span>
+                           </li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                                DK Weight
+                                <span class="badge bg-secondary rounded-pill">8</span>
+                           </li>
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Fingering Weight
+                                <span class="badge bg-secondary rounded-pill">7</span>
+                           </li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-primary mt-3">View Yarn Stash</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">Quick Actions</div>
+                    <div class="card-body d-flex justify-content-around">
+                        <a href="#" class="btn btn-success"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
+                        <a href="#" class="btn btn-info"><i class="bi bi-journal-plus me-1"></i> Add New Pattern</a>
+                        <a href="#" class="btn btn-warning"><i class="bi bi-box-seam me-1"></i> Add New Yarn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 2: About Page -->
+    <h2>State 2: About Page</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Patterns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yarn Stash</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>About KnitTrack</h1>
+        <p class="lead">Your friendly neighborhood Knitting and Crochet Project Tracker!</p>
+        <hr>
+        <p>KnitTrack helps you keep your fiber arts life organized. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam nisl nunc vitae nisl.</p>
+        <p>Features include:</p>
+        <ul>
+            <li>Project Management: Track progress, materials, and notes.</li>
+            <li>Pattern Library: Store your digital and physical patterns.</li>
+            <li>Yarn Stash Inventory: Know what yarn you have, including details like weight, color, and dye lot.</li>
+            <li>Row Counters: Never lose your place again!</li>
+        </ul>
+        <p>Built with Bootstrap 5.</p>
+        <p>Version: 1.0.0 (Static Demo)</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 3: Patterns List -->
+    <h2>State 3: Patterns List (All Patterns)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterns</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patterns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yarn Stash</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Patterns</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Pattern</a>
+        </div>
+
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Pattern Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400/EBF4FA/777?text=Pattern+Image" class="card-img-top" alt="Pattern placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Garter Stitch Scarf</h5>
+                        <p class="card-text"><small class="text-muted">Type: Knitting | Difficulty: Beginner</small></p>
+                        <p class="card-text">A very basic garter stitch scarf pattern, perfect for learning.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pattern Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://placehold.co/600x400/FAF3EB/777?text=Pattern+Image" class="card-img-top" alt="Pattern placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Granny Square</h5>
+                         <p class="card-text"><small class="text-muted">Type: Crochet | Difficulty: Easy</small></p>
+                        <p class="card-text">The timeless granny square pattern, versatile for blankets, bags, and more.</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+             <!-- Pattern Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://placehold.co/600x400/F0EBFA/777?text=Pattern+Image" class="card-img-top" alt="Pattern placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Fair Isle Hat</h5>
+                         <p class="card-text"><small class="text-muted">Type: Knitting | Difficulty: Intermediate</small></p>
+                        <p class="card-text">A warm hat featuring a traditional Fair Isle colorwork pattern.</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 4: Pattern Details -->
+    <h2>State 4: Pattern Details</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patterns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yarn Stash</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Simple Garter Stitch Scarf</h1>
+            <div>
+                <a href="#" class="btn btn-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</a>
+                <a href="#" class="btn btn-danger"><i class="bi bi-trash me-1"></i> Delete</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://placehold.co/600x400/EBF4FA/777?text=Pattern+Image" class="img-fluid rounded mb-3" alt="Pattern Image">
+                 <h6>Details</h6>
+                 <ul class="list-unstyled">
+                     <li><strong>Type:</strong> Knitting</li>
+                     <li><strong>Difficulty:</strong> Beginner</li>
+                     <li><strong>Source:</strong> <a href="#" target="_blank">Online Blog Post</a></li>
+                     <li><strong>Needle Size:</strong> US 8 (5.0mm)</li>
+                     <li><strong>Yarn Weight:</strong> Worsted</li>
+                 </ul>
+            </div>
+            <div class="col-md-8">
+                <h6>Description</h6>
+                <p>A very basic garter stitch scarf pattern, perfect for learning. This pattern involves only the knit stitch, making it ideal for absolute beginners. Cast on 30 stitches and knit every row until the scarf reaches the desired length or you run out of yarn.</p>
+
+                <h6>Notes</h6>
+                <p>Remember to weave in ends securely. Blocking is optional for garter stitch but can even out the fabric.</p>
+
+                 <h6>Linked Projects</h6>
+                 <ul class="list-group">
+                    <li class="list-group-item"><a href="#">My First Scarf Project</a></li>
+                    <li class="list-group-item">No other projects using this pattern yet.</li>
+                 </ul>
+
+                 <h6 class="mt-3">Pattern File</h6>
+                 <p>
+                     <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-file-earmark-pdf me-1"></i> Download Pattern.pdf</a>
+                     <em>(If applicable)</em>
+                 </p>
+            </div>
+        </div>
+         <a href="#" class="btn btn-link mt-3"><i class="bi bi-arrow-left"></i> Back to Patterns List</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 5: Add New Pattern (Form) -->
+    <h2>State 5: Add New Pattern (Form)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Pattern</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Patterns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Yarn Stash</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Pattern</h1>
+        <form>
+            <div class="mb-3">
+                <label for="patternName" class="form-label">Pattern Name</label>
+                <input type="text" class="form-control" id="patternName" required>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="patternType" class="form-label">Type</label>
+                    <select class="form-select" id="patternType" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Knitting</option>
+                        <option>Crochet</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="patternDifficulty" class="form-label">Difficulty</label>
+                    <select class="form-select" id="patternDifficulty">
+                        <option selected>Choose...</option>
+                        <option>Beginner</option>
+                        <option>Easy</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+            </div>
+             <div class="mb-3">
+                <label for="patternSource" class="form-label">Source (URL or Description)</label>
+                <input type="text" class="form-control" id="patternSource" placeholder="e.g., Ravelry link, Book title, Website name">
+            </div>
+             <div class="mb-3">
+                <label for="patternYarnWeight" class="form-label">Recommended Yarn Weight</label>
+                <input type="text" class="form-control" id="patternYarnWeight" placeholder="e.g., Worsted, DK, Fingering">
+            </div>
+             <div class="mb-3">
+                <label for="patternNeedleHook" class="form-label">Recommended Needle/Hook Size</label>
+                <input type="text" class="form-control" id="patternNeedleHook" placeholder="e.g., US 8 (5.0mm), G (4.0mm)">
+            </div>
+            <div class="mb-3">
+                <label for="patternDescription" class="form-label">Description / Notes</label>
+                <textarea class="form-control" id="patternDescription" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="patternImage" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="patternImage">
+            </div>
+             <div class="mb-3">
+                <label for="patternFile" class="form-label">Upload Pattern File (PDF)</label>
+                <input class="form-control" type="file" id="patternFile" accept=".pdf">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Pattern</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 6: Add New Pattern (Form with Validation Errors) -->
+    <h2>State 6: Add New Pattern (Form with Validation Errors)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Pattern - Errors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Pattern</h1>
+         <div class="alert alert-danger" role="alert">
+            Please fix the errors below and try again.
+        </div>
+        <form>
+            <div class="mb-3">
+                <label for="patternName" class="form-label">Pattern Name</label>
+                <input type="text" class="form-control is-invalid" id="patternName" required>
+                <div class="invalid-feedback">
+                    Pattern name is required.
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="patternType" class="form-label">Type</label>
+                    <select class="form-select is-invalid" id="patternType" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Knitting</option>
+                        <option>Crochet</option>
+                        <option>Other</option>
+                    </select>
+                     <div class="invalid-feedback">
+                        Please select a pattern type.
+                    </div>
+                </div>
+                 <div class="col-md-6">
+                    <label for="patternDifficulty" class="form-label">Difficulty</label>
+                    <select class="form-select" id="patternDifficulty">
+                         <option selected>Choose...</option>
+                         <option>Beginner</option>
+                         <option>Easy</option>
+                         <option>Intermediate</option>
+                         <option>Advanced</option>
+                     </select>
+                 </div>
+            </div>
+             <div class="mb-3">
+                <label for="patternSource" class="form-label">Source (URL or Description)</label>
+                <input type="text" class="form-control" id="patternSource" placeholder="e.g., Ravelry link, Book title, Website name">
+            </div>
+             <div class="mb-3">
+                <label for="patternYarnWeight" class="form-label">Recommended Yarn Weight</label>
+                <input type="text" class="form-control" id="patternYarnWeight" placeholder="e.g., Worsted, DK, Fingering">
+            </div>
+             <div class="mb-3">
+                <label for="patternNeedleHook" class="form-label">Recommended Needle/Hook Size</label>
+                <input type="text" class="form-control" id="patternNeedleHook" placeholder="e.g., US 8 (5.0mm), G (4.0mm)">
+            </div>
+            <div class="mb-3">
+                <label for="patternDescription" class="form-label">Description / Notes</label>
+                <textarea class="form-control" id="patternDescription" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="patternImage" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="patternImage">
+            </div>
+             <div class="mb-3">
+                <label for="patternFile" class="form-label">Upload Pattern File (PDF)</label>
+                <input class="form-control" type="file" id="patternFile" accept=".pdf">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Pattern</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 7: Edit Pattern (Form pre-filled) -->
+    <h2>State 7: Edit Pattern (Form pre-filled)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pattern</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Patterns</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Edit Pattern: Simple Garter Stitch Scarf</h1>
+        <form>
+            <div class="mb-3">
+                <label for="patternName" class="form-label">Pattern Name</label>
+                <input type="text" class="form-control" id="patternName" value="Simple Garter Stitch Scarf" required>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="patternType" class="form-label">Type</label>
+                    <select class="form-select" id="patternType" required>
+                        <option disabled value="">Choose...</option>
+                        <option selected>Knitting</option>
+                        <option>Crochet</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="patternDifficulty" class="form-label">Difficulty</label>
+                    <select class="form-select" id="patternDifficulty">
+                        <option>Choose...</option>
+                        <option selected>Beginner</option>
+                        <option>Easy</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+            </div>
+             <div class="mb-3">
+                <label for="patternSource" class="form-label">Source (URL or Description)</label>
+                <input type="text" class="form-control" id="patternSource" value="Online Blog Post" placeholder="e.g., Ravelry link, Book title, Website name">
+            </div>
+             <div class="mb-3">
+                <label for="patternYarnWeight" class="form-label">Recommended Yarn Weight</label>
+                <input type="text" class="form-control" id="patternYarnWeight" value="Worsted" placeholder="e.g., Worsted, DK, Fingering">
+            </div>
+             <div class="mb-3">
+                <label for="patternNeedleHook" class="form-label">Recommended Needle/Hook Size</label>
+                <input type="text" class="form-control" id="patternNeedleHook" value="US 8 (5.0mm)" placeholder="e.g., US 8 (5.0mm), G (4.0mm)">
+            </div>
+            <div class="mb-3">
+                <label for="patternDescription" class="form-label">Description / Notes</label>
+                <textarea class="form-control" id="patternDescription" rows="3">A very basic garter stitch scarf pattern, perfect for learning. This pattern involves only the knit stitch, making it ideal for absolute beginners. Cast on 30 stitches and knit every row until the scarf reaches the desired length or you run out of yarn. Remember to weave in ends securely.</textarea>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">Current Image</label><br>
+                <img src="https://placehold.co/150x100/EBF4FA/777?text=Current" class="img-thumbnail mb-2" alt="Current pattern image"> <br>
+                <label for="patternImage" class="form-label">Upload New Image (Optional)</label>
+                <input class="form-control" type="file" id="patternImage">
+            </div>
+             <div class="mb-3">
+                 <label class="form-label">Current File</label><br>
+                 <a href="#" class="btn btn-outline-secondary btn-sm mb-2"><i class="bi bi-file-earmark-pdf me-1"></i> View Current Pattern.pdf</a> <br>
+                <label for="patternFile" class="form-label">Upload New Pattern File (Optional)</label>
+                <input class="form-control" type="file" id="patternFile" accept=".pdf">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Pattern</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 8: Yarn Stash List -->
+    <h2>State 8: Yarn Stash List (All Yarn)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarn Stash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Yarn Stash</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Yarn</a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name / Brand</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://placehold.co/80x50/A9CCE3/FFF?text=Yarn" class="img-thumbnail" alt="Yarn image"></td>
+                        <td>Malabrigo Rios</td>
+                        <td>Azules (043)</td>
+                        <td>Worsted</td>
+                        <td>3 skeins</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-pencil"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><img src="https://placehold.co/80x50/FADBD8/FFF?text=Yarn" class="img-thumbnail" alt="Yarn image"></td>
+                        <td>KnitPicks Stroll</td>
+                        <td>Blush Heather</td>
+                        <td>Fingering</td>
+                        <td>1 skein</td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-pencil"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td><img src="https://placehold.co/80x50/D5F5E3/FFF?text=Yarn" class="img-thumbnail" alt="Yarn image"></td>
+                        <td>Cascade 220</td>
+                        <td>Forest Green</td>
+                        <td>Worsted</td>
+                        <td>5 skeins</td>
+                         <td>
+                            <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-primary ms-1"><i class="bi bi-pencil"></i></a>
+                            <a href="#" class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                    <!-- More yarn rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 9: Yarn Details -->
+    <h2>State 9: Yarn Details</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarn Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Malabrigo Rios - Azules (043)</h1>
+            <div>
+                <a href="#" class="btn btn-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</a>
+                <a href="#" class="btn btn-danger"><i class="bi bi-trash me-1"></i> Delete</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://placehold.co/600x400/A9CCE3/FFF?text=Yarn+Image" class="img-fluid rounded mb-3" alt="Yarn Image">
+                 <h6>Details</h6>
+                 <ul class="list-unstyled">
+                     <li><strong>Brand:</strong> Malabrigo</li>
+                     <li><strong>Name:</strong> Rios</li>
+                     <li><strong>Colorway:</strong> Azules (043)</li>
+                     <li><strong>Dye Lot:</strong> 12345</li>
+                     <li><strong>Weight:</strong> Worsted</li>
+                     <li><strong>Fiber:</strong> 100% Superwash Merino Wool</li>
+                     <li><strong>Yardage per Skein:</strong> 210 yds</li>
+                     <li><strong>Quantity in Stash:</strong> 3 skeins</li>
+                     <li><strong>Purchase Date:</strong> 2023-05-10</li>
+                     <li><strong>Purchased From:</strong> Local Yarn Store</li>
+                 </ul>
+            </div>
+            <div class="col-md-8">
+                <h6>Description / Notes</h6>
+                <p>A soft, plied superwash merino yarn. Beautiful stitch definition. Kettle dyed, so slight variations between skeins are normal. This blue colorway has lovely depth.</p>
+
+                 <h6>Linked Projects</h6>
+                 <ul class="list-group">
+                    <li class="list-group-item">Planned: <a href="">Ocean Waves Shawl</a></li>
+                    <li class="list-group-item">No other projects linked yet.</li>
+                 </ul>
+            </div>
+        </div>
+         <a href="#" class="btn btn-link mt-3"><i class="bi bi-arrow-left"></i> Back to Yarn Stash</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 10: Add New Yarn (Form) -->
+    <h2>State 10: Add New Yarn (Form)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Yarn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Yarn to Stash</h1>
+        <form>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnBrand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="yarnBrand">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnName" class="form-label">Yarn Name</label>
+                    <input type="text" class="form-control" id="yarnName" required>
+                 </div>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnColorway" class="form-label">Colorway Name / Number</label>
+                    <input type="text" class="form-control" id="yarnColorway" required>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnDyeLot" class="form-label">Dye Lot</label>
+                    <input type="text" class="form-control" id="yarnDyeLot">
+                 </div>
+            </div>
+             <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="yarnWeight" class="form-label">Weight</label>
+                    <select class="form-select" id="yarnWeight">
+                        <option selected>Choose...</option>
+                        <option>Lace</option>
+                        <option>Fingering</option>
+                        <option>Sport</option>
+                        <option>DK</option>
+                        <option>Worsted</option>
+                        <option>Aran</option>
+                        <option>Bulky</option>
+                        <option>Super Bulky</option>
+                    </select>
+                </div>
+                 <div class="col-md-6">
+                    <label for="yarnFiber" class="form-label">Fiber Content</label>
+                    <input type="text" class="form-control" id="yarnFiber" placeholder="e.g., 100% Merino Wool, 80% Acrylic/20% Wool">
+                 </div>
+            </div>
+             <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnYardage" class="form-label">Yardage / Meters per Skein</label>
+                    <input type="number" class="form-control" id="yarnYardage" min="0">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnQuantity" class="form-label">Quantity in Stash (Skeins/Balls)</label>
+                    <input type="number" class="form-control" id="yarnQuantity" min="0" value="1" required>
+                 </div>
+            </div>
+             <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnPurchaseDate" class="form-label">Purchase Date</label>
+                    <input type="date" class="form-control" id="yarnPurchaseDate">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnPurchasedFrom" class="form-label">Purchased From</label>
+                    <input type="text" class="form-control" id="yarnPurchasedFrom">
+                 </div>
+            </div>
+            <div class="mb-3">
+                <label for="yarnNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="yarnNotes" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="yarnImage" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="yarnImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Yarn</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 11: Add New Yarn (Form with Validation Errors) -->
+    <h2>State 11: Add New Yarn (Form with Validation Errors)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Yarn - Errors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Yarn to Stash</h1>
+         <div class="alert alert-danger" role="alert">
+            Please fix the errors below and try again.
+        </div>
+        <form>
+             <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnBrand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="yarnBrand">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnName" class="form-label">Yarn Name</label>
+                    <input type="text" class="form-control is-invalid" id="yarnName" required>
+                     <div class="invalid-feedback">
+                        Yarn name is required.
+                     </div>
+                 </div>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnColorway" class="form-label">Colorway Name / Number</label>
+                    <input type="text" class="form-control is-invalid" id="yarnColorway" required>
+                     <div class="invalid-feedback">
+                        Colorway is required.
+                     </div>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnDyeLot" class="form-label">Dye Lot</label>
+                    <input type="text" class="form-control" id="yarnDyeLot">
+                 </div>
+            </div>
+             <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="yarnWeight" class="form-label">Weight</label>
+                    <select class="form-select" id="yarnWeight">
+                        <option selected>Choose...</option>
+                        <option>Lace</option>
+                        <option>Fingering</option>
+                        <option>Sport</option>
+                        <option>DK</option>
+                        <option>Worsted</option>
+                        <option>Aran</option>
+                        <option>Bulky</option>
+                        <option>Super Bulky</option>
+                    </select>
+                </div>
+                 <div class="col-md-6">
+                    <label for="yarnFiber" class="form-label">Fiber Content</label>
+                    <input type="text" class="form-control" id="yarnFiber" placeholder="e.g., 100% Merino Wool, 80% Acrylic/20% Wool">
+                 </div>
+            </div>
+            <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnYardage" class="form-label">Yardage / Meters per Skein</label>
+                    <input type="number" class="form-control" id="yarnYardage" min="0">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnQuantity" class="form-label">Quantity in Stash (Skeins/Balls)</label>
+                    <input type="number" class="form-control is-invalid" id="yarnQuantity" min="0" value="0" required>
+                     <div class="invalid-feedback">
+                        Quantity must be at least 1.
+                    </div>
+                 </div>
+            </div>
+             <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnPurchaseDate" class="form-label">Purchase Date</label>
+                    <input type="date" class="form-control" id="yarnPurchaseDate">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnPurchasedFrom" class="form-label">Purchased From</label>
+                    <input type="text" class="form-control" id="yarnPurchasedFrom">
+                 </div>
+            </div>
+            <div class="mb-3">
+                <label for="yarnNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="yarnNotes" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="yarnImage" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="yarnImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Yarn</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 12: Edit Yarn (Form pre-filled) -->
+    <h2>State 12: Edit Yarn (Form pre-filled)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Yarn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <div class="container mt-4">
+        <h1>Edit Yarn: Malabrigo Rios - Azules (043)</h1>
+        <form>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnBrand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="yarnBrand" value="Malabrigo">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnName" class="form-label">Yarn Name</label>
+                    <input type="text" class="form-control" id="yarnName" value="Rios" required>
+                 </div>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="yarnColorway" class="form-label">Colorway Name / Number</label>
+                    <input type="text" class="form-control" id="yarnColorway" value="Azules (043)" required>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnDyeLot" class="form-label">Dye Lot</label>
+                    <input type="text" class="form-control" id="yarnDyeLot" value="12345">
+                 </div>
+            </div>
+             <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="yarnWeight" class="form-label">Weight</label>
+                    <select class="form-select" id="yarnWeight">
+                        <option>Choose...</option>
+                        <option>Lace</option>
+                        <option>Fingering</option>
+                        <option>Sport</option>
+                        <option>DK</option>
+                        <option selected>Worsted</option>
+                        <option>Aran</option>
+                        <option>Bulky</option>
+                        <option>Super Bulky</option>
+                    </select>
+                </div>
+                 <div class="col-md-6">
+                    <label for="yarnFiber" class="form-label">Fiber Content</label>
+                    <input type="text" class="form-control" id="yarnFiber" value="100% Superwash Merino Wool" placeholder="e.g., 100% Merino Wool, 80% Acrylic/20% Wool">
+                 </div>
+            </div>
+             <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnYardage" class="form-label">Yardage / Meters per Skein</label>
+                    <input type="number" class="form-control" id="yarnYardage" min="0" value="210">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnQuantity" class="form-label">Quantity in Stash (Skeins/Balls)</label>
+                    <input type="number" class="form-control" id="yarnQuantity" min="0" value="3" required>
+                 </div>
+            </div>
+             <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="yarnPurchaseDate" class="form-label">Purchase Date</label>
+                    <input type="date" class="form-control" id="yarnPurchaseDate" value="2023-05-10">
+                 </div>
+                 <div class="col-md-6">
+                    <label for="yarnPurchasedFrom" class="form-label">Purchased From</label>
+                    <input type="text" class="form-control" id="yarnPurchasedFrom" value="Local Yarn Store">
+                 </div>
+            </div>
+            <div class="mb-3">
+                <label for="yarnNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="yarnNotes" rows="3">A soft, plied superwash merino yarn. Beautiful stitch definition. Kettle dyed, so slight variations between skeins are normal. This blue colorway has lovely depth.</textarea>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">Current Image</label><br>
+                <img src="https://placehold.co/150x100/A9CCE3/FFF?text=Current+Yarn" class="img-thumbnail mb-2" alt="Current yarn image"> <br>
+                <label for="yarnImage" class="form-label">Upload New Image (Optional)</label>
+                <input class="form-control" type="file" id="yarnImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Yarn</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 13: Projects List -->
+    <h2>State 13: Projects List (All Projects)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Projects</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
+        </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <!-- Project Card 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://placehold.co/600x400/E8DAEF/777?text=Project+WIP" class="card-img-top" alt="Project placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Cozy Winter Scarf</h5>
+                        <p class="card-text"><small class="text-muted">Pattern: Simple Garter Stitch Scarf</small></p>
+                        <p class="card-text">Status: <span class="badge bg-info">In Progress</span></p>
+                        <div class="progress mb-2" role="progressbar" aria-label="Project progress" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar" style="width: 60%">60%</div>
+                        </div>
+                        <p class="card-text">Current Row: 55</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://placehold.co/600x400/D6EAF8/777?text=Project+Planned" class="card-img-top" alt="Project placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Baby Blanket</h5>
+                         <p class="card-text"><small class="text-muted">Pattern: Classic Granny Square</small></p>
+                        <p class="card-text">Status: <span class="badge bg-warning">Planned</span></p>
+                         <div class="progress mb-2" role="progressbar" aria-label="Project progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar" style="width: 0%">0%</div>
+                        </div>
+                         <p class="card-text">Not Started</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+             <!-- Project Card 3 -->
+            <div class="col">
+                <div class="card h-100">
+                     <img src="https://placehold.co/600x400/D1F2EB/777?text=Project+Finished" class="card-img-top" alt="Project placeholder image">
+                    <div class="card-body">
+                        <h5 class="card-title">Simple Beanie</h5>
+                         <p class="card-text"><small class="text-muted">Pattern: Basic Ribbed Beanie</small></p>
+                         <p class="card-text">Status: <span class="badge bg-success">Completed</span></p>
+                         <div class="progress mb-2" role="progressbar" aria-label="Project progress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                        </div>
+                         <p class="card-text">Finished on 2023-10-15</p>
+                    </div>
+                     <div class="card-footer d-flex justify-content-end">
+                         <a href="#" class="btn btn-sm btn-outline-secondary me-2">View Details</a>
+                         <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 14: Project Details -->
+    <h2>State 14: Project Details</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>Cozy Winter Scarf</h1>
+            <div>
+                <a href="#" class="btn btn-secondary me-2"><i class="bi bi-pencil-square me-1"></i> Edit</a>
+                <a href="#" class="btn btn-danger"><i class="bi bi-trash me-1"></i> Delete</a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Column -->
+            <div class="col-md-4">
+                <img src="https://placehold.co/600x400/E8DAEF/777?text=Project+WIP" class="img-fluid rounded mb-3" alt="Project Image">
+                 <h6>Status</h6>
+                 <p><span class="badge bg-info fs-6">In Progress</span></p>
+
+                 <h6>Progress</h6>
+                 <div class="progress mb-3" role="progressbar" aria-label="Project progress" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="height: 20px;">
+                   <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%">60%</div>
+                 </div>
+
+                 <h6>Dates</h6>
+                 <ul class="list-unstyled">
+                    <li><strong>Started:</strong> 2023-11-01</li>
+                    <li><strong>Last Updated:</strong> 2023-11-15</li>
+                    <li><strong>Target Completion:</strong> 2023-12-15</li>
+                 </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-8">
+                 <h6>Pattern</h6>
+                 <p><a href="#">Simple Garter Stitch Scarf</a> (Knitting, Beginner)</p>
+
+                 <h6>Yarn Used</h6>
+                 <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="#">Malabrigo Rios - Azules (043)</a>
+                        <span class="badge bg-secondary">2 skeins used (of 3)</span>
+                    </li>
+                 </ul>
+
+                 <h6>Needles / Hooks</h6>
+                 <p>US 8 (5.0mm) Circular Needles</p>
+
+                <!-- Row Counter Section -->
+                <div class="card mb-3">
+                    <div class="card-header">Row Counter</div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title display-4">55</h4>
+                        <p class="card-text">Current Row</p>
+                        <div>
+                             <button type="button" class="btn btn-lg btn-danger me-2" disabled><i class="bi bi-dash-circle"></i></button>
+                             <button type="button" class="btn btn-lg btn-success" disabled><i class="bi bi-plus-circle"></i></button>
+                             <a href="#" class="btn btn-lg btn-outline-primary ms-3">Open Full Counter</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                 <h6>Notes</h6>
+                 <p>Working on this as a gift. Making good progress. Remembered to use a lifeline at row 50.</p>
+
+            </div>
+        </div>
+         <a href="#" class="btn btn-link mt-3"><i class="bi bi-arrow-left"></i> Back to Projects List</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 15: Add New Project (Form) -->
+    <h2>State 15: Add New Project (Form)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Project</h1>
+        <form>
+            <div class="mb-3">
+                <label for="projectName" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="projectName" required>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="projectPattern" class="form-label">Pattern</label>
+                    <select class="form-select" id="projectPattern">
+                        <option selected value="">Choose pattern (optional)...</option>
+                        <option value="1">Simple Garter Stitch Scarf</option>
+                        <option value="2">Classic Granny Square</option>
+                        <option value="3">Fair Isle Hat</option>
+                        <option value="new">-- Add New Pattern --</option>
+                    </select>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="projectStatus" class="form-label">Status</label>
+                    <select class="form-select" id="projectStatus" required>
+                        <option>Planned</option>
+                        <option selected>In Progress</option>
+                        <option>On Hold</option>
+                        <option>Completed</option>
+                        <option>Frogged</option>
+                    </select>
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectYarn" class="form-label">Yarn Used (Select from Stash)</label>
+                 <select class="form-select" id="projectYarn" multiple size="3">
+                    <option value="1">Malabrigo Rios - Azules (043) (3 skeins available)</option>
+                    <option value="2">KnitPicks Stroll - Blush Heather (1 skein available)</option>
+                    <option value="3">Cascade 220 - Forest Green (5 skeins available)</option>
+                    <option value="new">-- Add New Yarn to Stash --</option>
+                 </select>
+                 <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple yarns.</small>
+            </div>
+
+             <div class="mb-3">
+                <label for="projectNeedles" class="form-label">Needles / Hooks Used</label>
+                <input type="text" class="form-control" id="projectNeedles" placeholder="e.g., US 8 (5.0mm), Crochet Hook G (4.0mm)">
+            </div>
+
+             <div class="row mb-3">
+                 <div class="col-md-4">
+                    <label for="projectStartDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="projectStartDate">
+                 </div>
+                 <div class="col-md-4">
+                    <label for="projectEndDate" class="form-label">End Date (if completed)</label>
+                    <input type="date" class="form-control" id="projectEndDate">
+                 </div>
+                  <div class="col-md-4">
+                    <label for="projectProgress" class="form-label">Progress (%)</label>
+                    <input type="number" class="form-control" id="projectProgress" min="0" max="100" value="0">
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="projectNotes" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="projectImage" class="form-label">Upload Project Image</label>
+                <input class="form-control" type="file" id="projectImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Project</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 16: Add New Project (Form with Validation Errors) -->
+    <h2>State 16: Add New Project (Form with Validation Errors)</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Project - Errors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Add New Project</h1>
+         <div class="alert alert-danger" role="alert">
+            Please fix the errors below and try again.
+        </div>
+        <form>
+            <div class="mb-3">
+                <label for="projectName" class="form-label">Project Name</label>
+                <input type="text" class="form-control is-invalid" id="projectName" required>
+                 <div class="invalid-feedback">
+                    Project name is required.
+                </div>
+            </div>
+             <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="projectPattern" class="form-label">Pattern</label>
+                    <select class="form-select" id="projectPattern">
+                        <option selected value="">Choose pattern (optional)...</option>
+                        <option value="1">Simple Garter Stitch Scarf</option>
+                        <option value="2">Classic Granny Square</option>
+                        <option value="3">Fair Isle Hat</option>
+                        <option value="new">-- Add New Pattern --</option>
+                    </select>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="projectStatus" class="form-label">Status</label>
+                    <select class="form-select" id="projectStatus" required>
+                        <option>Planned</option>
+                        <option selected>In Progress</option>
+                        <option>On Hold</option>
+                        <option>Completed</option>
+                        <option>Frogged</option>
+                    </select>
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectYarn" class="form-label">Yarn Used (Select from Stash)</label>
+                 <select class="form-select" id="projectYarn" multiple size="3">
+                    <option value="1">Malabrigo Rios - Azules (043) (3 skeins available)</option>
+                    <option value="2">KnitPicks Stroll - Blush Heather (1 skein available)</option>
+                    <option value="3">Cascade 220 - Forest Green (5 skeins available)</option>
+                      <option value="new">-- Add New Yarn to Stash --</option>
+                 </select>
+                 <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple yarns.</small>
+            </div>
+
+             <div class="mb-3">
+                <label for="projectNeedles" class="form-label">Needles / Hooks Used</label>
+                <input type="text" class="form-control" id="projectNeedles" placeholder="e.g., US 8 (5.0mm), Crochet Hook G (4.0mm)">
+            </div>
+
+             <div class="row mb-3">
+                 <div class="col-md-4">
+                    <label for="projectStartDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="projectStartDate">
+                 </div>
+                 <div class="col-md-4">
+                    <label for="projectEndDate" class="form-label">End Date (if completed)</label>
+                    <input type="date" class="form-control" id="projectEndDate">
+                 </div>
+                  <div class="col-md-4">
+                    <label for="projectProgress" class="form-label">Progress (%)</label>
+                    <input type="number" class="form-control" id="projectProgress" min="0" max="100" value="0">
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="projectNotes" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="projectImage" class="form-label">Upload Project Image</label>
+                <input class="form-control" type="file" id="projectImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Save Project</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 17: Edit Project (Form pre-filled) -->
+    <h2>State 17: Edit Project (Form pre-filled)</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <div class="container mt-4">
+        <h1>Edit Project: Cozy Winter Scarf</h1>
+        <form>
+            <div class="mb-3">
+                <label for="projectName" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="projectName" value="Cozy Winter Scarf" required>
+            </div>
+            <div class="row mb-3">
+                 <div class="col-md-6">
+                    <label for="projectPattern" class="form-label">Pattern</label>
+                    <select class="form-select" id="projectPattern">
+                        <option value="">Choose pattern (optional)...</option>
+                        <option value="1" selected>Simple Garter Stitch Scarf</option>
+                        <option value="2">Classic Granny Square</option>
+                        <option value="3">Fair Isle Hat</option>
+                         <option value="new">-- Add New Pattern --</option>
+                    </select>
+                 </div>
+                 <div class="col-md-6">
+                    <label for="projectStatus" class="form-label">Status</label>
+                    <select class="form-select" id="projectStatus" required>
+                        <option>Planned</option>
+                        <option selected>In Progress</option>
+                        <option>On Hold</option>
+                        <option>Completed</option>
+                        <option>Frogged</option>
+                    </select>
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectYarn" class="form-label">Yarn Used (Select from Stash)</label>
+                 <select class="form-select" id="projectYarn" multiple size="3">
+                    <option value="1" selected>Malabrigo Rios - Azules (043) (3 skeins available)</option>
+                    <option value="2">KnitPicks Stroll - Blush Heather (1 skein available)</option>
+                    <option value="3">Cascade 220 - Forest Green (5 skeins available)</option>
+                      <option value="new">-- Add New Yarn to Stash --</option>
+                 </select>
+                 <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple yarns.</small>
+                 <!-- Placeholder for showing quantity used per yarn -->
+                 <div class="mt-2">
+                     <small>Currently using: Malabrigo Rios - Azules (043) (Adjust quantity used: <input type="number" value="2" min="0" max="3" style="width: 60px;"> skeins)</small>
+                 </div>
+            </div>
+
+             <div class="mb-3">
+                <label for="projectNeedles" class="form-label">Needles / Hooks Used</label>
+                <input type="text" class="form-control" id="projectNeedles" value="US 8 (5.0mm) Circular Needles" placeholder="e.g., US 8 (5.0mm), Crochet Hook G (4.0mm)">
+            </div>
+
+             <div class="row mb-3">
+                 <div class="col-md-4">
+                    <label for="projectStartDate" class="form-label">Start Date</label>
+                    <input type="date" class="form-control" id="projectStartDate" value="2023-11-01">
+                 </div>
+                 <div class="col-md-4">
+                    <label for="projectEndDate" class="form-label">End Date (if completed)</label>
+                    <input type="date" class="form-control" id="projectEndDate">
+                 </div>
+                  <div class="col-md-4">
+                    <label for="projectProgress" class="form-label">Progress (%)</label>
+                    <input type="number" class="form-control" id="projectProgress" min="0" max="100" value="60">
+                 </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="projectNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="projectNotes" rows="3">Working on this as a gift. Making good progress. Remembered to use a lifeline at row 50.</textarea>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">Current Image</label><br>
+                <img src="https://placehold.co/150x100/E8DAEF/777?text=Current+WIP" class="img-thumbnail mb-2" alt="Current project image"> <br>
+                <label for="projectImage" class="form-label">Upload New Image (Optional)</label>
+                <input class="form-control" type="file" id="projectImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Project</button>
+            <a href="#" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 18: Project Row Counter View -->
+    <h2>State 18: Project Row Counter View</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Row Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+         <a href="#" class="btn btn-link mb-3"><i class="bi bi-arrow-left"></i> Back to Project Details (Cozy Winter Scarf)</a>
+        <h1 class="text-center mb-3">Row Counter</h1>
+         <h2 class="text-center text-muted mb-4">Project: Cozy Winter Scarf</h2>
+
+        <div class="card text-center w-75 mx-auto">
+            <div class="card-header">
+                Main Counter
+            </div>
+            <div class="card-body">
+                 <h3 class="card-title display-1 fw-bold">55</h3>
+                 <p class="card-text lead">Current Row</p>
+                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                     <button type="button" class="btn btn-danger btn-lg px-4 gap-3" disabled><i class="bi bi-dash-circle-fill me-2"></i> Decrement</button>
+                     <button type="button" class="btn btn-success btn-lg px-4" disabled><i class="bi bi-plus-circle-fill me-2"></i> Increment</button>
+                </div>
+                 <div class="mt-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" disabled>Reset Counter</button>
+                 </div>
+            </div>
+            <div class="card-footer text-muted">
+                Last updated: 5 minutes ago
+            </div>
+        </div>
+
+         <!-- Optional: Linked Counters (e.g., for repeats) -->
+         <div class="row mt-4 justify-content-center">
+             <div class="col-md-4">
+                 <div class="card text-center mb-3">
+                     <div class="card-header">Repeat Counter 1</div>
+                     <div class="card-body">
+                         <h4 class="card-title display-5">3</h4>
+                         <p class="card-text">Repeats Done</p>
+                         <button type="button" class="btn btn-sm btn-outline-danger me-1" disabled><i class="bi bi-dash"></i></button>
+                         <button type="button" class="btn btn-sm btn-outline-success" disabled><i class="bi bi-plus"></i></button>
+                     </div>
+                 </div>
+             </div>
+              <div class="col-md-4">
+                 <div class="card text-center mb-3">
+                     <div class="card-header">Repeat Counter 2</div>
+                     <div class="card-body">
+                         <h4 class="card-title display-5">12</h4>
+                          <p class="card-text">Rows in Repeat</p>
+                         <button type="button" class="btn btn-sm btn-outline-danger me-1" disabled><i class="bi bi-dash"></i></button>
+                         <button type="button" class="btn btn-sm btn-outline-success" disabled><i class="bi bi-plus"></i></button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 19: Empty State - Patterns List -->
+    <h2>State 19: Empty State - Patterns List</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patterns (Empty)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Patterns</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Patterns</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Pattern</a>
+        </div>
+
+         <div class="text-center py-5">
+             <i class="bi bi-journal-bookmark" style="font-size: 4rem; color: #6c757d;"></i>
+             <h3 class="mt-3">No Patterns Yet</h3>
+             <p class="text-muted">Add your first knitting or crochet pattern to get started!</p>
+             <a href="#" class="btn btn-success mt-2"><i class="bi bi-journal-plus me-1"></i> Add Your First Pattern</a>
+         </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+    <!-- State 20: Empty State - Yarn Stash List -->
+    <h2>State 20: Empty State - Yarn Stash List</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarn Stash (Empty)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Yarn Stash</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Yarn Stash</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Yarn</a>
+        </div>
+
+        <div class="text-center py-5">
+             <i class="bi bi-box-seam" style="font-size: 4rem; color: #6c757d;"></i>
+             <h3 class="mt-3">Your Yarn Stash is Empty</h3>
+             <p class="text-muted">Track your yarn collection by adding your first skein!</p>
+             <a href="#" class="btn btn-warning mt-2"><i class="bi bi-box-seam me-1"></i> Add Your First Yarn</a>
+         </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 21: Empty State - Projects List -->
+    <h2>State 21: Empty State - Projects List</h2>
+    <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects (Empty)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KnitTrack</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Projects</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Patterns</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Yarn Stash</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>My Projects</h1>
+            <a href="#" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i> Add New Project</a>
+        </div>
+
+        <div class="text-center py-5">
+             <i class="bi bi-card-list" style="font-size: 4rem; color: #6c757d;"></i>
+             <h3 class="mt-3">No Projects Started Yet</h3>
+             <p class="text-muted">Time to cast on! Add your first project to track your progress.</p>
+             <a href="#" class="btn btn-success mt-2"><i class="bi bi-plus-circle me-1"></i> Add Your First Project</a>
+         </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+     <!-- State 22: Confirmation Dialog (Simulated) -->
+    <h2>State 22: Confirmation Dialog (e.g., Delete Project)</h2>
+     <iframe srcdoc='
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Deletion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <!-- No full nav here, simulating a focused confirmation step -->
+     <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                     <div class="card-header bg-danger text-white">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i> Confirm Deletion
+                     </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Are you sure?</h5>
+                        <p class="card-text">You are about to permanently delete the project:</p>
+                        <p class="fw-bold">"Cozy Winter Scarf"</p>
+                        <p class="text-danger">This action cannot be undone.</p>
+                         <div class="d-flex justify-content-end mt-4">
+                            <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                            <a href="#" class="btn btn-danger"><i class="bi bi-trash me-1"></i> Yes, Delete Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+    '></iframe>
+
+</body>
+</html>
